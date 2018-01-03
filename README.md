@@ -12,19 +12,13 @@ Using versions from Berger et al, TSE 2013, as well as some newer
 versions that will build on my current system.  In the future, using
 VMs will enable building for older versions and on other platforms.
 
-##
-
-If no prompt, can't be selected
-
-
-
 ## axtls
 
 Tried on two versions 1.2.7 and 2.4.1, and all sampled configurations configure properly.
 
 This creates the dimacs constraint file for feature model.
 
-    check_dep --dimacs config/Config.in | tee axtls_2_4_1.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > axtls_2_4_1.dimacs
+    check_dep --dimacs config/Config.in | tee axtls_2_1_4.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > axtls_2_1_4.dimacs
 
 This checks the contraints for all generated sample configurations (contained in `generated_configs`).
 
@@ -82,7 +76,7 @@ I don't know how platform-specific the generated configs are.
 
 This collects the contraints
 
-    check_dep --dimacs Config.in | tee toybox_0_7_5.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > toybox_0_7_5.dimacs
+    check_dep --dimacs Config.in | tee ~/research/repos/kconfig_case_studies/cases/toybox_0_7_5/toybox_0_7_5.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > ~/research/repos/kconfig_case_studies/cases/toybox_0_7_5/toybox_0_7_5.dimacs
 
 
 ## fiasco
