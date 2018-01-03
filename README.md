@@ -14,7 +14,7 @@ VMs will enable building for older versions and on other platforms.
 
 ## axtls
 
-Tried on two versions 1.2.7 and 2.4.1, and all sampled configurations configure properly.
+Tried on two versions 1.2.7 and 2.1.4, and all sampled configurations configure properly.
 
 This creates the dimacs constraint file for feature model.
 
@@ -38,7 +38,7 @@ This builds only linux configurations
 
 Older versions (1.2.7) don't build
 
-Trying 2.4.1.  It required me to install the following extra libraries
+Trying 2.1.4.  It required me to install the following extra libraries
 to build it with `allyesconfig`:
 
     libreadline-dev
