@@ -4,7 +4,7 @@
 
 1. check that `make oldconfig` accepts it
 1. compare oldconfig .config and generated config for sameness (modulo comments, empty nonbools)
-1. try building (modulo system-specific stuff
+1. try building (modulo system-specific stuff)
 
 ## Comparison with LVAT
 
