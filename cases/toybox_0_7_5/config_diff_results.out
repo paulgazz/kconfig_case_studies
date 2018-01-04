@@ -1,0 +1,3157 @@
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/0.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/0.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/0.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [N/y/?] n
+cat (CAT) [N/y/?] n
+catv (CATV) [Y/n/?] y
+chgrp (CHGRP) [N/y/?] n
+chown (CHOWN) [Y/n/?] y
+chmod (CHMOD) [Y/n/?] y
+cksum (CKSUM) [N/y/?] n
+cmp (CMP) [Y/n/?] y
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+mv (MV) [Y/n/?] y
+install (INSTALL) [Y/n/?] y
+cpio (CPIO) [N/y/?] n
+cut (CUT) [N/y/?] n
+date (DATE) [Y/n/?] y
+df (DF) [N/y/?] n
+dirname (DIRNAME) [N/y/?] n
+du (DU) [Y/n/?] y
+echo (ECHO) [Y/n/?] y
+env (ENV) [Y/n/?] y
+expand (EXPAND) [N/y/?] n
+false (FALSE) [N/y/?] n
+file (FILE) [Y/n/?] y
+find (FIND) [Y/n/?] y
+grep (GREP) [Y/n/?] y
+head (HEAD) [N/y/?] n
+id (ID) [N/y/?] n
+groups (GROUPS) [Y/n/?] y
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [Y/n/?] y
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [N/y/?] n
+link (LINK) [Y/n/?] y
+ln (LN) [N/y/?] n
+ls (LS) [Y/n/?] y
+  ls --color (LS_COLOR) [N/y/?] n
+mkdir (MKDIR) [Y/n/?] y
+mkfifo (MKFIFO) [N/y/?] n
+nice (NICE) [Y/n/?] y
+nl (NL) [Y/n/?] y
+nohup (NOHUP) [N/y/?] n
+od (OD) [N/y/?] n
+paste (PASTE) [N/y/?] n
+patch (PATCH) [Y/n/?] y
+printf (PRINTF) [Y/n/?] y
+ps (PS) [Y/n/?] y
+top (TOP) [Y/n/?] y
+iotop (IOTOP) [Y/n/?] y
+pgrep (PGREP) [Y/n/?] y
+pkill (PKILL) [Y/n/?] y
+pwd (PWD) [N/y/?] n
+renice (RENICE) [Y/n/?] y
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [Y/n/?] y
+sleep (SLEEP) [N/y/?] n
+sort (SORT) [Y/n/?] y
+  SuSv3 options (Support -ktcsbdfiozM) (SORT_BIG) [Y/n/?] y
+split (SPLIT) [N/y/?] n
+strings (STRINGS) [N/y/?] n
+tail (TAIL) [Y/n/?] y
+  tail seek support (TAIL_SEEK) [Y/n/?] y
+tee (TEE) [N/y/?] n
+time (TIME) [N/y/?] n
+touch (TOUCH) [Y/n/?] y
+true (TRUE) [N/y/?] n
+tty (TTY) [Y/n/?] y
+uname (UNAME) [N/y/?] n
+uniq (UNIQ) [Y/n/?] y
+unlink (UNLINK) [N/y/?] n
+uudecode (UUDECODE) [Y/n/?] y
+uuencode (UUENCODE) [Y/n/?] y
+wc (WC) [N/y/?] n
+who (WHO) [N/y/?] n
+xargs (XARGS) [Y/n/?] y
+  TODO xargs pedantic posix compatability (XARGS_PEDANTIC) [Y/n/?] y
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+gzip (GZIP) [N/y/?] n
+gunzip (GUNZIP) [N/y/?] n
+zcat (ZCAT) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [N/y/?] n
+ascii (ASCII) [N/y/?] n
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [N/y/?] n
+fstype (FSTYPE) [N/y/?] n
+blockdev (BLOCKDEV) [Y/n/?] y
+bunzip2 (BUNZIP2) [Y/n/?] y
+bzcat (BZCAT) [Y/n/?] y
+chcon (CHCON) [N/y/?] n
+chroot (CHROOT) [Y/n/?] y
+chrt (CHRT) [N/y/?] n
+chvt (CHVT) [N/y/?] n
+clear (CLEAR) [N/y/?] n
+count (COUNT) [N/y/?] n
+dos2unix/unix2dos (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [Y/n/?] y
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [N/y/?] n
+fallocate (FALLOCATE) [Y/n/?] y
+flock (FLOCK) [Y/n/?] y
+free (FREE) [Y/n/?] y
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsfreeze (FSFREEZE) [N/y/?] n
+fsync (FSYNC) [Y/n/?] y
+help (HELP) [N/y/?] n
+hexedit (HEXEDIT) [Y/n/?] y
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [Y/n/?] y
+insmod (INSMOD) [Y/n/?] y
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [Y/n/?] y
+login (LOGIN) [N/y/?] n
+losetup (LOSETUP) [Y/n/?] y
+lsattr (LSATTR) [N/y/?] n
+chattr (CHATTR) [N/y/?] n
+lsmod (LSMOD) [Y/n/?] y
+lspci (LSPCI) [N/y/?] n
+lsusb (LSUSB) [Y/n/?] y
+makedevs (MAKEDEVS) [Y/n/?] y
+mix (MIX) [Y/n/?] y
+mkpasswd (MKPASSWD) [N/y/?] n
+mkswap (MKSWAP) [N/y/?] n
+modinfo (MODINFO) [N/y/?] n
+mountpoint (MOUNTPOINT) [Y/n/?] y
+nbd-client (NBD_CLIENT) [Y/n/?] y
+oneit (ONEIT) [Y/n/?] y
+partprobe (PARTPROBE) [N/y/?] n
+pivot_root (PIVOT_ROOT) [Y/n/?] y
+pmap (PMAP) [N/y/?] n
+printenv (PRINTENV) [Y/n/?] y
+pwdx (PWDX) [Y/n/?] y
+readahead (READAHEAD) [Y/n/?] y
+readlink (READLINK) [Y/n/?] y
+realpath (REALPATH) [N/y/?] n
+reboot (REBOOT) [N/y/?] n
+reset (RESET) [N/y/?] n
+rev (REV) [N/y/?] n
+rmmod (RMMOD) [N/y/?] n
+setsid (SETSID) [N/y/?] n
+shred (SHRED) [Y/n/?] y
+stat (STAT) [N/y/?] n
+swapoff (SWAPOFF) [Y/n/?] y
+swapon (SWAPON) [N/y/?] n
+switch_root (SWITCH_ROOT) [N/y/?] n
+sysctl (SYSCTL) [Y/n/?] y
+tac (TAC) [Y/n/?] y
+nproc (NPROC) [N/y/?] n
+taskset (TASKSET) [N/y/?] n
+timeout (TIMEOUT) [Y/n/?] y
+truncate (TRUNCATE) [N/y/?] n
+uptime (UPTIME) [Y/n/?] y
+usleep (USLEEP) [Y/n/?] y
+vconfig (VCONFIG) [N/y/?] n
+vmstat (VMSTAT) [Y/n/?] y
+w (W) [N/y/?] n
+which (WHICH) [N/y/?] n
+xxd (XXD) [Y/n/?] y
+yes (YES) [Y/n/?] y
+*
+* Networking
+*
+ftpget (FTPGET) [Y/n/?] y
+ftpput (FTPPUT) [N/y/?] n
+ifconfig (IFCONFIG) [Y/n/?] y
+microcom (MICROCOM) [Y/n/?] y
+netcat (NETCAT) [Y/n/?] y
+  netcat server options (-let) (NETCAT_LISTEN) [Y/n/?] y
+netstat (NETSTAT) [N/y/?] n
+rfkill (RFKILL) [N/y/?] n
+tunctl (TUNCTL) [Y/n/?] y
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [Y/n/?] y
+hostname (HOSTNAME) [N/y/?] n
+killall (KILLALL) [Y/n/?] y
+md5sum (MD5SUM) [N/y/?] n
+sha1sum (SHA1SUM) [Y/n/?] y
+sha224sum (SHA224SUM) [N/y/?] n
+sha256sum (SHA256SUM) [N/y/?] n
+sha384sum (SHA384SUM) [N/y/?] n
+sha512sum (SHA512SUM) [Y/n/?] y
+mknod (MKNOD) [N/y/?] n
+mktemp (MKTEMP) [N/y/?] n
+mount (MOUNT) [N/y/?] n
+passwd (PASSWD) [N/y/?] n
+pidof (PIDOF) [N/y/?] n
+seq (SEQ) [Y/n/?] y
+su (SU) [Y/n/?] y
+sync (SYNC) [Y/n/?] y
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [N/y/?] n
+hostid (HOSTID) [Y/n/?] y
+skeleton (SKELETON) [N/y/?] n
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [N/y/?] n
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [Y/n/?] y
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [Y/n/?] y
+load_policy (LOAD_POLICY) [Y/n/?] y
+restorecon (RESTORECON) [Y/n/?] y
+runcon (RUNCON) [N/y/?] n
+setenforce (SETENFORCE) [N/y/?] n
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [Y/n/?] y
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [Y/n/?] y
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [Y/n/?] y
+Internationalization support (TOYBOX_I18N) [N/y/?] n
+Free memory unnecessarily (TOYBOX_FREE) [Y/n/?] y
+Disable recursive execution (TOYBOX_NORECURSE) [N/y/?] n
+Debugging tests (TOYBOX_DEBUG) [N/y/?] n
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [Y/n/?] y
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/0.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [Y/n/?] y
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [N/y/?] n
+catv (CATV) [Y/n/?] y
+chgrp (CHGRP) [N/y/?] n
+chown (CHOWN) [Y/n/?] y
+chmod (CHMOD) [Y/n/?] y
+cksum (CKSUM) [Y/n/?] y
+cmp (CMP) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+mv (MV) [N/y/?] n
+install (INSTALL) [Y/n/?] y
+cpio (CPIO) [Y/n/?] y
+cut (CUT) [Y/n/?] y
+date (DATE) [Y/n/?] y
+df (DF) [N/y/?] n
+dirname (DIRNAME) [Y/n/?] y
+du (DU) [Y/n/?] y
+echo (ECHO) [N/y/?] n
+env (ENV) [N/y/?] n
+expand (EXPAND) [Y/n/?] y
+false (FALSE) [N/y/?] n
+file (FILE) [N/y/?] n
+find (FIND) [Y/n/?] y
+grep (GREP) [Y/n/?] y
+head (HEAD) [Y/n/?] y
+id (ID) [N/y/?] n
+groups (GROUPS) [N/y/?] n
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [Y/n/?] y
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [Y/n/?] y
+link (LINK) [N/y/?] n
+ln (LN) [Y/n/?] y
+ls (LS) [Y/n/?] y
+  ls --color (LS_COLOR) [N/y/?] n
+mkdir (MKDIR) [Y/n/?] y
+mkfifo (MKFIFO) [N/y/?] n
+nice (NICE) [Y/n/?] y
+nl (NL) [Y/n/?] y
+nohup (NOHUP) [N/y/?] n
+od (OD) [Y/n/?] y
+paste (PASTE) [Y/n/?] y
+patch (PATCH) [Y/n/?] y
+printf (PRINTF) [Y/n/?] y
+ps (PS) [N/y/?] n
+top (TOP) [Y/n/?] y
+iotop (IOTOP) [Y/n/?] y
+pgrep (PGREP) [N/y/?] n
+pkill (PKILL) [Y/n/?] y
+pwd (PWD) [Y/n/?] y
+renice (RENICE) [N/y/?] n
+rm (RM) [Y/n/?] y
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [Y/n/?] y
+sleep (SLEEP) [N/y/?] n
+sort (SORT) [N/y/?] n
+split (SPLIT) [Y/n/?] y
+strings (STRINGS) [N/y/?] n
+tail (TAIL) [N/y/?] n
+tee (TEE) [N/y/?] n
+touch (TOUCH) [N/y/?] n
+true (TRUE) [Y/n/?] y
+tty (TTY) [N/y/?] n
+uname (UNAME) [Y/n/?] y
+uniq (UNIQ) [N/y/?] n
+unlink (UNLINK) [Y/n/?] y
+uudecode (UUDECODE) [Y/n/?] y
+uuencode (UUENCODE) [Y/n/?] y
+wc (WC) [Y/n/?] y
+who (WHO) [Y/n/?] y
+xargs (XARGS) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [Y/n/?] y
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [N/y/?] n
+blkid (BLKID) [Y/n/?] y
+fstype (FSTYPE) [N/y/?] n
+blockdev (BLOCKDEV) [N/y/?] n
+bunzip2 (BUNZIP2) [N/y/?] n
+bzcat (BZCAT) [N/y/?] n
+chcon (CHCON) [Y/n/?] y
+chroot (CHROOT) [Y/n/?] y
+chrt (CHRT) [Y/n/?] y
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [N/y/?] n
+count (COUNT) [Y/n/?] y
+dos2unix/unix2dos (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [Y/n/?] y
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [Y/n/?] y
+fallocate (FALLOCATE) [N/y/?] n
+flock (FLOCK) [Y/n/?] y
+free (FREE) [N/y/?] n
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsfreeze (FSFREEZE) [Y/n/?] y
+fsync (FSYNC) [N/y/?] n
+help (HELP) [Y/n/?] y
+  help -ah (HELP_EXTRAS) [N/y/?] n
+hexedit (HEXEDIT) [N/y/?] n
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [Y/n/?] y
+insmod (INSMOD) [N/y/?] n
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [Y/n/?] y
+login (LOGIN) [N/y/?] n
+losetup (LOSETUP) [Y/n/?] y
+lsattr (LSATTR) [N/y/?] n
+chattr (CHATTR) [Y/n/?] y
+lsmod (LSMOD) [Y/n/?] y
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [N/y/?] n
+lsusb (LSUSB) [Y/n/?] y
+makedevs (MAKEDEVS) [Y/n/?] y
+mix (MIX) [Y/n/?] y
+mkpasswd (MKPASSWD) [Y/n/?] y
+mkswap (MKSWAP) [Y/n/?] y
+modinfo (MODINFO) [N/y/?] n
+mountpoint (MOUNTPOINT) [N/y/?] n
+nbd-client (NBD_CLIENT) [N/y/?] n
+oneit (ONEIT) [Y/n/?] y
+partprobe (PARTPROBE) [Y/n/?] y
+pivot_root (PIVOT_ROOT) [N/y/?] n
+pmap (PMAP) [Y/n/?] y
+printenv (PRINTENV) [N/y/?] n
+pwdx (PWDX) [Y/n/?] y
+readahead (READAHEAD) [Y/n/?] y
+readlink (READLINK) [N/y/?] n
+realpath (REALPATH) [Y/n/?] y
+reboot (REBOOT) [N/y/?] n
+reset (RESET) [Y/n/?] y
+rev (REV) [Y/n/?] y
+rmmod (RMMOD) [Y/n/?] y
+setsid (SETSID) [Y/n/?] y
+shred (SHRED) [N/y/?] n
+stat (STAT) [Y/n/?] y
+swapoff (SWAPOFF) [Y/n/?] y
+swapon (SWAPON) [Y/n/?] y
+switch_root (SWITCH_ROOT) [Y/n/?] y
+sysctl (SYSCTL) [N/y/?] n
+tac (TAC) [N/y/?] n
+nproc (NPROC) [N/y/?] n
+taskset (TASKSET) [Y/n/?] y
+truncate (TRUNCATE) [N/y/?] n
+uptime (UPTIME) [N/y/?] n
+usleep (USLEEP) [Y/n/?] y
+vconfig (VCONFIG) [Y/n/?] y
+vmstat (VMSTAT) [N/y/?] n
+w (W) [Y/n/?] y
+which (WHICH) [Y/n/?] y
+xxd (XXD) [Y/n/?] y
+yes (YES) [N/y/?] n
+*
+* Networking
+*
+ftpget (FTPGET) [N/y/?] n
+ftpput (FTPPUT) [Y/n/?] y
+ifconfig (IFCONFIG) [Y/n/?] y
+microcom (MICROCOM) [N/y/?] n
+netcat (NETCAT) [N/y/?] n
+netstat (NETSTAT) [N/y/?] n
+rfkill (RFKILL) [N/y/?] n
+tunctl (TUNCTL) [Y/n/?] y
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [N/y/?] n
+hostname (HOSTNAME) [N/y/?] n
+killall (KILLALL) [N/y/?] n
+md5sum (MD5SUM) [Y/n/?] y
+sha1sum (SHA1SUM) [Y/n/?] y
+sha224sum (SHA224SUM) [Y/n/?] y
+sha256sum (SHA256SUM) [Y/n/?] y
+sha384sum (SHA384SUM) [Y/n/?] y
+sha512sum (SHA512SUM) [Y/n/?] y
+mknod (MKNOD) [N/y/?] n
+mktemp (MKTEMP) [N/y/?] n
+mount (MOUNT) [Y/n/?] y
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [Y/n/?] y
+pidof (PIDOF) [Y/n/?] y
+su (SU) [Y/n/?] y
+sync (SYNC) [N/y/?] n
+umount (UMOUNT) [Y/n/?] y
+*
+* Example commands
+*
+hello (HELLO) [Y/n/?] y
+hostid (HOSTID) [N/y/?] n
+skeleton (SKELETON) [Y/n/?] y
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [N/y/?] n
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [N/y/?] n
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [N/y/?] n
+load_policy (LOAD_POLICY) [N/y/?] n
+restorecon (RESTORECON) [Y/n/?] y
+runcon (RUNCON) [N/y/?] n
+setenforce (SETENFORCE) [Y/n/?] y
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [Y/n/?] y
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [N/y/?] n
+Floating point support (TOYBOX_FLOAT) [N/y/?] n
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [Y/n/?] y
+Internationalization support (TOYBOX_I18N) [N/y/?] n
+Free memory unnecessarily (TOYBOX_FREE) [N/y/?] n
+Disable recursive execution (TOYBOX_NORECURSE) [N/y/?] n
+Debugging tests (TOYBOX_DEBUG) [N/y/?] n
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [N/y/?] n
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [N/y/?] n
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [Y/n/?] y
+catv (CATV) [Y/n/?] y
+chgrp (CHGRP) [N/y/?] n
+chown (CHOWN) [N/y/?] n
+chmod (CHMOD) [N/y/?] n
+cksum (CKSUM) [N/y/?] n
+cmp (CMP) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+mv (MV) [N/y/?] n
+install (INSTALL) [Y/n/?] y
+cpio (CPIO) [N/y/?] n
+cut (CUT) [N/y/?] n
+date (DATE) [N/y/?] n
+df (DF) [Y/n/?] y
+dirname (DIRNAME) [N/y/?] n
+du (DU) [Y/n/?] y
+echo (ECHO) [Y/n/?] y
+env (ENV) [Y/n/?] y
+expand (EXPAND) [Y/n/?] y
+false (FALSE) [N/y/?] n
+file (FILE) [N/y/?] n
+find (FIND) [N/y/?] n
+grep (GREP) [N/y/?] n
+head (HEAD) [Y/n/?] y
+id (ID) [Y/n/?] y
+groups (GROUPS) [Y/n/?] y
+logname (LOGNAME) [N/y/?] n
+whoami (WHOAMI) [Y/n/?] y
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [N/y/?] n
+link (LINK) [N/y/?] n
+ln (LN) [N/y/?] n
+ls (LS) [N/y/?] n
+mkdir (MKDIR) [N/y/?] n
+mkfifo (MKFIFO) [N/y/?] n
+nice (NICE) [Y/n/?] y
+nl (NL) [N/y/?] n
+nohup (NOHUP) [N/y/?] n
+od (OD) [Y/n/?] y
+paste (PASTE) [N/y/?] n
+patch (PATCH) [N/y/?] n
+printf (PRINTF) [Y/n/?] y
+ps (PS) [Y/n/?] y
+top (TOP) [N/y/?] n
+iotop (IOTOP) [Y/n/?] y
+pgrep (PGREP) [N/y/?] n
+pkill (PKILL) [Y/n/?] y
+pwd (PWD) [N/y/?] n
+renice (RENICE) [Y/n/?] y
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [N/y/?] n
+sleep (SLEEP) [Y/n/?] y
+sort (SORT) [N/y/?] n
+split (SPLIT) [Y/n/?] y
+strings (STRINGS) [Y/n/?] y
+tail (TAIL) [N/y/?] n
+tee (TEE) [N/y/?] n
+time (TIME) [N/y/?] n
+touch (TOUCH) [Y/n/?] y
+true (TRUE) [Y/n/?] y
+tty (TTY) [N/y/?] n
+uname (UNAME) [Y/n/?] y
+uniq (UNIQ) [Y/n/?] y
+unlink (UNLINK) [N/y/?] n
+uudecode (UUDECODE) [Y/n/?] y
+uuencode (UUENCODE) [N/y/?] n
+wc (WC) [Y/n/?] y
+who (WHO) [Y/n/?] y
+xargs (XARGS) [Y/n/?] y
+  TODO xargs pedantic posix compatability (XARGS_PEDANTIC) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+gzip (GZIP) [N/y/?] n
+gunzip (GUNZIP) [N/y/?] n
+zcat (ZCAT) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [N/y/?] n
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [N/y/?] n
+blkid (BLKID) [Y/n/?] y
+fstype (FSTYPE) [Y/n/?] y
+blockdev (BLOCKDEV) [Y/n/?] y
+bunzip2 (BUNZIP2) [Y/n/?] y
+bzcat (BZCAT) [Y/n/?] y
+chcon (CHCON) [Y/n/?] y
+chroot (CHROOT) [N/y/?] n
+chrt (CHRT) [N/y/?] n
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [N/y/?] n
+count (COUNT) [Y/n/?] y
+dos2unix/unix2dos (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [Y/n/?] y
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [N/y/?] n
+fallocate (FALLOCATE) [N/y/?] n
+flock (FLOCK) [N/y/?] n
+free (FREE) [N/y/?] n
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsfreeze (FSFREEZE) [Y/n/?] y
+fsync (FSYNC) [Y/n/?] y
+hexedit (HEXEDIT) [Y/n/?] y
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [N/y/?] n
+insmod (INSMOD) [N/y/?] n
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [Y/n/?] y
+login (LOGIN) [N/y/?] n
+losetup (LOSETUP) [Y/n/?] y
+lsattr (LSATTR) [Y/n/?] y
+chattr (CHATTR) [Y/n/?] y
+lsmod (LSMOD) [N/y/?] n
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [Y/n/?] y
+lsusb (LSUSB) [Y/n/?] y
+makedevs (MAKEDEVS) [Y/n/?] y
+mix (MIX) [N/y/?] n
+mkpasswd (MKPASSWD) [Y/n/?] y
+mkswap (MKSWAP) [N/y/?] n
+modinfo (MODINFO) [Y/n/?] y
+mountpoint (MOUNTPOINT) [Y/n/?] y
+nbd-client (NBD_CLIENT) [N/y/?] n
+oneit (ONEIT) [Y/n/?] y
+partprobe (PARTPROBE) [N/y/?] n
+pivot_root (PIVOT_ROOT) [Y/n/?] y
+pmap (PMAP) [Y/n/?] y
+printenv (PRINTENV) [Y/n/?] y
+pwdx (PWDX) [N/y/?] n
+readahead (READAHEAD) [N/y/?] n
+readlink (READLINK) [N/y/?] n
+realpath (REALPATH) [Y/n/?] y
+reboot (REBOOT) [N/y/?] n
+reset (RESET) [Y/n/?] y
+rev (REV) [Y/n/?] y
+rmmod (RMMOD) [N/y/?] n
+setsid (SETSID) [Y/n/?] y
+shred (SHRED) [Y/n/?] y
+stat (STAT) [N/y/?] n
+swapoff (SWAPOFF) [N/y/?] n
+swapon (SWAPON) [Y/n/?] y
+switch_root (SWITCH_ROOT) [N/y/?] n
+sysctl (SYSCTL) [Y/n/?] y
+tac (TAC) [N/y/?] n
+nproc (NPROC) [N/y/?] n
+taskset (TASKSET) [N/y/?] n
+timeout (TIMEOUT) [N/y/?] n
+truncate (TRUNCATE) [Y/n/?] y
+uptime (UPTIME) [N/y/?] n
+usleep (USLEEP) [N/y/?] n
+vconfig (VCONFIG) [Y/n/?] y
+vmstat (VMSTAT) [Y/n/?] y
+w (W) [Y/n/?] y
+which (WHICH) [Y/n/?] y
+xxd (XXD) [Y/n/?] y
+yes (YES) [N/y/?] n
+*
+* Networking
+*
+ftpget (FTPGET) [Y/n/?] y
+ftpput (FTPPUT) [N/y/?] n
+ifconfig (IFCONFIG) [Y/n/?] y
+microcom (MICROCOM) [Y/n/?] y
+netcat (NETCAT) [Y/n/?] y
+  netcat server options (-let) (NETCAT_LISTEN) [N/y/?] n
+netstat (NETSTAT) [Y/n/?] y
+rfkill (RFKILL) [N/y/?] n
+tunctl (TUNCTL) [N/y/?] n
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [Y/n/?] y
+hostname (HOSTNAME) [Y/n/?] y
+killall (KILLALL) [Y/n/?] y
+md5sum (MD5SUM) [N/y/?] n
+sha1sum (SHA1SUM) [N/y/?] n
+sha224sum (SHA224SUM) [N/y/?] n
+sha256sum (SHA256SUM) [Y/n/?] y
+sha384sum (SHA384SUM) [N/y/?] n
+sha512sum (SHA512SUM) [N/y/?] n
+mknod (MKNOD) [Y/n/?] y
+mktemp (MKTEMP) [Y/n/?] y
+mount (MOUNT) [Y/n/?] y
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [N/y/?] n
+pidof (PIDOF) [N/y/?] n
+seq (SEQ) [Y/n/?] y
+su (SU) [Y/n/?] y
+sync (SYNC) [N/y/?] n
+umount (UMOUNT) [Y/n/?] y
+*
+* Example commands
+*
+hello (HELLO) [Y/n/?] y
+hostid (HOSTID) [Y/n/?] y
+skeleton (SKELETON) [Y/n/?] y
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [Y/n/?] y
+test_many_options (TEST_MANY_OPTIONS) [Y/n/?] y
+test_scankey (TEST_SCANKEY) [N/y/?] n
+test_utf8towc (TEST_UTF8TOWC) [Y/n/?] y
+*
+* Android
+*
+getenforce (GETENFORCE) [Y/n/?] y
+load_policy (LOAD_POLICY) [Y/n/?] y
+restorecon (RESTORECON) [Y/n/?] y
+runcon (RUNCON) [Y/n/?] y
+setenforce (SETENFORCE) [Y/n/?] y
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [N/y/?] n
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [Y/n/?] y
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [N/y/?] n
+Internationalization support (TOYBOX_I18N) [Y/n/?] y
+Free memory unnecessarily (TOYBOX_FREE) [Y/n/?] y
+Disable recursive execution (TOYBOX_NORECURSE) [Y/n/?] y
+Debugging tests (TOYBOX_DEBUG) [N/y/?] n
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [Y/n/?] y
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [Y/n/?] y
+cal (CAL) [N/y/?] n
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [N/y/?] n
+catv (CATV) [N/y/?] n
+chgrp (CHGRP) [Y/n/?] y
+chown (CHOWN) [Y/n/?] y
+chmod (CHMOD) [N/y/?] n
+cksum (CKSUM) [N/y/?] n
+cmp (CMP) [Y/n/?] y
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+mv (MV) [Y/n/?] y
+install (INSTALL) [N/y/?] n
+cpio (CPIO) [Y/n/?] y
+cut (CUT) [Y/n/?] y
+date (DATE) [N/y/?] n
+df (DF) [Y/n/?] y
+dirname (DIRNAME) [N/y/?] n
+du (DU) [N/y/?] n
+echo (ECHO) [Y/n/?] y
+env (ENV) [N/y/?] n
+expand (EXPAND) [Y/n/?] y
+false (FALSE) [Y/n/?] y
+file (FILE) [N/y/?] n
+find (FIND) [N/y/?] n
+grep (GREP) [Y/n/?] y
+head (HEAD) [N/y/?] n
+id (ID) [N/y/?] n
+groups (GROUPS) [N/y/?] n
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [N/y/?] n
+kill (KILL) [N/y/?] n
+link (LINK) [Y/n/?] y
+ln (LN) [Y/n/?] y
+ls (LS) [N/y/?] n
+mkdir (MKDIR) [Y/n/?] y
+mkfifo (MKFIFO) [Y/n/?] y
+nice (NICE) [N/y/?] n
+nl (NL) [Y/n/?] y
+nohup (NOHUP) [N/y/?] n
+od (OD) [Y/n/?] y
+paste (PASTE) [Y/n/?] y
+patch (PATCH) [Y/n/?] y
+printf (PRINTF) [N/y/?] n
+ps (PS) [N/y/?] n
+top (TOP) [N/y/?] n
+iotop (IOTOP) [Y/n/?] y
+pgrep (PGREP) [Y/n/?] y
+pkill (PKILL) [N/y/?] n
+pwd (PWD) [N/y/?] n
+renice (RENICE) [Y/n/?] y
+rm (RM) [Y/n/?] y
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [Y/n/?] y
+sleep (SLEEP) [N/y/?] n
+sort (SORT) [Y/n/?] y
+  SuSv3 options (Support -ktcsbdfiozM) (SORT_BIG) [N/y/?] n
+split (SPLIT) [Y/n/?] y
+strings (STRINGS) [N/y/?] n
+tail (TAIL) [Y/n/?] y
+  tail seek support (TAIL_SEEK) [N/y/?] n
+tee (TEE) [N/y/?] n
+time (TIME) [N/y/?] n
+touch (TOUCH) [N/y/?] n
+true (TRUE) [Y/n/?] y
+tty (TTY) [Y/n/?] y
+uname (UNAME) [N/y/?] n
+uniq (UNIQ) [Y/n/?] y
+unlink (UNLINK) [Y/n/?] y
+uudecode (UUDECODE) [Y/n/?] y
+uuencode (UUENCODE) [Y/n/?] y
+wc (WC) [N/y/?] n
+who (WHO) [N/y/?] n
+xargs (XARGS) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [N/y/?] n
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [N/y/?] n
+fstype (FSTYPE) [Y/n/?] y
+blockdev (BLOCKDEV) [Y/n/?] y
+bunzip2 (BUNZIP2) [Y/n/?] y
+bzcat (BZCAT) [Y/n/?] y
+chcon (CHCON) [Y/n/?] y
+chroot (CHROOT) [N/y/?] n
+chrt (CHRT) [N/y/?] n
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [N/y/?] n
+count (COUNT) [N/y/?] n
+dos2unix/unix2dos (DOS2UNIX) [Y/n/?] y
+unix2dos (UNIX2DOS) [Y/n/?] y
+eject (EJECT) [N/y/?] n
+factor (FACTOR) [Y/n/?] y
+fallocate (FALLOCATE) [N/y/?] n
+flock (FLOCK) [Y/n/?] y
+free (FREE) [Y/n/?] y
+freeramdisk (FREERAMDISK) [Y/n/?] y
+fsfreeze (FSFREEZE) [N/y/?] n
+fsync (FSYNC) [Y/n/?] y
+help (HELP) [Y/n/?] y
+  help -ah (HELP_EXTRAS) [Y/n/?] y
+hexedit (HEXEDIT) [N/y/?] n
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [N/y/?] n
+insmod (INSMOD) [Y/n/?] y
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [N/y/?] n
+login (LOGIN) [Y/n/?] y
+losetup (LOSETUP) [N/y/?] n
+lsattr (LSATTR) [N/y/?] n
+chattr (CHATTR) [Y/n/?] y
+lsmod (LSMOD) [Y/n/?] y
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [Y/n/?] y
+lsusb (LSUSB) [Y/n/?] y
+makedevs (MAKEDEVS) [Y/n/?] y
+mix (MIX) [Y/n/?] y
+mkpasswd (MKPASSWD) [N/y/?] n
+mkswap (MKSWAP) [Y/n/?] y
+modinfo (MODINFO) [N/y/?] n
+mountpoint (MOUNTPOINT) [Y/n/?] y
+oneit (ONEIT) [N/y/?] n
+partprobe (PARTPROBE) [Y/n/?] y
+pivot_root (PIVOT_ROOT) [Y/n/?] y
+pmap (PMAP) [N/y/?] n
+printenv (PRINTENV) [Y/n/?] y
+pwdx (PWDX) [Y/n/?] y
+readahead (READAHEAD) [Y/n/?] y
+readlink (READLINK) [N/y/?] n
+realpath (REALPATH) [N/y/?] n
+reboot (REBOOT) [N/y/?] n
+reset (RESET) [N/y/?] n
+rev (REV) [Y/n/?] y
+rmmod (RMMOD) [Y/n/?] y
+setsid (SETSID) [Y/n/?] y
+shred (SHRED) [N/y/?] n
+stat (STAT) [N/y/?] n
+swapoff (SWAPOFF) [N/y/?] n
+swapon (SWAPON) [Y/n/?] y
+switch_root (SWITCH_ROOT) [N/y/?] n
+sysctl (SYSCTL) [N/y/?] n
+tac (TAC) [N/y/?] n
+nproc (NPROC) [N/y/?] n
+taskset (TASKSET) [Y/n/?] y
+timeout (TIMEOUT) [N/y/?] n
+truncate (TRUNCATE) [N/y/?] n
+uptime (UPTIME) [N/y/?] n
+usleep (USLEEP) [N/y/?] n
+vconfig (VCONFIG) [Y/n/?] y
+vmstat (VMSTAT) [N/y/?] n
+w (W) [Y/n/?] y
+which (WHICH) [N/y/?] n
+xxd (XXD) [Y/n/?] y
+yes (YES) [N/y/?] n
+*
+* Networking
+*
+ftpget (FTPGET) [N/y/?] n
+ftpput (FTPPUT) [Y/n/?] y
+ifconfig (IFCONFIG) [N/y/?] n
+microcom (MICROCOM) [Y/n/?] y
+netcat (NETCAT) [N/y/?] n
+netstat (NETSTAT) [N/y/?] n
+rfkill (RFKILL) [N/y/?] n
+tunctl (TUNCTL) [N/y/?] n
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [Y/n/?] y
+hostname (HOSTNAME) [N/y/?] n
+killall (KILLALL) [N/y/?] n
+md5sum (MD5SUM) [N/y/?] n
+sha1sum (SHA1SUM) [N/y/?] n
+sha224sum (SHA224SUM) [Y/n/?] y
+sha256sum (SHA256SUM) [Y/n/?] y
+sha384sum (SHA384SUM) [N/y/?] n
+sha512sum (SHA512SUM) [N/y/?] n
+mknod (MKNOD) [N/y/?] n
+mktemp (MKTEMP) [Y/n/?] y
+mount (MOUNT) [N/y/?] n
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [Y/n/?] y
+pidof (PIDOF) [Y/n/?] y
+seq (SEQ) [N/y/?] n
+su (SU) [N/y/?] n
+sync (SYNC) [Y/n/?] y
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [N/y/?] n
+hostid (HOSTID) [N/y/?] n
+skeleton (SKELETON) [Y/n/?] y
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [N/y/?] n
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [Y/n/?] y
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [N/y/?] n
+load_policy (LOAD_POLICY) [Y/n/?] y
+restorecon (RESTORECON) [Y/n/?] y
+runcon (RUNCON) [N/y/?] n
+setenforce (SETENFORCE) [N/y/?] n
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [N/y/?] n
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [N/y/?] n
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [Y/n/?] y
+Internationalization support (TOYBOX_I18N) [Y/n/?] y
+Free memory unnecessarily (TOYBOX_FREE) [N/y/?] n
+Disable recursive execution (TOYBOX_NORECURSE) [N/y/?] n
+Debugging tests (TOYBOX_DEBUG) [N/y/?] n
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [N/y/?] n
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [Y/n/?] y
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [N/y/?] n
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [N/y/?] n
+catv (CATV) [Y/n/?] y
+chgrp (CHGRP) [N/y/?] n
+chown (CHOWN) [N/y/?] n
+chmod (CHMOD) [Y/n/?] y
+cksum (CKSUM) [N/y/?] n
+cmp (CMP) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+mv (MV) [N/y/?] n
+install (INSTALL) [Y/n/?] y
+cpio (CPIO) [Y/n/?] y
+cut (CUT) [N/y/?] n
+date (DATE) [N/y/?] n
+df (DF) [N/y/?] n
+dirname (DIRNAME) [N/y/?] n
+du (DU) [Y/n/?] y
+echo (ECHO) [N/y/?] n
+env (ENV) [N/y/?] n
+expand (EXPAND) [N/y/?] n
+false (FALSE) [N/y/?] n
+file (FILE) [Y/n/?] y
+find (FIND) [Y/n/?] y
+grep (GREP) [Y/n/?] y
+head (HEAD) [N/y/?] n
+id (ID) [N/y/?] n
+groups (GROUPS) [N/y/?] n
+logname (LOGNAME) [N/y/?] n
+whoami (WHOAMI) [Y/n/?] y
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [N/y/?] n
+link (LINK) [Y/n/?] y
+ln (LN) [N/y/?] n
+ls (LS) [Y/n/?] y
+  ls --color (LS_COLOR) [Y/n/?] y
+mkdir (MKDIR) [Y/n/?] y
+mkfifo (MKFIFO) [Y/n/?] y
+nice (NICE) [Y/n/?] y
+nl (NL) [Y/n/?] y
+nohup (NOHUP) [Y/n/?] y
+od (OD) [Y/n/?] y
+paste (PASTE) [N/y/?] n
+patch (PATCH) [N/y/?] n
+printf (PRINTF) [Y/n/?] y
+ps (PS) [Y/n/?] y
+top (TOP) [Y/n/?] y
+iotop (IOTOP) [N/y/?] n
+pgrep (PGREP) [Y/n/?] y
+pkill (PKILL) [Y/n/?] y
+pwd (PWD) [Y/n/?] y
+renice (RENICE) [N/y/?] n
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [N/y/?] n
+sed (SED) [N/y/?] n
+sleep (SLEEP) [N/y/?] n
+sort (SORT) [Y/n/?] y
+  SuSv3 options (Support -ktcsbdfiozM) (SORT_BIG) [Y/n/?] y
+split (SPLIT) [N/y/?] n
+strings (STRINGS) [N/y/?] n
+tail (TAIL) [Y/n/?] y
+  tail seek support (TAIL_SEEK) [Y/n/?] y
+tee (TEE) [Y/n/?] y
+time (TIME) [Y/n/?] y
+touch (TOUCH) [Y/n/?] y
+true (TRUE) [N/y/?] n
+tty (TTY) [N/y/?] n
+uname (UNAME) [Y/n/?] y
+uniq (UNIQ) [N/y/?] n
+unlink (UNLINK) [N/y/?] n
+uudecode (UUDECODE) [N/y/?] n
+uuencode (UUENCODE) [Y/n/?] y
+wc (WC) [Y/n/?] y
+who (WHO) [N/y/?] n
+xargs (XARGS) [Y/n/?] y
+  TODO xargs pedantic posix compatability (XARGS_PEDANTIC) [Y/n/?] y
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [N/y/?] n
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [Y/n/?] y
+fstype (FSTYPE) [N/y/?] n
+blockdev (BLOCKDEV) [Y/n/?] y
+bunzip2 (BUNZIP2) [N/y/?] n
+bzcat (BZCAT) [N/y/?] n
+chcon (CHCON) [Y/n/?] y
+chroot (CHROOT) [Y/n/?] y
+chrt (CHRT) [Y/n/?] y
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [Y/n/?] y
+count (COUNT) [N/y/?] n
+dos2unix/unix2dos (DOS2UNIX) [Y/n/?] y
+unix2dos (UNIX2DOS) [Y/n/?] y
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [N/y/?] n
+fallocate (FALLOCATE) [N/y/?] n
+flock (FLOCK) [N/y/?] n
+free (FREE) [N/y/?] n
+freeramdisk (FREERAMDISK) [Y/n/?] y
+fsfreeze (FSFREEZE) [Y/n/?] y
+fsync (FSYNC) [N/y/?] n
+hexedit (HEXEDIT) [N/y/?] n
+hwclock (HWCLOCK) [N/y/?] n
+inotifyd (INOTIFYD) [Y/n/?] y
+insmod (INSMOD) [Y/n/?] y
+ionice (IONICE) [Y/n/?] y
+iorenice (IORENICE) [N/y/?] n
+login (LOGIN) [Y/n/?] y
+losetup (LOSETUP) [N/y/?] n
+lsattr (LSATTR) [Y/n/?] y
+chattr (CHATTR) [Y/n/?] y
+lsmod (LSMOD) [Y/n/?] y
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [N/y/?] n
+lsusb (LSUSB) [N/y/?] n
+makedevs (MAKEDEVS) [Y/n/?] y
+mix (MIX) [N/y/?] n
+mkpasswd (MKPASSWD) [Y/n/?] y
+mkswap (MKSWAP) [Y/n/?] y
+modinfo (MODINFO) [Y/n/?] y
+mountpoint (MOUNTPOINT) [N/y/?] n
+nbd-client (NBD_CLIENT) [N/y/?] n
+oneit (ONEIT) [N/y/?] n
+partprobe (PARTPROBE) [Y/n/?] y
+pivot_root (PIVOT_ROOT) [N/y/?] n
+pmap (PMAP) [N/y/?] n
+printenv (PRINTENV) [N/y/?] n
+pwdx (PWDX) [N/y/?] n
+readahead (READAHEAD) [N/y/?] n
+readlink (READLINK) [N/y/?] n
+realpath (REALPATH) [Y/n/?] y
+reboot (REBOOT) [Y/n/?] y
+reset (RESET) [N/y/?] n
+rev (REV) [Y/n/?] y
+rmmod (RMMOD) [N/y/?] n
+setsid (SETSID) [Y/n/?] y
+shred (SHRED) [Y/n/?] y
+stat (STAT) [N/y/?] n
+swapoff (SWAPOFF) [Y/n/?] y
+swapon (SWAPON) [N/y/?] n
+switch_root (SWITCH_ROOT) [N/y/?] n
+sysctl (SYSCTL) [Y/n/?] y
+tac (TAC) [Y/n/?] y
+nproc (NPROC) [N/y/?] n
+taskset (TASKSET) [N/y/?] n
+timeout (TIMEOUT) [N/y/?] n
+truncate (TRUNCATE) [N/y/?] n
+uptime (UPTIME) [Y/n/?] y
+usleep (USLEEP) [Y/n/?] y
+vconfig (VCONFIG) [Y/n/?] y
+vmstat (VMSTAT) [Y/n/?] y
+w (W) [N/y/?] n
+which (WHICH) [N/y/?] n
+xxd (XXD) [Y/n/?] y
+yes (YES) [N/y/?] n
+*
+* Networking
+*
+ftpget (FTPGET) [Y/n/?] y
+ftpput (FTPPUT) [Y/n/?] y
+ifconfig (IFCONFIG) [Y/n/?] y
+microcom (MICROCOM) [Y/n/?] y
+netcat (NETCAT) [N/y/?] n
+netstat (NETSTAT) [Y/n/?] y
+rfkill (RFKILL) [Y/n/?] y
+tunctl (TUNCTL) [Y/n/?] y
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [N/y/?] n
+hostname (HOSTNAME) [Y/n/?] y
+killall (KILLALL) [N/y/?] n
+md5sum (MD5SUM) [N/y/?] n
+sha1sum (SHA1SUM) [N/y/?] n
+sha224sum (SHA224SUM) [Y/n/?] y
+sha256sum (SHA256SUM) [Y/n/?] y
+sha384sum (SHA384SUM) [N/y/?] n
+sha512sum (SHA512SUM) [Y/n/?] y
+mknod (MKNOD) [N/y/?] n
+mktemp (MKTEMP) [Y/n/?] y
+mount (MOUNT) [Y/n/?] y
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [N/y/?] n
+pidof (PIDOF) [Y/n/?] y
+seq (SEQ) [N/y/?] n
+su (SU) [N/y/?] n
+sync (SYNC) [N/y/?] n
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [N/y/?] n
+hostid (HOSTID) [N/y/?] n
+skeleton (SKELETON) [Y/n/?] y
+skeleton_alias (SKELETON_ALIAS) [N/y/?] n
+test_human_readable (TEST_HUMAN_READABLE) [Y/n/?] y
+test_many_options (TEST_MANY_OPTIONS) [Y/n/?] y
+test_scankey (TEST_SCANKEY) [Y/n/?] y
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [Y/n/?] y
+load_policy (LOAD_POLICY) [N/y/?] n
+restorecon (RESTORECON) [N/y/?] n
+runcon (RUNCON) [Y/n/?] y
+setenforce (SETENFORCE) [N/y/?] n
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [N/y/?] n
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [N/y/?] n
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [N/y/?] n
+Internationalization support (TOYBOX_I18N) [Y/n/?] y
+Free memory unnecessarily (TOYBOX_FREE) [Y/n/?] y
+Disable recursive execution (TOYBOX_NORECURSE) [Y/n/?] y
+Debugging tests (TOYBOX_DEBUG) [N/y/?] n
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [N/y/?] n
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [Y/n/?] y
+cat (CAT) [N/y/?] n
+catv (CATV) [Y/n/?] y
+chgrp (CHGRP) [Y/n/?] y
+chown (CHOWN) [N/y/?] n
+chmod (CHMOD) [N/y/?] n
+cksum (CKSUM) [Y/n/?] y
+cmp (CMP) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [Y/n/?] y
+  cp --preserve support (CP_PRESERVE) [N/y/?] n
+mv (MV) [Y/n/?] y
+install (INSTALL) [Y/n/?] y
+cpio (CPIO) [N/y/?] n
+cut (CUT) [N/y/?] n
+date (DATE) [N/y/?] n
+df (DF) [Y/n/?] y
+dirname (DIRNAME) [Y/n/?] y
+du (DU) [N/y/?] n
+echo (ECHO) [N/y/?] n
+env (ENV) [Y/n/?] y
+expand (EXPAND) [Y/n/?] y
+false (FALSE) [N/y/?] n
+file (FILE) [Y/n/?] y
+find (FIND) [Y/n/?] y
+grep (GREP) [Y/n/?] y
+head (HEAD) [N/y/?] n
+id (ID) [Y/n/?] y
+groups (GROUPS) [Y/n/?] y
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [Y/n/?] y
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [N/y/?] n
+link (LINK) [N/y/?] n
+ln (LN) [Y/n/?] y
+ls (LS) [Y/n/?] y
+  ls --color (LS_COLOR) [Y/n/?] y
+mkdir (MKDIR) [Y/n/?] y
+mkfifo (MKFIFO) [N/y/?] n
+nice (NICE) [Y/n/?] y
+nl (NL) [N/y/?] n
+nohup (NOHUP) [N/y/?] n
+od (OD) [Y/n/?] y
+paste (PASTE) [N/y/?] n
+patch (PATCH) [N/y/?] n
+printf (PRINTF) [Y/n/?] y
+ps (PS) [N/y/?] n
+top (TOP) [N/y/?] n
+iotop (IOTOP) [N/y/?] n
+pgrep (PGREP) [Y/n/?] y
+pkill (PKILL) [Y/n/?] y
+pwd (PWD) [Y/n/?] y
+renice (RENICE) [Y/n/?] y
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [Y/n/?] y
+sleep (SLEEP) [Y/n/?] y
+sort (SORT) [Y/n/?] y
+  SuSv3 options (Support -ktcsbdfiozM) (SORT_BIG) [N/y/?] n
+split (SPLIT) [Y/n/?] y
+strings (STRINGS) [N/y/?] n
+tail (TAIL) [N/y/?] n
+tee (TEE) [N/y/?] n
+time (TIME) [Y/n/?] y
+touch (TOUCH) [N/y/?] n
+true (TRUE) [Y/n/?] y
+tty (TTY) [Y/n/?] y
+uname (UNAME) [N/y/?] n
+uniq (UNIQ) [N/y/?] n
+unlink (UNLINK) [N/y/?] n
+uudecode (UUDECODE) [N/y/?] n
+uuencode (UUENCODE) [N/y/?] n
+wc (WC) [Y/n/?] y
+who (WHO) [N/y/?] n
+xargs (XARGS) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+gzip (GZIP) [N/y/?] n
+gunzip (GUNZIP) [N/y/?] n
+zcat (ZCAT) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [N/y/?] n
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [Y/n/?] y
+fstype (FSTYPE) [Y/n/?] y
+blockdev (BLOCKDEV) [N/y/?] n
+bunzip2 (BUNZIP2) [Y/n/?] y
+bzcat (BZCAT) [N/y/?] n
+chcon (CHCON) [N/y/?] n
+chroot (CHROOT) [Y/n/?] y
+chrt (CHRT) [Y/n/?] y
+chvt (CHVT) [N/y/?] n
+clear (CLEAR) [Y/n/?] y
+count (COUNT) [Y/n/?] y
+dos2unix/unix2dos (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [N/y/?] n
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [N/y/?] n
+fallocate (FALLOCATE) [Y/n/?] y
+flock (FLOCK) [Y/n/?] y
+free (FREE) [N/y/?] n
+freeramdisk (FREERAMDISK) [Y/n/?] y
+fsfreeze (FSFREEZE) [N/y/?] n
+fsync (FSYNC) [Y/n/?] y
+help (HELP) [N/y/?] n
+hexedit (HEXEDIT) [Y/n/?] y
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [N/y/?] n
+insmod (INSMOD) [N/y/?] n
+ionice (IONICE) [Y/n/?] y
+iorenice (IORENICE) [Y/n/?] y
+login (LOGIN) [N/y/?] n
+losetup (LOSETUP) [Y/n/?] y
+lsattr (LSATTR) [Y/n/?] y
+chattr (CHATTR) [N/y/?] n
+lsmod (LSMOD) [N/y/?] n
+lspci (LSPCI) [N/y/?] n
+lsusb (LSUSB) [Y/n/?] y
+makedevs (MAKEDEVS) [N/y/?] n
+mix (MIX) [Y/n/?] y
+mkpasswd (MKPASSWD) [Y/n/?] y
+mkswap (MKSWAP) [N/y/?] n
+modinfo (MODINFO) [N/y/?] n
+mountpoint (MOUNTPOINT) [N/y/?] n
+oneit (ONEIT) [N/y/?] n
+partprobe (PARTPROBE) [Y/n/?] y
+pivot_root (PIVOT_ROOT) [Y/n/?] y
+pmap (PMAP) [N/y/?] n
+printenv (PRINTENV) [N/y/?] n
+pwdx (PWDX) [N/y/?] n
+readahead (READAHEAD) [N/y/?] n
+readlink (READLINK) [Y/n/?] y
+realpath (REALPATH) [N/y/?] n
+reboot (REBOOT) [Y/n/?] y
+reset (RESET) [Y/n/?] y
+rev (REV) [N/y/?] n
+rmmod (RMMOD) [N/y/?] n
+setsid (SETSID) [Y/n/?] y
+shred (SHRED) [N/y/?] n
+stat (STAT) [Y/n/?] y
+swapoff (SWAPOFF) [N/y/?] n
+swapon (SWAPON) [Y/n/?] y
+switch_root (SWITCH_ROOT) [Y/n/?] y
+sysctl (SYSCTL) [N/y/?] n
+tac (TAC) [Y/n/?] y
+nproc (NPROC) [N/y/?] n
+taskset (TASKSET) [N/y/?] n
+timeout (TIMEOUT) [N/y/?] n
+truncate (TRUNCATE) [Y/n/?] y
+uptime (UPTIME) [N/y/?] n
+usleep (USLEEP) [Y/n/?] y
+vconfig (VCONFIG) [Y/n/?] y
+vmstat (VMSTAT) [Y/n/?] y
+w (W) [N/y/?] n
+which (WHICH) [N/y/?] n
+xxd (XXD) [N/y/?] n
+yes (YES) [N/y/?] n
+*
+* Networking
+*
+ftpget (FTPGET) [N/y/?] n
+ftpput (FTPPUT) [N/y/?] n
+ifconfig (IFCONFIG) [Y/n/?] y
+microcom (MICROCOM) [Y/n/?] y
+netcat (NETCAT) [N/y/?] n
+netstat (NETSTAT) [N/y/?] n
+rfkill (RFKILL) [Y/n/?] y
+tunctl (TUNCTL) [N/y/?] n
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [N/y/?] n
+hostname (HOSTNAME) [Y/n/?] y
+killall (KILLALL) [N/y/?] n
+md5sum (MD5SUM) [Y/n/?] y
+sha1sum (SHA1SUM) [N/y/?] n
+sha224sum (SHA224SUM) [Y/n/?] y
+sha256sum (SHA256SUM) [N/y/?] n
+sha384sum (SHA384SUM) [N/y/?] n
+sha512sum (SHA512SUM) [N/y/?] n
+mknod (MKNOD) [Y/n/?] y
+mktemp (MKTEMP) [N/y/?] n
+mount (MOUNT) [Y/n/?] y
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [Y/n/?] y
+pidof (PIDOF) [N/y/?] n
+seq (SEQ) [Y/n/?] y
+su (SU) [N/y/?] n
+sync (SYNC) [Y/n/?] y
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [Y/n/?] y
+hostid (HOSTID) [N/y/?] n
+skeleton (SKELETON) [N/y/?] n
+skeleton_alias (SKELETON_ALIAS) [N/y/?] n
+test_human_readable (TEST_HUMAN_READABLE) [Y/n/?] y
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [N/y/?] n
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [N/y/?] n
+load_policy (LOAD_POLICY) [Y/n/?] y
+restorecon (RESTORECON) [Y/n/?] y
+runcon (RUNCON) [N/y/?] n
+setenforce (SETENFORCE) [Y/n/?] y
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [Y/n/?] y
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [Y/n/?] y
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [N/y/?] n
+Internationalization support (TOYBOX_I18N) [N/y/?] n
+Free memory unnecessarily (TOYBOX_FREE) [N/y/?] n
+Disable recursive execution (TOYBOX_NORECURSE) [N/y/?] n
+Debugging tests (TOYBOX_DEBUG) [Y/n/?] y
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [Y/n/?] y
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [Y/n/?] y
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [Y/n/?] y
+cal (CAL) [N/y/?] n
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [Y/n/?] y
+catv (CATV) [N/y/?] n
+chgrp (CHGRP) [N/y/?] n
+chown (CHOWN) [Y/n/?] y
+chmod (CHMOD) [Y/n/?] y
+cksum (CKSUM) [N/y/?] n
+cmp (CMP) [Y/n/?] y
+comm (COMM) [Y/n/?] y
+cp (CP) [Y/n/?] y
+  cp --preserve support (CP_PRESERVE) [Y/n/?] y
+mv (MV) [Y/n/?] y
+install (INSTALL) [N/y/?] n
+cpio (CPIO) [Y/n/?] y
+cut (CUT) [Y/n/?] y
+date (DATE) [N/y/?] n
+df (DF) [N/y/?] n
+dirname (DIRNAME) [N/y/?] n
+du (DU) [Y/n/?] y
+echo (ECHO) [N/y/?] n
+env (ENV) [N/y/?] n
+expand (EXPAND) [Y/n/?] y
+false (FALSE) [N/y/?] n
+file (FILE) [N/y/?] n
+find (FIND) [Y/n/?] y
+grep (GREP) [Y/n/?] y
+head (HEAD) [Y/n/?] y
+id (ID) [Y/n/?] y
+groups (GROUPS) [N/y/?] n
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [Y/n/?] y
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [Y/n/?] y
+link (LINK) [Y/n/?] y
+ln (LN) [Y/n/?] y
+ls (LS) [Y/n/?] y
+  ls --color (LS_COLOR) [Y/n/?] y
+mkdir (MKDIR) [Y/n/?] y
+mkfifo (MKFIFO) [Y/n/?] y
+nice (NICE) [Y/n/?] y
+nl (NL) [Y/n/?] y
+nohup (NOHUP) [Y/n/?] y
+od (OD) [N/y/?] n
+paste (PASTE) [Y/n/?] y
+patch (PATCH) [N/y/?] n
+printf (PRINTF) [N/y/?] n
+ps (PS) [N/y/?] n
+top (TOP) [Y/n/?] y
+iotop (IOTOP) [N/y/?] n
+pgrep (PGREP) [N/y/?] n
+pkill (PKILL) [N/y/?] n
+pwd (PWD) [Y/n/?] y
+renice (RENICE) [Y/n/?] y
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [N/y/?] n
+sed (SED) [N/y/?] n
+sleep (SLEEP) [Y/n/?] y
+sort (SORT) [Y/n/?] y
+  SuSv3 options (Support -ktcsbdfiozM) (SORT_BIG) [Y/n/?] y
+split (SPLIT) [Y/n/?] y
+strings (STRINGS) [Y/n/?] y
+tail (TAIL) [Y/n/?] y
+  tail seek support (TAIL_SEEK) [N/y/?] n
+tee (TEE) [Y/n/?] y
+time (TIME) [Y/n/?] y
+touch (TOUCH) [N/y/?] n
+true (TRUE) [N/y/?] n
+tty (TTY) [N/y/?] n
+uname (UNAME) [Y/n/?] y
+uniq (UNIQ) [N/y/?] n
+unlink (UNLINK) [Y/n/?] y
+uudecode (UUDECODE) [N/y/?] n
+uuencode (UUENCODE) [N/y/?] n
+wc (WC) [N/y/?] n
+who (WHO) [N/y/?] n
+xargs (XARGS) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [N/y/?] n
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [Y/n/?] y
+fstype (FSTYPE) [N/y/?] n
+blockdev (BLOCKDEV) [Y/n/?] y
+bunzip2 (BUNZIP2) [N/y/?] n
+bzcat (BZCAT) [N/y/?] n
+chcon (CHCON) [Y/n/?] y
+chroot (CHROOT) [Y/n/?] y
+chrt (CHRT) [Y/n/?] y
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [Y/n/?] y
+count (COUNT) [Y/n/?] y
+dos2unix/unix2dos (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [N/y/?] n
+eject (EJECT) [N/y/?] n
+factor (FACTOR) [Y/n/?] y
+fallocate (FALLOCATE) [Y/n/?] y
+flock (FLOCK) [N/y/?] n
+free (FREE) [N/y/?] n
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsfreeze (FSFREEZE) [N/y/?] n
+fsync (FSYNC) [N/y/?] n
+help (HELP) [Y/n/?] y
+  help -ah (HELP_EXTRAS) [Y/n/?] y
+hexedit (HEXEDIT) [N/y/?] n
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [N/y/?] n
+insmod (INSMOD) [Y/n/?] y
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [Y/n/?] y
+login (LOGIN) [Y/n/?] y
+losetup (LOSETUP) [N/y/?] n
+lsattr (LSATTR) [Y/n/?] y
+chattr (CHATTR) [N/y/?] n
+lsmod (LSMOD) [N/y/?] n
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [Y/n/?] y
+lsusb (LSUSB) [N/y/?] n
+makedevs (MAKEDEVS) [N/y/?] n
+mix (MIX) [Y/n/?] y
+mkpasswd (MKPASSWD) [N/y/?] n
+mkswap (MKSWAP) [N/y/?] n
+modinfo (MODINFO) [N/y/?] n
+mountpoint (MOUNTPOINT) [N/y/?] n
+nbd-client (NBD_CLIENT) [Y/n/?] y
+oneit (ONEIT) [Y/n/?] y
+partprobe (PARTPROBE) [N/y/?] n
+pivot_root (PIVOT_ROOT) [Y/n/?] y
+pmap (PMAP) [Y/n/?] y
+printenv (PRINTENV) [Y/n/?] y
+pwdx (PWDX) [N/y/?] n
+readahead (READAHEAD) [Y/n/?] y
+readlink (READLINK) [N/y/?] n
+realpath (REALPATH) [N/y/?] n
+reboot (REBOOT) [N/y/?] n
+reset (RESET) [N/y/?] n
+rev (REV) [N/y/?] n
+rmmod (RMMOD) [N/y/?] n
+setsid (SETSID) [N/y/?] n
+shred (SHRED) [Y/n/?] y
+stat (STAT) [Y/n/?] y
+swapoff (SWAPOFF) [N/y/?] n
+swapon (SWAPON) [N/y/?] n
+switch_root (SWITCH_ROOT) [Y/n/?] y
+sysctl (SYSCTL) [N/y/?] n
+tac (TAC) [Y/n/?] y
+nproc (NPROC) [N/y/?] n
+taskset (TASKSET) [N/y/?] n
+timeout (TIMEOUT) [N/y/?] n
+truncate (TRUNCATE) [N/y/?] n
+uptime (UPTIME) [Y/n/?] y
+usleep (USLEEP) [Y/n/?] y
+vconfig (VCONFIG) [Y/n/?] y
+vmstat (VMSTAT) [Y/n/?] y
+w (W) [N/y/?] n
+which (WHICH) [N/y/?] n
+xxd (XXD) [N/y/?] n
+yes (YES) [Y/n/?] y
+*
+* Networking
+*
+ftpget (FTPGET) [Y/n/?] y
+ftpput (FTPPUT) [N/y/?] n
+ifconfig (IFCONFIG) [Y/n/?] y
+microcom (MICROCOM) [N/y/?] n
+netcat (NETCAT) [N/y/?] n
+netstat (NETSTAT) [Y/n/?] y
+rfkill (RFKILL) [Y/n/?] y
+tunctl (TUNCTL) [N/y/?] n
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [Y/n/?] y
+hostname (HOSTNAME) [Y/n/?] y
+killall (KILLALL) [N/y/?] n
+md5sum (MD5SUM) [Y/n/?] y
+sha1sum (SHA1SUM) [N/y/?] n
+sha224sum (SHA224SUM) [Y/n/?] y
+sha256sum (SHA256SUM) [N/y/?] n
+sha384sum (SHA384SUM) [N/y/?] n
+sha512sum (SHA512SUM) [Y/n/?] y
+mknod (MKNOD) [N/y/?] n
+mktemp (MKTEMP) [N/y/?] n
+mount (MOUNT) [N/y/?] n
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [N/y/?] n
+pidof (PIDOF) [N/y/?] n
+seq (SEQ) [Y/n/?] y
+su (SU) [N/y/?] n
+sync (SYNC) [N/y/?] n
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [Y/n/?] y
+hostid (HOSTID) [N/y/?] n
+skeleton (SKELETON) [Y/n/?] y
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [N/y/?] n
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [Y/n/?] y
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [Y/n/?] y
+load_policy (LOAD_POLICY) [Y/n/?] y
+restorecon (RESTORECON) [N/y/?] n
+runcon (RUNCON) [Y/n/?] y
+setenforce (SETENFORCE) [Y/n/?] y
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [Y/n/?] y
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [N/y/?] n
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [N/y/?] n
+Internationalization support (TOYBOX_I18N) [Y/n/?] y
+Free memory unnecessarily (TOYBOX_FREE) [Y/n/?] y
+Disable recursive execution (TOYBOX_NORECURSE) [Y/n/?] y
+Debugging tests (TOYBOX_DEBUG) [Y/n/?] y
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [N/y/?] n
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [Y/n/?] y
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [N/y/?] n
+catv (CATV) [N/y/?] n
+chgrp (CHGRP) [N/y/?] n
+chown (CHOWN) [N/y/?] n
+chmod (CHMOD) [Y/n/?] y
+cksum (CKSUM) [Y/n/?] y
+cmp (CMP) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [Y/n/?] y
+  cp --preserve support (CP_PRESERVE) [N/y/?] n
+mv (MV) [N/y/?] n
+install (INSTALL) [N/y/?] n
+cpio (CPIO) [Y/n/?] y
+cut (CUT) [N/y/?] n
+date (DATE) [N/y/?] n
+df (DF) [Y/n/?] y
+dirname (DIRNAME) [N/y/?] n
+du (DU) [Y/n/?] y
+echo (ECHO) [Y/n/?] y
+env (ENV) [Y/n/?] y
+expand (EXPAND) [Y/n/?] y
+false (FALSE) [N/y/?] n
+file (FILE) [Y/n/?] y
+find (FIND) [Y/n/?] y
+grep (GREP) [N/y/?] n
+head (HEAD) [Y/n/?] y
+id (ID) [N/y/?] n
+groups (GROUPS) [N/y/?] n
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [N/y/?] n
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [Y/n/?] y
+link (LINK) [Y/n/?] y
+ln (LN) [Y/n/?] y
+ls (LS) [Y/n/?] y
+  ls --color (LS_COLOR) [N/y/?] n
+mkdir (MKDIR) [N/y/?] n
+mkfifo (MKFIFO) [N/y/?] n
+nice (NICE) [Y/n/?] y
+nl (NL) [Y/n/?] y
+nohup (NOHUP) [N/y/?] n
+od (OD) [Y/n/?] y
+paste (PASTE) [N/y/?] n
+patch (PATCH) [N/y/?] n
+printf (PRINTF) [Y/n/?] y
+ps (PS) [Y/n/?] y
+top (TOP) [Y/n/?] y
+iotop (IOTOP) [N/y/?] n
+pgrep (PGREP) [N/y/?] n
+pkill (PKILL) [Y/n/?] y
+pwd (PWD) [N/y/?] n
+renice (RENICE) [N/y/?] n
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [N/y/?] n
+sleep (SLEEP) [Y/n/?] y
+sort (SORT) [N/y/?] n
+split (SPLIT) [N/y/?] n
+strings (STRINGS) [N/y/?] n
+tail (TAIL) [Y/n/?] y
+  tail seek support (TAIL_SEEK) [Y/n/?] y
+tee (TEE) [N/y/?] n
+time (TIME) [Y/n/?] y
+touch (TOUCH) [N/y/?] n
+true (TRUE) [Y/n/?] y
+tty (TTY) [N/y/?] n
+uname (UNAME) [Y/n/?] y
+uniq (UNIQ) [Y/n/?] y
+unlink (UNLINK) [N/y/?] n
+uudecode (UUDECODE) [N/y/?] n
+uuencode (UUENCODE) [N/y/?] n
+wc (WC) [N/y/?] n
+who (WHO) [N/y/?] n
+xargs (XARGS) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+gzip (GZIP) [N/y/?] n
+gunzip (GUNZIP) [N/y/?] n
+zcat (ZCAT) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [Y/n/?] y
+ascii (ASCII) [N/y/?] n
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [Y/n/?] y
+fstype (FSTYPE) [N/y/?] n
+blockdev (BLOCKDEV) [N/y/?] n
+bunzip2 (BUNZIP2) [Y/n/?] y
+bzcat (BZCAT) [Y/n/?] y
+chcon (CHCON) [Y/n/?] y
+chroot (CHROOT) [Y/n/?] y
+chrt (CHRT) [N/y/?] n
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [N/y/?] n
+count (COUNT) [N/y/?] n
+dos2unix/unix2dos (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [Y/n/?] y
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [N/y/?] n
+fallocate (FALLOCATE) [N/y/?] n
+flock (FLOCK) [N/y/?] n
+free (FREE) [Y/n/?] y
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsfreeze (FSFREEZE) [N/y/?] n
+fsync (FSYNC) [N/y/?] n
+help (HELP) [N/y/?] n
+hexedit (HEXEDIT) [N/y/?] n
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [Y/n/?] y
+insmod (INSMOD) [N/y/?] n
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [Y/n/?] y
+login (LOGIN) [Y/n/?] y
+losetup (LOSETUP) [N/y/?] n
+lsattr (LSATTR) [Y/n/?] y
+chattr (CHATTR) [Y/n/?] y
+lsmod (LSMOD) [Y/n/?] y
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [N/y/?] n
+lsusb (LSUSB) [N/y/?] n
+makedevs (MAKEDEVS) [N/y/?] n
+mix (MIX) [N/y/?] n
+mkpasswd (MKPASSWD) [N/y/?] n
+mkswap (MKSWAP) [N/y/?] n
+modinfo (MODINFO) [Y/n/?] y
+mountpoint (MOUNTPOINT) [Y/n/?] y
+nbd-client (NBD_CLIENT) [N/y/?] n
+oneit (ONEIT) [N/y/?] n
+partprobe (PARTPROBE) [Y/n/?] y
+pivot_root (PIVOT_ROOT) [Y/n/?] y
+pmap (PMAP) [Y/n/?] y
+printenv (PRINTENV) [Y/n/?] y
+pwdx (PWDX) [Y/n/?] y
+readahead (READAHEAD) [Y/n/?] y
+readlink (READLINK) [N/y/?] n
+realpath (REALPATH) [Y/n/?] y
+reboot (REBOOT) [Y/n/?] y
+reset (RESET) [Y/n/?] y
+rev (REV) [N/y/?] n
+rmmod (RMMOD) [Y/n/?] y
+setsid (SETSID) [N/y/?] n
+shred (SHRED) [Y/n/?] y
+stat (STAT) [N/y/?] n
+swapoff (SWAPOFF) [Y/n/?] y
+swapon (SWAPON) [N/y/?] n
+switch_root (SWITCH_ROOT) [N/y/?] n
+sysctl (SYSCTL) [Y/n/?] y
+tac (TAC) [N/y/?] n
+nproc (NPROC) [Y/n/?] y
+taskset (TASKSET) [N/y/?] n
+timeout (TIMEOUT) [N/y/?] n
+truncate (TRUNCATE) [Y/n/?] y
+uptime (UPTIME) [N/y/?] n
+usleep (USLEEP) [N/y/?] n
+vconfig (VCONFIG) [N/y/?] n
+vmstat (VMSTAT) [Y/n/?] y
+w (W) [Y/n/?] y
+which (WHICH) [N/y/?] n
+xxd (XXD) [N/y/?] n
+yes (YES) [Y/n/?] y
+*
+* Networking
+*
+ftpget (FTPGET) [N/y/?] n
+ftpput (FTPPUT) [N/y/?] n
+ifconfig (IFCONFIG) [Y/n/?] y
+microcom (MICROCOM) [Y/n/?] y
+netcat (NETCAT) [Y/n/?] y
+  netcat server options (-let) (NETCAT_LISTEN) [Y/n/?] y
+netstat (NETSTAT) [N/y/?] n
+rfkill (RFKILL) [N/y/?] n
+tunctl (TUNCTL) [N/y/?] n
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [N/y/?] n
+hostname (HOSTNAME) [N/y/?] n
+killall (KILLALL) [N/y/?] n
+md5sum (MD5SUM) [Y/n/?] y
+sha1sum (SHA1SUM) [Y/n/?] y
+sha224sum (SHA224SUM) [N/y/?] n
+sha256sum (SHA256SUM) [N/y/?] n
+sha384sum (SHA384SUM) [Y/n/?] y
+sha512sum (SHA512SUM) [Y/n/?] y
+mknod (MKNOD) [Y/n/?] y
+mktemp (MKTEMP) [Y/n/?] y
+mount (MOUNT) [N/y/?] n
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [Y/n/?] y
+pidof (PIDOF) [Y/n/?] y
+seq (SEQ) [N/y/?] n
+su (SU) [Y/n/?] y
+sync (SYNC) [Y/n/?] y
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [N/y/?] n
+hostid (HOSTID) [Y/n/?] y
+skeleton (SKELETON) [N/y/?] n
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [N/y/?] n
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [N/y/?] n
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [Y/n/?] y
+load_policy (LOAD_POLICY) [Y/n/?] y
+restorecon (RESTORECON) [N/y/?] n
+runcon (RUNCON) [Y/n/?] y
+setenforce (SETENFORCE) [N/y/?] n
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [N/y/?] n
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [Y/n/?] y
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [Y/n/?] y
+Internationalization support (TOYBOX_I18N) [Y/n/?] y
+Free memory unnecessarily (TOYBOX_FREE) [Y/n/?] y
+Disable recursive execution (TOYBOX_NORECURSE) [Y/n/?] y
+Debugging tests (TOYBOX_DEBUG) [N/y/?] n
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [N/y/?] n
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [N/y/?] n
+cal (CAL) [N/y/?] n
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [Y/n/?] y
+catv (CATV) [Y/n/?] y
+chgrp (CHGRP) [Y/n/?] y
+chown (CHOWN) [N/y/?] n
+chmod (CHMOD) [N/y/?] n
+cksum (CKSUM) [N/y/?] n
+cmp (CMP) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+mv (MV) [Y/n/?] y
+install (INSTALL) [N/y/?] n
+cpio (CPIO) [Y/n/?] y
+cut (CUT) [N/y/?] n
+date (DATE) [N/y/?] n
+df (DF) [Y/n/?] y
+dirname (DIRNAME) [Y/n/?] y
+du (DU) [Y/n/?] y
+echo (ECHO) [N/y/?] n
+env (ENV) [Y/n/?] y
+expand (EXPAND) [Y/n/?] y
+false (FALSE) [Y/n/?] y
+file (FILE) [N/y/?] n
+find (FIND) [N/y/?] n
+grep (GREP) [Y/n/?] y
+head (HEAD) [Y/n/?] y
+id (ID) [Y/n/?] y
+groups (GROUPS) [N/y/?] n
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [N/y/?] n
+kill (KILL) [N/y/?] n
+link (LINK) [Y/n/?] y
+ln (LN) [N/y/?] n
+ls (LS) [N/y/?] n
+mkdir (MKDIR) [N/y/?] n
+mkfifo (MKFIFO) [Y/n/?] y
+nice (NICE) [N/y/?] n
+nl (NL) [N/y/?] n
+nohup (NOHUP) [Y/n/?] y
+od (OD) [N/y/?] n
+paste (PASTE) [N/y/?] n
+patch (PATCH) [Y/n/?] y
+printf (PRINTF) [Y/n/?] y
+ps (PS) [Y/n/?] y
+top (TOP) [Y/n/?] y
+iotop (IOTOP) [Y/n/?] y
+pgrep (PGREP) [Y/n/?] y
+pkill (PKILL) [Y/n/?] y
+pwd (PWD) [Y/n/?] y
+renice (RENICE) [Y/n/?] y
+rm (RM) [Y/n/?] y
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [N/y/?] n
+sleep (SLEEP) [N/y/?] n
+sort (SORT) [Y/n/?] y
+  SuSv3 options (Support -ktcsbdfiozM) (SORT_BIG) [Y/n/?] y
+split (SPLIT) [Y/n/?] y
+strings (STRINGS) [N/y/?] n
+tail (TAIL) [Y/n/?] y
+  tail seek support (TAIL_SEEK) [Y/n/?] y
+tee (TEE) [N/y/?] n
+time (TIME) [Y/n/?] y
+touch (TOUCH) [Y/n/?] y
+true (TRUE) [Y/n/?] y
+tty (TTY) [N/y/?] n
+uname (UNAME) [N/y/?] n
+uniq (UNIQ) [Y/n/?] y
+unlink (UNLINK) [N/y/?] n
+uudecode (UUDECODE) [Y/n/?] y
+uuencode (UUENCODE) [Y/n/?] y
+wc (WC) [Y/n/?] y
+who (WHO) [Y/n/?] y
+xargs (XARGS) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+gzip (GZIP) [N/y/?] n
+gunzip (GUNZIP) [N/y/?] n
+zcat (ZCAT) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [Y/n/?] y
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [N/y/?] n
+fstype (FSTYPE) [N/y/?] n
+blockdev (BLOCKDEV) [Y/n/?] y
+bunzip2 (BUNZIP2) [N/y/?] n
+bzcat (BZCAT) [N/y/?] n
+chcon (CHCON) [Y/n/?] y
+chroot (CHROOT) [N/y/?] n
+chrt (CHRT) [N/y/?] n
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [N/y/?] n
+count (COUNT) [Y/n/?] y
+dos2unix/unix2dos (DOS2UNIX) [Y/n/?] y
+unix2dos (UNIX2DOS) [Y/n/?] y
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [Y/n/?] y
+fallocate (FALLOCATE) [N/y/?] n
+flock (FLOCK) [Y/n/?] y
+free (FREE) [N/y/?] n
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsfreeze (FSFREEZE) [N/y/?] n
+fsync (FSYNC) [N/y/?] n
+help (HELP) [Y/n/?] y
+  help -ah (HELP_EXTRAS) [Y/n/?] y
+hexedit (HEXEDIT) [N/y/?] n
+hwclock (HWCLOCK) [N/y/?] n
+inotifyd (INOTIFYD) [Y/n/?] y
+insmod (INSMOD) [Y/n/?] y
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [N/y/?] n
+login (LOGIN) [N/y/?] n
+losetup (LOSETUP) [N/y/?] n
+lsattr (LSATTR) [Y/n/?] y
+chattr (CHATTR) [N/y/?] n
+lsmod (LSMOD) [N/y/?] n
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [N/y/?] n
+lsusb (LSUSB) [N/y/?] n
+makedevs (MAKEDEVS) [N/y/?] n
+mix (MIX) [N/y/?] n
+mkpasswd (MKPASSWD) [Y/n/?] y
+mkswap (MKSWAP) [N/y/?] n
+modinfo (MODINFO) [N/y/?] n
+mountpoint (MOUNTPOINT) [N/y/?] n
+nbd-client (NBD_CLIENT) [N/y/?] n
+oneit (ONEIT) [N/y/?] n
+partprobe (PARTPROBE) [Y/n/?] y
+pivot_root (PIVOT_ROOT) [N/y/?] n
+pmap (PMAP) [Y/n/?] y
+printenv (PRINTENV) [Y/n/?] y
+pwdx (PWDX) [N/y/?] n
+readahead (READAHEAD) [Y/n/?] y
+readlink (READLINK) [Y/n/?] y
+realpath (REALPATH) [N/y/?] n
+reboot (REBOOT) [N/y/?] n
+reset (RESET) [Y/n/?] y
+rev (REV) [Y/n/?] y
+rmmod (RMMOD) [N/y/?] n
+setsid (SETSID) [Y/n/?] y
+shred (SHRED) [N/y/?] n
+stat (STAT) [Y/n/?] y
+swapoff (SWAPOFF) [Y/n/?] y
+swapon (SWAPON) [N/y/?] n
+switch_root (SWITCH_ROOT) [N/y/?] n
+sysctl (SYSCTL) [Y/n/?] y
+tac (TAC) [Y/n/?] y
+nproc (NPROC) [Y/n/?] y
+taskset (TASKSET) [Y/n/?] y
+timeout (TIMEOUT) [Y/n/?] y
+truncate (TRUNCATE) [Y/n/?] y
+uptime (UPTIME) [N/y/?] n
+usleep (USLEEP) [Y/n/?] y
+vconfig (VCONFIG) [N/y/?] n
+vmstat (VMSTAT) [Y/n/?] y
+w (W) [N/y/?] n
+which (WHICH) [Y/n/?] y
+xxd (XXD) [Y/n/?] y
+yes (YES) [Y/n/?] y
+*
+* Networking
+*
+ftpget (FTPGET) [Y/n/?] y
+ftpput (FTPPUT) [Y/n/?] y
+ifconfig (IFCONFIG) [N/y/?] n
+microcom (MICROCOM) [N/y/?] n
+netcat (NETCAT) [Y/n/?] y
+  netcat server options (-let) (NETCAT_LISTEN) [N/y/?] n
+netstat (NETSTAT) [N/y/?] n
+rfkill (RFKILL) [Y/n/?] y
+tunctl (TUNCTL) [N/y/?] n
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [Y/n/?] y
+hostname (HOSTNAME) [N/y/?] n
+killall (KILLALL) [Y/n/?] y
+md5sum (MD5SUM) [Y/n/?] y
+sha1sum (SHA1SUM) [Y/n/?] y
+sha224sum (SHA224SUM) [Y/n/?] y
+sha256sum (SHA256SUM) [N/y/?] n
+sha384sum (SHA384SUM) [Y/n/?] y
+sha512sum (SHA512SUM) [Y/n/?] y
+mknod (MKNOD) [N/y/?] n
+mktemp (MKTEMP) [Y/n/?] y
+mount (MOUNT) [N/y/?] n
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [Y/n/?] y
+pidof (PIDOF) [N/y/?] n
+seq (SEQ) [Y/n/?] y
+su (SU) [Y/n/?] y
+sync (SYNC) [N/y/?] n
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [N/y/?] n
+hostid (HOSTID) [N/y/?] n
+skeleton (SKELETON) [Y/n/?] y
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [N/y/?] n
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [N/y/?] n
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [Y/n/?] y
+load_policy (LOAD_POLICY) [N/y/?] n
+restorecon (RESTORECON) [N/y/?] n
+runcon (RUNCON) [Y/n/?] y
+setenforce (SETENFORCE) [Y/n/?] y
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [Y/n/?] y
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [Y/n/?] y
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [N/y/?] n
+Internationalization support (TOYBOX_I18N) [Y/n/?] y
+Free memory unnecessarily (TOYBOX_FREE) [N/y/?] n
+Disable recursive execution (TOYBOX_NORECURSE) [N/y/?] n
+Debugging tests (TOYBOX_DEBUG) [Y/n/?] y
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [Y/n/?] y
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config .config
++ echo 'diff result: 0'
+diff result: 0
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+kconfig/conf -o Config.in
+*
+* ToyBox Configuration
+*
+*
+* Posix commands
+*
+basename (BASENAME) [Y/n/?] y
+cal (CAL) [Y/n/?] y
+cat (CAT) [Y/n/?] y
+  cat -etv (CAT_V) [N/y/?] n
+catv (CATV) [N/y/?] n
+chgrp (CHGRP) [Y/n/?] y
+chown (CHOWN) [Y/n/?] y
+chmod (CHMOD) [N/y/?] n
+cksum (CKSUM) [Y/n/?] y
+cmp (CMP) [N/y/?] n
+comm (COMM) [N/y/?] n
+cp (CP) [N/y/?] n
+mv (MV) [N/y/?] n
+install (INSTALL) [N/y/?] n
+cpio (CPIO) [N/y/?] n
+cut (CUT) [N/y/?] n
+date (DATE) [N/y/?] n
+df (DF) [Y/n/?] y
+dirname (DIRNAME) [Y/n/?] y
+du (DU) [Y/n/?] y
+echo (ECHO) [N/y/?] n
+env (ENV) [Y/n/?] y
+expand (EXPAND) [N/y/?] n
+false (FALSE) [N/y/?] n
+file (FILE) [N/y/?] n
+find (FIND) [N/y/?] n
+grep (GREP) [N/y/?] n
+head (HEAD) [Y/n/?] y
+id (ID) [N/y/?] n
+groups (GROUPS) [N/y/?] n
+logname (LOGNAME) [Y/n/?] y
+whoami (WHOAMI) [N/y/?] n
+kill (KILL) [Y/n/?] y
+  killall5 (KILLALL5) [Y/n/?] y
+link (LINK) [Y/n/?] y
+ln (LN) [Y/n/?] y
+ls (LS) [Y/n/?] y
+  ls --color (LS_COLOR) [N/y/?] n
+mkdir (MKDIR) [N/y/?] n
+mkfifo (MKFIFO) [N/y/?] n
+nice (NICE) [Y/n/?] y
+nl (NL) [N/y/?] n
+nohup (NOHUP) [Y/n/?] y
+od (OD) [Y/n/?] y
+paste (PASTE) [Y/n/?] y
+patch (PATCH) [Y/n/?] y
+printf (PRINTF) [Y/n/?] y
+ps (PS) [N/y/?] n
+top (TOP) [N/y/?] n
+iotop (IOTOP) [Y/n/?] y
+pgrep (PGREP) [Y/n/?] y
+pkill (PKILL) [N/y/?] n
+pwd (PWD) [N/y/?] n
+renice (RENICE) [N/y/?] n
+rm (RM) [N/y/?] n
+rmdir (RMDIR) [Y/n/?] y
+sed (SED) [Y/n/?] y
+sleep (SLEEP) [N/y/?] n
+sort (SORT) [Y/n/?] y
+  SuSv3 options (Support -ktcsbdfiozM) (SORT_BIG) [N/y/?] n
+split (SPLIT) [N/y/?] n
+strings (STRINGS) [Y/n/?] y
+tail (TAIL) [N/y/?] n
+tee (TEE) [N/y/?] n
+time (TIME) [Y/n/?] y
+touch (TOUCH) [Y/n/?] y
+true (TRUE) [Y/n/?] y
+tty (TTY) [Y/n/?] y
+uname (UNAME) [Y/n/?] y
+uniq (UNIQ) [N/y/?] n
+unlink (UNLINK) [Y/n/?] y
+uudecode (UUDECODE) [Y/n/?] y
+uuencode (UUENCODE) [Y/n/?] y
+wc (WC) [N/y/?] n
+who (WHO) [N/y/?] n
+xargs (XARGS) [Y/n/?] y
+  TODO xargs pedantic posix compatability (XARGS_PEDANTIC) [N/y/?] n
+*
+* pending (see toys/pending/README)
+*
+arp (ARP) [N/y/?] n
+arping (ARPING) [N/y/?] n
+bootchartd (BOOTCHARTD) [N/y/?] n
+brctl (BRCTL) [N/y/?] n
+compress (COMPRESS) [N/y/?] n
+decompress (DECOMPRESS) [N/y/?] n
+crond (CROND) [N/y/?] n
+crontab (CRONTAB) [N/y/?] n
+dd (DD) [N/y/?] n
+dhcp6 (DHCP6) [N/y/?] n
+dhcp (DHCP) [N/y/?] n
+dhcpd (DHCPD) [N/y/?] n
+diff (DIFF) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+expr (EXPR) [N/y/?] n
+fdisk (FDISK) [N/y/?] n
+fold (FOLD) [N/y/?] n
+fsck (FSCK) [N/y/?] n
+getfattr (GETFATTR) [N/y/?] n
+getty (GETTY) [N/y/?] n
+groupadd (GROUPADD) [N/y/?] n
+groupdel (GROUPDEL) [N/y/?] n
+host (HOST) [N/y/?] n
+iconv (ICONV) [N/y/?] n
+init (INIT) [N/y/?] n
+ip (IP) [N/y/?] n
+ipcrm (IPCRM) [N/y/?] n
+ipcs (IPCS) [N/y/?] n
+klogd (KLOGD) [N/y/?] n
+last (LAST) [N/y/?] n
+lsof (LSOF) [N/y/?] n
+mdev (MDEV) [N/y/?] n
+mke2fs (MKE2FS) [N/y/?] n
+modprobe (MODPROBE) [N/y/?] n
+more (MORE) [N/y/?] n
+openvt (OPENVT) [N/y/?] n
+deallocvt (DEALLOCVT) [N/y/?] n
+ping (PING) [N/y/?] n
+route (ROUTE) [N/y/?] n
+setfattr (SETFATTR) [N/y/?] n
+sh (toysh) (SH) [N/y/?] n
+sulogin (SULOGIN) [N/y/?] n
+syslogd (SYSLOGD) [N/y/?] n
+tar (TAR) [N/y/?] n
+tcpsvd (TCPSVD) [N/y/?] n
+telnet (TELNET) [N/y/?] n
+telnetd (TELNETD) [N/y/?] n
+test (TEST) [N/y/?] n
+tftp (TFTP) [N/y/?] n
+tftpd (TFTPD) [N/y/?] n
+traceroute (TRACEROUTE) [N/y/?] n
+tr (TR) [N/y/?] n
+useradd (USERADD) [N/y/?] n
+userdel (USERDEL) [N/y/?] n
+vi (VI) [N/y/?] n
+watch (WATCH) [N/y/?] n
+wget (WGET) [N/y/?] n
+xzcat (XZCAT) [N/y/?] n
+*
+* Other commands
+*
+acpi (ACPI) [Y/n/?] y
+ascii (ASCII) [Y/n/?] y
+base64 (BASE64) [Y/n/?] y
+blkid (BLKID) [Y/n/?] y
+fstype (FSTYPE) [Y/n/?] y
+blockdev (BLOCKDEV) [N/y/?] n
+bunzip2 (BUNZIP2) [N/y/?] n
+bzcat (BZCAT) [N/y/?] n
+chcon (CHCON) [N/y/?] n
+chroot (CHROOT) [N/y/?] n
+chrt (CHRT) [N/y/?] n
+chvt (CHVT) [N/y/?] n
+clear (CLEAR) [N/y/?] n
+count (COUNT) [N/y/?] n
+dos2unix/unix2dos (DOS2UNIX) [N/y/?] n
+unix2dos (UNIX2DOS) [N/y/?] n
+eject (EJECT) [Y/n/?] y
+factor (FACTOR) [N/y/?] n
+fallocate (FALLOCATE) [Y/n/?] y
+flock (FLOCK) [Y/n/?] y
+free (FREE) [N/y/?] n
+freeramdisk (FREERAMDISK) [N/y/?] n
+fsfreeze (FSFREEZE) [N/y/?] n
+fsync (FSYNC) [N/y/?] n
+help (HELP) [Y/n/?] y
+  help -ah (HELP_EXTRAS) [Y/n/?] y
+hexedit (HEXEDIT) [Y/n/?] y
+hwclock (HWCLOCK) [Y/n/?] y
+inotifyd (INOTIFYD) [N/y/?] n
+insmod (INSMOD) [Y/n/?] y
+ionice (IONICE) [N/y/?] n
+iorenice (IORENICE) [Y/n/?] y
+login (LOGIN) [Y/n/?] y
+losetup (LOSETUP) [N/y/?] n
+lsattr (LSATTR) [N/y/?] n
+chattr (CHATTR) [N/y/?] n
+lsmod (LSMOD) [N/y/?] n
+lspci (LSPCI) [Y/n/?] y
+  lspci readable output (LSPCI_TEXT) [N/y/?] n
+lsusb (LSUSB) [Y/n/?] y
+makedevs (MAKEDEVS) [N/y/?] n
+mix (MIX) [N/y/?] n
+mkpasswd (MKPASSWD) [N/y/?] n
+mkswap (MKSWAP) [Y/n/?] y
+modinfo (MODINFO) [N/y/?] n
+mountpoint (MOUNTPOINT) [N/y/?] n
+nbd-client (NBD_CLIENT) [N/y/?] n
+oneit (ONEIT) [N/y/?] n
+partprobe (PARTPROBE) [Y/n/?] y
+pivot_root (PIVOT_ROOT) [N/y/?] n
+pmap (PMAP) [N/y/?] n
+printenv (PRINTENV) [Y/n/?] y
+pwdx (PWDX) [N/y/?] n
+readahead (READAHEAD) [Y/n/?] y
+readlink (READLINK) [Y/n/?] y
+realpath (REALPATH) [Y/n/?] y
+reboot (REBOOT) [Y/n/?] y
+reset (RESET) [Y/n/?] y
+rev (REV) [N/y/?] n
+rmmod (RMMOD) [Y/n/?] y
+setsid (SETSID) [N/y/?] n
+shred (SHRED) [Y/n/?] y
+stat (STAT) [N/y/?] n
+swapoff (SWAPOFF) [N/y/?] n
+swapon (SWAPON) [Y/n/?] y
+switch_root (SWITCH_ROOT) [N/y/?] n
+sysctl (SYSCTL) [N/y/?] n
+tac (TAC) [Y/n/?] y
+nproc (NPROC) [Y/n/?] y
+taskset (TASKSET) [N/y/?] n
+timeout (TIMEOUT) [N/y/?] n
+truncate (TRUNCATE) [Y/n/?] y
+uptime (UPTIME) [N/y/?] n
+usleep (USLEEP) [Y/n/?] y
+vconfig (VCONFIG) [Y/n/?] y
+vmstat (VMSTAT) [N/y/?] n
+w (W) [N/y/?] n
+which (WHICH) [Y/n/?] y
+xxd (XXD) [Y/n/?] y
+yes (YES) [N/y/?] n
+*
+* Networking
+*
+ftpget (FTPGET) [N/y/?] n
+ftpput (FTPPUT) [N/y/?] n
+ifconfig (IFCONFIG) [N/y/?] n
+microcom (MICROCOM) [Y/n/?] y
+netcat (NETCAT) [N/y/?] n
+netstat (NETSTAT) [N/y/?] n
+rfkill (RFKILL) [Y/n/?] y
+tunctl (TUNCTL) [N/y/?] n
+*
+* Linux Standard Base commands
+*
+dmesg (DMESG) [N/y/?] n
+hostname (HOSTNAME) [Y/n/?] y
+killall (KILLALL) [Y/n/?] y
+md5sum (MD5SUM) [Y/n/?] y
+sha1sum (SHA1SUM) [N/y/?] n
+sha224sum (SHA224SUM) [N/y/?] n
+sha256sum (SHA256SUM) [N/y/?] n
+sha384sum (SHA384SUM) [Y/n/?] y
+sha512sum (SHA512SUM) [N/y/?] n
+mknod (MKNOD) [Y/n/?] y
+mktemp (MKTEMP) [Y/n/?] y
+mount (MOUNT) [N/y/?] n
+passwd (PASSWD) [Y/n/?] y
+  Add sad password checking heuristics (PASSWD_SAD) [Y/n/?] y
+pidof (PIDOF) [N/y/?] n
+seq (SEQ) [Y/n/?] y
+su (SU) [Y/n/?] y
+sync (SYNC) [Y/n/?] y
+umount (UMOUNT) [N/y/?] n
+*
+* Example commands
+*
+hello (HELLO) [N/y/?] n
+hostid (HOSTID) [Y/n/?] y
+skeleton (SKELETON) [Y/n/?] y
+skeleton_alias (SKELETON_ALIAS) [Y/n/?] y
+test_human_readable (TEST_HUMAN_READABLE) [Y/n/?] y
+test_many_options (TEST_MANY_OPTIONS) [N/y/?] n
+test_scankey (TEST_SCANKEY) [N/y/?] n
+test_utf8towc (TEST_UTF8TOWC) [N/y/?] n
+*
+* Android
+*
+getenforce (GETENFORCE) [Y/n/?] y
+load_policy (LOAD_POLICY) [Y/n/?] y
+restorecon (RESTORECON) [Y/n/?] y
+runcon (RUNCON) [Y/n/?] y
+setenforce (SETENFORCE) [N/y/?] n
+*
+* 
+*
+*
+* Toybox global settings
+*
+SUID support (TOYBOX_SUID) [Y/n/?] y
+Security Blanket
+  1. None (TOYBOX_LSM_NONE)
+> 2. SELinux support (TOYBOX_SELINUX)
+  3. SMACK support (TOYBOX_SMACK)
+choice[1-3?]: 2
+Use libcrypto (OpenSSL/BoringSSL) (TOYBOX_LIBCRYPTO) [Y/n/?] y
+Use libz (zlib) (TOYBOX_LIBZ) [N/y/?] n
+Floating point support (TOYBOX_FLOAT) [Y/n/?] y
+Help messages (TOYBOX_HELP) [Y/n/?] y
+  --help and --version (TOYBOX_HELP_DASHDASH) [N/y/?] n
+Internationalization support (TOYBOX_I18N) [N/y/?] n
+Free memory unnecessarily (TOYBOX_FREE) [N/y/?] n
+Disable recursive execution (TOYBOX_NORECURSE) [N/y/?] n
+Debugging tests (TOYBOX_DEBUG) [N/y/?] n
+Pedantic argument checking (TOYBOX_PEDANTIC_ARGS) [Y/n/?] y
+First system UID (TOYBOX_UID_SYS) [100] 100
+First user UID (TOYBOX_UID_USR) [500] 500
+Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN) [N/y/?] n
+#
+# configuration written to .config
+#
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config .config
++ echo 'diff result: 0'
+diff result: 0

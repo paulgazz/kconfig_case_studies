@@ -1,0 +1,1534 @@
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/0.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/0.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/0.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [Y/n/?] y
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+> 1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+  3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 1
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [N/y/?] n
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [Y/n/?] y
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [N/y/?] n
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [Y/n/?] y
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [Y/n/?] y
+Enable axtlswrap (CONFIG_AXTLSWRAP) [Y/n/?] y
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [N/y/?] n
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [Y/n/?] y
+      Lua's Installation Prefix (CONFIG_HTTP_LUA_PREFIX) [/usr] /usr
+      Build Lua (CONFIG_HTTP_BUILD_LUA) [N/y/?] n
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [N/y/?] n
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [Y/n/?] y
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [N/y/?] n
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [Y/n/?] y
+    As User (CONFIG_HTTP_USER) [nobody] nobody
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [N/y/?] n
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [N/y/?] n
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [Y/n/?] y
+  axssl - C version (CONFIG_C_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+  2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+> 3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 3
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [Y/n/?] y
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [Y/n/?] y
+  Karatsuba Multiplication Theshold (MUL_KARATSUBA_THRESH) [20] 20
+  Karatsuba Square Threshold (SQU_KARATSUBA_THRESH) [40] 40
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [N/y/?] n
+Square Algorithm (CONFIG_BIGINT_SQUARE) [Y/n/?] y
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [Y/n/?] y
+Integer Size
+> 1. 32 (CONFIG_INTEGER_32BIT)
+  2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 1
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/0.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+66c66
+< # CONFIG_SSL_PRIVATE_KEY_PASSWORD is not set
+---
+> CONFIG_SSL_PRIVATE_KEY_PASSWORD=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/1.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/1.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/1.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [Y/n/?] y
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+  1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+> 3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 3
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+Private key password (CONFIG_SSL_PRIVATE_KEY_PASSWORD) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [Y/n/?] y
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [Y/n/?] y
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [N/y/?] n
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [N/y/?] n
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [N/y/?] n
+Enable axtlswrap (CONFIG_AXTLSWRAP) [N/y/?] n
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [Y/n/?] y
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [Y/n/?] y
+      Lua's Installation Prefix (CONFIG_HTTP_LUA_PREFIX) [/usr] /usr
+      Build Lua (CONFIG_HTTP_BUILD_LUA) [Y/n/?] y
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [N/y/?] n
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [Y/n/?] y
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [N/y/?] n
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [N/y/?] n
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [Y/n/?] y
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [Y/n/?] y
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [Y/n/?] y
+  axssl - C version (CONFIG_C_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+> 2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 2
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [N/y/?] n
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [Y/n/?] y
+  Karatsuba Multiplication Theshold (MUL_KARATSUBA_THRESH) [20] 20
+  Karatsuba Square Threshold (SQU_KARATSUBA_THRESH) [40] 40
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [Y/n/?] y
+Square Algorithm (CONFIG_BIGINT_SQUARE) [Y/n/?] y
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [N/y/?] n
+Integer Size
+  1. 32 (CONFIG_INTEGER_32BIT)
+> 2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 2
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/1.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+35c35
+< # CONFIG_HTTP_USER is not set
+---
+> CONFIG_HTTP_USER=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/2.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/2.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/2.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [Y/n/?] y
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+  1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+> 3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 3
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+X.509 certificate file location (CONFIG_SSL_X509_CERT_LOCATION) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [N/y/?] n
+Enable PEM (CONFIG_SSL_HAS_PEM) [N/y/?] n
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [N/y/?] n
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [N/y/?] n
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [N/y/?] n
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [Y/n/?] y
+Enable axtlswrap (CONFIG_AXTLSWRAP) [Y/n/?] y
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [N/y/?] n
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [Y/n/?] y
+      Lua's Installation Prefix (CONFIG_HTTP_LUA_PREFIX) [/usr] /usr
+      Build Lua (CONFIG_HTTP_BUILD_LUA) [Y/n/?] y
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [Y/n/?] y
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [N/y/?] n
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [N/y/?] n
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [Y/n/?] y
+    As User (CONFIG_HTTP_USER) [nobody] nobody
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [N/y/?] n
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [Y/n/?] y
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [Y/n/?] y
+  axssl - C version (CONFIG_C_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+> 2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 2
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [N/y/?] n
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [N/y/?] n
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [Y/n/?] y
+Square Algorithm (CONFIG_BIGINT_SQUARE) [Y/n/?] y
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [Y/n/?] y
+Integer Size
+  1. 32 (CONFIG_INTEGER_32BIT)
+  2. 16 (CONFIG_INTEGER_16BIT)
+> 3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 3
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/2.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+66c66
+< # CONFIG_SSL_PRIVATE_KEY_PASSWORD is not set
+---
+> CONFIG_SSL_PRIVATE_KEY_PASSWORD=""
+76,78c76,78
+< # CONFIG_SSL_X509_COMMON_NAME is not set
+< # CONFIG_SSL_X509_ORGANIZATION_NAME is not set
+< # CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME is not set
+---
+> CONFIG_SSL_X509_COMMON_NAME=""
+> CONFIG_SSL_X509_ORGANIZATION_NAME=""
+> CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/3.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/3.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/3.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [Y/n/?] y
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+  1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+> 3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 3
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [N/y/?] n
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [N/y/?] n
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [N/y/?] n
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [N/y/?] n
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [N/y/?] n
+Enable axtlswrap (CONFIG_AXTLSWRAP) [Y/n/?] y
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [N/y/?] n
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [N/y/?] n
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [N/y/?] n
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [Y/n/?] y
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [N/y/?] n
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [Y/n/?] y
+    As User (CONFIG_HTTP_USER) [nobody] nobody
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [Y/n/?] y
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [N/y/?] n
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+> 2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 2
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [N/y/?] n
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [N/y/?] n
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [Y/n/?] y
+Square Algorithm (CONFIG_BIGINT_SQUARE) [Y/n/?] y
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [N/y/?] n
+Integer Size
+> 1. 32 (CONFIG_INTEGER_32BIT)
+  2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 1
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/3.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+30c30
+< # CONFIG_HTTP_LUA_PREFIX is not set
+---
+> CONFIG_HTTP_LUA_PREFIX=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+66c66
+< # CONFIG_SSL_PRIVATE_KEY_PASSWORD is not set
+---
+> CONFIG_SSL_PRIVATE_KEY_PASSWORD=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/4.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/4.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/4.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [Y/n/?] y
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+  1. Low (CONFIG_SSL_PROT_LOW)
+> 2. Medium (CONFIG_SSL_PROT_MEDIUM)
+  3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 2
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+Private key password (CONFIG_SSL_PRIVATE_KEY_PASSWORD) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [Y/n/?] y
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [N/y/?] n
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [N/y/?] n
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [Y/n/?] y
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [Y/n/?] y
+Enable axtlswrap (CONFIG_AXTLSWRAP) [N/y/?] n
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [N/y/?] n
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [Y/n/?] y
+      Lua's Installation Prefix (CONFIG_HTTP_LUA_PREFIX) [/usr] /usr
+      Build Lua (CONFIG_HTTP_BUILD_LUA) [Y/n/?] y
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [Y/n/?] y
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [Y/n/?] y
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [Y/n/?] y
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [N/y/?] n
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [Y/n/?] y
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [N/y/?] n
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+> 2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 2
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [Y/n/?] y
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [N/y/?] n
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [Y/n/?] y
+Square Algorithm (CONFIG_BIGINT_SQUARE) [Y/n/?] y
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [N/y/?] n
+Integer Size
+> 1. 32 (CONFIG_INTEGER_32BIT)
+  2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 1
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/4.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+35c35
+< # CONFIG_HTTP_USER is not set
+---
+> CONFIG_HTTP_USER=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/5.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/5.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/5.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [Y/n/?] y
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+> 1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+  3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 1
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [Y/n/?] y
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [Y/n/?] y
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [N/y/?] n
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [Y/n/?] y
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [N/y/?] n
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [Y/n/?] y
+Enable axtlswrap (CONFIG_AXTLSWRAP) [Y/n/?] y
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [Y/n/?] y
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [Y/n/?] y
+      Lua's Installation Prefix (CONFIG_HTTP_LUA_PREFIX) [/usr] /usr
+      Build Lua (CONFIG_HTTP_BUILD_LUA) [N/y/?] n
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [N/y/?] n
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [N/y/?] n
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [Y/n/?] y
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [Y/n/?] y
+    As User (CONFIG_HTTP_USER) [nobody] nobody
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [Y/n/?] y
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [Y/n/?] y
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+> 2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 2
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [Y/n/?] y
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [Y/n/?] y
+  Karatsuba Multiplication Theshold (MUL_KARATSUBA_THRESH) [20] 20
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [Y/n/?] y
+Square Algorithm (CONFIG_BIGINT_SQUARE) [N/y/?] n
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [Y/n/?] y
+Integer Size
+  1. 32 (CONFIG_INTEGER_32BIT)
+> 2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 2
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/5.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+65,66c65,66
+< # CONFIG_SSL_PRIVATE_KEY_LOCATION is not set
+< # CONFIG_SSL_PRIVATE_KEY_PASSWORD is not set
+---
+> CONFIG_SSL_PRIVATE_KEY_LOCATION=""
+> CONFIG_SSL_PRIVATE_KEY_PASSWORD=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/6.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/6.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/6.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [Y/n/?] y
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+> 1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+  3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 1
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+Private key password (CONFIG_SSL_PRIVATE_KEY_PASSWORD) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [Y/n/?] y
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [N/y/?] n
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [Y/n/?] y
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [N/y/?] n
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [N/y/?] n
+Enable axtlswrap (CONFIG_AXTLSWRAP) [N/y/?] n
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [N/y/?] n
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [N/y/?] n
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [N/y/?] n
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [N/y/?] n
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [N/y/?] n
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [Y/n/?] y
+    As User (CONFIG_HTTP_USER) [nobody] nobody
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [N/y/?] n
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [N/y/?] n
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+> 2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 2
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [N/y/?] n
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [N/y/?] n
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [N/y/?] n
+Square Algorithm (CONFIG_BIGINT_SQUARE) [N/y/?] n
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [N/y/?] n
+Integer Size
+> 1. 32 (CONFIG_INTEGER_32BIT)
+  2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 1
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/6.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+20,21c20,21
+< # CONFIG_HTTP_CGI_EXTENSIONS is not set
+< # CONFIG_HTTP_CGI_LAUNCHER is not set
+---
+> CONFIG_HTTP_CGI_EXTENSIONS=""
+> CONFIG_HTTP_CGI_LAUNCHER=""
+30c30
+< # CONFIG_HTTP_LUA_PREFIX is not set
+---
+> CONFIG_HTTP_LUA_PREFIX=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/7.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/7.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/7.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [N/y/?] n
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+  1. Low (CONFIG_SSL_PROT_LOW)
+> 2. Medium (CONFIG_SSL_PROT_MEDIUM)
+  3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 2
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [Y/n/?] y
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [N/y/?] n
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [N/y/?] n
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [Y/n/?] y
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [N/y/?] n
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [N/y/?] n
+Enable axtlswrap (CONFIG_AXTLSWRAP) [N/y/?] n
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [Y/n/?] y
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [Y/n/?] y
+      Lua's Installation Prefix (CONFIG_HTTP_LUA_PREFIX) [/usr] /usr
+      Build Lua (CONFIG_HTTP_BUILD_LUA) [Y/n/?] y
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [Y/n/?] y
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [Y/n/?] y
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [Y/n/?] y
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [Y/n/?] y
+    As User (CONFIG_HTTP_USER) [nobody] nobody
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [Y/n/?] y
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [Y/n/?] y
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [Y/n/?] y
+  axssl - C version (CONFIG_C_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+> 2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 2
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [N/y/?] n
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [N/y/?] n
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [N/y/?] n
+Square Algorithm (CONFIG_BIGINT_SQUARE) [Y/n/?] y
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [Y/n/?] y
+Integer Size
+  1. 32 (CONFIG_INTEGER_32BIT)
+  2. 16 (CONFIG_INTEGER_16BIT)
+> 3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 3
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/7.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+65,66c65,66
+< # CONFIG_SSL_PRIVATE_KEY_LOCATION is not set
+< # CONFIG_SSL_PRIVATE_KEY_PASSWORD is not set
+---
+> CONFIG_SSL_PRIVATE_KEY_LOCATION=""
+> CONFIG_SSL_PRIVATE_KEY_PASSWORD=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/8.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/8.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/8.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [N/y/?] n
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+  1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+> 3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 3
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+X.509 certificate file location (CONFIG_SSL_X509_CERT_LOCATION) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [N/y/?] n
+Enable PEM (CONFIG_SSL_HAS_PEM) [N/y/?] n
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [Y/n/?] y
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [N/y/?] n
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [Y/n/?] y
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [N/y/?] n
+Enable axtlswrap (CONFIG_AXTLSWRAP) [N/y/?] n
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [N/y/?] n
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [N/y/?] n
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [N/y/?] n
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [Y/n/?] y
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [Y/n/?] y
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [N/y/?] n
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [N/y/?] n
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [Y/n/?] y
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [Y/n/?] y
+  axssl - C version (CONFIG_C_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+  1. Classical (CONFIG_BIGINT_CLASSICAL)
+  2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+> 3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 3
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [Y/n/?] y
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [N/y/?] n
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [N/y/?] n
+Square Algorithm (CONFIG_BIGINT_SQUARE) [N/y/?] n
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [N/y/?] n
+Integer Size
+  1. 32 (CONFIG_INTEGER_32BIT)
+> 2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 2
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/8.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+30c30
+< # CONFIG_HTTP_LUA_PREFIX is not set
+---
+> CONFIG_HTTP_LUA_PREFIX=""
+35c35
+< # CONFIG_HTTP_USER is not set
+---
+> CONFIG_HTTP_USER=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+66c66
+< # CONFIG_SSL_PRIVATE_KEY_PASSWORD is not set
+---
+> CONFIG_SSL_PRIVATE_KEY_PASSWORD=""
+76,78c76,78
+< # CONFIG_SSL_X509_COMMON_NAME is not set
+< # CONFIG_SSL_X509_ORGANIZATION_NAME is not set
+< # CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME is not set
+---
+> CONFIG_SSL_X509_COMMON_NAME=""
+> CONFIG_SSL_X509_ORGANIZATION_NAME=""
+> CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
++ for i in ${case_dir}/Configs/*.config
++ echo 'configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/9.config'
+configuring /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/9.config
++ cat /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/9.config
++ grep -v SPECIAL_ROOT_VARIABLE
++ make oldconfig
+#
+# using defaults found in config/.config
+#
+*
+* axTLS Configuration
+*
+Platform
+> 1. Linux (CONFIG_PLATFORM_LINUX)
+  2. Cygwin (CONFIG_PLATFORM_CYGWIN)
+  3. Win32 (CONFIG_PLATFORM_WIN32)
+choice[1-3]: 1
+*
+* General Configuration
+*
+axTLS installation prefix (PREFIX) [/usr/local] /usr/local
+Build axTLS with Debugging symbols (CONFIG_DEBUG) [N/y/?] n
+  Strip unwanted sections from elf binaries (CONFIG_STRIP_UNWANTED_SECTIONS) [N/y/?] n
+Any extra CFLAGS options for the compiler? (CONFIG_EXTRA_CFLAGS_OPTIONS) [] 
+Any extra LDFLAGS options for the compiler? (CONFIG_EXTRA_LDFLAGS_OPTIONS) [] 
+*
+* SSL Library
+*
+Mode
+> 1. Server only - no verification (CONFIG_SSL_SERVER_ONLY)
+  2. Server only - with verification (CONFIG_SSL_CERT_VERIFICATION)
+  3. Client/Server enabled (CONFIG_SSL_ENABLE_CLIENT)
+  4. Client/Server enabled with diagnostics (CONFIG_SSL_FULL_MODE)
+  5. Skeleton mode - the smallest server mode (CONFIG_SSL_SKELETON_MODE)
+choice[1-5]: 1
+Protocol Preference
+  1. Low (CONFIG_SSL_PROT_LOW)
+  2. Medium (CONFIG_SSL_PROT_MEDIUM)
+> 3. High (CONFIG_SSL_PROT_HIGH)
+choice[1-3]: 3
+Enable default key (CONFIG_SSL_USE_DEFAULT_KEY) [N/y/?] n
+  Private key file location (CONFIG_SSL_PRIVATE_KEY_LOCATION) [] 
+Generate X.509 Certificate (CONFIG_SSL_GENERATE_X509_CERT) [Y/n/?] y
+  X.509 Common Name (CONFIG_SSL_X509_COMMON_NAME) [] 
+  X.509 Organization Name (CONFIG_SSL_X509_ORGANIZATION_NAME) [] 
+  X.509 Organization Unit Name (CONFIG_SSL_X509_ORGANIZATION_UNIT_NAME) [] 
+Enable PEM (CONFIG_SSL_HAS_PEM) [N/y/?] n
+Use PKCS8/PKCS12 (CONFIG_SSL_USE_PKCS12) [Y/n/?] y
+Session expiry time (in hours) (CONFIG_SSL_EXPIRY_TIME) [24] 24
+Maximum number of chained certificates (CONFIG_SSL_MAX_CERTS) [3] 3
+Enable SSL_CTX mutexing (CONFIG_SSL_CTX_MUTEXING) [Y/n/?] y
+Use /dev/urandom (CONFIG_USE_DEV_URANDOM) [N/y/?] n
+Enable openssl API compatibility (CONFIG_OPENSSL_COMPATIBLE) [N/y/?] n
+Enable axtlswrap (CONFIG_AXTLSWRAP) [N/y/?] n
+Enable HTTP/HTTPS Web Server (CONFIG_AXHTTPD) [Y/n/?] y
+  *
+  * Axhttpd Configuration
+  *
+  Static Build (CONFIG_HTTP_STATIC_BUILD) [Y/n/?] y
+  HTTP port (CONFIG_HTTP_PORT) [80] 80
+  HTTPS port (CONFIG_HTTP_HTTPS_PORT) [443] 443
+  SSL session cache size (CONFIG_HTTP_SESSION_CACHE_SIZE) [5] 5
+  Web root location (CONFIG_HTTP_WEBROOT) [../www] ../www
+  Timeout (CONFIG_HTTP_TIMEOUT) [300] 300
+  *
+  * CGI
+  *
+  Enable CGI (CONFIG_HTTP_HAS_CGI) [Y/n/?] y
+    CGI File Extension(s) (CONFIG_HTTP_CGI_EXTENSIONS) [.lua,.lp,.php] .lua,.lp,.php
+    Enable Lua (CONFIG_HTTP_ENABLE_LUA) [Y/n/?] y
+      Lua's Installation Prefix (CONFIG_HTTP_LUA_PREFIX) [/usr] /usr
+      Build Lua (CONFIG_HTTP_BUILD_LUA) [Y/n/?] y
+    CGI launcher location (CONFIG_HTTP_CGI_LAUNCHER) [/usr/bin/cgi] /usr/bin/cgi
+  Enable Directory Listing (CONFIG_HTTP_DIRECTORIES) [N/y/?] n
+  Enable authorization (CONFIG_HTTP_HAS_AUTHORIZATION) [N/y/?] n
+  Enable IPv6 (CONFIG_HTTP_HAS_IPV6) [N/y/?] n
+  Enable different user (CONFIG_HTTP_ENABLE_DIFFERENT_USER) [Y/n/?] y
+    As User (CONFIG_HTTP_USER) [nobody] nobody
+  Verbose Mode (CONFIG_HTTP_VERBOSE) [Y/n/?] y
+  Run as a daemon (CONFIG_HTTP_IS_DAEMON) [N/y/?] n
+*
+* Language Bindings
+*
+Create language bindings (CONFIG_BINDINGS) [N/y/?] n
+*
+* Samples
+*
+Create Samples (CONFIG_SAMPLES) [Y/n/?] y
+  axssl - C version (CONFIG_C_SAMPLES) [N/y/?] n
+*
+* BigInt Options
+*
+Reduction Algorithm
+> 1. Classical (CONFIG_BIGINT_CLASSICAL)
+  2. Montgomery (CONFIG_BIGINT_MONTGOMERY)
+  3. Barrett (CONFIG_BIGINT_BARRETT)
+choice[1-3]: 1
+Chinese Remainder Theorem (CRT) (CONFIG_BIGINT_CRT) [N/y/?] n
+Karatsuba Multiplication (CONFIG_BIGINT_KARATSUBA) [N/y/?] n
+Sliding Window Exponentiation (CONFIG_BIGINT_SLIDING_WINDOW) [Y/n/?] y
+Square Algorithm (CONFIG_BIGINT_SQUARE) [N/y/?] n
+BigInt Integrity Checking (CONFIG_BIGINT_CHECK_ON) [N/y/?] n
+Integer Size
+> 1. 32 (CONFIG_INTEGER_32BIT)
+  2. 16 (CONFIG_INTEGER_16BIT)
+  3. 8 (CONFIG_INTEGER_8BIT)
+choice[1-3]: 1
++ /home/paul/research/repos/kconfig_case_studies/scripts/compare_configs.sh /home/paul/research/repos/kconfig_case_studies/cases/axtls_2_1_4/Configs/9.config config/.config
+16c16
+< # CONFIG_DOT_NET_FRAMEWORK_BASE is not set
+---
+> CONFIG_DOT_NET_FRAMEWORK_BASE=""
+42c42
+< # CONFIG_JAVA_HOME is not set
+---
+> CONFIG_JAVA_HOME=""
+45c45
+< # CONFIG_LUA_CORE is not set
+---
+> CONFIG_LUA_CORE=""
+50,51c50,51
+< # CONFIG_PERL_CORE is not set
+< # CONFIG_PERL_LIB is not set
+---
+> CONFIG_PERL_CORE=""
+> CONFIG_PERL_LIB=""
+66c66
+< # CONFIG_SSL_PRIVATE_KEY_PASSWORD is not set
+---
+> CONFIG_SSL_PRIVATE_KEY_PASSWORD=""
+75c75
+< # CONFIG_SSL_X509_CERT_LOCATION is not set
+---
+> CONFIG_SSL_X509_CERT_LOCATION=""
+83c83
+< # CONFIG_VISUAL_STUDIO_10_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_10_0_BASE=""
+85c85
+< # CONFIG_VISUAL_STUDIO_7_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_7_0_BASE=""
+87c87
+< # CONFIG_VISUAL_STUDIO_8_0_BASE is not set
+---
+> CONFIG_VISUAL_STUDIO_8_0_BASE=""
+90c90
+< # CONFIG_X509_MAX_CA_CERTS is not set
+---
+> CONFIG_X509_MAX_CA_CERTS=0
++ echo 'diff result: 1'
+diff result: 1
