@@ -18,13 +18,13 @@ Tried on two versions 1.2.7 and 2.1.4, and all sampled configurations configure 
 
 This creates the dimacs constraint file for feature model.
 
-    check_dep --dimacs config/Config.in | tee axtls_2_1_4.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > axtls_2_1_4.dimacs
+    check_dep --dimacs -p config/Config.in | tee ~/research/repos/kconfig_case_studies/cases/axtls_2_1_4/axtls_2_1_4.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > ~/research/repos/kconfig_case_studies/cases/axtls_2_1_4/axtls_2_1_4.dimacs
 
 This checks the contraints for all generated sample configurations (contained in `generated_configs`).
 
     for i in generated_configs/*.config; do echo "configuring $i"; cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > config/.config; make oldconfig; done > generated_configs/config_results.out 2>&1
     
-This checks constraints for all generated samples and ensures they are the 
+This checks constraints for all generated samples and ensures they are the same.
 
     for i in generated_configs/*.config; do echo "configuring $i"; cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > config/.config; make oldconfig; /home/paul/research/repos/kmax/scripts/compare_configs.sh "${i}" config/.config; echo "diff result: ${?}"; done > generated_configs/config_diff_results.out 2>&1
 
@@ -43,6 +43,13 @@ to build it with `allyesconfig`:
 
     libreadline-dev
     
+### System-specific changes
+
+Forcing linux on (to avoid having to build on windows and cygwin platforms)
+
+Turning off language extensions (because of a variability bug)
+    
+### Kconfig semantics differences
 
 
 ## busybox
@@ -89,4 +96,4 @@ Need to call `tool/gen_kconfig`
 
 Collect constraints
 
-    check_dep --dimacs build/Kconfig | tee fiasco_17_10.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > fiasco_17_10.dimacs
+    check_dep --dimacs build/Kconfig | tee  ~/research/repos/kconfig_case_studies/cases/fiasco_17_10/fiasco_17_10.kmax | python ~/research/repos/kmax/kconfig/dimacs.py >  ~/research/repos/kconfig_case_studies/cases/fiasco_17_10/fiasco_17_10.dimacs
