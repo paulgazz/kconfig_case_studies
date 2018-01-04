@@ -304,7 +304,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/0.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+.............................................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config
 kconfig/conf -o Config.in
 *
@@ -617,7 +625,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+......................................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config
 kconfig/conf -o Config.in
 *
@@ -925,7 +941,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+......................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config
 kconfig/conf -o Config.in
 *
@@ -1236,7 +1260,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox..........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+..............................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config
 kconfig/conf -o Config.in
 *
@@ -1550,7 +1582,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+..................................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config
 kconfig/conf -o Config.in
 *
@@ -1851,7 +1891,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+..........................................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config
 kconfig/conf -o Config.in
 *
@@ -2160,7 +2208,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+...........................................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config
 kconfig/conf -o Config.in
 *
@@ -2468,7 +2524,12 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox..................................................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config
 kconfig/conf -o Config.in
 *
@@ -2776,7 +2837,15 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+........................................................................................
+return code 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config
 kconfig/conf -o Config.in
 *
@@ -3085,4 +3154,12 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-diff result: 0
+building /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config
+scripts/make.sh
+Generate headers from toys/*/*.c...
+Make generated/config.h from .config.
+generated/flags.h Compile toybox.........toys/example/skeleton.c:63:2: warning: #warning skeleton.c is just an example, not something to deploy. [-Wcpp]
+ #warning skeleton.c is just an example, not something to deploy.
+  ^~~~~~~
+................................................................................
+return code 0
