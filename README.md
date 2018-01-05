@@ -85,6 +85,10 @@ This collects the contraints
 
     check_dep --dimacs Config.in | tee ~/research/repos/kconfig_case_studies/cases/toybox_0_7_5/toybox_0_7_5.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > ~/research/repos/kconfig_case_studies/cases/toybox_0_7_5/toybox_0_7_5.dimacs
 
+Comparing 0.0.9.2
+
+    check_dep --dimacs Config.in | tee ~/research/repos/kconfig_case_studies/cases/toybox_0_0_9_2/toybox_0_0_9_2.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > ~/research/repos/kconfig_case_studies/cases/toybox_0_0_9_2/toybox_0_0_9_2.dimacs
+
 
 ## fiasco
 
