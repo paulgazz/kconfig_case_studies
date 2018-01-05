@@ -30,9 +30,7 @@ if [[ ! -e "${case_dir}" ]]; then
     exit 1
 fi
 
-set -x
-
-if [[ "${action}" -eq "config" ]]; then
+if [[ "${action}" == "config" ]]; then
     for i in ${case_dir}/Configs/*.config; do
       echo "configuring $i";
       cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
@@ -40,7 +38,7 @@ if [[ "${action}" -eq "config" ]]; then
       "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.sh" "${i}" "${config_file}";
       echo "diff result: ${?}";
     done 2>&1 | tee "${case_dir}/config_diff_results.out"
-elif [[ "${action}" -eq "build" ]]; then
+elif [[ "${action}" == "build" ]]; then
     for i in ${case_dir}/Configs/*.config; do
       echo "configuring $i";
       cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
