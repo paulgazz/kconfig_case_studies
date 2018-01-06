@@ -92,7 +92,8 @@ c 91 CONFIG_SSL_HAS_PEM bool
 c 92 CONFIG_HTTP_CGI_LAUNCHER nonbool "/usr/bin/cgi"
 c 93 CONFIG_SSL_PRIVATE_KEY_PASSWORD nonbool ""
 c 94 CONFIG_WIN32_USE_CRYPTO_LIB bool
-p cnf 94 211
+p cnf 94 212
+1 0
 -24 1 0
 -28 1 0
 -29 1 0
