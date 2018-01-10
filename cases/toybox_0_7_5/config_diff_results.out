@@ -1,17 +1,5 @@
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/0.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -316,69 +304,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/10.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -677,75 +609,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/11.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -1050,72 +920,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/12.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -1415,59 +1226,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/13.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -1774,61 +1539,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/14.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -2130,61 +1843,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/15.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -2484,55 +2149,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/16.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -2838,55 +2461,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/17.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -3194,59 +2775,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/18.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -3551,73 +3088,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/19.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -3918,65 +3395,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -4273,65 +3700,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/20.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -4636,71 +4011,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/21.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -5005,53 +4322,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/22.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -5361,56 +4638,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/23.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -5715,77 +4945,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/24.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -6085,67 +5251,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/25.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -6452,74 +5564,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/26.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -6831,71 +5884,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/27.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -7204,71 +6201,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/28.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -7573,54 +6512,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/29.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -7929,59 +6827,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config
 kconfig/conf -o Config.in
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -8283,56 +7135,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/30.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -8639,55 +7450,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/31.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -8995,57 +7760,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/32.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -9351,59 +8074,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/33.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -9703,53 +8376,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/34.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -10056,56 +8689,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/35.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -10413,58 +9005,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/36.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -10775,60 +9322,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/37.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -11131,62 +9631,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/38.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -11496,51 +9943,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/39.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -11851,52 +10260,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -12196,53 +10566,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/40.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -12545,73 +10875,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/41.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -12910,66 +11182,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/42.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -13272,69 +11493,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/43.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -13636,63 +11803,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/44.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -13997,53 +12114,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/45.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -14345,67 +12418,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/46.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -14706,72 +12725,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/47.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -15077,62 +13039,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/48.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -15430,67 +13343,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/49.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -15794,68 +13653,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -16163,78 +13969,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/50.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -16538,63 +14279,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/51.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -16905,58 +14592,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/52.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -17261,67 +14903,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/53.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -17622,52 +15210,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/54.config
 kconfig/conf -o Config.in
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -17969,63 +15514,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/55.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -18333,75 +15830,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/56.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -18706,72 +16141,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/57.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -19079,55 +16455,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/58.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -19436,58 +16766,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/59.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -19794,65 +17079,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -20154,54 +17387,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/60.config
 kconfig/conf -o Config.in
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -20504,49 +17696,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/61.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -20850,54 +18006,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/62.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -21200,51 +18315,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/63.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -21549,55 +18628,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/64.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -21900,55 +18937,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/65.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -22253,54 +19250,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/66.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -22597,53 +19553,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/67.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -22940,63 +19856,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/68.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -23299,75 +20161,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/69.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -23673,72 +20475,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -24041,57 +20784,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/70.config
 kconfig/conf -o Config.in
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -24397,63 +21092,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/71.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -24754,63 +21399,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/72.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -25116,61 +21711,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/73.config
 kconfig/conf -o Config.in
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -25474,57 +22021,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/74.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -25830,64 +22335,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/75.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -26198,61 +22652,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/76.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -26562,59 +22970,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/77.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -26924,52 +23282,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/78.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -27265,58 +23580,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/79.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -27626,60 +23896,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -27982,59 +24205,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/80.config
 kconfig/conf -o Config.in
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -28329,56 +24506,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/81.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -28687,58 +24823,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/82.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -29042,69 +25129,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/83.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -29417,66 +25448,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/84.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -29774,49 +25748,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/85.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -30122,56 +26060,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/86.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -30478,67 +26373,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/87.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -30846,63 +26687,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/88.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -31207,58 +26998,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/89.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -31563,56 +27305,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -31918,75 +27619,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/90.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -32291,70 +27926,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/91.config
 kconfig/conf -o Config.in
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -32664,57 +28242,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/92.config
 kconfig/conf -o Config.in
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -33014,45 +28548,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/93.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -33355,45 +28857,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/94.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -33699,66 +29165,15 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/95.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -34065,65 +29480,9 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
-diff result: 1
+diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/96.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -34426,66 +29785,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/97.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:223:warning: symbol value 'hidden_bool' invalid for SORT_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -34792,65 +30098,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-219c219
-< CONFIG_SORT_FLOAT=hidden_bool
----
-> CONFIG_SORT_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/98.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -35153,58 +30407,13 @@ First user UID (TOYBOX_UID_USR) [500] (NEW) Workaround for musl-libc breakage on
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-280,281c279,281
+279c279
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/99.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:127:warning: symbol value 'hidden_bool' invalid for FGREP
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:191:warning: symbol value 'hidden_bool' invalid for EGREP
-.config:233:warning: symbol value 'hidden_bool' invalid for MKDIR_Z
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:262:warning: symbol value 'hidden_bool' invalid for SLEEP_FLOAT
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -35511,76 +30720,13 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
-54c54
-< CONFIG_EGREP=hidden_bool
----
-> CONFIG_EGREP=y
-64c64
-< CONFIG_FGREP=hidden_bool
----
-> CONFIG_FGREP=y
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-139c139
-< CONFIG_MKDIR_Z=hidden_bool
----
-> CONFIG_MKDIR_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-216c216
-< CONFIG_SLEEP_FLOAT=hidden_bool
----
-> CONFIG_SLEEP_FLOAT=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279c278
+278c278
 < # CONFIG_TOYBOX_UID_SYS is not set
 ---
 > CONFIG_TOYBOX_UID_SYS=100
-281c280,281
-< CONFIG_TOYBOX_UTMPX=hidden_bool
----
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config
 kconfig/conf -o Config.in
-.config:23:warning: symbol value 'hidden_bool' invalid for MKNOD_Z
-.config:33:warning: symbol value 'hidden_bool' invalid for TOYBOX_FORK
-.config:70:warning: symbol value 'hidden_bool' invalid for ID_Z
-.config:76:warning: symbol value 'hidden_bool' invalid for TOYBOX_SHADOW
-.config:95:warning: symbol value 'hidden_bool' invalid for TOYBOX
-.config:164:warning: symbol value 'hidden_bool' invalid for TOYBOX_FIFREEZE
-.config:169:warning: symbol value 'hidden_bool' invalid for TOYBOX_FALLOCATE
-.config:243:warning: symbol value 'hidden_bool' invalid for MKFIFO_Z
-.config:283:warning: symbol value 'hidden_bool' invalid for TOYBOX_UTMPX
-.config:288:warning: symbol value 'hidden_bool' invalid for TOYBOX_ICONV
 *
 * ToyBox Configuration
 *
@@ -35884,45 +31030,10 @@ First system UID (TOYBOX_UID_SYS) [100] (NEW) First user UID (TOYBOX_UID_USR) [5
 #
 # configuration written to .config
 #
-98c98
-< CONFIG_ID_Z=hidden_bool
----
-> CONFIG_ID_Z=y
-146c146
-< CONFIG_MKFIFO_Z=hidden_bool
----
-> CONFIG_MKFIFO_Z=y
-148c148
-< CONFIG_MKNOD_Z=hidden_bool
----
-> CONFIG_MKNOD_Z=y
-257,258c257,258
-< CONFIG_TOYBOX_FALLOCATE=hidden_bool
-< CONFIG_TOYBOX_FIFREEZE=hidden_bool
----
-> CONFIG_TOYBOX_FALLOCATE=y
-> CONFIG_TOYBOX_FIFREEZE=y
-260c260
-< CONFIG_TOYBOX_FORK=hidden_bool
----
-> CONFIG_TOYBOX_FORK=y
-264d263
-< CONFIG_TOYBOX=hidden_bool
-266c265
-< CONFIG_TOYBOX_ICONV=hidden_bool
----
-> CONFIG_TOYBOX_ICONV=y
-276c275
-< CONFIG_TOYBOX_SHADOW=hidden_bool
----
-> CONFIG_TOYBOX_SHADOW=y
-279,281c278,281
+278,279c278,279
 < # CONFIG_TOYBOX_UID_SYS is not set
 < # CONFIG_TOYBOX_UID_USR is not set
-< CONFIG_TOYBOX_UTMPX=hidden_bool
 ---
 > CONFIG_TOYBOX_UID_SYS=100
 > CONFIG_TOYBOX_UID_USR=500
-> CONFIG_TOYBOX_UTMPX=y
-> CONFIG_TOYBOX=y
 diff result: 1
