@@ -4,7 +4,7 @@ bool CONFIG_PF_SA1100 selectable
 bool CONFIG_BIT32 nonselectable
 bool CONFIG_PF_ZYNQ selectable
 bool CONFIG_HAS_LIGHTWEIGHT_BARRIERS_OPTION nonselectable
-nonbool CONFIG_MP_MAX_CPUS selectable
+nonbool CONFIG_MP_MAX_CPUS selectable nonstring
 def_nonbool CONFIG_MP_MAX_CPUS 4|(CONFIG_MP)
 bool CONFIG_PF_REALVIEW selectable
 bool CONFIG_BIT64 nonselectable
@@ -22,15 +22,15 @@ bool CONFIG_SCHED_HPET selectable
 bool CONFIG_CAN_ARM_CACHE_L2CXX0 nonselectable
 bool CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x8 selectable
 bool CONFIG_SCHED_APIC selectable
-nonbool CONFIG_ABI nonselectable
+nonbool CONFIG_ABI nonselectable string
 def_nonbool CONFIG_ABI "vf"|(1)
-nonbool CONFIG_CXX selectable
+nonbool CONFIG_CXX selectable string
 def_nonbool CONFIG_CXX "g++"|(1)
 bool CONFIG_UX_NET selectable
 bool CONFIG_PF_QEMU selectable
 bool CONFIG_PF_EXYNOS_TIMER_MCT selectable
 bool CONFIG_PF_REALVIEW_PB11MP selectable
-nonbool CONFIG_LABEL selectable
+nonbool CONFIG_LABEL selectable string
 bool CONFIG_PF_OMAP3_BEAGLEBOARD selectable
 bool CONFIG_CAN_ARM_CPU_CORTEX_A9 nonselectable
 bool CONFIG_PF_MPC52XX selectable
@@ -59,7 +59,7 @@ bool CONFIG_PF_REALVIEW_VEXPRESS_A57 nonselectable
 def_bool CONFIG_PF_REALVIEW_VEXPRESS_A57 1 (CONFIG_PF_REALVIEW and CONFIG_PF_REALVIEW_VEXPRESS and CONFIG_ARM_CORTEX_A57)
 bool CONFIG_SCHED_RTC selectable
 bool CONFIG_WARN_WARNING selectable
-nonbool CONFIG_BSP_NAME nonselectable
+nonbool CONFIG_BSP_NAME nonselectable string
 def_nonbool CONFIG_BSP_NAME "armada38x"|(CONFIG_PF_ARMADA38X)
 def_nonbool CONFIG_BSP_NAME "baikal"|(CONFIG_PF_BAIKAL_T)
 def_nonbool CONFIG_BSP_NAME "bcm283x"|(CONFIG_PF_BCM283X)
@@ -109,7 +109,7 @@ bool CONFIG_LIGHTWEIGHT_BARRIERS selectable
 bool CONFIG_CONTEXT_4K nonselectable
 def_bool CONFIG_CONTEXT_4K 1 ( not CONFIG_CONTEXT_8K)
 bool CONFIG_CAN_ARM_CPU_MPCORE nonselectable
-nonbool CONFIG_HOST_CC selectable
+nonbool CONFIG_HOST_CC selectable string
 def_nonbool CONFIG_HOST_CC "gcc"|(1)
 bool CONFIG_MP selectable
 bool CONFIG_PF_CI20 selectable
@@ -167,7 +167,7 @@ bool CONFIG_CPU_MIPSR6 nonselectable
 bool CONFIG_CPU_MIPS64_R6 selectable
 bool CONFIG_NDEBUG selectable
 bool CONFIG_PF_REALVIEW_EB selectable
-nonbool CONFIG_PF_REALVIEW_RAM_PHYS_BASE nonselectable
+nonbool CONFIG_PF_REALVIEW_RAM_PHYS_BASE nonselectable nonstring
 def_nonbool CONFIG_PF_REALVIEW_RAM_PHYS_BASE 0x0|(CONFIG_PF_REALVIEW and  not CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x2 and  not CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x6 and  not CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x7 and  not CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x8)
 def_nonbool CONFIG_PF_REALVIEW_RAM_PHYS_BASE 0x20000000|(CONFIG_PF_REALVIEW and CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x2)
 def_nonbool CONFIG_PF_REALVIEW_RAM_PHYS_BASE 0x60000000|(CONFIG_PF_REALVIEW and CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x6)
@@ -187,12 +187,12 @@ bool CONFIG_CAN_ARM_CPU_CORTEX_A53 nonselectable
 bool CONFIG_PF_REALVIEW_RAM_PHYS_BASE_0x0 selectable
 bool CONFIG_CAN_MIPS_VZ_ASE nonselectable
 bool CONFIG_PF_TEGRA_TIMER_MP selectable
-nonbool CONFIG_PF_EXYNOS_PKG_IDS selectable
+nonbool CONFIG_PF_EXYNOS_PKG_IDS selectable string
 def_nonbool CONFIG_PF_EXYNOS_PKG_IDS ""|(CONFIG_PF_EXYNOS)
 bool CONFIG_LEON3 selectable
 bool CONFIG_PF_MALTA_UP selectable
 bool CONFIG_ARM_920T selectable
-nonbool CONFIG_KERNELVERSION nonselectable
+nonbool CONFIG_KERNELVERSION nonselectable string
 bool CONFIG_ARM_LPAE selectable
 bool CONFIG_MAINTAINER_MODE selectable
 bool CONFIG_POWERSAVE_GETCHAR selectable
@@ -211,7 +211,7 @@ bool CONFIG_CPU_VIRT selectable
 bool CONFIG_BEFORE_IRET_SANITY selectable
 bool CONFIG_PF_EXYNOS_TIMER_GEN selectable
 bool CONFIG_PF_EXYNOS4_4210 selectable
-nonbool CONFIG_PF_IMX_RAM_PHYS_BASE nonselectable
+nonbool CONFIG_PF_IMX_RAM_PHYS_BASE nonselectable nonstring
 def_nonbool CONFIG_PF_IMX_RAM_PHYS_BASE 0xc0000000|(CONFIG_PF_IMX and CONFIG_PF_IMX_21)
 def_nonbool CONFIG_PF_IMX_RAM_PHYS_BASE 0x40000000|(CONFIG_PF_IMX and CONFIG_PF_IMX_28)
 def_nonbool CONFIG_PF_IMX_RAM_PHYS_BASE 0x80000000|(CONFIG_PF_IMX and (CONFIG_PF_IMX_35 or CONFIG_PF_IMX_6UL or CONFIG_PF_IMX_7))
@@ -239,7 +239,7 @@ bool CONFIG_PF_IMX_6UL selectable
 bool CONFIG_ARM_SA selectable
 bool CONFIG_SPARC selectable
 bool CONFIG_ARM_SECMONIF_NONE selectable
-nonbool CONFIG_XARCH nonselectable
+nonbool CONFIG_XARCH nonselectable string
 def_nonbool CONFIG_XARCH "ux"|(CONFIG_PF_UX)
 def_nonbool CONFIG_XARCH "amd64"|(CONFIG_AMD64 and CONFIG_PF_PC)
 def_nonbool CONFIG_XARCH "ia32"|(CONFIG_IA32 and CONFIG_PF_PC)
@@ -255,12 +255,12 @@ bool CONFIG_PF_TEGRA2 selectable
 bool CONFIG_CAN_ARM_CPU_CORTEX_A57 nonselectable
 bool CONFIG_ARM_V6 nonselectable
 def_bool CONFIG_ARM_V6 1 (CONFIG_ARM and (CONFIG_ARM_1136 or CONFIG_ARM_1176 or CONFIG_ARM_MPCORE))
-nonbool CONFIG_CC selectable
+nonbool CONFIG_CC selectable string
 def_nonbool CONFIG_CC "gcc"|(1)
 bool CONFIG_PF_REALVIEW_VEXPRESS_A15 nonselectable
 def_bool CONFIG_PF_REALVIEW_VEXPRESS_A15 1 (CONFIG_PF_REALVIEW and CONFIG_PF_REALVIEW_VEXPRESS and CONFIG_ARM_CORTEX_A15)
 bool CONFIG_UX_CON selectable
-nonbool CONFIG_HOST_CXX selectable
+nonbool CONFIG_HOST_CXX selectable string
 def_nonbool CONFIG_HOST_CXX "g++"|(1)
 bool CONFIG_PF_BCM283X selectable
 bool CONFIG_JDB_LOGGING selectable
@@ -271,15 +271,15 @@ bool CONFIG_SYNC_TSC selectable
 bool CONFIG_ARM_1176 selectable
 bool CONFIG_PF_IMX selectable
 bool CONFIG_PF_LS1021A selectable
-nonbool CONFIG_WARN_LEVEL nonselectable
+nonbool CONFIG_WARN_LEVEL nonselectable nonstring
 def_nonbool CONFIG_WARN_LEVEL 2|(CONFIG_WARN_ANY)
 def_nonbool CONFIG_WARN_LEVEL 1|(CONFIG_WARN_WARNING)
 def_nonbool CONFIG_WARN_LEVEL 0|(CONFIG_WARN_NONE)
 bool CONFIG_HAS_JDB_GZIP_OPTION nonselectable
-nonbool CONFIG_PF_EXYNOS_UART_NR selectable
+nonbool CONFIG_PF_EXYNOS_UART_NR selectable nonstring
 def_nonbool CONFIG_PF_EXYNOS_UART_NR 2|(CONFIG_PF_EXYNOS and CONFIG_PF_EXYNOS_UART_NATIVE)
 bool CONFIG_JDB_ACCOUNTING selectable
-nonbool CONFIG_MIPS_CPU_FREQUENCY selectable
+nonbool CONFIG_MIPS_CPU_FREQUENCY selectable nonstring
 def_nonbool CONFIG_MIPS_CPU_FREQUENCY 200|(CONFIG_MIPS)
 bool CONFIG_DISABLE_VIRT_OBJ_SPACE selectable
 bool CONFIG_ARM_ALIGNMENT_CHECK selectable
