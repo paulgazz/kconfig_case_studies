@@ -302,6 +302,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/10.config
 kconfig/conf -o Config.in
@@ -614,6 +616,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/11.config
 kconfig/conf -o Config.in
@@ -924,6 +928,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/12.config
 kconfig/conf -o Config.in
@@ -1232,6 +1238,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/13.config
 kconfig/conf -o Config.in
@@ -1539,6 +1547,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/14.config
 kconfig/conf -o Config.in
@@ -1851,6 +1861,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/15.config
 kconfig/conf -o Config.in
@@ -2159,6 +2171,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/16.config
 kconfig/conf -o Config.in
@@ -2471,6 +2485,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/17.config
 kconfig/conf -o Config.in
@@ -2776,6 +2792,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/18.config
 kconfig/conf -o Config.in
@@ -3073,6 +3091,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/19.config
 kconfig/conf -o Config.in
@@ -3375,6 +3395,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/1.config
 kconfig/conf -o Config.in
@@ -3688,6 +3710,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/20.config
 kconfig/conf -o Config.in
@@ -3996,6 +4020,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/21.config
 kconfig/conf -o Config.in
@@ -4298,6 +4324,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/22.config
 kconfig/conf -o Config.in
@@ -4609,6 +4637,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/23.config
 kconfig/conf -o Config.in
@@ -4913,6 +4943,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/24.config
 kconfig/conf -o Config.in
@@ -5221,6 +5253,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/25.config
 kconfig/conf -o Config.in
@@ -5523,6 +5557,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/26.config
 kconfig/conf -o Config.in
@@ -5825,6 +5861,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/27.config
 kconfig/conf -o Config.in
@@ -6131,6 +6169,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/28.config
 kconfig/conf -o Config.in
@@ -6435,6 +6475,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/29.config
 kconfig/conf -o Config.in
@@ -6750,6 +6792,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/2.config
 kconfig/conf -o Config.in
@@ -7055,6 +7099,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/30.config
 kconfig/conf -o Config.in
@@ -7365,6 +7411,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/31.config
 kconfig/conf -o Config.in
@@ -7671,6 +7719,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/32.config
 kconfig/conf -o Config.in
@@ -7973,6 +8023,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/33.config
 kconfig/conf -o Config.in
@@ -8282,6 +8334,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/34.config
 kconfig/conf -o Config.in
@@ -8586,6 +8640,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/35.config
 kconfig/conf -o Config.in
@@ -8900,6 +8956,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/36.config
 kconfig/conf -o Config.in
@@ -9203,6 +9261,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/37.config
 kconfig/conf -o Config.in
@@ -9509,6 +9569,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/38.config
 kconfig/conf -o Config.in
@@ -9819,6 +9881,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/39.config
 kconfig/conf -o Config.in
@@ -10128,6 +10192,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/3.config
 kconfig/conf -o Config.in
@@ -10442,6 +10508,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/40.config
 kconfig/conf -o Config.in
@@ -10752,6 +10820,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/41.config
 kconfig/conf -o Config.in
@@ -11063,6 +11133,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/42.config
 kconfig/conf -o Config.in
@@ -11376,6 +11448,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/43.config
 kconfig/conf -o Config.in
@@ -11680,6 +11754,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/44.config
 kconfig/conf -o Config.in
@@ -11991,6 +12067,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/45.config
 kconfig/conf -o Config.in
@@ -12299,6 +12377,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/46.config
 kconfig/conf -o Config.in
@@ -12602,6 +12682,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/47.config
 kconfig/conf -o Config.in
@@ -12912,6 +12994,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/48.config
 kconfig/conf -o Config.in
@@ -13224,6 +13308,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/49.config
 kconfig/conf -o Config.in
@@ -13528,6 +13614,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/4.config
 kconfig/conf -o Config.in
@@ -13832,6 +13920,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/50.config
 kconfig/conf -o Config.in
@@ -14136,6 +14226,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/51.config
 kconfig/conf -o Config.in
@@ -14447,6 +14539,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/52.config
 kconfig/conf -o Config.in
@@ -14757,6 +14851,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/53.config
 kconfig/conf -o Config.in
@@ -15061,6 +15157,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/54.config
 kconfig/conf -o Config.in
@@ -15373,6 +15471,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/55.config
 kconfig/conf -o Config.in
@@ -15688,6 +15788,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/56.config
 kconfig/conf -o Config.in
@@ -15995,6 +16097,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/57.config
 kconfig/conf -o Config.in
@@ -16308,6 +16412,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/58.config
 kconfig/conf -o Config.in
@@ -16621,6 +16727,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/59.config
 kconfig/conf -o Config.in
@@ -16932,6 +17040,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/5.config
 kconfig/conf -o Config.in
@@ -17243,6 +17353,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/60.config
 kconfig/conf -o Config.in
@@ -17557,6 +17669,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/61.config
 kconfig/conf -o Config.in
@@ -17861,6 +17975,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/62.config
 kconfig/conf -o Config.in
@@ -18166,6 +18282,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/63.config
 kconfig/conf -o Config.in
@@ -18467,6 +18585,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/64.config
 kconfig/conf -o Config.in
@@ -18779,6 +18899,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/65.config
 kconfig/conf -o Config.in
@@ -19090,6 +19212,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/66.config
 kconfig/conf -o Config.in
@@ -19393,6 +19517,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/67.config
 kconfig/conf -o Config.in
@@ -19697,6 +19823,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/68.config
 kconfig/conf -o Config.in
@@ -20006,6 +20134,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/69.config
 kconfig/conf -o Config.in
@@ -20310,6 +20440,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/6.config
 kconfig/conf -o Config.in
@@ -20617,6 +20749,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/70.config
 kconfig/conf -o Config.in
@@ -20923,6 +21057,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/71.config
 kconfig/conf -o Config.in
@@ -21233,6 +21369,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/72.config
 kconfig/conf -o Config.in
@@ -21540,6 +21678,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/73.config
 kconfig/conf -o Config.in
@@ -21850,6 +21990,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/74.config
 kconfig/conf -o Config.in
@@ -22160,6 +22302,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/75.config
 kconfig/conf -o Config.in
@@ -22473,6 +22617,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/76.config
 kconfig/conf -o Config.in
@@ -22784,6 +22930,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/77.config
 kconfig/conf -o Config.in
@@ -23093,6 +23241,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/78.config
 kconfig/conf -o Config.in
@@ -23403,6 +23553,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/79.config
 kconfig/conf -o Config.in
@@ -23707,6 +23859,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/7.config
 kconfig/conf -o Config.in
@@ -24008,6 +24162,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/80.config
 kconfig/conf -o Config.in
@@ -24316,6 +24472,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/81.config
 kconfig/conf -o Config.in
@@ -24626,6 +24784,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/82.config
 kconfig/conf -o Config.in
@@ -24930,6 +25090,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/83.config
 kconfig/conf -o Config.in
@@ -25236,6 +25398,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/84.config
 kconfig/conf -o Config.in
@@ -25549,6 +25713,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/85.config
 kconfig/conf -o Config.in
@@ -25859,6 +26025,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/86.config
 kconfig/conf -o Config.in
@@ -26162,6 +26330,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/87.config
 kconfig/conf -o Config.in
@@ -26470,6 +26640,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/88.config
 kconfig/conf -o Config.in
@@ -26781,6 +26953,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/89.config
 kconfig/conf -o Config.in
@@ -27091,6 +27265,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/8.config
 kconfig/conf -o Config.in
@@ -27398,6 +27574,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/90.config
 kconfig/conf -o Config.in
@@ -27707,6 +27885,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/91.config
 kconfig/conf -o Config.in
@@ -28015,6 +28195,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/92.config
 kconfig/conf -o Config.in
@@ -28329,6 +28511,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/93.config
 kconfig/conf -o Config.in
@@ -28643,6 +28827,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/94.config
 kconfig/conf -o Config.in
@@ -28951,6 +29137,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/95.config
 kconfig/conf -o Config.in
@@ -29254,6 +29442,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/96.config
 kconfig/conf -o Config.in
@@ -29568,6 +29758,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/97.config
 kconfig/conf -o Config.in
@@ -29873,6 +30065,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/98.config
 kconfig/conf -o Config.in
@@ -30183,6 +30377,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/99.config
 kconfig/conf -o Config.in
@@ -30493,6 +30689,8 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
 configuring /home/paul/research/repos/kconfig_case_studies/cases/toybox_0_7_5/Configs/9.config
 kconfig/conf -o Config.in
@@ -30806,4 +31004,6 @@ Workaround for musl-libc breakage on nommu systems. (TOYBOX_MUSL_NOMMU_IS_BROKEN
 #
 # configuration written to .config
 #
+0 errors
+0 warnings
 diff result: 0
