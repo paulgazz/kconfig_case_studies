@@ -76,7 +76,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           echo "configuring $i";
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           make oldconfig;
-          "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.sh" "${i}" "${config_file}";
+          python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}.kmax" "${i}" "${config_file}";
           echo "diff result: ${?}";
         done 2>&1 | tee "${case_dir}/config_diff_results.out"
 
