@@ -68,7 +68,8 @@ if [[ "${config_file}" == "" || "${kconfig_root}" == "" ]]; then
     exit 1
 fi
 
-
+kconfig_out_dir="${case_dir}/kconfig_out"
+mkdir -p "${kconfig_out_dir}"
 if [[ "${action}" == "config" || "${action}" == "build" ]]; then
     # configure or build each sample
     if [[ "${action}" == "config" ]]; then
@@ -76,9 +77,15 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           echo "configuring $i";
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           make oldconfig;
+          cp "${config_file}" "${kconfig_out_dir}/$(basename ${i})"
+          cat "${config_file}" | md5sum > "${kconfig_out_dir}/$(basename ${i}).md5"
           python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}.kmax" "${i}" "${config_file}";
           echo "diff result: ${?}";
         done 2>&1 | tee "${case_dir}/config_diff_results.out"
+
+        cat "${kconfig_out_dir}/"*.md5 | sort | uniq -d > "${case_dir}/uniq_config_comparison.out"
+
+        echo "has $(cat "${case_dir}/uniq_config_comparison.out" | wc -l) duplicate config files" | tee -a "${case_dir}/config_diff_results.out"
 
     elif [[ "${action}" == "build" ]]; then
         for i in ${case_dir}/Configs/*.config; do

@@ -5325,3 +5325,4 @@ warning: CONFIG_ABI is being set to some value in kconfig output, but is not use
 6 errors
 19 warnings
 diff result: 1
+has 0 duplicate config files

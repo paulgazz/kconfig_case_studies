@@ -11650,3 +11650,4 @@ warning: CONFIG_PERL_CORE is being set to some value in kconfig output
 0 errors
 21 warnings
 diff result: 0
+has 0 duplicate config files
