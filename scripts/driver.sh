@@ -47,20 +47,30 @@ fi
 # setup case-specific properties
 config_file=""
 kconfig_root=""
+binaries=""
 echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
+    binaries="_stage/"
 fi
 echo "${casename}" | grep -i "toybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
+    binaries="toybox"
 fi
 echo "${casename}" | grep -i "fiasco" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file="build/globalconfig.out"
     kconfig_root="build/Kconfig"
+    # perhaps just use "*.{o,a}"
+    binaries="build/*.o build/*.a"
+    # if [[ "${action}" == "build" ]]; then
+    #     # looks like boot_image.{x1,x2}
+    #     echo "ERROR: please figure out what to use to measure the binary size" >&2
+    #     exit 1 
+    # fi
 fi
 
 if [[ "${config_file}" == "" || "${kconfig_root}" == "" ]]; then
@@ -93,8 +103,10 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           make oldconfig;
           echo "building $i";
+          make clean;
           make;
           echo "return code $?";
+          echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
         done 2>&1 | tee "${case_dir}/build_results.out"
     fi
 
