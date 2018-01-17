@@ -70,6 +70,12 @@ Get the dimacs file with
 
 apt-get install libselinux1-dev libsepol1-dev
 
+### Building
+
+For building, we constrain are samples to PLATFORM_LINUX, since
+cross-compiling for other systems is difficult.  We also constrain
+language bindings, since there is a bug with that configuration
+variable, as well as lua, since we lack system support.
 
 ## toybox
 
@@ -101,3 +107,8 @@ Need to call `tool/gen_kconfig`
 Collect constraints
 
     check_dep --dimacs build/Kconfig | tee  ~/research/repos/kconfig_case_studies/cases/fiasco_17_10/fiasco_17_10.kmax | python ~/research/repos/kmax/kconfig/dimacs.py >  ~/research/repos/kconfig_case_studies/cases/fiasco_17_10/fiasco_17_10.dimacs
+
+### Building
+
+For building, we constrain are samples to IA32, since cross-compiling
+for other systems is difficult.
