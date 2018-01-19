@@ -51,6 +51,10 @@ Turning off language extensions (because of a variability bug)
     
 ### Kconfig semantics differences
 
+- axtls seems to disable the automatic CONFIG_ prefix and instead it
+is in the name of the variables in the Kconfig files.
+- Non-booleans seem to be always included in the `.config` file even
+  when the dependencies for them are not met.
 
 ## busybox
 
