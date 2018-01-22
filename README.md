@@ -58,10 +58,11 @@ is in the name of the variables in the Kconfig files.
 
 ## busybox
 
+    
 Trying on 1.18.0
 
     git clone https://git.busybox.net/busybox
-    git checkout 1_18_0
+    git checkout 1_28_0
 
 The Config.src files need to be preprocessed.  Use
 `scripts/gen_build_files.sh` or run
@@ -70,11 +71,11 @@ The Config.src files need to be preprocessed.  Use
     
 Get the dimacs file with
 
-    check_dep --dimacs Config.in | tee busybox_1_18_0.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > busybox_1_18_0.dimacs
-
-apt-get install libselinux1-dev libsepol1-dev
+    check_dep --dimacs Config.in | tee ~/research/repos/kconfig_case_studies/cases/busybox_1_28_0/busybox_1_28_0.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > ~/research/repos/kconfig_case_studies/cases/busybox_1_28_0/busybox_1_28_0.dimacs
 
 ### Building
+
+    apt-get install libselinux1-dev libsepol1-dev
 
 For building, we constrain are samples to PLATFORM_LINUX, since
 cross-compiling for other systems is difficult.  We also constrain

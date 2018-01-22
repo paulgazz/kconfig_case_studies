@@ -53,12 +53,21 @@ if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
     binaries="_stage/"
+    # CONFIG_HTTP_LUA_PREFIX="/full/path/local/lua"
+    # make PREFIX="/full/path/local"
+    #
 fi
 echo "${casename}" | grep -i "toybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="toybox"
+fi
+echo "${casename}" | grep -i "busybox" > /dev/null
+if [[ $? -eq 0 ]]; then
+    config_file=".config"
+    kconfig_root="Config.in"
+    binaries="busybox"
 fi
 echo "${casename}" | grep -i "fiasco" > /dev/null
 if [[ $? -eq 0 ]]; then
