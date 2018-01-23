@@ -56,10 +56,19 @@ is in the name of the variables in the Kconfig files.
 - Non-booleans seem to be always included in the `.config` file even
   when the dependencies for them are not met.
 
+### Building
+    
+    apt-get install libselinux1-dev libsepol1-dev
+
+For building, we constrain are samples to PLATFORM_LINUX, since
+cross-compiling for other systems is difficult.  We also constrain
+language bindings, since there is a bug with that configuration
+variable, as well as lua, since we lack system support.
+
 ## busybox
 
     
-Trying on 1.18.0
+Trying on 1.28.0
 
     git clone https://git.busybox.net/busybox
     git checkout 1_28_0
@@ -75,12 +84,7 @@ Get the dimacs file with
 
 ### Building
 
-    apt-get install libselinux1-dev libsepol1-dev
-
-For building, we constrain are samples to PLATFORM_LINUX, since
-cross-compiling for other systems is difficult.  We also constrain
-language bindings, since there is a bug with that configuration
-variable, as well as lua, since we lack system support.
+    apt-get install libpam0g-dev
 
 ## toybox
 
