@@ -1,6 +1,29 @@
 # Case studies
 
-## evaluation
+## Environment Setup
+
+Please set your environment to point to the root of the repository, e.g.,
+
+    export KCONFIG_CASE_STUDIES=/home/USER/src/kconfig_case_studies
+
+## VM setup
+
+Install vagrant and virtual box:
+
+    apt install vagrant virtualbox
+    
+(Note that Debian 9 does not have virtualbox, so [use backports](https://wiki.debian.org/VirtualBox#Debian_9_.22Stretch.22]))
+
+Start the VM.  This will install dependencies and get source code
+automatically.
+
+    vagrant up
+    
+Enter the VM.
+
+    vagrant ssh
+
+## Evaluation
 
 1. check that `make oldconfig` accepts it
 1. compare oldconfig .config and generated config for sameness (modulo comments, empty nonbools)
@@ -47,7 +70,7 @@ to build it with `allyesconfig`:
 
 Forcing linux on (to avoid having to build on windows and cygwin platforms)
 
-Turning off language extensions (because of a variability bug)
+nTurning off language extensions (because of a variability bug)
     
 ### Kconfig semantics differences
 
