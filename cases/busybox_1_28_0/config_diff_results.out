@@ -1,12 +1,4 @@
-configuring /home/paul/research/repos/kconfig_case_studies/cases/busybox_1_28_0/Configs/0.config
-  HOSTCC  scripts/basic/fixdep
-  HOSTCC  scripts/basic/split-include
-  HOSTCC  scripts/basic/docproc
-  HOSTCC  scripts/kconfig/conf.o
-  HOSTCC  scripts/kconfig/kxgettext.o
-  HOSTCC  scripts/kconfig/mconf.o
-  HOSTCC  scripts/kconfig/zconf.tab.o
-  HOSTLD  scripts/kconfig/conf
+configuring /vagrant/cases/busybox_1_28_0/Configs/0.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -1053,6 +1045,8 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [N/y/?] n
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [N/y/?] n
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [Y/n/?] y
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
 warning: CONFIG_FEATURE_KILL_DELAY is being set to some value in kconfig output
 warning: CONFIG_FEATURE_COPYBUF_KB has different nonboolean values
 warning: CONFIG_FEATURE_MIME_CHARSET is being set to some value in kconfig output
@@ -1075,7 +1069,7 @@ warning: CONFIG_VOLUMEID is being set to some value in kconfig output, but is no
 1 errors
 18 warnings
 diff result: 1
-configuring /home/paul/research/repos/kconfig_case_studies/cases/busybox_1_28_0/Configs/1.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/1.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -2139,6 +2133,8 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [Y/n/?] y
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [Y/n/?] y
     Circular buffer size in Kbytes (minimum 4KB) (FEATURE_IPC_SYSLOG_BUFFER_SIZE) [16] (NEW)   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [N/y/?] n
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
 warning: CONFIG_FEATURE_COPYBUF_KB has different nonboolean values
 warning: CONFIG_FEATURE_SYSLOGD_READ_BUFFER_SIZE has different nonboolean values
 warning: CONFIG_GZIP_FAST is being set to some value in kconfig output
@@ -2162,7 +2158,7 @@ warning: CONFIG_VOLUMEID is being set to some value in kconfig output, but is no
 2 errors
 18 warnings
 diff result: 1
-configuring /home/paul/research/repos/kconfig_case_studies/cases/busybox_1_28_0/Configs/2.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/2.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -3225,6 +3221,8 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [Y/n/?] y
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [Y/n/?] y
     Circular buffer size in Kbytes (minimum 4KB) (FEATURE_IPC_SYSLOG_BUFFER_SIZE) [16] (NEW)   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [N/y/?] n
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
 error: CONFIG_FEATURE_IP_TUNNEL differs between configs.  bool value is being unset by kconfig.
 error: CONFIG_FEATURE_IP_ADDRESS differs between configs.  bool value is being unset by kconfig.
 warning: CONFIG_FEATURE_COPYBUF_KB has different nonboolean values
@@ -3255,7 +3253,7 @@ warning: CONFIG_VOLUMEID is being set to some value in kconfig output, but is no
 8 errors
 19 warnings
 diff result: 1
-configuring /home/paul/research/repos/kconfig_case_studies/cases/busybox_1_28_0/Configs/3.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/3.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -4293,6 +4291,8 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [Y/n/?] y
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [N/y/?] n
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [Y/n/?] y
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
 warning: CONFIG_FEATURE_KILL_DELAY is being set to some value in kconfig output
 error: CONFIG_FEATURE_IP_ADDRESS differs between configs.  bool value is being unset by kconfig.
 warning: CONFIG_FEATURE_COPYBUF_KB has different nonboolean values
@@ -4319,7 +4319,7 @@ warning: CONFIG_VOLUMEID is being set to some value in kconfig output, but is no
 3 errors
 20 warnings
 diff result: 1
-configuring /home/paul/research/repos/kconfig_case_studies/cases/busybox_1_28_0/Configs/4.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/4.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -5379,6 +5379,8 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [N/y/?] n
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [N/y/?] n
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [N/y/?] n
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
 error: CONFIG_FEATURE_IP_TUNNEL differs between configs.  bool value is being unset by kconfig.
 warning: CONFIG_FEATURE_KILL_DELAY is being set to some value in kconfig output
 error: CONFIG_FEATURE_IP_ADDRESS differs between configs.  bool value is being unset by kconfig.

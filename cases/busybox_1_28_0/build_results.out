@@ -1,4 +1,4 @@
-configuring /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/0.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/0.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -86,7 +86,7 @@ SHA3: Trade bytes for speed (0:fast, 1:slow) (SHA3_SMALL) [0] 0
 Faster /proc scanning code (+100 bytes) (FEATURE_FAST_TOP) [N/y/?] n
 Support /etc/networks (FEATURE_ETC_NETWORKS) [N/y/?] n
 Command line editing (FEATURE_EDITING) [Y/n/?] y
-  Maximum length of input (FEATURE_EDITING_MAX_LEN) [1024] (NEW)   Maximum length of input (FEATURE_EDITING_MAX_LEN) [1024] (NEW)   Maximum length of input (FEATURE_EDITING_MAX_LEN) [1024] (NEW)   vi-style line editing commands (FEATURE_EDITING_VI) [Y/n/?] y
+  Maximum length of input (FEATURE_EDITING_MAX_LEN) [1024] (NEW)   vi-style line editing commands (FEATURE_EDITING_VI) [Y/n/?] y
   History size (FEATURE_EDITING_HISTORY) [0] 0
   History saving (FEATURE_EDITING_SAVEHISTORY) [Y/n/?] y
     Save history on shell exit, not after every command (FEATURE_EDITING_SAVE_ON_EXIT) [N/y/?] n
@@ -1045,10 +1045,14 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [N/y/?] n
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [N/y/?] n
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [Y/n/?] y
-building /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/0.config
-  CLEAN   applets
-  CLEAN   .tmp_versions
-  CLEAN   busybox busybox_unstripped.map busybox_unstripped.out busybox_unstripped .kernelrelease
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
+building /vagrant/cases/busybox_1_28_0/Configs/0.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
+  CLEAN   .kernelrelease
+make: pkg-config: Command not found
+make: pkg-config: Command not found
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/split-include
 scripts/basic/split-include.c: In function ‘main’:
@@ -1081,6 +1085,8 @@ scripts/kconfig/conf -s Config.in
 #
 # using defaults found in .config
 #
+make[2]: pkg-config: Command not found
+make[2]: pkg-config: Command not found
   SPLIT   include/autoconf.h -> include/config/*
   GEN     include/bbconfigopts.h
   GEN     include/common_bufsiz.h
@@ -1094,1007 +1100,18 @@ applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared wi
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   CC      applets/applets.o
-  LD      applets/built-in.o
-  HOSTCC  applets/usage_pod
-applets/usage_pod.c: In function ‘main’:
-applets/usage_pod.c:74:3: warning: format not a string literal and no format arguments [-Wformat-security]
-   printf(usage_array[i].aname);
-   ^
-  LD      archival/built-in.o
-  CC      archival/ar.o
-  CC      archival/bbunzip.o
-  CC      archival/bzip2.o
-  CC      archival/cpio.o
-  CC      archival/dpkg_deb.o
-  CC      archival/gzip.o
-  CC      archival/tar.o
-  CC      archival/unzip.o
-  AR      archival/lib.a
-  LD      archival/libarchive/built-in.o
-  CC      archival/libarchive/common.o
-  CC      archival/libarchive/data_align.o
-  CC      archival/libarchive/data_extract_all.o
-archival/libarchive/data_extract_all.c: In function ‘data_extract_all’:
-archival/libarchive/data_extract_all.c:247:4: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
-    chown(dst_name, uid, gid);
-    ^
-  CC      archival/libarchive/data_extract_to_stdout.o
-  CC      archival/libarchive/data_skip.o
-  CC      archival/libarchive/decompress_bunzip2.o
-  CC      archival/libarchive/decompress_gunzip.o
-  CC      archival/libarchive/decompress_uncompress.o
-  CC      archival/libarchive/decompress_unlzma.o
-  CC      archival/libarchive/decompress_unxz.o
-  CC      archival/libarchive/filter_accept_all.o
-  CC      archival/libarchive/filter_accept_list.o
-  CC      archival/libarchive/filter_accept_list_reassign.o
-  CC      archival/libarchive/filter_accept_reject_list.o
-  CC      archival/libarchive/find_list_entry.o
-  CC      archival/libarchive/get_header_ar.o
-  CC      archival/libarchive/get_header_cpio.o
-  CC      archival/libarchive/get_header_tar.o
-archival/libarchive/get_header_tar.c: In function ‘get_header_tar’:
-archival/libarchive/get_header_tar.c:171:2: warning: label ‘again’ defined but not used [-Wunused-label]
-  again:
-  ^
-  CC      archival/libarchive/get_header_tar_bz2.o
-  CC      archival/libarchive/get_header_tar_gz.o
-  CC      archival/libarchive/get_header_tar_lzma.o
-  CC      archival/libarchive/get_header_tar_xz.o
-  CC      archival/libarchive/header_list.o
-  CC      archival/libarchive/header_skip.o
-  CC      archival/libarchive/header_verbose_list.o
-  CC      archival/libarchive/init_handle.o
-  CC      archival/libarchive/open_transformer.o
-  CC      archival/libarchive/seek_by_jump.o
-  CC      archival/libarchive/seek_by_read.o
-  CC      archival/libarchive/unpack_ar_archive.o
-  CC      archival/libarchive/unsafe_prefix.o
-  CC      archival/libarchive/unsafe_symlink_target.o
-  AR      archival/libarchive/lib.a
-  LD      console-tools/built-in.o
-  CC      console-tools/chvt.o
-  CC      console-tools/dumpkmap.o
-console-tools/dumpkmap.c: In function ‘dumpkmap_main’:
-console-tools/dumpkmap.c:68:2: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-  write(STDOUT_FILENO, flags, 7 + MAX_NR_KEYMAPS);
-  ^
-console-tools/dumpkmap.c:80:6: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-      write(STDOUT_FILENO, &ke.kb_value, 2);
-      ^
-  CC      console-tools/fgconsole.o
-  CC      console-tools/loadfont.o
-console-tools/loadfont.c: In function ‘setfont_main’:
-console-tools/loadfont.c:447:4: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
-    chdir(CONFIG_DEFAULT_SETFONT_DIR "/consolefonts");
-    ^
-console-tools/loadfont.c:465:5: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
-     chdir(CONFIG_DEFAULT_SETFONT_DIR "/consoletrans");
-     ^
-  CC      console-tools/loadkmap.o
-  CC      console-tools/reset.o
-  CC      console-tools/resize.o
-console-tools/resize.c: In function ‘resize_main’:
-console-tools/resize.c:88:2: warning: ignoring return value of ‘scanf’, declared with attribute warn_unused_result [-Wunused-result]
-  scanf(ESC"[%hu;%huR", &w.ws_row, &w.ws_col);
-  ^
-  CC      console-tools/setconsole.o
-  CC      console-tools/setkeycodes.o
-  CC      console-tools/showkey.o
-  AR      console-tools/lib.a
-  LD      coreutils/built-in.o
-  CC      coreutils/cat.o
-  CC      coreutils/chgrp.o
-  CC      coreutils/chmod.o
-  CC      coreutils/chown.o
-  CC      coreutils/date.o
-  CC      coreutils/dd.o
-  CC      coreutils/df.o
-  CC      coreutils/dos2unix.o
-coreutils/dos2unix.c: In function ‘convert’:
-coreutils/dos2unix.c:83:3: warning: ignoring return value of ‘fchown’, declared with attribute warn_unused_result [-Wunused-result]
-   fchown(fd, st.st_uid, st.st_gid);
-   ^
-  CC      coreutils/du.o
-  CC      coreutils/echo.o
-  CC      coreutils/env.o
-  CC      coreutils/expand.o
-  CC      coreutils/expr.o
-  CC      coreutils/factor.o
-  CC      coreutils/fold.o
-  CC      coreutils/head.o
-  CC      coreutils/id.o
-  CC      coreutils/install.o
-  CC      coreutils/link.o
-  CC      coreutils/ls.o
-  CC      coreutils/md5_sha1_sum.o
-  CC      coreutils/mkfifo.o
-  CC      coreutils/mktemp.o
-  CC      coreutils/nice.o
-  CC      coreutils/nl.o
-  CC      coreutils/paste.o
-  CC      coreutils/printf.o
-  CC      coreutils/pwd.o
-  CC      coreutils/readlink.o
-  CC      coreutils/realpath.o
-  CC      coreutils/rmdir.o
-  CC      coreutils/shred.o
-coreutils/shred.c: In function ‘shred_main’:
-coreutils/shred.c:98:5: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
-     ftruncate(fd, 0);
-     ^
-  CC      coreutils/shuf.o
-  CC      coreutils/sort.o
-  CC      coreutils/split.o
-  CC      coreutils/stat.o
-  CC      coreutils/stty.o
-  CC      coreutils/sum.o
-  CC      coreutils/sync.o
-  CC      coreutils/tac.o
-  CC      coreutils/tail.o
-  CC      coreutils/tee.o
-  CC      coreutils/test.o
-  CC      coreutils/test_ptr_hack.o
-  CC      coreutils/touch.o
-  CC      coreutils/tr.o
-  CC      coreutils/true.o
-  CC      coreutils/truncate.o
-  CC      coreutils/tty.o
-  CC      coreutils/uname.o
-  CC      coreutils/uniq.o
-  CC      coreutils/unlink.o
-  CC      coreutils/usleep.o
-  CC      coreutils/uudecode.o
-  CC      coreutils/who.o
-  CC      coreutils/whoami.o
-  CC      coreutils/yes.o
-  AR      coreutils/lib.a
-  LD      coreutils/libcoreutils/built-in.o
-  CC      coreutils/libcoreutils/cp_mv_stat.o
-  CC      coreutils/libcoreutils/getopt_mk_fifo_nod.o
-  AR      coreutils/libcoreutils/lib.a
-  LD      debianutils/built-in.o
-  CC      debianutils/pipe_progress.o
-  CC      debianutils/run_parts.o
-  CC      debianutils/start_stop_daemon.o
-  CC      debianutils/which.o
-  AR      debianutils/lib.a
-  LD      klibc-utils/built-in.o
-  CC      klibc-utils/resume.o
-  AR      klibc-utils/lib.a
-  LD      e2fsprogs/built-in.o
-  CC      e2fsprogs/e2fs_lib.o
-  CC      e2fsprogs/fsck.o
-  CC      e2fsprogs/lsattr.o
-  CC      e2fsprogs/tune2fs.o
-  AR      e2fsprogs/lib.a
-  LD      editors/built-in.o
-  CC      editors/awk.o
-  CC      editors/diff.o
-  CC      editors/ed.o
-editors/ed.c: In function ‘printLines’:
-editors/ed.c:535:4: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-    write(STDOUT_FILENO, lp->data, lp->len);
-    ^
-  CC      editors/vi.o
-editors/vi.c: In function ‘file_write’:
-editors/vi.c:2983:2: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
-  ftruncate(fd, charcnt);
-  ^
-  AR      editors/lib.a
-  LD      findutils/built-in.o
-  CC      findutils/find.o
-  CC      findutils/grep.o
-  CC      findutils/xargs.o
-  AR      findutils/lib.a
-  LD      init/built-in.o
-  CC      init/bootchartd.o
-init/bootchartd.c: In function ‘finalize’:
-init/bootchartd.c:318:2: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
-  system(xasprintf("tar -zcf /var/log/bootlog.tgz header %s *.log", process_accounting ? "kernel_pacct" : ""));
-  ^
-  CC      init/halt.o
-  CC      init/init.o
-  AR      init/lib.a
-  LD      libbb/built-in.o
-  CC      libbb/appletlib.o
-libbb/appletlib.c: In function ‘check_suid’:
-libbb/appletlib.c:695:3: warning: ignoring return value of ‘setgid’, declared with attribute warn_unused_result [-Wunused-result]
-   setgid(rgid);
-   ^
-libbb/appletlib.c:696:3: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
-   setuid(ruid);
-   ^
-  CC      libbb/ask_confirmation.o
-  CC      libbb/auto_string.o
-  CC      libbb/bb_askpass.o
-  CC      libbb/bb_bswap_64.o
-  CC      libbb/bb_cat.o
-  CC      libbb/bb_do_delay.o
-  CC      libbb/bb_getgroups.o
-  CC      libbb/bb_pwd.o
-  CC      libbb/bb_qsort.o
-  CC      libbb/bb_strtonum.o
-  CC      libbb/bbunit.o
-  CC      libbb/capability.o
-  CC      libbb/change_identity.o
-  CC      libbb/chomp.o
-  CC      libbb/common_bufsiz.o
-  CC      libbb/compare_string_array.o
-  CC      libbb/concat_path_file.o
-  CC      libbb/concat_subpath_file.o
-  CC      libbb/copy_file.o
-  CC      libbb/copyfd.o
-  CC      libbb/correct_password.o
-  CC      libbb/crc32.o
-  CC      libbb/default_error_retval.o
-  CC      libbb/device_open.o
-  CC      libbb/die_if_bad_username.o
-  CC      libbb/dump.o
-  CC      libbb/endofname.o
-  CC      libbb/executable.o
-  CC      libbb/fclose_nonstdin.o
-  CC      libbb/fflush_stdout_and_exit.o
-  CC      libbb/fgets_str.o
-  CC      libbb/find_mount_point.o
-  CC      libbb/find_pid_by_name.o
-  CC      libbb/find_root_device.o
-  CC      libbb/full_write.o
-  CC      libbb/get_console.o
-  CC      libbb/get_cpu_count.o
-  CC      libbb/get_last_path_component.o
-  CC      libbb/get_line_from_file.o
-  CC      libbb/get_shell_name.o
-  CC      libbb/get_volsize.o
-  CC      libbb/getopt32.o
-  CC      libbb/getopt_allopts.o
-  CC      libbb/getpty.o
-  CC      libbb/hash_md5_sha.o
-  CC      libbb/herror_msg.o
-  CC      libbb/human_readable.o
-  CC      libbb/in_ether.o
-  CC      libbb/inet_cksum.o
-  CC      libbb/inet_common.o
-  CC      libbb/inode_hash.o
-  CC      libbb/isdirectory.o
-  CC      libbb/isqrt.o
-  CC      libbb/kernel_version.o
-  CC      libbb/last_char_is.o
-  CC      libbb/lineedit.o
-  CC      libbb/lineedit_ptr_hack.o
-  CC      libbb/llist.o
-  CC      libbb/logenv.o
-  CC      libbb/login.o
-  CC      libbb/loop.o
-  CC      libbb/make_directory.o
-  CC      libbb/makedev.o
-  CC      libbb/match_fstype.o
-  CC      libbb/messages.o
-  CC      libbb/missing_syscalls.o
-  CC      libbb/mode_string.o
-  CC      libbb/mtab.o
-  CC      libbb/nuke_str.o
-  CC      libbb/obscure.o
-  CC      libbb/parse_config.o
-  CC      libbb/parse_mode.o
-  CC      libbb/percent_decode.o
-  CC      libbb/perror_msg.o
-  CC      libbb/perror_nomsg.o
-  CC      libbb/perror_nomsg_and_die.o
-  CC      libbb/pidfile.o
-  CC      libbb/platform.o
-  CC      libbb/print_flags.o
-  CC      libbb/print_numbered_lines.o
-  CC      libbb/printable.o
-  CC      libbb/printable_string.o
-  CC      libbb/process_escape_sequence.o
-  CC      libbb/procps.o
-  CC      libbb/progress.o
-  CC      libbb/ptr_to_globals.o
-  CC      libbb/pw_encrypt.o
-  CC      libbb/read.o
-  CC      libbb/read_key.o
-  CC      libbb/read_printf.o
-  CC      libbb/recursive_action.o
-  CC      libbb/remove_file.o
-  CC      libbb/replace.o
-  CC      libbb/rtc.o
-  CC      libbb/run_shell.o
-  CC      libbb/safe_gethostname.o
-  CC      libbb/safe_poll.o
-  CC      libbb/safe_strncpy.o
-  CC      libbb/safe_write.o
-  CC      libbb/securetty.o
-  CC      libbb/selinux_common.o
-  CC      libbb/setup_environment.o
-  CC      libbb/signals.o
-  CC      libbb/simplify_path.o
-  CC      libbb/single_argv.o
-  CC      libbb/skip_whitespace.o
-  CC      libbb/speed_table.o
-  CC      libbb/str_tolower.o
-  CC      libbb/strrstr.o
-  CC      libbb/sysconf.o
-  CC      libbb/time.o
-  CC      libbb/trim.o
-  CC      libbb/u_signal_names.o
-  CC      libbb/ubi.o
-  CC      libbb/udp_io.o
-  CC      libbb/unicode.o
-  CC      libbb/update_passwd.o
-libbb/update_passwd.c: In function ‘update_passwd’:
-libbb/update_passwd.c:150:3: warning: ignoring return value of ‘fchown’, declared with attribute warn_unused_result [-Wunused-result]
-   fchown(new_fd, sb.st_uid, sb.st_gid);
-   ^
-  CC      libbb/utmp.o
-  CC      libbb/uuencode.o
-  CC      libbb/verror_msg.o
-  CC      libbb/vfork_daemon_rexec.o
-  CC      libbb/warn_ignoring_args.o
-  CC      libbb/wfopen.o
-  CC      libbb/wfopen_input.o
-  CC      libbb/write.o
-  CC      libbb/xatonum.o
-  CC      libbb/xconnect.o
-  CC      libbb/xfunc_die.o
-  CC      libbb/xfuncs.o
-  CC      libbb/xfuncs_printf.o
-libbb/xfuncs_printf.c: In function ‘generate_uuid’:
-libbb/xfuncs_printf.c:643:3: warning: ignoring return value of ‘read’, declared with attribute warn_unused_result [-Wunused-result]
-   read(i, buf, 16);
-   ^
-  CC      libbb/xgetcwd.o
-  CC      libbb/xgethostbyname.o
-  CC      libbb/xreadlink.o
-  CC      libbb/xrealloc_vector.o
-  CC      libbb/xregcomp.o
-  AR      libbb/lib.a
-  LD      libpwdgrp/built-in.o
-  CC      libpwdgrp/uidgid_get.o
-  AR      libpwdgrp/lib.a
-  LD      loginutils/built-in.o
-  CC      loginutils/add-remove-shell.o
-  CC      loginutils/addgroup.o
-  CC      loginutils/cryptpw.o
-  CC      loginutils/getty.o
-loginutils/getty.c: In function ‘open_tty’:
-loginutils/getty.c:224:3: warning: ignoring return value of ‘fchown’, declared with attribute warn_unused_result [-Wunused-result]
-   fchown(0, 0, 0);        /* 0:0 */
-   ^
-  CC      loginutils/login.o
-loginutils/login.c: In function ‘login_main’:
-loginutils/login.c:545:2: warning: ignoring return value of ‘fchown’, declared with attribute warn_unused_result [-Wunused-result]
-  fchown(0, pw->pw_uid, pw->pw_gid);
-  ^
-  CC      loginutils/passwd.o
-  CC      loginutils/su.o
-  CC      loginutils/vlock.o
-  AR      loginutils/lib.a
-  LD      mailutils/built-in.o
-  CC      mailutils/mail.o
-  CC      mailutils/popmaildir.o
-  AR      mailutils/lib.a
-  LD      miscutils/built-in.o
-  CC      miscutils/chat.o
-  CC      miscutils/crond.o
-  CC      miscutils/dc.o
-  CC      miscutils/devfsd.o
-miscutils/devfsd.c: In function ‘devfsd_main’:
-miscutils/devfsd.c:442:3: warning: ignoring return value of ‘symlink’, declared with attribute warn_unused_result [-Wunused-result]
-   symlink(curr->dest, curr->name);
-   ^
-miscutils/devfsd.c: In function ‘copy_inode’:
-miscutils/devfsd.c:1055:5: warning: ignoring return value of ‘symlink’, declared with attribute warn_unused_result [-Wunused-result]
-     symlink(source_link, destpath);
-     ^
-miscutils/devfsd.c:1060:3: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
-   chown(destpath, source_stat->st_uid, source_stat->st_gid);
-   ^
-  CC      miscutils/devmem.o
-  CC      miscutils/fbsplash.o
-  CC      miscutils/hdparm.o
-  CC      miscutils/i2c_tools.o
-  CC      miscutils/less.o
-  CC      miscutils/makedevs.o
-  CC      miscutils/man.o
-miscutils/man.c: In function ‘run_pipe’:
-miscutils/man.c:160:2: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
-  system(cmd);
-  ^
-  CC      miscutils/nandwrite.o
-  CC      miscutils/partprobe.o
-  CC      miscutils/rfkill.o
-  CC      miscutils/rx.o
-  CC      miscutils/setfattr.o
-  CC      miscutils/strings.o
-  CC      miscutils/ubi_tools.o
-  CC      miscutils/volname.o
-  AR      miscutils/lib.a
-  LD      modutils/built-in.o
-  CC      modutils/depmod.o
-  CC      modutils/insmod.o
-  CC      modutils/lsmod.o
-  CC      modutils/modinfo.o
-  CC      modutils/modprobe.o
-  CC      modutils/modutils-24.o
-modutils/modutils-24.c: In function ‘get_module_version’:
-modutils/modutils-24.c:3612:28: warning: ‘sizeof’ on array function parameter ‘str’ will return size of ‘char *’ [-Wsizeof-array-argument]
-  strncpy(str, "???", sizeof(str));
-                            ^
-modutils/modutils-24.c:3607:45: note: declared here
- get_module_version(struct obj_file *f, char str[STRVERSIONLEN])
-                                             ^
-modutils/modutils-24.c:3604:55: note: in definition of macro ‘get_module_version’
- #define get_module_version(f, str) get_module_version(str)
-                                                       ^
-modutils/modutils-24.c:3612:28: warning: argument to ‘sizeof’ in ‘strncpy’ call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
-  strncpy(str, "???", sizeof(str));
-                            ^
-modutils/modutils-24.c: In function ‘add_ksymoops_symbols’:
-modutils/modutils-24.c:3639:15: warning: variable ‘lfilename’ set but not used [-Wunused-but-set-variable]
-  int lm_name, lfilename, use_ksymtab, version;
-               ^
-modutils/modutils-24.c:3639:6: warning: variable ‘lm_name’ set but not used [-Wunused-but-set-variable]
-  int lm_name, lfilename, use_ksymtab, version;
-      ^
-modutils/modutils-24.c: In function ‘bb_init_module_24’:
-modutils/modutils-24.c:3807:6: warning: variable ‘k_crcs’ set but not used [-Wunused-but-set-variable]
-  int k_crcs;
-      ^
-modutils/modutils-24.c: In function ‘set_tainted’:
-modutils/modutils-24.c:3546:3: warning: ignoring return value of ‘read’, declared with attribute warn_unused_result [-Wunused-result]
-   read(fd, buf, sizeof(buf)-1);
-   ^
-  CC      modutils/modutils.o
-  AR      modutils/lib.a
-  LD      networking/built-in.o
-  CC      networking/arp.o
-In file included from networking/arp.c:44:0:
-networking/arp.c: In function ‘arp_show’:
-include/libbb.h:209:28: warning: ignoring return value of ‘fgets_unlocked’, declared with attribute warn_unused_result [-Wunused-result]
- # define fgets(s,n,stream) fgets_unlocked(s,n,stream)
-                            ^
-networking/arp.c:431:2: note: in expansion of macro ‘fgets’
-  fgets(line, sizeof(line), fp);
-  ^
-  CC      networking/arping.o
-  CC      networking/ftpd.o
-networking/ftpd.c: In function ‘popen_ls’:
-networking/ftpd.c:708:3: warning: ignoring return value of ‘dup’, declared with attribute warn_unused_result [-Wunused-result]
-   dup(STDOUT_FILENO); /* copy will become STDIN_FILENO */
-   ^
-  CC      networking/ftpgetput.o
-  CC      networking/hostname.o
-  CC      networking/httpd.o
-  CC      networking/ifconfig.o
-  CC      networking/ifenslave.o
-  CC      networking/ifupdown.o
-  CC      networking/interface.o
-In file included from networking/interface.c:33:0:
-networking/interface.c: In function ‘if_readlist_proc’:
-include/libbb.h:209:28: warning: ignoring return value of ‘fgets_unlocked’, declared with attribute warn_unused_result [-Wunused-result]
- # define fgets(s,n,stream) fgets_unlocked(s,n,stream)
-                            ^
-networking/interface.c:561:2: note: in expansion of macro ‘fgets’
-  fgets(buf, sizeof buf, fh); /* eat line */
-  ^
-include/libbb.h:209:28: warning: ignoring return value of ‘fgets_unlocked’, declared with attribute warn_unused_result [-Wunused-result]
- # define fgets(s,n,stream) fgets_unlocked(s,n,stream)
-                            ^
-networking/interface.c:562:2: note: in expansion of macro ‘fgets’
-  fgets(buf, sizeof buf, fh);
-  ^
-  CC      networking/ip.o
-  CC      networking/ipcalc.o
-  CC      networking/nc.o
-  CC      networking/netstat.o
-  CC      networking/nslookup.o
-  CC      networking/ntpd.o
-  CC      networking/tcpudp.o
-  CC      networking/tcpudp_perhost.o
-  CC      networking/telnet.o
-  CC      networking/telnetd.o
-  CC      networking/tftp.o
-  CC      networking/tls.o
-  CC      networking/tls_aes.o
-  CC      networking/tls_pstm.o
-  CC      networking/tls_pstm_montgomery_reduce.o
-  CC      networking/tls_pstm_mul_comba.o
-  CC      networking/tls_pstm_sqr_comba.o
-  CC      networking/tls_rsa.o
-  CC      networking/traceroute.o
-  CC      networking/tunctl.o
-  CC      networking/vconfig.o
-  CC      networking/wget.o
-networking/wget.c: In function ‘retrieve_file_data’:
-networking/wget.c:952:4: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
-    ftruncate(G.output_fd, pos);
-    ^
-  CC      networking/whois.o
-  CC      networking/zcip.o
-  AR      networking/lib.a
-  LD      networking/libiproute/built-in.o
-  CC      networking/libiproute/ip_parse_common_args.o
-  CC      networking/libiproute/ipneigh.o
-  CC      networking/libiproute/iproute.o
-  CC      networking/libiproute/iptunnel.o
-In file included from networking/libiproute/ip_common.h:5:0,
-                 from networking/libiproute/iptunnel.c:64:
-networking/libiproute/iptunnel.c: In function ‘do_tunnels_list’:
-include/libbb.h:209:28: warning: ignoring return value of ‘fgets_unlocked’, declared with attribute warn_unused_result [-Wunused-result]
- # define fgets(s,n,stream) fgets_unlocked(s,n,stream)
-                            ^
-networking/libiproute/iptunnel.c:477:2: note: in expansion of macro ‘fgets’
-  fgets(buf, sizeof(buf), fp);
-  ^
-include/libbb.h:209:28: warning: ignoring return value of ‘fgets_unlocked’, declared with attribute warn_unused_result [-Wunused-result]
- # define fgets(s,n,stream) fgets_unlocked(s,n,stream)
-                            ^
-networking/libiproute/iptunnel.c:478:2: note: in expansion of macro ‘fgets’
-  fgets(buf, sizeof(buf), fp);
-  ^
-  CC      networking/libiproute/libnetlink.o
-  CC      networking/libiproute/ll_addr.o
-  CC      networking/libiproute/ll_map.o
-  CC      networking/libiproute/rt_names.o
-  CC      networking/libiproute/rtm_map.o
-  CC      networking/libiproute/utils.o
-  AR      networking/libiproute/lib.a
-  LD      networking/udhcp/built-in.o
-  CC      networking/udhcp/arpping.o
-  CC      networking/udhcp/common.o
-  CC      networking/udhcp/d6_dhcpc.o
-In file included from networking/udhcp/d6_dhcpc.c:54:0:
-networking/udhcp/d6_dhcpc.c: In function ‘new_env’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:192:2: note: in expansion of macro ‘client6_data’
-  client6_data.env_ptr = xrealloc_vector(client6_data.env_ptr, 3, client6_data.env_idx);
-  ^
-In file included from networking/udhcp/common.h:11:0,
-                 from networking/udhcp/d6_dhcpc.c:51:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-include/libbb.h:382:26: note: in definition of macro ‘xrealloc_vector’
-  xrealloc_vector_helper((vector), (sizeof((vector)[0]) << 8) + (shift), (idx))
-                          ^
-networking/udhcp/d6_dhcpc.c:192:41: note: in expansion of macro ‘client6_data’
-  client6_data.env_ptr = xrealloc_vector(client6_data.env_ptr, 3, client6_data.env_idx);
-                                         ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-include/libbb.h:382:44: note: in definition of macro ‘xrealloc_vector’
-  xrealloc_vector_helper((vector), (sizeof((vector)[0]) << 8) + (shift), (idx))
-                                            ^
-networking/udhcp/d6_dhcpc.c:192:41: note: in expansion of macro ‘client6_data’
-  client6_data.env_ptr = xrealloc_vector(client6_data.env_ptr, 3, client6_data.env_idx);
-                                         ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-include/libbb.h:382:74: note: in definition of macro ‘xrealloc_vector’
-  xrealloc_vector_helper((vector), (sizeof((vector)[0]) << 8) + (shift), (idx))
-                                                                          ^
-networking/udhcp/d6_dhcpc.c:192:66: note: in expansion of macro ‘client6_data’
-  client6_data.env_ptr = xrealloc_vector(client6_data.env_ptr, 3, client6_data.env_idx);
-                                                                  ^
-In file included from networking/udhcp/d6_dhcpc.c:54:0:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:193:10: note: in expansion of macro ‘client6_data’
-  return &client6_data.env_ptr[client6_data.env_idx++];
-          ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:193:31: note: in expansion of macro ‘client6_data’
-  return &client6_data.env_ptr[client6_data.env_idx++];
-                               ^
-networking/udhcp/d6_dhcpc.c: In function ‘fill_envp’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:365:2: note: in expansion of macro ‘client6_data’
-  client6_data.env_ptr = NULL;
-  ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:366:2: note: in expansion of macro ‘client6_data’
-  client6_data.env_idx = 0;
-  ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:373:16: note: in expansion of macro ‘client6_data’
-  envp = curr = client6_data.env_ptr;
-                ^
-networking/udhcp/d6_dhcpc.c: In function ‘d6_mcast_from_client_config_ifindex’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:465:12: note: in expansion of macro ‘client6_data’
-   /*src*/ &client6_data.ll_ip6, CLIENT_PORT6,
-            ^
-networking/udhcp/d6_dhcpc.c: In function ‘send_d6_discover’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:563:7: note: in expansion of macro ‘client6_data’
-  free(client6_data.ia_na);
-       ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:565:2: note: in expansion of macro ‘client6_data’
-  client6_data.ia_na = xzalloc(len);
-  ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:566:2: note: in expansion of macro ‘client6_data’
-  client6_data.ia_na->code = D6_OPT_IA_NA;
-  ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:567:2: note: in expansion of macro ‘client6_data’
-  client6_data.ia_na->len = len - 4;
-  ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:568:14: note: in expansion of macro ‘client6_data’
-  *(uint32_t*)client6_data.ia_na->data = rand(); /* IAID */
-              ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:568:14: note: in expansion of macro ‘client6_data’
-  *(uint32_t*)client6_data.ia_na->data = rand(); /* IAID */
-              ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:570:38: note: in expansion of macro ‘client6_data’
-   struct d6_option *iaaddr = (void*)(client6_data.ia_na->data + 4+4+4);
-                                      ^
-In file included from include/libbb.h:35:0,
-                 from networking/udhcp/common.h:11,
-                 from networking/udhcp/d6_dhcpc.c:51:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:575:29: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.ia_na, len);
-                             ^
-networking/udhcp/d6_dhcpc.c: In function ‘send_d6_select’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:626:29: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.server_id, client6_data.server_id->len + 2+2);
-                             ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:626:53: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.server_id, client6_data.server_id->len + 2+2);
-                                                     ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:628:29: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.ia_na, client6_data.ia_na->len + 2+2);
-                             ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:628:49: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.ia_na, client6_data.ia_na->len + 2+2);
-                                                 ^
-networking/udhcp/d6_dhcpc.c: In function ‘send_d6_renew’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:695:29: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.server_id, client6_data.server_id->len + 2+2);
-                             ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:695:53: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.server_id, client6_data.server_id->len + 2+2);
-                                                     ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:697:29: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.ia_na, client6_data.ia_na->len + 2+2);
-                             ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:697:49: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.ia_na, client6_data.ia_na->len + 2+2);
-                                                 ^
-networking/udhcp/d6_dhcpc.c: In function ‘send_d6_release’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:726:29: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.server_id, client6_data.server_id->len + 2+2);
-                             ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:726:53: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.server_id, client6_data.server_id->len + 2+2);
-                                                     ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:728:29: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.ia_na, client6_data.ia_na->len + 2+2);
-                             ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:728:49: note: in expansion of macro ‘client6_data’
-  opt_ptr = mempcpy(opt_ptr, client6_data.ia_na, client6_data.ia_na->len + 2+2);
-                                                 ^
-In file included from networking/udhcp/d6_dhcpc.c:54:0:
-networking/udhcp/d6_dhcpc.c: In function ‘udhcpc6_main’:
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1170:5: note: in expansion of macro ‘client6_data’
-    &client6_data.ll_ip6,
-     ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1273:7: note: in expansion of macro ‘client6_data’
-      &client6_data.ll_ip6,
-       ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1496:10: note: in expansion of macro ‘client6_data’
-     free(client6_data.server_id);
-          ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1497:5: note: in expansion of macro ‘client6_data’
-     client6_data.server_id = option;
-     ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1592:10: note: in expansion of macro ‘client6_data’
-     free(client6_data.ia_na);
-          ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1593:5: note: in expansion of macro ‘client6_data’
-     client6_data.ia_na = d6_copy_option(packet.d6_options, packet_end, D6_OPT_IA_NA);
-     ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1594:10: note: in expansion of macro ‘client6_data’
-     if (!client6_data.ia_na) {
-          ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1598:9: note: in expansion of macro ‘client6_data’
-     if (client6_data.ia_na->len < (4 + 4 + 4) + (2 + 2 + 16 + 4 + 4)) {
-         ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1599:57: note: in expansion of macro ‘client6_data’
-      bb_error_msg("IA_NA option is too short:%d bytes", client6_data.ia_na->len);
-                                                         ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1602:29: note: in expansion of macro ‘client6_data’
-     iaaddr = d6_find_option(client6_data.ia_na->data + 4 + 4 + 4,
-                             ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1603:7: note: in expansion of macro ‘client6_data’
-       client6_data.ia_na->data + client6_data.ia_na->len,
-       ^
-networking/udhcp/d6_common.h:142:99: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
- #define client6_data (*(struct client6_data_t*)(&bb_common_bufsiz1[COMMON_BUFSIZE - sizeof(struct client6_data_t)]))
-                                                                                                   ^
-networking/udhcp/d6_dhcpc.c:1603:34: note: in expansion of macro ‘client6_data’
-       client6_data.ia_na->data + client6_data.ia_na->len,
-                                  ^
-  CC      networking/udhcp/d6_packet.o
-  CC      networking/udhcp/d6_socket.o
-  CC      networking/udhcp/dhcpc.o
-  CC      networking/udhcp/dhcpd.o
-  CC      networking/udhcp/domain_codec.o
-  CC      networking/udhcp/packet.o
-  CC      networking/udhcp/signalpipe.o
-  CC      networking/udhcp/socket.o
-  AR      networking/udhcp/lib.a
-  LD      printutils/built-in.o
-  CC      printutils/lpr.o
-printutils/lpr.c: In function ‘lpqr_main’:
-printutils/lpr.c:272:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-   write(fd, "", 1); // send ACK
-   ^
-  AR      printutils/lib.a
-  LD      procps/built-in.o
-  CC      procps/free.o
-  CC      procps/iostat.o
-  CC      procps/kill.o
-  CC      procps/lsof.o
-  CC      procps/pgrep.o
-  CC      procps/pidof.o
-  CC      procps/pmap.o
-  CC      procps/powertop.o
-  CC      procps/ps.o
-  CC      procps/sysctl.o
-  CC      procps/top.o
-  CC      procps/uptime.o
-  AR      procps/lib.a
-  LD      runit/built-in.o
-  CC      runit/chpst.o
-  CC      runit/runsv.o
-runit/runsv.c: In function ‘s_term’:
-runit/runsv.c:154:2: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-  write(selfpipe.wr, "", 1); /* XXX */
-  ^
-runit/runsv.c: In function ‘s_child’:
-runit/runsv.c:148:2: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-  write(selfpipe.wr, "", 1);
-  ^
-runit/runsv.c: In function ‘update_status’:
-runit/runsv.c:196:4: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-    write(fd, spid, size);
-    ^
-runit/runsv.c:237:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-   write(fd, stat_buf, p - stat_buf);
-   ^
-  CC      runit/runsvdir.o
-runit/runsvdir.c: In function ‘runsvdir_main’:
-runit/runsvdir.c:364:5: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-     write(logpipe.wr, ".", 1);
-     ^
-  CC      runit/sv.o
-  AR      runit/lib.a
-  LD      selinux/built-in.o
-  CC      selinux/chcon.o
-  CC      selinux/selinuxenabled.o
-  CC      selinux/sestatus.o
-  CC      selinux/setfiles.o
-  AR      selinux/lib.a
-  LD      shell/built-in.o
-  CC      shell/ash.o
-shell/ash.c: In function ‘preadfd’:
-shell/ash.c:10274:4: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-    write(STDOUT_FILENO, "^C", 2);
-    ^
-  CC      shell/ash_ptr_hack.o
-  CC      shell/cttyhack.o
-  CC      shell/hush.o
-shell/hush.c: In function ‘get_user_input’:
-shell/hush.c:2474:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-   write(STDOUT_FILENO, "^C", 2);
-   ^
-  CC      shell/match.o
-  CC      shell/math.o
-  CC      shell/random.o
-  CC      shell/shell_common.o
-  AR      shell/lib.a
-  LD      sysklogd/built-in.o
-  CC      sysklogd/klogd.o
-  CC      sysklogd/syslogd_and_logger.o
-  AR      sysklogd/lib.a
-  LD      util-linux/built-in.o
-  CC      util-linux/blkdiscard.o
-  CC      util-linux/blkid.o
-  CC      util-linux/blockdev.o
-  CC      util-linux/fallocate.o
-  CC      util-linux/fdformat.o
-  CC      util-linux/freeramdisk.o
-  CC      util-linux/fstrim.o
-  CC      util-linux/getopt.o
-  CC      util-linux/hexdump.o
-  CC      util-linux/hwclock.o
-  CC      util-linux/ionice.o
-  CC      util-linux/losetup.o
-  CC      util-linux/lspci.o
-  CC      util-linux/lsusb.o
-  CC      util-linux/mdev.o
-util-linux/mdev.c: In function ‘make_device’:
-util-linux/mdev.c:764:5: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
-     chown(node_name, rule->ugid.uid, rule->ugid.gid);
-     ^
-util-linux/mdev.c:767:5: warning: ignoring return value of ‘symlink’, declared with attribute warn_unused_result [-Wunused-result]
-     symlink(node_name, "root");
-     ^
-util-linux/mdev.c:774:6: warning: ignoring return value of ‘symlink’, declared with attribute warn_unused_result [-Wunused-result]
-      symlink(node_name, device_name);
-      ^
-  CC      util-linux/mkfs_minix.o
-util-linux/mkfs_minix.c: In function ‘get_list_blocks’:
-util-linux/mkfs_minix.c:533:3: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
-   fscanf(listfile, "%lu\n", &blockno);
-   ^
-  CC      util-linux/mkfs_vfat.o
-  CC      util-linux/mount.o
-  CC      util-linux/mountpoint.o
-  CC      util-linux/rdate.o
-  CC      util-linux/readprofile.o
-  CC      util-linux/renice.o
-  CC      util-linux/script.o
-  CC      util-linux/setarch.o
-  CC      util-linux/setpriv.o
-  CC      util-linux/swaponoff.o
-  CC      util-linux/switch_root.o
-  CC      util-linux/taskset.o
-  CC      util-linux/uevent.o
-  CC      util-linux/umount.o
-  CC      util-linux/wall.o
-  AR      util-linux/lib.a
-  LD      util-linux/volume_id/built-in.o
-  CC      util-linux/volume_id/btrfs.o
-  CC      util-linux/volume_id/exfat.o
-  CC      util-linux/volume_id/ext.o
-  CC      util-linux/volume_id/fat.o
-  CC      util-linux/volume_id/get_devname.o
-  CC      util-linux/volume_id/iso9660.o
-  CC      util-linux/volume_id/linux_raid.o
-  CC      util-linux/volume_id/linux_swap.o
-  CC      util-linux/volume_id/luks.o
-  CC      util-linux/volume_id/minix.o
-  CC      util-linux/volume_id/nilfs.o
-  CC      util-linux/volume_id/ocfs2.o
-  CC      util-linux/volume_id/squashfs.o
-  CC      util-linux/volume_id/util.o
-  CC      util-linux/volume_id/volume_id.o
-  CC      util-linux/volume_id/xfs.o
-  AR      util-linux/volume_id/lib.a
-  LINK    busybox_unstripped
-Trying libraries: crypt m selinux sepol
-Failed: -Wl,--start-group  -lcrypt -lm -lselinux -lsepol  -Wl,--end-group
-Output of:
-gcc -Wall -Wshadow -Wwrite-strings -Wundef -Wstrict-prototypes -Wunused -Wunused-parameter -Wunused-function -Wunused-value -Wmissing-prototypes -Wmissing-declarations -Wno-format-security -Wdeclaration-after-statement -Wold-style-definition -fno-builtin-strlen -finline-limit=0 -fomit-frame-pointer -ffunction-sections -fdata-sections -fno-guess-branch-probability -funsigned-char -static-libgcc -falign-functions=1 -falign-jumps=1 -falign-labels=1 -falign-loops=1 -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-builtin-printf -g -Os -fpic -fvisibility=hidden -o busybox_unstripped -Wl,--sort-common -Wl,--sort-section,alignment -Wl,--gc-sections -Wl,--start-group applets/built-in.o archival/lib.a archival/libarchive/lib.a console-tools/lib.a coreutils/lib.a coreutils/libcoreutils/lib.a debianutils/lib.a klibc-utils/lib.a e2fsprogs/lib.a editors/lib.a findutils/lib.a init/lib.a libbb/lib.a libpwdgrp/lib.a loginutils/lib.a mailutils/lib.a miscutils/lib.a modutils/lib.a networking/lib.a networking/libiproute/lib.a networking/udhcp/lib.a printutils/lib.a procps/lib.a runit/lib.a selinux/lib.a shell/lib.a sysklogd/lib.a util-linux/lib.a util-linux/volume_id/lib.a archival/built-in.o archival/libarchive/built-in.o console-tools/built-in.o coreutils/built-in.o coreutils/libcoreutils/built-in.o debianutils/built-in.o klibc-utils/built-in.o e2fsprogs/built-in.o editors/built-in.o findutils/built-in.o init/built-in.o libbb/built-in.o libpwdgrp/built-in.o loginutils/built-in.o mailutils/built-in.o miscutils/built-in.o modutils/built-in.o networking/built-in.o networking/libiproute/built-in.o networking/udhcp/built-in.o printutils/built-in.o procps/built-in.o runit/built-in.o selinux/built-in.o shell/built-in.o sysklogd/built-in.o util-linux/built-in.o util-linux/volume_id/built-in.o -Wl,--end-group -Wl,--start-group -lcrypt -lm -lselinux -lsepol -Wl,--end-group
-==========
-coreutils/lib.a(mktemp.o): In function `mktemp_main':
-/home/jeho/LinuxSource/busybox/busybox-1.28.0/coreutils/mktemp.c:102: warning: the use of `mktemp' is dangerous, better use `mkstemp' or `mkdtemp'
-modutils/lib.a(modutils-24.o): In function `bb_init_module_24':
-/home/jeho/LinuxSource/busybox/busybox-1.28.0/modutils/modutils-24.c:3866: undefined reference to `query_module'
-modutils/lib.a(modutils-24.o): In function `new_get_kernel_symbols':
-/home/jeho/LinuxSource/busybox/busybox-1.28.0/modutils/modutils-24.c:2597: undefined reference to `query_module'
-/home/jeho/LinuxSource/busybox/busybox-1.28.0/modutils/modutils-24.c:2616: undefined reference to `query_module'
-/home/jeho/LinuxSource/busybox/busybox-1.28.0/modutils/modutils-24.c:2627: undefined reference to `query_module'
-/home/jeho/LinuxSource/busybox/busybox-1.28.0/modutils/modutils-24.c:2658: undefined reference to `query_module'
-modutils/lib.a(modutils-24.o): In function `bb_init_module_24':
-/home/jeho/LinuxSource/busybox/busybox-1.28.0/modutils/modutils-24.c:3905: undefined reference to `create_module'
-collect2: error: ld returned 1 exit status
-Note: if build needs additional libraries, put them in CONFIG_EXTRA_LDLIBS.
-Example: CONFIG_EXTRA_LDLIBS="pthread dl tirpc audit pam"
-Makefile:718: recipe for target 'busybox_unstripped' failed
-make: *** [busybox_unstripped] Error 1
+In file included from include/busybox.h:8:0,
+                 from applets/applets.c:9:
+include/libbb.h:82:30: fatal error: selinux/selinux.h: No such file or directory
+compilation terminated.
+scripts/Makefile.build:197: recipe for target 'applets/applets.o' failed
+make[1]: *** [applets/applets.o] Error 1
+Makefile:372: recipe for target 'applets_dir' failed
+make: *** [applets_dir] Error 2
 return code 2
 du: cannot access 'busybox': No such file or directory
 binary size (in bytes): 0
-configuring /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/1.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/1.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -3158,10 +2175,16 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [Y/n/?] y
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [Y/n/?] y
     Circular buffer size in Kbytes (minimum 4KB) (FEATURE_IPC_SYSLOG_BUFFER_SIZE) [16] (NEW)   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [N/y/?] n
-building /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/1.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
+building /vagrant/cases/busybox_1_28_0/Configs/1.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
   CLEAN   applets
   CLEAN   .tmp_versions
-  CLEAN   busybox_unstripped.out .kernelrelease
+  CLEAN   .kernelrelease
+make: pkg-config: Command not found
+make: pkg-config: Command not found
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/split-include
 scripts/basic/split-include.c: In function ‘main’:
@@ -3194,6 +2217,8 @@ scripts/kconfig/conf -s Config.in
 #
 # using defaults found in .config
 #
+make[2]: pkg-config: Command not found
+make[2]: pkg-config: Command not found
   SPLIT   include/autoconf.h -> include/config/*
   GEN     include/bbconfigopts.h
   GEN     include/common_bufsiz.h
@@ -3207,276 +2232,18 @@ applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared wi
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   CC      applets/applets.o
-  LD      applets/built-in.o
-  HOSTCC  applets/usage_pod
-applets/usage_pod.c: In function ‘main’:
-applets/usage_pod.c:74:3: warning: format not a string literal and no format arguments [-Wformat-security]
-   printf(usage_array[i].aname);
-   ^
-  LD      archival/built-in.o
-  CC      archival/ar.o
-  CC      archival/bbunzip.o
-  CC      archival/bzip2.o
-  CC      archival/cpio.o
-  CC      archival/dpkg.o
-  CC      archival/lzop.o
-  CC      archival/tar.o
-  CC      archival/unzip.o
-  AR      archival/lib.a
-  LD      archival/libarchive/built-in.o
-  CC      archival/libarchive/common.o
-  CC      archival/libarchive/data_align.o
-  CC      archival/libarchive/data_extract_all.o
-archival/libarchive/data_extract_all.c: In function ‘data_extract_all’:
-archival/libarchive/data_extract_all.c:247:4: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
-    chown(dst_name, uid, gid);
-    ^
-  CC      archival/libarchive/data_extract_to_stdout.o
-  CC      archival/libarchive/data_skip.o
-  CC      archival/libarchive/decompress_bunzip2.o
-  CC      archival/libarchive/decompress_gunzip.o
-  CC      archival/libarchive/decompress_uncompress.o
-  CC      archival/libarchive/decompress_unlzma.o
-  CC      archival/libarchive/decompress_unxz.o
-  CC      archival/libarchive/filter_accept_all.o
-  CC      archival/libarchive/filter_accept_list.o
-  CC      archival/libarchive/filter_accept_list_reassign.o
-  CC      archival/libarchive/filter_accept_reject_list.o
-  CC      archival/libarchive/find_list_entry.o
-  CC      archival/libarchive/get_header_ar.o
-  CC      archival/libarchive/get_header_cpio.o
-  CC      archival/libarchive/get_header_tar.o
-archival/libarchive/get_header_tar.c: In function ‘get_header_tar’:
-archival/libarchive/get_header_tar.c:171:2: warning: label ‘again’ defined but not used [-Wunused-label]
-  again:
-  ^
-  CC      archival/libarchive/get_header_tar_bz2.o
-  CC      archival/libarchive/get_header_tar_gz.o
-  CC      archival/libarchive/get_header_tar_lzma.o
-  CC      archival/libarchive/get_header_tar_xz.o
-  CC      archival/libarchive/header_list.o
-  CC      archival/libarchive/header_skip.o
-  CC      archival/libarchive/header_verbose_list.o
-  CC      archival/libarchive/init_handle.o
-  CC      archival/libarchive/lzo1x_1.o
-  CC      archival/libarchive/lzo1x_1o.o
-  CC      archival/libarchive/lzo1x_d.o
-  CC      archival/libarchive/open_transformer.o
-  CC      archival/libarchive/seek_by_jump.o
-  CC      archival/libarchive/seek_by_read.o
-  CC      archival/libarchive/unpack_ar_archive.o
-  CC      archival/libarchive/unsafe_prefix.o
-  CC      archival/libarchive/unsafe_symlink_target.o
-  AR      archival/libarchive/lib.a
-  LD      console-tools/built-in.o
-  CC      console-tools/chvt.o
-  CC      console-tools/clear.o
-  CC      console-tools/loadfont.o
-console-tools/loadfont.c: In function ‘setfont_main’:
-console-tools/loadfont.c:447:4: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
-    chdir(CONFIG_DEFAULT_SETFONT_DIR "/consolefonts");
-    ^
-console-tools/loadfont.c:465:5: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
-     chdir(CONFIG_DEFAULT_SETFONT_DIR "/consoletrans");
-     ^
-  CC      console-tools/loadkmap.o
-  CC      console-tools/openvt.o
-  CC      console-tools/setconsole.o
-  CC      console-tools/setlogcons.o
-  CC      console-tools/showkey.o
-  AR      console-tools/lib.a
-  LD      coreutils/built-in.o
-  CC      coreutils/basename.o
-  CC      coreutils/cat.o
-  CC      coreutils/chgrp.o
-  CC      coreutils/chmod.o
-  CC      coreutils/chown.o
-  CC      coreutils/chroot.o
-  CC      coreutils/cksum.o
-  CC      coreutils/cp.o
-  CC      coreutils/cut.o
-  CC      coreutils/date.o
-  CC      coreutils/dd.o
-  CC      coreutils/df.o
-  CC      coreutils/dirname.o
-  CC      coreutils/dos2unix.o
-coreutils/dos2unix.c: In function ‘convert’:
-coreutils/dos2unix.c:83:3: warning: ignoring return value of ‘fchown’, declared with attribute warn_unused_result [-Wunused-result]
-   fchown(fd, st.st_uid, st.st_gid);
-   ^
-  CC      coreutils/echo.o
-  CC      coreutils/expr.o
-  CC      coreutils/false.o
-  CC      coreutils/head.o
-  CC      coreutils/hostid.o
-  CC      coreutils/link.o
-  CC      coreutils/ls.o
-  CC      coreutils/md5_sha1_sum.o
-  CC      coreutils/mkdir.o
-  CC      coreutils/mknod.o
-  CC      coreutils/nl.o
-  CC      coreutils/nohup.o
-  CC      coreutils/od.o
-  CC      coreutils/paste.o
-  CC      coreutils/printenv.o
-  CC      coreutils/printf.o
-  CC      coreutils/pwd.o
-  CC      coreutils/readlink.o
-  CC      coreutils/realpath.o
-  CC      coreutils/rmdir.o
-  CC      coreutils/seq.o
-  CC      coreutils/sleep.o
-  CC      coreutils/sort.o
-  CC      coreutils/stat.o
-  CC      coreutils/sum.o
-  CC      coreutils/tee.o
-  CC      coreutils/test.o
-  CC      coreutils/test_ptr_hack.o
-  CC      coreutils/touch.o
-  CC      coreutils/tr.o
-  CC      coreutils/tty.o
-  CC      coreutils/uname.o
-  CC      coreutils/uniq.o
-  CC      coreutils/unlink.o
-  CC      coreutils/wc.o
-  CC      coreutils/who.o
-  CC      coreutils/yes.o
-  AR      coreutils/lib.a
-  LD      coreutils/libcoreutils/built-in.o
-  CC      coreutils/libcoreutils/cp_mv_stat.o
-  CC      coreutils/libcoreutils/getopt_mk_fifo_nod.o
-  AR      coreutils/libcoreutils/lib.a
-  LD      debianutils/built-in.o
-  CC      debianutils/run_parts.o
-  CC      debianutils/start_stop_daemon.o
-  CC      debianutils/which.o
-  AR      debianutils/lib.a
-  LD      klibc-utils/built-in.o
-  CC      klibc-utils/nuke.o
-  CC      klibc-utils/resume.o
-  AR      klibc-utils/lib.a
-  LD      e2fsprogs/built-in.o
-  CC      e2fsprogs/fsck.o
-  CC      e2fsprogs/tune2fs.o
-  AR      e2fsprogs/lib.a
-  LD      editors/built-in.o
-  CC      editors/awk.o
-  CC      editors/cmp.o
-  CC      editors/diff.o
-  CC      editors/ed.o
-editors/ed.c: In function ‘printLines’:
-editors/ed.c:535:4: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-    write(STDOUT_FILENO, lp->data, lp->len);
-    ^
-  CC      editors/patch.o
-  CC      editors/vi.o
-editors/vi.c: In function ‘file_write’:
-editors/vi.c:2983:2: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
-  ftruncate(fd, charcnt);
-  ^
-  AR      editors/lib.a
-  LD      findutils/built-in.o
-  CC      findutils/find.o
-  CC      findutils/grep.o
-  CC      findutils/xargs.o
-  AR      findutils/lib.a
-  LD      init/built-in.o
-  CC      init/bootchartd.o
-init/bootchartd.c: In function ‘finalize’:
-init/bootchartd.c:318:2: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
-  system(xasprintf("tar -zcf /var/log/bootlog.tgz header %s *.log", process_accounting ? "kernel_pacct" : ""));
-  ^
-  CC      init/halt.o
-  CC      init/init.o
-  AR      init/lib.a
-  LD      libbb/built-in.o
-  CC      libbb/appletlib.o
-libbb/appletlib.c: In function ‘check_suid’:
-libbb/appletlib.c:695:3: warning: ignoring return value of ‘setgid’, declared with attribute warn_unused_result [-Wunused-result]
-   setgid(rgid);
-   ^
-libbb/appletlib.c:696:3: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
-   setuid(ruid);
-   ^
-  CC      libbb/ask_confirmation.o
-  CC      libbb/auto_string.o
-  CC      libbb/bb_askpass.o
-  CC      libbb/bb_bswap_64.o
-  CC      libbb/bb_cat.o
-  CC      libbb/bb_do_delay.o
-  CC      libbb/bb_getgroups.o
-  CC      libbb/bb_pwd.o
-  CC      libbb/bb_qsort.o
-  CC      libbb/bb_strtonum.o
-  CC      libbb/capability.o
-  CC      libbb/change_identity.o
-  CC      libbb/chomp.o
-  CC      libbb/common_bufsiz.o
-  CC      libbb/compare_string_array.o
-  CC      libbb/concat_path_file.o
-  CC      libbb/concat_subpath_file.o
-  CC      libbb/copy_file.o
-  CC      libbb/copyfd.o
-  CC      libbb/correct_password.o
-  CC      libbb/crc32.o
-  CC      libbb/default_error_retval.o
-  CC      libbb/device_open.o
-  CC      libbb/die_if_bad_username.o
-  CC      libbb/dump.o
-  CC      libbb/endofname.o
-  CC      libbb/executable.o
-  CC      libbb/fclose_nonstdin.o
-  CC      libbb/fflush_stdout_and_exit.o
-  CC      libbb/fgets_str.o
-  CC      libbb/find_mount_point.o
-  CC      libbb/find_pid_by_name.o
-  CC      libbb/find_root_device.o
-  CC      libbb/full_write.o
-  CC      libbb/get_console.o
-  CC      libbb/get_cpu_count.o
-  CC      libbb/get_last_path_component.o
-  CC      libbb/get_line_from_file.o
-  CC      libbb/get_shell_name.o
-  CC      libbb/get_volsize.o
-  CC      libbb/getopt32.o
-  CC      libbb/getopt_allopts.o
-  CC      libbb/getpty.o
-  CC      libbb/hash_md5_sha.o
-  CC      libbb/herror_msg.o
-  CC      libbb/human_readable.o
-  CC      libbb/in_ether.o
-  CC      libbb/inet_cksum.o
-  CC      libbb/inet_common.o
-  CC      libbb/inode_hash.o
-  CC      libbb/isdirectory.o
-  CC      libbb/isqrt.o
-  CC      libbb/kernel_version.o
-  CC      libbb/last_char_is.o
-  CC      libbb/lineedit.o
-libbb/lineedit.c: In function ‘reverse_i_search’:
-libbb/lineedit.c:2260:12: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘cur_history’
-   h = state->cur_history;
-            ^
-libbb/lineedit.c:2264:13: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘history’
-    if (state->history[h]) {
-             ^
-libbb/lineedit.c:2265:31: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘history’
-     char *match = strstr(state->history[h], match_buf);
-                               ^
-libbb/lineedit.c:2267:11: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘cur_history’
-      state->cur_history = h;
-           ^
-libbb/lineedit.c:2268:34: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘history’
-      matched_history_line = state->history[h];
-                                  ^
-scripts/Makefile.build:197: recipe for target 'libbb/lineedit.o' failed
-make[1]: *** [libbb/lineedit.o] Error 1
-Makefile:743: recipe for target 'libbb' failed
-make: *** [libbb] Error 2
+In file included from include/busybox.h:8:0,
+                 from applets/applets.c:9:
+include/libbb.h:82:30: fatal error: selinux/selinux.h: No such file or directory
+compilation terminated.
+scripts/Makefile.build:197: recipe for target 'applets/applets.o' failed
+make[1]: *** [applets/applets.o] Error 1
+Makefile:372: recipe for target 'applets_dir' failed
+make: *** [applets_dir] Error 2
 return code 2
 du: cannot access 'busybox': No such file or directory
 binary size (in bytes): 0
-configuring /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/2.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/2.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -4539,10 +3306,16 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [Y/n/?] y
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [Y/n/?] y
     Circular buffer size in Kbytes (minimum 4KB) (FEATURE_IPC_SYSLOG_BUFFER_SIZE) [16] (NEW)   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [N/y/?] n
-building /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/2.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
+building /vagrant/cases/busybox_1_28_0/Configs/2.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
   CLEAN   applets
   CLEAN   .tmp_versions
   CLEAN   .kernelrelease
+make: pkg-config: Command not found
+make: pkg-config: Command not found
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/split-include
 scripts/basic/split-include.c: In function ‘main’:
@@ -4575,6 +3348,8 @@ scripts/kconfig/conf -s Config.in
 #
 # using defaults found in .config
 #
+make[2]: pkg-config: Command not found
+make[2]: pkg-config: Command not found
   SPLIT   include/autoconf.h -> include/config/*
   GEN     include/bbconfigopts.h
   GEN     include/common_bufsiz.h
@@ -4588,292 +3363,18 @@ applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared wi
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   CC      applets/applets.o
-  LD      applets/built-in.o
-  HOSTCC  applets/usage_pod
-applets/usage_pod.c: In function ‘main’:
-applets/usage_pod.c:74:3: warning: format not a string literal and no format arguments [-Wformat-security]
-   printf(usage_array[i].aname);
-   ^
-  LD      archival/built-in.o
-  CC      archival/ar.o
-  CC      archival/bbunzip.o
-  CC      archival/dpkg_deb.o
-  CC      archival/gzip.o
-  CC      archival/lzop.o
-  CC      archival/rpm.o
-archival/rpm.c: In function ‘fileaction_setowngrp’:
-archival/rpm.c:248:2: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
-  chown(filename, uid, gid);
-  ^
-  CC      archival/tar.o
-  CC      archival/unzip.o
-  AR      archival/lib.a
-  LD      archival/libarchive/built-in.o
-  CC      archival/libarchive/common.o
-  CC      archival/libarchive/data_align.o
-  CC      archival/libarchive/data_extract_all.o
-archival/libarchive/data_extract_all.c: In function ‘data_extract_all’:
-archival/libarchive/data_extract_all.c:247:4: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
-    chown(dst_name, uid, gid);
-    ^
-  CC      archival/libarchive/data_extract_to_command.o
-  CC      archival/libarchive/data_extract_to_stdout.o
-  CC      archival/libarchive/data_skip.o
-  CC      archival/libarchive/decompress_bunzip2.o
-  CC      archival/libarchive/decompress_gunzip.o
-  CC      archival/libarchive/decompress_uncompress.o
-  CC      archival/libarchive/decompress_unxz.o
-  CC      archival/libarchive/filter_accept_all.o
-  CC      archival/libarchive/filter_accept_list.o
-  CC      archival/libarchive/filter_accept_list_reassign.o
-  CC      archival/libarchive/filter_accept_reject_list.o
-  CC      archival/libarchive/find_list_entry.o
-  CC      archival/libarchive/get_header_ar.o
-  CC      archival/libarchive/get_header_cpio.o
-  CC      archival/libarchive/get_header_tar.o
-  CC      archival/libarchive/get_header_tar_bz2.o
-  CC      archival/libarchive/get_header_tar_gz.o
-  CC      archival/libarchive/get_header_tar_lzma.o
-  CC      archival/libarchive/get_header_tar_xz.o
-  CC      archival/libarchive/header_list.o
-  CC      archival/libarchive/header_skip.o
-  CC      archival/libarchive/header_verbose_list.o
-  CC      archival/libarchive/init_handle.o
-  CC      archival/libarchive/lzo1x_1.o
-  CC      archival/libarchive/lzo1x_1o.o
-  CC      archival/libarchive/lzo1x_d.o
-  CC      archival/libarchive/open_transformer.o
-  CC      archival/libarchive/seek_by_jump.o
-  CC      archival/libarchive/seek_by_read.o
-  CC      archival/libarchive/unpack_ar_archive.o
-  CC      archival/libarchive/unsafe_prefix.o
-  CC      archival/libarchive/unsafe_symlink_target.o
-  AR      archival/libarchive/lib.a
-  LD      console-tools/built-in.o
-  CC      console-tools/clear.o
-  CC      console-tools/deallocvt.o
-  CC      console-tools/dumpkmap.o
-console-tools/dumpkmap.c: In function ‘dumpkmap_main’:
-console-tools/dumpkmap.c:68:2: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-  write(STDOUT_FILENO, flags, 7 + MAX_NR_KEYMAPS);
-  ^
-console-tools/dumpkmap.c:80:6: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
-      write(STDOUT_FILENO, &ke.kb_value, 2);
-      ^
-  CC      console-tools/fgconsole.o
-  CC      console-tools/loadfont.o
-console-tools/loadfont.c: In function ‘setfont_main’:
-console-tools/loadfont.c:447:4: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
-    chdir(CONFIG_DEFAULT_SETFONT_DIR "/consolefonts");
-    ^
-console-tools/loadfont.c:465:5: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
-     chdir(CONFIG_DEFAULT_SETFONT_DIR "/consoletrans");
-     ^
-  CC      console-tools/openvt.o
-  CC      console-tools/reset.o
-  CC      console-tools/setconsole.o
-  CC      console-tools/setlogcons.o
-  CC      console-tools/showkey.o
-  AR      console-tools/lib.a
-  LD      coreutils/built-in.o
-  CC      coreutils/cat.o
-  CC      coreutils/chgrp.o
-  CC      coreutils/chmod.o
-  CC      coreutils/chown.o
-  CC      coreutils/chroot.o
-  CC      coreutils/cksum.o
-  CC      coreutils/comm.o
-  CC      coreutils/cp.o
-  CC      coreutils/date.o
-  CC      coreutils/dd.o
-  CC      coreutils/df.o
-  CC      coreutils/dos2unix.o
-coreutils/dos2unix.c: In function ‘convert’:
-coreutils/dos2unix.c:83:3: warning: ignoring return value of ‘fchown’, declared with attribute warn_unused_result [-Wunused-result]
-   fchown(fd, st.st_uid, st.st_gid);
-   ^
-  CC      coreutils/du.o
-  CC      coreutils/echo.o
-  CC      coreutils/env.o
-  CC      coreutils/expand.o
-  CC      coreutils/fold.o
-  CC      coreutils/fsync.o
-  CC      coreutils/head.o
-  CC      coreutils/hostid.o
-  CC      coreutils/id.o
-  CC      coreutils/install.o
-  CC      coreutils/ln.o
-  CC      coreutils/logname.o
-  CC      coreutils/ls.o
-  CC      coreutils/md5_sha1_sum.o
-  CC      coreutils/mkfifo.o
-  CC      coreutils/mknod.o
-  CC      coreutils/mktemp.o
-  CC      coreutils/mv.o
-  CC      coreutils/nohup.o
-  CC      coreutils/od.o
-  CC      coreutils/printenv.o
-  CC      coreutils/printf.o
-  CC      coreutils/readlink.o
-  CC      coreutils/rm.o
-  CC      coreutils/seq.o
-  CC      coreutils/sleep.o
-  CC      coreutils/split.o
-  CC      coreutils/stat.o
-  CC      coreutils/sum.o
-  CC      coreutils/sync.o
-  CC      coreutils/tac.o
-  CC      coreutils/tail.o
-  CC      coreutils/test.o
-  CC      coreutils/test_ptr_hack.o
-  CC      coreutils/touch.o
-  CC      coreutils/tr.o
-  CC      coreutils/truncate.o
-  CC      coreutils/tty.o
-  CC      coreutils/uname.o
-  CC      coreutils/unlink.o
-  CC      coreutils/usleep.o
-  CC      coreutils/uuencode.o
-  CC      coreutils/wc.o
-  CC      coreutils/who.o
-  CC      coreutils/whoami.o
-  AR      coreutils/lib.a
-  LD      coreutils/libcoreutils/built-in.o
-  CC      coreutils/libcoreutils/cp_mv_stat.o
-  CC      coreutils/libcoreutils/getopt_mk_fifo_nod.o
-  AR      coreutils/libcoreutils/lib.a
-  LD      debianutils/built-in.o
-  CC      debianutils/pipe_progress.o
-  CC      debianutils/run_parts.o
-  CC      debianutils/start_stop_daemon.o
-  AR      debianutils/lib.a
-  LD      klibc-utils/built-in.o
-  CC      klibc-utils/resume.o
-  AR      klibc-utils/lib.a
-  LD      e2fsprogs/built-in.o
-  CC      e2fsprogs/chattr.o
-  CC      e2fsprogs/e2fs_lib.o
-  CC      e2fsprogs/tune2fs.o
-  AR      e2fsprogs/lib.a
-  LD      editors/built-in.o
-  CC      editors/awk.o
-  CC      editors/cmp.o
-  CC      editors/patch.o
-  CC      editors/sed.o
-editors/sed.c: In function ‘sed_main’:
-editors/sed.c:1600:4: warning: ignoring return value of ‘fchown’, declared with attribute warn_unused_result [-Wunused-result]
-    fchown(nonstdoutfd, statbuf.st_uid, statbuf.st_gid);
-    ^
-  CC      editors/vi.o
-editors/vi.c: In function ‘edit_file’:
-editors/vi.c:753:36: warning: statement with no effect [-Wunused-value]
- # define query_screen_dimensions() (0)
-                                    ^
-editors/vi.c:770:51: note: in expansion of macro ‘query_screen_dimensions’
-  IF_FEATURE_VI_ASK_TERMINAL(G.get_rowcol_error =) query_screen_dimensions();
-                                                   ^
-editors/vi.c: In function ‘refresh’:
-editors/vi.c:753:36: warning: statement with no effect [-Wunused-value]
- # define query_screen_dimensions() (0)
-                                    ^
-editors/vi.c:3343:3: note: in expansion of macro ‘query_screen_dimensions’
-   query_screen_dimensions();
-   ^
-editors/vi.c: In function ‘file_write’:
-editors/vi.c:2983:2: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
-  ftruncate(fd, charcnt);
-  ^
-  AR      editors/lib.a
-  LD      findutils/built-in.o
-  CC      findutils/find.o
-  CC      findutils/grep.o
-  CC      findutils/xargs.o
-  AR      findutils/lib.a
-  LD      init/built-in.o
-  CC      init/halt.o
-  CC      init/init.o
-  AR      init/lib.a
-  LD      libbb/built-in.o
-  CC      libbb/appletlib.o
-  CC      libbb/ask_confirmation.o
-  CC      libbb/auto_string.o
-  CC      libbb/bb_askpass.o
-  CC      libbb/bb_bswap_64.o
-  CC      libbb/bb_cat.o
-  CC      libbb/bb_do_delay.o
-  CC      libbb/bb_getgroups.o
-  CC      libbb/bb_pwd.o
-  CC      libbb/bb_qsort.o
-  CC      libbb/bb_strtonum.o
-  CC      libbb/capability.o
-  CC      libbb/change_identity.o
-  CC      libbb/chomp.o
-  CC      libbb/common_bufsiz.o
-  CC      libbb/compare_string_array.o
-  CC      libbb/concat_path_file.o
-  CC      libbb/concat_subpath_file.o
-  CC      libbb/copy_file.o
-  CC      libbb/copyfd.o
-  CC      libbb/correct_password.o
-  CC      libbb/crc32.o
-  CC      libbb/default_error_retval.o
-  CC      libbb/device_open.o
-  CC      libbb/die_if_bad_username.o
-  CC      libbb/dump.o
-  CC      libbb/endofname.o
-  CC      libbb/executable.o
-  CC      libbb/fclose_nonstdin.o
-  CC      libbb/fflush_stdout_and_exit.o
-  CC      libbb/fgets_str.o
-  CC      libbb/find_mount_point.o
-  CC      libbb/find_pid_by_name.o
-  CC      libbb/find_root_device.o
-  CC      libbb/full_write.o
-  CC      libbb/get_console.o
-  CC      libbb/get_cpu_count.o
-  CC      libbb/get_last_path_component.o
-  CC      libbb/get_line_from_file.o
-  CC      libbb/get_shell_name.o
-  CC      libbb/get_volsize.o
-  CC      libbb/getopt32.o
-  CC      libbb/getopt_allopts.o
-  CC      libbb/getpty.o
-  CC      libbb/hash_md5_sha.o
-  CC      libbb/herror_msg.o
-  CC      libbb/human_readable.o
-  CC      libbb/in_ether.o
-  CC      libbb/inet_cksum.o
-  CC      libbb/inet_common.o
-  CC      libbb/inode_hash.o
-  CC      libbb/isdirectory.o
-  CC      libbb/isqrt.o
-  CC      libbb/kernel_version.o
-  CC      libbb/last_char_is.o
-  CC      libbb/lineedit.o
-libbb/lineedit.c: In function ‘reverse_i_search’:
-libbb/lineedit.c:2260:12: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘cur_history’
-   h = state->cur_history;
-            ^
-libbb/lineedit.c:2264:13: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘history’
-    if (state->history[h]) {
-             ^
-libbb/lineedit.c:2265:31: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘history’
-     char *match = strstr(state->history[h], match_buf);
-                               ^
-libbb/lineedit.c:2267:11: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘cur_history’
-      state->cur_history = h;
-           ^
-libbb/lineedit.c:2268:34: error: ‘line_input_t {aka struct line_input_t}’ has no member named ‘history’
-      matched_history_line = state->history[h];
-                                  ^
-scripts/Makefile.build:197: recipe for target 'libbb/lineedit.o' failed
-make[1]: *** [libbb/lineedit.o] Error 1
-Makefile:743: recipe for target 'libbb' failed
-make: *** [libbb] Error 2
+In file included from include/busybox.h:8:0,
+                 from applets/applets.c:9:
+include/libbb.h:82:30: fatal error: selinux/selinux.h: No such file or directory
+compilation terminated.
+scripts/Makefile.build:197: recipe for target 'applets/applets.o' failed
+make[1]: *** [applets/applets.o] Error 1
+Makefile:372: recipe for target 'applets_dir' failed
+make: *** [applets_dir] Error 2
 return code 2
 du: cannot access 'busybox': No such file or directory
 binary size (in bytes): 0
-configuring /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/3.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/3.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -5911,10 +4412,16 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [Y/n/?] y
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [N/y/?] n
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [Y/n/?] y
-building /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/3.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
+building /vagrant/cases/busybox_1_28_0/Configs/3.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
   CLEAN   applets
   CLEAN   .tmp_versions
   CLEAN   .kernelrelease
+make: pkg-config: Command not found
+make: pkg-config: Command not found
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/split-include
 scripts/basic/split-include.c: In function ‘main’:
@@ -5947,6 +4454,8 @@ scripts/kconfig/conf -s Config.in
 #
 # using defaults found in .config
 #
+make[2]: pkg-config: Command not found
+make[2]: pkg-config: Command not found
   SPLIT   include/autoconf.h -> include/config/*
   GEN     include/bbconfigopts.h
   GEN     include/common_bufsiz.h
@@ -5960,294 +4469,18 @@ applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared wi
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   CC      applets/applets.o
-  LD      applets/built-in.o
-  HOSTCC  applets/usage_pod
-applets/usage_pod.c: In function ‘main’:
-applets/usage_pod.c:74:3: warning: format not a string literal and no format arguments [-Wformat-security]
-   printf(usage_array[i].aname);
-   ^
-  LD      archival/built-in.o
-  CC      archival/ar.o
-  CC      archival/bbunzip.o
-  CC      archival/cpio.o
-  CC      archival/dpkg.o
-  CC      archival/dpkg_deb.o
-  CC      archival/gzip.o
-  CC      archival/tar.o
-  AR      archival/lib.a
-  LD      archival/libarchive/built-in.o
-  CC      archival/libarchive/common.o
-  CC      archival/libarchive/data_align.o
-  CC      archival/libarchive/data_extract_all.o
-  CC      archival/libarchive/data_extract_to_stdout.o
-  CC      archival/libarchive/data_skip.o
-  CC      archival/libarchive/decompress_bunzip2.o
-  CC      archival/libarchive/decompress_gunzip.o
-  CC      archival/libarchive/decompress_unlzma.o
-  CC      archival/libarchive/decompress_unxz.o
-  CC      archival/libarchive/filter_accept_all.o
-  CC      archival/libarchive/filter_accept_list.o
-  CC      archival/libarchive/filter_accept_list_reassign.o
-  CC      archival/libarchive/filter_accept_reject_list.o
-  CC      archival/libarchive/find_list_entry.o
-  CC      archival/libarchive/get_header_ar.o
-  CC      archival/libarchive/get_header_cpio.o
-  CC      archival/libarchive/get_header_tar.o
-  CC      archival/libarchive/get_header_tar_bz2.o
-  CC      archival/libarchive/get_header_tar_gz.o
-  CC      archival/libarchive/get_header_tar_lzma.o
-  CC      archival/libarchive/get_header_tar_xz.o
-  CC      archival/libarchive/header_list.o
-  CC      archival/libarchive/header_skip.o
-  CC      archival/libarchive/header_verbose_list.o
-  CC      archival/libarchive/init_handle.o
-  CC      archival/libarchive/open_transformer.o
-  CC      archival/libarchive/seek_by_jump.o
-  CC      archival/libarchive/seek_by_read.o
-  CC      archival/libarchive/unpack_ar_archive.o
-  CC      archival/libarchive/unsafe_prefix.o
-  CC      archival/libarchive/unsafe_symlink_target.o
-  AR      archival/libarchive/lib.a
-  LD      console-tools/built-in.o
-  CC      console-tools/chvt.o
-  CC      console-tools/clear.o
-  CC      console-tools/dumpkmap.o
-  CC      console-tools/fgconsole.o
-  CC      console-tools/loadfont.o
-  CC      console-tools/reset.o
-  CC      console-tools/showkey.o
-  AR      console-tools/lib.a
-  LD      coreutils/built-in.o
-  CC      coreutils/cat.o
-  CC      coreutils/chown.o
-  CC      coreutils/cp.o
-  CC      coreutils/cut.o
-  CC      coreutils/dd.o
-  CC      coreutils/df.o
-  CC      coreutils/dirname.o
-  CC      coreutils/dos2unix.o
-  CC      coreutils/echo.o
-  CC      coreutils/expand.o
-  CC      coreutils/expr.o
-  CC      coreutils/factor.o
-  CC      coreutils/false.o
-  CC      coreutils/fold.o
-  CC      coreutils/fsync.o
-  CC      coreutils/head.o
-  CC      coreutils/id.o
-  CC      coreutils/logname.o
-  CC      coreutils/ls.o
-  CC      coreutils/md5_sha1_sum.o
-  CC      coreutils/mkdir.o
-  CC      coreutils/mv.o
-  CC      coreutils/paste.o
-  CC      coreutils/pwd.o
-  CC      coreutils/rmdir.o
-  CC      coreutils/sort.o
-  CC      coreutils/split.o
-  CC      coreutils/stty.o
-  CC      coreutils/sync.o
-  CC      coreutils/tail.o
-  CC      coreutils/tee.o
-  CC      coreutils/test.o
-  CC      coreutils/test_ptr_hack.o
-  CC      coreutils/timeout.o
-  CC      coreutils/touch.o
-  CC      coreutils/tr.o
-  CC      coreutils/truncate.o
-  CC      coreutils/uniq.o
-  CC      coreutils/usleep.o
-  CC      coreutils/uudecode.o
-  CC      coreutils/who.o
-  CC      coreutils/whoami.o
-  AR      coreutils/lib.a
-  LD      coreutils/libcoreutils/built-in.o
-  CC      coreutils/libcoreutils/cp_mv_stat.o
-  AR      coreutils/libcoreutils/lib.a
-  LD      debianutils/built-in.o
-  CC      debianutils/start_stop_daemon.o
-  AR      debianutils/lib.a
-  LD      klibc-utils/built-in.o
-  CC      klibc-utils/nuke.o
-  AR      klibc-utils/lib.a
-  LD      e2fsprogs/built-in.o
-  CC      e2fsprogs/e2fs_lib.o
-  CC      e2fsprogs/lsattr.o
-  CC      e2fsprogs/tune2fs.o
-  AR      e2fsprogs/lib.a
-  LD      editors/built-in.o
-  CC      editors/diff.o
-  CC      editors/ed.o
-  CC      editors/sed.o
-  CC      editors/vi.o
-  AR      editors/lib.a
-  LD      findutils/built-in.o
-  CC      findutils/find.o
-  CC      findutils/xargs.o
-  AR      findutils/lib.a
-  LD      init/built-in.o
-  CC      init/bootchartd.o
-  CC      init/halt.o
-  CC      init/init.o
-  AR      init/lib.a
-  LD      libbb/built-in.o
-  CC      libbb/appletlib.o
-  CC      libbb/ask_confirmation.o
-  CC      libbb/auto_string.o
-  CC      libbb/bb_askpass.o
-  CC      libbb/bb_bswap_64.o
-  CC      libbb/bb_cat.o
-  CC      libbb/bb_do_delay.o
-  CC      libbb/bb_getgroups.o
-  CC      libbb/bb_pwd.o
-  CC      libbb/bb_qsort.o
-  CC      libbb/bb_strtonum.o
-  CC      libbb/bbunit.o
-  CC      libbb/capability.o
-  CC      libbb/change_identity.o
-  CC      libbb/chomp.o
-  CC      libbb/common_bufsiz.o
-  CC      libbb/compare_string_array.o
-  CC      libbb/concat_path_file.o
-  CC      libbb/concat_subpath_file.o
-  CC      libbb/copy_file.o
-  CC      libbb/copyfd.o
-  CC      libbb/correct_password.o
-  CC      libbb/crc32.o
-  CC      libbb/default_error_retval.o
-  CC      libbb/device_open.o
-  CC      libbb/die_if_bad_username.o
-  CC      libbb/dump.o
-  CC      libbb/endofname.o
-  CC      libbb/executable.o
-  CC      libbb/fclose_nonstdin.o
-  CC      libbb/fflush_stdout_and_exit.o
-  CC      libbb/fgets_str.o
-  CC      libbb/find_mount_point.o
-  CC      libbb/find_pid_by_name.o
-  CC      libbb/find_root_device.o
-  CC      libbb/full_write.o
-  CC      libbb/get_console.o
-  CC      libbb/get_cpu_count.o
-  CC      libbb/get_last_path_component.o
-  CC      libbb/get_line_from_file.o
-  CC      libbb/get_shell_name.o
-  CC      libbb/get_volsize.o
-  CC      libbb/getopt32.o
-  CC      libbb/getopt_allopts.o
-  CC      libbb/getpty.o
-  CC      libbb/hash_md5_sha.o
-  CC      libbb/herror_msg.o
-  CC      libbb/human_readable.o
-  CC      libbb/in_ether.o
-  CC      libbb/inet_cksum.o
-  CC      libbb/inet_common.o
-  CC      libbb/inode_hash.o
-  CC      libbb/isdirectory.o
-  CC      libbb/isqrt.o
-  CC      libbb/kernel_version.o
-  CC      libbb/last_char_is.o
-  CC      libbb/lineedit.o
-  CC      libbb/lineedit_ptr_hack.o
-  CC      libbb/llist.o
-  CC      libbb/login.o
-  CC      libbb/loop.o
-  CC      libbb/make_directory.o
-  CC      libbb/makedev.o
-  CC      libbb/match_fstype.o
-  CC      libbb/messages.o
-  CC      libbb/missing_syscalls.o
-  CC      libbb/mode_string.o
-  CC      libbb/mtab.o
-  CC      libbb/nuke_str.o
-  CC      libbb/parse_config.o
-  CC      libbb/parse_mode.o
-  CC      libbb/percent_decode.o
-  CC      libbb/perror_msg.o
-  CC      libbb/perror_nomsg.o
-  CC      libbb/perror_nomsg_and_die.o
-  CC      libbb/pidfile.o
-  CC      libbb/platform.o
-  CC      libbb/print_flags.o
-  CC      libbb/print_numbered_lines.o
-  CC      libbb/printable.o
-  CC      libbb/printable_string.o
-  CC      libbb/process_escape_sequence.o
-  CC      libbb/procps.o
-  CC      libbb/progress.o
-  CC      libbb/ptr_to_globals.o
-  CC      libbb/pw_encrypt.o
-  CC      libbb/read.o
-  CC      libbb/read_key.o
-  CC      libbb/read_printf.o
-  CC      libbb/recursive_action.o
-  CC      libbb/remove_file.o
-  CC      libbb/replace.o
-  CC      libbb/rtc.o
-  CC      libbb/run_shell.o
-  CC      libbb/safe_gethostname.o
-  CC      libbb/safe_poll.o
-  CC      libbb/safe_strncpy.o
-  CC      libbb/safe_write.o
-  CC      libbb/securetty.o
-  CC      libbb/selinux_common.o
-  CC      libbb/setup_environment.o
-  CC      libbb/signals.o
-  CC      libbb/simplify_path.o
-  CC      libbb/single_argv.o
-  CC      libbb/skip_whitespace.o
-  CC      libbb/speed_table.o
-  CC      libbb/str_tolower.o
-  CC      libbb/strrstr.o
-  CC      libbb/sysconf.o
-  CC      libbb/time.o
-  CC      libbb/trim.o
-  CC      libbb/u_signal_names.o
-  CC      libbb/ubi.o
-  CC      libbb/udp_io.o
-  CC      libbb/unicode.o
-  CC      libbb/update_passwd.o
-  CC      libbb/utmp.o
-  CC      libbb/uuencode.o
-  CC      libbb/verror_msg.o
-  CC      libbb/vfork_daemon_rexec.o
-  CC      libbb/warn_ignoring_args.o
-  CC      libbb/wfopen.o
-  CC      libbb/wfopen_input.o
-  CC      libbb/write.o
-  CC      libbb/xatonum.o
-  CC      libbb/xconnect.o
-  CC      libbb/xfunc_die.o
-  CC      libbb/xfuncs.o
-  CC      libbb/xfuncs_printf.o
-  CC      libbb/xgetcwd.o
-  CC      libbb/xgethostbyname.o
-  CC      libbb/xreadlink.o
-  CC      libbb/xrealloc_vector.o
-  CC      libbb/xregcomp.o
-  AR      libbb/lib.a
-  LD      libpwdgrp/built-in.o
-  CC      libpwdgrp/pwd_grp.o
-  CC      libpwdgrp/uidgid_get.o
-  AR      libpwdgrp/lib.a
-  LD      loginutils/built-in.o
-  CC      loginutils/add-remove-shell.o
-  CC      loginutils/addgroup.o
-  CC      loginutils/adduser.o
-  CC      loginutils/chpasswd.o
-  CC      loginutils/cryptpw.o
-  CC      loginutils/getty.o
-  CC      loginutils/login.o
-loginutils/login.c:82:32: fatal error: security/pam_appl.h: No such file or directory
+In file included from include/busybox.h:8:0,
+                 from applets/applets.c:9:
+include/libbb.h:82:30: fatal error: selinux/selinux.h: No such file or directory
 compilation terminated.
-scripts/Makefile.build:197: recipe for target 'loginutils/login.o' failed
-make[1]: *** [loginutils/login.o] Error 1
-Makefile:743: recipe for target 'loginutils' failed
-make: *** [loginutils] Error 2
+scripts/Makefile.build:197: recipe for target 'applets/applets.o' failed
+make[1]: *** [applets/applets.o] Error 1
+Makefile:372: recipe for target 'applets_dir' failed
+make: *** [applets_dir] Error 2
 return code 2
 du: cannot access 'busybox': No such file or directory
 binary size (in bytes): 0
-configuring /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/4.config
+configuring /vagrant/cases/busybox_1_28_0/Configs/4.config
 scripts/kconfig/conf -o Config.in
 #
 # using defaults found in .config
@@ -7307,10 +5540,16 @@ syslogd (12 kb) (SYSLOGD) [Y/n/?] y
   Support syslog.conf (FEATURE_SYSLOGD_CFG) [N/y/?] n
   Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] (NEW)   Circular Buffer support (FEATURE_IPC_SYSLOG) [N/y/?] n
   Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [N/y/?] n
-building /home/jeho/kMax/kconfig_case_studies/cases/busybox_1_28_0/Configs/4.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
+building /vagrant/cases/busybox_1_28_0/Configs/4.config
+make[1]: pkg-config: Command not found
+make[1]: pkg-config: Command not found
   CLEAN   applets
   CLEAN   .tmp_versions
   CLEAN   .kernelrelease
+make: pkg-config: Command not found
+make: pkg-config: Command not found
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/split-include
 scripts/basic/split-include.c: In function ‘main’:
@@ -7343,6 +5582,8 @@ scripts/kconfig/conf -s Config.in
 #
 # using defaults found in .config
 #
+make[2]: pkg-config: Command not found
+make[2]: pkg-config: Command not found
   SPLIT   include/autoconf.h -> include/config/*
   GEN     include/bbconfigopts.h
   GEN     include/common_bufsiz.h
@@ -7356,36 +5597,14 @@ applets/usage.c:52:3: warning: ignoring return value of ‘write’, declared wi
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   GEN     include/applet_tables.h include/NUM_APPLETS.h
   CC      applets/applets.o
-  LD      applets/built-in.o
-  HOSTCC  applets/usage_pod
-applets/usage_pod.c: In function ‘main’:
-applets/usage_pod.c:74:3: warning: format not a string literal and no format arguments [-Wformat-security]
-   printf(usage_array[i].aname);
-   ^
-  LD      archival/built-in.o
-  CC      archival/ar.o
-  CC      archival/bbunzip.o
-  CC      archival/cpio.o
-  CC      archival/dpkg.o
-  CC      archival/gzip.o
-  CC      archival/lzop.o
-  CC      archival/rpm.o
-  CC      archival/tar.o
-  CC      archival/unzip.o
-  AR      archival/lib.a
-  LD      archival/libarchive/built-in.o
-  CC      archival/libarchive/common.o
-  CC      archival/libarchive/data_align.o
-  CC      archival/libarchive/data_extract_all.o
-archival/libarchive/data_extract_all.c: In function ‘data_extract_all’:
-archival/libarchive/data_extract_all.c:247:4: error: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Werror=unused-result]
-    chown(dst_name, uid, gid);
-    ^
-cc1: all warnings being treated as errors
-scripts/Makefile.build:197: recipe for target 'archival/libarchive/data_extract_all.o' failed
-make[1]: *** [archival/libarchive/data_extract_all.o] Error 1
-Makefile:743: recipe for target 'archival/libarchive' failed
-make: *** [archival/libarchive] Error 2
+In file included from include/busybox.h:8:0,
+                 from applets/applets.c:9:
+include/libbb.h:82:30: fatal error: selinux/selinux.h: No such file or directory
+compilation terminated.
+scripts/Makefile.build:197: recipe for target 'applets/applets.o' failed
+make[1]: *** [applets/applets.o] Error 1
+Makefile:372: recipe for target 'applets_dir' failed
+make: *** [applets_dir] Error 2
 return code 2
 du: cannot access 'busybox': No such file or directory
 binary size (in bytes): 0
