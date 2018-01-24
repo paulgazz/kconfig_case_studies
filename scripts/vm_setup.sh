@@ -6,7 +6,8 @@ set -x
 yes | sudo apt-get install python make gcc
 
 # environment
-echo 'export KCONFIG_CASE_STUDIES=/vagrant' >> /home/vagrant/.bash_profile
+echo 'export KCONFIG_CASE_STUDIES=/vagrant' > /home/vagrant/.bash_profile
+echo 'export PATH=$KCONFIG_CASE_STUDIES/scripts:$PATH' >> /home/vagrant/.bash_profile
 
 # source code
 # wget -O axTLS-2.1.4.tar.gz 'https://downloads.sourceforge.net/project/axtls/2.1.4/axTLS-2.1.4.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Faxtls%2Ffiles%2Flatest%2Fdownload%3Fsource%3Dfiles&ts=1516744347'
