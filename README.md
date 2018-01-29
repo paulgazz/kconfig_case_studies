@@ -27,6 +27,13 @@ automatically.
 Enter the VM.
 
     vagrant ssh
+    
+## Updating the VM
+
+When necessary (e.g., `scripts/vm_setup.sh` changes), reprovision the
+VM to install any new dependencies by running
+
+    vagrant provision
 
 ## Evaluation
 
