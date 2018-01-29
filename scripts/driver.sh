@@ -1,14 +1,15 @@
 #!/bin/bash
 
 if [[ $# -lt 1 ]]; then
-    echo "USAGE: $(basename $0) action casename"
+    echo "USAGE: $(basename $0) action casename [samples]"
     echo ""
     echo "   action may be one of the following"
     echo "     dimacs - generate dimacs file"
     echo "     config - configure the system for each sampled config"
     echo "     build  - build the system for each sampled config"
     echo ""
-    echo "    casename - the subdirectory of the case in the kconfig_case_studies repo"
+    echo "    casename  - the subdirectory of the case in the kconfig_case_studies repo"
+    echo "    samples - the subdirectory containing samples, relative to case dir (default: Configs)"
     echo ""
     echo "USAGE: $(basename $0) list"
     echo ""
@@ -30,6 +31,12 @@ fi
 action="${1}"
 casename="${2}"
 
+if [[ $# -ge 3 ]]; then
+    sample_dir="${3}"
+else
+  sample_dir="Configs"
+fi
+
 case_dir="${KCONFIG_CASE_STUDIES}/cases/${casename}"
 
 if [[ ! -e "${case_dir}" ]]; then
@@ -42,7 +49,6 @@ if [[ "${casename}" == "" || "${action}" == "list" ]]; then
     ls ${KCONFIG_CASE_STUDIES}/cases/
     exit 1
 fi
-
 
 # setup case-specific properties
 config_file=""
@@ -87,12 +93,20 @@ if [[ "${config_file}" == "" || "${kconfig_root}" == "" ]]; then
     exit 1
 fi
 
-kconfig_out_dir="${case_dir}/kconfig_out"
-mkdir -p "${kconfig_out_dir}"
 if [[ "${action}" == "config" || "${action}" == "build" ]]; then
+    experiment_dir=${case_dir}/${sample_dir}
+    
+    kconfig_out_dir="${experiment_dir}/kconfig_out"
+    mkdir -p "${kconfig_out_dir}"
+
     # configure or build each sample
+    if [[ ! -e "${experiment_dir}" ]]; then
+        echo "${experiment_dir} does not exist."
+        exit 1
+    fi
+    
     if [[ "${action}" == "config" ]]; then
-        for i in ${case_dir}/Configs/*.config; do
+        for i in ${experiment_dir}/*.config; do
           echo "configuring $i";
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           make oldconfig;
@@ -100,14 +114,14 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           cat "${config_file}" | md5sum > "${kconfig_out_dir}/$(basename ${i}).md5"
           python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}.kmax" "${i}" "${config_file}";
           echo "diff result: ${?}";
-        done 2>&1 | tee "${case_dir}/config_diff_results.out"
+        done 2>&1 | tee "${experiment_dir}/config_diff_results.out"
 
-        cat "${kconfig_out_dir}/"*.md5 | sort | uniq -d > "${case_dir}/uniq_config_comparison.out"
+        cat "${kconfig_out_dir}/"*.md5 | sort | uniq -d > "${experiment_dir}/uniq_config_comparison.out"
 
-        echo "has $(cat "${case_dir}/uniq_config_comparison.out" | wc -l) duplicate config files" | tee -a "${case_dir}/config_diff_results.out"
+        echo "has $(cat "${experiment_dir}/uniq_config_comparison.out" | wc -l) duplicate config files" | tee -a "${experiment_dir}/config_diff_results.out"
 
     elif [[ "${action}" == "build" ]]; then
-        for i in ${case_dir}/Configs/*.config; do
+        for i in ${experiment_dir}/*.config; do
           echo "configuring $i";
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           make oldconfig;
@@ -116,7 +130,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           make;
           echo "return code $?";
           echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
-        done 2>&1 | tee "${case_dir}/build_results.out"
+        done 2>&1 | tee "${experiment_dir}/build_results.out"
     fi
 
 elif [[ "${action}" == "dimacs" ]]; then
