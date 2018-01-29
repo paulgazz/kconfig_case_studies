@@ -14,6 +14,11 @@ Install vagrant and virtual box:
     
 (Note that Debian 9 does not have virtualbox, so [use backports](https://wiki.debian.org/VirtualBox#Debian_9_.22Stretch.22]))
 
+(Note that Ubuntu 16 has a broken version of virtualbox as of
+01/24/2018.  It is advised to download the virtualbox 5.1
+[not the latest virtualbox, since it doesn't work with the apt version of vagrant],
+or download the latest versions of virtualbox and vagrant.)
+
 Start the VM.  This will install dependencies and get source code
 automatically.
 
