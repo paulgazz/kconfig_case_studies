@@ -109,7 +109,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
         for i in ${experiment_dir}/*.config; do
           echo "configuring $i";
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
-          make oldconfig;
+          time make oldconfig;
           cp "${config_file}" "${kconfig_out_dir}/$(basename ${i})"
           cat "${config_file}" | md5sum > "${kconfig_out_dir}/$(basename ${i}).md5"
           python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}.kmax" "${i}" "${config_file}";
@@ -127,7 +127,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           make oldconfig;
           echo "building $i";
           make clean;
-          make;
+          time make;
           echo "return code $?";
           echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
         done 2>&1 | tee "${experiment_dir}/build_results.out"
@@ -151,8 +151,8 @@ elif [[ "${action}" == "dimacs" ]]; then
     fi
 
     # get the dimacs file by running kmax's check_dep
-    "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}.dimacs"
+    time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}.dimacs"
 
     # without reverse dependencies
-    "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} -D --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_sans_reverse.dimacs"
+    time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} -D --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_sans_reverse.dimacs"
 fi
