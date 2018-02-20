@@ -59,9 +59,6 @@ if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
     binaries="_stage/"
-    # CONFIG_HTTP_LUA_PREFIX="/full/path/local/lua"
-    # make PREFIX="/full/path/local"
-    #
 fi
 echo "${casename}" | grep -i "toybox" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -123,10 +120,21 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
     elif [[ "${action}" == "build" ]]; then
         for i in ${experiment_dir}/*.config; do
           echo "configuring $i";
+          echo "${casename}" | grep -i "axtls" > /dev/null
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
+          if [[ $? -eq 0 ]]; then
+              mkdir -p /tmp/lua
+              echo 'CONFIG_HTTP_LUA_PREFIX="/tmp/lua"' >> "${config_file}";
+          fi
           make oldconfig;
           echo "building $i";
-          make clean;
+          echo "${casename}" | grep -i "axtls" > /dev/null
+          if [[ $? -eq 0 ]]; then
+              mkdir -p /tmp/local
+              make PREFIX="/tmp/local"
+          else
+            make clean;
+          fi
           time make;
           echo "return code $?";
           echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
