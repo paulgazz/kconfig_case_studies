@@ -3,7 +3,7 @@
 set -x
 
 # dependencies
-yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev
+yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev
 
 # environment
 echo 'export KCONFIG_CASE_STUDIES=/vagrant' > /home/vagrant/.bash_profile
