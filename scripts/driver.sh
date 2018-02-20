@@ -128,14 +128,14 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           fi
           make oldconfig;
           echo "building $i";
+          make clean;
           echo "${casename}" | grep -i "axtls" > /dev/null
           if [[ $? -eq 0 ]]; then
               mkdir -p /tmp/local
-              make PREFIX="/tmp/local"
+              time make PREFIX="/tmp/local"
           else
-            make clean;
+            time make;
           fi
-          time make;
           echo "return code $?";
           echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
         done 2>&1 | tee "${experiment_dir}/build_results.out"
