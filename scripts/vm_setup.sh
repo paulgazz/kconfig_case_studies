@@ -3,8 +3,20 @@
 set -x
 
 # dependencies
-yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev
+yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence g++-5-arm-linux-gnueabihf
 
+# setup arm binutils for fiasco cross-compiling
+sudo ln -s $(which arm-linux-gnueabihf-g++-5) /usr/local/binarm-linux-g++
+sudo ln -s $(which arm-linux-gnueabihf-g++-5) /usr/local/bin/arm-linux-g++
+sudo ln -s $(which arm-linux-gnueabihf-gcc-5) /usr/local/bin/arm-linux-gcc
+sudo ln -s $(which arm-linux-gnueabihf-ld-5) /usr/local/bin/arm-linux-ld
+sudo ln -s $(which arm-linux-gnueabihf-ld) /usr/local/bin/arm-linux-ld
+sudo ln -s $(which arm-linux-gnueabihf-cpp-5) /usr/local/bin/arm-linux-cpp
+sudo ln -s $(which arm-linux-gnueabihf-nm) /usr/local/bin/arm-linux-nm
+sudo ln -s $(which arm-linux-gnueabihf-objcopy) /usr/local/bin/arm-linux-objcopy
+sudo ln -s $(which arm-linux-gnueabihf-ar) /usr/local/bin/arm-linux-ar
+sudo ln -s $(which arm-linux-gnueabihf-strip) /usr/local/bin/arm-linux-strip
+  
 # environment
 echo 'export KCONFIG_CASE_STUDIES=/vagrant' > /home/vagrant/.bash_profile
 echo 'export PATH=$KCONFIG_CASE_STUDIES/scripts:$PATH' >> /home/vagrant/.bash_profile
