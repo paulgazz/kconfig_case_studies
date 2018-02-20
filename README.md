@@ -139,6 +139,10 @@ Comparing 0.0.9.2
 
     check_dep --dimacs Config.in | tee ~/research/repos/kconfig_case_studies/cases/toybox_0_0_9_2/toybox_0_0_9_2.kmax | python ~/research/repos/kmax/kconfig/dimacs.py > ~/research/repos/kconfig_case_studies/cases/toybox_0_0_9_2/toybox_0_0_9_2.dimacs
 
+### Constrained Features
+
+`sys/smack.h` depends on some random library that doesn't come with
+Debian.  It can be disabled with `TOYBOX_SMACK`.
 
 ## fiasco
 
