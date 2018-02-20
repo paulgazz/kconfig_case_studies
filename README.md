@@ -121,6 +121,15 @@ Get the dimacs file with
 
     apt-get install libpam0g-dev
 
+### Additional Constraints
+
+We turned off `CONFIG_WERROR`, because 8 out of a sample of 10 had a
+broken build due to this option.  It enables the `-Werror` flag to the
+compiler which treats warnings as errors.  These configs are perhaps
+untested in this configuration.  See
+`cases/busybox_1_28_0/configs_broken/README.md` `bugs/README.md` for
+more information.
+
 ## toybox
 
 Trying on 0.7.5
