@@ -130,6 +130,18 @@ untested in this configuration.  See
 `cases/busybox_1_28_0/configs_broken/README.md` `bugs/README.md` for
 more information.
 
+`CONFIG_FEATURE_2_4_MODULES` is also disabled, because it is only for
+for older Linux kernels.  See the following for more info:
+
+    modutils/Config.in
+    https://dev.openwrt.org/ticket/8933
+    https://dev.openwrt.org/ticket/7460
+    https://dev.openwrt.org/ticket/7349
+
+
+We also disable `CONFIG_FEATURE_LIBBUSYBOX_STATIC` due to issues with
+linking.
+
 ## toybox
 
 Trying on 0.7.5
