@@ -111,7 +111,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           cat "${config_file}" | md5sum > "${kconfig_out_dir}/$(basename ${i}).md5"
           python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}.kmax" "${i}" "${config_file}";
           echo "diff result: ${?}";
-        done 2>&1 | tee "${experiment_dir}/config_diff_results.out"
+        done 2>&1 | tee "${experiment_dir}/config_diff_results.out" | egrep "^(configuring)"
 
         cat "${kconfig_out_dir}/"*.md5 | sort | uniq -d > "${experiment_dir}/uniq_config_comparison.out"
 
@@ -138,7 +138,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           fi
           echo "return code $?";
           echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
-        done 2>&1 | tee "${experiment_dir}/build_results.out"
+        done 2>&1 | tee "${experiment_dir}/build_results.out" | egrep "^(building)"
     fi
 
 elif [[ "${action}" == "dimacs" ]]; then
