@@ -103,7 +103,8 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
     fi
     
     if [[ "${action}" == "config" ]]; then
-        for i in ${experiment_dir}/*.config; do
+        for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
+          i="${experiment_dir}/${i_base}"
           echo "configuring $i";
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           time make oldconfig;
@@ -118,7 +119,8 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
         echo "has $(cat "${experiment_dir}/uniq_config_comparison.out" | wc -l) duplicate config files" | tee -a "${experiment_dir}/config_diff_results.out"
 
     elif [[ "${action}" == "build" ]]; then
-        for i in ${experiment_dir}/*.config; do
+        for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
+          i="${experiment_dir}/${i_base}"
           echo "configuring $i";
           echo "${casename}" | grep -i "axtls" > /dev/null
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
