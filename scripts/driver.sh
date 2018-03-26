@@ -15,6 +15,10 @@ if [[ $# -lt 1 ]]; then
     echo ""
     echo "  list the active cases"
     echo ""
+    echo "USAGE: $(basename $0) randconfigs casename out_dir num"
+    echo ""
+    echo "  use kconfig's randconfig to generate a set of random .config files for the given case"
+    echo ""
     echo "NOTES:"
     echo "  - Run this script from root of a project's source directory."
     echo "  - Be sure that KCONFIG_CASE_STUDIES has been set to the repo."
@@ -90,9 +94,28 @@ if [[ "${config_file}" == "" || "${kconfig_root}" == "" ]]; then
     exit 1
 fi
 
+experiment_dir=${case_dir}/${sample_dir}
+
+if [[ "${action}" == "randconfigs" ]]; then
+    if [[ $# -ge 4 ]]; then
+        num="${4}"
+        if [ -d "${experiment_dir}" ]; then
+            echo "error: the out_dir '${sample_dir}' already exists.  please remove it or give a nonexistent directory"
+            exit 1
+        fi
+        mkdir -p ${experiment_dir}
+        for i in $(seq $((num - 1))); do
+          make randconfig
+          cp "${config_file}" "${experiment_dir}/${i}.config"
+        done
+        exit 0
+    else
+      echo "missing arguments for randconfigs"
+      exit 1
+    fi
+fi
+
 if [[ "${action}" == "config" || "${action}" == "build" ]]; then
-    experiment_dir=${case_dir}/${sample_dir}
-    
     kconfig_out_dir="${experiment_dir}/kconfig_out"
     mkdir -p "${kconfig_out_dir}"
 
