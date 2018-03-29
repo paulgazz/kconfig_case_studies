@@ -88,6 +88,12 @@ if [[ $? -eq 0 ]]; then
     #     exit 1 
     # fi
 fi
+echo "${casename}" | grep -i "uClibc-ng" > /dev/null
+if [[ $? -eq 0 ]]; then
+    config_file=".config"
+    kconfig_root="extra/Configs/Config.in"
+    binaries="*"
+fi
 
 if [[ "${config_file}" == "" || "${kconfig_root}" == "" ]]; then
     echo "unknown case '${casename}. please add it to this script '${0}'"
@@ -133,7 +139,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           time make oldconfig;
           cp "${config_file}" "${kconfig_out_dir}/$(basename ${i})"
           cat "${config_file}" | md5sum > "${kconfig_out_dir}/$(basename ${i}).md5"
-          python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}.kmax" "${i}" "${config_file}";
+          python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}_sans_reverse.kmax" "${i}" "${config_file}";
           echo "diff result: ${?}";
         done 2>&1 | tee "${experiment_dir}/config_diff_results.out" | egrep "^(configuring)"
 
@@ -145,11 +151,16 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
         for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
           i="${experiment_dir}/${i_base}"
           echo "configuring $i";
-          echo "${casename}" | grep -i "axtls" > /dev/null
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
+          echo "${casename}" | grep -i "axtls" > /dev/null
           if [[ $? -eq 0 ]]; then
               mkdir -p /tmp/lua
               echo 'CONFIG_HTTP_LUA_PREFIX="/tmp/lua"' >> "${config_file}";
+          fi
+          echo "${casename}" | egrep -i "uClibc-ng" >/dev/null
+          if [[ $? -eq 0 ]]; then
+              mv "${config_file}" "${config_file}.tmp"
+              cat "${config_file}.tmp" | grep -v "^KERNEL_HEADERS=" > "${config_file}"; echo 'KERNEL_HEADERS="/home/vagrant/linux-headers/include"' >> "${config_file}"
           fi
           make oldconfig;
           echo "building $i";
@@ -176,16 +187,24 @@ elif [[ "${action}" == "dimacs" ]]; then
     # axtls variables already include the the CONFIG_ prefix and it's
     # kconfig system is modified not to.  add a flag to check_dep to
     # disable the prefix for axtls.
-    echo "${casename}" | grep -i "axtls" >/dev/null
+    echo "${casename}" | egrep -i "axtls" >/dev/null
     if [[ $? -eq 0 ]]; then
         extra_args="-p"
     else
       extra_args=""
     fi
-
-    # get the dimacs file by running kmax's check_dep
-    time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}.dimacs"
+    # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
+    # environment variables with -d.
+    echo "${casename}" | egrep -i "uClibc-ng" >/dev/null
+    if [[ $? -eq 0 ]]; then
+        extra_args="-p -d"
+    else
+      extra_args=""
+    fi
 
     # without reverse dependencies
     time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} -D --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_sans_reverse.dimacs"
+
+    # get the dimacs file by running kmax's check_dep
+    time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_with_reverse.dimacs"
 fi

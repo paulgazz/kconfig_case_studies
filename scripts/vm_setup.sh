@@ -3,7 +3,7 @@
 set -x
 
 # dependencies
-yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence g++-5-arm-linux-gnueabihf libdlib-dev libaudit-dev
+yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence g++-5-arm-linux-gnueabihf libdlib-dev libaudit-dev linux-source-4.4.0
 
 # allow user to add to /usr/local
 sudo chgrp -R vagrant /usr/local; sudo chmod -R g+w /usr/local
@@ -71,4 +71,14 @@ if [ ! -d "fiasco_17_10" ]; then
     cd fiasco_17_10/src/kernel/fiasco    
     tool/gen_kconfig src/Kconfig my_kconfig $(find src/ | grep Kconfig | grep -v src/Kconfig)
     cd /home/vagrant
+fi
+
+if [ ! -d "uClibc-ng_1_0_29" ]; then
+    if [ ! -d "uClibc-ng-1.0.29" ]; then
+        tar -xvf /vagrant/cases/uClibc-ng_1_0_29/uClibc-ng-1.0.29.tar.xz
+    fi
+    mv uClibc-ng-1.0.29 uClibc-ng_1_0_29
+    
+    tar -C /home/vagrant -xvf /usr/src/linux-source-4.4.0.tar.bz2
+    make -C /home/vagrant/linux-source-4.4.0 INSTALL_HDR_PATH=/home/vagrant/linux-headers headers_install
 fi
