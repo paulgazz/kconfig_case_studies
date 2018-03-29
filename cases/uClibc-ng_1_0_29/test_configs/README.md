@@ -1,0 +1,3 @@
+- 0.config is defconfig
+- 1.config is allnoconfig
+- 2.config is allyesconfig
