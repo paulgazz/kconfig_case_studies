@@ -35,6 +35,10 @@ VM to install any new dependencies by running
 
     vagrant provision
 
+## Samples
+
+Configuration samples are contained in: `kconfig_case_studies/cases/*/Configs/*.config`
+
 ## Evaluation
 
 1. check that `make oldconfig` accepts it
@@ -186,3 +190,96 @@ Collect constraints
 
 For building, we constrain are samples to IA32, since cross-compiling
 for other systems is difficult.
+
+## Additional Info
+
+## axTLS
+
+### Download
+
+(If using the VM, this step is unnecessary.)
+
+Download version 2.1.4 at
+<https://sourceforge.net/projects/axtls/files/2.1.4/axTLS-2.1.4.tar.gz/download>
+([direct link](https://downloads.sourceforge.net/project/axtls/2.1.4/axTLS-2.1.4.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Faxtls%2Ffiles%2F2.1.4%2FaxTLS-2.1.4.tar.gz%2Fdownload&ts=1516376523)).
+
+Untar and move into the root of the source tree.
+
+### Configure
+
+To use an already-generated config file with Kconfig, copy the file to
+`config/.config` and use `make oldconfig` to process it.
+
+1. Copy one of the sampled config files to `config/`.
+
+        cd /path/to/axtls-code
+        cp /path/to/samples/0.config config/.config
+    
+2. Configure according to the copied `.config`.
+
+        make oldconfig
+
+This will overwrite `config/.config` with the results of processing
+the sampled file with Kconfig.  There will be some difference due to
+default values being added by Kconfig.
+
+This generates, among other files, the `config/config.h` header file
+that provides preprocessor macros for configuration within C files.
+It also generates `config/makefile.conf` to set Makefile variables
+used to configure the build process.
+
+### Build
+
+The configurations are restricted to the Linux platform.  Building the
+samples has been tested on Debian 9.1.  At least the following
+dependency needs to be installed.  Other dependencies may be needed to
+build the system, depending on the configuration options selected.
+
+    apt-get install make gcc libreadline-dev selinux
+
+To build, simply run make.
+
+    make
+    
+For source-level tools, compiling may not be necessary, though getting
+the list of C files may be easiest by running `make`.  There could be
+some generated C files during the build, but I do not know for sure.
+
+## toybox (and busybox)
+
+(If using the VM, this step is unnecessary.)
+
+### Download
+
+Download from <http://www.landley.net/toybox/downloads/toybox-0.7.5.tar.gz>.
+
+Untar tar and move in to the root of the source directory.
+
+### Configure
+
+To use an already-generated config file with Kconfig, copy the file to
+`.config` and use `make oldconfig` to process it.
+
+1. Copy one of the sampled config files.
+
+        cd /path/to/toybox-0.7.5
+        cp /path/to/samples/0.config .config
+    
+2. Configure according to the copied `.config`.
+
+        make oldconfig
+
+This will overwrite `.config` with the results of processing
+the sampled file with Kconfig.  There will be some difference due to
+default values being added by Kconfig.
+
+### Build
+
+Run make
+
+    make
+    
+This generates, among other files, the `generated/config.h` header
+file that provides preprocessor macros for configuration within C
+files.  Also created is `generated build.sh`, which contains the list
+of C files.
