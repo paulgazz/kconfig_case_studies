@@ -58,23 +58,27 @@ fi
 config_file=""
 kconfig_root=""
 binaries=""
+get_reverse_dep=""
 echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
     binaries="_stage/"
+    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "toybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="toybox"
+    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "busybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="busybox"
+    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "fiasco" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -87,12 +91,14 @@ if [[ $? -eq 0 ]]; then
     #     echo "ERROR: please figure out what to use to measure the binary size" >&2
     #     exit 1 
     # fi
+    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="extra/Configs/Config.in"
     binaries="*"
+    get_reverse_dep=""
 fi
 
 if [[ "${config_file}" == "" || "${kconfig_root}" == "" ]]; then
@@ -187,24 +193,26 @@ elif [[ "${action}" == "dimacs" ]]; then
     # axtls variables already include the the CONFIG_ prefix and it's
     # kconfig system is modified not to.  add a flag to check_dep to
     # disable the prefix for axtls.
+    extra_args=""
     echo "${casename}" | egrep -i "axtls" >/dev/null
     if [[ $? -eq 0 ]]; then
         extra_args="-p"
-    else
-      extra_args=""
     fi
     # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
     # environment variables with -d.
     echo "${casename}" | egrep -i "uClibc-ng" >/dev/null
     if [[ $? -eq 0 ]]; then
         extra_args="-p -d"
-    else
-      extra_args=""
     fi
 
     # without reverse dependencies
     time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} -D --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_sans_reverse.dimacs"
 
     # get the dimacs file by running kmax's check_dep
-    time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_with_reverse.dimacs"
+    if [[ "${get_reverse_dep}" != "" ]]; then
+        time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_with_reverse.dimacs"
+    fi
+else
+  echo "invalid action"
+  exit 1
 fi
