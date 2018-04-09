@@ -234,7 +234,7 @@ bool CONFIG_SORT_FLOAT nonselectable
 def_bool CONFIG_SORT_FLOAT 1 (CONFIG_SORT_BIG and CONFIG_TOYBOX_FLOAT)
 bool CONFIG_MD5SUM selectable
 nonbool CONFIG_TOYBOX_UID_SYS selectable nonstring
-def_nonbool CONFIG_TOYBOX_UID_SYS 100|(1)
+def_nonbool CONFIG_TOYBOX_UID_SYS "100"|(1)
 bool CONFIG_FALSE selectable
 bool CONFIG_TAR selectable
 bool CONFIG_LOGIN selectable
@@ -258,7 +258,7 @@ bool CONFIG_MKFIFO_Z nonselectable
 def_bool CONFIG_MKFIFO_Z 1 (CONFIG_MKFIFO and  not CONFIG_TOYBOX_LSM_NONE)
 bool CONFIG_FSCK selectable
 nonbool CONFIG_TOYBOX_UID_USR selectable nonstring
-def_nonbool CONFIG_TOYBOX_UID_USR 500|(1)
+def_nonbool CONFIG_TOYBOX_UID_USR "500"|(1)
 bool CONFIG_CHGRP selectable
 bool CONFIG_MDEV selectable
 bool CONFIG_TR selectable

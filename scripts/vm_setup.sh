@@ -82,3 +82,11 @@ if [ ! -d "uClibc-ng_1_0_29" ]; then
     tar -C /home/vagrant -xvf /usr/src/linux-source-4.4.0.tar.bz2
     make -C /home/vagrant/linux-source-4.4.0 INSTALL_HDR_PATH=/home/vagrant/linux-headers headers_install
 fi
+
+if [ ! -d "buildroot_2018_02" ]; then
+    if [ ! -d "buildroot-2018.02" ]; then
+        tar -xvf /vagrant/cases/buildroot_2018_02/buildroot-2018.02.tar.gz
+    fi
+    mv buildroot-2018.02 buildroot_2018_02
+fi
+

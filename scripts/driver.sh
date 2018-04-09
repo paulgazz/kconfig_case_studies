@@ -59,12 +59,17 @@ config_file=""
 kconfig_root=""
 binaries=""
 get_reverse_dep=""
+dimacs_extra_args=""
 echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
     binaries="_stage/"
     get_reverse_dep="true"
+    # axtls variables already include the the CONFIG_ prefix and it's
+    # kconfig system is modified not to.  add a flag to check_dep to
+    # disable the prefix for axtls.
+    dimacs_extra_args="-p"
 fi
 echo "${casename}" | grep -i "toybox" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -97,9 +102,23 @@ echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="extra/Configs/Config.in"
-    binaries="*"
+    binaries="*"  # TODO: set binaries
     get_reverse_dep=""
+    # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
+    # environment variables with -d.
+    dimacs_extra_args="-p -d"
 fi
+echo "${casename}" | grep -i "buildroot" > /dev/null
+if [[ $? -eq 0 ]]; then
+    config_file=".config"
+    kconfig_root="Config.in"
+    binaries="*"  # TODO: set binaries
+    get_reverse_dep=""
+    # don't add CONFIG_ prefix, already uses BR2 itself.  must set a build path.
+    dimacs_extra_args="-p -e BUILD_DIR=."
+    touch .br2-external.in  # this file is necessary in order to process the Config.in
+fi
+
 
 if [[ "${config_file}" == "" || "${kconfig_root}" == "" ]]; then
     echo "unknown case '${casename}. please add it to this script '${0}'"
@@ -158,6 +177,8 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           i="${experiment_dir}/${i_base}"
           echo "configuring $i";
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
+
+          # case-specific build scripts
           echo "${casename}" | grep -i "axtls" > /dev/null
           if [[ $? -eq 0 ]]; then
               mkdir -p /tmp/lua
@@ -168,6 +189,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
               mv "${config_file}" "${config_file}.tmp"
               cat "${config_file}.tmp" | grep -v "^KERNEL_HEADERS=" > "${config_file}"; echo 'KERNEL_HEADERS="/home/vagrant/linux-headers/include"' >> "${config_file}"
           fi
+
           make oldconfig;
           echo "building $i";
           make clean;
@@ -190,27 +212,12 @@ elif [[ "${action}" == "dimacs" ]]; then
         exit 1
     fi
 
-    # axtls variables already include the the CONFIG_ prefix and it's
-    # kconfig system is modified not to.  add a flag to check_dep to
-    # disable the prefix for axtls.
-    extra_args=""
-    echo "${casename}" | egrep -i "axtls" >/dev/null
-    if [[ $? -eq 0 ]]; then
-        extra_args="-p"
-    fi
-    # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
-    # environment variables with -d.
-    echo "${casename}" | egrep -i "uClibc-ng" >/dev/null
-    if [[ $? -eq 0 ]]; then
-        extra_args="-p -d"
-    fi
-
     # without reverse dependencies
-    time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} -D --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_sans_reverse.dimacs"
+    time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} -D --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_sans_reverse.dimacs"
 
     # get the dimacs file by running kmax's check_dep
     if [[ "${get_reverse_dep}" != "" ]]; then
-        time "${KMAX_ROOT}/kconfig/check_dep" ${extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_with_reverse.dimacs"
+        time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_with_reverse.dimacs"
     fi
 else
   echo "invalid action"
