@@ -213,11 +213,15 @@ elif [[ "${action}" == "dimacs" ]]; then
     fi
 
     # without reverse dependencies
-    time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} -D --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_sans_reverse.dimacs"
+    time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" -D | tee "${case_dir}/${casename}_sans_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py"    > "${case_dir}/${casename}_sans_reverse.dimacs"
+    time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_sans_reverse_sans_nonselectable.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" -D    > "${case_dir}/sans_reverse_sans_nonselectable.dimacs"
+    time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/sans_reverse_with_nonselectable.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" -D -n > "${case_dir}/sans_reverse_with_nonselectable.dimacs"
 
     # get the dimacs file by running kmax's check_dep
     if [[ "${get_reverse_dep}" != "" ]]; then
-        time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" > "${case_dir}/${casename}_with_reverse.dimacs"
+        time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py"       > "${case_dir}/${casename}_with_reverse.dimacs"
+        time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse_sans_nonselectable.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py"       > "${case_dir}/with_reverse_sans_nonselectable.dimacs"
+        time "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/${casename}_with_reverse_with_nonselectable.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py"    -n > "${case_dir}/with_reverse_with_nonselectable.dimacs"
     fi
 else
   echo "invalid action"
