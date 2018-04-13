@@ -1,0 +1,510 @@
+configuring /vagrant/cases/fiasco_17_10/configs_small/0.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  SHIPPED scripts/kconfig/zconf.hash.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/0.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.052s
+user	0m0.004s
+sys	0m0.000s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/1.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/1.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.050s
+user	0m0.000s
+sys	0m0.004s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/2.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+*
+* Restart config...
+*
+*
+* Kernel options
+*
+Enable multi processor support (MP) [Y/n/?] y
+  Maximal supported number of CPUs (MP_MAX_CPUS) [4] (NEW) 
+Use time-stamp counter for KIP and scheduling accounting (SYNC_TSC) [N/y/?] n
+Fine-grained CPU time (FINE_GRAINED_CPUTIME) [N/y/?] n
+Scheduler
+  1. Fixed priority scheduler (SCHED_FIXED_PRIO)
+  2. Weighted fair queueing scheduler (SCHED_WFQ)
+> 3. Combined fixed priority RT and WFQ scheduler (SCHED_FP_WFQ)
+choice[1-3]: 3
+Enable support for DMA remapping (IOMMU) [Y/n/?] y
+No virtually mapped array for cap tables (DISABLE_VIRT_OBJ_SPACE) [Y/n] y
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/2.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.053s
+user	0m0.004s
+sys	0m0.000s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/3.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+*
+* Restart config...
+*
+*
+* Kernel options
+*
+Enable multi processor support (MP) [Y/n/?] y
+  Maximal supported number of CPUs (MP_MAX_CPUS) [4] (NEW) 
+Use scheduling timer in one-shot mode (ONE_SHOT) [N/y/?] n
+Use time-stamp counter for KIP and scheduling accounting (SYNC_TSC) [Y/n/?] y
+Fine-grained CPU time (FINE_GRAINED_CPUTIME) [N/y/?] n
+Scheduler
+> 1. Fixed priority scheduler (SCHED_FIXED_PRIO)
+  2. Weighted fair queueing scheduler (SCHED_WFQ)
+  3. Combined fixed priority RT and WFQ scheduler (SCHED_FP_WFQ)
+choice[1-3]: 1
+Enable support for DMA remapping (IOMMU) [N/y/?] n
+No virtually mapped array for cap tables (DISABLE_VIRT_OBJ_SPACE) [N/y] n
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/3.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.048s
+user	0m0.004s
+sys	0m0.000s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/4.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/4.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.049s
+user	0m0.004s
+sys	0m0.000s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/5.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/5.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.050s
+user	0m0.004s
+sys	0m0.000s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/6.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+*
+* Restart config...
+*
+*
+* Kernel options
+*
+Enable multi processor support (MP) [Y/n/?] y
+  Maximal supported number of CPUs (MP_MAX_CPUS) [4] (NEW) 
+Use scheduling timer in one-shot mode (ONE_SHOT) [N/y/?] n
+Use time-stamp counter for KIP and scheduling accounting (SYNC_TSC) [Y/n/?] y
+Fine-grained CPU time (FINE_GRAINED_CPUTIME) [N/y/?] n
+Scheduler
+> 1. Fixed priority scheduler (SCHED_FIXED_PRIO)
+  2. Weighted fair queueing scheduler (SCHED_WFQ)
+  3. Combined fixed priority RT and WFQ scheduler (SCHED_FP_WFQ)
+choice[1-3]: 1
+Enable support for DMA remapping (IOMMU) [Y/n/?] y
+No virtually mapped array for cap tables (DISABLE_VIRT_OBJ_SPACE) [N/y] n
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/6.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.049s
+user	0m0.000s
+sys	0m0.004s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/7.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/7.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.050s
+user	0m0.000s
+sys	0m0.004s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/8.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/8.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.047s
+user	0m0.000s
+sys	0m0.004s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
+configuring /vagrant/cases/fiasco_17_10/configs_small/9.config
+make -C build oldconfig
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. oldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to globalconfig.out
+#
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make -C /home/vagrant/fiasco-17.10/src/kernel/fiasco/src/../tool/kconfig O=/home/vagrant/fiasco-17.10/src/kernel/fiasco/build Kconfig=Kconfig KCONFIG_AUTOHEADER=globalconfig.h KCONFIG_TRISTATE=include/config/tristate.conf KCONFIG_CONFIG=globalconfig.out KCONFIG_AUTOCONFIG=include/config/auto.conf KERNELVERSION=SVN MENUCONFIG_COLOR=blackbg INCLUDE_PPC32= INCLUDE_SPARC= fiasco_srcdir=/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/.. silentoldconfig
+make[2]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[3]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[3]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[2]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/tool/kconfig'
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+building /vagrant/cases/fiasco_17_10/configs_small/9.config
+set -e; for i in man build; do make -C $i clean; done
+make[1]: *** man: No such file or directory.  Stop.
+Makefile:77: recipe for target 'clean' failed
+make: *** [clean] Error 2
+make -C build
+make[1]: Entering directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+make[1]: --version: Command not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+/bin/sh: 1: -E: not found
+make[1]: -m32: Command not found
+make[1]: -m32: Command not found
+/home/vagrant/fiasco-17.10/src/kernel/fiasco/src/Makeconf:261: *** gcc- is not supported. Please use one of the following versions: 4.7 4.8 4.9 5 6 7.  Stop.
+make[1]: Leaving directory '/home/vagrant/fiasco-17.10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+real	0m0.047s
+user	0m0.004s
+sys	0m0.000s
+return code 2
+du: cannot access 'build/*.o': No such file or directory
+du: cannot access 'build/*.a': No such file or directory
+binary size (in bytes): 0
