@@ -7,7 +7,17 @@ configurations.
 
 ## axtls
 
-language bindings (see email to dev).
+### language bindings
+
+(see email to dev in this directory)
+
+### macros in function prototype
+
+`crypt/crypto_misc.c` has an uninitialized variable dereference bug in
+`RNG_initialize. `cppcheck` apparently doesn't find this when running
+on the original, unpreprocessed source code.  this was due to the
+macros used in the function prototype.  it could be caused by improper
+handling of preprocessor directives.
 
 ## busybox
 
