@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 if [[ $# -lt 1 ]]; then
     echo "USAGE: $(basename $0) action casename [samples]"
     echo ""
@@ -216,6 +214,10 @@ elif [[ "${action}" == "dimacs" ]]; then
 
     # extract kconfig constraints to kmax intermediate format
     "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/kconfig.kmax"
+
+    # complete
+    # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects --include-nonvisible-bool-defaults --remove-orphaned-nonvisibles --remove-independent-nonvisibles > "${case_dir}/kconfig.dimacs"
+    time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects --include-nonvisible-bool-defaults --remove-orphaned-nonvisibles > "${case_dir}/kconfig.dimacs"
     
     # without reverse dependencies
     time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-reverse-dependencies --remove-all-nonvisibles > "${case_dir}/sans_reverse_sans_nonselectable.dimacs"
