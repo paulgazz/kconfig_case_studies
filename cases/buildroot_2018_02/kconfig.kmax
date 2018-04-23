@@ -3170,7 +3170,7 @@ bool BR2_PACKAGE_RANGER selectable
 bool BR2_PACKAGE_RS485CONF selectable
 bool BR2_PACKAGE_HWLOC selectable
 bool BR2_PACKAGE_GST_PLUGINS_BAD_ZBAR selectable
-bool BR2_SKIP_LEGACY nonselectable
+bool BR2_SKIP_LEGACY selectable
 bool BR2_PACKAGE_QT_PIXEL_DEPTH_18 selectable
 bool BR2_arm922t selectable
 bool BR2_PACKAGE_LINUX_FIRMWARE_RALINK_RT2XX selectable
