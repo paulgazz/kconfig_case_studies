@@ -121,9 +121,16 @@ for name in common_configs:
       sys.stderr.write("warning: %s is being set to some value in kconfig output\n" % name)
       num_warnings = num_warnings + 1
       pass
+    elif configs1[name] == True and configs2[name] == False:
+      if config_vals1[name] == "\"\"" or config_vals1[name] == "0":
+        # our sampler sets these to empty values, "\"\"" for string and 0 for ints
+        sys.stderr.write("warning: %s differs between configs, but only because an empty value is being unset by kconfig\n" % name)
+        num_errors = num_errors + 1
+      else:
+        sys.stderr.write("error: %s differs between configs.  nonbool value is being unset by kconfig\n" % name)
+        num_errors = num_errors + 1
     else:
-      sys.stderr.write("error: %s differs between configs.  nonbool value is being unset by kconfig\n" % name)
-      num_errors = num_errors + 1
+      assert True
 
 # make sure that any variables not in the kconfig are disabled in the kconfig file
 for name in unique1:
