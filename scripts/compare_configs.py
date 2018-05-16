@@ -105,7 +105,7 @@ for name in common_configs:
       elif configs1[name] == True and configs2[name] == False:
         # assume it was set by a select statement or a default
         sys.stderr.write("error: %s is user-selectable bool and being turned off by kconfig.\n" % name)
-        num_warnings = num_warnings + 1
+        num_warnings = num_errors + 1
     else:
       sys.stderr.write("error: %s differs between configs.  bool value is being unset by kconfig.\n" % name)
       num_errors = num_errors + 1
