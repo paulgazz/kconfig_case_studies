@@ -164,7 +164,7 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
           time make oldconfig;
           cp "${config_file}" "${kconfig_out_dir}/$(basename ${i})"
           cat "${config_file}" | md5sum > "${kconfig_out_dir}/$(basename ${i}).md5"
-          python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/${casename}_sans_reverse.kmax" "${i}" "${config_file}";
+          python "${KCONFIG_CASE_STUDIES}/scripts/compare_configs.py" "${case_dir}/kconfig.kmax" "${i}" "${config_file}";
           echo "diff result: ${?}";
         done 2>&1 | tee "${experiment_dir}/config_diff_results.out" | egrep "^(configuring)"
 
