@@ -98,11 +98,14 @@ for name in common_configs:
     elif configs1[name] == False and configs2[name] == False:
       # both are unset
       pass
-    elif configs1[name] == False and configs2[name] == True and not type_info.is_selectable:
-      # assume it was set by a select statement or a default
-      sys.stderr.write("warning: %s is bool and being set to some value in kconfig output, but is not user-selectable anyway.\n" % name)
-      num_warnings = num_warnings + 1
-      pass
+    elif not type_info.is_selectable:
+      if configs1[name] == False and configs2[name] == True:
+        sys.stderr.write("warning: %s is bool and being set to some value in kconfig output, but is not user-selectable anyway.\n" % name)
+        num_warnings = num_warnings + 1
+      elif configs1[name] == True and configs2[name] == False:
+        # assume it was set by a select statement or a default
+        sys.stderr.write("error: %s is user-selectable bool and being turned off by kconfig.\n" % name)
+        num_warnings = num_warnings + 1
     else:
       sys.stderr.write("error: %s differs between configs.  bool value is being unset by kconfig.\n" % name)
       num_errors = num_errors + 1
