@@ -20,7 +20,7 @@ if [[ $# -lt 1 ]]; then
     echo "  use kconfig's randconfig to generate a set of random .config files for the given case"
     echo ""
     echo "NOTES:"
-    echo "  - Run this script from root of a project's source directory."
+    echo "  - Run this script from directory in which the project's root Makefile is located."
     echo "  - Be sure that KCONFIG_CASE_STUDIES has been set to the repo."
     echo "  - For 'dimacs' be sure that KMAX_ROOT has been set to the kmax repo."
     exit 1
