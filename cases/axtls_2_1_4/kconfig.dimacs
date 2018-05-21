@@ -1,12 +1,12 @@
 c 1 CONFIG_HTTP_TIMEOUT nonbool 300
 c 2 CONFIG_SSL_X509_ORGANIZATION_NAME nonbool ""
 c 3 CONFIG_SSL_SERVER_ONLY choice_bool
-c 4 CONFIG_JAVA_HOME nonbool "c:\Program Files\Java\jdk1.5.0_06"
+c 4 CONFIG_JAVA_HOME nonbool "c:\\Program Files\\Java\\jdk1.5.0_06"
 c 5 CONFIG_SSL_TEST bool
 c 6 CONFIG_SSL_PROT_LOW choice_bool
-c 7 CONFIG_DOT_NET_FRAMEWORK_BASE nonbool "c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727"
+c 7 CONFIG_DOT_NET_FRAMEWORK_BASE nonbool "c:\\WINDOWS\\Microsoft.NET\\Framework\\v2.0.50727"
 c 8 CONFIG_HTTP_DIRECTORIES bool
-c 9 CONFIG_PERL_CORE nonbool "c:\perl\lib\CORE"
+c 9 CONFIG_PERL_CORE nonbool "c:\\perl\\lib\\CORE"
 c 10 CONFIG_VBNET_SAMPLES bool
 c 11 CONFIG_CSHARP_SAMPLES bool
 c 12 CONFIG_SSL_EXPIRY_TIME nonbool 24
@@ -22,14 +22,14 @@ c 21 CONFIG_BIGINT_CLASSICAL choice_bool
 c 22 CONFIG_JAVA_SAMPLES bool
 c 23 MUL_KARATSUBA_THRESH nonbool 20
 c 24 CONFIG_DEBUG bool
-c 25 CONFIG_VISUAL_STUDIO_10_0_BASE nonbool "c:\Program Files\Microsoft Visual Studio 10.0"
+c 25 CONFIG_VISUAL_STUDIO_10_0_BASE nonbool "c:\\Program Files\\Microsoft Visual Studio 10.0"
 c 26 CONFIG_LUA_SAMPLES bool
 c 27 CONFIG_SSL_PROT_MEDIUM choice_bool
 c 28 CONFIG_AXHTTPD bool
 c 29 CONFIG_SSL_GENERATE_X509_CERT bool
 c 30 CONFIG_SSL_USE_PKCS12 bool
 c 31 CONFIG_X509_MAX_CA_CERTS nonbool 150
-c 32 CONFIG_VISUAL_STUDIO_8_0_BASE nonbool "c:\Program Files\Microsoft Visual Studio 8"
+c 32 CONFIG_VISUAL_STUDIO_8_0_BASE nonbool "c:\\Program Files\\Microsoft Visual Studio 8"
 c 33 PREFIX nonbool "/usr/local"
 c 34 CONFIG_VISUAL_STUDIO_8_0 choice_bool
 c 35 CONFIG_SSL_X509_CERT_LOCATION nonbool ""
@@ -65,7 +65,7 @@ c 64 CONFIG_BIGINT_KARATSUBA bool
 c 65 CONFIG_BIGINT_CRT bool
 c 66 CONFIG_HTTP_USER nonbool "nobody"
 c 67 CONFIG_LUA_CORE nonbool "/usr/local"
-c 68 CONFIG_VISUAL_STUDIO_7_0_BASE nonbool "c:\Program Files\Microsoft Visual Studio .NET 2003"
+c 68 CONFIG_VISUAL_STUDIO_7_0_BASE nonbool "c:\\Program Files\\Microsoft Visual Studio .NET 2003"
 c 69 CONFIG_HTTP_HAS_CGI bool
 c 70 CONFIG_PERL_LIB nonbool "perl58.lib"
 c 71 CONFIG_INTEGER_32BIT choice_bool
