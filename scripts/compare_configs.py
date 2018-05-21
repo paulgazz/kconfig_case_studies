@@ -24,16 +24,23 @@ class ConfigVar:
     self.is_selectable = is_selectable
 
 config_types = {}
+environment_vars = set()
 with open(args.kmax_file) as f:
   for line in f:
     instr, data = line.strip().split(" ", 1)
     if (instr == "bool"):
       varname, selectability = data.split(" ", 1)
       selectable = True if selectability == "selectable" else False
+      if selectability == "environment":
+         selectable = True
+         environment_vars.add(varname)
       config_types[varname] = ConfigVar(True, None, selectable)
     elif (instr == "nonbool"):
       varname, selectability, type_name = data.split(" ", 2)
       selectable = True if selectability == "selectable" else False
+      if selectability == "environment":
+         selectable = True
+         environment_vars.add(varname)
       config_types[varname] = ConfigVar(False, type_name, selectable)
 
 # Return two dictionaries.  The first maps config names to True for
@@ -83,7 +90,7 @@ for name in common_configs:
   type_info = config_types[name]
   assert type_info != None
   if type_info.is_bool:
-    if  configs1[name] == True and configs2[name] == True:
+    if configs1[name] == True and configs2[name] == True:
       val1 = config_vals1[name]
       val2 = config_vals2[name]
       if (val1 == "y" or val1 == "m") and (val2 == "y" or val2 == "m"):
@@ -125,7 +132,7 @@ for name in common_configs:
       if config_vals1[name] == "\"\"" or config_vals1[name] == "0":
         # our sampler sets these to empty values, "\"\"" for string and 0 for ints
         sys.stderr.write("warning: %s differs between configs, but only because an empty value is being unset by kconfig\n" % name)
-        num_errors = num_errors + 1
+        num_warnings = num_warnings + 1
       else:
         sys.stderr.write("error: %s differs between configs.  nonbool value is being unset by kconfig\n" % name)
         num_errors = num_errors + 1
@@ -141,8 +148,14 @@ for name in unique1:
       # unset in the generated config, and non-existent in the kconfig config is okay
       pass
     elif configs1[name] == True and name not in configs2:
-      sys.stderr.write("error: %s is true in generated, but not set in kconfig output.\n" % name)
-      num_errors = num_errors + 1
+      if name in environment_vars:
+        # environment variables are not set by kconfig
+        sys.stderr.write("warning: %s is not set by kconfig, because it is set by environment variable\n" % name)
+        num_warnings = num_warnings + 1
+        pass
+      else:
+        sys.stderr.write("error: %s is true in generated, but not set in kconfig output.\n" % name)
+        num_errors = num_errors + 1
     else:
       assert True # should not reach here
   else: # non booleans
@@ -151,8 +164,8 @@ for name in unique1:
       pass
     elif configs1[name] == True and name not in configs2:
       # unsetting a nonboolean is fine, since we don't support nonbooleans
-      sys.stderr.write("error: %s differs between configs.  nonbool value is not set in kconfig\n" % name)
-      num_errors = num_errors + 1
+      sys.stderr.write("warning: %s differs between configs.  nonbool value is not set in kconfig\n" % name)
+      num_warnings = num_warnings + 1
       pass
     else:
       assert True # should not reach here
