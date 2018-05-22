@@ -100,32 +100,34 @@ for name in common_configs:
         # both are disabled
         pass
       else:
-        sys.stderr.write("error: %s differs between configs.  they have different boolean value settings.\n" % name)
+        sys.stderr.write("error: %s differs between configs.  they have different bool value settings.\n" % name)
         num_errors = num_errors + 1
     elif configs1[name] == False and configs2[name] == False:
       # both are unset
       pass
     elif not type_info.is_selectable:
       if configs1[name] == False and configs2[name] == True:
-        sys.stderr.write("warning: %s is bool and being set to some value in kconfig output, but is not user-selectable anyway.\n" % name)
+        sys.stderr.write("warning: %s is a nonselectable bool and being set to some value in kconfig output, but is not user-selectable anyway.\n" % name)
         num_warnings = num_warnings + 1
       elif configs1[name] == True and configs2[name] == False:
         # assume it was set by a select statement or a default
-        sys.stderr.write("error: %s is user-selectable bool and being turned off by kconfig.\n" % name)
+        sys.stderr.write("error: %s is a nonselectable bool and being turned off by kconfig.\n" % name)
         num_warnings = num_errors + 1
     else:
-      sys.stderr.write("error: %s differs between configs.  bool value is being unset by kconfig.\n" % name)
+      sys.stderr.write("error: %s differs between configs.  bool value is selectable being unset by kconfig.\n" % name)
       num_errors = num_errors + 1
   else: # non booleans
     if configs1[name] == configs2[name]:
       # having both set to _something_ is sufficient
       if config_vals1[name] != config_vals2[name]:
-        sys.stderr.write("warning: %s has different nonboolean values\n" % name)
+        selectability = "selectable" if type_info.is_selectable else "nonselectable"
+        sys.stderr.write("warning: %s has different %s nonboolean values\n" % (name, selectability))
         num_warnings = num_warnings + 1
       pass
     elif configs1[name] == False and configs2[name] == True:
       # assume the nonbool was set to a default
-      sys.stderr.write("warning: %s is being set to some value in kconfig output\n" % name)
+      selectability = "selectable" if type_info.is_selectable else "nonselectable"
+      sys.stderr.write("warning: %s nonbool %s is being set to some value in kconfig output\n" % (selectability, name))
       num_warnings = num_warnings + 1
       pass
     elif configs1[name] == True and configs2[name] == False:
@@ -150,7 +152,8 @@ for name in unique1:
     elif configs1[name] == True and name not in configs2:
       if name in environment_vars:
         # environment variables are not set by kconfig
-        sys.stderr.write("warning: %s is not set by kconfig, because it is set by environment variable\n" % name)
+        selectability = "selectable" if type_info.is_selectable else "nonselectable"
+        sys.stderr.write("warning: %s bool %s is not set by kconfig, because it is set by environment variable\n" % (selectability, name))
         num_warnings = num_warnings + 1
         pass
       else:
@@ -180,7 +183,8 @@ for name in unique2:
     num_warnings = num_warnings + 1
     pass
   else:
-    sys.stderr.write("error: %s is set in kconfig output, but not in the generated config.\n" % name)
+    typename = "bool" if type_info.is_bool else "nonbool"
+    sys.stderr.write("error: selectable %s variable %s is set in kconfig output, but not in the generated config.\n" % typename, name)
     num_errors = num_errors + 1
       
 sys.stderr.write("%d errors\n" % num_errors)
