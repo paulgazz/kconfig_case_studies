@@ -1,0 +1,799 @@
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_GZIP is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_WEAK_ORDERING differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_GZIP is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_LIGHTWEIGHT_BARRIERS differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_WEAK_ORDERING differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_LIGHTWEIGHT_BARRIERS differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_FPU differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_PSCI differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_PF_EXYNOS_UART_NATIVE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_ARM_LPAE differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_JDB_DISASM is true in generated, but not set in kconfig output.
+error: CONFIG_LIGHTWEIGHT_BARRIERS differs between configs.  bool value is selectable being unset by kconfig.
+error: CONFIG_JDB_GZIP is true in generated, but not set in kconfig output.
