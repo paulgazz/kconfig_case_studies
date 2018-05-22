@@ -190,7 +190,8 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
               cat "${config_file}.tmp" | grep -v "^KERNEL_HEADERS=" > "${config_file}"; echo 'KERNEL_HEADERS="/home/vagrant/linux-headers/include"' >> "${config_file}"
           fi
 
-          make oldconfig;
+          time make oldconfig;
+
           echo "building $i";
           make clean;
           echo "${casename}" | grep -i "axtls" > /dev/null
