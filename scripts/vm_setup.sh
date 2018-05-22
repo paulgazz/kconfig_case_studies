@@ -3,6 +3,8 @@
 set -x
 
 # dependencies
+sudo apt-get update
+
 yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence g++-5-arm-linux-gnueabihf libdlib-dev libaudit-dev linux-source-4.4.0
 
 # allow user to add to /usr/local
