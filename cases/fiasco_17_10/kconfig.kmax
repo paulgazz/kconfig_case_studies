@@ -86,7 +86,7 @@ def_nonbool CONFIG_BSP_NAME "tegra"|(CONFIG_PF_TEGRA)
 def_nonbool CONFIG_BSP_NAME "pxa"|(CONFIG_PF_XSCALE)
 def_nonbool CONFIG_BSP_NAME "zynq"|(CONFIG_PF_ZYNQ)
 bool CONFIG_PF_ARMADA38X selectable
-bool CONFIG_INCLUDE_SPARC selectable
+bool CONFIG_INCLUDE_SPARC environment
 bool CONFIG_JDB_GZIP selectable
 bool CONFIG_PF_EXYNOS4_4412 selectable
 bool CONFIG_PF_BAIKAL_T selectable
@@ -145,7 +145,7 @@ bool CONFIG_PF_IMX_51 selectable
 bool CONFIG_HAS_ARM_PSCI nonselectable
 bool CONFIG_PF_IMX_7 selectable
 bool CONFIG_CAN_ARM_CPU_926 nonselectable
-bool CONFIG_INCLUDE_PPC32 selectable
+bool CONFIG_INCLUDE_PPC32 environment
 bool CONFIG_WATCHDOG selectable
 bool CONFIG_WARN_ANY selectable
 bool CONFIG_BIT64_CHOICE selectable
