@@ -1,342 +1,927 @@
-bool CONFIG_KILL selectable
-bool CONFIG_TOYBOX_NORECURSE selectable
-bool CONFIG_LOGGER selectable
-bool CONFIG_WHICH selectable
-bool CONFIG_DHCP6 selectable
-bool CONFIG_LSATTR selectable
-bool CONFIG_UUDECODE selectable
-bool CONFIG_UNSHARE selectable
-bool CONFIG_USERADD selectable
-bool CONFIG_OPENVT selectable
-bool CONFIG_IONICE selectable
-bool CONFIG_SWITCH_ROOT selectable
-bool CONFIG_WATCH selectable
-bool CONFIG_FACTOR selectable
-bool CONFIG_TOYBOX_HELP selectable
-bool CONFIG_IFCONFIG selectable
-bool CONFIG_GROUPS selectable
-bool CONFIG_TOYBOX_ANDROID_SCHEDPOLICY nonselectable
+config CONFIG_KILL bool
+prompt CONFIG_KILL (1)
+def_bool CONFIG_KILL 1 (1)
+config CONFIG_TOYBOX_NORECURSE bool
+prompt CONFIG_TOYBOX_NORECURSE (1)
+def_bool CONFIG_TOYBOX_NORECURSE 0 (1)
+config CONFIG_LOGGER bool
+prompt CONFIG_LOGGER (CONFIG_SYSLOGD)
+def_bool CONFIG_LOGGER 0 (CONFIG_SYSLOGD)
+config CONFIG_WHICH bool
+prompt CONFIG_WHICH (1)
+def_bool CONFIG_WHICH 1 (1)
+config CONFIG_DHCP6 bool
+prompt CONFIG_DHCP6 (1)
+def_bool CONFIG_DHCP6 0 (1)
+config CONFIG_LSATTR bool
+prompt CONFIG_LSATTR (1)
+def_bool CONFIG_LSATTR 1 (1)
+config CONFIG_UUDECODE bool
+prompt CONFIG_UUDECODE (1)
+def_bool CONFIG_UUDECODE 1 (1)
+config CONFIG_UNSHARE bool
+prompt CONFIG_UNSHARE (CONFIG_TOYBOX_CONTAINER)
+def_bool CONFIG_UNSHARE 1 (CONFIG_TOYBOX_CONTAINER)
+config CONFIG_USERADD bool
+prompt CONFIG_USERADD (1)
+def_bool CONFIG_USERADD 0 (1)
+config CONFIG_OPENVT bool
+prompt CONFIG_OPENVT (CONFIG_TOYBOX_FORK)
+def_bool CONFIG_OPENVT 0 (CONFIG_TOYBOX_FORK)
+config CONFIG_IONICE bool
+prompt CONFIG_IONICE (1)
+def_bool CONFIG_IONICE 1 (1)
+config CONFIG_SWITCH_ROOT bool
+prompt CONFIG_SWITCH_ROOT (1)
+def_bool CONFIG_SWITCH_ROOT 1 (1)
+config CONFIG_WATCH bool
+prompt CONFIG_WATCH (1)
+def_bool CONFIG_WATCH 0 (1)
+config CONFIG_FACTOR bool
+prompt CONFIG_FACTOR (1)
+def_bool CONFIG_FACTOR 1 (1)
+config CONFIG_TOYBOX_HELP bool
+prompt CONFIG_TOYBOX_HELP (1)
+def_bool CONFIG_TOYBOX_HELP 1 (1)
+config CONFIG_IFCONFIG bool
+prompt CONFIG_IFCONFIG (1)
+def_bool CONFIG_IFCONFIG 1 (1)
+config CONFIG_GROUPS bool
+prompt CONFIG_GROUPS (1)
+def_bool CONFIG_GROUPS 1 (1)
+config CONFIG_TOYBOX_ANDROID_SCHEDPOLICY bool
 def_bool CONFIG_TOYBOX_ANDROID_SCHEDPOLICY 0 (1)
-bool CONFIG_MKDIR selectable
-bool CONFIG_CATV selectable
-bool CONFIG_MODINFO selectable
-bool CONFIG_MDEV_CONF selectable
-bool CONFIG_MKNOD_Z nonselectable
+config CONFIG_MKDIR bool
+prompt CONFIG_MKDIR (1)
+def_bool CONFIG_MKDIR 1 (1)
+config CONFIG_CATV bool
+prompt CONFIG_CATV (1)
+def_bool CONFIG_CATV 1 (1)
+config CONFIG_MODINFO bool
+prompt CONFIG_MODINFO (1)
+def_bool CONFIG_MODINFO 1 (1)
+config CONFIG_MDEV_CONF bool
+prompt CONFIG_MDEV_CONF (CONFIG_MDEV)
+def_bool CONFIG_MDEV_CONF 1 (CONFIG_MDEV)
+config CONFIG_MKNOD_Z bool
 def_bool CONFIG_MKNOD_Z 1 (CONFIG_MKNOD and  not CONFIG_TOYBOX_LSM_NONE)
-bool CONFIG_SETPROP selectable
-bool CONFIG_IPCS selectable
-bool CONFIG_FREERAMDISK selectable
-bool CONFIG_TEST_MANY_OPTIONS selectable
-bool CONFIG_UNIX2DOS selectable
-bool CONFIG_SEQ selectable
-bool CONFIG_ASCII selectable
-bool CONFIG_TOYBOX_FORK nonselectable
+config CONFIG_SETPROP bool
+prompt CONFIG_SETPROP (CONFIG_TOYBOX_ON_ANDROID)
+def_bool CONFIG_SETPROP 1 (CONFIG_TOYBOX_ON_ANDROID)
+config CONFIG_IPCS bool
+prompt CONFIG_IPCS (1)
+def_bool CONFIG_IPCS 0 (1)
+config CONFIG_FREERAMDISK bool
+prompt CONFIG_FREERAMDISK (1)
+def_bool CONFIG_FREERAMDISK 1 (1)
+config CONFIG_TEST_MANY_OPTIONS bool
+prompt CONFIG_TEST_MANY_OPTIONS (1)
+def_bool CONFIG_TEST_MANY_OPTIONS 0 (1)
+config CONFIG_UNIX2DOS bool
+prompt CONFIG_UNIX2DOS (1)
+def_bool CONFIG_UNIX2DOS 1 (1)
+config CONFIG_SEQ bool
+prompt CONFIG_SEQ (CONFIG_TOYBOX_FLOAT)
+def_bool CONFIG_SEQ 1 (CONFIG_TOYBOX_FLOAT)
+config CONFIG_ASCII bool
+prompt CONFIG_ASCII (1)
+def_bool CONFIG_ASCII 0 (1)
+config CONFIG_TOYBOX_FORK bool
 def_bool CONFIG_TOYBOX_FORK 1 ( not CONFIG_TOYBOX_MUSL_NOMMU_IS_BROKEN)
-bool CONFIG_TEST_UTF8TOWC selectable
-bool CONFIG_LSUSB selectable
-bool CONFIG_PS selectable
-bool CONFIG_SYNC selectable
-bool CONFIG_GZIP selectable
-bool CONFIG_CHRT selectable
-bool CONFIG_NBD_CLIENT selectable
-bool CONFIG_FTPGET selectable
-bool CONFIG_RMMOD selectable
-bool CONFIG_TAIL selectable
-bool CONFIG_MORE selectable
-bool CONFIG_CMP selectable
-bool CONFIG_GUNZIP selectable
-bool CONFIG_UNAME selectable
-bool CONFIG_TAC selectable
-bool CONFIG_LOAD_POLICY selectable
-bool CONFIG_GETPROP selectable
-bool CONFIG_FSFREEZE selectable
-bool CONFIG_MV selectable
-bool CONFIG_PATCH selectable
-bool CONFIG_PKILL selectable
-bool CONFIG_DOS2UNIX selectable
-bool CONFIG_SENDEVENT selectable
-bool CONFIG_ACPI selectable
-bool CONFIG_TEST_SCANKEY selectable
-bool CONFIG_MKTEMP selectable
-bool CONFIG_READLINK selectable
-bool CONFIG_DF selectable
-bool CONFIG_TOYBOX_HELP_DASHDASH selectable
-bool CONFIG_BZCAT selectable
-bool CONFIG_DIFF selectable
-bool CONFIG_TRUNCATE selectable
-bool CONFIG_DECOMPRESS selectable
-bool CONFIG_YES selectable
-bool CONFIG_ARP selectable
-bool CONFIG_ID_Z nonselectable
+config CONFIG_TEST_UTF8TOWC bool
+prompt CONFIG_TEST_UTF8TOWC (1)
+def_bool CONFIG_TEST_UTF8TOWC 0 (1)
+config CONFIG_LSUSB bool
+prompt CONFIG_LSUSB (1)
+def_bool CONFIG_LSUSB 1 (1)
+config CONFIG_PS bool
+prompt CONFIG_PS (1)
+def_bool CONFIG_PS 1 (1)
+config CONFIG_SYNC bool
+prompt CONFIG_SYNC (1)
+def_bool CONFIG_SYNC 1 (1)
+config CONFIG_GZIP bool
+prompt CONFIG_GZIP (CONFIG_TOYBOX_LIBZ)
+def_bool CONFIG_GZIP 1 (CONFIG_TOYBOX_LIBZ)
+config CONFIG_CHRT bool
+prompt CONFIG_CHRT (1)
+def_bool CONFIG_CHRT 1 (1)
+config CONFIG_NBD_CLIENT bool
+prompt CONFIG_NBD_CLIENT (CONFIG_TOYBOX_FORK)
+def_bool CONFIG_NBD_CLIENT 1 (CONFIG_TOYBOX_FORK)
+config CONFIG_FTPGET bool
+prompt CONFIG_FTPGET (1)
+def_bool CONFIG_FTPGET 1 (1)
+config CONFIG_RMMOD bool
+prompt CONFIG_RMMOD (1)
+def_bool CONFIG_RMMOD 1 (1)
+config CONFIG_TAIL bool
+prompt CONFIG_TAIL (1)
+def_bool CONFIG_TAIL 1 (1)
+config CONFIG_MORE bool
+prompt CONFIG_MORE (1)
+def_bool CONFIG_MORE 0 (1)
+config CONFIG_CMP bool
+prompt CONFIG_CMP (1)
+def_bool CONFIG_CMP 1 (1)
+config CONFIG_GUNZIP bool
+prompt CONFIG_GUNZIP (CONFIG_TOYBOX_LIBZ)
+def_bool CONFIG_GUNZIP 1 (CONFIG_TOYBOX_LIBZ)
+config CONFIG_UNAME bool
+prompt CONFIG_UNAME (1)
+def_bool CONFIG_UNAME 1 (1)
+config CONFIG_TAC bool
+prompt CONFIG_TAC (1)
+def_bool CONFIG_TAC 1 (1)
+config CONFIG_LOAD_POLICY bool
+prompt CONFIG_LOAD_POLICY (CONFIG_TOYBOX_SELINUX)
+def_bool CONFIG_LOAD_POLICY 1 (CONFIG_TOYBOX_SELINUX)
+config CONFIG_GETPROP bool
+prompt CONFIG_GETPROP (CONFIG_TOYBOX_ON_ANDROID and CONFIG_TOYBOX_SELINUX)
+def_bool CONFIG_GETPROP 1 (CONFIG_TOYBOX_ON_ANDROID and CONFIG_TOYBOX_SELINUX)
+config CONFIG_FSFREEZE bool
+prompt CONFIG_FSFREEZE (CONFIG_TOYBOX_FIFREEZE)
+def_bool CONFIG_FSFREEZE 1 (CONFIG_TOYBOX_FIFREEZE)
+config CONFIG_MV bool
+prompt CONFIG_MV (1)
+def_bool CONFIG_MV 1 (1)
+config CONFIG_PATCH bool
+prompt CONFIG_PATCH (1)
+def_bool CONFIG_PATCH 1 (1)
+config CONFIG_PKILL bool
+prompt CONFIG_PKILL (1)
+def_bool CONFIG_PKILL 1 (1)
+config CONFIG_DOS2UNIX bool
+prompt CONFIG_DOS2UNIX (1)
+def_bool CONFIG_DOS2UNIX 1 (1)
+config CONFIG_SENDEVENT bool
+prompt CONFIG_SENDEVENT (CONFIG_TOYBOX_ON_ANDROID)
+def_bool CONFIG_SENDEVENT 1 (CONFIG_TOYBOX_ON_ANDROID)
+config CONFIG_ACPI bool
+prompt CONFIG_ACPI (1)
+def_bool CONFIG_ACPI 1 (1)
+config CONFIG_TEST_SCANKEY bool
+prompt CONFIG_TEST_SCANKEY (1)
+def_bool CONFIG_TEST_SCANKEY 0 (1)
+config CONFIG_MKTEMP bool
+prompt CONFIG_MKTEMP (1)
+def_bool CONFIG_MKTEMP 1 (1)
+config CONFIG_READLINK bool
+prompt CONFIG_READLINK (1)
+def_bool CONFIG_READLINK 1 (1)
+config CONFIG_DF bool
+prompt CONFIG_DF (1)
+def_bool CONFIG_DF 1 (1)
+config CONFIG_TOYBOX_HELP_DASHDASH bool
+prompt CONFIG_TOYBOX_HELP_DASHDASH (CONFIG_TOYBOX_HELP)
+def_bool CONFIG_TOYBOX_HELP_DASHDASH 1 (CONFIG_TOYBOX_HELP)
+config CONFIG_BZCAT bool
+prompt CONFIG_BZCAT (1)
+def_bool CONFIG_BZCAT 1 (1)
+config CONFIG_DIFF bool
+prompt CONFIG_DIFF (1)
+def_bool CONFIG_DIFF 0 (1)
+config CONFIG_TRUNCATE bool
+prompt CONFIG_TRUNCATE (1)
+def_bool CONFIG_TRUNCATE 1 (1)
+config CONFIG_DECOMPRESS bool
+prompt CONFIG_DECOMPRESS (1)
+def_bool CONFIG_DECOMPRESS 0 (1)
+config CONFIG_YES bool
+prompt CONFIG_YES (1)
+def_bool CONFIG_YES 1 (1)
+config CONFIG_ARP bool
+prompt CONFIG_ARP (1)
+def_bool CONFIG_ARP 0 (1)
+config CONFIG_ID_Z bool
 def_bool CONFIG_ID_Z 1 (CONFIG_ID and  not CONFIG_TOYBOX_LSM_NONE)
-bool CONFIG_HOST selectable
-bool CONFIG_FOLD selectable
-bool CONFIG_SHA1SUM selectable
-bool CONFIG_TEST_HUMAN_READABLE selectable
-bool CONFIG_TOYBOX_SHADOW nonselectable
+config CONFIG_HOST bool
+prompt CONFIG_HOST (1)
+def_bool CONFIG_HOST 0 (1)
+config CONFIG_FOLD bool
+prompt CONFIG_FOLD (1)
+def_bool CONFIG_FOLD 0 (1)
+config CONFIG_SHA1SUM bool
+prompt CONFIG_SHA1SUM (1)
+def_bool CONFIG_SHA1SUM 1 (1)
+config CONFIG_TEST_HUMAN_READABLE bool
+prompt CONFIG_TEST_HUMAN_READABLE (1)
+def_bool CONFIG_TEST_HUMAN_READABLE 0 (1)
+config CONFIG_TOYBOX_SHADOW bool
 def_bool CONFIG_TOYBOX_SHADOW 1 (1)
-bool CONFIG_USLEEP selectable
-bool CONFIG_NICE selectable
-bool CONFIG_RFKILL selectable
-bool CONFIG_LSPCI_TEXT selectable
-bool CONFIG_GETFATTR selectable
-bool CONFIG_EXIT nonselectable
+config CONFIG_USLEEP bool
+prompt CONFIG_USLEEP (1)
+def_bool CONFIG_USLEEP 1 (1)
+config CONFIG_NICE bool
+prompt CONFIG_NICE (1)
+def_bool CONFIG_NICE 1 (1)
+config CONFIG_RFKILL bool
+prompt CONFIG_RFKILL (1)
+def_bool CONFIG_RFKILL 1 (1)
+config CONFIG_LSPCI_TEXT bool
+prompt CONFIG_LSPCI_TEXT (CONFIG_LSPCI)
+def_bool CONFIG_LSPCI_TEXT 1 (CONFIG_LSPCI)
+config CONFIG_GETFATTR bool
+prompt CONFIG_GETFATTR (1)
+def_bool CONFIG_GETFATTR 0 (1)
+config CONFIG_EXIT bool
 def_bool CONFIG_EXIT 0 (CONFIG_SH)
-bool CONFIG_VCONFIG selectable
-bool CONFIG_SETFATTR selectable
-bool CONFIG_START selectable
-bool CONFIG_TRACEROUTE selectable
-bool CONFIG_TEE selectable
-bool CONFIG_TEST selectable
-bool CONFIG_ID selectable
-bool CONFIG_TOYBOX_SUID selectable
-bool CONFIG_TFTP selectable
-bool CONFIG_FDISK selectable
-bool CONFIG_BUNZIP2 selectable
-bool CONFIG_MOUNT selectable
-bool CONFIG_TOYBOX nonselectable
+config CONFIG_VCONFIG bool
+prompt CONFIG_VCONFIG (1)
+def_bool CONFIG_VCONFIG 1 (1)
+config CONFIG_SETFATTR bool
+prompt CONFIG_SETFATTR (1)
+def_bool CONFIG_SETFATTR 0 (1)
+config CONFIG_START bool
+prompt CONFIG_START (CONFIG_TOYBOX_ON_ANDROID)
+def_bool CONFIG_START 1 (CONFIG_TOYBOX_ON_ANDROID)
+config CONFIG_TRACEROUTE bool
+prompt CONFIG_TRACEROUTE (1)
+def_bool CONFIG_TRACEROUTE 0 (1)
+config CONFIG_TEE bool
+prompt CONFIG_TEE (1)
+def_bool CONFIG_TEE 1 (1)
+config CONFIG_TEST bool
+prompt CONFIG_TEST (1)
+def_bool CONFIG_TEST 0 (1)
+config CONFIG_ID bool
+prompt CONFIG_ID (1)
+def_bool CONFIG_ID 1 (1)
+config CONFIG_TOYBOX_SUID bool
+prompt CONFIG_TOYBOX_SUID (1)
+def_bool CONFIG_TOYBOX_SUID 1 (1)
+config CONFIG_TFTP bool
+prompt CONFIG_TFTP (1)
+def_bool CONFIG_TFTP 0 (1)
+config CONFIG_FDISK bool
+prompt CONFIG_FDISK (1)
+def_bool CONFIG_FDISK 0 (1)
+config CONFIG_BUNZIP2 bool
+prompt CONFIG_BUNZIP2 (1)
+def_bool CONFIG_BUNZIP2 1 (1)
+config CONFIG_MOUNT bool
+prompt CONFIG_MOUNT (1)
+def_bool CONFIG_MOUNT 1 (1)
+config CONFIG_TOYBOX bool
 def_bool CONFIG_TOYBOX 1 (1)
-bool CONFIG_HOSTID selectable
-bool CONFIG_EXPR selectable
-bool CONFIG_CP selectable
-bool CONFIG_MICROCOM selectable
-bool CONFIG_PARTPROBE selectable
-bool CONFIG_RUNCON selectable
-bool CONFIG_SPLIT selectable
-bool CONFIG_SED selectable
-bool CONFIG_RESET selectable
-bool CONFIG_WGET selectable
-bool CONFIG_TOYBOX_SELINUX selectable
-bool CONFIG_NOHUP selectable
-bool CONFIG_IP selectable
-bool CONFIG_TOYBOX_PRLIMIT nonselectable
+config CONFIG_HOSTID bool
+prompt CONFIG_HOSTID (1)
+def_bool CONFIG_HOSTID 0 (1)
+config CONFIG_EXPR bool
+prompt CONFIG_EXPR (1)
+def_bool CONFIG_EXPR 0 (1)
+config CONFIG_CP bool
+prompt CONFIG_CP (1)
+def_bool CONFIG_CP 1 (1)
+config CONFIG_MICROCOM bool
+prompt CONFIG_MICROCOM (1)
+def_bool CONFIG_MICROCOM 1 (1)
+config CONFIG_PARTPROBE bool
+prompt CONFIG_PARTPROBE (1)
+def_bool CONFIG_PARTPROBE 1 (1)
+config CONFIG_RUNCON bool
+prompt CONFIG_RUNCON (CONFIG_TOYBOX_SELINUX)
+def_bool CONFIG_RUNCON 1 (CONFIG_TOYBOX_SELINUX)
+config CONFIG_SPLIT bool
+prompt CONFIG_SPLIT (1)
+def_bool CONFIG_SPLIT 1 (1)
+config CONFIG_SED bool
+prompt CONFIG_SED (1)
+def_bool CONFIG_SED 1 (1)
+config CONFIG_RESET bool
+prompt CONFIG_RESET (1)
+def_bool CONFIG_RESET 1 (1)
+config CONFIG_WGET bool
+prompt CONFIG_WGET (1)
+def_bool CONFIG_WGET 0 (1)
+config CONFIG_TOYBOX_SELINUX bool
+prompt CONFIG_TOYBOX_SELINUX (1)
+config CONFIG_NOHUP bool
+prompt CONFIG_NOHUP (1)
+def_bool CONFIG_NOHUP 1 (1)
+config CONFIG_IP bool
+prompt CONFIG_IP (1)
+def_bool CONFIG_IP 0 (1)
+config CONFIG_TOYBOX_PRLIMIT bool
 def_bool CONFIG_TOYBOX_PRLIMIT 0 (1)
-bool CONFIG_LSPCI selectable
-bool CONFIG_HEAD selectable
-bool CONFIG_TOYBOX_I18N selectable
-bool CONFIG_UMOUNT selectable
-bool CONFIG_DIRNAME selectable
-bool CONFIG_HELP_EXTRAS selectable
-bool CONFIG_CLEAR selectable
-bool CONFIG_PASTE selectable
-bool CONFIG_CD nonselectable
+config CONFIG_LSPCI bool
+prompt CONFIG_LSPCI (1)
+def_bool CONFIG_LSPCI 1 (1)
+config CONFIG_HEAD bool
+prompt CONFIG_HEAD (1)
+def_bool CONFIG_HEAD 1 (1)
+config CONFIG_TOYBOX_I18N bool
+prompt CONFIG_TOYBOX_I18N (1)
+def_bool CONFIG_TOYBOX_I18N 1 (1)
+config CONFIG_UMOUNT bool
+prompt CONFIG_UMOUNT (1)
+def_bool CONFIG_UMOUNT 1 (1)
+config CONFIG_DIRNAME bool
+prompt CONFIG_DIRNAME (1)
+def_bool CONFIG_DIRNAME 1 (1)
+config CONFIG_HELP_EXTRAS bool
+prompt CONFIG_HELP_EXTRAS (CONFIG_TOYBOX and CONFIG_HELP)
+def_bool CONFIG_HELP_EXTRAS 1 (CONFIG_TOYBOX and CONFIG_HELP)
+config CONFIG_CLEAR bool
+prompt CONFIG_CLEAR (1)
+def_bool CONFIG_CLEAR 1 (1)
+config CONFIG_PASTE bool
+prompt CONFIG_PASTE (1)
+def_bool CONFIG_PASTE 1 (1)
+config CONFIG_CD bool
 def_bool CONFIG_CD 0 (CONFIG_SH)
-bool CONFIG_TIMEOUT selectable
-bool CONFIG_VI selectable
-bool CONFIG_STRINGS selectable
-bool CONFIG_SULOGIN selectable
-bool CONFIG_CKSUM selectable
-bool CONFIG_KILLALL5 selectable
-bool CONFIG_SETSID selectable
-bool CONFIG_GROUPADD selectable
-bool CONFIG_FGREP nonselectable
+config CONFIG_TIMEOUT bool
+prompt CONFIG_TIMEOUT (CONFIG_TOYBOX_FLOAT)
+def_bool CONFIG_TIMEOUT 1 (CONFIG_TOYBOX_FLOAT)
+config CONFIG_VI bool
+prompt CONFIG_VI (1)
+def_bool CONFIG_VI 0 (1)
+config CONFIG_STRINGS bool
+prompt CONFIG_STRINGS (1)
+def_bool CONFIG_STRINGS 1 (1)
+config CONFIG_SULOGIN bool
+prompt CONFIG_SULOGIN (CONFIG_TOYBOX_SHADOW)
+def_bool CONFIG_SULOGIN 0 (CONFIG_TOYBOX_SHADOW)
+config CONFIG_CKSUM bool
+prompt CONFIG_CKSUM (1)
+def_bool CONFIG_CKSUM 1 (1)
+config CONFIG_KILLALL5 bool
+prompt CONFIG_KILLALL5 (CONFIG_KILL)
+def_bool CONFIG_KILLALL5 1 (CONFIG_KILL)
+config CONFIG_SETSID bool
+prompt CONFIG_SETSID (1)
+def_bool CONFIG_SETSID 1 (1)
+config CONFIG_GROUPADD bool
+prompt CONFIG_GROUPADD (1)
+def_bool CONFIG_GROUPADD 0 (1)
+config CONFIG_FGREP bool
 def_bool CONFIG_FGREP 1 (CONFIG_GREP)
-bool CONFIG_MKFIFO selectable
-bool CONFIG_RESTORECON selectable
-bool CONFIG_NSENTER selectable
-bool CONFIG_TOYBOX_FLOAT selectable
-bool CONFIG_ENV selectable
-bool CONFIG_STAT selectable
-bool CONFIG_TELNET selectable
-bool CONFIG_SHA384SUM selectable
-bool CONFIG_UPTIME selectable
-bool CONFIG_LS selectable
-bool CONFIG_PRINTF selectable
-bool CONFIG_LOGNAME selectable
-bool CONFIG_BLKID selectable
-bool CONFIG_PGREP selectable
-bool CONFIG_SORT_BIG selectable
-bool CONFIG_SHA512SUM selectable
-bool CONFIG_MKPASSWD selectable
-bool CONFIG_PWDX selectable
-bool CONFIG_SHRED selectable
-bool CONFIG_PASSWD selectable
-bool CONFIG_CAL selectable
-bool CONFIG_INOTIFYD selectable
-bool CONFIG_CRONTAB selectable
-bool CONFIG_TASKSET selectable
-bool CONFIG_BRCTL selectable
-bool CONFIG_LAST selectable
-bool CONFIG_WC selectable
-bool CONFIG_MKE2FS_EXTENDED selectable
-bool CONFIG_MKE2FS selectable
-bool CONFIG_TOYBOX_FREE selectable
-bool CONFIG_SWAPON selectable
-bool CONFIG_CHMOD selectable
-bool CONFIG_TFTPD selectable
-bool CONFIG_REALPATH selectable
-bool CONFIG_UNIQ selectable
-bool CONFIG_TOYBOX_FIFREEZE nonselectable
+config CONFIG_MKFIFO bool
+prompt CONFIG_MKFIFO (1)
+def_bool CONFIG_MKFIFO 1 (1)
+config CONFIG_RESTORECON bool
+prompt CONFIG_RESTORECON (CONFIG_TOYBOX_SELINUX)
+def_bool CONFIG_RESTORECON 1 (CONFIG_TOYBOX_SELINUX)
+config CONFIG_NSENTER bool
+prompt CONFIG_NSENTER (CONFIG_TOYBOX_CONTAINER)
+def_bool CONFIG_NSENTER 1 (CONFIG_TOYBOX_CONTAINER)
+config CONFIG_TOYBOX_FLOAT bool
+prompt CONFIG_TOYBOX_FLOAT (1)
+def_bool CONFIG_TOYBOX_FLOAT 1 (1)
+config CONFIG_ENV bool
+prompt CONFIG_ENV (1)
+def_bool CONFIG_ENV 1 (1)
+config CONFIG_STAT bool
+prompt CONFIG_STAT (1)
+def_bool CONFIG_STAT 1 (1)
+config CONFIG_TELNET bool
+prompt CONFIG_TELNET (1)
+def_bool CONFIG_TELNET 0 (1)
+config CONFIG_SHA384SUM bool
+prompt CONFIG_SHA384SUM (CONFIG_TOYBOX_LIBCRYPTO)
+def_bool CONFIG_SHA384SUM 1 (CONFIG_TOYBOX_LIBCRYPTO)
+config CONFIG_UPTIME bool
+prompt CONFIG_UPTIME (CONFIG_TOYBOX_UTMPX)
+def_bool CONFIG_UPTIME 1 (CONFIG_TOYBOX_UTMPX)
+config CONFIG_LS bool
+prompt CONFIG_LS (1)
+def_bool CONFIG_LS 1 (1)
+config CONFIG_PRINTF bool
+prompt CONFIG_PRINTF (1)
+def_bool CONFIG_PRINTF 1 (1)
+config CONFIG_LOGNAME bool
+prompt CONFIG_LOGNAME (1)
+def_bool CONFIG_LOGNAME 1 (1)
+config CONFIG_BLKID bool
+prompt CONFIG_BLKID (1)
+def_bool CONFIG_BLKID 1 (1)
+config CONFIG_PGREP bool
+prompt CONFIG_PGREP (1)
+def_bool CONFIG_PGREP 1 (1)
+config CONFIG_SORT_BIG bool
+prompt CONFIG_SORT_BIG (CONFIG_SORT)
+def_bool CONFIG_SORT_BIG 1 (CONFIG_SORT)
+config CONFIG_SHA512SUM bool
+prompt CONFIG_SHA512SUM (CONFIG_TOYBOX_LIBCRYPTO)
+def_bool CONFIG_SHA512SUM 1 (CONFIG_TOYBOX_LIBCRYPTO)
+config CONFIG_MKPASSWD bool
+prompt CONFIG_MKPASSWD ( not CONFIG_TOYBOX_ON_ANDROID)
+def_bool CONFIG_MKPASSWD 1 ( not CONFIG_TOYBOX_ON_ANDROID)
+config CONFIG_PWDX bool
+prompt CONFIG_PWDX (1)
+def_bool CONFIG_PWDX 1 (1)
+config CONFIG_SHRED bool
+prompt CONFIG_SHRED (1)
+def_bool CONFIG_SHRED 1 (1)
+config CONFIG_PASSWD bool
+prompt CONFIG_PASSWD (CONFIG_TOYBOX_SHADOW)
+def_bool CONFIG_PASSWD 1 (CONFIG_TOYBOX_SHADOW)
+config CONFIG_CAL bool
+prompt CONFIG_CAL (1)
+def_bool CONFIG_CAL 1 (1)
+config CONFIG_INOTIFYD bool
+prompt CONFIG_INOTIFYD (1)
+def_bool CONFIG_INOTIFYD 1 (1)
+config CONFIG_CRONTAB bool
+prompt CONFIG_CRONTAB (CONFIG_TOYBOX_FORK)
+def_bool CONFIG_CRONTAB 0 (CONFIG_TOYBOX_FORK)
+config CONFIG_TASKSET bool
+prompt CONFIG_TASKSET (1)
+def_bool CONFIG_TASKSET 1 (1)
+config CONFIG_BRCTL bool
+prompt CONFIG_BRCTL (1)
+def_bool CONFIG_BRCTL 0 (1)
+config CONFIG_LAST bool
+prompt CONFIG_LAST (1)
+def_bool CONFIG_LAST 0 (1)
+config CONFIG_WC bool
+prompt CONFIG_WC (1)
+def_bool CONFIG_WC 1 (1)
+config CONFIG_MKE2FS_EXTENDED bool
+prompt CONFIG_MKE2FS_EXTENDED (CONFIG_MKE2FS)
+def_bool CONFIG_MKE2FS_EXTENDED 0 (CONFIG_MKE2FS)
+config CONFIG_MKE2FS bool
+prompt CONFIG_MKE2FS (1)
+def_bool CONFIG_MKE2FS 0 (1)
+config CONFIG_TOYBOX_FREE bool
+prompt CONFIG_TOYBOX_FREE (1)
+def_bool CONFIG_TOYBOX_FREE 0 (1)
+config CONFIG_SWAPON bool
+prompt CONFIG_SWAPON (1)
+def_bool CONFIG_SWAPON 1 (1)
+config CONFIG_CHMOD bool
+prompt CONFIG_CHMOD (1)
+def_bool CONFIG_CHMOD 1 (1)
+config CONFIG_TFTPD bool
+prompt CONFIG_TFTPD (1)
+def_bool CONFIG_TFTPD 0 (1)
+config CONFIG_REALPATH bool
+prompt CONFIG_REALPATH (1)
+def_bool CONFIG_REALPATH 1 (1)
+config CONFIG_UNIQ bool
+prompt CONFIG_UNIQ (1)
+def_bool CONFIG_UNIQ 1 (1)
+config CONFIG_TOYBOX_FIFREEZE bool
 def_bool CONFIG_TOYBOX_FIFREEZE 1 (1)
-bool CONFIG_WHO selectable
-bool CONFIG_HWCLOCK selectable
-bool CONFIG_DMESG selectable
-bool CONFIG_MKNOD selectable
-bool CONFIG_MOUNTPOINT selectable
-bool CONFIG_TOYBOX_FALLOCATE nonselectable
+config CONFIG_WHO bool
+prompt CONFIG_WHO (CONFIG_TOYBOX_UTMPX)
+def_bool CONFIG_WHO 1 (CONFIG_TOYBOX_UTMPX)
+config CONFIG_HWCLOCK bool
+prompt CONFIG_HWCLOCK (1)
+def_bool CONFIG_HWCLOCK 1 (1)
+config CONFIG_DMESG bool
+prompt CONFIG_DMESG (1)
+def_bool CONFIG_DMESG 1 (1)
+config CONFIG_MKNOD bool
+prompt CONFIG_MKNOD (1)
+def_bool CONFIG_MKNOD 1 (1)
+config CONFIG_MOUNTPOINT bool
+prompt CONFIG_MOUNTPOINT (1)
+def_bool CONFIG_MOUNTPOINT 1 (1)
+config CONFIG_TOYBOX_FALLOCATE bool
 def_bool CONFIG_TOYBOX_FALLOCATE 1 (1)
-bool CONFIG_KILLALL selectable
-bool CONFIG_SHA224SUM selectable
-bool CONFIG_DHCPD selectable
-bool CONFIG_SLEEP selectable
-bool CONFIG_INSTALL selectable
-bool CONFIG_W selectable
-bool CONFIG_BASE64 selectable
-bool CONFIG_FALLOCATE selectable
-bool CONFIG_KLOGD selectable
-bool CONFIG_INSMOD selectable
-bool CONFIG_MKSWAP selectable
-bool CONFIG_RENICE selectable
-bool CONFIG_CHATTR selectable
-bool CONFIG_NETSTAT selectable
-bool CONFIG_OD selectable
-bool CONFIG_DEBUG_DHCP selectable
-bool CONFIG_TOYBOX_DEBUG selectable
-bool CONFIG_TTY selectable
-bool CONFIG_DU selectable
-bool CONFIG_CROND selectable
-bool CONFIG_TOYBOX_MUSL_NOMMU_IS_BROKEN selectable
-bool CONFIG_PWD selectable
-bool CONFIG_EGREP nonselectable
+config CONFIG_KILLALL bool
+prompt CONFIG_KILLALL (1)
+def_bool CONFIG_KILLALL 1 (1)
+config CONFIG_SHA224SUM bool
+prompt CONFIG_SHA224SUM (CONFIG_TOYBOX_LIBCRYPTO)
+def_bool CONFIG_SHA224SUM 1 (CONFIG_TOYBOX_LIBCRYPTO)
+config CONFIG_DHCPD bool
+prompt CONFIG_DHCPD (1)
+def_bool CONFIG_DHCPD 0 (1)
+config CONFIG_SLEEP bool
+prompt CONFIG_SLEEP (1)
+def_bool CONFIG_SLEEP 1 (1)
+config CONFIG_INSTALL bool
+prompt CONFIG_INSTALL (1)
+def_bool CONFIG_INSTALL 1 (1)
+config CONFIG_W bool
+prompt CONFIG_W (CONFIG_TOYBOX_UTMPX)
+def_bool CONFIG_W 1 (CONFIG_TOYBOX_UTMPX)
+config CONFIG_BASE64 bool
+prompt CONFIG_BASE64 (1)
+def_bool CONFIG_BASE64 1 (1)
+config CONFIG_FALLOCATE bool
+prompt CONFIG_FALLOCATE (CONFIG_TOYBOX_FALLOCATE)
+def_bool CONFIG_FALLOCATE 1 (CONFIG_TOYBOX_FALLOCATE)
+config CONFIG_KLOGD bool
+prompt CONFIG_KLOGD (1)
+def_bool CONFIG_KLOGD 0 (1)
+config CONFIG_INSMOD bool
+prompt CONFIG_INSMOD (1)
+def_bool CONFIG_INSMOD 1 (1)
+config CONFIG_MKSWAP bool
+prompt CONFIG_MKSWAP (1)
+def_bool CONFIG_MKSWAP 1 (1)
+config CONFIG_RENICE bool
+prompt CONFIG_RENICE (1)
+def_bool CONFIG_RENICE 1 (1)
+config CONFIG_CHATTR bool
+prompt CONFIG_CHATTR (1)
+def_bool CONFIG_CHATTR 1 (1)
+config CONFIG_NETSTAT bool
+prompt CONFIG_NETSTAT (1)
+def_bool CONFIG_NETSTAT 1 (1)
+config CONFIG_OD bool
+prompt CONFIG_OD (1)
+def_bool CONFIG_OD 1 (1)
+config CONFIG_DEBUG_DHCP bool
+prompt CONFIG_DEBUG_DHCP (CONFIG_DHCPD)
+def_bool CONFIG_DEBUG_DHCP 0 (CONFIG_DHCPD)
+config CONFIG_TOYBOX_DEBUG bool
+prompt CONFIG_TOYBOX_DEBUG (1)
+def_bool CONFIG_TOYBOX_DEBUG 0 (1)
+config CONFIG_TTY bool
+prompt CONFIG_TTY (1)
+def_bool CONFIG_TTY 1 (1)
+config CONFIG_DU bool
+prompt CONFIG_DU (1)
+def_bool CONFIG_DU 1 (1)
+config CONFIG_CROND bool
+prompt CONFIG_CROND (1)
+def_bool CONFIG_CROND 0 (1)
+config CONFIG_TOYBOX_MUSL_NOMMU_IS_BROKEN bool
+prompt CONFIG_TOYBOX_MUSL_NOMMU_IS_BROKEN (1)
+def_bool CONFIG_TOYBOX_MUSL_NOMMU_IS_BROKEN 0 (1)
+config CONFIG_PWD bool
+prompt CONFIG_PWD (1)
+def_bool CONFIG_PWD 1 (1)
+config CONFIG_EGREP bool
 def_bool CONFIG_EGREP 1 (CONFIG_GREP)
-bool CONFIG_BOOTCHARTD selectable
-bool CONFIG_COMM selectable
-bool CONFIG_ONEIT selectable
-bool CONFIG_UNLINK selectable
-bool CONFIG_NETCAT selectable
-bool CONFIG_PASSWD_SAD selectable
-bool CONFIG_HEXEDIT selectable
-bool CONFIG_SHA256SUM selectable
-bool CONFIG_CHVT selectable
-bool CONFIG_FLOCK selectable
-bool CONFIG_XARGS selectable
-bool CONFIG_FSTYPE selectable
-bool CONFIG_LSMOD selectable
-bool CONFIG_MIX selectable
-bool CONFIG_INIT selectable
-bool CONFIG_DEALLOCVT selectable
-bool CONFIG_TAIL_SEEK selectable
-bool CONFIG_BASENAME selectable
-bool CONFIG_RM selectable
-bool CONFIG_LN selectable
-bool CONFIG_ICONV selectable
-bool CONFIG_FIND selectable
-bool CONFIG_MKE2FS_JOURNAL selectable
-bool CONFIG_MODPROBE selectable
-bool CONFIG_CUT selectable
-bool CONFIG_MKE2FS_LABEL selectable
-bool CONFIG_XXD selectable
-bool CONFIG_XZCAT selectable
-bool CONFIG_HELLO selectable
-bool CONFIG_KLOGD_SOURCE_RING_BUFFER selectable
-bool CONFIG_COUNT selectable
-bool CONFIG_SORT_FLOAT nonselectable
+config CONFIG_BOOTCHARTD bool
+prompt CONFIG_BOOTCHARTD (CONFIG_TOYBOX_FORK)
+def_bool CONFIG_BOOTCHARTD 0 (CONFIG_TOYBOX_FORK)
+config CONFIG_COMM bool
+prompt CONFIG_COMM (1)
+def_bool CONFIG_COMM 1 (1)
+config CONFIG_ONEIT bool
+prompt CONFIG_ONEIT (1)
+def_bool CONFIG_ONEIT 1 (1)
+config CONFIG_UNLINK bool
+prompt CONFIG_UNLINK (1)
+def_bool CONFIG_UNLINK 1 (1)
+config CONFIG_NETCAT bool
+prompt CONFIG_NETCAT (1)
+def_bool CONFIG_NETCAT 1 (1)
+config CONFIG_PASSWD_SAD bool
+prompt CONFIG_PASSWD_SAD (CONFIG_PASSWD)
+def_bool CONFIG_PASSWD_SAD 0 (CONFIG_PASSWD)
+config CONFIG_HEXEDIT bool
+prompt CONFIG_HEXEDIT (1)
+def_bool CONFIG_HEXEDIT 1 (1)
+config CONFIG_SHA256SUM bool
+prompt CONFIG_SHA256SUM (CONFIG_TOYBOX_LIBCRYPTO)
+def_bool CONFIG_SHA256SUM 1 (CONFIG_TOYBOX_LIBCRYPTO)
+config CONFIG_CHVT bool
+prompt CONFIG_CHVT (1)
+def_bool CONFIG_CHVT 1 (1)
+config CONFIG_FLOCK bool
+prompt CONFIG_FLOCK (1)
+def_bool CONFIG_FLOCK 1 (1)
+config CONFIG_XARGS bool
+prompt CONFIG_XARGS (1)
+def_bool CONFIG_XARGS 1 (1)
+config CONFIG_FSTYPE bool
+prompt CONFIG_FSTYPE (1)
+def_bool CONFIG_FSTYPE 1 (1)
+config CONFIG_LSMOD bool
+prompt CONFIG_LSMOD (1)
+def_bool CONFIG_LSMOD 1 (1)
+config CONFIG_MIX bool
+prompt CONFIG_MIX (1)
+def_bool CONFIG_MIX 1 (1)
+config CONFIG_INIT bool
+prompt CONFIG_INIT (1)
+def_bool CONFIG_INIT 0 (1)
+config CONFIG_DEALLOCVT bool
+prompt CONFIG_DEALLOCVT (1)
+def_bool CONFIG_DEALLOCVT 0 (1)
+config CONFIG_TAIL_SEEK bool
+prompt CONFIG_TAIL_SEEK (CONFIG_TAIL)
+def_bool CONFIG_TAIL_SEEK 1 (CONFIG_TAIL)
+config CONFIG_BASENAME bool
+prompt CONFIG_BASENAME (1)
+def_bool CONFIG_BASENAME 1 (1)
+config CONFIG_RM bool
+prompt CONFIG_RM (1)
+def_bool CONFIG_RM 1 (1)
+config CONFIG_LN bool
+prompt CONFIG_LN (1)
+def_bool CONFIG_LN 1 (1)
+config CONFIG_ICONV bool
+prompt CONFIG_ICONV (CONFIG_TOYBOX_ICONV)
+def_bool CONFIG_ICONV 0 (CONFIG_TOYBOX_ICONV)
+config CONFIG_FIND bool
+prompt CONFIG_FIND (1)
+def_bool CONFIG_FIND 1 (1)
+config CONFIG_MKE2FS_JOURNAL bool
+prompt CONFIG_MKE2FS_JOURNAL (CONFIG_MKE2FS)
+def_bool CONFIG_MKE2FS_JOURNAL 0 (CONFIG_MKE2FS)
+config CONFIG_MODPROBE bool
+prompt CONFIG_MODPROBE (1)
+def_bool CONFIG_MODPROBE 0 (1)
+config CONFIG_CUT bool
+prompt CONFIG_CUT (1)
+def_bool CONFIG_CUT 1 (1)
+config CONFIG_MKE2FS_LABEL bool
+prompt CONFIG_MKE2FS_LABEL (CONFIG_MKE2FS)
+def_bool CONFIG_MKE2FS_LABEL 0 (CONFIG_MKE2FS)
+config CONFIG_XXD bool
+prompt CONFIG_XXD (1)
+def_bool CONFIG_XXD 1 (1)
+config CONFIG_XZCAT bool
+prompt CONFIG_XZCAT (1)
+def_bool CONFIG_XZCAT 0 (1)
+config CONFIG_HELLO bool
+prompt CONFIG_HELLO (1)
+def_bool CONFIG_HELLO 0 (1)
+config CONFIG_KLOGD_SOURCE_RING_BUFFER bool
+prompt CONFIG_KLOGD_SOURCE_RING_BUFFER (CONFIG_KLOGD)
+def_bool CONFIG_KLOGD_SOURCE_RING_BUFFER 0 (CONFIG_KLOGD)
+config CONFIG_COUNT bool
+prompt CONFIG_COUNT (1)
+def_bool CONFIG_COUNT 1 (1)
+config CONFIG_SORT_FLOAT bool
 def_bool CONFIG_SORT_FLOAT 1 (CONFIG_SORT_BIG and CONFIG_TOYBOX_FLOAT)
-bool CONFIG_MD5SUM selectable
-nonbool CONFIG_TOYBOX_UID_SYS selectable nonstring
+config CONFIG_MD5SUM bool
+prompt CONFIG_MD5SUM (1)
+def_bool CONFIG_MD5SUM 1 (1)
+config CONFIG_TOYBOX_UID_SYS number
+prompt CONFIG_TOYBOX_UID_SYS (1)
 def_nonbool CONFIG_TOYBOX_UID_SYS "100"|(1)
-bool CONFIG_FALSE selectable
-bool CONFIG_TAR selectable
-bool CONFIG_LOGIN selectable
-bool CONFIG_MAKEDEVS selectable
-bool CONFIG_PRINTENV selectable
-bool CONFIG_TOYBOX_LIBCRYPTO selectable
-bool CONFIG_PING selectable
-bool CONFIG_MKDIR_Z nonselectable
+config CONFIG_FALSE bool
+prompt CONFIG_FALSE (1)
+def_bool CONFIG_FALSE 1 (1)
+config CONFIG_TAR bool
+prompt CONFIG_TAR (1)
+def_bool CONFIG_TAR 0 (1)
+config CONFIG_LOGIN bool
+prompt CONFIG_LOGIN (CONFIG_TOYBOX_SHADOW)
+def_bool CONFIG_LOGIN 1 (CONFIG_TOYBOX_SHADOW)
+config CONFIG_MAKEDEVS bool
+prompt CONFIG_MAKEDEVS (1)
+def_bool CONFIG_MAKEDEVS 1 (1)
+config CONFIG_PRINTENV bool
+prompt CONFIG_PRINTENV (1)
+def_bool CONFIG_PRINTENV 1 (1)
+config CONFIG_TOYBOX_LIBCRYPTO bool
+prompt CONFIG_TOYBOX_LIBCRYPTO (1)
+def_bool CONFIG_TOYBOX_LIBCRYPTO 0 (1)
+config CONFIG_PING bool
+prompt CONFIG_PING (1)
+def_bool CONFIG_PING 0 (1)
+config CONFIG_MKDIR_Z bool
 def_bool CONFIG_MKDIR_Z 1 (CONFIG_MKDIR and  not CONFIG_TOYBOX_LSM_NONE)
-bool CONFIG_CAT_V selectable
-bool CONFIG_IOTOP selectable
-bool CONFIG_COMPRESS selectable
-bool CONFIG_TOYBOX_ON_ANDROID nonselectable
+config CONFIG_CAT_V bool
+prompt CONFIG_CAT_V (CONFIG_CAT)
+def_bool CONFIG_CAT_V 0 (CONFIG_CAT)
+config CONFIG_IOTOP bool
+prompt CONFIG_IOTOP (1)
+def_bool CONFIG_IOTOP 1 (1)
+config CONFIG_COMPRESS bool
+prompt CONFIG_COMPRESS (1)
+def_bool CONFIG_COMPRESS 0 (1)
+config CONFIG_TOYBOX_ON_ANDROID bool
 def_bool CONFIG_TOYBOX_ON_ANDROID 0 (1)
-bool CONFIG_FSYNC selectable
-bool CONFIG_ECHO selectable
-bool CONFIG_TELNETD selectable
-bool CONFIG_TRUE selectable
-bool CONFIG_CPIO selectable
-bool CONFIG_MKFIFO_Z nonselectable
+config CONFIG_FSYNC bool
+prompt CONFIG_FSYNC (1)
+def_bool CONFIG_FSYNC 1 (1)
+config CONFIG_ECHO bool
+prompt CONFIG_ECHO (1)
+def_bool CONFIG_ECHO 1 (1)
+config CONFIG_TELNETD bool
+prompt CONFIG_TELNETD (1)
+def_bool CONFIG_TELNETD 0 (1)
+config CONFIG_TRUE bool
+prompt CONFIG_TRUE (1)
+def_bool CONFIG_TRUE 1 (1)
+config CONFIG_CPIO bool
+prompt CONFIG_CPIO (1)
+def_bool CONFIG_CPIO 1 (1)
+config CONFIG_MKFIFO_Z bool
 def_bool CONFIG_MKFIFO_Z 1 (CONFIG_MKFIFO and  not CONFIG_TOYBOX_LSM_NONE)
-bool CONFIG_FSCK selectable
-nonbool CONFIG_TOYBOX_UID_USR selectable nonstring
+config CONFIG_FSCK bool
+prompt CONFIG_FSCK (1)
+def_bool CONFIG_FSCK 0 (1)
+config CONFIG_TOYBOX_UID_USR number
+prompt CONFIG_TOYBOX_UID_USR (1)
 def_nonbool CONFIG_TOYBOX_UID_USR "500"|(1)
-bool CONFIG_CHGRP selectable
-bool CONFIG_MDEV selectable
-bool CONFIG_TR selectable
-bool CONFIG_DHCP selectable
-bool CONFIG_GROUPDEL selectable
-bool CONFIG_EXPAND selectable
-bool CONFIG_CAT selectable
-bool CONFIG_SWAPOFF selectable
-bool CONFIG_HELP selectable
-bool CONFIG_DD selectable
-bool CONFIG_RMDIR selectable
-bool CONFIG_GREP selectable
-bool CONFIG_BLOCKDEV selectable
-bool CONFIG_UUENCODE selectable
-bool CONFIG_TUNCTL selectable
-bool CONFIG_TOYBOX_PEDANTIC_ARGS selectable
-bool CONFIG_IORENICE selectable
-bool CONFIG_SLEEP_FLOAT nonselectable
+config CONFIG_CHGRP bool
+prompt CONFIG_CHGRP (1)
+def_bool CONFIG_CHGRP 1 (1)
+config CONFIG_MDEV bool
+prompt CONFIG_MDEV (1)
+def_bool CONFIG_MDEV 0 (1)
+config CONFIG_TR bool
+prompt CONFIG_TR (1)
+def_bool CONFIG_TR 0 (1)
+config CONFIG_DHCP bool
+prompt CONFIG_DHCP (1)
+def_bool CONFIG_DHCP 0 (1)
+config CONFIG_GROUPDEL bool
+prompt CONFIG_GROUPDEL (1)
+def_bool CONFIG_GROUPDEL 0 (1)
+config CONFIG_EXPAND bool
+prompt CONFIG_EXPAND (1)
+def_bool CONFIG_EXPAND 1 (1)
+config CONFIG_CAT bool
+prompt CONFIG_CAT (1)
+def_bool CONFIG_CAT 1 (1)
+config CONFIG_SWAPOFF bool
+prompt CONFIG_SWAPOFF (1)
+def_bool CONFIG_SWAPOFF 1 (1)
+config CONFIG_HELP bool
+prompt CONFIG_HELP (CONFIG_TOYBOX_HELP)
+def_bool CONFIG_HELP 1 (CONFIG_TOYBOX_HELP)
+config CONFIG_DD bool
+prompt CONFIG_DD (1)
+def_bool CONFIG_DD 0 (1)
+config CONFIG_RMDIR bool
+prompt CONFIG_RMDIR (1)
+def_bool CONFIG_RMDIR 1 (1)
+config CONFIG_GREP bool
+prompt CONFIG_GREP (1)
+def_bool CONFIG_GREP 1 (1)
+config CONFIG_BLOCKDEV bool
+prompt CONFIG_BLOCKDEV (1)
+def_bool CONFIG_BLOCKDEV 1 (1)
+config CONFIG_UUENCODE bool
+prompt CONFIG_UUENCODE (1)
+def_bool CONFIG_UUENCODE 1 (1)
+config CONFIG_TUNCTL bool
+prompt CONFIG_TUNCTL (1)
+def_bool CONFIG_TUNCTL 1 (1)
+config CONFIG_TOYBOX_PEDANTIC_ARGS bool
+prompt CONFIG_TOYBOX_PEDANTIC_ARGS (1)
+def_bool CONFIG_TOYBOX_PEDANTIC_ARGS 0 (1)
+config CONFIG_IORENICE bool
+prompt CONFIG_IORENICE (1)
+def_bool CONFIG_IORENICE 1 (1)
+config CONFIG_SLEEP_FLOAT bool
 def_bool CONFIG_SLEEP_FLOAT 1 (CONFIG_SLEEP and CONFIG_TOYBOX_FLOAT)
-bool CONFIG_PIDOF selectable
-bool CONFIG_CHOWN selectable
-bool CONFIG_CHROOT selectable
-bool CONFIG_VMSTAT selectable
-bool CONFIG_SKELETON_ALIAS selectable
-bool CONFIG_NL selectable
-bool CONFIG_PIVOT_ROOT selectable
-bool CONFIG_ZCAT selectable
-bool CONFIG_PMAP selectable
-bool CONFIG_SU selectable
-bool CONFIG_STOP selectable
-bool CONFIG_LS_COLOR selectable
-bool CONFIG_DUMPLEASES selectable
-bool CONFIG_HOSTNAME selectable
-bool CONFIG_SYSCTL selectable
-bool CONFIG_NPROC selectable
-bool CONFIG_ROUTE selectable
-bool CONFIG_LSOF selectable
-bool CONFIG_USERDEL selectable
-bool CONFIG_LOSETUP selectable
-bool CONFIG_TOYBOX_UTMPX nonselectable
+config CONFIG_PIDOF bool
+prompt CONFIG_PIDOF (1)
+def_bool CONFIG_PIDOF 1 (1)
+config CONFIG_CHOWN bool
+prompt CONFIG_CHOWN (1)
+def_bool CONFIG_CHOWN 1 (1)
+config CONFIG_CHROOT bool
+prompt CONFIG_CHROOT (1)
+def_bool CONFIG_CHROOT 1 (1)
+config CONFIG_VMSTAT bool
+prompt CONFIG_VMSTAT (1)
+def_bool CONFIG_VMSTAT 1 (1)
+config CONFIG_SKELETON_ALIAS bool
+prompt CONFIG_SKELETON_ALIAS (1)
+def_bool CONFIG_SKELETON_ALIAS 0 (1)
+config CONFIG_NL bool
+prompt CONFIG_NL (1)
+def_bool CONFIG_NL 1 (1)
+config CONFIG_PIVOT_ROOT bool
+prompt CONFIG_PIVOT_ROOT (1)
+def_bool CONFIG_PIVOT_ROOT 1 (1)
+config CONFIG_ZCAT bool
+prompt CONFIG_ZCAT (CONFIG_TOYBOX_LIBZ)
+def_bool CONFIG_ZCAT 1 (CONFIG_TOYBOX_LIBZ)
+config CONFIG_PMAP bool
+prompt CONFIG_PMAP (1)
+def_bool CONFIG_PMAP 1 (1)
+config CONFIG_SU bool
+prompt CONFIG_SU (CONFIG_TOYBOX_SHADOW)
+def_bool CONFIG_SU 1 (CONFIG_TOYBOX_SHADOW)
+config CONFIG_STOP bool
+prompt CONFIG_STOP (CONFIG_TOYBOX_ON_ANDROID)
+def_bool CONFIG_STOP 1 (CONFIG_TOYBOX_ON_ANDROID)
+config CONFIG_LS_COLOR bool
+prompt CONFIG_LS_COLOR (CONFIG_LS)
+def_bool CONFIG_LS_COLOR 1 (CONFIG_LS)
+config CONFIG_DUMPLEASES bool
+prompt CONFIG_DUMPLEASES (1)
+def_bool CONFIG_DUMPLEASES 0 (1)
+config CONFIG_HOSTNAME bool
+prompt CONFIG_HOSTNAME (1)
+def_bool CONFIG_HOSTNAME 1 (1)
+config CONFIG_SYSCTL bool
+prompt CONFIG_SYSCTL (1)
+def_bool CONFIG_SYSCTL 1 (1)
+config CONFIG_NPROC bool
+prompt CONFIG_NPROC (1)
+def_bool CONFIG_NPROC 1 (1)
+config CONFIG_ROUTE bool
+prompt CONFIG_ROUTE (1)
+def_bool CONFIG_ROUTE 0 (1)
+config CONFIG_LSOF bool
+prompt CONFIG_LSOF (1)
+def_bool CONFIG_LSOF 0 (1)
+config CONFIG_USERDEL bool
+prompt CONFIG_USERDEL (1)
+def_bool CONFIG_USERDEL 0 (1)
+config CONFIG_LOSETUP bool
+prompt CONFIG_LOSETUP (1)
+def_bool CONFIG_LOSETUP 1 (1)
+config CONFIG_TOYBOX_UTMPX bool
 def_bool CONFIG_TOYBOX_UTMPX 1 (1)
-bool CONFIG_TOYBOX_LIBZ selectable
-bool CONFIG_REV selectable
-bool CONFIG_SH selectable
-bool CONFIG_IPCRM selectable
-bool CONFIG_LINK selectable
-bool CONFIG_TOYBOX_ICONV nonselectable
+config CONFIG_TOYBOX_LIBZ bool
+prompt CONFIG_TOYBOX_LIBZ (1)
+def_bool CONFIG_TOYBOX_LIBZ 0 (1)
+config CONFIG_REV bool
+prompt CONFIG_REV (1)
+def_bool CONFIG_REV 1 (1)
+config CONFIG_SH bool
+prompt CONFIG_SH (1)
+def_bool CONFIG_SH 0 (1)
+config CONFIG_IPCRM bool
+prompt CONFIG_IPCRM (1)
+def_bool CONFIG_IPCRM 0 (1)
+config CONFIG_LINK bool
+prompt CONFIG_LINK (1)
+def_bool CONFIG_LINK 1 (1)
+config CONFIG_TOYBOX_ICONV bool
 def_bool CONFIG_TOYBOX_ICONV 1 (1)
-bool CONFIG_ULIMIT selectable
-bool CONFIG_DATE selectable
-bool CONFIG_WHOAMI selectable
-bool CONFIG_MKE2FS_GEN selectable
-bool CONFIG_GETTY selectable
-bool CONFIG_FTPPUT selectable
-bool CONFIG_SETENFORCE selectable
-bool CONFIG_TOP selectable
-bool CONFIG_EJECT selectable
-bool CONFIG_TOYBOX_LSM_NONE selectable
-bool CONFIG_FILE selectable
-bool CONFIG_CHCON selectable
-bool CONFIG_SORT selectable
-bool CONFIG_SKELETON selectable
-bool CONFIG_TCPSVD selectable
-bool CONFIG_TOUCH selectable
-bool CONFIG_REBOOT selectable
-bool CONFIG_TOYBOX_CONTAINER nonselectable
+config CONFIG_ULIMIT bool
+prompt CONFIG_ULIMIT (CONFIG_TOYBOX_PRLIMIT)
+def_bool CONFIG_ULIMIT 1 (CONFIG_TOYBOX_PRLIMIT)
+config CONFIG_DATE bool
+prompt CONFIG_DATE (1)
+def_bool CONFIG_DATE 1 (1)
+config CONFIG_WHOAMI bool
+prompt CONFIG_WHOAMI (1)
+def_bool CONFIG_WHOAMI 1 (1)
+config CONFIG_MKE2FS_GEN bool
+prompt CONFIG_MKE2FS_GEN (CONFIG_MKE2FS)
+def_bool CONFIG_MKE2FS_GEN 0 (CONFIG_MKE2FS)
+config CONFIG_GETTY bool
+prompt CONFIG_GETTY (1)
+def_bool CONFIG_GETTY 0 (1)
+config CONFIG_FTPPUT bool
+prompt CONFIG_FTPPUT (1)
+def_bool CONFIG_FTPPUT 1 (1)
+config CONFIG_SETENFORCE bool
+prompt CONFIG_SETENFORCE (CONFIG_TOYBOX_SELINUX)
+def_bool CONFIG_SETENFORCE 1 (CONFIG_TOYBOX_SELINUX)
+config CONFIG_TOP bool
+prompt CONFIG_TOP (1)
+def_bool CONFIG_TOP 1 (1)
+config CONFIG_EJECT bool
+prompt CONFIG_EJECT (1)
+def_bool CONFIG_EJECT 1 (1)
+config CONFIG_TOYBOX_LSM_NONE bool
+prompt CONFIG_TOYBOX_LSM_NONE (1)
+config CONFIG_FILE bool
+prompt CONFIG_FILE (1)
+def_bool CONFIG_FILE 1 (1)
+config CONFIG_CHCON bool
+prompt CONFIG_CHCON (CONFIG_TOYBOX_SELINUX)
+def_bool CONFIG_CHCON 1 (CONFIG_TOYBOX_SELINUX)
+config CONFIG_SORT bool
+prompt CONFIG_SORT (1)
+def_bool CONFIG_SORT 1 (1)
+config CONFIG_SKELETON bool
+prompt CONFIG_SKELETON (1)
+def_bool CONFIG_SKELETON 0 (1)
+config CONFIG_TCPSVD bool
+prompt CONFIG_TCPSVD (CONFIG_TOYBOX_FORK)
+def_bool CONFIG_TCPSVD 0 (CONFIG_TOYBOX_FORK)
+config CONFIG_TOUCH bool
+prompt CONFIG_TOUCH (1)
+def_bool CONFIG_TOUCH 1 (1)
+config CONFIG_REBOOT bool
+prompt CONFIG_REBOOT (1)
+def_bool CONFIG_REBOOT 1 (1)
+config CONFIG_TOYBOX_CONTAINER bool
 def_bool CONFIG_TOYBOX_CONTAINER 0 (1)
-bool CONFIG_TIME selectable
-bool CONFIG_READAHEAD selectable
-bool CONFIG_SYSLOGD selectable
-bool CONFIG_TOYBOX_SMACK selectable
-bool CONFIG_NETCAT_LISTEN selectable
-bool CONFIG_GETENFORCE selectable
-bool CONFIG_FREE selectable
-bool CONFIG_XARGS_PEDANTIC selectable
-bool CONFIG_LOG selectable
-bool CONFIG_ARPING selectable
-bool CONFIG_CP_PRESERVE selectable
+config CONFIG_TIME bool
+prompt CONFIG_TIME (CONFIG_TOYBOX_FLOAT)
+def_bool CONFIG_TIME 1 (CONFIG_TOYBOX_FLOAT)
+config CONFIG_READAHEAD bool
+prompt CONFIG_READAHEAD (1)
+def_bool CONFIG_READAHEAD 1 (1)
+config CONFIG_SYSLOGD bool
+prompt CONFIG_SYSLOGD (1)
+def_bool CONFIG_SYSLOGD 0 (1)
+config CONFIG_TOYBOX_SMACK bool
+prompt CONFIG_TOYBOX_SMACK (1)
+config CONFIG_NETCAT_LISTEN bool
+prompt CONFIG_NETCAT_LISTEN (CONFIG_NETCAT)
+def_bool CONFIG_NETCAT_LISTEN 1 (CONFIG_NETCAT)
+config CONFIG_GETENFORCE bool
+prompt CONFIG_GETENFORCE (CONFIG_TOYBOX_SELINUX)
+def_bool CONFIG_GETENFORCE 1 (CONFIG_TOYBOX_SELINUX)
+config CONFIG_FREE bool
+prompt CONFIG_FREE (1)
+def_bool CONFIG_FREE 1 (1)
+config CONFIG_XARGS_PEDANTIC bool
+prompt CONFIG_XARGS_PEDANTIC (CONFIG_XARGS)
+def_bool CONFIG_XARGS_PEDANTIC 0 (CONFIG_XARGS)
+config CONFIG_LOG bool
+prompt CONFIG_LOG (CONFIG_TOYBOX_ON_ANDROID)
+def_bool CONFIG_LOG 1 (CONFIG_TOYBOX_ON_ANDROID)
+config CONFIG_ARPING bool
+prompt CONFIG_ARPING (1)
+def_bool CONFIG_ARPING 0 (1)
+config CONFIG_CP_PRESERVE bool
+prompt CONFIG_CP_PRESERVE (CONFIG_CP)
+def_bool CONFIG_CP_PRESERVE 1 (CONFIG_CP)
 bool_choice CONFIG_TOYBOX_LSM_NONE CONFIG_TOYBOX_SELINUX CONFIG_TOYBOX_SMACK|(1)
 dep CONFIG_LOGGER (CONFIG_SYSLOGD)
 dep CONFIG_UNSHARE (CONFIG_TOYBOX_CONTAINER)
