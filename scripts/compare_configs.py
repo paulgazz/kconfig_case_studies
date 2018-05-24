@@ -28,20 +28,16 @@ environment_vars = set()
 with open(args.kmax_file) as f:
   for line in f:
     instr, data = line.strip().split(" ", 1)
-    if (instr == "bool"):
-      varname, selectability = data.split(" ", 1)
-      selectable = True if selectability == "selectable" else False
-      if selectability == "environment":
-         selectable = True
-         environment_vars.add(varname)
-      config_types[varname] = ConfigVar(True, None, selectable)
-    elif (instr == "nonbool"):
-      varname, selectability, type_name = data.split(" ", 2)
-      selectable = True if selectability == "selectable" else False
-      if selectability == "environment":
-         selectable = True
-         environment_vars.add(varname)
-      config_types[varname] = ConfigVar(False, type_name, selectable)
+    if (instr == "config"):
+      varname, typename = data.split(" ", 1)
+      config_types[varname] = ConfigVar(typename == "bool", typename, False)
+    elif (instr == "prompt"):
+      varname, condition = data.split(" ", 1)
+      config_types[varname].is_selectable = True
+    elif (instr == "env"):
+      varname = data
+      environment_vars.add(varname)
+      config_types[varname].is_selectable = True
 
 # Return two dictionaries.  The first maps config names to True for
 # set ones and False for not set ones.  The second maps set config
