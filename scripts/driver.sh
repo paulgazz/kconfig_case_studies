@@ -59,7 +59,9 @@ config_file=""
 kconfig_root=""
 binaries=""
 get_reverse_dep=""
+check_dep_extra_args=""
 dimacs_extra_args=""
+# dimacs_extra_args="--remove-bad-selects" # allow bad selects, since fiasco using them intentionally
 echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file="config/.config"
@@ -69,7 +71,7 @@ if [[ $? -eq 0 ]]; then
     # axtls variables already include the the CONFIG_ prefix and it's
     # kconfig system is modified not to.  add a flag to check_dep to
     # disable the prefix for axtls.
-    dimacs_extra_args="-p"
+    check_dep_extra_args="-p"
 fi
 echo "${casename}" | grep -i "toybox" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -97,6 +99,7 @@ if [[ $? -eq 0 ]]; then
     #     exit 1 
     # fi
     get_reverse_dep="true"
+    dimacs_extra_args="" # bad selects are part of the feature model!
 fi
 echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -106,7 +109,7 @@ if [[ $? -eq 0 ]]; then
     get_reverse_dep=""
     # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
     # environment variables with -d.
-    dimacs_extra_args="-p -d"
+    check_dep_extra_args="-p -d"
 fi
 echo "${casename}" | grep -i "buildroot" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -115,7 +118,7 @@ if [[ $? -eq 0 ]]; then
     binaries="*"  # TODO: set binaries
     get_reverse_dep=""
     # don't add CONFIG_ prefix, already uses BR2 itself.  must set a build path.
-    dimacs_extra_args="-p -e BUILD_DIR=."
+    check_dep_extra_args="-p -e BUILD_DIR=."
     touch .br2-external.in  # this file is necessary in order to process the Config.in
 fi
 
@@ -214,11 +217,12 @@ elif [[ "${action}" == "dimacs" ]]; then
     fi
 
     # extract kconfig constraints to kmax intermediate format
-    "${KMAX_ROOT}/kconfig/check_dep" ${dimacs_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/kconfig.kmax"
+    "${KMAX_ROOT}/kconfig/check_dep" ${check_dep_extra_args} --dimacs "${kconfig_root}" | tee "${case_dir}/kconfig.kmax"
 
     # complete
     # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects --include-nonvisible-bool-defaults --remove-orphaned-nonvisibles --remove-independent-nonvisibles > "${case_dir}/kconfig.dimacs"
-    time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects --include-nonvisible-bool-defaults --remove-orphaned-nonvisibles > "${case_dir}/kconfig.dimacs"
+    # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects --include-nonvisible-bool-defaults --remove-orphaned-nonvisibles > "${case_dir}/kconfig.dimacs"
+    time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" ${dimacs_extra_args} --include-nonvisible-bool-defaults --remove-orphaned-nonvisibles > "${case_dir}/kconfig.dimacs"
     
     # # without reverse dependencies
     # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-reverse-dependencies --remove-all-nonvisibles > "${case_dir}/sans_reverse_sans_nonselectable.dimacs"

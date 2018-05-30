@@ -5,13 +5,16 @@ set -x
 # dependencies
 sudo apt-get update
 
-yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence g++-5-arm-linux-gnueabihf libdlib-dev libaudit-dev linux-source-4.4.0
+yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence libdlib-dev libaudit-dev linux-source-4.4.0 g++-mips-linux-gnu
+
+# cross-compilation tools
+yes | sudo apt-get install g++-5-arm-linux-gnueabihf g++-aarch64-linux-gnu 
 
 # allow user to add to /usr/local
 sudo chgrp -R vagrant /usr/local; sudo chmod -R g+w /usr/local
 
 # setup arm binutils for fiasco cross-compiling
-sudo ln -s $(which arm-linux-gnueabihf-g++-5) /usr/local/binarm-linux-g++
+sudo ln -s $(which arm-linux-gnueabihf-g++-5) /usr/local/bin/arm-linux-g++
 sudo ln -s $(which arm-linux-gnueabihf-g++-5) /usr/local/bin/arm-linux-g++
 sudo ln -s $(which arm-linux-gnueabihf-gcc-5) /usr/local/bin/arm-linux-gcc
 sudo ln -s $(which arm-linux-gnueabihf-ld-5) /usr/local/bin/arm-linux-ld
@@ -21,7 +24,19 @@ sudo ln -s $(which arm-linux-gnueabihf-nm) /usr/local/bin/arm-linux-nm
 sudo ln -s $(which arm-linux-gnueabihf-objcopy) /usr/local/bin/arm-linux-objcopy
 sudo ln -s $(which arm-linux-gnueabihf-ar) /usr/local/bin/arm-linux-ar
 sudo ln -s $(which arm-linux-gnueabihf-strip) /usr/local/bin/arm-linux-strip
-  
+
+# setup mips binutils for fiasco cross-compiling
+sudo ln -s $(which mips-linux-gnu-g++) /usr/local/bin/mips-linux-g++
+sudo ln -s $(which mips-linux-gnu-g++) /usr/local/bin/mips-linux-g++
+sudo ln -s $(which mips-linux-gnu-gcc) /usr/local/bin/mips-linux-gcc
+sudo ln -s $(which mips-linux-gnu-ld) /usr/local/bin/mips-linux-ld
+sudo ln -s $(which mips-linux-gnu-ld) /usr/local/bin/mips-linux-ld
+sudo ln -s $(which mips-linux-gnu-cpp) /usr/local/bin/mips-linux-cpp
+sudo ln -s $(which mips-linux-gnu-nm) /usr/local/bin/mips-linux-nm
+sudo ln -s $(which mips-linux-gnu-objcopy) /usr/local/bin/mips-linux-objcopy
+sudo ln -s $(which mips-linux-gnu-ar) /usr/local/bin/mips-linux-ar
+sudo ln -s $(which mips-linux-gnu-strip) /usr/local/bin/mips-linux-strip
+
 # environment
 echo 'export KCONFIG_CASE_STUDIES=/vagrant' > /home/vagrant/.bash_profile
 echo 'export PATH=$KCONFIG_CASE_STUDIES/scripts:$PATH' >> /home/vagrant/.bash_profile
