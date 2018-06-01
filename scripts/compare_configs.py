@@ -180,7 +180,7 @@ for name in unique2:
     pass
   else:
     typename = "bool" if type_info.is_bool else "nonbool"
-    sys.stderr.write("error: selectable %s variable %s is set in kconfig output, but not in the generated config.\n" % typename, name)
+    sys.stderr.write("error: selectable %s variable %s is set in kconfig output, but not in the generated config.\n" % (typename, name))
     num_errors = num_errors + 1
       
 sys.stderr.write("%d errors\n" % num_errors)
