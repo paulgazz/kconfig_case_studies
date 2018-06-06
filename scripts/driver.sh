@@ -152,6 +152,8 @@ fi
 if [[ "${action}" == "config" || "${action}" == "build" ]]; then
     kconfig_out_dir="${experiment_dir}/kconfig_out"
     mkdir -p "${kconfig_out_dir}"
+    build_out_dir="${experiment_dir}/build_out"
+    mkdir -p "${build_out_dir}"
 
     # configure or build each sample
     if [[ ! -e "${experiment_dir}" ]]; then
@@ -178,35 +180,39 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
     elif [[ "${action}" == "build" ]]; then
         for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
           i="${experiment_dir}/${i_base}"
-          echo "configuring $i";
-          cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
+          build_out_file="${build_out_dir}/$(basename ${i}).out"
+          
+          for dummy in $(seq 1 1); do  # single-iteration loop to make saving output easier
+            echo "configuring $i";
+            cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
 
-          # case-specific build scripts
-          echo "${casename}" | grep -i "axtls" > /dev/null
-          if [[ $? -eq 0 ]]; then
-              mkdir -p /tmp/lua
-              echo 'CONFIG_HTTP_LUA_PREFIX="/tmp/lua"' >> "${config_file}";
-          fi
-          echo "${casename}" | egrep -i "uClibc-ng" >/dev/null
-          if [[ $? -eq 0 ]]; then
-              mv "${config_file}" "${config_file}.tmp"
-              cat "${config_file}.tmp" | grep -v "^KERNEL_HEADERS=" > "${config_file}"; echo 'KERNEL_HEADERS="/home/vagrant/linux-headers/include"' >> "${config_file}"
-          fi
+            # case-specific build scripts
+            echo "${casename}" | grep -i "axtls" > /dev/null
+            if [[ $? -eq 0 ]]; then
+                mkdir -p /tmp/lua
+                echo 'CONFIG_HTTP_LUA_PREFIX="/tmp/lua"' >> "${config_file}";
+            fi
+            echo "${casename}" | egrep -i "uClibc-ng" >/dev/null
+            if [[ $? -eq 0 ]]; then
+                mv "${config_file}" "${config_file}.tmp"
+                cat "${config_file}.tmp" | grep -v "^KERNEL_HEADERS=" > "${config_file}"; echo 'KERNEL_HEADERS="/home/vagrant/linux-headers/include"' >> "${config_file}"
+            fi
 
-          time make oldconfig;
+            time make oldconfig;
 
-          echo "building $i";
-          make clean;
-          echo "${casename}" | grep -i "axtls" > /dev/null
-          if [[ $? -eq 0 ]]; then
-              mkdir -p /tmp/local
-              time make PREFIX="/tmp/local"
-          else
-            time make;
-          fi
-          echo "return code $?";
-          echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
-        done 2>&1 | tee "${experiment_dir}/build_results.out" | egrep "^(building)"
+            echo "building $i";
+            make clean;
+            echo "${casename}" | grep -i "axtls" > /dev/null
+            if [[ $? -eq 0 ]]; then
+                mkdir -p /tmp/local
+                time make PREFIX="/tmp/local"
+            else
+              time make;
+            fi
+            echo "return code $?";
+            echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
+          done 2>&1 | tee "${build_out_file}" | egrep "^(building)"
+        done
     fi
 
 elif [[ "${action}" == "dimacs" ]]; then
