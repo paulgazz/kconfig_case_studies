@@ -1,0 +1,36 @@
+  ... Making entry_frame-arm.o
+  ... Making entry_frame-abs-timeout-hack.o
+  ... Making kernel_console.o
+  ... Making ipc_gate.o
+  ... Making task.o
+  ... Making task-arm.o
+  ... Making sigma0_task.o
+  ... Making kernel_task.o
+  ... Making kernel_task-arm.o
+  ... Making platform_control_object.o
+  ... Making irq_controller.o
+  ... Making irq_chip.o
+  ... Making irq_mgr.o
+  ... Making terminate.o
+  ... Making continuation-arm.o
+  ... Making timer_tick.o
+  ... Making timer_tick-arm.o
+  ... Making timer_tick-single-vector.o
+  ... Making platform_control.o
+  ... Making platform_control-arm-psci.o
+/tmp/cc4Pkoja.s: Assembler messages:
+/tmp/cc4Pkoja.s:90: Error: selected processor does not support `smc #0' in ARM mode
+/tmp/cc4Pkoja.s:131: Error: selected processor does not support `smc #0' in ARM mode
+/tmp/cc4Pkoja.s:180: Error: selected processor does not support `smc #0' in ARM mode
+/tmp/cc4Pkoja.s:318: Error: selected processor does not support `smc #0' in ARM mode
+/tmp/cc4Pkoja.s:381: Error: selected processor does not support `smc #0' in ARM mode
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makerules.global:118: recipe for target 'platform_control-arm-psci.o' failed
+make[2]: *** [platform_control-arm-psci.o] Error 1
+make[2]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makefile:153: recipe for target 'all' failed
+make[1]: *** [all] Error 2
+make[1]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+return code 2

@@ -1,0 +1,36 @@
+  ... Making crt0.o
+  ... Making bootstrap.o
+  ... Making bootstrap-arm-32.o
+  ==> Linking bootstrap.fiasco.pre.o
+  ==> Linking bootstrap.fiasco.o
+  ... Making kernel_panic.o
+In file included from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/cpu_call.cpp:188:0,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/context.cpp:1940,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/switch_lock.cpp:84,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/helping_lock.cpp:4,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/thread.cpp:6,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/kernel_panic.cc:9:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/arm/bsp/exynos/ipi-arm-exynos.cpp: In static member function ‘static void Ipi::send(Ipi::Message, Cpu_number, Cpu_number)’:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/arm/bsp/exynos/ipi-arm-exynos.cpp:16:91: error: ‘class Ipi’ has no member named ‘_phys_id’
+   Pic::gic.cpu(from_cpu)->softint_cpu(1UL << cxx::int_value<Cpu_phys_id>(_ipi.cpu(to_cpu)._phys_id), m);
+                                                                                           ^
+In file included from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/cpu_call.cpp:188:0,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/context.cpp:1940,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/switch_lock.cpp:84,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/helping_lock.cpp:4,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/thread.cpp:6,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/kernel_panic.cc:9:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/arm/ipi-arm.cpp: In static member function ‘static void Ipi::init(Cpu_number)’:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/arm/ipi-arm.cpp:47:39: error: base operand of ‘->’ has non-pointer type ‘Per_cpu_ptr<Static_object<Gic> >’
+   _ipi.cpu(cpu)._sgi_target = Pic::gic->pcpu_to_sgi(Cpu::cpus.cpu(cpu).phys_id());
+                                       ^
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makerules.global:118: recipe for target 'kernel_panic.o' failed
+make[2]: *** [kernel_panic.o] Error 1
+make[2]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makefile:153: recipe for target 'all' failed
+make[1]: *** [all] Error 2
+make[1]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+return code 2
