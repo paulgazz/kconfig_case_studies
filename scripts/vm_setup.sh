@@ -22,6 +22,7 @@ sudo ln -s $(which arm-linux-gnueabihf-ld) /usr/local/bin/arm-linux-ld
 sudo ln -s $(which arm-linux-gnueabihf-cpp-5) /usr/local/bin/arm-linux-cpp
 sudo ln -s $(which arm-linux-gnueabihf-nm) /usr/local/bin/arm-linux-nm
 sudo ln -s $(which arm-linux-gnueabihf-objcopy) /usr/local/bin/arm-linux-objcopy
+sudo ln -s $(which arm-linux-gnueabihf-objdump) /usr/local/bin/arm-linux-objdump
 sudo ln -s $(which arm-linux-gnueabihf-ar) /usr/local/bin/arm-linux-ar
 sudo ln -s $(which arm-linux-gnueabihf-strip) /usr/local/bin/arm-linux-strip
 
