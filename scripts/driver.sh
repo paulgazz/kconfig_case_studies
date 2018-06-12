@@ -60,7 +60,7 @@ kconfig_root=""
 binaries=""
 get_reverse_dep=""
 check_dep_extra_args=""
-dimacs_extra_args=""
+dimacs_extra_args="-d"
 # dimacs_extra_args="--remove-bad-selects" # allow bad selects, since fiasco using them intentionally
 echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
