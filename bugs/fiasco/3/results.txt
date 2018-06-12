@@ -1,0 +1,4 @@
+800.config disable CONFIG_PF_EXYNOS
+494.config disable CONFIG_PF_BCM283X (bcm283x's mem_layout does not define Gic_h_phys_base!)
+712.config (also fixed by disabling bcm283x!)
+379.config (also fixed by disabling exynos!)
