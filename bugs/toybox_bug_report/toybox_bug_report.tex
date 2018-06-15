@@ -1,0 +1,80 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{courier}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{microtype}
+%\usepackage[T1]{fontenc}
+%\renewcommand\tabularxcolumn[1]{m{#1}}% vertically center
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X} % A regular tabularx column but left justified instead of full justified.
+% -------------------------------------------------------
+% FROM https://tex.stackexchange.com/questions/348651/c-code-to-add-in-the-document
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,       
+    keepspaces=true,                 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\lstset{style=CStyle}
+% -------------------------------------------------------
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Austin Mordahl}
+\title{Toybox Bug Analysis}
+\begin{document}
+\maketitle
+
+\begin{tabularx}{\textwidth}{rY}
+\toprule
+File & lsm.h \\
+Line & 63 \\
+Description & Uninitialized variable: result \\
+Number of Configurations & 432\footnote{The actual cppcheck bug reports listed various C source code files which included this header as the source of the bug, even though \texttt{lsm.h} was the actual source. This is the number of total occurrences of the bug across multiple files.}\\
+\midrule
+\multicolumn{2}{c}{Code Sample} \\
+\multicolumn{2}{c}{\lstinputlisting{code/lsm_h_lsm_context.c}} \\
+\midrule
+Status & False positive. \\
+Remarks & In configurations including \texttt{TOYBOX\_SMACK} and \texttt{TOYBOX\_SELINUX} \texttt{smack\_new\_label\_from\_self} and \texttt{getcon} are replaced with the value -1, respectively. In other configurations, \texttt{*result} is an out parameter. \\
+\bottomrule
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{rY}
+\toprule
+File & base64.c\\
+Line & 35\\
+Description & Expression \texttt{`this.base64.columns\&\&++*x == this.base64.columns'} \\ & depends on order of evaluation of side effects. \\
+Number of Configurations & 478 \\
+\midrule
+\multicolumn{2}{c}{Code Sample} \\
+\multicolumn{2}{c}{\lstinputlisting[firstline=31,lastline=39]{code/base64.c}} \\
+\midrule
+Status & False positive. \\
+Remarks & Although \texttt{TT.colums} appears twice in the same expression, it is modified neither time. Thus, the order of evaluation of side effects does not matter. \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
