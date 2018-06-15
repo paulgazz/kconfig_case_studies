@@ -42,7 +42,6 @@
 \lstset{style=CStyle}
 % -------------------------------------------------------
 %\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Austin Mordahl}
 \title{Toybox Bug Analysis}
 \begin{document}
 \maketitle
@@ -73,7 +72,7 @@ Number of Configurations & 478 \\
 \multicolumn{2}{c}{\lstinputlisting[firstline=31,lastline=39]{code/base64.c}} \\
 \midrule
 Status & False positive. \\
-Remarks & Although \texttt{TT.colums} appears twice in the same expression, it is modified neither time. Thus, the order of evaluation of side effects does not matter. \\
+Remarks & Although \texttt{TT.columns} appears twice in the same expression, it is modified neither time. Thus, the order of evaluation of side effects does not matter. \\
 \bottomrule
 \end{tabularx}
 
