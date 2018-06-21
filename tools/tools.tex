@@ -1,0 +1,125 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{courier}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{microtype}
+%\usepackage[T1]{fontenc}
+%\renewcommand\tabularxcolumn[1]{m{#1}}% vertically center
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X} % A regular tabularx column but left justified instead of full justified.
+% -------------------------------------------------------
+% FROM https://tex.stackexchange.com/questions/348651/c-code-to-add-in-the-document
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,       
+    keepspaces=true,
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\lstset{style=CStyle}
+% -------------------------------------------------------
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+% BUG REPORT TEMPLATE -----------------------------------
+%\begin{tabularx}{\textwidth}{rY}
+%\toprule
+%File & •\\
+%Line & •\\
+%Description & •\\
+%Number of Configurations & •\\
+%\midrule
+%\multicolumn{2}{c}{Code Sample} \\
+%\multicolumn{2}{l}{\lstinputlisting{code/•}} \\
+%\midrule
+%Status & •\\
+%Remarks & •\\
+%\bottomrule
+%\end{tabularx}
+% -------------------------------------------------------
+\title{Static Analysis Preliminary Tool Investigation}
+\begin{document}
+\maketitle
+
+\section{\textcolor{green}{CBMC}}
+
+Tool available and runnable. Model checker that verifies properties
+such as pointers and array bounds. It works by translating the program
+into a formula. 
+
+Download: http://www.cprover.org/cbmc/
+
+Manual: http://www.cprover.org/cprover-manual/cbmc.html
+
+\section{\textcolor{green}{clang-scan-build}}
+
+Tool available and runnable. Clang can analyze individual C file or
+the complete codebase built with make/xcodebuild.
+
+Download: https://clang-analyzer.llvm.org
+
+Manual: https://clang-analyzer.llvm.org/scan-build
+
+\section{\textcolor{red}{CMetrics}}
+
+Code metrics tool; does not report bugs.
+
+\section{\textcolor{green}{CodeSonar}}
+
+GrammaTech static analysis tool. Can submit a request to obtain 30-day trial.
+Can also apply for its free academic program (submitted).
+
+Website: https://www.grammatech.com/products/codesonar
+
+\section{\textcolor{orange}{Corrode}}
+
+C to Rust translator. Not fully automatic. Can then run Rust compiler to catch bugs.
+
+Code repo: https://github.com/jameysharp/corrode
+
+\section{\textcolor{green}{cppcheck}}
+
+Already included.
+
+\section{\textcolor{orange}{CppDepend}}
+
+Commercial tool. Can obtain 30-day trial version. Detect dependency and
+structural flaws. Does not seem very relevant.
+
+Website: https://www.cppdepend.com
+
+\section{\textcolor{red}{cpplint}}
+
+C++ code style checker.
+
+\section{\textcolor{red}{cqmetrics}}
+
+Code metrics tool; does not report bugs.
+
+\section{\textcolor{red}{CScout}}
+
+C refactoring tool; does not report bugs.
+
+\end{document}
