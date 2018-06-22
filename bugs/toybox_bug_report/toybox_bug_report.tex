@@ -9,8 +9,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{microtype}
-%\usepackage[T1]{fontenc}
-%\renewcommand\tabularxcolumn[1]{m{#1}}% vertically center
+% \usepackage[T1]{fontenc}
+% \renewcommand\tabularxcolumn[1]{m{#1}}% vertically center
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X} % A regular tabularx column but left justified instead of full justified.
 % -------------------------------------------------------
 % FROM https://tex.stackexchange.com/questions/348651/c-code-to-add-in-the-document
@@ -22,42 +22,43 @@
 \definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{CStyle}{
-    commentstyle=\color{mGreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{mGray},
-    stringstyle=\color{mPurple},
-    basicstyle=\footnotesize\ttfamily,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,       
-    keepspaces=true,
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2,
-    language=C
+  commentstyle=\color{mGreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{mGray},
+  stringstyle=\color{mPurple},
+  basicstyle=\footnotesize\ttfamily,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,       
+  keepspaces=true,
+  numbersep=5pt,
+  numbers=left,
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  language=C
 }
 
 \lstset{style=CStyle}
 % -------------------------------------------------------
-%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+% \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 
 % BUG REPORT TEMPLATE -----------------------------------
-%\begin{tabularx}{\textwidth}{rY}
-%\toprule
-%File & •\\
-%Line & •\\
-%Description & •\\
-%Number of Configurations & •\\
-%\midrule
-%\multicolumn{2}{c}{Code Sample} \\
-%\multicolumn{2}{l}{\lstinputlisting{code/•}} \\
-%\midrule
-%Status & •\\
-%Remarks & •\\
-%\bottomrule
-%\end{tabularx}
+% \begin{tabularx}{\textwidth}{rY}
+%   \toprule
+%   File & •\\
+%   Line & •\\
+%   Description & •\\
+%   Number of Configurations & •\\
+%   \midrule
+%   \multicolumn{2}{c}{Code Sample} \\
+%   \multicolumn{2}{l}{\lstinputlisting{code/•}} \\
+%   \midrule
+%   Status & •\\
+%   Remarks & •\\
+%   \bottomrule
+% \end{tabularx}
 % -------------------------------------------------------
 \title{Toybox Bug Analysis}
 \author{Austin Mordahl}
@@ -70,186 +71,207 @@
 Bug reports are classified into the following categories:
 
 \begin{center}
-\noindent\begin{tabularx}{0.75\textwidth}{rX}
-\toprule
-True & A bug which exists and 1) its existence is unintended, or 2) whether or not its existence is purposeful is undetermined. \\
-\midrule
-Technically True & A bug for which the content of the cppcheck bug report is true, but whose existence is intended. The difference between a False and Technically True bug report is that the former could theoretically be detected by a more sophisticated implementation of cppcheck. \\
-\midrule
-False & A bug cppcheck finds which, upon further inspection, does not exist in the code. For example, cppcheck indicating a variable is passed to a function without being initialized, when the variable is actually an out parameter and intialized within the function.\\
-\bottomrule
-\end{tabularx}
+  \noindent\begin{tabularx}{0.75\textwidth}{rX}
+    \toprule
+    True & A bug which exists and 1) its existence is unintended, or 2) whether or not its existence is purposeful is undetermined. \\
+    \midrule
+    Technically True & A bug for which the content of the cppcheck bug report is true, but whose existence is intended. The difference between a False and Technically True bug report is that the former could theoretically be detected by a more sophisticated implementation of cppcheck. \\
+    \midrule
+    False & A bug cppcheck finds which, upon further inspection, does not exist in the code. For example, cppcheck indicating a variable is passed to a function without being initialized, when the variable is actually an out parameter and intialized within the function.\\
+    \bottomrule
+  \end{tabularx}
 \end{center}
 
 \pagebreak
 \section{True Reports}
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & blockdev.c \\
-Line & 60 \\
-Description & Array \texttt{cmds[11]} accessed at index 31, which is out of bounds.\\
-Number of Configurations & 482 \\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/blockdev_blockdev_main.c}} \\
-\midrule
-Status & True \\
-Remarks & \texttt{cmd[]} is defined as an integer array of size 11. By using a loop that iterates through the number 31 to access the loop, the program is exceeding the bounds of the array. \\
-\bottomrule
+  \toprule
+  File & blockdev.c \\
+  Line & 60 \\
+  Description & Array \texttt{cmds[11]} accessed at index 31, which is out of bounds.\\
+  Number of Configurations & 482 \\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=52-64, firstnumber=52]{code/blockdev.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & True \\
+  Remarks & \texttt{cmd[]} is defined as an integer array of size 11. By using a loop that iterates through the number 31 to access the loop, the program is exceeding the bounds of the array. \\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & netstat.c\\
-Line & 118\\
-Description & {Resource leak: \texttt{fp}}\\
-Number of Configurations & {515}\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/netstat_show_ip.c}} \\
-\midrule
-Status & True\\
-Remarks & \texttt{fp} is not closed before the function returns.\\
-\bottomrule
+  \toprule
+  File & netstat.c\\
+  Line & 118\\
+  Description & {Resource leak: \texttt{fp}}\\
+  Number of Configurations & {515}\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=111-118, firstnumber=111]{code/netstat.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & True\\
+  Remarks & \texttt{fp} is not closed before the function returns.\\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak	
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & cmp.c \\
-Line & 83 \\
-Description & Signed integer overflow for expression \texttt{(2147483648)*!(toys.optflags\&(1))}. \\
-Number of Configurations & 501 \\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/cmp_cmp_main.c}} \\
-\midrule 
-Status & True \\
-Remarks & The multiplication of the flags will cause integer overflow. \\
-\bottomrule
+  \toprule
+  File & cmp.c \\
+  Line & 83 \\
+  Description & Signed integer overflow for expression \texttt{(2147483648)*!(toys.optflags\&(1))}. \\
+  Number of Configurations & 501 \\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=80-85, firstnumber=80]{code/cmp.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule 
+  Status & True \\
+  Remarks & The multiplication of the flags will cause integer overflow. \\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \section{Technically True Reports}
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & chvt.c \\
-Line & 24 \\
-Description & Uninitialized variable: \texttt{fd} \\
-Number of Configurations & 512 \\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/chvt_chvt_main.c}} \\
-\midrule
-Status & Technically True \\
-Remarks & The self-assignment \texttt{fd=fd} is likely purposeful, as a method to suppress compiler warnings about an unused variable \texttt{fd} before the rest of \texttt{chvt\_main} was written to use \texttt{fd}. However, cppcheck is correct in that \texttt{fd\= fd} is an assignment of the value of an uninitialized variable.\\
-\bottomrule
+  \toprule
+  File & chvt.c \\
+  Line & 24 \\
+  Description & Uninitialized variable: \texttt{fd} \\
+  Number of Configurations & 512 \\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=22-34, firstnumber=22]{code/chvt.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & Technically True \\
+  Remarks & The self-assignment \texttt{fd=fd} is likely purposeful, as a method to suppress compiler warnings about an unused variable \texttt{fd} before the rest of \texttt{chvt\_main} was written to use \texttt{fd}. However, cppcheck is correct in that \texttt{fd\= fd} is an assignment of the value of an uninitialized variable.\\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & date.c \\
-Line & 137 \\
-Description & Uninitialized variable: \texttt{width}\\
-Number of Configurations & 511 \\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/date_puts_time.c}} \\
-\midrule
-Status & Technically True \\
-Remarks & See the report for \texttt{chvt.c:24}.\\
-\bottomrule
+  \toprule
+  File & date.c \\
+  Line & 137 \\
+  Description & Uninitialized variable: \texttt{width}\\
+  Number of Configurations & 511 \\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=134-160, firstnumber=134]{code/date.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & Technically True \\
+  Remarks & See the report for \texttt{chvt.c:24}.\\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & hwclock.c\\
-Line & 89\\
-Description & Uninitialized variable: s\\
-Number of Configurations & 466\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/hwclock_hwclock_main.c}} \\
-\midrule
-Status & Technically True\\
-Remarks & See the report for \texttt{chvt.c:24}.\\
-\bottomrule
+  \toprule
+  File & hwclock.c\\
+  Line & 89\\
+  Description & Uninitialized variable: \texttt{s}\\
+  Number of Configurations & 466\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
 \end{tabularx}
-
-\pagebreak
-
+\noindent\lstinputlisting[linerange=88-98, firstnumber=88]{code/hwclock.c}
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & losetup.c\\
-Line & 64\\
-Description & Uninitialized variable: ffd\\
-Number of Configurations & 531\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/losetup_loopback_setup.c}} \\
-\midrule
-Status & Technically True\\
-Remarks & See the report for \texttt{chvt.c:24}.\\
-\bottomrule
+  \midrule
+  Status & Technically True\\
+  Remarks & See the report for \texttt{chvt.c:24}.\\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & switch\_root.c\\
-Line & 49\\
-Description & Uninitialized variable: \texttt{console}\\
-Number of Configurations & 486\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/switch_root_switch_root_main.c}} \\
-\midrule
-Status & Technically True\\
-Remarks & See the report for \texttt{chvt.c:24}.\\
-\bottomrule
+  \toprule
+  File & losetup.c\\
+  Line & 64\\
+  Description & Uninitialized variable: \texttt{ffd}\\
+  Number of Configurations & 531\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=63-69, firstnumber=63]{code/losetup.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & Technically True\\
+  Remarks & See the report for \texttt{chvt.c:24}.\\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & uudecode.c\\
-Line & 29\\
-Description & Uninitialized variable: \texttt{m}\\
-Number of Configurations & 485\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/uudecode_uudecode_main.c}} \\
-\midrule
-Status & Technically True\\
-Remarks & See the report for \texttt{chvt.c:24}.\\
-\bottomrule
+  \toprule
+  File & switch\_root.c\\
+  Line & 49\\
+  Description & Uninitialized variable: \texttt{console}\\
+  Number of Configurations & 486\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=46-49, firstnumber=46]{code/switch_root.c}
+\noindent\lstinputlisting[linerange=81-84, firstnumber=81]{code/switch_root.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & Technically True\\
+  Remarks & See the report for \texttt{chvt.c:24}.\\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & vmstat.c\\
-Line & 508\\
-Description & Uninitialized variable: \texttt{name}\\
-& Uninitialized variable: \texttt{p}\\
-Number of Configurations & 508\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/vmstat_get_vmstat_proc.c}}\\
-\midrule
-Status & Technically True\\
-Remarks & See the report for \texttt{chvt.c:24}.\\
-\bottomrule
+  \toprule
+  File & uudecode.c\\
+  Line & 29\\
+  Description & Uninitialized variable: \texttt{m}\\
+  Number of Configurations & 485\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=29-43, firstnumber=29]{code/uudecode.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & Technically True\\
+  Remarks & See the report for \texttt{chvt.c:24}.\\
+  \bottomrule
+\end{tabularx}
+
+\pagebreak
+
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \toprule
+  File & vmstat.c\\
+  Line & 51\\
+  Description & Uninitialized variable: \texttt{name}\\
+  & Uninitialized variable: \texttt{p}\\
+  Number of Configurations & 508\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=51-70, firstnumber=51]{code/vmstat.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & Technically True\\
+  Remarks & See the report for \texttt{chvt.c:24}.\\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
@@ -257,52 +279,77 @@ Remarks & See the report for \texttt{chvt.c:24}.\\
 \section{False Reports}
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & lsm.h \\
-Line & 63 \\
-Description & Uninitialized variable: result \\
-Number of Configurations & 432\footnote{The actual cppcheck bug reports listed various C source code files which included this header as the source of the bug, even though \texttt{lsm.h} was the actual source. This is the number of total occurrences of the bug across multiple files.}\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/lsm_h_lsm_context.c}}\\
-\midrule
-Status & False\\
-Remarks & In configurations including \texttt{TOYBOX\_SMACK} and \texttt{TOYBOX\_SELINUX} \texttt{smack\_new\_label\_from\_self} and \texttt{getcon} are replaced with the value -1, respectively. In other configurations, \texttt{*result} is an out parameter. \\
-\bottomrule
+  \toprule
+  File & lsm.h \\
+  Line & 63 \\
+  Description & Uninitialized variable: result \\
+  Number of Configurations & 432\footnote{The actual cppcheck bug reports listed various C source code files which included this header as the source of the bug, even though \texttt{lsm.h} was the actual source. This is the number of total occurrences of the bug across multiple files.}\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=55-64, firstnumber=55]{code/lsm.h}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & False\\
+  Remarks & In configurations including \texttt{TOYBOX\_SMACK} and \texttt{TOYBOX\_SELINUX} \texttt{smack\_new\_label\_from\_self} and \texttt{getcon} are replaced with the value -1, respectively. In other configurations, \texttt{*result} is an out parameter. \\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & base64.c\\
-Line & 35\\
-Description & Expression \texttt{`this.base64.columns\&\&++*x == this.base64.columns'} \\ & depends on order of evaluation of side effects. \\
-Number of Configurations & 478 \\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting[firstline=31,lastline=39]{code/base64.c}} \\
-\midrule
-Status & False\\
-Remarks & Although \texttt{TT.columns} appears twice in the same expression, it is modified neither time. Thus, the order of evaluation of side effects does not matter. \\
-\bottomrule
+  \toprule
+  File & base64.c\\
+  Line & 35\\
+  Description & Expression \texttt{`this.base64.columns\&\&++*x == this.base64.columns'} \\ & depends on order of evaluation of side effects. \\
+  Number of Configurations & 478 \\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=31-39, firstnumber=31]{code/base64.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & False\\
+  Remarks & Although \texttt{TT.columns} appears twice in the same expression, it is modified neither time. Thus, the order of evaluation of side effects does not matter. \\
+  \bottomrule
 \end{tabularx}
 
 \pagebreak
 
 \noindent\begin{tabularx}{\textwidth}{rY}
-\toprule
-File & tail.c\\
-Line & 188\\
-Description & Memory is allocated but not initialized: \texttt{try}\\
-Number of Configurations & 655\\
-\midrule
-\multicolumn{2}{c}{Code Sample} \\
-\multicolumn{2}{l}{\lstinputlisting{code/tail_do_tail.c}}\\
-\midrule
-Status & False\\
-Remarks & The \texttt{for} loop causing cppcheck to give a warning is actually only testing \texttt{try[count]} for equality.\\
-\bottomrule
+  \toprule
+  File & tail.c\\
+  Line & 188\\
+  Description & Memory is allocated but not initialized: \texttt{try}\\
+  Number of Configurations & 655\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\lstinputlisting[firstline=181,lastline=188,firstnumber=181]{code/tail.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & False\\
+  Remarks & The \texttt{for} loop causing cppcheck to give a warning is actually only testing \texttt{try[count]} for equality.\\
+  \bottomrule
+\end{tabularx}
+
+\pagebreak
+
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \toprule
+  File & args.c\\
+  Line & 309\\
+  Description & Uninitialized variable: temp\\
+  Number of Configurations & 519\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[firstline=301, lastline=309, firstnumber=301]{code/args.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+    Status & False\\
+   Remarks & \texttt{temp} is necessarily initialized by either a call to \texttt{strol} or \texttt{strod}. In other words, \texttt{temp} will necessarily be initialized.\\
+  \bottomrule
 \end{tabularx}
 
 \end{document}
