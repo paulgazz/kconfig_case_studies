@@ -339,7 +339,7 @@ Bug reports are classified into the following categories:
   \toprule
   File & args.c\\
   Line & 309\\
-  Description & Uninitialized variable: temp\\
+  Description & Uninitialized variable: \texttt{temp}\\
   Number of Configurations & 519\\
   \midrule
   \multicolumn{2}{c}{Code Sample} \\
@@ -348,8 +348,29 @@ Bug reports are classified into the following categories:
 \noindent\begin{tabularx}{\textwidth}{rY}
   \midrule
     Status & False\\
-   Remarks & \texttt{temp} is necessarily initialized by either a call to \texttt{strol} or \texttt{strod}. In other words, \texttt{temp} will necessarily be initialized.\\
+   Remarks & \texttt{temp} is necessarily initialized by either a call to \texttt{strol} or \texttt{strod}.\\
   \bottomrule
 \end{tabularx}
+
+\pagebreak
+
+\begin{tabularx}{\textwidth}{rY}
+  \toprule
+  File & lib.c\\
+  Line & 975\\
+  Description & Buffer is accessed out of bounds: \texttt{``xwr''}\\
+  Number of Configurations & 986\\
+  \midrule
+  \multicolumn{2}{c}{Code Sample} \\
+\end{tabularx}
+\noindent\lstinputlisting[linerange=965-977, firstnumber=965]{code/lib.c}
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \midrule
+  Status & False\\
+  Remarks & \texttt{``xwr''} will never be accessed out of bounds. \texttt{c} is assigned by the expression \texttt{c = i \% 3}, which will give \texttt{c} the value of 0, 1, or 2.\\
+  \bottomrule
+\end{tabularx}
+
+\pagebreak
 
 \end{document}
