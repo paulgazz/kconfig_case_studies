@@ -99,7 +99,6 @@ if [[ $? -eq 0 ]]; then
     #     exit 1 
     # fi
     get_reverse_dep="true"
-    dimacs_extra_args="" # bad selects are part of the feature model!
 fi
 echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
