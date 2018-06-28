@@ -1,28 +1,37 @@
 #!/bin/bash
 
 if [[ $# -lt 1 ]]; then
-    echo "USAGE: $(basename $0) action casename [samples]"
-    echo ""
-    echo "   action may be one of the following"
-    echo "     dimacs - generate dimacs file"
-    echo "     config - configure the system for each sampled config"
-    echo "     build  - build the system for each sampled config"
-    echo ""
-    echo "    casename  - the subdirectory of the case in the kconfig_case_studies repo"
-    echo "    samples - the subdirectory containing samples, relative to case dir (default: Configs)"
-    echo ""
-    echo "USAGE: $(basename $0) list"
-    echo ""
-    echo "  list the active cases"
-    echo ""
-    echo "USAGE: $(basename $0) randconfigs casename out_dir num"
-    echo ""
-    echo "  use kconfig's randconfig to generate a set of random .config files for the given case"
-    echo ""
-    echo "NOTES:"
-    echo "  - Run this script from directory in which the project's root Makefile is located."
-    echo "  - Be sure that KCONFIG_CASE_STUDIES has been set to the repo."
-    echo "  - For 'dimacs' be sure that KMAX_ROOT has been set to the kmax repo."
+    cat <<EOF
+USAGE SCHEMA: $(basename $0) action arg1 arg2 ...
+
+ACTIONS:
+
+list
+    list the active cases
+
+(dimacs|config|build) casename [samples]
+    dimacs     - generate dimacs file
+    config     - configure the system for each sampled config
+    build      - build the system for each sampled config
+
+    casename  - the subdirectory of the case in the kconfig_case_studies repo
+    samples - the subdirectory containing samples, relative to case dir (default: Configs)
+
+preprocess casename samples outdir
+  preprocess each config.  due to generated headers, must also build.
+
+    casename   - as usual
+    samples    - as usual (but mandatory)
+    outdir     - the path to store the preprocessed files (won't fit in github repo)
+
+randconfigs casename out_dir num
+    use kconfig's randconfig to generate a set of random .config files for the given case
+
+NOTES:
+  - Run this script from directory in which the project's root Makefile is located.
+  - Be sure that KCONFIG_CASE_STUDIES has been set to the repo.
+  - For 'dimacs' be sure that KMAX_ROOT has been set to the kmax repo.
+EOF
     exit 1
 fi
 
@@ -39,7 +48,7 @@ if [[ $# -ge 3 ]]; then
     sample_dir="${3}"
 else
   sample_dir="Configs"
-fi
+fi  
 
 case_dir="${KCONFIG_CASE_STUDIES}/cases/${casename}"
 
@@ -54,6 +63,18 @@ if [[ "${casename}" == "" || "${action}" == "list" ]]; then
     exit 1
 fi
 
+if [[ "${action}" == "preprocess" ]]; then
+    if [[ $# -lt 3 ]]; then
+      echo "please specify the subdirectory (relative to casedir) containing the samples"
+      exit 1
+    fi
+    if [[ $# -ge 4 ]]; then
+        preprocessed_outdir="${4}"
+    else
+      echo "please specify outdir to store preprocessed files"
+      exit 1
+    fi
+fi
 # setup case-specific properties
 config_file=""
 kconfig_root=""
@@ -61,6 +82,7 @@ binaries=""
 get_reverse_dep=""
 check_dep_extra_args=""
 dimacs_extra_args="-d"
+make_extra_args=""
 # dimacs_extra_args="--remove-bad-selects" # allow bad selects, since fiasco using them intentionally
 echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -86,6 +108,7 @@ if [[ $? -eq 0 ]]; then
     kconfig_root="Config.in"
     binaries="busybox"
     get_reverse_dep="true"
+    make_extra_args="KBUILD_VERBOSE=1"  # emit entire gcc commands
 fi
 echo "${casename}" | grep -i "fiasco" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -148,11 +171,18 @@ if [[ "${action}" == "randconfigs" ]]; then
     fi
 fi
 
-if [[ "${action}" == "config" || "${action}" == "build" ]]; then
+if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "preprocess" ]]; then
+    if [[ ! -d ${experiment_dir} ]]; then
+        echo "the samples directory does not exist or is not a directory"
+        exit 1
+    fi
+    
     kconfig_out_dir="${experiment_dir}/kconfig_out"
     mkdir -p "${kconfig_out_dir}"
     build_out_dir="${experiment_dir}/build_out"
     mkdir -p "${build_out_dir}"
+    preprocess_out_dir="${experiment_dir}/preprocess_out"
+    mkdir -p "${preprocess_out_dir}"
 
     # configure or build each sample
     if [[ ! -e "${experiment_dir}" ]]; then
@@ -176,10 +206,21 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
 
         echo "has $(cat "${experiment_dir}/uniq_config_comparison.out" | wc -l) duplicate config files" | tee -a "${experiment_dir}/config_diff_results.out"
 
-    elif [[ "${action}" == "build" ]]; then
+    elif [[ "${action}" == "build" || "${action}" == "preprocess" ]]; then
         for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
           i="${experiment_dir}/${i_base}"
           build_out_file="${build_out_dir}/$(basename ${i}).out"
+          preprocess_out_file="${preprocess_out_dir}/$(basename ${i}).preprocess.out"
+          preprocess_build_out_file="${preprocess_out_dir}/$(basename ${i}).build.out"
+
+          if [[ "${action}" == "build" ]]; then
+              save_file="${build_out_file}"
+          elif [[ "${action}" == "preprocess" ]]; then
+              save_file="${preprocess_build_out_file}"
+          else
+            print "unknown action for compilation"
+            exit 1
+          fi
           
           for dummy in $(seq 1 1); do  # single-iteration loop to make saving output easier
             echo "configuring $i";
@@ -204,13 +245,18 @@ if [[ "${action}" == "config" || "${action}" == "build" ]]; then
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time make PREFIX="/tmp/local"
+                time make ${make_extra_args} PREFIX="/tmp/local"
             else
-              time make;
+              time make ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
-          done 2>&1 | tee "${build_out_file}" | egrep "^(building)"
+          done 2>&1 | tee "${save_file}" | egrep "^(building)"
+
+          if [[ "${action}" == "preprocess" ]]; then
+              echo "preprocessing $i"
+              python "${KCONFIG_CASE_STUDIES}/scripts/preprocess_config.py" "${build_out_file}" "${preprocessed_outdir}/${i_base}" > "${preprocess_out_file}" 2>&1
+          fi
         done
     fi
 
