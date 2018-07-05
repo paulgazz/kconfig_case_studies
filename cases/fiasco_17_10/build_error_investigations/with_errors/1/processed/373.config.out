@@ -1,0 +1,36 @@
+  ... Making mem_unit-arm-32.o
+  ... Making factory.o
+  ... Making cpu_call.o
+  ... Making lock.o
+  ... Making ipc_sender.o
+  ... Making thread.o
+  ... Making thread-arm.o
+  ... Making thread-arm-hyp.o
+  ... Making thread-jdb.o
+  ... Making thread-jdb-32.o
+  ... Making thread-ipc.o
+  ... Making thread-pagefault.o
+  ... Making thread-log.o
+  ... Making thread-vcpu.o
+  ... Making thread-arm-32.o
+  ... Making thread_object.o
+  ... Making syscalls.o
+  ... Making syscalls-log.o
+  ... Making kernel_thread.o
+  ... Making kernel_thread-std.o
+  ... Making kernel_thread-arm.o
+  ... Making kernel_thread-arm-32.o
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/arm/32/kernel_thread-arm-32.cpp: In static member function ‘static void Kernel_thread::boot_app_cpus()’:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/arm/32/kernel_thread-arm-32.cpp:41:3: error: ‘boot_ap_cpus’ is not a member of ‘Platform_control’
+   Platform_control::boot_ap_cpus(Kmem::kdir->virt_to_phys((Address)_tramp_mp_entry));
+   ^
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makerules.global:118: recipe for target 'kernel_thread-arm-32.o' failed
+make[2]: *** [kernel_thread-arm-32.o] Error 1
+make[2]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makefile:153: recipe for target 'all' failed
+make[1]: *** [all] Error 2
+make[1]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+return code 2
