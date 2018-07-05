@@ -1,0 +1,36 @@
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/mem_space.cpp:4,
+                 from auto/mem_space-arm.cc:3:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/lib/libk/arm/64/atomic-arm-64.cpp:186:1: warning: always_inline function might not be inlinable [-Wattributes]
+ atomic_store(T *p, V value)
+ ^
+In file included from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/lib/libk/bitmap.cpp:3:0,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/cpu_mask.cpp:3,
+                 from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/mem_space.cpp:4,
+                 from auto/mem_space-arm.cc:3:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/lib/libk/arm/64/atomic-arm-64.cpp:167:1: warning: always_inline function might not be inlinable [-Wattributes]
+ atomic_load(T const *p)
+ ^
+  ... Making mem_space-arm-64.o
+  ... Making mem_space-user.o
+  ... Making space.o
+  ... Making string_buffer.o
+  ... Making vlog.o
+  ... Making kmem.o
+  ... Making kmem-arm-64.o
+  ... Making kmem_alloc.o
+  ... Making kmem_alloc-arm.o
+  ... Making slab_cache.o
+  ... Making mem_layout.o
+  ... Making mem_layout-arm-64.o
+/tmp/cccC30pB.s: Assembler messages:
+/tmp/cccC30pB.s:44: Error: unknown mnemonic `b.e' -- `b.e 1f'
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makerules.global:118: recipe for target 'mem_layout-arm-64.o' failed
+make[2]: *** [mem_layout-arm-64.o] Error 1
+make[2]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makefile:153: recipe for target 'all' failed
+make[1]: *** [all] Error 2
+make[1]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+return code 2

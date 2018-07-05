@@ -1,0 +1,36 @@
+  ... Making mem_unit.o
+  ... Making mem_unit-arm-32.o
+  ... Making factory.o
+  ... Making cpu_call.o
+  ... Making lock.o
+  ... Making ipc_sender.o
+  ... Making thread.o
+  ... Making thread-arm.o
+  ... Making thread-arm-hyp.o
+  ... Making thread-jdb.o
+  ... Making thread-jdb-32.o
+  ... Making thread-ipc.o
+  ... Making thread-pagefault.o
+  ... Making thread-log.o
+  ... Making thread-vcpu.o
+  ... Making thread-arm-32.o
+  ... Making thread_object.o
+  ... Making syscalls.o
+  ... Making syscalls-log.o
+  ... Making kernel_thread.o
+In file included from /home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/kernel_thread.cpp:44:0,
+                 from auto/kernel_thread.cc:4:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/timer_tick-broadcast.cpp: In member function ‘void Timer_tick::ack()’:
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/kern/timer_tick-broadcast.cpp:59:14: error: ‘Timer’ is not a member of ‘Ipi’
+   Ipi::bcast(Ipi::Timer, Cpu_number::boot_cpu());
+              ^
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makerules.global:118: recipe for target 'kernel_thread.o' failed
+make[2]: *** [kernel_thread.o] Error 1
+make[2]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+/home/vagrant/fiasco_17_10/src/kernel/fiasco/src/Makefile:153: recipe for target 'all' failed
+make[1]: *** [all] Error 2
+make[1]: Leaving directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/build'
+Makefile:72: recipe for target 'build' failed
+make: *** [build] Error 2
+
+return code 2

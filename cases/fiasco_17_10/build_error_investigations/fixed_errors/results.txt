@@ -1,0 +1,7 @@
+374.config
+524.config disable CONFIG_PF_IMX (by diff b/t 102.config, does not have this)
+573.config
+686.config (fixed also)
+767.config disable CONFIG_ARM_PSCI (file seems to be psci version)
+852.config
+926.config
