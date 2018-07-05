@@ -1,4 +1,7 @@
-# Bugs and Other Defects
+# Build Errors
+
+This directory contains bugs resulting from merely building
+the configuration
 
 In the course of sampling and building random configurations from the
 space of valid configurations (as defined by Kconfig), we several
