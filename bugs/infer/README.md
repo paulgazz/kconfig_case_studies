@@ -10,6 +10,22 @@ With both files in the same subdirectory, call `compile_results.sh` from within 
 
 list_unique.py can be used alone to deduplicate a single JSON array of infer bug reports. Call
 
-`list_unique.py infile outfile'
+`list_unique.py -i infile (default: master.json) -o outfil (default: unique.json)'
 
 With infile being the master record, and outfile (default unique.json) being the output file. list_unique.py will filter bug reports to only include relevant information, and augment each report with the number of times it occurred in the master.
+
+### Generating the mapping from unique bugs to configurations present
+
+The script generate_mapping.py will take a report of unique bugs, and generate the mapping from unique bug to configurations in which the bug report is present. Call
+
+'generate_mapping.py -i infile (default unique.json) -o outfile (default mapping.json)'
+
+The output file will be an array of JSON objects, each containing the key of the bug, the hash of the bug, and the list of configurations in which the bug was present.
+
+### Verifying fidelity
+
+To verify the fidelity between the number of configurations reported by generate_mapping.py and the number of occurrences reported by list_unique.py, use fidelity.py:
+
+`fidelity.py -u unique (default unique.json) -m mapping (default mapping.json)'
+
+This script will report any discrepancies in those two counts. No output means that no discrepancies were found.

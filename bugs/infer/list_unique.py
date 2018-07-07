@@ -5,7 +5,7 @@ import json
 import argparse
 
 parser = argparse.ArgumentParser(description='List unique JSON records')
-parser.add_argument('input', type=str, default="master.json",
+parser.add_argument('-i','--input', type=str, default="master.json",
                     help='The master file containing the JSON records')
 parser.add_argument('-o', '--output', type=str, default="unique.json",
                     help='The output file (default unique.json)')
@@ -29,7 +29,7 @@ rawdata = json.load(infile)
 # Filter rawdata to only include relevant information.
 filtered = list()
 for datum in rawdata:
-    filtered.append(dict((key, value) for key, value in datum.iteritems() if key in ('bug_type','file','line','procedure','qualifier')))
+    filtered.append(dict((key, value) for key, value in datum.iteritems() if key in ('key', 'bug_type','file','line','procedure','qualifier', 'hash')))
     
 # Convert rawdata to strings so we can compare them.
 data = [json.dumps(item) for item in filtered]
@@ -38,7 +38,7 @@ data = [json.dumps(item) for item in filtered]
 for datum in filtered:
     datum['num_occurrences'] = data.count(json.dumps(datum))
     
-# Convert filtered to strings, again, so 
+# Convert filtered to strings, again
 data = list()
 data = [json.dumps(item) for item in filtered]
 
@@ -50,11 +50,12 @@ for item in data:
                          
 # Write the unique set to file.
 print "Found " + str(len(unique)) + " unique reports."
-outfile.write('[')
 
+#outfile.write('[')
+unique_json = list()
 for item in unique:
-    outfile.write(item + ',')
-outfile.write(']')
+    unique_json.append(json.loads(item))
+json.dump(unique_json, outfile)
 print "Written to " + args.output
     
 infile.close()
