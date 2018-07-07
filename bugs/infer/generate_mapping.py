@@ -26,7 +26,7 @@ unique = json.load(infile)
 # Iterate through unique and only grab keys and hashes.
 hashes = list()
 for item in unique:
-    hashes.append((item['key'], item['hash']))
+    hashes.append((item['key'], item['hash'], item['line'], item['file']))
 
 # Find report files.
 reports = list()
@@ -38,7 +38,7 @@ mappings = list()
 
 # Create an entry for each bug:
 for bug in hashes:
-    mappings.append({'key':bug[0], 'hash':bug[1], 'configs':list()})
+    mappings.append({'key':bug[0], 'hash':bug[1], 'line':bug[2], 'file':bug[3], 'configs':list()})
 
 # Iterate through report files and generate the mapping
 for bug in mappings:
