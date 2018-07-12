@@ -7,25 +7,29 @@ USAGE SCHEMA: $(basename $0) action arg1 arg2 ...
 ACTIONS:
 
 list
-    list the active cases
+  list the active cases
 
-(dimacs|config|build) casename [samples]
-    dimacs     - generate dimacs file
-    config     - configure the system for each sampled config
-    build      - build the system for each sampled config
+dimacs casename
+  generate the dimacs file for the case
 
     casename  - the subdirectory of the case in the kconfig_case_studies repo
-    samples - the subdirectory containing samples, relative to case dir (default: Configs)
+
+(config|build) casename samples
+  config     - configure the system for each sampled config
+  build      - build the system for each sampled config
+
+    casename  - the subdirectory of the case in the kconfig_case_studies repo
+    samples   - the subdirectory containing samples, relative to case dir (default: Configs)
 
 preprocess casename samples outdir
   preprocess each config.  due to generated headers, must also build.
 
     casename   - as usual
-    samples    - as usual (but mandatory)
+    samples    - as usual
     outdir     - the path to store the preprocessed files (won't fit in github repo)
 
 randconfigs casename out_dir num
-    use kconfig's randconfig to generate a set of random .config files for the given case
+  use kconfig's randconfig to generate a set of random .config files for the given case
 
 NOTES:
   - Run this script from directory in which the project's root Makefile is located.
@@ -44,12 +48,6 @@ fi
 action="${1}"
 casename="${2}"
 
-if [[ $# -ge 3 ]]; then
-    sample_dir="${3}"
-else
-  sample_dir="Configs"
-fi  
-
 case_dir="${KCONFIG_CASE_STUDIES}/cases/${casename}"
 
 if [[ ! -e "${case_dir}" ]]; then
@@ -63,11 +61,19 @@ if [[ "${casename}" == "" || "${action}" == "list" ]]; then
     exit 1
 fi
 
-if [[ "${action}" == "preprocess" ]]; then
+if [[ $# -ge 3 ]]; then
+    sample_dir="${3}"
+else
+  sample_dir="Configs"
+fi  
+
+if [[ "${action}" == "build" || "${action}" == "config" || "${action}" == "preprocess" ]]; then
     if [[ $# -lt 3 ]]; then
       echo "please specify the subdirectory (relative to casedir) containing the samples"
       exit 1
     fi
+fi
+if [[ "${action}" == "preprocess" ]]; then
     if [[ $# -ge 4 ]]; then
         preprocessed_outdir="${4}"
     else
