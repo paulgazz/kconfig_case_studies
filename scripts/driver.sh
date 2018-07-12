@@ -138,9 +138,16 @@ if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="*"  # TODO: set binaries
-    get_reverse_dep=""
     # don't add CONFIG_ prefix, already uses BR2 itself.  must set a build path.
     check_dep_extra_args="-p -e BUILD_DIR=."
+    touch .br2-external.in  # this file is necessary in order to process the Config.in
+fi
+echo "${casename}" | grep -i "linux" > /dev/null
+if [[ $? -eq 0 ]]; then
+    config_file=".config"
+    kconfig_root="Kconfig"
+    binaries="vmlinuz"  # TODO: set binaries
+    check_dep_extra_args="-p -e SRCARCH=x86"  # run on x86 version of Linux
     touch .br2-external.in  # this file is necessary in order to process the Config.in
 fi
 
