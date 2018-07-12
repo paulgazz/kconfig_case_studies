@@ -85,7 +85,6 @@ fi
 config_file=""
 kconfig_root=""
 binaries=""
-get_reverse_dep=""
 check_dep_extra_args=""
 dimacs_extra_args="-d"
 make_extra_args=""
@@ -95,7 +94,6 @@ if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
     binaries="_stage/"
-    get_reverse_dep="true"
     # axtls variables already include the the CONFIG_ prefix and it's
     # kconfig system is modified not to.  add a flag to check_dep to
     # disable the prefix for axtls.
@@ -106,14 +104,12 @@ if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="toybox"
-    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "busybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="busybox"
-    get_reverse_dep="true"
     make_extra_args="KBUILD_VERBOSE=1"  # emit entire gcc commands
 fi
 echo "${casename}" | grep -i "fiasco" > /dev/null
@@ -127,14 +123,12 @@ if [[ $? -eq 0 ]]; then
     #     echo "ERROR: please figure out what to use to measure the binary size" >&2
     #     exit 1 
     # fi
-    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="extra/Configs/Config.in"
     binaries="*"  # TODO: set binaries
-    get_reverse_dep=""
     # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
     # environment variables with -d.
     check_dep_extra_args="-p -d"
@@ -284,12 +278,6 @@ elif [[ "${action}" == "dimacs" ]]; then
     # # without reverse dependencies
     # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-reverse-dependencies --remove-all-nonvisibles > "${case_dir}/sans_reverse_sans_nonselectable.dimacs"
     # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-reverse-dependencies > "${case_dir}/sans_reverse_with_nonselectable.dimacs"
-
-    # # get the dimacs file by running kmax's check_dep
-    # if [[ "${get_reverse_dep}" != "" ]]; then
-    #     time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects --remove-all-nonvisibles > "${case_dir}/with_reverse_sans_nonselectable.dimacs"
-    #     time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects > "${case_dir}/with_reverse_with_nonselectable.dimacs"
-    # fi
 else
   echo "invalid action"
   exit 1
