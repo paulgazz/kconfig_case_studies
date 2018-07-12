@@ -110,7 +110,6 @@ if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="busybox"
-    make_extra_args="KBUILD_VERBOSE=1"  # emit entire gcc commands
 fi
 echo "${casename}" | grep -i "fiasco" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -247,14 +246,20 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
 
             time make oldconfig;
 
+            if [[ "${action}" == "preprocess" ]]; then
+                preprocess_args_opt="KBUILD_VERBOSE=1" # emit entire gcc commands
+            else
+              preprocess_args_opt=""
+            fi
+
             echo "building $i";
             make clean;
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time make ${make_extra_args} PREFIX="/tmp/local"
+                time make ${preprocess_args_opt} ${make_extra_args} PREFIX="/tmp/local"
             else
-              time make ${make_extra_args};
+              time make ${preprocess_args_opt} ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
@@ -263,9 +268,9 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
           bzip2 "${save_file}"
           if [[ "${action}" == "preprocess" ]]; then
               echo "preprocessing $i"
-              bunzip2 "${build_out_file}"
-              python "${KCONFIG_CASE_STUDIES}/scripts/preprocess_config.py" "${build_out_file}" "${preprocessed_outdir}/${i_base}" > "${preprocess_out_file}" 2>&1
-              bzip2 "${build_out_file}"
+              bunzip2 "${save_file}"
+              python "${KCONFIG_CASE_STUDIES}/scripts/preprocess_config.py" "${save_file}" "${preprocessed_outdir}/${i_base}" > "${preprocess_out_file}" 2>&1
+              bzip2 "${save_file}"
               bzip2 "${preprocess_out_file}"
           fi
         done
