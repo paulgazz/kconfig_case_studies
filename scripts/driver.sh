@@ -170,7 +170,7 @@ if [[ "${action}" == "randconfigs" ]]; then
         for i in $(seq $((num - 1))); do
           make randconfig
           cp "${config_file}" "${experiment_dir}/${i}.config"
-        done
+        done | tee ${experiment_dir}/seeds
         exit 0
     else
       echo "missing arguments for randconfigs"
