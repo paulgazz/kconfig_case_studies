@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# run cppcheck on all .i files in a given directory, saving the
-# cppcheck output to .i.cppcheck files for each one
+# Run cppcheck on all .i files in a given directory, saving the
+# cppcheck output to .i.cppcheck files for each one.
 
 if [ $# -lt 1 ]; then
     echo "USAGE: $(basename $0) preprocessed_source_dir"

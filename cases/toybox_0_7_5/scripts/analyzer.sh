@@ -41,6 +41,6 @@ for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); 
   echo $PRE_DIR
 	time ${scripts_dir}/make_i.sh
   cd "${PRE_DIR}"
-	cppcheck ./*.i 2> err.txt | tee out.txt
+	cppcheck ./*.i 2> cppcheck_all.txt | tee out.txt
 	((CONFIG_COUNT++));
 done 
