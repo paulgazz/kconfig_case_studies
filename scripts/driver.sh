@@ -229,6 +229,12 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
           fi
           
           for dummy in $(seq 1 1); do  # single-iteration loop to make saving output easier
+            echo "${casename}" | grep -i "linux" > /dev/null
+            if [[ $? -eq 0 ]]; then
+                # complete cleanup for linux
+                make mrproper
+            fi
+            
             echo "configuring $i";
             cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
 
