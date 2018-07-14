@@ -1,12 +1,24 @@
+// This program takes the cppcheck_all.txt results from each
+// configuration and resolves the preprocessed line numbers back to
+// their line numbers from the original .c and .h files.
+//
+// This script should be run in the parent directory of the
+// configuration-specific directories.  Each first-level subdirectory
+// should contain a file called cppcheck_all.txt containing the error
+// output from cppcheck.
+
 let fs              = require('fs')
 let path            = require('path')
 let find            = require('find')
 let lbl             = require('line-by-line');
 let async           = require('async');
-let err_name        = /err_c\.txt$/
+
+let working_dir     = "./"
+let err_name        = /cppcheck_all\.txt$/
+let outfile_name    = "cppcheck_resolved.txt"
 
 function findAllErrorFiles(callback){
-    find.file(err_name, __dirname, function(files) {
+    find.file(err_name, working_dir, function(files) {
         return callback(null, files)
     })
     .error(function(err) {
@@ -117,7 +129,7 @@ function getStringMatch(line, pattern){
 function findOriginalFile(filename, callback){
     //console.log(new RegExp(filename));
     find
-    .file(new RegExp(filename), __dirname, function(files) {
+    .file(new RegExp(filename), working_dir, function(files) {
         if(empty(files)){
             return callback("no files found");
         }
@@ -135,27 +147,6 @@ function writeArrayToFile(arr, directory, file_name, callback){
             return callback(err);
         }
         callback(null, dest);
-    });
-}
-
-function countErrorLines(lines, report, unique, callback){
-    let previous = [];
-    async.forEachOf(lines, function (line, key, each_callback) {
-        //increase the count for the number of times we have encountered this bug, if never seen before, assign 1
-        if(unique){
-            if(previous.indexOf(line) == -1){
-                previous.push(line);
-                report[line] = (!isNaN(report[line])) ? report[line] + 1 : 1
-            }
-        }
-        else{
-            report[line] = (!isNaN(report[line])) ? report[line] + 1 : 1
-        }
-        each_callback();
-    }, function (err) {
-        if (err) console.error(err.message);
-        //finished iterating over the files
-        return callback(null, report);
     });
 }
 
@@ -182,7 +173,7 @@ function lineCheck(){
                     console.log(dir);
                     console.log(result);
                     //write the corrected lines to a new file
-                    writeArrayToFile(result, dir, "err_c.txt", function(err, result){
+                    writeArrayToFile(result, dir, outfile_name, function(err, result){
                         if(err) return callback();
                         console.log("Saved data to ", result)
                         callback();
@@ -196,60 +187,4 @@ function lineCheck(){
     });
 }
 
-/**
- * 
- * @param {Boolean} unique 
- * 
- * Counts the number of bugs in the found across all configs and 
- * generates a report in the form of a JSON
- * 
- * Pass in argument of true to collect only unique occurences of a bug throughout all configs
- */
-function buildReport(unique = false){
-    let report = { max:0, min:999999999999};
-    findAllErrorFiles(function(err, files){
-        if(err) return err;
-        //iterate over all the files, only process 5 at a time to prevent i/o explosion
-        async.forEachLimit(files, 5, function(file, callback) {
-            //return a list of the lines in the file
-            collectFileLines(file, function(err, lines){
-                if(err) return callback();
-                if(lines.length == 0) return callback();
-                if(lines.length < report['min']){
-                    report['min'] = lines.length
-                    report['min_file'] = file;
-                }
-                else if(lines.length > report['max']){
-                    report['max'] = lines.length
-                    report['max_file'] = file;
-                } 
-                //process lines accordingly
-                countErrorLines(lines, report, unique, function(err, result){
-                    report = result;
-                    return callback();
-                })
-            })
-        }, function(err) {
-            if (err) return next(err);
-            let name = "report.json";
-            if(unique){
-                name = "report_unique.json";
-            }
-            //write the report to file once done
-            fs.writeFile(name, JSON.stringify(report), 'utf8', function (err) {
-                if (err) {
-                    console.log("An error occured while writing JSON Object to File.");
-                    return console.log(err);
-                }
-                console.log(report);
-                console.log("All done");
-            });
-        });
-    });
-}
-
-//Uncomment to run script that corrects the err.txt files
-//lineCheck();
-
-//Uncomment to run function that counts the number of unique bugs in the program
-buildReport(true)
+lineCheck();
