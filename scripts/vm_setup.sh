@@ -41,6 +41,8 @@ sudo ln -s $(which mips-linux-gnu-strip) /usr/local/bin/mips-linux-strip
 # environment
 echo 'export KCONFIG_CASE_STUDIES=/vagrant' > /home/vagrant/.bash_profile
 echo 'export PATH=$KCONFIG_CASE_STUDIES/scripts:$PATH' >> /home/vagrant/.bash_profile
+# prevent locale errors
+echo "export LC_ALL=en_US.UTF-8" >> /home/vagrant/.bash_profile
 
 # get source code and setup repos
 cd /home/vagrant

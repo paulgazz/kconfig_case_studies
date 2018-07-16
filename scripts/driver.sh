@@ -7,25 +7,29 @@ USAGE SCHEMA: $(basename $0) action arg1 arg2 ...
 ACTIONS:
 
 list
-    list the active cases
+  list the active cases
 
-(dimacs|config|build) casename [samples]
-    dimacs     - generate dimacs file
-    config     - configure the system for each sampled config
-    build      - build the system for each sampled config
+dimacs casename
+  generate the dimacs file for the case
 
     casename  - the subdirectory of the case in the kconfig_case_studies repo
-    samples - the subdirectory containing samples, relative to case dir (default: Configs)
+
+(config|build) casename samples
+  config     - configure the system for each sampled config
+  build      - build the system for each sampled config
+
+    casename  - the subdirectory of the case in the kconfig_case_studies repo
+    samples   - the subdirectory containing samples, relative to case dir (default: Configs)
 
 preprocess casename samples outdir
   preprocess each config.  due to generated headers, must also build.
 
     casename   - as usual
-    samples    - as usual (but mandatory)
+    samples    - as usual
     outdir     - the path to store the preprocessed files (won't fit in github repo)
 
 randconfigs casename out_dir num
-    use kconfig's randconfig to generate a set of random .config files for the given case
+  use kconfig's randconfig to generate a set of random .config files for the given case
 
 NOTES:
   - Run this script from directory in which the project's root Makefile is located.
@@ -44,12 +48,6 @@ fi
 action="${1}"
 casename="${2}"
 
-if [[ $# -ge 3 ]]; then
-    sample_dir="${3}"
-else
-  sample_dir="Configs"
-fi  
-
 case_dir="${KCONFIG_CASE_STUDIES}/cases/${casename}"
 
 if [[ ! -e "${case_dir}" ]]; then
@@ -63,11 +61,19 @@ if [[ "${casename}" == "" || "${action}" == "list" ]]; then
     exit 1
 fi
 
-if [[ "${action}" == "preprocess" ]]; then
+if [[ $# -ge 3 ]]; then
+    sample_dir="${3}"
+else
+  sample_dir="Configs"
+fi  
+
+if [[ "${action}" == "build" || "${action}" == "config" || "${action}" == "preprocess" ]]; then
     if [[ $# -lt 3 ]]; then
       echo "please specify the subdirectory (relative to casedir) containing the samples"
       exit 1
     fi
+fi
+if [[ "${action}" == "preprocess" ]]; then
     if [[ $# -ge 4 ]]; then
         preprocessed_outdir="${4}"
     else
@@ -79,7 +85,6 @@ fi
 config_file=""
 kconfig_root=""
 binaries=""
-get_reverse_dep=""
 check_dep_extra_args=""
 dimacs_extra_args="-d"
 make_extra_args=""
@@ -89,7 +94,6 @@ if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
     binaries="_stage/"
-    get_reverse_dep="true"
     # axtls variables already include the the CONFIG_ prefix and it's
     # kconfig system is modified not to.  add a flag to check_dep to
     # disable the prefix for axtls.
@@ -100,15 +104,12 @@ if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="toybox"
-    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "busybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="busybox"
-    get_reverse_dep="true"
-    make_extra_args="KBUILD_VERBOSE=1"  # emit entire gcc commands
 fi
 echo "${casename}" | grep -i "fiasco" > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -121,14 +122,12 @@ if [[ $? -eq 0 ]]; then
     #     echo "ERROR: please figure out what to use to measure the binary size" >&2
     #     exit 1 
     # fi
-    get_reverse_dep="true"
 fi
 echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="extra/Configs/Config.in"
     binaries="*"  # TODO: set binaries
-    get_reverse_dep=""
     # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
     # environment variables with -d.
     check_dep_extra_args="-p -d"
@@ -138,9 +137,16 @@ if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
     binaries="*"  # TODO: set binaries
-    get_reverse_dep=""
     # don't add CONFIG_ prefix, already uses BR2 itself.  must set a build path.
     check_dep_extra_args="-p -e BUILD_DIR=."
+    touch .br2-external.in  # this file is necessary in order to process the Config.in
+fi
+echo "${casename}" | grep -i "linux" > /dev/null
+if [[ $? -eq 0 ]]; then
+    config_file=".config"
+    kconfig_root="Kconfig"
+    binaries="vmlinux"  # TODO: set binaries
+    check_dep_extra_args="-p -e SRCARCH=x86"  # run on x86 version of Linux
     touch .br2-external.in  # this file is necessary in order to process the Config.in
 fi
 
@@ -163,7 +169,7 @@ if [[ "${action}" == "randconfigs" ]]; then
         for i in $(seq $((num - 1))); do
           make randconfig
           cp "${config_file}" "${experiment_dir}/${i}.config"
-        done
+        done | tee ${experiment_dir}/seeds
         exit 0
     else
       echo "missing arguments for randconfigs"
@@ -223,6 +229,12 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
           fi
           
           for dummy in $(seq 1 1); do  # single-iteration loop to make saving output easier
+            echo "${casename}" | grep -i "linux" > /dev/null
+            if [[ $? -eq 0 ]]; then
+                # complete cleanup for linux
+                make mrproper
+            fi
+            
             echo "configuring $i";
             cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
 
@@ -240,22 +252,32 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
 
             time make oldconfig;
 
+            if [[ "${action}" == "preprocess" ]]; then
+                preprocess_args_opt="KBUILD_VERBOSE=1" # emit entire gcc commands
+            else
+              preprocess_args_opt=""
+            fi
+
             echo "building $i";
             make clean;
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time make ${make_extra_args} PREFIX="/tmp/local"
+                time make ${preprocess_args_opt} ${make_extra_args} PREFIX="/tmp/local"
             else
-              time make ${make_extra_args};
+              time make ${preprocess_args_opt} ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
           done 2>&1 | tee "${save_file}" | egrep "^(building)"
 
+          bzip2 -f "${save_file}"
           if [[ "${action}" == "preprocess" ]]; then
               echo "preprocessing $i"
-              python "${KCONFIG_CASE_STUDIES}/scripts/preprocess_config.py" "${build_out_file}" "${preprocessed_outdir}/${i_base}" > "${preprocess_out_file}" 2>&1
+              bunzip2 "${save_file}.bz2"
+              python "${KCONFIG_CASE_STUDIES}/scripts/preprocess_config.py" "${save_file}" "${preprocessed_outdir}/${i_base}" > "${preprocess_out_file}" 2>&1
+              bzip2 "${save_file}"
+              bzip2 "${preprocess_out_file}"
           fi
         done
     fi
@@ -278,12 +300,6 @@ elif [[ "${action}" == "dimacs" ]]; then
     # # without reverse dependencies
     # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-reverse-dependencies --remove-all-nonvisibles > "${case_dir}/sans_reverse_sans_nonselectable.dimacs"
     # time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-reverse-dependencies > "${case_dir}/sans_reverse_with_nonselectable.dimacs"
-
-    # # get the dimacs file by running kmax's check_dep
-    # if [[ "${get_reverse_dep}" != "" ]]; then
-    #     time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects --remove-all-nonvisibles > "${case_dir}/with_reverse_sans_nonselectable.dimacs"
-    #     time cat "${case_dir}/kconfig.kmax" | python "${KMAX_ROOT}/kconfig/dimacs.py" --remove-bad-selects > "${case_dir}/with_reverse_with_nonselectable.dimacs"
-    # fi
 else
   echo "invalid action"
   exit 1
