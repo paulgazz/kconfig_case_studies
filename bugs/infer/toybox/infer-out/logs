@@ -1,0 +1,11 @@
+[14153][environment] CWD = /home/austin/Documents/kconfig_case_studies/bugs/infer/toybox
+[14153][environment] No .inferconfig file found
+[14153][environment] Project root = /home/austin/Documents/kconfig_case_studies/bugs/infer/toybox
+[14153][environment] INFER_ARGS =   command line arguments:   inferAnalyzer: checkers
+[14153][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[14153][environment] Infer log identifier is 
+Infer version v0.15.0
+[14153][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[14153][environment] 
+[14153][  user warn] Nothing to compile. Have you run `infer capture`? Try cleaning the build first.
+[14153][   progress] There was nothing to analyze.
