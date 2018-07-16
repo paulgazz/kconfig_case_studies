@@ -14,8 +14,7 @@ let lbl             = require('line-by-line');
 let async           = require('async');
 
 let working_dir     = "./"
-let err_name        = /cppcheck_all\.txt$/
-let outfile_name    = "cppcheck_resolved.txt"
+let err_name        = /\.cppcheck$/
 
 function findAllErrorFiles(callback){
     find.file(err_name, working_dir, function(files) {
@@ -57,7 +56,9 @@ function collectFileLines(f, callback){
         callback(err);
     });
     e_file.on('line', function(line){
-        lines.push(line);
+        if (line.startsWith('[')) {  // only include error lines
+            lines.push(line);
+        }
     });
     e_file.on('end', function(){
         callback(null, lines);
@@ -93,18 +94,17 @@ function processLines(lines, directory, callback){
     let new_lines = [];
     let total = lines.length
     let i = 0
+    process.stderr.write('\n')
     async.forEachOf(lines, function (line, key, each_callback) {
         i = i + 1
-        console.log('line ' + i + ' of ' + total + '\r\b');
+        process.stderr.write('\b\rline ' + i + ' of ' + total + '\n');
         let pre_processed = getStringMatch(line, /\w*.i\b/)
         let c_file = pre_processed.replace(".i", ".c");
         let line_num = getStringMatch(line, /\:\b\d*\b/).slice(1);
-        let file_array = find.fileSync(new RegExp(pre_processed),directory);
+        let file_array = find.fileSync(new RegExp(pre_processed + "$"),directory);
         if(empty(file_array)){
             return each_callback();
         }
-        // console.log('----------');
-        // console.log(file_array[0]);
         getOriginalLineNum(file_array[0], line_num, function(err, original_line_num){
             if(err){
                 return each_callback();
@@ -131,7 +131,6 @@ function getStringMatch(line, pattern){
 }
 
 function findOriginalFile(filename, callback){
-    //console.log(new RegExp(filename));
     find
     .file(new RegExp(filename), working_dir, function(files) {
         if(empty(files)){
@@ -146,8 +145,10 @@ function findOriginalFile(filename, callback){
 
 function writeArrayToFile(arr, directory, file_name, callback){
     let dest = path.join(directory, file_name);
+    process.stderr.write("writing results to " + dest + '\n');
     fs.writeFile(dest, arr.join('\r\n'), function(err) {
         if(err) {
+            console.log(err)
             return callback(err);
         }
         callback(null, dest);
@@ -166,57 +167,32 @@ function lineCheck(){
         //iterate over all the files, only process 5 at a time to prevent i/o explosion
         async.forEachLimit(files, 5, function(file, callback) {
             //return a list of the lines in the file
-            console.log("processing " + file)
+            process.stderr.write("processing " + file + "\n")
             collectFileLines(file, function(err, lines){
                 if(err) return callback();
                 //get the parent folder of the error file
-                let dir = path.dirname(file);
+                let dir = './'
                 //process lines accordingly
                 processLines(lines, dir, function(err, result){
                     if(err) return callback();
                     result = result.sort();
-                    console.log(dir);
-                    console.log(result);
                     //write the corrected lines to a new file
-                    writeArrayToFile(result, dir, outfile_name, function(err, result){
-                        if(err) return callback();
-                        console.log("Saved data to ", result)
+                    let output_file = file + '.resolved'
+                    writeArrayToFile(result, dir, output_file, function(err, result){
+                        if(err) {
+                            process.stderr.write("error writing file\n");
+                            return callback();
+                        }
+                        process.stderr.write("Saved data to " + result + '\n')
                         callback();
                     });
                 })
             })
         }, function(err) {
             if (err) return next(err);
-            console.log("All done");
+            process.stderr.write("All done\n");
         });
     });
 }
-
-function lineCheckSingle(file) {
-    console.log("FDSJL")
-    collectFileLines(file, function(err, lines){
-        console.log("BOO")
-        if(err) return callback();
-        //get the parent folder of the error file
-        let dir = path.dirname(file);
-        //process lines accordingly
-        console.log("BOO2")
-        processLines(lines, dir, function(err, result){
-            console.log("PL")
-            if(err) return callback();
-            result = result.sort();
-            console.log(dir);
-            console.log(result);
-            //write the corrected lines to a new file
-            writeArrayToFile(result, dir, outfile_name, function(err, result){
-                if(err) return callback();
-                console.log("Saved data to ", result)
-                callback();
-            });
-        })
-    })
-}
-
-// lineCheckSingle('./cppcheck_all.txt')
 
 lineCheck();
