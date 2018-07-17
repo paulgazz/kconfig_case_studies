@@ -274,10 +274,10 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
           bzip2 -f "${save_file}"
           if [[ "${action}" == "preprocess" ]]; then
               echo "preprocessing $i"
-              bunzip2 "${save_file}.bz2"
+              bunzip2 -f "${save_file}.bz2"
               python "${KCONFIG_CASE_STUDIES}/scripts/preprocess_config.py" "${save_file}" "${preprocessed_outdir}/${i_base}" > "${preprocess_out_file}" 2>&1
               bzip2 "${save_file}"
-              bzip2 "${preprocess_out_file}"
+              bzip2 -f "${preprocess_out_file}"
           fi
         done
     fi
