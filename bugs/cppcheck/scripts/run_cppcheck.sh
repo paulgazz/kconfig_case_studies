@@ -11,8 +11,14 @@ fi
 path_to_i_files="${1}"
 
 echo "running cppcheck on all .i files in ${path_to_i_files}"
-find "${path_to_i_files}" -type f -name "*.i" | while read i; do
-  iout="${i}.cppcheck"
-  echo "checking ${i} and writing to ${iout}"
-  cppcheck "${i}" > "${iout}" 2>&1
+cd "${path_to_i_files}"
+ls -d *.config | sort -h | while read config_dir; do
+  cd "${config_dir}"
+  # run cppcheck from the root of the config_dir to avoid full path in error reports
+  find ./ -type f -name "*.i" | while read i; do
+    iout="${i}.cppcheck"
+    echo "checking ${config_dir}/${i} and writing to ${iout}"
+    cppcheck "${i}" > "${iout}" 2>&1
+  done
+  cd ../
 done
