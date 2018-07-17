@@ -12,7 +12,6 @@ mkdir -p ${PRE_DIR}
 # was adapted from the toybox make.sh build script
 
 # Grab default values for $CFLAGS and such.
-set -x
 KCONFIG_CONFIG ?= .config
 export LANG=c
 export LC_ALL=C
