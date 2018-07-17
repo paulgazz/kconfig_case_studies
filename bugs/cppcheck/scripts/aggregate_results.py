@@ -2,6 +2,7 @@ import sys
 import os
 import glob
 import natsort  # pip3 install natsort
+from collections import defaultdict
 
 # aggregate cppcheck results for a set of configurations.
 
@@ -17,6 +18,8 @@ import natsort  # pip3 install natsort
 
 # for each configuration directory
 cumulative_errors = set([])
+error_counts = defaultdict(int)
+total_errors = 0
 min_errors = None
 min_error_configs = None
 max_errors = -1
@@ -55,10 +58,14 @@ for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
   sys.stderr.write("unique errors: %d\n" % (len(config_errors)))
   update_min_max(config_errors)
   cumulative_errors = cumulative_errors.union(config_errors)
-  sys.stderr.write("cumulative errors: %d\n" % (len(cumulative_errors)))
+  for error in config_errors:
+    error_counts[error] += 1
+  total_errors += len(config_errors)
+  sys.stderr.write("unique/total errors: %d/%d\n" % (len(error_counts.keys()), total_errors))
   sys.stderr.write("min/max errors: %d/%d\n" % (min_errors, max_errors))
 
-print("unique_errors %d" % (len(cumulative_errors)))
+print("unique_errors %d" % (len(error_counts.keys())))
 print("max_per_config: %d" % (max_errors))
 print("min_per_config: %d" % (min_errors))
-print("\n".join(sorted(cumulative_errors)))
+for error in sorted(error_counts.keys()):
+  print('"%s", %d' % (error, error_counts[error]))
