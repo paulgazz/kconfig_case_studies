@@ -30,6 +30,23 @@
 \input{../../bug_classifications}
 
 \pagebreak
+
+\section{Statistics}
+
+\begin{center}
+  \noindent\begin{tabular}{rl}\toprule
+             True Reports & 7 \\
+             Technically True Reports & 5 \\
+             False Reports & 68 \\ \bottomrule
+           \end{tabular}
+\end{center}
+
+\section{Remarks}
+
+This analysis does not include bug reports having the bug type ``Dead Store.'' This type describes bugs in which a value is assigned to a variable but is never used.
+In the unique bug reports list, many bugs listed as unique are actually the same (for example, a variable infer recognizes as uninitialized will generate a unique bug report for every occurrence). For convenience, only one instance of each of these bugs is recorded here. [This is an issue I plan to resolve with updated versions of the scripts generating the unique bug reports].
+\pagebreak
+
 \section{True Reports}
 
 \noindent\begin{tabularx}{\textwidth}{rY}
@@ -67,7 +84,6 @@
   \midrule
   Status & True\\
   Remarks & The call to \texttt{bufgetgrgid} initializes overwrites the \texttt{list} pointer with pointer to new memory without freeing the memory it pointed to initially. Although the buffer is meant to last past the end of the function, the memory is orphaned each time \texttt{list} is reassigned.\\
-  Similar Bugs & \texttt{lib.c:1257} -- \texttt{pw} is not reachable after line 1257, column 3.\\
   \bottomrule
 \end{tabularx}
 
@@ -75,7 +91,7 @@
 \noindent\begin{tabularx}{\textwidth}{rY}
   \toprule
   File & lib.c\\
-  Line & 1268\\
+  Line & 1257\\
   Bug Class & \texttt{MEMORY\_LEAK} \\
   Description & \texttt{pw} is not reachable after line 1257, column 3.\\
   Number of Configurations & 986\\
@@ -254,7 +270,7 @@
   Remarks & The usage of the \texttt{NULL} pointer should not trigger this error.\\
   \midrule
   \multicolumn{2}{c}{Similar Bugs} \\
-  \multicolumn{2}{l}{\textit{Condition}: Similar bug reports are those in which infer incorrectly identifies a \texttt{NULL} pointer as a Null Dereference bug.}\\
+  \textit{Condition}:&  Similar bug reports are those in which infer incorrectly identifies a \texttt{NULL} pointer as a Null Dereference bug.\\
   \texttt{pwd.c:26} & pointer \texttt{null} could be null and is dereferenced by call to \texttt{getcwd()} at line 26, column 19. \\
   \bottomrule
 \end{tabularx}
@@ -279,17 +295,29 @@
   Similar Bugs & \texttt{xwrap.c:287} -- The value read from \texttt{pipe} was never initialized. \\
   & \texttt{mount.c:314} -- The value read from \texttt{mtl} was never initialized. \\
   & \texttt{comm.c:79} -- The value read from \texttt{file[\_]} was never intiialized. \\
-  & \texttt{comm.c:68} -- The value read from \texttt{file[\_]} was never intiialized. \\
+%  & \texttt{comm.c:68} -- The value read from \texttt{file[\_]} was never intiialized. \\
+%  & \texttt{comm.c:76} -- The value read from \texttt{file[\_]} was never intiialized. \\
+ 
   & \texttt{kill.c:145} -- The value read from \texttt{signum} was never intialized. \\
-  & \texttt{xwrap.c:232} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
-  & \texttt{xwrap.c:213} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
+%  & \texttt{xwrap.c:232} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
+%  & \texttt{xwrap.c:213} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
   & \texttt{xwrap.c:790} -- The value read from \texttt{d} was never intialized. \\
   & \texttt{xwrap.c:737} -- The value read from \texttt{fd} was never initialized. \\
-  & \texttt{comm.c:62} -- The value read from \texttt{file[\_]} was never initialized.\\
-  & \texttt{xwrap.c:225} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
+%  & \texttt{xwrap.c:736} -- The value read from \texttt{fd} was never initialized. \\
+%  & \texttt{comm.c:62} -- The value read from \texttt{file[\_]} was never initialized.\\
+%  & \texttt{xwrap.c:225} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
   & \texttt{bzcat.c:252} -- The value read from \texttt{length[\_]} was never initialized. \\
-  & \texttt{xwrap.c:233} -- The value read from \texttt{cestnepasun[\_]} was never initialized. (Other bugs dealing with this variable are truncated) \\
+  % & \texttt{bzcat.c:254} -- The value read from \texttt{length[\_]} was never initialized. \\
+  % & \texttt{bzcat.c:251} -- The value read from \texttt{length[\_]} was never initialized. \\
+  % & \texttt{xwrap.c:233} -- The value read from \texttt{cestnepasun[\_]} was never initialized. (Other bugs dealing with this variable are truncated) \\
   & \texttt{modinfo.c:496} -- The value readf from \texttt{len} was never initialized.\\
+  & \texttt{ps.c:1514} -- The value read from \texttt{lines} was never initialized.\\
+  & \texttt{md5sum.c:203} -- The value read from \texttt{rot[\_]} was never initialized.\\
+  % & \texttt{ps.c:1456} -- The value read from \texttt{lines} was never initialized. \\
+  & \texttt{setenforce.c:30} -- The value read from \texttt{state} was never initialized. \\
+  & \texttt{od.c:92} -- The value read from \texttt{ld} was never initialized. \\
+  & \texttt{xwrap.c:794} -- The value read from \texttt{l} was never initialized. \\
+  & \texttt{hwclock.c:466} -- The value read from \texttt{time} was never initialized. \\
   \bottomrule
 \end{tabularx}
 
@@ -313,6 +341,8 @@
   Similar Bugs & \texttt{od.c:88} -- The value read from \texttt{fdl.ld} was never initialized. \\
   & \texttt{od.c:85} -- The value read from \texttt{fdl.d} was never initialized. \\
   & \texttt{ulimit.c:95} -- The value read from \texttt{rr.rlim\_max} was never initialized. \\
+  & \texttt{od.c:491} -- The value read from \texttt{fdl.f} was never initialized. \\
+  & \texttt{grep.c:215} -- The value read from \texttt{matches.rm\_so} was never initialized. \\
   \bottomrule
 \end{tabularx}
 
@@ -335,11 +365,21 @@
   Remarks & \texttt{totals} was initialized by memset. Other bugs in which the variable was initialized by memset, memcpy, or any other function which accepts out parameters are listed below.\\
   Similar Bugs & \texttt{md5sum.c:157} -- The value read from \texttt{x[\_]} was never initialized. \\
   Similar Bugs & \texttt{ps.c:1453} -- The value read from \texttt{run[\_]} was never initialized. \\
+%  & \texttt{ps.c:1468} -- The value read from \texttt{run[\_]} was never initialized. \\
+  % & \texttt{ps.c:1464} -- The value read from \texttt{run[\_]} was never initialized. \\
   & \texttt{md5sum.c:143} -- The value read from \texttt{x[\_]} was never initialized. \\
   & \texttt{ftpget.c:150} -- The value read from \texttt{port} was never initialized. \\
   & \texttt{ftpget.c:151} -- The value read from \texttt{si6.sin6\_family} was never initialized. \\
-  & \texttt{md5sum.c:147} -- The value read from \texttt{x[\_]} was never initialized. \\
-  & \texttt{ls.c:369} -- The value read from \texttt{dtlen} was never intialized. \\
+  % & \texttt{md5sum.c:147} -- The value read from \texttt{x[\_]} was never initialized. \\
+  % & \texttt{ls.c:369} -- The value read from \texttt{dtlen} was never initialized. \\
+  & \texttt{ls.c:377} -- The value read from \texttt{dtlen} was never initialized. \\
+  & \texttt{rfkill.c:94} -- The value reaf from \texttt{rfevent.idx} was never initialized. \\
+%  & \texttt{rfkill.c:82} -- The value reaf from \texttt{rfevent.idx} was never initialized. \\
+  & \texttt{ls.c:479} -- The value read from \texttt{totals[\_]} was never initialized. \\
+  & \texttt{ls.c:349} -- The value read from \texttt{dtlen} was never initialized. \\
+%  & \texttt{ls.c:424} -- The value read from \texttt{totals[\_]} was never initialized. \\
+  % & \texttt{ls.c:655} -- The value read from \texttt{dtlen} was never initialized. \\
+  % & \texttt{ftpget.c:203} -- The value read from \texttt{port} was never initialized. \\
   \bottomrule
 \end{tabularx}
 
@@ -358,8 +398,9 @@
 \noindent\lstinputlisting[linerange=78-86, firstnumber=78]{code/pmap.c}
 \noindent\begin{tabularx}{\textwidth}{rY}
   \midrule
-  Status & TBD\\
-  Remarks & \\
+  Status & False\\
+  Remarks & \texttt{swap} is initialized in the loop above.\\
+  Similar Bugs & \texttt{pmap.c:86} -- The value read from \texttt{dirty} was never initialized. \\
   \bottomrule
 \end{tabularx}
 
@@ -392,7 +433,7 @@
   Remarks & No calls to \texttt{xcreate} pass \texttt{O\_CLOEXEC}, so the file will always be closed automatically.\\
   \midrule
   \multicolumn{2}{c}{Similar Bugs} \\
-  \multicolumn{2}{l}{\textit{Condition}: \texttt{xopen} and \texttt{xcreate} close files by default unless \texttt{O\_CLOEXEC} is passed to them. These bugs involve instances in which the file opened by those functions is not closed explicitly, but \texttt{O\_CLOEXEC} is not passed; therefore, we can safely assume that the file is closed.} \\
+  \textit{Condition} & \texttt{xopen} and \texttt{xcreate} close files by default unless \texttt{O\_CLOEXEC} is passed to them. These bugs involve instances in which the file opened by those functions is not closed explicitly, but \texttt{O\_CLOEXEC} is not passed; therefore, we can safely assume that the file is closed. \\
     \texttt{xwrap.c:373} & resource acquired by call to \texttt{xopen\_stdio()} at line 373, column 5 is not released after line 373, column 5. \\
   \bottomrule
 \end{tabularx}
@@ -412,5 +453,17 @@
 \end{tabularx}
 
 \pagebreak
-  
+
+\noindent\begin{tabularx}{\textwidth}{rY}
+  \toprule
+  File & \texttt{lsm.h:63}\\
+  Bug Type & Uninitialized Value\\
+  Description & The value read from \texttt{result} was never initialized.\\
+  Number of Configurations & 922\\
+  \midrule
+  Status & False\\
+  Remarks & See the report from cppcheck for the same bug.\\
+  \bottomrule
+\end{tabularx}
+
 \end{document}
