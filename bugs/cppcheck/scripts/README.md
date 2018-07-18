@@ -1,1 +1,3 @@
-Run `npm install` in this directory first to use the js programs with `node`.
+- `run_cppcheck.sh` runs cppcheck on a set of preprocessed configurations
+- `python3 resolve_lines.py` resolves the line numbers back to the original file and line number in the unpreprocessed source
+- `python3 aggregate_results.py | report_unique.txt` aggregates the error reports

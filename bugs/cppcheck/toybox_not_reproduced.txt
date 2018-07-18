@@ -1,0 +1,6 @@
+"[bzcat.c:586]: (error) Possible null pointer dereference: outbuf": 89,
+"[cp.c:343]: (error) Null pointer dereference": 46,
+"[cp.c:409]: (error) Null pointer dereference": 46,
+"[kill.c:89]: (error) Null pointer dereference": 35,
+"[lib_args.c:309]: (error) Uninitialized variable: temp": 56,
+"[main.c:86]: (error) Null pointer dereference": 62

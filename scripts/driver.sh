@@ -145,7 +145,7 @@ echo "${casename}" | grep -i "linux" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Kconfig"
-    binaries="vmlinux"  # TODO: set binaries
+    binaries="arch/x86/boot/bzImage"  # TODO: set binaries
     check_dep_extra_args="-p -e SRCARCH=x86"  # run on x86 version of Linux
     touch .br2-external.in  # this file is necessary in order to process the Config.in
 fi
@@ -274,10 +274,10 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
           bzip2 -f "${save_file}"
           if [[ "${action}" == "preprocess" ]]; then
               echo "preprocessing $i"
-              bunzip2 "${save_file}.bz2"
+              bunzip2 -f "${save_file}.bz2"
               python "${KCONFIG_CASE_STUDIES}/scripts/preprocess_config.py" "${save_file}" "${preprocessed_outdir}/${i_base}" > "${preprocess_out_file}" 2>&1
               bzip2 "${save_file}"
-              bzip2 "${preprocess_out_file}"
+              bzip2 -f "${preprocess_out_file}"
           fi
         done
     fi

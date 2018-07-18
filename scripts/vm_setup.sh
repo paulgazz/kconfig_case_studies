@@ -2,13 +2,16 @@
 
 set -x
 
-# dependencies
 sudo apt-get update
 
+# dependencies for building axtls, toybox, fiasco
 yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence libdlib-dev libaudit-dev linux-source-4.4.0 g++-mips-linux-gnu
 
-# cross-compilation tools
+# cross-compilation tools for fiasco
 yes | sudo apt-get install g++-5-arm-linux-gnueabihf g++-aarch64-linux-gnu 
+
+# dependencies for building linux
+yes | sudo apt-get install libelf-dev 
 
 # allow user to add to /usr/local
 sudo chgrp -R vagrant /usr/local; sudo chmod -R g+w /usr/local
