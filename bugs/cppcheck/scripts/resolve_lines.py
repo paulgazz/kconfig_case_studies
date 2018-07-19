@@ -23,6 +23,8 @@ for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
             result = error_pattern.match(line)
             if result != None:
               old_file = result.group(2)
+              # assume that cppcheck errors are relative to the config directory
+              old_file = os.path.join(config_dir, old_file)
               old_line = int(result.group(4))
               ref_file = old_file
               ref_line = 1
