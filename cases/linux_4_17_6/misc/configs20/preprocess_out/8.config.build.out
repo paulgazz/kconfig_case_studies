@@ -1,0 +1,97 @@
+  CLEAN   .
+  CLEAN   arch/x86/entry/vdso
+  CLEAN   arch/x86/kernel/cpu
+  CLEAN   arch/x86/kernel
+  CLEAN   arch/x86/realmode/rm
+  CLEAN   arch/x86/lib
+  CLEAN   certs
+  CLEAN   drivers/video/logo
+  CLEAN   kernel
+  CLEAN   lib
+  CLEAN   net/wireless
+  CLEAN   usr
+  CLEAN   arch/x86/boot/compressed
+  CLEAN   arch/x86/boot
+  CLEAN   arch/x86/tools
+  CLEAN   .tmp_versions
+  CLEAN   scripts/basic
+  CLEAN   scripts/dtc
+  CLEAN   scripts/kconfig
+  CLEAN   scripts/mod
+  CLEAN   scripts
+  CLEAN   include/config usr/include include/generated arch/x86/include/generated
+  CLEAN   .config .config.old .version Module.symvers
+configuring /home/paul/research/repos/kconfig_case_studies/cases/linux_4_17_6/configs20/8.config
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  YACC    scripts/kconfig/zconf.tab.c
+  LEX     scripts/kconfig/zconf.lex.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to .config
+#
+
+real	0m2.535s
+user	0m1.952s
+sys	0m0.160s
+building /home/paul/research/repos/kconfig_case_studies/cases/linux_4_17_6/configs20/8.config
+make -f ./Makefile syncconfig
+make -f ./scripts/Makefile.build obj=scripts/basic
+(cat /dev/null; ) > scripts/basic/modules.order
+  gcc -Wp,-MD,scripts/basic/.fixdep.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89       -o scripts/basic/fixdep scripts/basic/fixdep.c  
+rm -f .tmp_quiet_recordmcount
+make -f ./scripts/Makefile.build obj=scripts/kconfig syncconfig
+  gcc -Wp,-MD,scripts/kconfig/.conf.o.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89    -D_GNU_SOURCE -D_DEFAULT_SOURCE -DCURSES_LOC="<ncurses.h>" -DLOCALE   -c -o scripts/kconfig/conf.o scripts/kconfig/conf.c
+  bison -oscripts/kconfig/zconf.tab.c -t -l scripts/kconfig/zconf.y
+  flex -oscripts/kconfig/zconf.lex.c -L scripts/kconfig/zconf.l
+  gcc -Wp,-MD,scripts/kconfig/.zconf.tab.o.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89    -D_GNU_SOURCE -D_DEFAULT_SOURCE -DCURSES_LOC="<ncurses.h>" -DLOCALE  -Iscripts/kconfig -c -o scripts/kconfig/zconf.tab.o scripts/kconfig/zconf.tab.c
+  gcc  -o scripts/kconfig/conf scripts/kconfig/conf.o scripts/kconfig/zconf.tab.o  
+mkdir -p include/config include/generated
+scripts/kconfig/conf  --syncconfig Kconfig
+make -f ./scripts/Makefile.build obj=arch/x86/entry/syscalls all
+  /bin/bash './arch/x86/entry/syscalls/syscalltbl.sh' arch/x86/entry/syscalls/syscall_32.tbl arch/x86/include/generated/asm/syscalls_32.h
+  /bin/bash './arch/x86/entry/syscalls/syscallhdr.sh' 'arch/x86/entry/syscalls/syscall_32.tbl' 'arch/x86/include/generated/uapi/asm/unistd_32.h' 'i386' '' ''
+  /bin/bash './arch/x86/entry/syscalls/syscallhdr.sh' 'arch/x86/entry/syscalls/syscall_64.tbl' 'arch/x86/include/generated/uapi/asm/unistd_64.h' 'common,64' '' ''
+  /bin/bash './arch/x86/entry/syscalls/syscallhdr.sh' 'arch/x86/entry/syscalls/syscall_64.tbl' 'arch/x86/include/generated/uapi/asm/unistd_x32.h' 'common,x32' '' '__X32_SYSCALL_BIT'
+make -f ./scripts/Makefile.build obj=scripts/basic
+(cat /dev/null; ) > scripts/basic/modules.order
+  gcc -Wp,-MD,scripts/basic/.bin2c.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89       -o scripts/basic/bin2c scripts/basic/bin2c.c  
+rm -f .tmp_quiet_recordmcount
+make -f ./scripts/Makefile.build obj=arch/x86/tools relocs
+  gcc -Wp,-MD,arch/x86/tools/.relocs_32.o.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89    -I./tools/include  -c -o arch/x86/tools/relocs_32.o arch/x86/tools/relocs_32.c
+  gcc -Wp,-MD,arch/x86/tools/.relocs_64.o.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89    -I./tools/include  -c -o arch/x86/tools/relocs_64.o arch/x86/tools/relocs_64.c
+  gcc -Wp,-MD,arch/x86/tools/.relocs_common.o.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89    -I./tools/include  -c -o arch/x86/tools/relocs_common.o arch/x86/tools/relocs_common.c
+  gcc  -o arch/x86/tools/relocs arch/x86/tools/relocs_32.o arch/x86/tools/relocs_64.o arch/x86/tools/relocs_common.o  
+set -e; : '  CHK     include/config/kernel.release'; mkdir -p include/config/; 	echo "4.17.6$(/bin/bash ./scripts/setlocalversion .)" < include/config/auto.conf > include/config/kernel.release.tmp; if [ -r include/config/kernel.release ] && cmp -s include/config/kernel.release include/config/kernel.release.tmp; then rm -f include/config/kernel.release.tmp; else : '  UPD     include/config/kernel.release'; mv -f include/config/kernel.release.tmp include/config/kernel.release; fi
+make -f ./scripts/Makefile.asm-generic \
+            src=uapi/asm obj=arch/x86/include/generated/uapi/asm
+  echo "#include <asm-generic/bpf_perf_event.h>" >arch/x86/include/generated/uapi/asm/bpf_perf_event.h
+  echo "#include <asm-generic/poll.h>" >arch/x86/include/generated/uapi/asm/poll.h
+make -f ./scripts/Makefile.asm-generic \
+            src=asm obj=arch/x86/include/generated/asm
+  echo "#include <asm-generic/dma-contiguous.h>" >arch/x86/include/generated/asm/dma-contiguous.h
+  echo "#include <asm-generic/early_ioremap.h>" >arch/x86/include/generated/asm/early_ioremap.h
+  echo "#include <asm-generic/mcs_spinlock.h>" >arch/x86/include/generated/asm/mcs_spinlock.h
+  echo "#include <asm-generic/mm-arch-hooks.h>" >arch/x86/include/generated/asm/mm-arch-hooks.h
+set -e; : '  CHK     include/generated/uapi/linux/version.h'; mkdir -p include/generated/uapi/linux/; 	(echo \#define LINUX_VERSION_CODE 266502; echo '#define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))';) < Makefile > include/generated/uapi/linux/version.h.tmp; if [ -r include/generated/uapi/linux/version.h ] && cmp -s include/generated/uapi/linux/version.h include/generated/uapi/linux/version.h.tmp; then rm -f include/generated/uapi/linux/version.h.tmp; else : '  UPD     include/generated/uapi/linux/version.h'; mv -f include/generated/uapi/linux/version.h.tmp include/generated/uapi/linux/version.h; fi
+rm -f include/linux/version.h
+set -e; : '  CHK     include/generated/utsrelease.h'; mkdir -p include/generated/; 	if [ `echo -n "4.17.6" | wc -c ` -gt 64 ]; then echo '"4.17.6" exceeds 64 characters' >&2; exit 1; fi; (echo \#define UTS_RELEASE \"4.17.6\";) < include/config/kernel.release > include/generated/utsrelease.h.tmp; if [ -r include/generated/utsrelease.h ] && cmp -s include/generated/utsrelease.h include/generated/utsrelease.h.tmp; then rm -f include/generated/utsrelease.h.tmp; else : '  UPD     include/generated/utsrelease.h'; mv -f include/generated/utsrelease.h.tmp include/generated/utsrelease.h; fi
+mkdir -p .tmp_versions ; rm -f .tmp_versions/*
+./scripts/gcc-plugin.sh --show-error "g++" "g++" "gcc" || true
+In file included from <stdin>:1:0:
+./scripts/gcc-plugins/gcc-common.h:5:22: fatal error: bversion.h: No such file or directory
+ #include "bversion.h"
+                      ^
+compilation terminated.
+Cannot use CONFIG_GCC_PLUGINS: your gcc installation does not support plugins, perhaps the necessary headers are missing?
+scripts/Makefile.gcc-plugins:69: recipe for target 'gcc-plugins-check' failed
+make: *** [gcc-plugins-check] Error 1
+
+real	0m5.164s
+user	0m2.908s
+sys	0m0.412s
+return code 2
+du: cannot access 'arch/x86/boot/bzImage': No such file or directory
+binary size (in bytes): 0
