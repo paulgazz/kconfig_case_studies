@@ -25,12 +25,7 @@ cur_src_dir = os.getcwd()
 
 # keep track of nested makefiles.  the paths in this stack are all
 # relative the the current directory (not to each other)
-cur_make_dir = ["./"]
-
-# remove current source directory from a file
-def rem_src_dir(filename):
-  global cur_src_dir
-  return filename.replace(cur_src_dir + "/", '')
+cur_make_dir = [cur_src_dir]
 
 # This script depends on SuperC's GCCShunt program being available.
 def gccshunt_cmd(cli_args, out_file):
@@ -80,7 +75,6 @@ with open(build_out) as f:
       cd_type = make_cd_result.group(1)
       cd_dir = make_cd_result.group(2)
       # filter out the current source dir
-      cd_dir = rem_src_dir(cd_dir)
       if (cd_type == "Entering"):
         cur_make_dir.append(cd_dir)
       elif (cd_type == "Leaving"):
@@ -88,6 +82,7 @@ with open(build_out) as f:
       else:
         # our regex should only match Entering or Leaving
         assert(False)
+      os.chdir(cur_make_dir[-1])
     elif line.endswith("\\"):
       full_line += line[:-1]  # merge line continuations
     else:
@@ -102,8 +97,6 @@ with open(build_out) as f:
         # filename. gcc does not require this, but kbuild makefiles
         # ensure it.
         _, filename = gcc_args.rsplit(" ", 1)
-        if not os.path.isabs(filename):
-          filename = os.path.join(cur_make_dir[-1], filename)  # add make's current path
 
         cli_args_file = os.path.join(out_dir, "%s.cli" % (filename))
         preprocessed_file = os.path.join(out_dir, "%s.i" % (os.path.splitext(filename)[0]))
