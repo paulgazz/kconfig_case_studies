@@ -13,7 +13,7 @@ import re
 # repository.
 
 # The name of the compiler for use in processing the commands.
-cc_cmd_regex = r'^(gcc|g\+\+) (.*)$'
+cc_cmd_regex = r'^(gcc|g\+\+|arm-linux-gcc|arm-linux-g\+\+|mips-linux-gcc|mips-linux-g\+\+) (.*)$'
 cc_cmd_match = re.compile(cc_cmd_regex)
 
 # make[2]: Entering directory '/home/vagrant/fiasco_17_10/src/kernel/fiasco/tool/kconfig'
