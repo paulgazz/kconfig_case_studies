@@ -228,8 +228,10 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             exit 1
           fi
 
-          if [[ -e "${save_file}" || -e "${save_file}.bz2" ]]; then
+          if [[ "${action}" == "build" && (-e "${save_file}" || -e "${save_file}.bz2") ]]; then
               echo "skipping existing build: ${save_file}"
+          elif [[ "${action}" == "preprocess" && (-e "${save_file}" || -e "${save_file}.bz2") && (-e "${preprocess_out_file}" || -e "${preprocess_out_file}.bz2") ]]; then
+              echo "skipping existing preprocess: ${preprocess_out_file}"
           else
             for dummy in $(seq 1 1); do  # single-iteration loop to make saving output easier
               echo "${casename}" | grep -i "linux" > /dev/null
@@ -283,11 +285,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             done 2>&1 | tee "${save_file}.tmp" | egrep "^(building)"
             mv ${save_file}.tmp ${save_file}
             bzip2 -f "${save_file}"
-          fi
-
-          if [[ -e "${preprocess_out_file}" || -e "${preprocess_out_file}.bz2" ]]; then
-              echo "skipping existing preprocess: ${save_file}"
-          else
+            
             if [[ "${action}" == "preprocess" ]]; then
                 echo "preprocessing $i"
                 bunzip2 -f "${save_file}.bz2"
