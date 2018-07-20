@@ -1,4 +1,5 @@
 import os
+import json
 
 
 def read_dimacs(dimacsfile):
@@ -27,9 +28,8 @@ def read_dimacs(dimacsfile):
     return _features, _clauses, _vcount
 
 
-def get_commmon(dimacs_, cdir_, configlist_, include_=True):
+def get_commmon(dimacs_, cdir_, configs_, include_=True):
     common = list()
-    configs = list()
     init = True
 
     # check if config dir exists
@@ -37,24 +37,15 @@ def get_commmon(dimacs_, cdir_, configlist_, include_=True):
         print("randconfig not found")
         return
 
-    # get list of configurations
-    if os.path.exists(configlist_):
-        with open(configlist_, 'r') as f:
-            for line in f:
-                raw = line.split('/')
-                configs.append(raw[1])
-    else:
-        print("checking with no config list")
-
     # get features and clauses
     _features, _clauses, _vars = read_dimacs(dimacs_)
     _names = [i[1] for i in _features]
 
     # iterate over each randconfig configurations
     for file in os.listdir(cdir_):
-        if (include_ and (file in configs)) or (not include_ and (file not in configs)) or (len(configs) == 0):
+        if (include_ and (file in configs_)) or (not include_ and (file not in configs_)) or (len(configs_) == 0):
             with open(cdir_ + "/" + file, 'r') as f:
-                print(file)
+                # print(file)
                 _existing = set()
 
                 sol = list()
@@ -98,15 +89,77 @@ def get_commmon(dimacs_, cdir_, configlist_, include_=True):
 
     return common
 
-# extract common features from configs
+
+def analyze_cpp(dimacs_, cdir_, listfile_):
+    configs = list()
+
+    # get list of configurations
+    if os.path.exists(listfile_):
+        with open(listfile_, 'r') as f:
+            for line in f:
+                raw = line.split('/')
+                configs.append(raw[1])
+    else:
+        print("checking with no config list")
+
+        common_fail = get_commmon(dimacs_, cdir_, configs, True)
+        common_pass = get_commmon(dimacs_, cdir_, configs, False)
+
+        for s in common_fail:
+            if s not in common_pass:
+                print(s)
+
+
+def analyze_infer(dimacs_, cdir_, jsonfile_):
+    # read json file
+    with open(jsonfile_) as f:
+        rawdata = json.load(f)
+
+    i = 1
+    for datum in rawdata:
+        # get list of configurations
+        configs = datum['configs']
+
+        print("(" + str(i) + "/" + str(len(rawdata)) + ") " + datum['key'] + ":" + str(datum['line']) + " (" + str(len(configs)) + "): ", end='')
+
+        # get filtered config list
+        filtered = list()
+        for c in configs:
+            slash = c.split('/')
+            name = slash[1].split('_')
+            filtered.append(name[1])
+
+        # find common features
+        common_fail = get_commmon(dimacs_, cdir_, filtered, True)
+        common_pass = get_commmon(dimacs_, cdir_, filtered, False)
+
+        result = list()
+        for s in common_fail:
+            if s not in common_pass:
+            #     if s.startswith('-'):
+            #         if s[1:] in common_pass:
+            #             result.append(s)
+            #     else:
+            #         if '-'+s in common_pass:
+            #             result.append(s)
+                result.append(s)
+
+        print(result)
+        # print(common_fail)
+        # print(common_pass)
+
+        i += 1
+
+
+
 target = "toybox_0_7_5"
 dimacs = "/home/jeho/kmax/kconfig_case_studies/cases/" + target + "/kconfig.dimacs"
-cdir = "/home/jeho/kmax/kconfig_case_studies/bugs/toybox_bug_report/configs"
-configlist = "/home/jeho/kmax/kconfig_case_studies/bugs/toybox_bug_report/config_occurrence_lists/configs_with_vmstat.txt"
+cdir = "/home/jeho/kmax/kconfig_case_studies/bugs/cppcheck/toybox_bug_report/configs"
+cppfile = "/home/jeho/kmax/kconfig_case_studies/bugs/toybox_bug_report/config_occurrence_lists/configs_with_vmstat.txt"
+inferfile = "/home/jeho/kmax/kconfig_case_studies/cases/" + target + "/infer/mapping.json"
 
-common_fail = get_commmon(dimacs, cdir, configlist, True)
-common_pass = get_commmon(dimacs, cdir, configlist, False)
+analyze_infer(dimacs, cdir, inferfile)
 
-for s in common_fail:
-    if s not in common_pass:
-        print(s)
+
+
+

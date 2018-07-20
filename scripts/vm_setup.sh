@@ -13,6 +13,9 @@ yes | sudo apt-get install g++-5-arm-linux-gnueabihf g++-aarch64-linux-gnu
 # dependencies for building linux
 yes | sudo apt-get install libelf-dev 
 
+# dependencies for java program to extract gcc args
+sudo apt-get install openjdk-8-jre-headless
+
 # allow user to add to /usr/local
 sudo chgrp -R vagrant /usr/local; sudo chmod -R g+w /usr/local
 

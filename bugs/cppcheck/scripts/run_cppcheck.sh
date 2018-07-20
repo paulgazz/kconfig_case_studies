@@ -17,8 +17,13 @@ ls -d *.config | sort -h | while read config_dir; do
   # run cppcheck from the root of the config_dir to avoid full path in error reports
   find ./ -type f -name "*.i" | while read i; do
     iout="${i}.cppcheck"
-    echo "checking ${config_dir}/${i} and writing to ${iout}"
-    cppcheck "${i}" > "${iout}" 2>&1
+    if [[ -e "${iout}" ]]; then
+       echo "skipping existing cppcheck run: ${config_dir}/${iout}"
+    else
+      echo "checking ${config_dir}/${i} and writing to ${config_dir}/${iout}"
+      cppcheck "${i}" > "${iout}.tmp" 2>&1
+      mv "${iout}.tmp" "${iout}"
+    fi
   done
   cd ../
 done
