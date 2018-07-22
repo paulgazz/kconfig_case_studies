@@ -1,0 +1,513 @@
+#item ACPI
+#item ARP
+#item ARPING
+#item ASCII
+#item BASE64
+#item BASENAME
+#item BLKID
+#item BLOCKDEV
+#item BOOTCHARTD
+(!def(BOOTCHARTD)|def(TOYBOX_FORK))
+(!def(BOOTCHARTD)|def(TOYBOX_FORK))
+#item BRCTL
+#item BUNZIP2
+#item BZCAT
+#item CAL
+#item CAT
+#item CATV
+#item CAT_V
+(!def(CAT_V)|def(CAT))
+(!def(CAT_V)|def(CAT))
+#item CD
+!def(CD)
+(!def(CD)|def(SH))
+#item CHATTR
+#item CHCON
+(!def(CHCON)|def(TOYBOX_SELINUX))
+(!def(CHCON)|def(TOYBOX_SELINUX))
+#item CHGRP
+#item CHMOD
+#item CHOICE_1
+def(CHOICE_1)
+#item CHOWN
+#item CHROOT
+#item CHRT
+#item CHVT
+#item CKSUM
+#item CLEAR
+#item CMP
+#item COMM
+#item COMPRESS
+#item COUNT
+#item CP
+#item CPIO
+#item CP_PRESERVE
+(!def(CP_PRESERVE)|def(CP))
+(!def(CP_PRESERVE)|def(CP))
+#item CROND
+#item CRONTAB
+(!def(CRONTAB)|def(TOYBOX_FORK))
+(!def(CRONTAB)|def(TOYBOX_FORK))
+#item CUT
+#item DATE
+#item DD
+#item DEALLOCVT
+#item DEBUG_DHCP
+(!def(DEBUG_DHCP)|def(DHCPD))
+(!def(DEBUG_DHCP)|def(DHCPD))
+#item DECOMPRESS
+#item DF
+#item DHCP
+#item DHCP6
+#item DHCPD
+#item DIFF
+#item DIRNAME
+#item DMESG
+#item DOS2UNIX
+#item DU
+#item DUMPLEASES
+#item ECHO
+#item EGREP
+(!def(GREP)|def(EGREP))
+(!def(EGREP)|def(GREP))
+(!def(EGREP)|def(GREP))
+#item EJECT
+#item ENV
+#item EXIT
+!def(EXIT)
+(!def(EXIT)|def(SH))
+#item EXPAND
+#item EXPR
+#item FACTOR
+#item FALLOCATE
+(!def(FALLOCATE)|def(TOYBOX_FALLOCATE))
+(!def(FALLOCATE)|def(TOYBOX_FALLOCATE))
+#item FALSE
+#item FDISK
+#item FGREP
+(!def(GREP)|def(FGREP))
+(!def(FGREP)|def(GREP))
+(!def(FGREP)|def(GREP))
+#item FILE
+#item FIND
+#item FLOCK
+#item FOLD
+#item FREE
+#item FREERAMDISK
+#item FSCK
+#item FSFREEZE
+(!def(FSFREEZE)|def(TOYBOX_FIFREEZE))
+(!def(FSFREEZE)|def(TOYBOX_FIFREEZE))
+#item FSTYPE
+#item FSYNC
+#item FTPGET
+#item FTPPUT
+#item GETENFORCE
+(!def(GETENFORCE)|def(TOYBOX_SELINUX))
+(!def(GETENFORCE)|def(TOYBOX_SELINUX))
+#item GETFATTR
+#item GETPROP
+(!def(GETPROP)|(def(TOYBOX_ON_ANDROID)&def(TOYBOX_SELINUX)))
+(!def(GETPROP)|(def(TOYBOX_ON_ANDROID)&def(TOYBOX_SELINUX)))
+#item GETTY
+#item GREP
+#item GROUPADD
+#item GROUPDEL
+#item GROUPS
+#item GUNZIP
+(!def(GUNZIP)|def(TOYBOX_LIBZ))
+(!def(GUNZIP)|def(TOYBOX_LIBZ))
+#item GZIP
+(!def(GZIP)|def(TOYBOX_LIBZ))
+(!def(GZIP)|def(TOYBOX_LIBZ))
+#item HEAD
+#item HELLO
+#item HELP
+(!def(HELP)|def(TOYBOX_HELP))
+(!def(HELP)|def(TOYBOX_HELP))
+#item HELP_EXTRAS
+(!def(HELP_EXTRAS)|(def(TOYBOX)&def(HELP)))
+(!def(HELP_EXTRAS)|(def(TOYBOX)&def(HELP)))
+#item HEXEDIT
+#item HOST
+#item HOSTID
+#item HOSTNAME
+#item HWCLOCK
+#item ICONV
+(!def(ICONV)|def(TOYBOX_ICONV))
+(!def(ICONV)|def(TOYBOX_ICONV))
+#item ID
+#item ID_Z
+(!def(ID)|def(TOYBOX_LSM_NONE)|def(ID_Z))
+(!def(ID_Z)|(def(ID)&!def(TOYBOX_LSM_NONE)))
+(!def(ID_Z)|(def(ID)&!def(TOYBOX_LSM_NONE)))
+#item IFCONFIG
+#item INIT
+#item INOTIFYD
+#item INSMOD
+#item INSTALL
+#item IONICE
+#item IORENICE
+#item IOTOP
+#item IP
+#item IPCRM
+#item IPCS
+#item KILL
+#item KILLALL
+#item KILLALL5
+(!def(KILLALL5)|def(KILL))
+(!def(KILLALL5)|def(KILL))
+#item KLOGD
+#item KLOGD_SOURCE_RING_BUFFER
+(!def(KLOGD_SOURCE_RING_BUFFER)|def(KLOGD))
+(!def(KLOGD_SOURCE_RING_BUFFER)|def(KLOGD))
+#item LAST
+#item LINK
+#item LN
+#item LOAD_POLICY
+(!def(LOAD_POLICY)|def(TOYBOX_SELINUX))
+(!def(LOAD_POLICY)|def(TOYBOX_SELINUX))
+#item LOG
+(!def(LOG)|def(TOYBOX_ON_ANDROID))
+(!def(LOG)|def(TOYBOX_ON_ANDROID))
+#item LOGGER
+(!def(LOGGER)|def(SYSLOGD))
+(!def(LOGGER)|def(SYSLOGD))
+#item LOGIN
+(!def(LOGIN)|def(TOYBOX_SHADOW))
+(!def(LOGIN)|def(TOYBOX_SHADOW))
+#item LOGNAME
+#item LOSETUP
+#item LS
+#item LSATTR
+#item LSMOD
+#item LSOF
+#item LSPCI
+#item LSPCI_TEXT
+(!def(LSPCI_TEXT)|def(LSPCI))
+(!def(LSPCI_TEXT)|def(LSPCI))
+#item LSUSB
+#item LS_COLOR
+(!def(LS_COLOR)|def(LS))
+(!def(LS_COLOR)|def(LS))
+#item MAKEDEVS
+#item MD5SUM
+#item MDEV
+#item MDEV_CONF
+(!def(MDEV_CONF)|def(MDEV))
+(!def(MDEV_CONF)|def(MDEV))
+#item MICROCOM
+#item MIX
+#item MKDIR
+#item MKDIR_Z
+(!def(MKDIR)|def(TOYBOX_LSM_NONE)|def(MKDIR_Z))
+(!def(MKDIR_Z)|(def(MKDIR)&!def(TOYBOX_LSM_NONE)))
+(!def(MKDIR_Z)|(def(MKDIR)&!def(TOYBOX_LSM_NONE)))
+#item MKE2FS
+#item MKE2FS_EXTENDED
+(!def(MKE2FS_EXTENDED)|def(MKE2FS))
+(!def(MKE2FS_EXTENDED)|def(MKE2FS))
+#item MKE2FS_GEN
+(!def(MKE2FS_GEN)|def(MKE2FS))
+(!def(MKE2FS_GEN)|def(MKE2FS))
+#item MKE2FS_JOURNAL
+(!def(MKE2FS_JOURNAL)|def(MKE2FS))
+(!def(MKE2FS_JOURNAL)|def(MKE2FS))
+#item MKE2FS_LABEL
+(!def(MKE2FS_LABEL)|def(MKE2FS))
+(!def(MKE2FS_LABEL)|def(MKE2FS))
+#item MKFIFO
+#item MKFIFO_Z
+(!def(MKFIFO)|def(TOYBOX_LSM_NONE)|def(MKFIFO_Z))
+(!def(MKFIFO_Z)|(def(MKFIFO)&!def(TOYBOX_LSM_NONE)))
+(!def(MKFIFO_Z)|(def(MKFIFO)&!def(TOYBOX_LSM_NONE)))
+#item MKNOD
+#item MKNOD_Z
+(!def(MKNOD)|def(TOYBOX_LSM_NONE)|def(MKNOD_Z))
+(!def(MKNOD_Z)|(def(MKNOD)&!def(TOYBOX_LSM_NONE)))
+(!def(MKNOD_Z)|(def(MKNOD)&!def(TOYBOX_LSM_NONE)))
+#item MKPASSWD
+(!def(MKPASSWD)|!def(TOYBOX_ON_ANDROID))
+(!def(MKPASSWD)|!def(TOYBOX_ON_ANDROID))
+#item MKSWAP
+#item MKTEMP
+#item MODINFO
+#item MODPROBE
+#item MORE
+#item MOUNT
+#item MOUNTPOINT
+#item MV
+#item NBD_CLIENT
+(!def(NBD_CLIENT)|def(TOYBOX_FORK))
+(!def(NBD_CLIENT)|def(TOYBOX_FORK))
+#item NETCAT
+#item NETCAT_LISTEN
+(!def(NETCAT_LISTEN)|def(NETCAT))
+(!def(NETCAT_LISTEN)|def(NETCAT))
+#item NETSTAT
+#item NICE
+#item NL
+#item NOHUP
+#item NPROC
+#item NSENTER
+(!def(NSENTER)|def(TOYBOX_CONTAINER))
+(!def(NSENTER)|def(TOYBOX_CONTAINER))
+#item OD
+#item ONEIT
+#item OPENVT
+(!def(OPENVT)|def(TOYBOX_FORK))
+(!def(OPENVT)|def(TOYBOX_FORK))
+#item PARTPROBE
+#item PASSWD
+(!def(PASSWD)|def(TOYBOX_SHADOW))
+(!def(PASSWD)|def(TOYBOX_SHADOW))
+#item PASSWD_SAD
+(!def(PASSWD_SAD)|def(PASSWD))
+(!def(PASSWD_SAD)|def(PASSWD))
+#item PASTE
+#item PATCH
+#item PGREP
+#item PIDOF
+#item PING
+#item PIVOT_ROOT
+#item PKILL
+#item PMAP
+#item PRINTENV
+#item PRINTF
+#item PS
+#item PWD
+#item PWDX
+#item READAHEAD
+#item READLINK
+#item REALPATH
+#item REBOOT
+#item RENICE
+#item RESET
+#item RESTORECON
+(!def(RESTORECON)|def(TOYBOX_SELINUX))
+(!def(RESTORECON)|def(TOYBOX_SELINUX))
+#item REV
+#item RFKILL
+#item RM
+#item RMDIR
+#item RMMOD
+#item ROUTE
+#item RUNCON
+(!def(RUNCON)|def(TOYBOX_SELINUX))
+(!def(RUNCON)|def(TOYBOX_SELINUX))
+#item SED
+#item SENDEVENT
+(!def(SENDEVENT)|def(TOYBOX_ON_ANDROID))
+(!def(SENDEVENT)|def(TOYBOX_ON_ANDROID))
+#item SEQ
+(!def(SEQ)|def(TOYBOX_FLOAT))
+(!def(SEQ)|def(TOYBOX_FLOAT))
+#item SETENFORCE
+(!def(SETENFORCE)|def(TOYBOX_SELINUX))
+(!def(SETENFORCE)|def(TOYBOX_SELINUX))
+#item SETFATTR
+#item SETPROP
+(!def(SETPROP)|def(TOYBOX_ON_ANDROID))
+(!def(SETPROP)|def(TOYBOX_ON_ANDROID))
+#item SETSID
+#item SH
+#item SHA1SUM
+#item SHA224SUM
+(!def(SHA224SUM)|def(TOYBOX_LIBCRYPTO))
+(!def(SHA224SUM)|def(TOYBOX_LIBCRYPTO))
+#item SHA256SUM
+(!def(SHA256SUM)|def(TOYBOX_LIBCRYPTO))
+(!def(SHA256SUM)|def(TOYBOX_LIBCRYPTO))
+#item SHA384SUM
+(!def(SHA384SUM)|def(TOYBOX_LIBCRYPTO))
+(!def(SHA384SUM)|def(TOYBOX_LIBCRYPTO))
+#item SHA512SUM
+(!def(SHA512SUM)|def(TOYBOX_LIBCRYPTO))
+(!def(SHA512SUM)|def(TOYBOX_LIBCRYPTO))
+#item SHRED
+#item SKELETON
+#item SKELETON_ALIAS
+#item SLEEP
+#item SLEEP_FLOAT
+(!def(SLEEP)|!def(TOYBOX_FLOAT)|def(SLEEP_FLOAT))
+(!def(SLEEP_FLOAT)|(def(SLEEP)&def(TOYBOX_FLOAT)))
+(!def(SLEEP_FLOAT)|(def(SLEEP)&def(TOYBOX_FLOAT)))
+#item SORT
+#item SORT_BIG
+(!def(SORT_BIG)|def(SORT))
+(!def(SORT_BIG)|def(SORT))
+#item SORT_FLOAT
+(!def(SORT_BIG)|!def(TOYBOX_FLOAT)|def(SORT_FLOAT))
+(!def(SORT_FLOAT)|(def(SORT_BIG)&def(TOYBOX_FLOAT)))
+(!def(SORT_FLOAT)|(def(SORT_BIG)&def(TOYBOX_FLOAT)))
+#item SPLIT
+#item START
+(!def(START)|def(TOYBOX_ON_ANDROID))
+(!def(START)|def(TOYBOX_ON_ANDROID))
+#item STAT
+#item STOP
+(!def(STOP)|def(TOYBOX_ON_ANDROID))
+(!def(STOP)|def(TOYBOX_ON_ANDROID))
+#item STRINGS
+#item SU
+(!def(SU)|def(TOYBOX_SHADOW))
+(!def(SU)|def(TOYBOX_SHADOW))
+#item SULOGIN
+(!def(SULOGIN)|def(TOYBOX_SHADOW))
+(!def(SULOGIN)|def(TOYBOX_SHADOW))
+#item SWAPOFF
+#item SWAPON
+#item SWITCH_ROOT
+#item SYNC
+#item SYSCTL
+#item SYSLOGD
+#item TAC
+#item TAIL
+#item TAIL_SEEK
+(!def(TAIL_SEEK)|def(TAIL))
+(!def(TAIL_SEEK)|def(TAIL))
+#item TAR
+#item TASKSET
+#item TCPSVD
+(!def(TCPSVD)|def(TOYBOX_FORK))
+(!def(TCPSVD)|def(TOYBOX_FORK))
+#item TEE
+#item TELNET
+#item TELNETD
+#item TEST
+#item TEST_HUMAN_READABLE
+#item TEST_MANY_OPTIONS
+#item TEST_SCANKEY
+#item TEST_UTF8TOWC
+#item TFTP
+#item TFTPD
+#item TIME
+(!def(TIME)|def(TOYBOX_FLOAT))
+(!def(TIME)|def(TOYBOX_FLOAT))
+#item TIMEOUT
+(!def(TIMEOUT)|def(TOYBOX_FLOAT))
+(!def(TIMEOUT)|def(TOYBOX_FLOAT))
+#item TOP
+#item TOUCH
+#item TOYBOX
+def(TOYBOX)
+#item TOYBOX_ANDROID_SCHEDPOLICY
+!def(TOYBOX_ANDROID_SCHEDPOLICY)
+#item TOYBOX_CONTAINER
+!def(TOYBOX_CONTAINER)
+#item TOYBOX_DEBUG
+#item TOYBOX_FALLOCATE
+def(TOYBOX_FALLOCATE)
+#item TOYBOX_FIFREEZE
+def(TOYBOX_FIFREEZE)
+#item TOYBOX_FLOAT
+#item TOYBOX_FORK
+(def(TOYBOX_MUSL_NOMMU_IS_BROKEN)|def(TOYBOX_FORK))
+(!def(TOYBOX_FORK)|!def(TOYBOX_MUSL_NOMMU_IS_BROKEN))
+(!def(TOYBOX_FORK)|!def(TOYBOX_MUSL_NOMMU_IS_BROKEN))
+#item TOYBOX_FREE
+#item TOYBOX_HELP
+#item TOYBOX_HELP_DASHDASH
+(!def(TOYBOX_HELP_DASHDASH)|def(TOYBOX_HELP))
+(!def(TOYBOX_HELP_DASHDASH)|def(TOYBOX_HELP))
+#item TOYBOX_I18N
+#item TOYBOX_ICONV
+def(TOYBOX_ICONV)
+#item TOYBOX_LIBCRYPTO
+#item TOYBOX_LIBZ
+#item TOYBOX_LSM_NONE
+(!def(TOYBOX_LSM_NONE)|def(CHOICE_1))
+(!def(TOYBOX_LSM_NONE)|def(CHOICE_1))
+#item TOYBOX_MUSL_NOMMU_IS_BROKEN
+#item TOYBOX_NORECURSE
+#item TOYBOX_ON_ANDROID
+!def(TOYBOX_ON_ANDROID)
+#item TOYBOX_PEDANTIC_ARGS
+#item TOYBOX_PRLIMIT
+!def(TOYBOX_PRLIMIT)
+#item TOYBOX_SELINUX
+(!def(TOYBOX_SELINUX)|def(CHOICE_1))
+(!def(TOYBOX_SELINUX)|def(CHOICE_1))
+#item TOYBOX_SHADOW
+def(TOYBOX_SHADOW)
+#item TOYBOX_SMACK
+(!def(TOYBOX_SMACK)|def(CHOICE_1))
+(!def(TOYBOX_SMACK)|def(CHOICE_1))
+#item TOYBOX_SUID
+#item TOYBOX_UID_SYS
+!def(TOYBOX_UID_SYS=n)
+(def(TOYBOX_UID_SYS=0)|def(TOYBOX_UID_SYS=1)|def(TOYBOX_UID_SYS=100)|def(TOYBOX_UID_SYS=n))
+(!def(TOYBOX_UID_SYS=0)|!def(TOYBOX_UID_SYS=1))
+(!def(TOYBOX_UID_SYS=0)|!def(TOYBOX_UID_SYS=100))
+(!def(TOYBOX_UID_SYS=0)|!def(TOYBOX_UID_SYS=n))
+(!def(TOYBOX_UID_SYS=1)|!def(TOYBOX_UID_SYS=100))
+(!def(TOYBOX_UID_SYS=1)|!def(TOYBOX_UID_SYS=n))
+(!def(TOYBOX_UID_SYS=100)|!def(TOYBOX_UID_SYS=n))
+#item TOYBOX_UID_USR
+!def(TOYBOX_UID_USR=n)
+(def(TOYBOX_UID_USR=0)|def(TOYBOX_UID_USR=1)|def(TOYBOX_UID_USR=500)|def(TOYBOX_UID_USR=n))
+(!def(TOYBOX_UID_USR=0)|!def(TOYBOX_UID_USR=1))
+(!def(TOYBOX_UID_USR=0)|!def(TOYBOX_UID_USR=500))
+(!def(TOYBOX_UID_USR=0)|!def(TOYBOX_UID_USR=n))
+(!def(TOYBOX_UID_USR=1)|!def(TOYBOX_UID_USR=500))
+(!def(TOYBOX_UID_USR=1)|!def(TOYBOX_UID_USR=n))
+(!def(TOYBOX_UID_USR=500)|!def(TOYBOX_UID_USR=n))
+#item TOYBOX_UTMPX
+def(TOYBOX_UTMPX)
+#item TR
+#item TRACEROUTE
+#item TRUE
+#item TRUNCATE
+#item TTY
+#item TUNCTL
+#item ULIMIT
+(!def(ULIMIT)|def(TOYBOX_PRLIMIT))
+(!def(ULIMIT)|def(TOYBOX_PRLIMIT))
+#item UMOUNT
+#item UNAME
+#item UNIQ
+#item UNIX2DOS
+#item UNLINK
+#item UNSHARE
+(!def(UNSHARE)|def(TOYBOX_CONTAINER))
+(!def(UNSHARE)|def(TOYBOX_CONTAINER))
+#item UPTIME
+(!def(UPTIME)|def(TOYBOX_UTMPX))
+(!def(UPTIME)|def(TOYBOX_UTMPX))
+#item USERADD
+#item USERDEL
+#item USLEEP
+#item UUDECODE
+#item UUENCODE
+#item VCONFIG
+#item VI
+#item VMSTAT
+#item W
+(!def(W)|def(TOYBOX_UTMPX))
+(!def(W)|def(TOYBOX_UTMPX))
+#item WATCH
+#item WC
+#item WGET
+#item WHICH
+#item WHO
+(!def(WHO)|def(TOYBOX_UTMPX))
+(!def(WHO)|def(TOYBOX_UTMPX))
+#item WHOAMI
+#item XARGS
+#item XARGS_PEDANTIC
+(!def(XARGS_PEDANTIC)|def(XARGS))
+(!def(XARGS_PEDANTIC)|def(XARGS))
+#item XXD
+#item XZCAT
+#item YES
+#item ZCAT
+(!def(ZCAT)|def(TOYBOX_LIBZ))
+(!def(ZCAT)|def(TOYBOX_LIBZ))
+#choice CHOICE_1
+(def(TOYBOX_SMACK)|def(TOYBOX_SELINUX)|def(TOYBOX_LSM_NONE)|!def(CHOICE_1))
+(!def(TOYBOX_SMACK)|def(CHOICE_1))
+(!def(TOYBOX_SELINUX)|def(CHOICE_1))
+(!def(TOYBOX_LSM_NONE)|def(CHOICE_1))
+(!def(TOYBOX_SMACK)|!def(TOYBOX_SELINUX))
+(!def(TOYBOX_SMACK)|!def(TOYBOX_LSM_NONE))
+(!def(TOYBOX_SELINUX)|!def(TOYBOX_LSM_NONE))
