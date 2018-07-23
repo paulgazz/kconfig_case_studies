@@ -304,6 +304,22 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             fi
           fi
         done
+
+        if [[ "${action}" == "build" ]]; then
+            echo "generating build summary"
+            binary_sizes="${experiment_dir}/binary_sizes.txt"
+            for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
+              i="${experiment_dir}/${i_base}"
+              build_out_file="${build_out_dir}/$(basename ${i}).out"
+              bzcat "${build_out_file}.bz2" | egrep "binary size"
+            done > "${binary_sizes}"
+            return_codes="${experiment_dir}/return_codes.txt"
+            for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
+              i="${experiment_dir}/${i_base}"
+              build_out_file="${build_out_dir}/$(basename ${i}).out"
+              bzcat "${build_out_file}.bz2" | egrep "return code"
+            done > "${return_codes}"
+        fi
     fi
 
 elif [[ "${action}" == "dimacs" ]]; then
