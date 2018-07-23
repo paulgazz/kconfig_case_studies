@@ -57,7 +57,7 @@ fi
 
 if [[ "${casename}" == "" || "${action}" == "list" ]]; then
     echo "Please choose from the following:"
-    ls ${KCONFIG_CASE_STUDIES}/cases/
+    echo $(ls ${KCONFIG_CASE_STUDIES}/cases/ | grep -v README.md)
     exit 1
 fi
 
