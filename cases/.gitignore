@@ -1,1 +1,3 @@
 kconfig_out/
+build_out/
+preprocess_out/
