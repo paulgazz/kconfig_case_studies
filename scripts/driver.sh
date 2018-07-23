@@ -200,6 +200,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
         for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
           i="${experiment_dir}/${i_base}"
           echo "configuring $i";
+          date;
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           time make oldconfig;
           cp "${config_file}" "${kconfig_out_dir}/$(basename ${i})"
@@ -241,6 +242,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
               fi
               
               echo "configuring $i";
+              date;
               cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
 
               # case-specific build scripts
@@ -285,7 +287,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             done 2>&1 | tee "${save_file}.tmp" | egrep "^(building)"
             mv ${save_file}.tmp ${save_file}
             bzip2 -f "${save_file}"
-            
+
             if [[ "${action}" == "preprocess" ]]; then
                 echo "preprocessing $i"
                 bunzip2 -f "${save_file}.bz2"
