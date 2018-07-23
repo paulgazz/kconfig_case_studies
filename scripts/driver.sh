@@ -138,7 +138,7 @@ if [[ $? -eq 0 ]]; then
     kconfig_root="Config.in"
     binaries="*"  # TODO: set binaries
     # don't add CONFIG_ prefix, already uses BR2 itself.  must set a build path.
-    check_dep_extra_args="-p -e BUILD_DIR=."
+    check_dep_extra_args="-e BUILD_DIR=."
     touch .br2-external.in  # this file is necessary in order to process the Config.in
 fi
 echo "${casename}" | grep -i "linux" > /dev/null
@@ -146,8 +146,7 @@ if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Kconfig"
     binaries="arch/x86/boot/bzImage"  # TODO: set binaries
-    check_dep_extra_args="-p -e SRCARCH=x86"  # run on x86 version of Linux
-    touch .br2-external.in  # this file is necessary in order to process the Config.in
+    check_dep_extra_args="-e SRCARCH=x86"  # run on x86 version of Linux
 fi
 
 
@@ -306,7 +305,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
         done
 
         if [[ "${action}" == "build" ]]; then
-            echo "generating build summary"
+            echo "generating build summaries (this may take a couple minutes)"
             binary_sizes="${experiment_dir}/binary_sizes.txt"
             for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
               i="${experiment_dir}/${i_base}"
