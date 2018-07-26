@@ -64,6 +64,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & True\\
   Remarks & \texttt{localtime} may fail and return a null pointer, causing tm to be null.\\
+  Features & CONFIG_UPTIME \\
   \bottomrule
 \end{tabularx}
 
@@ -84,6 +85,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & True\\
   Remarks & The call to \texttt{bufgetgrgid} initializes overwrites the \texttt{list} pointer with pointer to new memory without freeing the memory it pointed to initially. Although the buffer is meant to last past the end of the function, the memory is orphaned each time \texttt{list} is reassigned.\\
+  Features & None (generic) \\
   \bottomrule
 \end{tabularx}
 
@@ -103,6 +105,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & True\\
   Remarks & The same explanation for \texttt{lib.c:1264} applies here.\\
+  Features & None (generic) \\
   \bottomrule
 \end{tabularx}
 
@@ -123,6 +126,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & True\\
   Remarks & \texttt{calloc} \textit{can} fail, leaving \texttt{new} as a null pointer. Although this is true, it's not particularly interesting, as \texttt{calloc} very rarely fails.\\
+  Features & None (generic) \\
   \bottomrule
 \end{tabularx}
 
@@ -144,6 +148,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   Status & True\\
   Remarks & \texttt{calloc} can fail, leaving \texttt{new} as a null pointer.\\
   Similar Bugs & \texttt{mkflags.c:227} -- pointer \texttt{new} last assigned on line 90 could be null and is dereferenced at line 92, column 7 \\ 
+  Features & None (generic) \\
   \bottomrule
 \end{tabularx}
 
@@ -164,6 +169,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & True\\
   Remarks & If \texttt{O\_CLOEXEC} is passed to \texttt{loopfiles\_rw}, then \texttt{fd} is closed. If \texttt{O\_CLOEXEC} is not passed to \texttt{loopfiles\_rw}, then whatever function is passed to \texttt{loopfiles\_rw} must close \texttt{fd} itself. Of the three calls in toybox to \texttt{loopfiles\_rw} which does not pass \texttt{O\_CLOEXEC}, the call in \texttt{paste.c} does not close \texttt{fd} itself.\\
+  Features & None (generic) \\
   \bottomrule
 \end{tabularx}
 
@@ -187,6 +193,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   Similar Bugs & \texttt{oneit.c:72} -- resource acquired by call to \texttt{xopen\_stdio()} at line 72, column 12 is not released after line 72, column 12. \\
   & \texttt{nohup.c:39} -- resource acquired by call to \texttt{xopen\_stdio()} at line 39, column 5 is not released after line 39, column 5. \\
   & \texttt{oneit.c:73} -- resource acquired by call to \texttt{xopen\_stdio()} at line 72, column 12 is not released after line 73, column 5. \\
+  Features & CONFIG_NOHUP \\
   \bottomrule
 \end{tabularx}
 
@@ -206,6 +213,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & Technically True\\
   Remarks & From the Toybox configuration documentation (\texttt{Config.in}): ``When a program exits, the operating system will clean up after it (free memory, close files, etc). To save size, toybox usually relies on this behavior. If you're running toybox under a debugger or without a real OS (ala newlib+libgloss), enable this to make toybox clean up after itself.'' If \texttt{TOYBOX\_FREE} is not enabled (and by default, it isn't), the memory allocated by \texttt{xmprintf} will not be freed explictly, and instead will be left open until the program terminates so the operating system can clean it up. This makes classifying this bug tricky. This is obviously a memory leak in the default case, as memory that is being allocated is not being freed; however, it seems that this is an intentional choice by the programmers. For now, this seems to fall nicely under the technically true class, but this could warrant a discussion on how exactly we're classifying what a bug is.\\
+  Features & CONFIG_MOUNTPOINT, CONFIG_TOYBOX_FREE \\
   \bottomrule
 \end{tabularx}
 
