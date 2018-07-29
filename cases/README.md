@@ -1,19 +1,23 @@
 Directory structure:
 
     CASENAME_VERSION/
-      kconfig.kmax      - the kmax file containing constraints 
-      kconfig.dimacs    - dimacs file generated from kmax file
-      correctness/      - configs generated for correctness testing
-        configs/        - from kmax dimacs
-        randconfig/     - from kbuild randconfig
-        kcr/            - from kconfigreader
-      build/            - configs generated for build data collection
-        constraints.txt - constraints to limit smapling to buildable features
-        configs/        - from kmax dimacs, constrained to buildable features
-      bugs/             - configs for bug finding
-        configs/        - configs, typically drawn from build/configs
-        scripts/        - (optional) helper scripts for bug-findind
-      misc/             - miscellaneous configs use for testing and development
+      kconfig.kmax         - the kmax file containing constraints 
+      kconfig.dimacs       - dimacs file generated from kmax file
+      correctness/         - configs generated for correctness testing
+        configs/           - from kmax dimacs
+          config_diff_results.out    - result of diffing configs before and after kconfig
+          uniq_config_comparison.out - non-empty if some configs are the same after kconfig
+        randconfig/        - from kbuild randconfig
+        kcr/               - from kconfigreader
+      build/               - configs generated for build data collection
+        constraints.txt    - constraints to limit smapling to buildable features
+        configs/           - from kmax dimacs, constrained to buildable features
+          binary_sizes.txt - the configs' resulting build sizes, in order
+          return_codes.txt - the configs' build return code, in order
+      bugs/                - configs for bug finding
+        configs/           - configs, typically drawn from build/configs
+        scripts/           - (optional) helper scripts for bug-findind
+      misc/                - miscellaneous configs use for testing and development
 
 
 ## axtls

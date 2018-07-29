@@ -57,7 +57,7 @@ fi
 
 if [[ "${casename}" == "" || "${action}" == "list" ]]; then
     echo "Please choose from the following:"
-    ls ${KCONFIG_CASE_STUDIES}/cases/
+    echo $(ls ${KCONFIG_CASE_STUDIES}/cases/ | grep -v README.md)
     exit 1
 fi
 
@@ -138,7 +138,7 @@ if [[ $? -eq 0 ]]; then
     kconfig_root="Config.in"
     binaries="*"  # TODO: set binaries
     # don't add CONFIG_ prefix, already uses BR2 itself.  must set a build path.
-    check_dep_extra_args="-p -e BUILD_DIR=."
+    check_dep_extra_args="-e BUILD_DIR=."
     touch .br2-external.in  # this file is necessary in order to process the Config.in
 fi
 echo "${casename}" | grep -i "linux" > /dev/null
@@ -146,8 +146,7 @@ if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Kconfig"
     binaries="arch/x86/boot/bzImage"  # TODO: set binaries
-    check_dep_extra_args="-p -e SRCARCH=x86"  # run on x86 version of Linux
-    touch .br2-external.in  # this file is necessary in order to process the Config.in
+    check_dep_extra_args="-e SRCARCH=x86"  # run on x86 version of Linux
 fi
 
 
@@ -200,6 +199,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
         for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
           i="${experiment_dir}/${i_base}"
           echo "configuring $i";
+          date;
           cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
           time make oldconfig;
           cp "${config_file}" "${kconfig_out_dir}/$(basename ${i})"
@@ -241,6 +241,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
               fi
               
               echo "configuring $i";
+              date;
               cat $i | grep -v "SPECIAL_ROOT_VARIABLE" > "${config_file}";
 
               # case-specific build scripts
@@ -285,7 +286,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             done 2>&1 | tee "${save_file}.tmp" | egrep "^(building)"
             mv ${save_file}.tmp ${save_file}
             bzip2 -f "${save_file}"
-            
+
             if [[ "${action}" == "preprocess" ]]; then
                 echo "preprocessing $i"
                 bunzip2 -f "${save_file}.bz2"
@@ -302,6 +303,22 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             fi
           fi
         done
+
+        if [[ "${action}" == "build" ]]; then
+            echo "generating build summaries (this may take a couple minutes)"
+            binary_sizes="${experiment_dir}/binary_sizes.txt"
+            for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
+              i="${experiment_dir}/${i_base}"
+              build_out_file="${build_out_dir}/$(basename ${i}).out"
+              bzcat "${build_out_file}.bz2" | egrep "binary size"
+            done > "${binary_sizes}"
+            return_codes="${experiment_dir}/return_codes.txt"
+            for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
+              i="${experiment_dir}/${i_base}"
+              build_out_file="${build_out_dir}/$(basename ${i}).out"
+              bzcat "${build_out_file}.bz2" | egrep "return code"
+            done > "${return_codes}"
+        fi
     fi
 
 elif [[ "${action}" == "dimacs" ]]; then

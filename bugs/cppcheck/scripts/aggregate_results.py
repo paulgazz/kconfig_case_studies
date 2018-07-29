@@ -3,6 +3,7 @@ import os
 import glob
 import natsort  # pip3 install natsort
 from collections import defaultdict
+import operator
 
 # aggregate cppcheck results for a set of configurations.
 
@@ -24,7 +25,7 @@ if os.path.isfile(outfilename):
 with open(outfilename, 'w') as outfile:
   # for each configuration directory
   cumulative_errors = set([])
-  error_counts = defaultdict(int)
+  error_counts = defaultdict(set)
   total_errors = 0
   min_errors = None
   min_error_configs = None
@@ -49,7 +50,10 @@ with open(outfilename, 'w') as outfile:
     elif len_errors == max_errors:
       max_error_configs.append(config_dir)
 
-  for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
+  config_dirs = natsort.natsorted(glob.iglob('*.config', recursive=False))
+  num_processed = 0
+  for config_dir in config_dirs:
+    num_processed += 1
     config_errors = set([])
     sys.stderr.write("processing: %s\n" % (config_dir))
     # for each cppcheck result for a compilation unit
@@ -65,15 +69,34 @@ with open(outfilename, 'w') as outfile:
     update_min_max(config_errors)
     cumulative_errors = cumulative_errors.union(config_errors)
     for error in config_errors:
-      error_counts[error] += 1
+      error_counts[error].add(config_dir)
     total_errors += len(config_errors)
     sys.stderr.write("unique/total errors: %d/%d\n" % (len(error_counts.keys()), total_errors))
     sys.stderr.write("min/max errors: %d/%d\n" % (min_errors, max_errors))
+    # if num_processed > 20: break  # used for testing
 
+
+  outfile.write("num_configs %d\n" % (num_processed))
   outfile.write("unique_errors %d\n" % (len(error_counts.keys())))
-  outfile.write("max_per_config: %d\n" % (max_errors))
-  outfile.write("min_per_config: %d\n" % (min_errors))
+  outfile.write("total_errors %d\n" % (total_errors))
+  outfile.write("max_per_config %d\n" % (max_errors))
+  outfile.write("min_per_config %d\n" % (min_errors))
+  config_sets = {}
   for error in sorted(error_counts.keys()):
-    outfile.write('"%s", %d\n' % (error, error_counts[error]))
+    num_configs = len(error_counts[error])
+    if num_configs == num_processed:
+      including_configs = "all"
+    else:
+      config_nums = [ int(x.split(".")[0]) for x in error_counts[error] ]
+      config_set_string = " ".join([ str(x) for x in sorted(config_nums) ])
+      if config_set_string in config_sets.keys():
+        set_id = config_sets[config_set_string]
+      else:
+        set_id = len(config_sets.keys())
+        config_sets[config_set_string] = set_id
+      including_configs = "set%d" % (set_id)
+    outfile.write('"%s",%d,%s\n' % (error, num_configs, including_configs))
+  for (config_set_string , set_id) in sorted(config_sets.items(), key=operator.itemgetter(1)):
+    outfile.write("set%d,%s\n" % (set_id, config_set_string))
 
   sys.stderr.write("report written to %s\n" % (outfilename))
