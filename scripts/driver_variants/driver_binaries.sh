@@ -1,5 +1,7 @@
 #!/bin/bash
 
+results_dir=~/Documents/varbugs/output
+
 if [[ $# -lt 1 ]]; then
     cat <<EOF
 USAGE SCHEMA: $(basename $0) action arg1 arg2 ...
@@ -47,7 +49,7 @@ casename="${2}"
 if [[ $# -ge 3 ]]; then
     sample_dir="${3}"
 else
-  sample_dir="correctness/configs"
+  sample_dir="build/configs"
 fi  
 
 case_dir="${KCONFIG_CASE_STUDIES}/cases/${casename}"
@@ -251,6 +253,10 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
+
+	    # Do CBMC processing
+	    #cbmc ${binaries} --show-properties --bounds-check --pointer-check --signed-overflow-check --unsigned-overflow-check --nan-check --xml-ui > "${results_dir}/${casename}/cbmc_results/cbmc_${i_base}.xml"
+	    echo ${binaries}
           done 2>&1 | tee "${save_file}" | egrep "^(building)"
 
           if [[ "${action}" == "preprocess" ]]; then

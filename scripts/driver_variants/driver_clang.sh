@@ -1,4 +1,7 @@
+#
 #!/bin/bash
+
+results_dir=~/Documents/varbugs/output
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
@@ -47,7 +50,7 @@ casename="${2}"
 if [[ $# -ge 3 ]]; then
     sample_dir="${3}"
 else
-  sample_dir="correctness/configs"
+  sample_dir="build/configs"
 fi  
 
 case_dir="${KCONFIG_CASE_STUDIES}/cases/${casename}"
@@ -245,12 +248,15 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time make ${make_extra_args} PREFIX="/tmp/local"
+		#scan-build ./configure
+                time scan-build -plist-html -o "${results_dir}/${casename}/clang_results/clang_${i_base}" make ${make_extra_args} PREFIX="/tmp/local"
             else
-              time make ${make_extra_args};
+	      #scan_build ./configure
+              time scan-build -plist-html -o "${results_dir}/${casename}/clang_results/clang_${i_base}" make ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
+
           done 2>&1 | tee "${save_file}" | egrep "^(building)"
 
           if [[ "${action}" == "preprocess" ]]; then
