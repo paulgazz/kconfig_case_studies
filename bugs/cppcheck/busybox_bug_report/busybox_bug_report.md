@@ -23,6 +23,8 @@ configuration-specific section of the code.  It's Kbuild file
 
 This is a true positive, but not a variability bug.
 
+Associated features: None
+
 
 ## Technically True Positives
 
@@ -32,6 +34,8 @@ This is a true positive, but not a variability bug.
 
 Line is not freed.  However, this is the `main` method for some helper
 program.
+
+Associated features: None
 
 ### Array 'freelist[17]' accessed at index 17, which is out of bounds.
 
@@ -82,6 +86,8 @@ and `fdisk.c` is configurable.
 
     // util-linux/Kbuild
     lib-$(CONFIG_FDISK) += fdisk.o
+
+Associated features: CONFIG_FDISK, CONFIG_FEATURE_FDISK_WRITABLE, CONFIG_FEATURE_SGI_LABEL
 
 ## False Positives
 
