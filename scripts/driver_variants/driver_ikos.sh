@@ -1,5 +1,9 @@
-#
+
 #!/bin/bash
+
+# This script sets up the environment veriables needed for IKOS to run
+
+results_dir=~/Documents/varbugs/output
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
@@ -48,7 +52,7 @@ casename="${2}"
 if [[ $# -ge 3 ]]; then
     sample_dir="${3}"
 else
-  sample_dir="Configs"
+  sample_dir="build/configs"
 fi  
 
 case_dir="${KCONFIG_CASE_STUDIES}/cases/${casename}"
@@ -89,7 +93,7 @@ echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
-    binaries="_stage/"
+    binaries="_stage/axhttpd"
     get_reverse_dep="true"
     # axtls variables already include the the CONFIG_ prefix and it's
     # kconfig system is modified not to.  add a flag to check_dep to
@@ -246,12 +250,16 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time infer run -o "../../output/toybox_0_7_5/infer_results/infer_${i_base}" -- make ${make_extra_args} PREFIX="/tmp/local"
+                time make ${make_extra_args} PREFIX="/tmp/local"
             else
-              time infer run -o "../../output/toybox_0_7_5/infer_results/infer_${i_base}" -- make ${make_extra_args};
+              time make ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
+
+	    # Do IKOS processing
+	    extract-bc ${binaries}
+	    ikos --ikos-pp "${binaries}.bc" -o "${results_dir}/${casename}/ikos_results/ikos_${i_base}.db"
           done 2>&1 | tee "${save_file}" | egrep "^(building)"
 
           if [[ "${action}" == "preprocess" ]]; then
