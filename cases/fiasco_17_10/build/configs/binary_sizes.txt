@@ -183,7 +183,7 @@ binary size (in bytes): 50607682
 binary size (in bytes): 68576982
 binary size (in bytes): 24092048
 binary size (in bytes): 46920342
-binary size (in bytes): 7209550
+binary size (in bytes): 77066758
 binary size (in bytes): 57726724
 binary size (in bytes): 50443488
 binary size (in bytes): 73960686
