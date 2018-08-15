@@ -249,10 +249,10 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
 		#scan-build ./configure
-                time scan-build-4.0 -plist-html -o "${results_dir}/${casename}/clang_results/clang_${i_base}" make ${make_extra_args} PREFIX="/tmp/local"
+                time scan-build-4.0 -plist-html -o "${results_dir}/${casename}/clang-4.0_results/clang-4.0_${i_base}" make ${make_extra_args} PREFIX="/tmp/local"
             else
 	      #scan_build ./configure
-              time scan-build-4.0 -plist-html -o "${results_dir}/${casename}/clang_results/clang_${i_base}" make ${make_extra_args};
+              time scan-build-4.0 -plist-html -o "${results_dir}/${casename}/clang-4.0_results/clang-4.0_${i_base}" make ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"

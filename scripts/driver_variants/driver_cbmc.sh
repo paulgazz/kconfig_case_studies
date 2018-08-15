@@ -90,7 +90,7 @@ echo "${casename}" | grep -i "axtls" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file="config/.config"
     kconfig_root="config/Config.in"
-    binaries="_stage/"
+    binaries="_stage/axhttpd"
     get_reverse_dep="true"
     # axtls variables already include the the CONFIG_ prefix and it's
     # kconfig system is modified not to.  add a flag to check_dep to

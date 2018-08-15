@@ -257,9 +257,12 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
 
-	    # Do IKOS processing
 	    extract-bc ${binaries}
-	    ikos --ikos-pp "${binaries}.bc" -o "${results_dir}/${casename}/ikos_results/ikos_${i_base}.db"
+	    cp ${binaries}.bc ~/Documents/varbugs/output/axtls_2_1_4/ikos_results/axtls_${i_base}.bc
+	    
+	    # Do IKOS processing
+	    #extract-bc ${binaries}
+	    #ikos --ikos-pp ${binaries}.bc -o ikos_${i_base}.db
           done 2>&1 | tee "${save_file}" | egrep "^(building)"
 
           if [[ "${action}" == "preprocess" ]]; then
