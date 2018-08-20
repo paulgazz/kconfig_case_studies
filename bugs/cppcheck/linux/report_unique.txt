@@ -1,0 +1,578 @@
+num_configs 20
+unique_errors 570
+total_errors 666
+max_per_config 549
+min_per_config 0
+"[./arch/x86/include/asm/inst.h:182]: (error) syntax error",1,set0
+"[./arch/x86/include/asm/paravirt.h:104]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:104]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:104]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:104]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:104]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:111]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:117]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:117]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:117]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:117]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:117]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:122]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:128]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:175]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:184]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:189]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:203]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:203]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:203]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:203]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:203]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:208]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:208]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:208]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:208]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:208]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:213]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:213]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:213]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:213]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:213]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:217]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:217]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:217]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:217]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:217]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:221]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:221]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:221]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:221]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:221]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:225]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:225]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:225]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:225]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:225]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:229]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:22]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:22]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:22]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:22]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:22]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:234]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:234]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:234]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:234]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:234]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:240]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:240]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:240]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:240]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:240]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:247]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:247]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:247]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:247]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:247]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:253]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:253]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:253]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:253]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:253]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:258]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:258]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:258]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:258]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:258]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:262]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:262]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:262]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:262]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:262]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:279]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:279]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:279]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:279]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:279]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:285]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:285]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:285]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:285]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:285]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:290]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:290]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:290]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:290]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:290]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:295]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:295]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:295]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:295]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:295]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:299]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:299]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:299]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:299]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:299]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:29]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:29]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:29]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:29]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:29]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:303]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:303]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:303]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:303]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:303]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:309]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:309]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:309]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:309]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:309]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:314]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:319]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:319]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:319]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:319]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:319]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:324]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:324]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:324]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:324]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:324]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:328]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:328]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:328]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:328]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:328]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:333]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:333]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:333]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:333]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:333]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:338]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:338]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:338]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:338]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:338]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:343]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:343]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:343]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:343]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:343]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:347]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:347]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:347]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:347]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:347]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:352]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:352]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:352]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:352]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:352]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:357]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:357]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:357]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:357]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:357]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:369]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:369]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:369]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:369]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:369]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:37]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:384]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:384]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:384]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:384]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:384]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:398]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:398]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:398]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:398]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:398]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:412]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:412]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:412]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:412]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:412]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:424]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:424]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:424]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:424]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:424]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:42]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:42]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:42]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:42]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:42]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:47]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:480]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:480]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:480]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:480]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:480]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:494]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:494]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:494]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:494]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:494]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:520]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:520]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:520]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:520]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:520]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:52]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:52]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:52]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:52]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:52]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:534]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:534]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:534]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:534]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:534]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:561]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:561]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:561]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:561]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:561]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:568]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:573]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:573]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:573]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:573]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:573]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:57]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:62]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:62]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:62]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:62]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:62]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:639]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:639]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:639]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:639]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:639]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:644]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:644]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:644]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:644]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:644]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:650]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:650]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:650]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:650]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:650]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:655]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:655]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:655]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:655]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:655]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:660]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:660]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:660]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:660]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:660]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:67]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:72]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:72]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:72]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:72]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:72]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:778]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:77]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:77]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:77]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:77]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:77]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:783]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:783]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:783]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:783]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:783]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:788]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:788]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:788]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:788]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:788]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:793]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:793]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:793]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:793]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:793]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:83]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:88]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:88]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:88]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:88]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:88]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:94]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:94]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:94]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:94]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:94]: (error) Uninitialized variable: __esi",1,set1
+"[./arch/x86/include/asm/paravirt.h:99]: (error) Uninitialized variable: __eax",1,set1
+"[./arch/x86/include/asm/paravirt.h:99]: (error) Uninitialized variable: __ecx",1,set1
+"[./arch/x86/include/asm/paravirt.h:99]: (error) Uninitialized variable: __edi",1,set1
+"[./arch/x86/include/asm/paravirt.h:99]: (error) Uninitialized variable: __edx",1,set1
+"[./arch/x86/include/asm/paravirt.h:99]: (error) Uninitialized variable: __esi",1,set1
+"[./include/linux/crypto.h:718]: (error) Uninitialized variable: tfm",2,set2
+"[arch/x86/entry/entry_32.S:121]: (error) syntax error",1,set0
+"[arch/x86/entry/thunk_32.S:19]: (error) syntax error",1,set0
+"[arch/x86/entry/vsyscall/vsyscall_gtod.c:37]: (error) Array '__c[1]' accessed at index 1, which is out of bounds.",1,set0
+"[arch/x86/kernel/apic/io_apic.c:1057]: (error) Uninitialized variable: irq",1,set1
+"[arch/x86/kernel/apic/io_apic.c:1070]: (error) Uninitialized variable: irq",1,set1
+"[arch/x86/kernel/cpu/topology.c:78]: (error) Shifting a negative value is undefined behaviour",1,set1
+"[arch/x86/kernel/quirks.c:189]: (error) Uninitialized variable: gen_cntl",2,set2
+"[arch/x86/kernel/quirks.c:211]: (error) Uninitialized variable: gen_cntl",2,set2
+"[arch/x86/kernel/quirks.c:302]: (error) Uninitialized variable: val",2,set2
+"[arch/x86/kernel/quirks.c:433]: (error) Uninitialized variable: val",2,set2
+"[arch/x86/kernel/quirks.c:99]: (error) Uninitialized variable: rcba",2,set2
+"[drivers/char/hw_random/intel-rng.c:333]: (error) Uninitialized variable: mem",1,set1
+"[drivers/clk/clk-gate.c:46]: (error) Uninitialized variable: flags",1,set1
+"[drivers/firewire/ohci.c:1115]: (error) Uninitialized variable: bus_addr",1,set1
+"[drivers/firewire/ohci.c:1305]: (error) Uninitialized variable: payload_bus",1,set1
+"[drivers/firewire/ohci.c:2461]: (error) Uninitialized variable: next_config_rom_bus",1,set1
+"[drivers/firewire/ohci.c:2950]: (error) Uninitialized variable: ctx",1,set1
+"[drivers/firewire/ohci.c:2951]: (error) Uninitialized variable: callback",1,set1
+"[drivers/firewire/ohci.c:2952]: (error) Uninitialized variable: channels",1,set1
+"[drivers/firewire/ohci.c:2953]: (error) Uninitialized variable: mask",1,set1
+"[drivers/firewire/ohci.c:2953]: (error) Uninitialized variable: regs",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../display/dc/dce110/dce110_hw_sequencer.c:560]: (error) Array 'seg_distr[16]' accessed at index 16, which is out of bounds.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/hwmgr/smu7_hwmgr.c:406]: (error) Signed integer overflow for expression '3223323048+i*4'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/hwmgr/smu7_hwmgr.c:423]: (error) Signed integer overflow for expression '3223323048+i*4'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/hwmgr/vega10_powertune.c:1115]: (error) Uninitialized variable: result",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/smumgr/fiji_smumgr.c:1735]: (error) Signed integer overflow for expression '3222274048+(584)'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/smumgr/fiji_smumgr.c:1737]: (error) Signed integer overflow for expression '3222274048+(592)'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/smumgr/polaris10_smumgr.c:1593]: (error) Signed integer overflow for expression '3222274048+(268)'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/smumgr/polaris10_smumgr.c:336]: (error) Signed integer overflow for expression '3222274048+(196)'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/smumgr/tonga_smumgr.c:1638]: (error) Signed integer overflow for expression '3222274048+(584)'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/../powerplay/smumgr/tonga_smumgr.c:1640]: (error) Signed integer overflow for expression '3222274048+(592)'.",1,set1
+"[drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gfx_v7.c:396]: (error) Uninitialized variable: wptr_val",1,set1
+"[drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gfx_v8.c:384]: (error) Uninitialized variable: wptr_val",1,set1
+"[drivers/gpu/drm/amd/amdgpu/cik_sdma.c:461]: (error) Uninitialized variable: rb_bufsz",1,set1
+"[drivers/gpu/drm/amd/amdgpu/sdma_v2_4.c:434]: (error) Uninitialized variable: rb_bufsz",1,set1
+"[drivers/gpu/drm/amd/amdgpu/sdma_v3_0.c:669]: (error) Uninitialized variable: rb_bufsz",1,set1
+"[drivers/gpu/drm/amd/amdgpu/sdma_v4_0.c:582]: (error) Uninitialized variable: rb_bufsz",1,set1
+"[drivers/gpu/drm/amd/amdgpu/si_dma.c:144]: (error) Uninitialized variable: rb_bufsz",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:202]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:204]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:206]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:208]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:241]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:242]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:243]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:244]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:245]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:246]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:247]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:248]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:249]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:250]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:251]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:253]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:277]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:278]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:279]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:280]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:281]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:306]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:308]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:309]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:310]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:311]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:313]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:314]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:315]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:316]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:322]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:325]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:358]: (error) Undefined behavior: Variable 'buf' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:388]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:401]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:406]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:408]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:410]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:412]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:414]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:416]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:418]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:420]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:422]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:424]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:426]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:428]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:430]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:432]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:434]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:436]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:438]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:440]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:442]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:444]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:465]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:468]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:471]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:475]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/amd/amdkfd/kfd_topology.c:479]: (error) Undefined behavior: Variable 'buffer' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/gpu/drm/drm_bufs.c:101]: (error) Shifting 32-bit value by 4096 bits is undefined behaviour",1,set1
+"[drivers/gpu/drm/drm_edid.c:2701]: (error) Uninitialized variable: width",1,set1
+"[drivers/gpu/drm/i915/gvt/handlers.c:1461]: (error) Uninitialized variable: ring_base",1,set1
+"[drivers/gpu/drm/i915/i915_pmu.c:723]: (error) Internal error. Token::astOperand1() cyclic dependency.",1,set1
+"[drivers/gpu/drm/i915/i915_vma.c:566]: (error) Uninitialized variable: page_alignment",1,set1
+"[drivers/gpu/drm/i915/intel_fbc.c:575]: (error) Uninitialized variable: compressed_llb",1,set1
+"[drivers/gpu/drm/i915/intel_lrc.c:328]: (error) Uninitialized variable: p",1,set1
+"[drivers/gpu/drm/i915/intel_pm.c:5381]: (error) Expression '[]={[PIPE_A]=((const struct i915_reg_t){.reg=(282880)}),[PIPE_B]=((const struct i915_reg_t){.reg=(282884)})' depends on order of evaluation of side effects",1,set1
+"[drivers/gpu/drm/i915/intel_pm.c:5382]: (error) Expression ',[PIPE_B]=((const struct i915_reg_t){.reg=(282884)}),[PIPE_C]=((const struct i915_reg_t){.reg=(283136)})' depends on order of evaluation of side effects",1,set1
+"[drivers/gpu/drm/i915/intel_uncore.c:1890]: (error) Uninitialized variable: reg_value",1,set1
+"[drivers/gpu/drm/i915/selftests/huge_pages.c:1123]: (error) Uninitialized variable: max_page_size",1,set1
+"[drivers/gpu/drm/i915/selftests/huge_pages.c:193]: (error) Uninitialized variable: max_len",1,set1
+"[drivers/iio/adc/ti-ads1015.c:585]: (error) Shifting a negative value is undefined behaviour",1,set0
+"[drivers/iio/adc/ti-ads1015.c:659]: (error) Shifting a negative value is undefined behaviour",1,set0
+"[drivers/iio/adc/ti-ads1015.c:986]: (error) Shifting a negative value is undefined behaviour",1,set0
+"[drivers/input/gameport/ns558.c:119]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/gameport/ns558.c:121]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/gameport/ns558.c:124]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/gameport/ns558.c:126]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/gameport/ns558.c:130]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/gameport/ns558.c:138]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/gameport/ns558.c:146]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/gameport/ns558.c:158]: (error) Shifting a negative value is undefined behaviour",2,set2
+"[drivers/input/mouse/cyapa_gen5.c:1855]: (error) Shifting a negative value is undefined behaviour",1,set1
+"[drivers/input/serio/serio_raw.c:165]: (error) Uninitialized variable: c",2,set2
+"[drivers/isdn/mISDN/dsp_audio.c:128]: (error) Shifting a negative value is undefined behaviour",1,set1
+"[drivers/leds/led-class-flash.c:215]: (error) Undefined behavior: Variable 'buf' is used as parameter and destination in s[n]printf().",2,set2
+"[drivers/misc/altera-stapl/altera.c:699]: (error) Shifting a negative value is undefined behaviour",1,set1
+"[drivers/misc/genwqe/card_base.c:363]: (error) Uninitialized variable: x",1,set1
+"[drivers/platform/x86/hdaps.c:381]: (error) Uninitialized variable: temp",1,set0
+"[drivers/platform/x86/hdaps.c:394]: (error) Uninitialized variable: temp",1,set0
+"[drivers/regulator/da903x.c:395]: (error) Division by zero.",1,set0
+"[drivers/regulator/da903x.c:415]: (error) Division by zero.",1,set0
+"[drivers/ssb/driver_chipcommon.c:122]: (error) Uninitialized variable: tmp",2,set2
+"[drivers/ssb/driver_chipcommon.c:152]: (error) Uninitialized variable: limit",2,set2
+"[drivers/thunderbolt/xdomain.c:599]: (error) Undefined behavior: Variable 'buf' is used as parameter and destination in s[n]printf().",1,set1
+"[drivers/tty/cyclades.c:3651]: (error) Uninitialized variable: mailbox",1,set1
+"[drivers/tty/isicom.c:1540]: (error) Uninitialized variable: signature",1,set1
+"[drivers/tty/serial/serial_core.c:115]: (error) Uninitialized variable: flags",1,set1
+"[drivers/tty/serial/serial_core.c:135]: (error) Uninitialized variable: flags",1,set1
+"[drivers/tty/serial/serial_core.c:545]: (error) Uninitialized variable: flags",1,set1
+"[drivers/tty/serial/serial_core.c:591]: (error) Uninitialized variable: flags",1,set1
+"[drivers/tty/serial/serial_core.c:604]: (error) Uninitialized variable: flags",1,set1
+"[drivers/tty/serial/serial_core.c:617]: (error) Uninitialized variable: flags",1,set1
+"[drivers/tty/serial/serial_core.c:644]: (error) Uninitialized variable: flags",1,set1
+"[drivers/tty/sysrq.c:147]: (error) Null pointer dereference: killer",2,set2
+"[drivers/usb/core/file.c:207]: (error) Array 'usb_minors[256]' accessed at index 256, which is out of bounds.",1,set1
+"[drivers/usb/host/ehci-q.c:64]: (error) Division by zero.",1,set1
+"[drivers/video/fbdev/core/fbmem.c:1701]: (error) Array 'registered_fb[32]' accessed at index 32, which is out of bounds.",2,set2
+"[drivers/video/fbdev/pm3fb.c:824]: (error) Uninitialized variable: m",1,set1
+"[drivers/video/fbdev/pm3fb.c:825]: (error) Uninitialized variable: n",1,set1
+"[drivers/video/fbdev/pm3fb.c:826]: (error) Uninitialized variable: p",1,set1
+"[drivers/virtio/virtio_ring.c:271]: (error) Uninitialized variable: prev",2,set2
+"[fs/fuse/control.c:120]: (error) Uninitialized variable: val",1,set0
+"[fs/fuse/control.c:157]: (error) Uninitialized variable: val",1,set0
+"[fs/fuse/cuse.c:271]: (error) Uninitialized variable: key",1,set0
+"[fs/fuse/cuse.c:271]: (error) Uninitialized variable: val",1,set0
+"[fs/fuse/file.c:2744]: (error) Uninitialized variable: parent",1,set0
+"[fs/overlayfs/copy_up.c:61]: (error) Uninitialized variable: error",1,set0
+"[kernel/async.c:118]: (error) Uninitialized variable: calltime",2,set2
+"[kernel/async.c:289]: (error) Uninitialized variable: starttime",2,set2
+"[kernel/cgroup/cgroup-v1.c:1003]: (error) Uninitialized variable: ss",2,set2
+"[kernel/cgroup/cgroup-v1.c:1312]: (error) Uninitialized variable: ss",2,set2
+"[kernel/cgroup/cgroup-v1.c:897]: (error) Uninitialized variable: ss",2,set2
+"[kernel/cgroup/debug.c:227]: (error) Uninitialized variable: ss",2,set2
+"[kernel/cgroup/debug.c:249]: (error) Uninitialized variable: ss",2,set2
+"[kernel/cgroup/debug.c:67]: (error) Uninitialized variable: ss",2,set2
+"[kernel/exit.c:95]: (error) Uninitialized variable: tty",2,set2
+"[kernel/futex.c:1252]: (error) Uninitialized variable: curval",1,set1
+"[kernel/futex.c:1411]: (error) Uninitialized variable: curval",1,set1
+"[kernel/futex.c:2286]: (error) Uninitialized variable: curval",1,set1
+"[kernel/futex.c:2897]: (error) Uninitialized variable: curval",1,set1
+"[kernel/futex.c:3365]: (error) Uninitialized variable: nval",1,set1
+"[kernel/futex.c:3439]: (error) Uninitialized variable: next_pi",1,set1
+"[kernel/futex_compat.c:56]: (error) Uninitialized variable: next_pi",1,set1
+"[kernel/locking/lockdep.c:1250]: (error) Uninitialized variable: target_entry",1,set1
+"[kernel/locking/lockdep.c:1276]: (error) Uninitialized variable: target_entry",1,set1
+"[kernel/locking/lockdep.c:1582]: (error) Uninitialized variable: target_entry",1,set1
+"[kernel/locking/lockdep.c:1583]: (error) Uninitialized variable: target_entry1",1,set1
+"[kernel/locking/lockdep.c:1837]: (error) Uninitialized variable: target_entry",1,set1
+"[kernel/locking/lockdep.c:2638]: (error) Uninitialized variable: target_entry",1,set1
+"[kernel/locking/lockdep.c:2662]: (error) Uninitialized variable: target_entry",1,set1
+"[kernel/rcu/tree.c:2098]: (error) Array '__c[1]' accessed at index 1, which is out of bounds.",1,set1
+"[kernel/rcu/tree.c:2364]: (error) Array '__c[1]' accessed at index 1, which is out of bounds.",1,set1
+"[kernel/rcu/tree.c:2861]: (error) Array '__c[1]' accessed at index 1, which is out of bounds.",1,set1
+"[kernel/sched/fair.c:6037]: (error) Expression 'group=group.next,group!=sd.groups' depends on order of evaluation of side effects",1,set1
+"[kernel/trace/ring_buffer.c:560]: (error) Uninitialized variable: cpu_buffer",1,set0
+"[lib/atomic64_test.c:142]: (error) Signed integer overflow for expression '(v0)+one'.",1,set1
+"[lib/atomic64_test.c:143]: (error) Signed integer overflow for expression '(v0)-one'.",1,set1
+"[lib/dma-debug.c:962]: (error) Uninitialized variable: entry",1,set0
+"[lib/glob.c:48]: (error) Uninitialized variable: back_str",2,set2
+"[lib/ioremap.c:102]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[lib/ioremap.c:129]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[lib/ioremap.c:155]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[lib/ioremap.c:178]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[lib/ioremap.c:75]: (error) Expression 'pte++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[lib/radix-tree.c:1501]: (error) Uninitialized variable: offset",2,set2
+"[mm/gup.c:1407]: (error) Expression 'ptep++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/gup.c:1530]: (error) Expression 'addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/gup.c:1568]: (error) Expression 'addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/gup.c:1605]: (error) Expression 'addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/gup.c:1661]: (error) Expression 'pmdp++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/gup.c:1689]: (error) Expression 'pudp++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/gup.c:1714]: (error) Expression 'p4dp++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/gup.c:1742]: (error) Expression 'pgdp++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/list_lru.c:279]: (error) Uninitialized variable: memcg_idx",2,set2
+"[mm/memory.c:1106]: (error) Expression 'dst_pte++,src_pte++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1155]: (error) Expression 'dst_pmd++,src_pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1189]: (error) Expression 'dst_pud++,src_pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1211]: (error) Expression 'dst_p4d++,src_p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1275]: (error) Expression 'dst_pgd++,src_pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1386]: (error) Expression 'pte++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1444]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1473]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1492]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1513]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:1985]: (error) Expression 'pte++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2008]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2028]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2048]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2112]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2175]: (error) Uninitialized variable: ptl",2,set2
+"[mm/memory.c:2193]: (error) Expression 'addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2220]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2240]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2260]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:2285]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:465]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:499]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:533]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/memory.c:613]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/mprotect.c:158]: (error) Expression 'pte++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/mprotect.c:215]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/mprotect.c:240]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/mprotect.c:260]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/mprotect.c:285]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/page-writeback.c:2162]: (error) Uninitialized variable: writeback_index",2,set2
+"[mm/page_alloc.c:780]: (error) Uninitialized variable: buddy_pfn",2,set2
+"[mm/pagewalk.c:112]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/pagewalk.c:138]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/pagewalk.c:164]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/pagewalk.c:338]: (error) Expression 'start=next,start<end' depends on order of evaluation of side effects",2,set2
+"[mm/pagewalk.c:68]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/percpu.c:2267]: (error) Uninitialized variable: best_upa",1,set1
+"[mm/percpu.c:2720]: (error) Syntax Error: AST broken, ternary operator lacks ':'.",1,set0
+"[mm/swap.c:720]: (error) Uninitialized variable: flags",2,set2
+"[mm/swap.c:721]: (error) Uninitialized variable: lock_batch",2,set2
+"[mm/vmalloc.c:100]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:116]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:131]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:156]: (error) Expression 'pte++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:173]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:190]: (error) Expression 'pud++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:207]: (error) Expression 'p4d++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:233]: (error) Expression 'pgd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:68]: (error) Expression 'pte++,addr+=(4096UL),addr!=end' depends on order of evaluation of side effects",2,set2
+"[mm/vmalloc.c:84]: (error) Expression 'pmd++,addr=next,addr!=end' depends on order of evaluation of side effects",2,set2
+"[net/dns_resolver/dns_key.c:133]: (error) Expression 'opt=next_opt+1,opt<end' depends on order of evaluation of side effects",1,set1
+"[scripts/asn1_compiler.c:832]: (error) Expression 'type++,!(type.flags&1)' depends on order of evaluation of side effects",2,set2
+"[sound/isa/sb/sb16_csp.c:119]: (error) Uninitialized variable: version",1,set0
+set0,2
+set1,3
+set2,2 3
