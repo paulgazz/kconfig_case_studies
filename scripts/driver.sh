@@ -116,7 +116,7 @@ if [[ $? -eq 0 ]]; then
     config_file="build/globalconfig.out"
     kconfig_root="build/Kconfig"
     # perhaps just use "*.{o,a}"
-    binaries="build/*.o build/*.a"
+    binaries="build/fiasco"
     # if [[ "${action}" == "build" ]]; then
     #     # looks like boot_image.{x1,x2}
     #     echo "ERROR: please figure out what to use to measure the binary size" >&2
@@ -273,6 +273,11 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
               fi
 
               echo "building $i";
+              echo "${casename}" | egrep -i "fiasco" >/dev/null
+              if [[ $? -eq 0 ]]; then
+                  make -C build/ clean cleanall
+                  rm -rf build/
+              fi
               make clean;
               echo "${casename}" | grep -i "axtls" > /dev/null
               if [[ $? -eq 0 ]]; then
