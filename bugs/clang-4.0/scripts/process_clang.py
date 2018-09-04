@@ -33,6 +33,8 @@ hash_master = set()
 # hash_index is a dictionary of hashes by file, so that we can determine the configuration list later on
 hash_index = dict()
 
+# DEBUG
+property_list = list()
 logging.info("Now starting processing. This may take some time.")
 
 for dirpath, dirnames, filenames in os.walk(target_dir):
@@ -55,7 +57,9 @@ for dirpath, dirnames, filenames in os.walk(target_dir):
             if len(data['diagnostics']) < 1:
                 continue
             for datum in data['diagnostics']:
-                property = {k: v for k,v in datum.iteritems() if k in ('category', 'description', 'location')}
+                property = {k: v for k,v in datum.iteritems() if k in ('category', 'description', 'location', 'file')}
+                # DEBUG
+                property_list.append(property)
                 logging.debug(str(property))
                 # Add a hash to the property so we can compare them later.
                 property['hash'] = hashlib.md5(str(property).encode()).hexdigest()
@@ -88,3 +92,6 @@ print str(len(master)) + ' unique bugs found.'
 with open(outfile, 'w') as out:
     json.dump(master,out)
     print 'Output written to ' + outfile
+# DEBUG
+with open('list_unique.json', 'w') as l:
+    json.dump(property_list, l)
