@@ -15,13 +15,7 @@ However, I do not think this is a useful distinction. Therefore, at time of writ
 
 ## What makes a report true?
 
-A true bug report **correctly identifies a bug in the program which can cause a fault to occur under _realistic operating conditions_.**
-
-Ask yourself the following questions when evaluating whether a bug report is true:
-1. Could a fault actually arise from this bug?
-2. If yes, could this fault actually occur under *realistic* operating conditions?
-
-Note that *realistic* is not the same as *normal*. Finding bugs that would only occur under certain uncommon conditions is still important, as long as those conditions are realistic.
+A true bug report **correctly identifies a bug in the program which can cause a fault to occur under some theoretical operating condition.**
 
 # Guidelines for Frequently Encountered Bug Types
 
