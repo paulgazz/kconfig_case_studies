@@ -192,7 +192,6 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   Remarks & The file descriptor opened cannot be closed, as the whole point is to redirect \texttt{stdin} and \texttt{stdout} and then run a command elsewhere. This is not a bug, but at the same time infer is not wrong that there is an open file descriptor that is not being closed. Other bugs which involve open resources that are not closed but are meant to stay open are listed below.\\
   Similar Bugs & \texttt{oneit.c:72} -- resource acquired by call to \texttt{xopen\_stdio()} at line 72, column 12 is not released after line 72, column 12. \\
   & \texttt{nohup.c:39} -- resource acquired by call to \texttt{xopen\_stdio()} at line 39, column 5 is not released after line 39, column 5. \\
-  & \texttt{oneit.c:73} -- resource acquired by call to \texttt{xopen\_stdio()} at line 72, column 12 is not released after line 73, column 5. \\
   Features & CONFIG_NOHUP \\
   \bottomrule
 \end{tabularx}
@@ -288,44 +287,26 @@ In the unique bug reports list, many bugs listed as unique are actually the same
 \noindent\begin{tabularx}{\textwidth}{rY}
   \toprule
   File & xwrap.c\\
-  Line & 264\\
+  Line & 213\\
   Bug Type \texttt{UNINITIALIZED\_VALUE}& \\
   Description & The value read from \texttt{cestnepasun[\_]} was never initialized.\\
   Number of Configurations & 986\\
-  \midrule
-  \multicolumn{2}{c}{Code Sample} \\
-\end{tabularx}
-\noindent\lstinputlisting[linerange=262-265, firstnumber=262]{code/xwrap.c}
-\noindent\begin{tabularx}{\textwidth}{rY}
   \midrule
   Status & False\\
   Remarks & \texttt{cestnepasun} is initialized by a call to \texttt{pipe}. This is representative of a broader class of bugs falling into the \texttt{UNINTIALIZED\_VALUE} type. These bugs take the form of two separate branches with the same condition, wherein a variable is intialized in the first and used in the second (i.e. \texttt{int a; if (b) a = 5; ...; if (b) int c = a;} Other false bugs which fall into this class (and similar bugs, i.e. wherein infer doesn't understand the variable being initialized in a different scope) are listed below.\\
   Similar Bugs & \texttt{xwrap.c:287} -- The value read from \texttt{pipe} was never initialized. \\
   & \texttt{mount.c:314} -- The value read from \texttt{mtl} was never initialized. \\
-  & \texttt{comm.c:79} -- The value read from \texttt{file[\_]} was never intiialized. \\
-%  & \texttt{comm.c:68} -- The value read from \texttt{file[\_]} was never intiialized. \\
-%  & \texttt{comm.c:76} -- The value read from \texttt{file[\_]} was never intiialized. \\
- 
-  & \texttt{kill.c:145} -- The value read from \texttt{signum} was never intialized. \\
-%  & \texttt{xwrap.c:232} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
-%  & \texttt{xwrap.c:213} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
   & \texttt{xwrap.c:790} -- The value read from \texttt{d} was never intialized. \\
-  & \texttt{xwrap.c:737} -- The value read from \texttt{fd} was never initialized. \\
-%  & \texttt{xwrap.c:736} -- The value read from \texttt{fd} was never initialized. \\
-%  & \texttt{comm.c:62} -- The value read from \texttt{file[\_]} was never initialized.\\
-%  & \texttt{xwrap.c:225} -- The value read from \texttt{cestnepasun[\_]} was never initialized. \\
-  & \texttt{bzcat.c:252} -- The value read from \texttt{length[\_]} was never initialized. \\
-  % & \texttt{bzcat.c:254} -- The value read from \texttt{length[\_]} was never initialized. \\
-  % & \texttt{bzcat.c:251} -- The value read from \texttt{length[\_]} was never initialized. \\
-  % & \texttt{xwrap.c:233} -- The value read from \texttt{cestnepasun[\_]} was never initialized. (Other bugs dealing with this variable are truncated) \\
-  & \texttt{modinfo.c:496} -- The value readf from \texttt{len} was never initialized.\\
-  & \texttt{ps.c:1514} -- The value read from \texttt{lines} was never initialized.\\
+  & \texttt{xwrap.c:736} -- The value read from \texttt{fd} was never initialized. \\
+  & \texttt{comm.c:62} -- The value read from \texttt{file[\_]} was never initialized.\\
+  & \texttt{bzcat.c:251} -- The value read from \texttt{length[\_]} was never initialized. \\
+  & \texttt{modinfo.c:72} -- The value readf from \texttt{len} was never initialized.\\
   & \texttt{md5sum.c:203} -- The value read from \texttt{rot[\_]} was never initialized.\\
-  % & \texttt{ps.c:1456} -- The value read from \texttt{lines} was never initialized. \\
+  & \texttt{ps.c:1456} -- The value read from \texttt{lines} was never initialized. \\
   & \texttt{setenforce.c:30} -- The value read from \texttt{state} was never initialized. \\
   & \texttt{od.c:92} -- The value read from \texttt{ld} was never initialized. \\
   & \texttt{xwrap.c:794} -- The value read from \texttt{l} was never initialized. \\
-  & \texttt{hwclock.c:466} -- The value read from \texttt{time} was never initialized. \\
+  & \texttt{hwclock.c:115} -- The value read from \texttt{time} was never initialized. \\
   \bottomrule
 \end{tabularx}
 
@@ -349,8 +330,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   Similar Bugs & \texttt{od.c:88} -- The value read from \texttt{fdl.ld} was never initialized. \\
   & \texttt{od.c:85} -- The value read from \texttt{fdl.d} was never initialized. \\
   & \texttt{ulimit.c:95} -- The value read from \texttt{rr.rlim\_max} was never initialized. \\
-  & \texttt{od.c:491} -- The value read from \texttt{fdl.f} was never initialized. \\
-  & \texttt{grep.c:215} -- The value read from \texttt{matches.rm\_so} was never initialized. \\
+  & \texttt{od.c:82} -- The value read from \texttt{fdl.f} was never initialized. \\
   \bottomrule
 \end{tabularx}
 
@@ -359,35 +339,20 @@ In the unique bug reports list, many bugs listed as unique are actually the same
 \noindent\begin{tabularx}{\textwidth}{rY}
   \toprule
   File & ls.c\\
-  Line & 428\\
+  Line & 424\\
   Bug Type & \texttt{UNINITIALIZED\_VALUE}\\
   Description & The value read from \texttt{totals[\_]} was never initialized.\\
   Number of Configurations & 655\\
-  \midrule
-  \multicolumn{2}{c}{Code Sample} \\
-\end{tabularx}
-\noindent\lstinputlisting[linerange=426-429, firstnumber=428]{code/ls.c}
-\noindent\begin{tabularx}{\textwidth}{rY}
   \midrule
   Status & False\\
   Remarks & \texttt{totals} was initialized by memset. Other bugs in which the variable was initialized by memset, memcpy, or any other function which accepts out parameters are listed below.\\
   Similar Bugs & \texttt{md5sum.c:157} -- The value read from \texttt{x[\_]} was never initialized. \\
   Similar Bugs & \texttt{ps.c:1453} -- The value read from \texttt{run[\_]} was never initialized. \\
-%  & \texttt{ps.c:1468} -- The value read from \texttt{run[\_]} was never initialized. \\
-  % & \texttt{ps.c:1464} -- The value read from \texttt{run[\_]} was never initialized. \\
   & \texttt{md5sum.c:143} -- The value read from \texttt{x[\_]} was never initialized. \\
   & \texttt{ftpget.c:150} -- The value read from \texttt{port} was never initialized. \\
   & \texttt{ftpget.c:151} -- The value read from \texttt{si6.sin6\_family} was never initialized. \\
-  % & \texttt{md5sum.c:147} -- The value read from \texttt{x[\_]} was never initialized. \\
-  % & \texttt{ls.c:369} -- The value read from \texttt{dtlen} was never initialized. \\
-  & \texttt{ls.c:377} -- The value read from \texttt{dtlen} was never initialized. \\
-  & \texttt{rfkill.c:94} -- The value reaf from \texttt{rfevent.idx} was never initialized. \\
-%  & \texttt{rfkill.c:82} -- The value reaf from \texttt{rfevent.idx} was never initialized. \\
-  & \texttt{ls.c:479} -- The value read from \texttt{totals[\_]} was never initialized. \\
+  & \texttt{rfkill.c:82} -- The value reaf from \texttt{rfevent.idx} was never initialized. \\
   & \texttt{ls.c:349} -- The value read from \texttt{dtlen} was never initialized. \\
-%  & \texttt{ls.c:424} -- The value read from \texttt{totals[\_]} was never initialized. \\
-  % & \texttt{ls.c:655} -- The value read from \texttt{dtlen} was never initialized. \\
-  % & \texttt{ftpget.c:203} -- The value read from \texttt{port} was never initialized. \\
   \bottomrule
 \end{tabularx}
 
@@ -450,7 +415,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
 
 \noindent\begin{tabularx}{\textwidth}{rY}
   \toprule
-  File & \texttt{password.c:986}\\
+  File & \texttt{password.c:127}\\
   Bug Type & Null Dereference\\
   Description & pointer \texttt{sfx} last assigned on line 119 could be null and is dereferenced at line 127, column 3.\\
   Number of Configurations & 986\\

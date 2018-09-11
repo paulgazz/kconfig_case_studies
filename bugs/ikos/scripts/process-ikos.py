@@ -1,14 +1,13 @@
 # Script to Process CBMC Records (and maybe all other XML files as well)
 
 import os
-import xmltodict
 import re
 import hashlib
 import logging
 import argparse
 import jsonplus as json
 
-parser = argparse.ArgumentParser('Script to deduplicate XML bug reports.')
+parser = argparse.ArgumentParser('Script to deduplicate JSON bug reports.')
 # Implemented verbose as a count in case we want to add more levels of verbosity later."
 parser.add_argument('-v', '--verbose', action='count', default=0,
                     help='Level of verbosity. Include more v\' s for more verbosity (current only one level of verbosity is supported)')
@@ -27,50 +26,43 @@ else:
 # Iterate through files in target directory
 target_dir = args.target
 outfile = args.output
-
+fields_to_hash = {'full_msg', 'location'}
 master = list()
 
 # hash_master is a set of all hashes, so that we can determine whether a report is unique
 hash_master = set()
 # hash_index is a dictionary of hashes by file, so that we can determine the configuration list later on
 hash_index = dict()
-# description_index is a dictionary of descriptions by hash, so we can include all of the descriptions in the bug report.
-description_index = dict()
 
 print "Now starting processing. This may take some time."
 
 for file in os.listdir(target_dir):
     # Skip non-xml files
-    if not file.endswith('.config.xml'):
+    if not file.endswith('.db.json'):
         continue
 
     # Grab XML records, add to master
     with open(file) as infile:
         logging.info('Now processing file ' + file)
-        data = xmltodict.parse(infile.read())
 
-        # Skip entries without any bugs
-        if 'property' not in data['cprover']:
-            logging.warning('File ' + file + ' has no bug reports.')
+        incontent = infile.read()
+        try:
+            data = json.loads(incontent)
+        except ValueError:
+            logging.warning('Unable to parse file %s as JSON' % (file))
             continue
-        
+
         # Make a list of hashes for keeping track of configurations later
         hashes = list()
         hash_index[file] = list()
         # Record configuration
-        logging.debug(str(len(data['cprover']['property'])) + ' reports found.')
-        for property in data['cprover']['property']:
+        logging.debug(str(len(data)) + ' reports found.')
+        for property in data:
+        # Add a hash to the property so we can compare them later. Only hash the subset of property, datum
+            property['location'] = {k: v for k,v in property['location'].items() if k not in {'stmt_uid'}}
+            to_hash = {k: v for k,v in property.items() if k in fields_to_hash}
+            property['hash'] = hashlib.md5(str(to_hash).encode()).hexdigest()
 
-            # Add a hash to the property so we can compare them later. Only hash the subset of property, datum
-            datum = {k: v for k,v in property.items() if k in {'@class', 'location'}}
-            property['hash'] = hashlib.md5(str(datum).encode()).hexdigest()
-
-            # Add the description to this hash's description list
-            if property['hash'] not in description_index:
-                description_index[property['hash']] = set()
-
-            description_index[property['hash']].add(property['description'])
-            
             # Add the hash to this file's hash dictionary
             hash_index[file].append(property['hash'])
             
@@ -90,13 +82,10 @@ for property in master:
     for record in hash_index:
         logging.debug('Finding configuration list for report ' + property['hash'])
         if property['hash'] in hash_index[record]:
-            property['configurations'].extend(re.findall(r'[0-9]{1,3}', record))
+            property['configurations'].extend(re.findall(r'[0-9]{1,3}', re.findall('[0-9]{1,3}.config', record)[0]))
             count = count + 1
     property['num_occurrences'] = count
     logging.info('Report ' + property['hash'] + ' was present in ' + str(len(property['configurations'])) + ' configurations.')
-
-    # Also add the description list to the property
-    property['description'] = description_index[property['hash']]
 
 print str(len(master)) + ' unique bugs found.'
 
