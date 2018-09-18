@@ -17,6 +17,8 @@ However, I do not think this is a useful distinction. Therefore, at time of writ
 
 A true bug report **correctly identifies a bug in the program which can cause a fault to occur under some theoretical operating conditions.** This is a broad classification, and will include many bugs that are not variable, that are uninteresting, and that are unexploitable. However, this is not a concern of the task of differentiating true and false bug reports.
 
+Something to pay attention to is the specific wording of the bug report. For example, a bug report saying that a pointer 'may' be null after being initialized with malloc is true. However, a bug report saying that a pointer 'is' null would be false if any valid execution path leads to the pointer being initialized.
+
 # Guidelines for Frequently Encountered Bug Types
 
 *This section will continue to be updated with more common bug types.*
