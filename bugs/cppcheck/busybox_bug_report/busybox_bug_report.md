@@ -26,8 +26,6 @@ This is a true positive, but not a variability bug.
 Associated features: None
 
 
-## Technically True Positives
-
 ### Memory leak: line
 
     "[scripts/basic/split-include.c:227]: (error) Memory leak: line", 1000
