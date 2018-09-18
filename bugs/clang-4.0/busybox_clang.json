@@ -37413,6 +37413,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "qsort is in stdlib.  Looking at qsort's manpage, shows that only line (a buffer) and compare_keys (a function pointer) are pointers.  'lines' is initialized to NULL on 454.  If GET_LINE returns NULL on 460, the the loop that populates lines breaks and can reach 486.  This depends on whether GET_LINE, i.e., bb_get_chunk_from_file (which xmalloc_fgetline calls) can return NULL; given the test for NULL and break, it seems possible.  Looking at bb_get_chunk_from_file, if the first character of a file is EOF, it will return NULL..  Note that if ENABLE_FEATURE_SORT_BIG is enabled, we should get similar error, but also get something on 477 as well (a variability bug).  The definition of the GET_LINE macro also depends on ENABLE_FEATURE_SORT_BIG.  ENABLE_FEATURE_SORT_BIG is disabled for 457 of these configs, while 224 have it enabled."
+    },
     "file": "coreutils/sort.c",
     "configurations": [
       "592.config",
@@ -39560,6 +39564,10 @@
       "line": 852,
       "col": 8,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "If something goes wrong with the search for Status: in the the control-buffer (line 838), then status_from_file can be NULL.  As long as the status_num test from search_status_hashtable works (lines 849-850), then there will be a NULL pointer passed to strcmp (alert line 852)."
     },
     "file": "archival/dpkg.c",
     "configurations": [
@@ -64912,6 +64920,10 @@
       "line": 539,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "",
+      "notes": "not sure"
     },
     "file": "debianutils/start_stop_daemon.c",
     "configurations": [
@@ -91979,6 +91991,10 @@
       "line": 932,
       "col": 20,
       "file": 0
+    },
+    "investigation": {
+      "result": "false",
+      "notes": "Assuming that string_array_len used on 908 is implemented properly, argv[1] won't be NULL, because this checks the argc is 2 and short-circuiting will prevent the strcmp from happening.  Looking at string_array_len, if argv is NULL, it will return 0."
     },
     "file": "libbb/appletlib.c",
     "configurations": [
@@ -130534,6 +130550,10 @@
       "col": 7,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "encode_then_expand_string initializes dest to a NULL_O_STRING (NULL struct with first field being data).  This is passed to encode_string to be populated.  encode_string, if it fails to read a character, will return without populating the data field.  There is a comment \"//TODO: error check (encode_string returns 0 on error)?\" that seems to corraborate that this is possible.  Then expand_string_to_string is called on dest.data, which can be NULL.  Then expand_string_to_string uses strchr on this value."
+    },
     "file": "shell/hush.c",
     "configurations": [
       "252.config",
@@ -168168,6 +168188,10 @@
       "line": 7388,
       "col": 6,
       "file": 0
+    },
+    "investigation": {
+      "result": "pending",
+      "notes": "This is a great example of a fine-grained configuration of the code using the preprocessor.  (ENABLE_FEATURE_SH_STANDALONE || BB_MMU) adds a conditional, goto, and label to jump to.  There is potentially a NULL-pointer error only when this configuration is enabled in the conditional."
     },
     "file": "shell/hush.c",
     "configurations": [
