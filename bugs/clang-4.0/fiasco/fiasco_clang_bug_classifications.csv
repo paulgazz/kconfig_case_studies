@@ -1,0 +1,10 @@
+hash	type	file	line	message	verdict	reasoning
+ad95994d5ac8d342d86858251309f75c	Logic error	auto/jdb_tbuf_show.cc	265	Function call argument is an uninitialized value	TRUE	"unit_mask is uninitialized, but this is intentional as an out parameter."
+c00fd22f03b334262d4d0a949adf3a02	Logic error	auto/cpu-ia32.cc	468	Branch condition evaluates to a garbage value	FALSE	This checks whether the descriptor is null or if the register bit is set.
+d0268495203b487a6aa418444308a94e	Logic error	auto/jdb_bt-ia32-ux.cc	353	Function call argument is an uninitialized value	FALSE	L4_PTR-FMT is defined in another header file
+c621ee2fbedf730714e01e007cf2c571	Logic error	auto/main-ia32-32.cc	34	Called C++ object pointer is null	FALSE	assert_opt verifies that kernel has been initialized
+19e5f5531200877d415aef2e306abc22	Logic error	auto/cpu-ia32.cc	444	Branch condition evaluates to a garbage value	FALSE	This checks whether the descriptor is null or if the register bit is set.
+6369eb9ddd4a0caa6a126a4c2ebfcf46	Logic error	auto/kernel_thread-std.cc	48	Called C++ object pointer is null	FALSE	assert_opt verifies that sigma0 has been initialized
+5824289cad079fb5629caa417058e9e6	Logic error	auto/map_util-objs.cc	96	Called C++ object pointer is null	FALSE	assert_opt verifies that to is initialized
+06461ca485c69217b703a89ab6c48b10	Logic error	auto/queue.cc	29	Access to field '_q' results in a dereference of a null pointer (loaded from variable 'i')	FALSE	assert_opt verifies that i is initialized
+59fc04b64cf79197218719bbba76592b	Logic error	auto/main-ia32-32.cc	45	Called C++ object pointer is null	FALSE	assert_opt verifies that kernel has been initialized
