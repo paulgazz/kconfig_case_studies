@@ -90,7 +90,10 @@ for entry in file_list:
             except ValueError:
                 continue;
         elif args.format == 'clang':
-            property_list  = plistlib.readPlist(f)['diagnostics']
+            clang_data = plistlib.readPlist(f)
+            property_list  = clang_data['diagnostics']
+            for property in property_list:
+                property['source_file'] = clang_data['files'][0]
         elif args.format == 'ikos':
             try:
                 property_list = json.loads(f.read())
