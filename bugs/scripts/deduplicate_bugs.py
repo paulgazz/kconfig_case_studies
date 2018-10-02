@@ -105,7 +105,8 @@ for entry in file_list:
         for property in property_list:
             # Hash property
             datum = {k: v for k,v in property.items() if k in fields_to_hash}
-            datum['location'] = {k:v for k,v in datum['location'].items() if k not in {'stmt_uid'}}
+            
+            #datum['location'] = {k:v for k,v in datum['location'].items() if k not in {'stmt_uid'}}
             property['hash'] = hashlib.md5(str(datum).encode()).hexdigest()
 
             # Add the description to the hash's description list
@@ -129,12 +130,12 @@ for entry in file_list:
 # Use the hash_index list to find the number of configurations in which each bug is present
 logging.info("Now compiling lists of configurations.")
 for property in master:
-    property['configurations'] = list()
+    property['configurations'] = set()
     count = 0
     logging.debug('Finding configuration list for report ' + property['hash'])
     for record in hash_index:
         if property['hash'] in hash_index[record]:
-            property['configurations'].extend(re.findall(r'[0-9]{1,3}', record))
+            property['configurations'].update(re.findall(r'[0-9]{1,3}', record))
             count = count + 1
     property['num_occurrences'] = count
     logging.info('Report ' + property['hash'] + ' was present in ' + str(len(property['configurations'])) + ' configurations.')
