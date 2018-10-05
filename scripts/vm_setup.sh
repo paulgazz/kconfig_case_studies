@@ -104,7 +104,9 @@ if [ ! -d "uClibc-ng_1_0_29" ]; then
         tar -xvf /vagrant/cases/uClibc-ng_1_0_29/uClibc-ng-1.0.29.tar.xz
     fi
     mv uClibc-ng-1.0.29 uClibc-ng_1_0_29
-    
+fi
+
+if [ ! -d "/home/vagrant/linux-headers" ]; then
     tar -C /home/vagrant -xvf /usr/src/linux-source-4.4.0.tar.bz2
     make -C /home/vagrant/linux-source-4.4.0 INSTALL_HDR_PATH=/home/vagrant/linux-headers headers_install
 fi

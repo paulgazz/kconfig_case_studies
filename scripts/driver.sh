@@ -127,7 +127,7 @@ echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="extra/Configs/Config.in"
-    binaries="*"  # TODO: set binaries
+    binaries="lib/*.a lib/*.so"
     # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
     # environment variables with -d.
     check_dep_extra_args="-p -d"
@@ -265,8 +265,16 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
                       # fiasco's flag for verbose mode
                       preprocess_args_opt="V=1"
                   else
-                    # kbuild-based build system flag for verbose mode
-                    preprocess_args_opt="KBUILD_VERBOSE=1"
+                    echo "${casename}" | egrep -i "axtls" >/dev/null
+                    if [[ $? -eq 0 ]]; then
+                        # axtls already prints out the commands, but
+                        # use gcc, because preprocess_configs_make.py
+                        # already matches it.
+                        preprocess_args_opt="CC=gcc"
+                    else
+                      # kbuild-based build system flag for verbose mode
+                      preprocess_args_opt="KBUILD_VERBOSE=1"
+                    fi
                   fi
               else
                 preprocess_args_opt=""
@@ -295,9 +303,9 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             if [[ "${action}" == "preprocess" ]]; then
                 echo "preprocessing $i"
                 bunzip2 -f "${save_file}.bz2"
-                echo "${casename}" | egrep -i "fiasco" >/dev/null
+                echo "${casename}" | egrep -i "fiasco|axtls" >/dev/null
                 if [[ $? -eq 0 ]]; then
-                    preprocess_script="preprocess_config_fiasco.py"
+                    preprocess_script="preprocess_config_make.py"
                 else
                   preprocess_script="preprocess_config.py"
                 fi

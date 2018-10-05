@@ -11,12 +11,13 @@ import subprocess
 # This script must be run from the root of the case's source code
 # repository.
 
-# The name of the compiler for use in processing the commands.
+# The default name of the compiler for use in processing the commands.
 cc_cmd = "gcc"
 
 # This script depends on SuperC's GCCShunt program being available.
+script_path = os.path.dirname(os.path.realpath(__file__))
 def gccshunt_cmd(cli_args, out_file):
-  return "java xtc.lang.cpp.GCCShunt --shunt-kbuild --shunt-config %s %s" % (out_file, cli_args)
+  return "java -cp %s GCCShunt --shunt-kbuild --shunt-config %s %s" % (script_path, out_file, cli_args)
 
 if len(sys.argv) < 3:
   print "%s build_out out_dir" % (os.path.basename(sys.argv[0]))
