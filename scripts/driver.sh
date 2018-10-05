@@ -127,7 +127,7 @@ echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="extra/Configs/Config.in"
-    binaries="*"  # TODO: set binaries
+    binaries="lib/*.a lib/*.so"
     # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
     # environment variables with -d.
     check_dep_extra_args="-p -d"
