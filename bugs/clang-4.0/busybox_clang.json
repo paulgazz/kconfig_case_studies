@@ -480,6 +480,10 @@
       "col": 3,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "insecure use of setuid after vfork in child process."
+    },
     "file": "miscutils/crond.c",
     "configurations": [
       "56.config",
@@ -947,6 +951,10 @@
       "col": 6,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "This seems to be a real bug, since bi is never initialized.  Is it possible that somehow arm_ioctl is replaced with some system call?  The C file has what looks like placeholder definition.  This would be a variability bug since it only appears in ENABLE_FEATURE_BRCTL_SHOW."
+    },
     "file": "networking/brctl.c",
     "configurations": [
       "119.config",
@@ -1203,6 +1211,10 @@
       "line": 120,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable."
     },
     "file": "printutils/lpd.c",
     "configurations": [
@@ -2223,6 +2235,10 @@
       "col": 8,
       "file": 0
     },
+    "investigation": {
+      "result": "pending",
+      "notes": "not sure which argument.  stat_buf looks like it may not be initialized in some paths, i.e., line 76 is not run, but we still reach 123."
+    },
     "file": "archival/bbunzip.c",
     "configurations": [
       "783.config",
@@ -2766,6 +2782,10 @@
       "col": 22,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "xstate is initialized on line 135 only under a certain runtime option (SEAMLESS_MAGIC).  The else branch only terminates under certain conditions, so there is an apparent path that leads from an uninitialized xstate to the comparison between xstate.mtime and 0."
+    },
     "file": "archival/bbunzip.c",
     "configurations": [
       "783.config",
@@ -3308,6 +3328,10 @@
       "line": 682,
       "col": 6,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "True because of the policy against vfork."
     },
     "file": "libbb/xfuncs_printf.c",
     "configurations": [
@@ -6157,6 +6181,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable (note that it missing the one on 370)"
+    },
     "file": "editors/patch.c",
     "configurations": [
       "977.config",
@@ -6692,6 +6720,10 @@
       "line": 624,
       "col": 3,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
     },
     "file": "util-linux/mdev.c",
     "configurations": [
@@ -7647,6 +7679,10 @@
       "col": 3,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
+    },
     "file": "util-linux/mdev.c",
     "configurations": [
       "132.config",
@@ -8600,6 +8636,10 @@
       "line": 121,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
     },
     "file": "miscutils/ubi_tools.c",
     "configurations": [
@@ -9600,6 +9640,10 @@
       "line": 254,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
     },
     "file": "util-linux/volume_id/get_devname.c",
     "configurations": [
@@ -10954,6 +10998,10 @@
       "line": 250,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
     },
     "file": "networking/tcpudp.c",
     "configurations": [
@@ -12446,6 +12494,10 @@
       "line": 76,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
     },
     "file": "util-linux/more.c",
     "configurations": [
@@ -18071,6 +18123,10 @@
       "col": 10,
       "file": 0
     },
+    "investigation": {
+      "result": "true (fairly confident)",
+      "notes": "pip[0] is presumably set by the call to pipe on line 9205, but there is a path that skips the call when lp->next is null."
+    },
     "file": "shell/ash.c",
     "configurations": [
       "348.config",
@@ -19600,6 +19656,10 @@
       "line": 333,
       "col": 3,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
     },
     "file": "findutils/grep.c",
     "configurations": [
@@ -21258,6 +21318,10 @@
       "col": 4,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "correctly identifies security issue"
+    },
     "file": "runit/runsvdir.c",
     "configurations": [
       "198.config",
@@ -21959,6 +22023,10 @@
       "line": 147,
       "col": 3,
       "file": 0
+    },
+    "investigation": {
+      "result": "pending",
+      "notes": "unsure what function in bb_perror_msg_and_die is prohibited"
     },
     "file": "runit/runsvdir.c",
     "configurations": [
@@ -22662,6 +22730,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "uninitialized variable"
+    },
     "file": "runit/runsvdir.c",
     "configurations": [
       "198.config",
@@ -23359,6 +23431,10 @@
     "count": 977,
     "hash": "d60f64fcdd21c7119600aeb67579b384",
     "description": "Array access results in a null pointer dereference",
+    "investigation": {
+      "result": "pending (maybe)",
+      "notes": "get_sys_types returns one of {sun,sgi,i386}_sys_types, the first two of which seem to be empty arrays.  these arrays are passed eventually to list_types, in which this error appears because the array is dereferenced."
+    }
     "location": {
       "line": 1114,
       "col": 19,
@@ -24350,6 +24426,10 @@
     "count": 977,
     "hash": "0e70c38d25a3c2af0c64ec4ea9c44fb4",
     "description": "The right operand of '<' is a garbage value",
+    "investigation": {
+      "result": "pending",
+      "notes": "the issue is whether the 'first' array is populated by fill_bounds (line 2380) or not"
+    }
     "location": {
       "line": 2387,
       "col": 47,
@@ -30054,6 +30134,10 @@
       "col": 3,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "miscutils/hexedit.c",
     "configurations": [
       "794.config",
@@ -32557,6 +32641,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "networking/udhcp/dhcpd.c",
     "configurations": [
       "700.config",
@@ -33362,6 +33450,10 @@
       "line": 96,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "libbb/rtc.c",
     "configurations": [
@@ -35114,6 +35206,10 @@
       "line": 600,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "networking/ping.c",
     "configurations": [
@@ -37083,6 +37179,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "coreutils/sort.c",
     "configurations": [
       "592.config",
@@ -38111,6 +38211,10 @@
       "line": 183,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "networking/zcip.c",
     "configurations": [
@@ -41988,6 +42092,10 @@
       "line": 118,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "mailutils/mail.c",
     "configurations": [
@@ -50257,6 +50365,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "networking/httpd.c",
     "configurations": [
       "933.config",
@@ -50775,6 +50887,10 @@
       "line": 2624,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "networking/httpd.c",
     "configurations": [
@@ -57607,6 +57723,10 @@
       "col": 3,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "networking/ntpd.c",
     "configurations": [
       "275.config",
@@ -60012,6 +60132,10 @@
       "col": 3,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "editors/awk.c",
     "configurations": [
       "991.config",
@@ -60814,6 +60938,10 @@
       "line": 493,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "miscutils/fbsplash.c",
     "configurations": [
@@ -65731,6 +65859,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "runit/chpst.c",
     "configurations": [
       "717.config",
@@ -69168,6 +69300,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "networking/slattach.c",
     "configurations": [
       "736.config",
@@ -69700,6 +69836,10 @@
       "line": 327,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "loginutils/login.c",
     "configurations": [
@@ -75764,6 +75904,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    },
     "file": "networking/udhcp/domain_codec.c",
     "configurations": [
       "236.config",
@@ -76607,6 +76751,10 @@
       "line": 628,
       "col": 2,
       "file": 0
+    },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
     },
     "file": "coreutils/test.c",
     "configurations": [
@@ -78662,6 +78810,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "file": "coreutils/shred.c",
     "configurations": [
       "950.config",
@@ -83214,6 +83366,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "file": "miscutils/less.c",
     "configurations": [
       "929.config",
@@ -86640,6 +86796,10 @@
     "count": 743,
     "hash": "692827836717241789a4d6d211073c58",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 64,
       "col": 2,
@@ -93623,6 +93783,10 @@
     "count": 829,
     "hash": "d5bd6e17fe405f01fd479466ec3901e0",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 1251,
       "col": 2,
@@ -114284,6 +114448,10 @@
     "count": 1000,
     "hash": "fa08d0a6851e1c483241eabe9c7079b6",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 5649,
       "col": 2,
@@ -124670,6 +124838,10 @@
     "count": 493,
     "hash": "9b3fe31214e91fa44492207eb6b3f38d",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 142,
       "col": 2,
@@ -125845,6 +126017,10 @@
     "count": 798,
     "hash": "69a3b65233a5e115963dd85798fdfe59",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 454,
       "col": 2,
@@ -127089,6 +127265,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable (misses 348 perhaps because analysis stops after first issue)"
+    }
     "file": "coreutils/expr.c",
     "configurations": [
       "812.config",
@@ -127758,6 +127938,10 @@
     "count": 893,
     "hash": "517c76bd63b9d8595d780ecfdfaaae3d",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 1231,
       "col": 3,
@@ -128665,6 +128849,10 @@
     "count": 673,
     "hash": "88d1e70618bcd57f60678d80c960e5ee",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 155,
       "col": 4,
@@ -131694,6 +131882,10 @@
       "col": 11,
       "file": 0
     },
+    "investigation": {
+      "result": "false (most likely)",
+      "notes": "The use-after-free alert happens because dest is freed on line 227 and the loop allows dest to be used again on line 207.  dest is set to last on line 197.  208 woudl also be a use-after-free.  In order for this use to happen, neither of the loop exits (lines 211 and 224) would be triggered on the first iteration.  Given the comment on line 223, it seems that looping is possible.  This is a good example of a variability bug, since the use-after-free identified here can only happen when ENABLE_FEATURE_CP_LONG_OPTIONS (line 203).  I tcan't happen from 198, since the comment claims the loop will break on 224.  I cannot see how last or *argv is being freed."
+    },
     "file": "coreutils/cp.c",
     "configurations": [
       "911.config",
@@ -132056,6 +132248,10 @@
       "line": 217,
       "col": 10,
       "file": 0
+    },
+    "investigation": {
+      "result": "false (most likely)",
+      "notes": "same as f59b0d5de1baae9c3bf0fc8c6b92cde9 on coreutils/cp.c"
     },
     "file": "coreutils/cp.c",
     "configurations": [
@@ -132792,6 +132988,10 @@
     "count": 963,
     "hash": "bf0561a723935dfcef6281553c3e3831",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 165,
       "col": 2,
@@ -142866,6 +143066,10 @@
     "count": 522,
     "hash": "263a0863cb449fafa93c81164c745725",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 70,
       "col": 2,
@@ -144826,6 +145030,10 @@
     "count": 319,
     "hash": "43b893f36faad2dd4f372289cfde4285",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable (same issue in next line as well) only appears in certain configs, wrapped in ifdef"
+    }
     "location": {
       "line": 146,
       "col": 3,
@@ -145159,6 +145367,10 @@
     "count": 483,
     "hash": "d3e1302edcc8abcc571207758570f7ff",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 106,
       "col": 2,
@@ -145656,6 +145868,10 @@
     "count": 515,
     "hash": "17079dff929ed37e5a98a56f18bb8720",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 205,
       "col": 2,
@@ -146826,6 +147042,10 @@
       "col": 2,
       "file": 0
     },
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variablewwwwwwwwwrapped in ifdef)"
+    }
     "file": "networking/telnetd.c",
     "configurations": [
       "613.config",
@@ -153080,6 +153300,10 @@
     "count": 474,
     "hash": "e41f539b659bafaa6df64676ab8e6019",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 75,
       "col": 2,
@@ -154626,6 +154850,10 @@
     "count": 513,
     "hash": "78708e90e3f607878eb1d564c247c843",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 470,
       "col": 5,
@@ -157455,6 +157683,10 @@
     "count": 486,
     "hash": "9f67c83082d9a7a13a3fe91f1303e69d",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 32,
       "col": 2,
@@ -159236,6 +159468,10 @@
     "count": 486,
     "hash": "186b4d8cfa38105f0dff752367d1d05a",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 122,
       "col": 2,
@@ -161686,6 +161922,10 @@
     "count": 625,
     "hash": "5730549738010053b0e2a039547902fa",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 1116,
       "col": 2,
@@ -165301,6 +165541,10 @@
     "count": 439,
     "hash": "6dcf2c98ec63a67f266962c9baa8f396",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 835,
       "col": 2,
@@ -167987,6 +168231,10 @@
     "count": 71,
     "hash": "1f3490bf3a2990933ccf161b06797f5e",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "result": "true",
+      "notes": "unitialized variable"
+    }
     "location": {
       "line": 657,
       "col": 2,
