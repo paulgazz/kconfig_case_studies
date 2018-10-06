@@ -96,7 +96,7 @@ with open(outfilename, 'w') as outfile:
       including_configs = "all"
     else:
       config_nums = [ x.split(".")[0] for x in error_counts[error] ]
-      config_nums = [ int(x) for x in config_nums ]
+      # config_nums = [ int(x) for x in config_nums ]
       config_set_string = " ".join([ str(x) for x in sorted(config_nums) ])
       if config_set_string in config_sets.keys():
         set_id = config_sets[config_set_string]

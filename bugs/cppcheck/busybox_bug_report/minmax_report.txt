@@ -1,0 +1,98 @@
+num_configs 3
+unique_errors 89
+total_errors 170
+max_per_config 83
+min_per_config 5
+"[archival/libarchive/decompress_bunzip2.c:165]: (error) Uninitialized variable: runCnt",2,set0
+"[coreutils/df.c:137]: (error) Uninitialized variable: chp",1,set1
+"[coreutils/dos2unix.c:64]: (error) Uninitialized variable: temp_fn",2,set0
+"[coreutils/dos2unix.c:65]: (error) Uninitialized variable: resolved_fn",2,set0
+"[coreutils/expr.c:347]: (error) Uninitialized variable: l",2,set0
+"[coreutils/expr.c:348]: (error) Uninitialized variable: v",2,set0
+"[coreutils/shred.c:44]: (error) Uninitialized variable: rand_fd",2,set0
+"[coreutils/sort.c:133]: (error) Uninitialized variable: start",2,set0
+"[coreutils/test.c:628]: (error) Uninitialized variable: i",2,set0
+"[editors/awk.c:2506]: (error) Uninitialized variable: L_d",2,set0
+"[editors/awk.c:2792]: (error) Uninitialized variable: R_d",2,set0
+"[editors/awk.c:3011]: (error) Uninitialized variable: i",2,set0
+"[editors/patch.c:369]: (error) Uninitialized variable: oldlen",2,set0
+"[editors/patch.c:370]: (error) Uninitialized variable: newlen",2,set0
+"[findutils/grep.c:333]: (error) Uninitialized variable: gl",2,set0
+"[libbb/appletlib.c:138]: (error) Null pointer dereference: usage_string",1,set2
+"[libbb/hash_md5_sha.c:665]: (error) Shifting 32-bit value by 32 bits is undefined behaviour",1,set2
+"[libbb/lineedit.c:1116]: (error) Uninitialized variable: match_pfx_len",2,set0
+"[libbb/pw_encrypt_des.c:601]: (error) Uninitialized variable: f",2,set0
+"[libbb/read_key.c:262]: (error) Shifting a negative value is undefined behaviour",3,all
+"[libbb/rtc.c:96]: (error) Uninitialized variable: oldtz",2,set0
+"[libbb/xfuncs_printf.c:115]: (error) Allocation with xmalloc, memcpy doesn't release it.",3,all
+"[loginutils/login.c:327]: (error) Uninitialized variable: opt_user",2,set0
+"[mailutils/mail.c:118]: (error) Uninitialized variable: fp",2,set0
+"[mailutils/mail.c:119]: (error) Uninitialized variable: len",2,set0
+"[mailutils/reformime.c:155]: (error) Uninitialized variable: pid",2,set0
+"[miscutils/beep.c:70]: (error) Uninitialized variable: tickrate_div_freq",2,set0
+"[miscutils/beep.c:71]: (error) Uninitialized variable: length",2,set0
+"[miscutils/beep.c:72]: (error) Uninitialized variable: delay",2,set0
+"[miscutils/beep.c:73]: (error) Uninitialized variable: rep",2,set0
+"[miscutils/conspy.c:470]: (error) Uninitialized variable: last",2,set0
+"[miscutils/devmem.c:32]: (error) Uninitialized variable: writeval",2,set0
+"[miscutils/fbsplash.c:493]: (error) Uninitialized variable: fp",2,set0
+"[miscutils/hexedit.c:296]: (error) Uninitialized variable: key",2,set0
+"[miscutils/less.c:740]: (error) Uninitialized variable: n",2,set0
+"[miscutils/ubi_tools.c:121]: (error) Uninitialized variable: size_bytes",2,set0
+"[networking/httpd.c:2091]: (error) Uninitialized variable: header_buf",2,set0
+"[networking/httpd.c:2092]: (error) Uninitialized variable: header_ptr",2,set0
+"[networking/httpd.c:2624]: (error) Uninitialized variable: server_socket",2,set0
+"[networking/inetd.c:1217]: (error) Uninitialized variable: grp",2,set0
+"[networking/nc_bloaty.c:589]: (error) Uninitialized variable: zp",2,set0
+"[networking/nc_bloaty.c:590]: (error) Uninitialized variable: np",2,set0
+"[networking/nc_bloaty.c:742]: (error) Uninitialized variable: themdotted",2,set0
+"[networking/ntpd.c:1300]: (error) Uninitialized variable: max_idx",2,set0
+"[networking/ntpd.c:1301]: (error) Uninitialized variable: max_selection_jitter",2,set0
+"[networking/ntpd.c:1302]: (error) Uninitialized variable: min_jitter",2,set0
+"[networking/ping.c:600]: (error) Uninitialized variable: triptime",2,set0
+"[networking/slattach.c:115]: (error) Uninitialized variable: baud_code",2,set0
+"[networking/tcpudp.c:250]: (error) Uninitialized variable: len_per_host",2,set0
+"[networking/tcpudp.c:257]: (error) Uninitialized variable: remote_hostname",2,set0
+"[networking/tcpudp.c:258]: (error) Uninitialized variable: remote_addr",2,set0
+"[networking/tcpudp.c:500]: (error) Uninitialized variable: local_hostname",2,set0
+"[networking/telnetd.c:650]: (error) Uninitialized variable: master_fd",2,set0
+"[networking/telnetd.c:651]: (error) Uninitialized variable: sec_linger",2,set0
+"[networking/tftp.c:835]: (error) Uninitialized variable: local_file",1,set3
+"[networking/udhcp/d6_dhcpc.c:1231]: (error) Uninitialized variable: timestamp_before_wait",1,set1
+"[networking/udhcp/dhcpc.c:1251]: (error) Uninitialized variable: server_addr",2,set0
+"[networking/udhcp/dhcpc.c:1253]: (error) Uninitialized variable: xid",2,set0
+"[networking/udhcp/dhcpc.c:1416]: (error) Uninitialized variable: timestamp_before_wait",2,set0
+"[networking/udhcp/dhcpd.c:809]: (error) Uninitialized variable: str_I",2,set0
+"[networking/udhcp/dhcpd.c:907]: (error) Uninitialized variable: requested_nip",2,set0
+"[networking/udhcp/domain_codec.c:34]: (error) Uninitialized variable: ret",2,set0
+"[networking/zcip.c:183]: (error) Uninitialized variable: addr",2,set0
+"[networking/zcip.c:185]: (error) Uninitialized variable: env_ip",2,set0
+"[networking/zcip.c:370]: (error) Uninitialized variable: deadline_us",2,set0
+"[printutils/lpd.c:120]: (error) Uninitialized variable: spooling",2,set0
+"[procps/sysctl.c:106]: (error) Uninitialized variable: value",2,set0
+"[runit/chpst.c:281]: (error) Uninitialized variable: set_user",2,set0
+"[runit/chpst.c:282]: (error) Uninitialized variable: env_dir",2,set0
+"[runit/runsvdir.c:239]: (error) Uninitialized variable: last_dev",2,set0
+"[runit/runsvdir.c:240]: (error) Uninitialized variable: last_ino",2,set0
+"[scripts/basic/split-include.c:227]: (error) Memory leak: line",3,all
+"[shell/hush.c:5649]: (error) Uninitialized variable: exp_save",2,set0
+"[shell/hush.c:5651]: (error) Uninitialized variable: exp_word",2,set0
+"[sysklogd/logread.c:146]: (error) Uninitialized variable: len_total",1,set3
+"[sysklogd/logread.c:147]: (error) Uninitialized variable: copy",1,set3
+"[util-linux/chrt.c:75]: (error) Uninitialized variable: priority",2,set0
+"[util-linux/fbset.c:454]: (error) Uninitialized variable: mode",2,set0
+"[util-linux/fdisk_sgi.c:138]: (error) Array 'freelist[17]' accessed at index 17, which is out of bounds.",1,set1
+"[util-linux/fdisk_sgi.c:139]: (error) Array 'freelist[17]' accessed at index 17, which is out of bounds.",1,set1
+"[util-linux/mdev.c:1087]: (error) Uninitialized variable: seqnum",2,set0
+"[util-linux/mdev.c:624]: (error) Uninitialized variable: aliaslink",2,set0
+"[util-linux/more.c:76]: (error) Uninitialized variable: c",2,set0
+"[util-linux/rtcwake.c:142]: (error) Uninitialized variable: alarm_time",1,set3
+"[util-linux/rtcwake.c:143]: (error) Uninitialized variable: seconds",1,set3
+"[util-linux/unshare.c:205]: (error) Uninitialized variable: child",2,set0
+"[util-linux/volume_id/get_devname.c:254]: (error) Uninitialized variable: uuid",2,set0
+"[util-linux/volume_id/get_devname.c:255]: (error) Uninitialized variable: label",2,set0
+"[util-linux/volume_id/get_devname.c:257]: (error) Uninitialized variable: type",2,set0
+set0,def max
+set1,max
+set2,min
+set3,def
