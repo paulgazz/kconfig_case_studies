@@ -23434,7 +23434,7 @@
     "investigation": {
       "result": "pending (maybe)",
       "notes": "get_sys_types returns one of {sun,sgi,i386}_sys_types, the first two of which seem to be empty arrays.  these arrays are passed eventually to list_types, in which this error appears because the array is dereferenced."
-    }
+    },
     "location": {
       "line": 1114,
       "col": 19,
@@ -24429,7 +24429,7 @@
     "investigation": {
       "result": "pending",
       "notes": "the issue is whether the 'first' array is populated by fill_bounds (line 2380) or not"
-    }
+    },
     "location": {
       "line": 2387,
       "col": 47,
@@ -78813,7 +78813,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "file": "coreutils/shred.c",
     "configurations": [
       "950.config",
@@ -83369,7 +83369,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "file": "miscutils/less.c",
     "configurations": [
       "929.config",
@@ -86799,7 +86799,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 64,
       "col": 2,
@@ -93786,7 +93786,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 1251,
       "col": 2,
@@ -114451,7 +114451,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 5649,
       "col": 2,
@@ -124841,7 +124841,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 142,
       "col": 2,
@@ -126020,7 +126020,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 454,
       "col": 2,
@@ -127268,7 +127268,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable (misses 348 perhaps because analysis stops after first issue)"
-    }
+    },
     "file": "coreutils/expr.c",
     "configurations": [
       "812.config",
@@ -127941,7 +127941,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 1231,
       "col": 3,
@@ -128852,7 +128852,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 155,
       "col": 4,
@@ -132991,7 +132991,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 165,
       "col": 2,
@@ -143069,7 +143069,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 70,
       "col": 2,
@@ -145033,7 +145033,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable (same issue in next line as well) only appears in certain configs, wrapped in ifdef"
-    }
+    },
     "location": {
       "line": 146,
       "col": 3,
@@ -145370,7 +145370,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 106,
       "col": 2,
@@ -145871,7 +145871,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 205,
       "col": 2,
@@ -147045,7 +147045,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variablewwwwwwwwwrapped in ifdef)"
-    }
+    },
     "file": "networking/telnetd.c",
     "configurations": [
       "613.config",
@@ -153303,7 +153303,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 75,
       "col": 2,
@@ -154853,7 +154853,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 470,
       "col": 5,
@@ -157686,7 +157686,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 32,
       "col": 2,
@@ -159471,7 +159471,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 122,
       "col": 2,
@@ -161925,7 +161925,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 1116,
       "col": 2,
@@ -165544,7 +165544,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 835,
       "col": 2,
@@ -168234,7 +168234,7 @@
     "investigation": {
       "result": "true",
       "notes": "unitialized variable"
-    }
+    },
     "location": {
       "line": 657,
       "col": 2,
