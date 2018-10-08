@@ -27,7 +27,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & True \\
   Remarks & \texttt{cmd[]} is defined as an integer array of size 11. By using a loop that iterates through the number 31 to access the loop, the program is exceeding the bounds of the array. \\
-  Features & CONFIG_BLOCKDEV \\
+  Features & CONFIG\_BLOCKDEV \\
   \bottomrule
 \end{tabularx}
 
@@ -47,7 +47,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & True\\
   Remarks & \texttt{fp} is not closed before the function returns.\\
-  Features & CONFIG_NETSTAT \\
+  Features & CONFIG\_NETSTAT \\
   \bottomrule
 \end{tabularx}
 
@@ -67,7 +67,7 @@ Bug reports are classified into the following categories:
   \midrule 
   Status & True \\
   Remarks & The multiplication of the flags will cause integer overflow. \\
-  Features & CONFIG_CMP \\
+  Features & CONFIG\_CMP \\
   \bottomrule
 \end{tabularx}
 
@@ -88,7 +88,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & Technically True \\
   Remarks & The self-assignment \texttt{fd=fd} is likely purposeful, as a method to suppress compiler warnings about an unused variable \texttt{fd} before the rest of \texttt{chvt\_main} was written to use \texttt{fd}. However, cppcheck is correct in that \texttt{fd\= fd} is an assignment of the value of an uninitialized variable.\\
-  Feature & CONFIG_CHVT \\
+  Feature & CONFIG\_CHVT \\
   \bottomrule
 \end{tabularx}
 
@@ -108,7 +108,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & Technically True \\
   Remarks & See the report for \texttt{chvt.c:24}.\\
-  Features & CONFIG_DATE \\
+  Features & CONFIG\_DATE \\
   \bottomrule
 \end{tabularx}
 
@@ -127,7 +127,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & Technically True\\
   Remarks & See the report for \texttt{chvt.c:24}.\\
-  Features & CONFIG_HWCLOCK \\
+  Features & CONFIG\_HWCLOCK \\
   \bottomrule
 \end{tabularx}
 
@@ -147,7 +147,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & Technically True\\
   Remarks & See the report for \texttt{chvt.c:24}.\\
-  Features & CONFIG_LOSETUP \\
+  Features & CONFIG\_LOSETUP \\
   \bottomrule
 \end{tabularx}
 
@@ -168,7 +168,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & Technically True\\
   Remarks & See the report for \texttt{chvt.c:24}.\\
-  Features & CONFIG_SWITCH_ROOT \\
+  Features & CONFIG\_SWITCH\_ROOT \\
   \bottomrule
 \end{tabularx}
 
@@ -188,7 +188,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & Technically True\\
   Remarks & See the report for \texttt{chvt.c:24}.\\
-  Features & CONFIG_UUDECODE \\
+  Features & CONFIG\_UUDECODE \\
   \bottomrule
 \end{tabularx}
 
@@ -209,7 +209,7 @@ Bug reports are classified into the following categories:
   \midrule
   Status & Technically True\\
   Remarks & See the report for \texttt{chvt.c:24}.\\
-  Features & CONFIG_VMSTAT \\
+  Features & CONFIG\_VMSTAT \\
   \bottomrule
 \end{tabularx}
 
