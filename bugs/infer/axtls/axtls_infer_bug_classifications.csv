@@ -21,7 +21,7 @@ fd6577ea09d46a35bd614b8fc3a100a4,FALSE,Uninitialized Value,crypto/aes.c,335,The 
 7858aaf5b02d6bfb9a03b8e8a952efd9,FALSE,Uninitialized Value,crypto/aes.c,344,The value read from xor[_] was never initialized.,,xor is initialized by the for loop,
 ba4d42765bb6954435c49e98db2af8e4,TRUE,Null Dereference,ssl/asn1.c,457,"pointer `*str` last assigned on line 454 could be null and is dereferenced at line 457, column 13.",,malloc can fail,generic
 778deb2faa85887d3fd34a2ccbb44fb5,TRUE,Null Dereference,ssl/asn1.c,459,"pointer `*str` last assigned on line 454 could be null and is dereferenced at line 459, column 9.",,malloc can fail,generic
-a80acd6dc7ee126dd900a1c57c3bb0f7,TRUE,Null Dereference,ssl/asn1.c,464,"pointer `*str` last assigned on line 463 could be null and is dereferenced by call to `memcpy()` at line 464, column 9.",,malloc can fail,generic
+a1834c975ba7c3d9ad4f592c2f6c622b,TRUE,Null Dereference,ssl/asn1.c,464,"pointer `*str` last assigned on line 463 could be null and is dereferenced by call to `memcpy()` at line 464, column 9.",,malloc can fail,generic
 8bdb4377b019dc1e4493d526d66f4bd6,TRUE,Null Dereference,httpd/axhttpd.c,479,"pointer `cp` last assigned on line 469 could be null and is dereferenced by call to `strchr()` at line 479, column 19.",,strdup can fail,"AXHTTPD, !CONFIG_PLATFORM_WIN32, HTTP_HAS_CGI"
 7f8122247189fdb39138ff3ab501a6cf,TRUE,Null Dereference,httpd/axhttpd.c,476,"pointer `ex` last assigned on line 474 could be null and is dereferenced at line 476, column 9.",,malloc can fail,"AXHTTPD, !CONFIG_PLATFORM_WIN32, HTTP_HAS_CGI"
 8e5cd4b20ed57c627cd7d7c751cee453,TRUE,Null Dereference,httpd/axhttpd.c,489,"pointer `tp` last assigned on line 487 could be null and is dereferenced at line 489, column 5.",,calloc can fail,AXHTTPD
