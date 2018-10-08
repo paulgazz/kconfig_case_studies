@@ -134,7 +134,7 @@ for property in master:
     logging.debug('Finding configuration list for report ' + property['hash'])
     for record in hash_index:
         if property['hash'] in hash_index[record]:
-            property['configurations'].update(re.findall(r'[0-9]{1,3}', record))
+            property['configurations'].add(int(re.findall('[0-9]{1,3}', re.findall('[0-9]{1,3}.config', record)[0])[0]))
             count = count + 1
     property['num_occurrences'] = len(property['configurations'])
     logging.info('Report ' + property['hash'] + ' was present in ' + str(len(property['configurations'])) + ' configurations.')
