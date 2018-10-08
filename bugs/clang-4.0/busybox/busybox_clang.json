@@ -78812,7 +78812,11 @@
     },
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "file": "coreutils/shred.c",
     "configurations": [
@@ -83368,7 +83372,11 @@
     },
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "file": "miscutils/less.c",
     "configurations": [
@@ -86798,7 +86806,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 64,
@@ -93785,7 +93797,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 1251,
@@ -114450,7 +114466,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 5649,
@@ -124840,7 +124860,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 142,
@@ -126019,7 +126043,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 454,
@@ -127267,7 +127295,11 @@
     },
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable (misses 348 perhaps because analysis stops after first issue)"
+=======
+      "notes": "unitialized variable (misses 348 perhaps because analysis stops after first issue)"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "file": "coreutils/expr.c",
     "configurations": [
@@ -127940,7 +127972,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 1231,
@@ -128851,7 +128887,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 155,
@@ -132990,7 +133030,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 165,
@@ -143068,7 +143112,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 70,
@@ -145032,7 +145080,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable (same issue in next line as well) only appears in certain configs, wrapped in ifdef"
+=======
+      "notes": "unitialized variable (same issue in next line as well) only appears in certain configs, wrapped in ifdef"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 146,
@@ -145369,7 +145421,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 106,
@@ -145870,7 +145926,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 205,
@@ -147044,7 +147104,11 @@
     },
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable wrapped in ifdef)"
+=======
+      "notes": "unitialized variablewwwwwwwwwrapped in ifdef)"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "file": "networking/telnetd.c",
     "configurations": [
@@ -153302,7 +153366,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 75,
@@ -154852,7 +154920,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 470,
@@ -157685,7 +157757,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 32,
@@ -159470,7 +159546,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 122,
@@ -161924,7 +162004,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 1116,
@@ -165543,7 +165627,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 835,
@@ -168233,7 +168321,11 @@
     "description": "Assigned value is garbage or undefined",
     "investigation": {
       "result": "true",
+<<<<<<< HEAD
       "notes": "uninitialized variable"
+=======
+      "notes": "unitialized variable"
+>>>>>>> e695127fd76b9d97470f4e0b9e7cf69daf5115ab
     },
     "location": {
       "line": 657,

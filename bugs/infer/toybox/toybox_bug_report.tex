@@ -64,7 +64,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & True\\
   Remarks & \texttt{localtime} may fail and return a null pointer, causing tm to be null.\\
-  Features & CONFIG_UPTIME \\
+  Features & CONFIG\_UPTIME \\
   \bottomrule
 \end{tabularx}
 
@@ -192,7 +192,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   Remarks & The file descriptor opened cannot be closed, as the whole point is to redirect \texttt{stdin} and \texttt{stdout} and then run a command elsewhere. This is not a bug, but at the same time infer is not wrong that there is an open file descriptor that is not being closed. Other bugs which involve open resources that are not closed but are meant to stay open are listed below.\\
   Similar Bugs & \texttt{oneit.c:72} -- resource acquired by call to \texttt{xopen\_stdio()} at line 72, column 12 is not released after line 72, column 12. \\
   & \texttt{nohup.c:39} -- resource acquired by call to \texttt{xopen\_stdio()} at line 39, column 5 is not released after line 39, column 5. \\
-  Features & CONFIG_NOHUP \\
+  Features & CONFIG\_NOHUP \\
   \bottomrule
 \end{tabularx}
 
@@ -212,7 +212,7 @@ In the unique bug reports list, many bugs listed as unique are actually the same
   \midrule
   Status & Technically True\\
   Remarks & From the Toybox configuration documentation (\texttt{Config.in}): ``When a program exits, the operating system will clean up after it (free memory, close files, etc). To save size, toybox usually relies on this behavior. If you're running toybox under a debugger or without a real OS (ala newlib+libgloss), enable this to make toybox clean up after itself.'' If \texttt{TOYBOX\_FREE} is not enabled (and by default, it isn't), the memory allocated by \texttt{xmprintf} will not be freed explictly, and instead will be left open until the program terminates so the operating system can clean it up. This makes classifying this bug tricky. This is obviously a memory leak in the default case, as memory that is being allocated is not being freed; however, it seems that this is an intentional choice by the programmers. For now, this seems to fall nicely under the technically true class, but this could warrant a discussion on how exactly we're classifying what a bug is.\\
-  Features & CONFIG_MOUNTPOINT, CONFIG_TOYBOX_FREE \\
+  Features & CONFIG\_MOUNTPOINT, CONFIG\_TOYBOX\_FREE \\
   \bottomrule
 \end{tabularx}
 
