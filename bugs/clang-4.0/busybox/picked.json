@@ -10,6 +10,10 @@
       "file": 0
     },
     "file": "coreutils/ls.c",
+    "investigation": {
+      "notes": "Unsure if dn is NULL or dn->name is null and being dereferenced in print_name.  It looks like no for the latter.  If dn itself is NULL, then the -> will be an error.  Traced dn back to sort_and_display_files.  This creates dn from dnalloc, which can return null is its arg num is less than one.  If the loop on 931 is never entered, nfiles stays zero, which gets passed to dnalloc on 964, resulting in NULL dnp, set to subdnp on 1016, which cannot be passed on 1024, because it is blocked by nfiles > 0, the same condition the prevents dnp from being NULL.  Another call to dnalloc in ls_main on 1221 also cannot result in NULL, because 1196 initialies nfiles to 0, 1211 only increments it, and 1215 returns if nfiles is zero before calling dnalloc.",
+      "result": "false"
+    },
     "configurations": [
       "511.config",
       "362.config",
@@ -1647,6 +1651,10 @@
     "count": 983,
     "hash": "1849cdbf0e06dd5be4cb16a6a96c719b",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "notes": "uninitialized variable",
+      "result": "true"
+    },
     "location": {
       "line": 1217,
       "col": 2,
@@ -5016,6 +5024,10 @@
     "count": 172,
     "hash": "5449b0afb9fad23371f0f36dbcb682fc",
     "description": "Use of memory after it is freed",
+    "investigation": {
+      "notes": "ENABLE_FEATURE_CLEAN_UP controls a delete_eth_table function (which is otherwise not defined in this compilation unit.  It frees ch, which is presumably what is being used after free on 295.  The call to delete_eth_table happens on 324 after 295 and there doesn't seem to be any control that would allow 295 after 324, nor is the function nameif_main called recursively that I can see",
+      "result": "pending (likely false)"
+    },
     "location": {
       "line": 295,
       "col": 8,
@@ -5202,6 +5214,10 @@
     "count": 328,
     "hash": "788a777a26018c22fde15b4d6560d950",
     "description": "Dereference of null pointer",
+    "investigation": {
+      "notes": "Another one in ENABLE_FEATURE_GETOPT_LONG.  longopts is a possible culprit.  It is passed into generate_output from getopt_main, which only exists if ENABLE_FEATURE_GETOPT_LONG is enabled.  It is initialized to NULL.  (Possibly good example of variability bug).  If ENABLE_FEATURE_GETOPT_LONG is not enabled, getopt_main cannot even compile, because long_options is used outside of an ifdef, but declared inside an ifdef.  As for the bug, it seems that if the condition on 386 holds, then generate_output will get a NULL version of long_options.  (Funny that 220 defines a macro to remove the longopts argument from generate_output, which removes it from both the definition and the calls).  If longopts, passed from long_options to 224, is NULL, 239 and 240 should also fail (API error as NULL is passed to the unistd getopt_long[_only].",
+      "result": "true"
+    },
     "location": {
       "line": 252,
       "col": 21,
@@ -6427,6 +6443,10 @@
     "count": 977,
     "hash": "10f963a12ef02f7cbb59f4d051cc27f6",
     "description": "The right operand of '<' is a garbage value",
+    "investigation": {
+      "notes": "start is thought to be garbage.  There is a long ste of conditions starting from 2455 that assign to start.  Interestingly, the declaration on 2447 only initializes stop but not start, though the first conditional 2455 always sets start to either sector_offset or extended_offset + sector_offset.  Sector offset seems to be defined, albeit confusing, with the INIT_G macro.  extended_offset, however, is not initialized in the same way.  The question is then is it initialized whenever the else branch of 2455 is set.  (Interesting that ENABLE_FEATURE_FDISK_WRITABLE controls a function that initializes extended_offset on line 1323.  Also interesting that there is a comment on 2510 checking if another value equsl extended_offset that says \"must be corrected\").  ",
+      "result": "pending"
+    },
     "location": {
       "line": 2522,
       "col": 13,
@@ -7418,6 +7438,10 @@
     "count": 231,
     "hash": "e8b4ffa7b622f128ad9824dc72eb6ee6",
     "description": "Attempt to free released memory",
+    "investigation": {
+      "notes": "304 uses a macro to make obuf expand to ibuf  If 563 (the error) happens after 561 (which is conditioned on FLAG_TWOBUFS), then the double free can happen.  FLAG_TWOBUFS enum value is multiplied by ENABLE_FEATURE_DD_IBS_OBS, which, if not enabled, is also reponsible for the the obuf to ibuf macro.  So it seems that if ENABLE_FEATURE_DD_IBS_OBS is enabled, then obuf != ibuf, and the condition leading to 563 can happen.  If not enabled, the condition leading to 563 cannot happen even though ibuf and obuf are the same.",
+      "result": "false"
+    },
     "location": {
       "line": 563,
       "col": 4,
@@ -8183,6 +8207,10 @@
     "count": 116,
     "hash": "7b99614cd168d16bc1240ca54fa1b049",
     "description": "Access to field 'dn_mode' results in a dereference of a null pointer (loaded from variable 'dn')",
+    "investigation": {
+      "notes": "see coreutils/ls.c 593",
+      "result": "false"
+    },
     "location": {
       "line": 496,
       "col": 7,
@@ -13683,7 +13711,7 @@
     "hash": "dcc404bf540c4efe024495487aec962f",
     "description": "Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function",
     "investigation": {
-      "notes": "vfork is indeed called.  depeds on BB_MMU at runtime.",
+      "notes": "vfork is indeed called.  depends on BB_MMU at runtime.",
       "result": "true"
     },
     "location": {
@@ -16503,6 +16531,10 @@
     "count": 515,
     "hash": "c196320b2f92f544cb5c06d22107deb5",
     "description": "This assignment is prohibited after a successful vfork",
+    "investigation": {
+      "notes": "the assignment indeed happens",
+      "result": "true"
+    },
     "location": {
       "line": 133,
       "col": 12,
@@ -17032,6 +17064,10 @@
     "count": 746,
     "hash": "9e3ec74d0739452e3e1700c769c2cb38",
     "description": "This assignment is prohibited after a successful vfork",
+    "investigation": {
+      "notes": "the assignment indeed happens",
+      "result": "true"
+    },
     "location": {
       "line": 177,
       "col": 10,
@@ -18332,6 +18368,10 @@
     "count": 511,
     "hash": "d734852e2de9e40552c10227ae1212b3",
     "description": "This function call is prohibited after a successful vfork",
+    "investigation": {
+      "notes": "the function call indeed happens",
+      "result": "true"
+    },
     "location": {
       "line": 290,
       "col": 19,
@@ -18857,7 +18897,11 @@
     "count": 511,
     "hash": "4c8b491c8df377f0bb359003eb3747b1",
     "description": "This function call is prohibited after a successful vfork",
-    "location": {
+    "investigation": {
+      "notes": "the function call indeed happens",
+      "result": "true"
+    },
+   "location": {
       "line": 382,
       "col": 3,
       "file": 0
@@ -19382,6 +19426,10 @@
     "count": 89,
     "hash": "5aaeaa31fb2679a173d3141187f0447f",
     "description": "Array access (from variable 'list') results in a null pointer dereference",
+    "investigation": {
+      "notes": "Possible culprits: list assigned to o->data on 2900, which comes from xrealloc (seems like it cannot return NULL); list assigned to o->data from input to o_save_ptr_helper on 2889.",
+      "result": "pending"
+    },
     "location": {
       "line": 2917,
       "col": 10,
@@ -22395,6 +22443,10 @@
     "count": 494,
     "hash": "e2a98b1f2dba428a0283ead2f2db7756",
     "description": "The left operand of '==' is a garbage value",
+    "investigation": {
+      "notes": "tmp_port is declared but not assigned anywhere in this method.  As long as 156 is reachable, the bug is valid.  Note that sag is also pinting to tmp_port under some conditions (line 136).",
+      "result": "true"
+    },
     "location": {
       "line": 156,
       "col": 17,
@@ -25335,6 +25387,10 @@
     "count": 19,
     "hash": "47b541e42fa599bd6794a369c196588c",
     "description": "Access to field 'dn_mode_lstat' results in a dereference of a null pointer (loaded from variable 'dn')",
+    "investigation": {
+      "notes": "see coreutils.c:593",
+      "result": "false"
+    },
     "location": {
       "line": 586,
       "col": 17,
@@ -30253,6 +30309,10 @@
     "count": 1751,
     "hash": "6a65a3a07bf7f762a5bd1ec8e4d0da30",
     "description": "This function call is prohibited after a successful vfork",
+    "investigation": {
+      "notes": "the function call indeed happens",
+      "result": "true"
+    },
     "location": {
       "line": 499,
       "col": 2,
