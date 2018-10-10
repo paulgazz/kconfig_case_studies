@@ -2653,8 +2653,8 @@
     "hash": "63c3d4a63ef883b7139df922eb25d99d",
     "description": "Function call argument is an uninitialized value",
     "investigation": {
-      "notes": "not sure which argument.  stat_buf looks like it may not be initialized in some paths, i.e., line 76 is not run, but we still reach 123.",
-      "result": "pending"
+      "notes": "not sure which argument.  stat_buf looks like it may not be initialized in some paths, i.e., line 76 is not run, but we still reach 123.  Traces confirm that is the path that led to the bug.  The question is whether the conditions can actually hold at runtime.  Key: is SEAMLESS_MAGIC on, i.e., seamless_compression and zcat (line 34), but also that the stdout and test options are not set on cli (line 101), since this will NULL the filename (line 105), preventing branch to true on 109 which contains the fault.  new_name for file must work (line 111), then finally on 123, open_to_or_warn will get garbage data for the mode.",
+      "result": "true"
     },
     "location": {
       "line": 123,
@@ -4157,6 +4157,11 @@
     "count": 320,
     "hash": "aaae865136a60b03248b6af2d58a03ae",
     "description": "Assigned value is garbage or undefined",
+    "investigation": {
+      "notes": "(example variability, has a good example of variable struct)  This appears to be false, since if the condition on 503 is false, then according to gethostname, the function call succeeded and ir_sin will be populated.",
+      "result": "false"
+    },
+
     "location": {
       "line": 510,
       "col": 55,
@@ -5025,8 +5030,8 @@
     "hash": "5449b0afb9fad23371f0f36dbcb682fc",
     "description": "Use of memory after it is freed",
     "investigation": {
-      "notes": "ENABLE_FEATURE_CLEAN_UP controls a delete_eth_table function (which is otherwise not defined in this compilation unit.  It frees ch, which is presumably what is being used after free on 295.  The call to delete_eth_table happens on 324 after 295 and there doesn't seem to be any control that would allow 295 after 324, nor is the function nameif_main called recursively that I can see",
-      "result": "pending (likely false)"
+      "notes": "ENABLE_FEATURE_CLEAN_UP controls a delete_eth_table function (which is otherwise not defined in this compilation unit.  It frees ch, which is presumably what is being used after free on 295.  The call to delete_eth_table happens on 317 within the loop.",
+      "result": "pending (likely true)"
     },
     "location": {
       "line": 295,
@@ -6078,7 +6083,7 @@
     "description": "Use of memory after it is freed",
     "investigation": {
       "notes": "The use-after-free alert happens because dest is freed on line 227 and the loop allows dest to be used again on line 207.  dest is set to last on line 197.  208 woudl also be a use-after-free.  In order for this use to happen, neither of the loop exits (lines 211 and 224) would be triggered on the first iteration.  Given the comment on line 223, it seems that looping is possible.  This is a good example of a variability bug, since the use-after-free identified here can only happen when ENABLE_FEATURE_CP_LONG_OPTIONS (line 203).  I tcan't happen from 198, since the comment claims the loop will break on 224.  I cannot see how last or *argv is being freed.",
-      "result": "false (most likely)"
+      "result": "pending (likely false)"
     },
     "location": {
       "line": 207,
@@ -6444,8 +6449,9 @@
     "hash": "10f963a12ef02f7cbb59f4d051cc27f6",
     "description": "The right operand of '<' is a garbage value",
     "investigation": {
-      "notes": "start is thought to be garbage.  There is a long ste of conditions starting from 2455 that assign to start.  Interestingly, the declaration on 2447 only initializes stop but not start, though the first conditional 2455 always sets start to either sector_offset or extended_offset + sector_offset.  Sector offset seems to be defined, albeit confusing, with the INIT_G macro.  extended_offset, however, is not initialized in the same way.  The question is then is it initialized whenever the else branch of 2455 is set.  (Interesting that ENABLE_FEATURE_FDISK_WRITABLE controls a function that initializes extended_offset on line 1323.  Also interesting that there is a comment on 2510 checking if another value equsl extended_offset that says \"must be corrected\").  ",
-      "result": "pending"
+      "notes": "first is thought to contain garbage.  Looking at the clang trace, it seems that first is being populated by fill_bounds",
+      "old_notes": "start is thought to be garbage.  There is a long ste of conditions starting from 2455 that assign to start.  Interestingly, the declaration on 2447 only initializes stop but not start, though the first conditional 2455 always sets start to either sector_offset or extended_offset + sector_offset.  Sector offset seems to be defined, albeit confusing, with the INIT_G macro.  extended_offset, however, is not initialized in the same way.  The question is then is it initialized whenever the else branch of 2455 is set.  (Interesting that ENABLE_FEATURE_FDISK_WRITABLE controls a function that initializes extended_offset on line 1323.  Also interesting that there is a comment on 2510 checking if another value equsl extended_offset that says \"must be corrected\").  ",
+      "result": "pending (likely false)"
     },
     "location": {
       "line": 2522,
@@ -9344,6 +9350,10 @@
     "count": 490,
     "hash": "05ffc63935a203a9f88cd23078717468",
     "description": "Use of memory after it is freed",
+    "investigation": {
+      "notes": "clang seems to think that because freealias (3347) can return *app, that the use of it (3346) is a use-after-free.  i believe though updating it with next (3349) ought to avoid that.  perhaps clang's alias analyze has overapproximated in this case.",
+      "result": "false"
+    },
     "location": {
       "line": 3346,
       "col": 28,
@@ -10696,8 +10706,8 @@
     "hash": "0e70c38d25a3c2af0c64ec4ea9c44fb4",
     "description": "The right operand of '<' is a garbage value",
     "investigation": {
-      "notes": "the issue is whether the 'first' array is populated by fill_bounds (line 2380) or not",
-      "result": "pending"
+      "notes": "the issue is whether the 'first' array is populated by fill_bounds (line 2380) or not.  see fdisk.c:2522",
+      "result": "pending (likely false)"
     },
     "location": {
       "line": 2387,
@@ -11691,7 +11701,7 @@
     "hash": "1f3490bf3a2990933ccf161b06797f5e",
     "description": "Assigned value is garbage or undefined",
     "investigation": {
-      "notes": "uninitialized variable",
+      "notes": "uninitialized variable (example variability bug, few configs)",
       "result": "true"
     },
     "location": {
