@@ -4,12 +4,11 @@
 import json
 import argparse
 
-parser = argparse.ArgumentParser(description='Filter bug reports to a unique bug type.')
+parser = argparse.ArgumentParser(description='Filter bug reports to remove dead stores.')
 parser.add_argument('-i','--input', type=str, default="unique.json.results",
-                    help='The file to be filtered (default unique.json)')
-parser.add_argument('-o', '--output', type=str, default="filtered.json",
-                    help='The output file (default unique.json.results.filtered)')
-parser.add_argument('program', choices=['ikos', 'cbmc', 'clang', 'infer', 'cppcheck'])
+                    help='The file to be filtered (default unique.json.results)')
+parser.add_argument('-o', '--output', type=str, default="unique.json.results.filtered", help='The output file (default unique.json.results.filtered)')
+parser.add_argument('program', choices=['clang', 'infer'])
 
 args = parser.parse_args()
 

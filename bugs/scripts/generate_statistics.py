@@ -17,6 +17,18 @@ if (args.nogeneric and not args.trueonly):
 with open(args.input) as f:
     data = json.load(f)
 
+# Handle aggregated bug reports
+import copy
+static_data = copy.deepcopy(data)
+for datum in static_data:
+    bugs = len(datum['matching_description']['__value__'])
+    if bugs > 1:
+        for x in range(1, bugs):
+            data.append(datum)
+
+# Handle reports where every bug isn't classified
+data = [x for x in data if 'classification' in x.keys()]
+        
 if (args.trueonly):
     data = [x for x in data if str(x['classification']).upper() == 'TRUE']
 

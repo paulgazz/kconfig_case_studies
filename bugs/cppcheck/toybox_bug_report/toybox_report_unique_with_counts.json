@@ -1,0 +1,22 @@
+{
+    "[blockdev.c:60]: (error) Array 'cmds[11]' accessed at index 31, which is out of bounds.": 55,
+    "[bzcat.c:586]: (error) Possible null pointer dereference: outbuf": 89,
+    "[chvt.c:24]: (error) Uninitialized variable: fd": 63,
+    "[hwclock.c:89]: (error) Uninitialized variable: s": 63,
+    "[hwclock.c:96]: (error) Memory pointed to by 's' is freed twice.": 63,
+    "[kill.c:89]: (error) Null pointer dereference": 35,
+    "[lib_lib.c:975]: (error) Buffer is accessed out of bounds: \"xwr\"": 116,
+    "[netstat.c:118]: (error) Resource leak: fp": 58,
+    "[switch_root.c:49]: (error) Uninitialized variable: console": 56,
+    "[tail.c:188]: (error) Memory is allocated but not initialized: try": 76,
+    "[vmstat.c:51]: (error) Uninitialized variable: name": 65,
+    "[vmstat.c:51]: (error) Uninitialized variable: p": 65,
+    "[base64.c:35]: (error) Expression 'this.base64.columns&&++*x==this.base64.columns' depends on order of evaluation of side effects": 59,
+    "[cp.c:343]: (error) Null pointer dereference": 46,
+    "[cp.c:409]: (error) Null pointer dereference": 46,
+    "[date.c:137]: (error) Uninitialized variable: width": 53,
+    "[lib_args.c:309]: (error) Uninitialized variable: temp": 56,
+    "[losetup.c:64]: (error) Uninitialized variable: ffd": 69,
+    "[uudecode.c:29]: (error) Uninitialized variable: m": 55,
+    "[main.c:86]: (error) Null pointer dereference": 62
+}

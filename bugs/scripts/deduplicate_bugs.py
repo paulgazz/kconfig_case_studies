@@ -106,7 +106,7 @@ for entry in file_list:
             # Hash property
             datum = {k: v for k,v in property.items() if k in fields_to_hash}
             
-            #datum['location'] = {k:v for k,v in datum['location'].items() if k not in {'stmt_uid'}}
+            datum['location'] = {k:v for k,v in datum['location'].items() if k not in {'stmt_uid'}}
             property['hash'] = hashlib.md5(str(datum).encode()).hexdigest()
 
             # Add the description to the hash's description list

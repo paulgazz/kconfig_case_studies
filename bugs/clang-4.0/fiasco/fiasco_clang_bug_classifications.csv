@@ -7,4 +7,4 @@ c621ee2fbedf730714e01e007cf2c571,Logic error,auto/main-ia32-32.cc,34,Called C++ 
 6369eb9ddd4a0caa6a126a4c2ebfcf46,Logic error,auto/kernel_thread-std.cc,48,Called C++ object pointer is null,FALSE,assert_opt verifies that sigma0 has been initialized,
 5824289cad079fb5629caa417058e9e6,Logic error,auto/map_util-objs.cc,96,Called C++ object pointer is null,FALSE,assert_opt verifies that to is initialized,
 06461ca485c69217b703a89ab6c48b10,Logic error,auto/queue.cc,29,Access to field '_q' results in a dereference of a null pointer (loaded from variable 'i'),FALSE,assert_opt verifies that i is initialized,
-59fc04b64cf79197218719bbba76592b,Logic error,auto/main-ia32-32.cc,45,Called C++ object pointer is null,FALSE,assert_opt verifies that kernel has been initialized,
+2036853110aa3b96b46b5cf11b01367d,Logic error,auto/main-ia32-32.cc,45,Called C++ object pointer is null,FALSE,assert_opt verifies that kernel has been initialized,
