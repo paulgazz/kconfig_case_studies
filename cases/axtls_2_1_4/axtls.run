@@ -31,7 +31,7 @@ def phash(v):
     import sys
     return hash(v) % ((sys.maxsize + 1) * 2)
     
-def printHashCodes(jsonFile, outFile)
+def printHashCodes(jsonFile, outFile):
     jsonFile = open(jsonFile, 'r')
     values = json.load(jsonFile)
     jsonFile.close()
@@ -66,19 +66,19 @@ if __name__ == "__main__":
     tid = "{}.{}".format(time.time(), phash(inp))
 
 
-    KCONFIG_DIR="/home/ugur/kconfig_case_studies"
+    KCONFIG_DIR="/Users/ukoc/kconfig_case_studies"
 
     pname="axtls_2_1_4"
     driver="{}/scripts/driver_variants/driver_clang-4.0.sh".format(KCONFIG_DIR)
-    deduplicateBugs='python {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
+    deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
     saTool='clang'
     jsonFile="unique.json.results"
 
-    BENCH_DIR="{}/{}".format(KCONFIG_DIR, pname)
-    TAR_FILE = "/var/tmp"
+    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, pname)
+    tarFile = "axTLS-2.1.4.tar.gz"
     SRC_DIR= "{}/axtls-code".format(BENCH_DIR)
     OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
-    RESULT_DIR = '{}/build/configs'.format(BENCH_DIR)
+    RESULT_DIR = "{}/build/configs".format(BENCH_DIR)
     
 
 
@@ -87,8 +87,10 @@ if __name__ == "__main__":
 
     assert not os.path.isdir(SRC_DIR), SRC_DIR
 
-    assert runcmd("cd {} && tar -xf {}".format(BENCH_DIR, TAR_FILE)) == 0
-    assert runcmd("cp {} {}".format(defConfigFile, configFile)) == 0
+    cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
+    assert runcmd(cmd) == 0
+    cmd="cp {} {}".format(defConfigFile, configFile)
+    assert runcmd(cmd) == 0
 
     parts =  [p.split() for p in inp.split(",")]
     ys, ns = [], []
