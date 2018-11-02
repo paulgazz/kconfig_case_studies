@@ -1,0 +1,142 @@
+#!/usr/bin/env python2.7
+
+"""
+"""
+import argparse
+import os.path
+import subprocess as sp
+import hashlib
+import json
+
+CLEANUP = True
+
+def vcmd(cmd, inp=None, shell=True):
+    proc = sp.Popen(cmd,shell=shell,stdin=sp.PIPE,stdout=sp.PIPE,stderr=sp.PIPE)
+    rs =  proc.communicate(input=inp)
+    exit_code = proc.wait()
+    return rs, exit_code
+
+def runcmd(cmd):
+    try:
+        #print '$', cmd
+        (_,rs_err), exit_code = vcmd(cmd)
+        #assert not rs_err, rs_err
+        #print 'ecode', exit_code
+        return exit_code
+    except:
+        #print("cmd '{}' failed".format(cmd))
+        return -1
+
+def phash(v):
+    import sys
+    return hash(v) % ((sys.maxsize + 1) * 2)
+    
+def printHashCodes(jsonFile, outFile):
+    jsonFile = open(jsonFile, 'r')
+    values = json.load(jsonFile)
+    jsonFile.close()
+
+    hashCodesStr = [bug['hash'] for bug in values]
+    f = open(outFile, "a")
+    f.write('\n'.join(hashCodesStr))
+
+def similar(tdir, f1, f2):
+    tf1 = "{}/f1.txt".format(tdir)
+    tf2 = "{}/f2.txt".format(tdir)
+
+    assert runcmd("rm -rf {} {}".format(tf1, tf2)) == 0
+
+    cleansort = lambda f, tf: "cat {} | sort | egrep \"^(CONFIG_|# CONFIG_.*is not set)\" > {}".format(f, tf)
+    assert runcmd(cleansort(f1, tf1))  == 0
+    assert runcmd(cleansort(f2, tf2))  == 0
+    return runcmd("diff {} {}".format(tf1, tf2)) == 0
+    
+                 
+if __name__ == "__main__":
+    #note:  use abspath (considers symlinks) instead of realpath (ignore symlinks)
+    me_file = os.path.abspath(os.path.expanduser(__file__))  
+    me_dir = os.path.dirname(me_file)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("inputs", help="input configurations")
+    args = parser.parse_args()
+    inp = args.inputs.strip() #"x 0, y 1, z 0"
+
+    import time
+    tid = "{}.{}".format(time.time(), phash(inp))
+
+
+    HOME_DIR="/home/ugur"
+    KCONFIG_DIR="{}/kconfig_case_studies".format(HOME_DIR)
+
+    pname="toybox_0_7_5"
+    driver="{}/scripts/driver_variants/driver_clang.sh".format(KCONFIG_DIR)
+    deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
+    saTool='clang'
+    jsonFile="unique.json.results"
+
+    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, pname)
+    tarFile = "toybox-0.7.5.tar.gz"
+    SRC_DIR= "{}/toybox-0.7.5".format(BENCH_DIR)
+    OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
+    RESULT_DIR = "{}/varbugs/output/{}}/clang_results".format(HOME_DIRpname)
+    jsonFile="{}/unique.json.results".format(RESULT_DIR)
+
+    defConfigFile="{}/def.config".format(BENCH_DIR)
+    configFile="{}/{}.config".format(RESULT_DIR, tid)
+
+    assert not os.path.isdir(SRC_DIR), SRC_DIR
+
+    cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
+    assert runcmd(cmd) == 0
+    cmd="cp {} {}".format(defConfigFile, configFile)
+#    print cmd
+    assert runcmd(cmd) == 0
+
+    parts =  [p.split() for p in inp.split(",")]
+    ys, ns = [], []
+    for name, val in parts:
+        assert val == 'y' or val == 'n', val
+        
+        ls = ys if val == 'y' else ns
+        ls.append(name)
+
+    setcmd = lambda name: \
+             "sed -e 's/.*{} .*/{}=y/' -i {}".format(name, name, configFile)
+
+    unsetcmd = lambda name:\
+               "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(
+                   name, name, configFile)
+    
+    for name in ys:
+        runcmd(setcmd(name))
+        
+    for name in ns:
+        runcmd(unsetcmd(name))
+        
+    
+    #runtest
+    logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, pname, tid)
+    assert runcmd("echo \"---Configuration:{}, stime+hash:{}\n\" > {} 2>&1".format(inp, tid, logFile)) == 0
+    
+    runDriver = lambda : runcmd("cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, pname, logFile))
+    runBugProcessor = lambda : runcmd("cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile))
+
+    found = True
+    if runDriver() != 0:
+        found = False
+
+    if found and runBugProcessor() != 0:
+        found = False
+    
+    resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, pname, tid)
+    if found:
+        printHashCodes(jsonFile, resultFile)
+    else:
+        runcmd("touch {}".format(resultFile))
+
+    if CLEANUP:
+        assert runcmd("rm -rf {}".format(SRC_DIR)) == 0
+        assert runcmd("rm -rf {}/*".format(RESULT_DIR)) == 0
+
+    print resultFile
