@@ -66,10 +66,10 @@ if __name__ == "__main__":
     tid = "{}.{}".format(time.time(), phash(inp))
 
 
-    KCONFIG_DIR="/Users/ukoc/kconfig_case_studies"
+    KCONFIG_DIR="/home/ugur/kconfig_case_studies"
 
     pname="axtls_2_1_4"
-    driver="{}/scripts/driver_variants/driver_clang-4.0.sh".format(KCONFIG_DIR)
+    driver="{}/scripts/driver_variants/driver_clang.sh".format(KCONFIG_DIR)
     deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
     saTool='clang'
     jsonFile="unique.json.results"
@@ -78,9 +78,8 @@ if __name__ == "__main__":
     tarFile = "axTLS-2.1.4.tar.gz"
     SRC_DIR= "{}/axtls-code".format(BENCH_DIR)
     OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
-    RESULT_DIR = "{}/build/configs".format(BENCH_DIR)
-    
-
+    RESULT_DIR = "/home/ugur/varbugs/output/axtls_2_1_4/clang_results"
+    jsonFile="{}/unique.json.results".format(RESULT_DIR)
 
     defConfigFile="{}/def.config".format(BENCH_DIR)
     configFile="{}/{}.config".format(RESULT_DIR, tid)
@@ -90,6 +89,7 @@ if __name__ == "__main__":
     cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
     assert runcmd(cmd) == 0
     cmd="cp {} {}".format(defConfigFile, configFile)
+#    print cmd
     assert runcmd(cmd) == 0
 
     parts =  [p.split() for p in inp.split(",")]
