@@ -1,5 +1,5 @@
 import argparse
-parser = argparse.ArgumentParser(description='A program to generate a .csv file with information about the number of bug reports per file.')
+parser = argparse.ArgumentParser(description='Postprocesses bug reports, finds unique bug reports.')
 parser.add_argument('--target', '-t', default='.', help='Target directory (default = \'.\')')
 parser.add_argument('--output', '-o', default='unique.json.results', help='Output file (default = unique.json.results)')
 parser.add_argument('--verbose', '-v', action='count', help='Verbosity level')
