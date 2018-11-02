@@ -1,7 +1,7 @@
 #
 #!/bin/bash
 
-results_dir=~/Documents/varbugs/output
+results_dir=~/varbugs/output
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
