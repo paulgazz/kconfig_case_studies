@@ -8,7 +8,7 @@ import subprocess as sp
 import hashlib
 import json
 
-CLEANUP = False #True
+CLEANUP = True
 
 bug_hashes = ["1e776811c0e6ab4fb4967951b947478c", "bdf654a44c7674aaeb296f47e966a5ae",
     "858e5d49272787c243fa7795b51e1ce7", "0823aeeab7a91433f343ce2223e3c9e9",
