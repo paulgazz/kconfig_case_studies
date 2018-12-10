@@ -8,7 +8,7 @@ import subprocess as sp
 import hashlib
 import json
 
-CLEANUP = True
+CLEANUP = False #True
 
 bug_hashes = ["1e776811c0e6ab4fb4967951b947478c", "bdf654a44c7674aaeb296f47e966a5ae",
     "858e5d49272787c243fa7795b51e1ce7", "0823aeeab7a91433f343ce2223e3c9e9",
@@ -114,7 +114,7 @@ if __name__ == "__main__":
 #    print cmd
     assert runcmd(cmd) == 0
 
-    parts =  [p.split() for p in inp.split(",")]
+    parts =  [p.split() for p in inp.split(" , ")]
     ys, ns = [], []
     neithers = {}
     for name, val in parts:
@@ -141,13 +141,14 @@ if __name__ == "__main__":
     for name in ns:
         runcmd(unsetcmd(name))
         
-    for name, value in neithers:
+    for name, value in neithers.iteritems():
         runcmd(setNonBool(name, value))
     
     #runtest
     logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, pname, tid)
-    assert runcmd("echo \"---Configuration:{}, stime+hash:{}\n\" > {} 2>&1".format(inp, tid, logFile)) == 0
-    
+    outF = open(logFile, "w+")
+    outF.write("---Configuration:{}, stime+hash:{}\n".format(inp, tid))    
+    outF.close()
     runDriver = lambda : runcmd("cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, pname, logFile))
     runBugProcessor = lambda : runcmd("cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile))
 
