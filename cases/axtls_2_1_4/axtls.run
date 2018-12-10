@@ -10,6 +10,13 @@ import json
 
 CLEANUP = True
 
+bug_hashes = ["1e776811c0e6ab4fb4967951b947478c", "bdf654a44c7674aaeb296f47e966a5ae",
+    "858e5d49272787c243fa7795b51e1ce7", "0823aeeab7a91433f343ce2223e3c9e9",
+    "e260e94feabb02f22ed397b00a425c63", "758ca0f92999575beb67530465557570",
+    "d3e06d501efeca7120ee3a28ef7ed761", "3c56314112bd449421c70d85c3e433e7",
+    "06b42fe0702677cef86df82aabbe9b74", "f0f3270314e7f46a6effa32f6337cebc",
+    "3af95a05752e49640ccb902a698825d7"]
+
 def vcmd(cmd, inp=None, shell=True):
     proc = sp.Popen(cmd,shell=shell,stdin=sp.PIPE,stdout=sp.PIPE,stderr=sp.PIPE)
     rs =  proc.communicate(input=inp)
@@ -31,12 +38,16 @@ def phash(v):
     import sys
     return hash(v) % ((sys.maxsize + 1) * 2)
     
-def printHashCodes(jsonFile, outFile):
+def printHashCodes(jsonFile, outFile, filter=True):
     jsonFile = open(jsonFile, 'r')
     values = json.load(jsonFile)
     jsonFile.close()
 
-    hashCodesStr = [bug['hash'] for bug in values]
+    hashCodesStr = []
+    if filter:
+        hashCodesStr = [bug['hash'] for bug in values if bug['hash'] in bug_hashes]
+    else:
+        hashCodesStr = [bug['hash'] for bug in values]
     f = open(outFile, "a")
     f.write('\n'.join(hashCodesStr))
 
@@ -68,37 +79,51 @@ if __name__ == "__main__":
 
     KCONFIG_DIR="/home/ugur/kconfig_case_studies"
 
+    saToolVersion="-4.0"
     pname="axtls_2_1_4"
-    driver="{}/scripts/driver_variants/driver_clang.sh".format(KCONFIG_DIR)
+    driver="{}/scripts/driver_variants/driver_clang{}.sh".format(KCONFIG_DIR,saToolVersion)
     deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
     saTool='clang'
     jsonFile="unique.json.results"
 
     BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, pname)
     tarFile = "axTLS-2.1.4.tar.gz"
-    SRC_DIR= "{}/axtls-code".format(BENCH_DIR)
+    SRC_DIR= "{}/axtls-code-{}".format(BENCH_DIR, tid)
     OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
-    RESULT_DIR = "/home/ugur/varbugs/output/axtls_2_1_4/clang_results"
+    RESULT_DIR = "/home/ugur/varbugs/output/axtls_2_1_4/clang{}_results".format(saToolVersion)
     jsonFile="{}/unique.json.results".format(RESULT_DIR)
 
     defConfigFile="{}/def.config".format(BENCH_DIR)
-    configFile="{}/{}.config".format(RESULT_DIR, tid)
-
+    configFile="{}/build/configs/{}.config".format(BENCH_DIR, tid)
+    
     assert not os.path.isdir(SRC_DIR), SRC_DIR
 
-    cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
+    cmd="cd {} && mkdir {}".format(BENCH_DIR, tid)
     assert runcmd(cmd) == 0
+    cmd="cd {} && tar -C {} -xf {}".format(BENCH_DIR, tid,  tarFile)
+    assert runcmd(cmd) == 0
+
+    cmd="cd {} && mv {}/axtls-code axtls-code-{}".format(BENCH_DIR, tid, tid)
+    assert runcmd(cmd) == 0
+
+    cmd="cd {} && rm -fr {}".format(BENCH_DIR, tid)
+    assert runcmd(cmd) == 0
+         
+        
     cmd="cp {} {}".format(defConfigFile, configFile)
 #    print cmd
     assert runcmd(cmd) == 0
 
     parts =  [p.split() for p in inp.split(",")]
     ys, ns = [], []
+    neithers = {}
     for name, val in parts:
-        assert val == 'y' or val == 'n', val
-        
-        ls = ys if val == 'y' else ns
-        ls.append(name)
+        if val == 'y':
+            ys.append(name)
+        elif val == 'n':
+            ns.append(name)
+        else:
+            neithers[name] = val
 
     setcmd = lambda name: \
              "sed -e 's/.*{} .*/{}=y/' -i {}".format(name, name, configFile)
@@ -106,13 +131,18 @@ if __name__ == "__main__":
     unsetcmd = lambda name:\
                "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(
                    name, name, configFile)
-    
+
+    setNonBool = lambda name, value: \
+                "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
+
     for name in ys:
         runcmd(setcmd(name))
         
     for name in ns:
         runcmd(unsetcmd(name))
         
+    for name, value in neithers:
+        runcmd(setNonBool(name, value))
     
     #runtest
     logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, pname, tid)
@@ -137,5 +167,6 @@ if __name__ == "__main__":
     if CLEANUP:
         assert runcmd("rm -rf {}".format(SRC_DIR)) == 0
         assert runcmd("rm -rf {}/*".format(RESULT_DIR)) == 0
+        assert runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR)) == 0
 
     print resultFile

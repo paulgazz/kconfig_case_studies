@@ -1,7 +1,7 @@
 #
 #!/bin/bash
 
-results_dir=~/Documents/varbugs/output
+results_dir=~/varbugs/output
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
@@ -248,10 +248,10 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-		#scan-build ./configure
+    #scan-build ./configure
                 time scan-build-4.0 -plist-html -o "${results_dir}/${casename}/clang-4.0_results/clang-4.0_${i_base}" make ${make_extra_args} PREFIX="/tmp/local"
             else
-	      #scan_build ./configure
+        #scan_build ./configure
               time scan-build-4.0 -plist-html -o "${results_dir}/${casename}/clang-4.0_results/clang-4.0_${i_base}" make ${make_extra_args};
             fi
             echo "return code $?";
