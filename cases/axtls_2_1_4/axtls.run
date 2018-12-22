@@ -43,13 +43,16 @@ def printHashCodes(jsonFile, outFile, filter=True):
     values = json.load(jsonFile)
     jsonFile.close()
 
-    hashCodesStr = []
+    hashCodesStr = [bug['hash'] for bug in values]
+    nonReachedList=[]
     if filter:
-        hashCodesStr = [bug['hash'] for bug in values if bug['hash'] in bug_hashes]
-    else:
-        hashCodesStr = [bug['hash'] for bug in values]
+        hashCodesStr = [hsh for hsh in hashCodesStr if hsh in bug_hashes]
+        nonReachedList = ['-'+hsh for hsh in bug_hashes if not in hashCodesStr]
+
     f = open(outFile, "a")
     f.write('\n'.join(hashCodesStr))
+    f.write('\n'.join(nonReachedList))
+    f.close()
 
 def similar(tdir, f1, f2):
     tf1 = "{}/f1.txt".format(tdir)

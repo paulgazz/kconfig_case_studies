@@ -1,19 +1,19 @@
 c format kmax_kconfig_v2
-c kconfig_variable 1 CONFIG_HTTP_TIMEOUT int 300
+c kconfig_variable 1 CONFIG_HTTP_TIMEOUT int 1
 c kconfig_variable 2 CONFIG_SSL_X509_ORGANIZATION_NAME string ""
 c kconfig_variable 3 CONFIG_SSL_SERVER_ONLY choice_bool
-c kconfig_variable 4 CONFIG_JAVA_HOME string "c:\\Program Files\\Java\\jdk1.5.0_06"
+c kconfig_variable 4 CONFIG_JAVA_HOME string ""
 c kconfig_variable 5 CONFIG_SSL_TEST bool
 c kconfig_variable 6 CONFIG_SSL_PROT_LOW choice_bool
-c kconfig_variable 7 CONFIG_DOT_NET_FRAMEWORK_BASE string "c:\\WINDOWS\\Microsoft.NET\\Framework\\v2.0.50727"
+c kconfig_variable 7 CONFIG_DOT_NET_FRAMEWORK_BASE string ""
 c kconfig_variable 8 CONFIG_HTTP_DIRECTORIES bool
-c kconfig_variable 9 CONFIG_PERL_CORE string "c:\\perl\\lib\\CORE"
+c kconfig_variable 9 CONFIG_PERL_CORE string ""
 c kconfig_variable 10 CONFIG_VBNET_SAMPLES bool
 c kconfig_variable 11 CONFIG_CSHARP_SAMPLES bool
-c kconfig_variable 12 CONFIG_SSL_EXPIRY_TIME int 24
+c kconfig_variable 12 CONFIG_SSL_EXPIRY_TIME int 1
 c kconfig_variable 13 CONFIG_PERL_BINDINGS bool
 c kconfig_variable 14 CONFIG_PLATFORM_WIN32 choice_bool
-c kconfig_variable 15 CONFIG_SSL_MAX_CERTS int 3
+c kconfig_variable 15 CONFIG_SSL_MAX_CERTS int 1
 c kconfig_variable 16 CONFIG_AXTLSWRAP bool
 c kconfig_variable 17 CONFIG_EXTRA_CFLAGS_OPTIONS string ""
 c kconfig_variable 18 CONFIG_BIGINT_BARRETT choice_bool
@@ -21,27 +21,27 @@ c kconfig_variable 19 CONFIG_C_SAMPLES bool
 c kconfig_variable 20 HAVE_DOT_CONFIG hidden_bool
 c kconfig_variable 21 CONFIG_BIGINT_CLASSICAL choice_bool
 c kconfig_variable 22 CONFIG_JAVA_SAMPLES bool
-c kconfig_variable 23 MUL_KARATSUBA_THRESH int 20
+c kconfig_variable 23 MUL_KARATSUBA_THRESH int 1
 c kconfig_variable 24 CONFIG_DEBUG bool
-c kconfig_variable 25 CONFIG_VISUAL_STUDIO_10_0_BASE string "c:\\Program Files\\Microsoft Visual Studio 10.0"
+c kconfig_variable 25 CONFIG_VISUAL_STUDIO_10_0_BASE string ""
 c kconfig_variable 26 CONFIG_LUA_SAMPLES bool
 c kconfig_variable 27 CONFIG_SSL_PROT_MEDIUM choice_bool
 c kconfig_variable 28 CONFIG_AXHTTPD bool
 c kconfig_variable 29 CONFIG_SSL_GENERATE_X509_CERT bool
 c kconfig_variable 30 CONFIG_SSL_USE_PKCS12 bool
-c kconfig_variable 31 CONFIG_X509_MAX_CA_CERTS int 150
-c kconfig_variable 32 CONFIG_VISUAL_STUDIO_8_0_BASE string "c:\\Program Files\\Microsoft Visual Studio 8"
-c kconfig_variable 33 PREFIX string "/usr/local"
+c kconfig_variable 31 CONFIG_X509_MAX_CA_CERTS int 1
+c kconfig_variable 32 CONFIG_VISUAL_STUDIO_8_0_BASE string ""
+c kconfig_variable 33 PREFIX string ""
 c kconfig_variable 34 CONFIG_VISUAL_STUDIO_8_0 choice_bool
 c kconfig_variable 35 CONFIG_SSL_X509_CERT_LOCATION string ""
 c kconfig_variable 36 CONFIG_VBNET_BINDINGS bool
 c kconfig_variable 37 CONFIG_SSL_FULL_MODE choice_bool
 c kconfig_variable 38 CONFIG_BIGINT_MONTGOMERY choice_bool
-c kconfig_variable 39 CONFIG_HTTP_PORT int 80
-c kconfig_variable 40 CONFIG_HTTP_HTTPS_PORT int 443
+c kconfig_variable 39 CONFIG_HTTP_PORT int 1
+c kconfig_variable 40 CONFIG_HTTP_HTTPS_PORT int 1
 c kconfig_variable 41 CONFIG_SSL_CTX_MUTEXING bool
 c kconfig_variable 42 CONFIG_CSHARP_BINDINGS bool
-c kconfig_variable 43 CONFIG_HTTP_LUA_PREFIX string "/usr"
+c kconfig_variable 43 CONFIG_HTTP_LUA_PREFIX string ""
 c kconfig_variable 44 CONFIG_SSL_SKELETON_MODE choice_bool
 c kconfig_variable 45 CONFIG_BIGINT_SQUARE bool
 c kconfig_variable 46 CONFIG_USE_DEV_URANDOM bool
@@ -49,26 +49,26 @@ c kconfig_variable 47 CONFIG_PERL_SAMPLES bool
 c kconfig_variable 48 CONFIG_HTTP_BUILD_LUA bool
 c kconfig_variable 49 CONFIG_VISUAL_STUDIO_10_0 choice_bool
 c kconfig_variable 50 CONFIG_PERFORMANCE_TESTING bool
-c kconfig_variable 51 SQU_KARATSUBA_THRESH int 40
+c kconfig_variable 51 SQU_KARATSUBA_THRESH int 1
 c kconfig_variable 52 CONFIG_EXTRA_LDFLAGS_OPTIONS string ""
 c kconfig_variable 53 CONFIG_STRIP_UNWANTED_SECTIONS bool
 c kconfig_variable 54 CONFIG_SSL_ENABLE_CLIENT choice_bool
 c kconfig_variable 55 CONFIG_SSL_USE_DEFAULT_KEY bool
 c kconfig_variable 56 CONFIG_SSL_CERT_VERIFICATION choice_bool
-c kconfig_variable 57 CONFIG_HTTP_WEBROOT string "../www"
+c kconfig_variable 57 CONFIG_HTTP_WEBROOT string ""
 c kconfig_variable 58 CONFIG_HTTP_STATIC_BUILD bool
-c kconfig_variable 59 CONFIG_HTTP_SESSION_CACHE_SIZE int 5
-c kconfig_variable 60 CONFIG_HTTP_CGI_EXTENSIONS string ".lua,.lp,.php"
+c kconfig_variable 59 CONFIG_HTTP_SESSION_CACHE_SIZE int 1
+c kconfig_variable 60 CONFIG_HTTP_CGI_EXTENSIONS string ""
 c kconfig_variable 61 CONFIG_OPENSSL_COMPATIBLE bool
 c kconfig_variable 62 CONFIG_BIGINT_SLIDING_WINDOW bool
 c kconfig_variable 63 CONFIG_VISUAL_STUDIO_7_0 choice_bool
 c kconfig_variable 64 CONFIG_BIGINT_KARATSUBA bool
 c kconfig_variable 65 CONFIG_BIGINT_CRT bool
-c kconfig_variable 66 CONFIG_HTTP_USER string "nobody"
-c kconfig_variable 67 CONFIG_LUA_CORE string "/usr/local"
-c kconfig_variable 68 CONFIG_VISUAL_STUDIO_7_0_BASE string "c:\\Program Files\\Microsoft Visual Studio .NET 2003"
+c kconfig_variable 66 CONFIG_HTTP_USER string ""
+c kconfig_variable 67 CONFIG_LUA_CORE string ""
+c kconfig_variable 68 CONFIG_VISUAL_STUDIO_7_0_BASE string ""
 c kconfig_variable 69 CONFIG_HTTP_HAS_CGI bool
-c kconfig_variable 70 CONFIG_PERL_LIB string "perl58.lib"
+c kconfig_variable 70 CONFIG_PERL_LIB string ""
 c kconfig_variable 71 CONFIG_INTEGER_32BIT choice_bool
 c kconfig_variable 72 CONFIG_BINDINGS bool
 c kconfig_variable 73 CONFIG_HTTP_HAS_IPV6 bool
@@ -90,7 +90,7 @@ c kconfig_variable 88 CONFIG_HTTP_IS_DAEMON bool
 c kconfig_variable 89 CONFIG_SSL_PROT_HIGH choice_bool
 c kconfig_variable 90 CONFIG_HTTP_VERBOSE bool
 c kconfig_variable 91 CONFIG_SSL_HAS_PEM bool
-c kconfig_variable 92 CONFIG_HTTP_CGI_LAUNCHER string "/usr/bin/cgi"
+c kconfig_variable 92 CONFIG_HTTP_CGI_LAUNCHER string ""
 c kconfig_variable 93 CONFIG_SSL_PRIVATE_KEY_PASSWORD string ""
 c kconfig_variable 94 CONFIG_WIN32_USE_CRYPTO_LIB bool
 p cnf 94 190
