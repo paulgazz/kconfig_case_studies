@@ -47,7 +47,7 @@ def printHashCodes(jsonFile, outFile, filter=True):
     nonReachedList=[]
     if filter:
         hashCodesStr = [hsh for hsh in hashCodesStr if hsh in bug_hashes]
-        nonReachedList = ['-'+hsh for hsh in bug_hashes if not in hashCodesStr]
+        nonReachedList = ['-'+hsh for hsh in bug_hashes if hsh not in hashCodesStr]
 
     f = open(outFile, "a")
     f.write('\n'.join(hashCodesStr))
