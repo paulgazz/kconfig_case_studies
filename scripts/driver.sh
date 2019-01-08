@@ -260,9 +260,9 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
               if [[ $? -eq 0 ]]; then
                   mv "${config_file}" "${config_file}.tmp"
                   cat "${config_file}.tmp" | grep -v "^KERNEL_HEADERS=" > "${config_file}"; echo 'KERNEL_HEADERS="/home/vagrant/linux-headers/include"' >> "${config_file}"
-                  # temporarily until constraint is set
-                  mv "${config_file}" "${config_file}.tmp"
-                  cat "${config_file}.tmp" | grep -v "^HAVE_SHARED=y" > "${config_file}"; echo '# HAVE_SHARED is not set' >> "${config_file}"
+                  # # temporarily until constraint is set
+                  # mv "${config_file}" "${config_file}.tmp"
+                  # cat "${config_file}.tmp" | grep -v "^HAVE_SHARED=y" > "${config_file}"; echo '# HAVE_SHARED is not set' >> "${config_file}"
               fi
 
               time make oldconfig;
