@@ -116,7 +116,7 @@ if [[ $? -eq 0 ]]; then
     config_file="build/globalconfig.out"
     kconfig_root="build/Kconfig"
     # perhaps just use "*.{o,a}"
-    binaries="build/fiasco"
+    binaries="build"
     # if [[ "${action}" == "build" ]]; then
     #     # looks like boot_image.{x1,x2}
     #     echo "ERROR: please figure out what to use to measure the binary size" >&2
@@ -127,7 +127,7 @@ echo "${casename}" | grep -i "uClibc-ng" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="extra/Configs/Config.in"
-    binaries="lib/*.a lib/*.so"
+    binaries="lib/*.a" # no need for lib/*.so without HAVE_SHARED
     # don't add extra CONFIG_ prefix for uClibc-ng.  also set default
     # environment variables with -d.
     check_dep_extra_args="-p -d"
@@ -239,6 +239,12 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
                   # complete cleanup for linux
                   make mrproper
               fi
+              echo "${casename}" | egrep -i "uClibc-ng" >/dev/null
+              if [[ $? -eq 0 ]]; then
+                  # complete cleanup for uClib-ng
+                  make realclean
+                  make distclean
+              fi
               
               echo "configuring $i";
               date;
@@ -254,6 +260,9 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
               if [[ $? -eq 0 ]]; then
                   mv "${config_file}" "${config_file}.tmp"
                   cat "${config_file}.tmp" | grep -v "^KERNEL_HEADERS=" > "${config_file}"; echo 'KERNEL_HEADERS="/home/vagrant/linux-headers/include"' >> "${config_file}"
+                  # # temporarily until constraint is set
+                  # mv "${config_file}" "${config_file}.tmp"
+                  # cat "${config_file}.tmp" | grep -v "^HAVE_SHARED=y" > "${config_file}"; echo '# HAVE_SHARED is not set' >> "${config_file}"
               fi
 
               time make oldconfig;
@@ -283,8 +292,8 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
               echo "building $i";
               echo "${casename}" | egrep -i "fiasco" >/dev/null
               if [[ $? -eq 0 ]]; then
-                  make -C build/ clean cleanall
-                  rm -rf build/
+                  make -C build/ clean
+                  # make -C build/ cleanall
               fi
               make clean;
               echo "${casename}" | grep -i "axtls" > /dev/null
@@ -331,6 +340,12 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
               build_out_file="${build_out_dir}/$(basename ${i}).out"
               bzcat "${build_out_file}.bz2" | egrep "return code"
             done > "${return_codes}"
+            build_times="${experiment_dir}/build_times.txt"
+            for i_base in $(ls ${experiment_dir}/*.config | xargs -L 1 basename | sort -n); do
+              i="${experiment_dir}/${i_base}"
+              build_out_file="${build_out_dir}/$(basename ${i}).out"
+              bzcat "${build_out_file}.bz2" | egrep "^real[[:space:]]" | tail -n1
+            done > "${build_times}"
         fi
     fi
 

@@ -148,6 +148,9 @@ for property in master:
     # Also add the description list to the property
     property['matching_description'] = description_index[property['hash']]
 
+    # Add empty investigation results field
+    property['investigation'] = {'result':'', 'comments':''}
+    
 print str(len(master)) + ' unique bugs found.'
 
 # Write output to file
