@@ -142,6 +142,8 @@ for property in master:
         if property['hash'] in hash_index[record]:
             property['configurations'].add(int(re.findall('[0-9]{1,3}', re.findall('[0-9]{1,3}.config', record)[0])[0]))
             count = count + 1
+    property['configurations'] = list(property['configurations'])
+    property['configurations'].sort()
     property['num_occurrences'] = len(property['configurations'])
     logging.info('Report ' + property['hash'] + ' was present in ' + str(len(property['configurations'])) + ' configurations.')
 
@@ -149,7 +151,7 @@ for property in master:
     property['matching_description'] = description_index[property['hash']]
 
     # Add empty investigation results field
-    property['investigation'] = {'result':'', 'comments':''}
+    property['investigation'] = {'result (true/false)': None, 'comments':''}
     
 print str(len(master)) + ' unique bugs found.'
 
