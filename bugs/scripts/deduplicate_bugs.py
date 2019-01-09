@@ -151,7 +151,7 @@ for property in master:
     property['matching_description'] = description_index[property['hash']]
 
     # Add empty investigation results field
-    property['investigation'] = {'result (true/false)': None, 'comments':''}
+    property['investigation'] = {'result': None, 'comments':''}
     
 print str(len(master)) + ' unique bugs found.'
 
