@@ -3,7 +3,7 @@ parser = argparse.ArgumentParser(description='Postprocesses bug reports, finds u
 parser.add_argument('--target', '-t', default='.', help='Target directory (default = \'.\')')
 parser.add_argument('--output', '-o', default='unique.json.results', help='Output file (default = unique.json.results)')
 parser.add_argument('--verbose', '-v', action='count', help='Verbosity level')
-parser.add_argument('format', choices=['cbmc', 'clang', 'infer', 'cppcheck', 'ikos'])
+parser.add_argument('format', choices=['cbmc', 'clang', 'infer', 'cppcheck', 'ikos', 'clang7'])
 args = parser.parse_args()
 
 import logging
@@ -36,6 +36,10 @@ elif args.format == 'infer':
     description = 'qualifier'
 elif args.format == 'clang':
     file_extension = '.plist'
+    fields_to_hash = {'category', 'location', 'file'}
+    description = 'description'
+elif args.format == 'clang7':
+    file_extension = '.plist.resolved'
     fields_to_hash = {'category', 'location', 'file'}
     description = 'description'
 elif args.format == 'ikos':
@@ -89,11 +93,13 @@ for entry in file_list:
                 property_list = json.loads(content)
             except ValueError:
                 continue;
-        elif args.format == 'clang':
+        elif args.format == 'clang' or args.format == 'clang7':
             clang_data = plistlib.readPlist(f)
             property_list  = clang_data['diagnostics']
             for property in property_list:
                 property['source_file'] = clang_data['files'][0]
+                # REMOVES PATH INFO, BECAUSE IT'S VERY LONG AND MAKES JSON REPORTS HARD TO READ
+                del property['path']
         elif args.format == 'ikos':
             try:
                 property_list = json.loads(f.read())
