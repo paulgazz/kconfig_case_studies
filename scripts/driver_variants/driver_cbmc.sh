@@ -1,6 +1,6 @@
 #!/bin/bash
 
-results_dir=~/Documents/varbugs/output
+results_dir=~/Documents/var-bugs-study/varbugs/output
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
@@ -108,7 +108,7 @@ echo "${casename}" | grep -i "busybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
-    binaries="busybox"
+    binaries="busybox_unstripped"
     get_reverse_dep="true"
     make_extra_args="KBUILD_VERBOSE=1"  # emit entire gcc commands
 fi
@@ -247,9 +247,9 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time make ${make_extra_args} PREFIX="/tmp/local"
+                time make CC=goto-cc busybox_unstripped ${make_extra_args} PREFIX="/tmp/local"
             else
-              time make ${make_extra_args};
+              time make CC=goto-cc busybox_unstripped ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"

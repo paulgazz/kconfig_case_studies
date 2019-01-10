@@ -16,7 +16,7 @@ ls -d *.config | sort -h | while read config_dir; do
   cd "${config_dir}"
   # run clang from the root of the config_dir to avoid full path in error reports
   find ./ -type f -name "*.i" | while read i; do
-    iout="${i}.plist"
+    iout="${i%.i}.plist"
     if [[ -e "${iout}" ]]; then
        echo "skipping existing clang run: ${config_dir}/${iout}"
     else

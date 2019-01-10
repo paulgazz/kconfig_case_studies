@@ -1,7 +1,7 @@
 #
 #!/bin/bash
 
-results_dir=~/Documents/varbugs/output
+results_dir=~/Documents/test/axtls_2_1_4/Jeho/noA_noD_noH
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF

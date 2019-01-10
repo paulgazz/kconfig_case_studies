@@ -8699,7 +8699,7 @@
   {
     "status": "warning",
     "long_msg": "memory access might be unsafe, possible overflow (offset >= 1)",
-    "classification": false,
+    "classification": unknown,
     "all_contexts": true,
     "short_msg": "memory access might be unsafe",
     "num_occurrences": 1000,
@@ -13946,7 +13946,7 @@
   {
     "status": "warning",
     "long_msg": "pointer might be null",
-    "classification": false,
+    "classification": true,
     "all_contexts": true,
     "short_msg": "pointer might be null",
     "num_occurrences": 1000,
