@@ -493,7 +493,7 @@
     "key": "nohup.c|nohup_main|RESOURCE_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "nohup_main",
@@ -1039,7 +1039,7 @@
     "key": "nohup.c|nohup_main|RESOURCE_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "nohup_main",
@@ -2224,7 +2224,7 @@
     "key": "uptime.c|uptime_main|NULL_DEREFERENCE",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "uptime_main",
@@ -10356,7 +10356,7 @@
     "key": "mkflags.c|digest|NULL_DEREFERENCE",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "digest",
@@ -11447,7 +11447,7 @@
     "key": "mkflags.c|digest|NULL_DEREFERENCE",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "digest",
@@ -36880,7 +36880,7 @@
     "key": "lib.c|loopfiles_rw|RESOURCE_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "loopfiles_rw",
@@ -42069,7 +42069,7 @@
     "key": "lib.c|getusername|MEMORY_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "getusername",
@@ -43188,7 +43188,7 @@
     "key": "lib.c|getgroupname|MEMORY_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "getgroupname",
@@ -60858,7 +60858,7 @@
     "key": "mountpoint.c|mountpoint_main|MEMORY_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "mountpoint_main",
@@ -62111,7 +62111,7 @@
     "key": "oneit.c|oneit_main|RESOURCE_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "oneit_main",
@@ -62784,7 +62784,7 @@
     "key": "oneit.c|oneit_main|RESOURCE_LEAK",
     "investigation": {
       "comments": "",
-      "result": false
+      "result": true
     },
     "severity": "HIGH",
     "procedure": "oneit_main",
