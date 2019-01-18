@@ -1,0 +1,1962 @@
+c format kmax_kconfig_v2
+c kconfig_variable 1 CONFIG_KILL bool
+c kconfig_variable 2 CONFIG_FEATURE_LESS_ASK_TERMINAL bool
+c kconfig_variable 3 CONFIG_FEATURE_TRACEROUTE_USE_ICMP bool
+c kconfig_variable 4 CONFIG_PID_FILE_PATH string "/var/run"
+c kconfig_variable 5 CONFIG_SH_IS_NONE choice_bool
+c kconfig_variable 6 CONFIG_FEATURE_TAB_COMPLETION bool
+c kconfig_variable 7 CONFIG_DEBUG_PESSIMIZE bool
+c kconfig_variable 8 CONFIG_FEATURE_INSTALL_LONG_OPTIONS bool
+c kconfig_variable 9 CONFIG_LOGGER bool
+c kconfig_variable 10 CONFIG_WHICH bool
+c kconfig_variable 11 CONFIG_FEATURE_PIDFILE bool
+c kconfig_variable 12 CONFIG_FEATURE_LESS_FLAGS bool
+c kconfig_variable 13 CONFIG_DHCPD_LEASES_FILE string "/var/lib/misc/udhcpd.leases"
+c kconfig_variable 14 CONFIG_RAIDAUTORUN bool
+c kconfig_variable 15 CONFIG_LSATTR bool
+c kconfig_variable 16 CONFIG_FEATURE_XARGS_SUPPORT_CONFIRMATION bool
+c kconfig_variable 17 CONFIG_ASH_MAIL bool
+c kconfig_variable 18 CONFIG_FEATURE_SEAMLESS_GZ bool
+c kconfig_variable 19 CONFIG_HUSH_ULIMIT bool
+c kconfig_variable 20 CONFIG_UBIUPDATEVOL bool
+c kconfig_variable 21 CONFIG_FEATURE_KILL_REMOVED bool
+c kconfig_variable 22 CONFIG_HUSH_INTERACTIVE bool
+c kconfig_variable 23 CONFIG_UNICODE_COMBINING_WCHARS bool
+c kconfig_variable 24 CONFIG_UUDECODE bool
+c kconfig_variable 25 CONFIG_HUSH_WAIT bool
+c kconfig_variable 26 CONFIG_FEATURE_EJECT_SCSI bool
+c kconfig_variable 27 CONFIG_FEATURE_SH_STANDALONE bool
+c kconfig_variable 28 CONFIG_FEATURE_IPV6 bool
+c kconfig_variable 29 CONFIG_ASH bool
+c kconfig_variable 30 CONFIG_IPNEIGH bool
+c kconfig_variable 31 CONFIG_FEATURE_IFCONFIG_MEMSTART_IOADDR_IRQ bool
+c kconfig_variable 32 CONFIG_UNSHARE bool
+c kconfig_variable 33 CONFIG_POWEROFF bool
+c kconfig_variable 34 CONFIG_OPENVT bool
+c kconfig_variable 35 CONFIG_IONICE bool
+c kconfig_variable 36 CONFIG_SWITCH_ROOT bool
+c kconfig_variable 37 CONFIG_FEATURE_BRCTL_FANCY bool
+c kconfig_variable 38 CONFIG_MPSTAT bool
+c kconfig_variable 39 CONFIG_FEATURE_PREFER_APPLETS bool
+c kconfig_variable 40 CONFIG_FEATURE_HTTPD_PROXY bool
+c kconfig_variable 41 CONFIG_ADJTIMEX bool
+c kconfig_variable 42 CONFIG_AR bool
+c kconfig_variable 43 CONFIG_CTTYHACK bool
+c kconfig_variable 44 CONFIG_WATCH bool
+c kconfig_variable 45 CONFIG_FEATURE_VI_UNDO_QUEUE_MAX int 256
+c kconfig_variable 46 CONFIG_FEATURE_INIT_QUIET bool
+c kconfig_variable 47 CONFIG_FEATURE_MAKEDEVS_TABLE choice_bool
+c kconfig_variable 48 CONFIG_FEATURE_EDITING_MAX_LEN int 1024
+c kconfig_variable 49 CONFIG_FACTOR bool
+c kconfig_variable 50 CONFIG_NC_EXTRA bool
+c kconfig_variable 51 CONFIG_LINUXRC bool
+c kconfig_variable 52 CONFIG_FEATURE_TOPMEM bool
+c kconfig_variable 53 CONFIG_IFCONFIG bool
+c kconfig_variable 54 CONFIG_FEATURE_IP_LINK bool
+c kconfig_variable 55 CONFIG_FEATURE_ROTATE_LOGFILE bool
+c kconfig_variable 56 CONFIG_FEATURE_MODUTILS_ALIAS bool
+c kconfig_variable 57 CONFIG_GROUPS bool
+c kconfig_variable 58 CONFIG_SENDMAIL bool
+c kconfig_variable 59 CONFIG_FEATURE_MOUNT_LOOP bool
+c kconfig_variable 60 CONFIG_MKDIR bool
+c kconfig_variable 61 CONFIG_UNICODE_WIDE_WCHARS bool
+c kconfig_variable 62 CONFIG_FEATURE_TELNET_AUTOLOGIN bool
+c kconfig_variable 63 CONFIG_HEXDUMP bool
+c kconfig_variable 64 CONFIG_FEATURE_VI_UNDO bool
+c kconfig_variable 65 CONFIG_FEATURE_SEAMLESS_XZ bool
+c kconfig_variable 66 CONFIG_DEBUG_SANITIZE bool
+c kconfig_variable 67 CONFIG_FEATURE_TELNET_TTYPE bool
+c kconfig_variable 68 CONFIG_UNICODE_BIDI_SUPPORT bool
+c kconfig_variable 69 CONFIG_UDHCPC_DEFAULT_SCRIPT string "/usr/share/udhcpc/default.script"
+c kconfig_variable 70 CONFIG_MODINFO bool
+c kconfig_variable 71 CONFIG_FEATURE_WGET_LONG_OPTIONS bool
+c kconfig_variable 72 CONFIG_FEATURE_GREP_CONTEXT bool
+c kconfig_variable 73 CONFIG_FEATURE_DC_LIBM bool
+c kconfig_variable 74 CONFIG_FEATURE_TR_EQUIV bool
+c kconfig_variable 75 CONFIG_VOLNAME bool
+c kconfig_variable 76 CONFIG_PASSWORD_MINLEN int 6
+c kconfig_variable 77 CONFIG_TFTP_DEBUG bool
+c kconfig_variable 78 CONFIG_FEATURE_MD5_SHA1_SUM_CHECK bool
+c kconfig_variable 79 CONFIG_UNICODE_PRESERVE_BROKEN bool
+c kconfig_variable 80 CONFIG_FIRST_SYSTEM_ID int 100
+c kconfig_variable 81 CONFIG_IPCS bool
+c kconfig_variable 82 CONFIG_BUILD_LIBBUSYBOX bool
+c kconfig_variable 83 CONFIG_ASH_JOB_CONTROL bool
+c kconfig_variable 84 CONFIG_FTPD bool
+c kconfig_variable 85 CONFIG_HUSH_BRACE_EXPANSION bool
+c kconfig_variable 86 CONFIG_BASH_IS_HUSH choice_bool
+c kconfig_variable 87 CONFIG_USE_PORTABLE_CODE bool
+c kconfig_variable 88 CONFIG_FEATURE_REMOTE_LOG bool
+c kconfig_variable 89 CONFIG_FREERAMDISK bool
+c kconfig_variable 90 CONFIG_FEATURE_EDITING_SAVEHISTORY bool
+c kconfig_variable 91 CONFIG_FEATURE_TASKSET_FANCY bool
+c kconfig_variable 92 CONFIG_FEATURE_FDISK_WRITABLE bool
+c kconfig_variable 93 CONFIG_FEATURE_BEEP_FREQ int 4000
+c kconfig_variable 94 CONFIG_FEATURE_HTTPD_BASIC_AUTH bool
+c kconfig_variable 95 CONFIG_SETKEYCODES bool
+c kconfig_variable 96 CONFIG_UNICODE_SUPPORT bool
+c kconfig_variable 97 CONFIG_FEATURE_ACPID_COMPAT bool
+c kconfig_variable 98 CONFIG_UNIX2DOS bool
+c kconfig_variable 99 CONFIG_SEQ bool
+c kconfig_variable 100 CONFIG_FEATURE_DD_THIRD_STATUS_LINE bool
+c kconfig_variable 101 CONFIG_FEATURE_MIME_CHARSET string "us-ascii"
+c kconfig_variable 102 CONFIG_FEATURE_FIND_XDEV bool
+c kconfig_variable 103 CONFIG_LSUSB bool
+c kconfig_variable 104 CONFIG_FEATURE_TFTP_PUT bool
+c kconfig_variable 105 CONFIG_FEATURE_WTMP bool
+c kconfig_variable 106 CONFIG_SHUF bool
+c kconfig_variable 107 CONFIG_PS bool
+c kconfig_variable 108 CONFIG_FEATURE_VI_MAX_LEN int 4096
+c kconfig_variable 109 CONFIG_FEATURE_PASSWD_WEAK_CHECK bool
+c kconfig_variable 110 CONFIG_SYNC bool
+c kconfig_variable 111 CONFIG_FEATURE_CLEAN_UP bool
+c kconfig_variable 112 CONFIG_FEATURE_INIT_MODIFY_CMDLINE bool
+c kconfig_variable 113 CONFIG_NBDCLIENT bool
+c kconfig_variable 114 CONFIG_FEATURE_FIND_PERM bool
+c kconfig_variable 115 CONFIG_FEATURE_FIND_MAXDEPTH bool
+c kconfig_variable 116 CONFIG_GZIP bool
+c kconfig_variable 117 CONFIG_CHRT bool
+c kconfig_variable 118 CONFIG_STATIC bool
+c kconfig_variable 119 CONFIG_FEATURE_VI_YANKMARK bool
+c kconfig_variable 120 CONFIG_FEATURE_TAR_FROM bool
+c kconfig_variable 121 CONFIG_FEATURE_FIND_CONTEXT bool
+c kconfig_variable 122 CONFIG_FEATURE_TFTP_PROGRESS_BAR bool
+c kconfig_variable 123 CONFIG_FEATURE_NON_POSIX_CP bool
+c kconfig_variable 124 CONFIG_FEATURE_UTMP bool
+c kconfig_variable 125 CONFIG_FTPGET bool
+c kconfig_variable 126 CONFIG_FEATURE_MDEV_LOAD_FIRMWARE bool
+c kconfig_variable 127 CONFIG_RMMOD bool
+c kconfig_variable 128 CONFIG_TAIL bool
+c kconfig_variable 129 CONFIG_RUN_PARTS bool
+c kconfig_variable 130 CONFIG_LAST_SUPPORTED_WCHAR int 767
+c kconfig_variable 131 CONFIG_NANDWRITE bool
+c kconfig_variable 132 CONFIG_HUSH_TICK bool
+c kconfig_variable 133 CONFIG_MORE bool
+c kconfig_variable 134 CONFIG_FEATURE_MDEV_RENAME_REGEXP bool
+c kconfig_variable 135 CONFIG_DNSD bool
+c kconfig_variable 136 CONFIG_I2CDETECT bool
+c kconfig_variable 137 CONFIG_CMP bool
+c kconfig_variable 138 CONFIG_RUN_INIT bool
+c kconfig_variable 139 CONFIG_UBIMKVOL bool
+c kconfig_variable 140 CONFIG_FEATURE_CALL_TELINIT bool
+c kconfig_variable 141 CONFIG_BUSYBOX bool
+c kconfig_variable 142 CONFIG_GUNZIP bool
+c kconfig_variable 143 CONFIG_FEDORA_COMPAT bool
+c kconfig_variable 144 CONFIG_UNAME bool
+c kconfig_variable 145 CONFIG_FEATURE_VOLUMEID_XFS bool
+c kconfig_variable 146 CONFIG_FBSPLASH bool
+c kconfig_variable 147 CONFIG_TAC bool
+c kconfig_variable 148 CONFIG_LOAD_POLICY bool
+c kconfig_variable 149 CONFIG_FEATURE_MODPROBE_BLACKLIST bool
+c kconfig_variable 150 CONFIG_FSFREEZE bool
+c kconfig_variable 151 CONFIG_I2CGET bool
+c kconfig_variable 152 CONFIG_FEATURE_SUID_CONFIG_QUIET bool
+c kconfig_variable 153 CONFIG_MV bool
+c kconfig_variable 154 CONFIG_PATCH bool
+c kconfig_variable 155 CONFIG_FEATURE_XARGS_SUPPORT_ZERO_TERM bool
+c kconfig_variable 156 CONFIG_HAVE_DOT_CONFIG hidden_bool
+c kconfig_variable 157 CONFIG_FEATURE_FTPD_ACCEPT_BROKEN_LIST bool
+c kconfig_variable 158 CONFIG_PKILL bool
+c kconfig_variable 159 CONFIG_DOS2UNIX bool
+c kconfig_variable 160 CONFIG_CHAT bool
+c kconfig_variable 161 CONFIG_FEATURE_USE_SENDFILE bool
+c kconfig_variable 162 CONFIG_FEATURE_IP_ROUTE_DIR string "/etc/iproute2"
+c kconfig_variable 163 CONFIG_MKTEMP bool
+c kconfig_variable 164 CONFIG_FEATURE_LS_FILETYPES bool
+c kconfig_variable 165 CONFIG_FEATURE_SUID bool
+c kconfig_variable 166 CONFIG_IFUPDOWN_UDHCPC_CMD_OPTIONS string "-R -n"
+c kconfig_variable 167 CONFIG_READLINK bool
+c kconfig_variable 168 CONFIG_DMALLOC choice_bool
+c kconfig_variable 169 CONFIG_SETSEBOOL bool
+c kconfig_variable 170 CONFIG_NOMMU bool
+c kconfig_variable 171 CONFIG_DF bool
+c kconfig_variable 172 CONFIG_RUNLEVEL bool
+c kconfig_variable 173 CONFIG_HUSH_CASE bool
+c kconfig_variable 174 CONFIG_FEATURE_UDHCP_PORT bool
+c kconfig_variable 175 CONFIG_FEATURE_CHAT_TTY_HIFI bool
+c kconfig_variable 176 CONFIG_FEATURE_UDHCPC6_RFC4833 bool
+c kconfig_variable 177 CONFIG_FEATURE_IP_ROUTE bool
+c kconfig_variable 178 CONFIG_FEATURE_BUFFERS_GO_ON_STACK choice_bool
+c kconfig_variable 179 CONFIG_LFS bool
+c kconfig_variable 180 CONFIG_FEATURE_SYSLOGD_READ_BUFFER_SIZE int 256
+c kconfig_variable 181 CONFIG_SETLOGCONS bool
+c kconfig_variable 182 CONFIG_SESTATUS bool
+c kconfig_variable 183 CONFIG_LOGIN_SCRIPTS bool
+c kconfig_variable 184 CONFIG_SCRIPT bool
+c kconfig_variable 185 CONFIG_FEATURE_CHECK_TAINTED_MODULE bool
+c kconfig_variable 186 CONFIG_FEATURE_COPYBUF_KB int 4
+c kconfig_variable 187 CONFIG_RUNSVDIR bool
+c kconfig_variable 188 CONFIG_FEATURE_MOUNT_LOOP_CREATE bool
+c kconfig_variable 189 CONFIG_WALL bool
+c kconfig_variable 190 CONFIG_IPADDR bool
+c kconfig_variable 191 CONFIG_FEATURE_AWK_GNU_EXTENSIONS bool
+c kconfig_variable 192 CONFIG_FEATURE_SPLIT_FANCY bool
+c kconfig_variable 193 CONFIG_FEATURE_LAST_FANCY bool
+c kconfig_variable 194 CONFIG_FEATURE_HDPARM_HDIO_UNREGISTER_HWIF bool
+c kconfig_variable 195 CONFIG_BZCAT bool
+c kconfig_variable 196 CONFIG_DEVFSD_FG_NP bool
+c kconfig_variable 197 CONFIG_UNCOMPRESS bool
+c kconfig_variable 198 CONFIG_FEATURE_WGET_STATUSBAR bool
+c kconfig_variable 199 CONFIG_DIFF bool
+c kconfig_variable 200 CONFIG_UNZIP bool
+c kconfig_variable 201 CONFIG_TRUNCATE bool
+c kconfig_variable 202 CONFIG_DEFAULT_SETFONT_DIR string ""
+c kconfig_variable 203 CONFIG_FEATURE_PS_LONG bool
+c kconfig_variable 204 CONFIG_IPRULE bool
+c kconfig_variable 205 CONFIG_FEATURE_TAR_OLDSUN_COMPATIBILITY bool
+c kconfig_variable 206 CONFIG_RESIZE bool
+c kconfig_variable 207 CONFIG_YES bool
+c kconfig_variable 208 CONFIG_FEATURE_VOLUMEID_HFS bool
+c kconfig_variable 209 CONFIG_ARP bool
+c kconfig_variable 210 CONFIG_FEATURE_FIND_NEWER bool
+c kconfig_variable 211 CONFIG_FEATURE_BUFFERS_GO_IN_BSS choice_bool
+c kconfig_variable 212 CONFIG_ADDUSER bool
+c kconfig_variable 213 CONFIG_FEATURE_SUN_LABEL bool
+c kconfig_variable 214 CONFIG_PSTREE bool
+c kconfig_variable 215 CONFIG_BZIP2 bool
+c kconfig_variable 216 CONFIG_FOLD bool
+c kconfig_variable 217 CONFIG_FEATURE_LS_COLOR_IS_DEFAULT bool
+c kconfig_variable 218 CONFIG_TRACEROUTE6 bool
+c kconfig_variable 219 CONFIG_FEATURE_SYSLOGD_DUP bool
+c kconfig_variable 220 CONFIG_FEATURE_HTTPD_CGI bool
+c kconfig_variable 221 CONFIG_LZCAT bool
+c kconfig_variable 222 CONFIG_SHA1SUM bool
+c kconfig_variable 223 CONFIG_FEATURE_AR_LONG_FILENAMES bool
+c kconfig_variable 224 CONFIG_FEATURE_FANCY_TAIL bool
+c kconfig_variable 225 CONFIG_HUSH_READ bool
+c kconfig_variable 226 CONFIG_FSTRIM bool
+c kconfig_variable 227 CONFIG_FEATURE_SORT_BIG bool
+c kconfig_variable 228 CONFIG_FEATURE_SH_MATH bool
+c kconfig_variable 229 CONFIG_LINUX32 bool
+c kconfig_variable 230 CONFIG_FGCONSOLE bool
+c kconfig_variable 231 CONFIG_TEST2 bool
+c kconfig_variable 232 CONFIG_FEATURE_BOOTCHARTD_CONFIG_FILE bool
+c kconfig_variable 233 CONFIG_USLEEP bool
+c kconfig_variable 234 CONFIG_NICE bool
+c kconfig_variable 235 CONFIG_RFKILL bool
+c kconfig_variable 236 CONFIG_INSTALL_APPLET_DONT choice_bool
+c kconfig_variable 237 CONFIG_FEATURE_IP_RULE bool
+c kconfig_variable 238 CONFIG_VCONFIG bool
+c kconfig_variable 239 CONFIG_IFUP bool
+c kconfig_variable 240 CONFIG_ASH_GETOPTS bool
+c kconfig_variable 241 CONFIG_FEATURE_TUNCTL_UG bool
+c kconfig_variable 242 CONFIG_SETFATTR bool
+c kconfig_variable 243 CONFIG_FEATURE_MOUNT_FLAGS bool
+c kconfig_variable 244 CONFIG_FEATURE_XARGS_SUPPORT_REPL_STR bool
+c kconfig_variable 245 CONFIG_DEFAULT_DEPMOD_FILE string "modules.dep"
+c kconfig_variable 246 CONFIG_HTTPD bool
+c kconfig_variable 247 CONFIG_TRACEROUTE bool
+c kconfig_variable 248 CONFIG_HUSH_LOCAL bool
+c kconfig_variable 249 CONFIG_TEE bool
+c kconfig_variable 250 CONFIG_TEST bool
+c kconfig_variable 251 CONFIG_IFDOWN bool
+c kconfig_variable 252 CONFIG_NAMEIF bool
+c kconfig_variable 253 CONFIG_FEATURE_VOLUMEID_UBIFS bool
+c kconfig_variable 254 CONFIG_UDHCPC bool
+c kconfig_variable 255 CONFIG_FEATURE_SWAPON_PRI bool
+c kconfig_variable 256 CONFIG_ID bool
+c kconfig_variable 257 CONFIG_FEATURE_FANCY_SLEEP bool
+c kconfig_variable 258 CONFIG_MD5_SMALL int 1
+c kconfig_variable 259 CONFIG_BEEP bool
+c kconfig_variable 260 CONFIG_FEATURE_LZMA_FAST bool
+c kconfig_variable 261 CONFIG_FEATURE_FIND_MTIME bool
+c kconfig_variable 262 CONFIG_FEATURE_VI_WIN_RESIZE bool
+c kconfig_variable 263 CONFIG_INSTALL_SH_APPLET_SCRIPT_WRAPPER choice_bool
+c kconfig_variable 264 CONFIG_TFTP bool
+c kconfig_variable 265 CONFIG_FEATURE_CPIO_O bool
+c kconfig_variable 266 CONFIG_FDISK bool
+c kconfig_variable 267 CONFIG_FEATURE_WGET_TIMEOUT bool
+c kconfig_variable 268 CONFIG_IPCALC bool
+c kconfig_variable 269 CONFIG_BUNZIP2 bool
+c kconfig_variable 270 CONFIG_MOUNT bool
+c kconfig_variable 271 CONFIG_FEATURE_RESIZE_PRINT bool
+c kconfig_variable 272 CONFIG_HUSH_PRINTF bool
+c kconfig_variable 273 CONFIG_FEATURE_VOLUMEID_BTRFS bool
+c kconfig_variable 274 CONFIG_HOSTID bool
+c kconfig_variable 275 CONFIG_EXPR bool
+c kconfig_variable 276 CONFIG_FEATURE_FIND_USER bool
+c kconfig_variable 277 CONFIG_FEATURE_DEVFS bool
+c kconfig_variable 278 CONFIG_FEATURE_RTMINMAX bool
+c kconfig_variable 279 CONFIG_DEFAULT_MODULES_DIR string "/lib/modules"
+c kconfig_variable 280 CONFIG_BLKDISCARD bool
+c kconfig_variable 281 CONFIG_CP bool
+c kconfig_variable 282 CONFIG_DHCPRELAY bool
+c kconfig_variable 283 CONFIG_MICROCOM bool
+c kconfig_variable 284 CONFIG_FEATURE_IP_TUNNEL bool
+c kconfig_variable 285 CONFIG_PARTPROBE bool
+c kconfig_variable 286 CONFIG_CHPST bool
+c kconfig_variable 287 CONFIG_PREFIX string "./_install"
+c kconfig_variable 288 CONFIG_FEATURE_IFUPDOWN_MAPPING bool
+c kconfig_variable 289 CONFIG_FEATURE_HTTPD_ERROR_PAGES bool
+c kconfig_variable 290 CONFIG_FEATURE_FANCY_ECHO bool
+c kconfig_variable 291 CONFIG_FEATURE_CHAT_IMPLICIT_CR bool
+c kconfig_variable 292 CONFIG_HUSH_FUNCTIONS bool
+c kconfig_variable 293 CONFIG_RUNCON bool
+c kconfig_variable 294 CONFIG_SPLIT bool
+c kconfig_variable 295 CONFIG_FEATURE_STAT_FILESYSTEM bool
+c kconfig_variable 296 CONFIG_INSTALL_SH_APPLET_SYMLINK choice_bool
+c kconfig_variable 297 CONFIG_FEATURE_TELNETD_STANDALONE bool
+c kconfig_variable 298 CONFIG_FEATURE_SYSLOGD_CFG bool
+c kconfig_variable 299 CONFIG_ASH_INTERNAL_GLOB bool
+c kconfig_variable 300 CONFIG_SED bool
+c kconfig_variable 301 CONFIG_FEATURE_TFTP_BLOCKSIZE bool
+c kconfig_variable 302 CONFIG_HUSH_TRAP bool
+c kconfig_variable 303 CONFIG_RESET bool
+c kconfig_variable 304 CONFIG_BBCONFIG bool
+c kconfig_variable 305 CONFIG_FEATURE_MOUNT_NFS bool
+c kconfig_variable 306 CONFIG_FEATURE_DATE_NANO bool
+c kconfig_variable 307 CONFIG_FEATURE_FIND_PRUNE bool
+c kconfig_variable 308 CONFIG_FEATURE_SETFONT_TEXTUAL_MAP bool
+c kconfig_variable 309 CONFIG_SLATTACH bool
+c kconfig_variable 310 CONFIG_FEATURE_INSMOD_LOADINKMEM bool
+c kconfig_variable 311 CONFIG_TEST1 bool
+c kconfig_variable 312 CONFIG_FEATURE_UNIX_LOCAL bool
+c kconfig_variable 313 CONFIG_LSSCSI bool
+c kconfig_variable 314 CONFIG_FEATURE_READLINK_FOLLOW bool
+c kconfig_variable 315 CONFIG_WGET bool
+c kconfig_variable 316 CONFIG_RX bool
+c kconfig_variable 317 CONFIG_FEATURE_VOLUMEID_SYSV bool
+c kconfig_variable 318 CONFIG_FEATURE_IP_RARE_PROTOCOLS bool
+c kconfig_variable 319 CONFIG_FEATURE_FANCY_PING bool
+c kconfig_variable 320 CONFIG_VOLUMEID hidden_bool
+c kconfig_variable 321 CONFIG_EXTRA_CFLAGS string ""
+c kconfig_variable 322 CONFIG_ENVDIR bool
+c kconfig_variable 323 CONFIG_LOADFONT bool
+c kconfig_variable 324 CONFIG_FEATURE_VOLUMEID_ISO9660 bool
+c kconfig_variable 325 CONFIG_FEATURE_SETCONSOLE_LONG_OPTIONS bool
+c kconfig_variable 326 CONFIG_FEATURE_MTAB_SUPPORT bool
+c kconfig_variable 327 CONFIG_NOHUP bool
+c kconfig_variable 328 CONFIG_HUSH_RANDOM_SUPPORT bool
+c kconfig_variable 329 CONFIG_TLS hidden_bool
+c kconfig_variable 330 CONFIG_FEATURE_TOP_DECIMALS bool
+c kconfig_variable 331 CONFIG_IP bool
+c kconfig_variable 332 CONFIG_BUSYBOX_EXEC_PATH string "/proc/self/exe"
+c kconfig_variable 333 CONFIG_FEATURE_VI_COLON bool
+c kconfig_variable 334 CONFIG_LSPCI bool
+c kconfig_variable 335 CONFIG_HEAD bool
+c kconfig_variable 336 CONFIG_FEATURE_VOLUMEID_MINIX bool
+c kconfig_variable 337 CONFIG_MATCHPATHCON bool
+c kconfig_variable 338 CONFIG_FEATURE_USE_BSS_TAIL bool
+c kconfig_variable 339 CONFIG_UMOUNT bool
+c kconfig_variable 340 CONFIG_DIRNAME bool
+c kconfig_variable 341 CONFIG_FEATURE_SYNC_FANCY bool
+c kconfig_variable 342 CONFIG_FEATURE_INETD_SUPPORT_BUILTIN_CHARGEN bool
+c kconfig_variable 343 CONFIG_CLEAR bool
+c kconfig_variable 344 CONFIG_FEATURE_MOUNT_FAKE bool
+c kconfig_variable 345 CONFIG_FEATURE_TAR_NOPRESERVE_TIME bool
+c kconfig_variable 346 CONFIG_LOCALE_SUPPORT bool
+c kconfig_variable 347 CONFIG_PASTE bool
+c kconfig_variable 348 CONFIG_FEATURE_NAMEIF_EXTENDED bool
+c kconfig_variable 349 CONFIG_VI bool
+c kconfig_variable 350 CONFIG_TIMEOUT bool
+c kconfig_variable 351 CONFIG_FEATURE_FIND_PRINT0 bool
+c kconfig_variable 352 CONFIG_FEATURE_NETSTAT_PRG bool
+c kconfig_variable 353 CONFIG_FEATURE_HTTPD_RANGES bool
+c kconfig_variable 354 CONFIG_STRINGS bool
+c kconfig_variable 355 CONFIG_FEATURE_REFORMIME_COMPAT bool
+c kconfig_variable 356 CONFIG_FEATURE_EDITING bool
+c kconfig_variable 357 CONFIG_FEATURE_VI_SET bool
+c kconfig_variable 358 CONFIG_SULOGIN bool
+c kconfig_variable 359 CONFIG_RDATE bool
+c kconfig_variable 360 CONFIG_ASH_IDLE_TIMEOUT bool
+c kconfig_variable 361 CONFIG_FDFLUSH bool
+c kconfig_variable 362 CONFIG_SUM bool
+c kconfig_variable 363 CONFIG_UDHCPC6 bool
+c kconfig_variable 364 CONFIG_CKSUM bool
+c kconfig_variable 365 CONFIG_GZIP_FAST int 0
+c kconfig_variable 366 CONFIG_HUSH_EXPORT_N bool
+c kconfig_variable 367 CONFIG_SUBST_WCHAR int 63
+c kconfig_variable 368 CONFIG_I2CSET bool
+c kconfig_variable 369 CONFIG_FEATURE_EDITING_FANCY_PROMPT bool
+c kconfig_variable 370 CONFIG_KILLALL5 bool
+c kconfig_variable 371 CONFIG_FEATURE_USE_INITTAB bool
+c kconfig_variable 372 CONFIG_FEATURE_TAR_TO_COMMAND bool
+c kconfig_variable 373 CONFIG_SETSID bool
+c kconfig_variable 374 CONFIG_INSTALL_NO_USR bool
+c kconfig_variable 375 CONFIG_SVC bool
+c kconfig_variable 376 CONFIG_FEATURE_TR_CLASSES bool
+c kconfig_variable 377 CONFIG_UNXZ bool
+c kconfig_variable 378 CONFIG_FEATURE_AR_CREATE bool
+c kconfig_variable 379 CONFIG_FEATURE_LOGREAD_REDUCED_LOCKING bool
+c kconfig_variable 380 CONFIG_FEATURE_SECURETTY bool
+c kconfig_variable 381 CONFIG_FEATURE_INETD_SUPPORT_BUILTIN_TIME bool
+c kconfig_variable 382 CONFIG_ASH_HELP bool
+c kconfig_variable 383 CONFIG_FEATURE_CROND_DIR string "/var/spool/cron"
+c kconfig_variable 384 CONFIG_FEATURE_VOLUMEID_EXT bool
+c kconfig_variable 385 CONFIG_FEATURE_MDEV_RENAME bool
+c kconfig_variable 386 CONFIG_FEATURE_UDHCP_8021Q bool
+c kconfig_variable 387 CONFIG_LINUX64 bool
+c kconfig_variable 388 CONFIG_FEATURE_VI_SETOPTS bool
+c kconfig_variable 389 CONFIG_EFENCE choice_bool
+c kconfig_variable 390 CONFIG_FEATURE_TFTP_GET bool
+c kconfig_variable 391 CONFIG_FGREP bool
+c kconfig_variable 392 CONFIG_FEATURE_VOLUMEID_SQUASHFS bool
+c kconfig_variable 393 CONFIG_FEATURE_VERBOSE_USAGE bool
+c kconfig_variable 394 CONFIG_SMEMCAP bool
+c kconfig_variable 395 CONFIG_FEATURE_INSMOD_TRY_MMAP bool
+c kconfig_variable 396 CONFIG_FEATURE_IPC_SYSLOG_BUFFER_SIZE int 16
+c kconfig_variable 397 CONFIG_FEATURE_FIND_PATH bool
+c kconfig_variable 398 CONFIG_FEATURE_DIFF_LONG_OPTIONS bool
+c kconfig_variable 399 CONFIG_FEATURE_VOLUMEID_LUKS bool
+c kconfig_variable 400 CONFIG_FDFORMAT bool
+c kconfig_variable 401 CONFIG_MKFIFO bool
+c kconfig_variable 402 CONFIG_DESKTOP bool
+c kconfig_variable 403 CONFIG_UBIRMVOL bool
+c kconfig_variable 404 CONFIG_FEATURE_SEAMLESS_BZ2 bool
+c kconfig_variable 405 CONFIG_PIPE_PROGRESS bool
+c kconfig_variable 406 CONFIG_RESTORECON bool
+c kconfig_variable 407 CONFIG_FEATURE_LS_TIMESTAMPS bool
+c kconfig_variable 408 CONFIG_UBIATTACH bool
+c kconfig_variable 409 CONFIG_FEATURE_AWK_LIBM bool
+c kconfig_variable 410 CONFIG_ASH_TEST bool
+c kconfig_variable 411 CONFIG_FEATURE_FIND_SIZE bool
+c kconfig_variable 412 CONFIG_FEATURE_SETPRIV_CAPABILITIES bool
+c kconfig_variable 413 CONFIG_NSENTER bool
+c kconfig_variable 414 CONFIG_ENV bool
+c kconfig_variable 415 CONFIG_STAT bool
+c kconfig_variable 416 CONFIG_LPD bool
+c kconfig_variable 417 CONFIG_VERBOSE_RESOLUTION_ERRORS bool
+c kconfig_variable 418 CONFIG_FEATURE_BRCTL_SHOW bool
+c kconfig_variable 419 CONFIG_TELNET bool
+c kconfig_variable 420 CONFIG_IPTUNNEL bool
+c kconfig_variable 421 CONFIG_FEATURE_SU_SYSLOG bool
+c kconfig_variable 422 CONFIG_UPTIME bool
+c kconfig_variable 423 CONFIG_LESS bool
+c kconfig_variable 424 CONFIG_TELINIT_PATH string "/sbin/telinit"
+c kconfig_variable 425 CONFIG_ASH_BASH_COMPAT bool
+c kconfig_variable 426 CONFIG_FEATURE_IFUPDOWN_IPV4 bool
+c kconfig_variable 427 CONFIG_HALT bool
+c kconfig_variable 428 CONFIG_LS bool
+c kconfig_variable 429 CONFIG_START_STOP_DAEMON bool
+c kconfig_variable 430 CONFIG_DUMPKMAP bool
+c kconfig_variable 431 CONFIG_HUSH_UNSET bool
+c kconfig_variable 432 CONFIG_PRINTF bool
+c kconfig_variable 433 CONFIG_FEATURE_MOUNT_FSTAB bool
+c kconfig_variable 434 CONFIG_LOGNAME bool
+c kconfig_variable 435 CONFIG_FEATURE_LS_RECURSIVE bool
+c kconfig_variable 436 CONFIG_FEATURE_POWERTOP_INTERACTIVE bool
+c kconfig_variable 437 CONFIG_BLKID bool
+c kconfig_variable 438 CONFIG_PGREP bool
+c kconfig_variable 439 CONFIG_LONG_OPTS bool
+c kconfig_variable 440 CONFIG_HUSH_JOB bool
+c kconfig_variable 441 CONFIG_FEATURE_TELNET_WIDTH bool
+c kconfig_variable 442 CONFIG_MAN bool
+c kconfig_variable 443 CONFIG_MKPASSWD bool
+c kconfig_variable 444 CONFIG_SHA512SUM bool
+c kconfig_variable 445 CONFIG_BB_SYSCTL bool
+c kconfig_variable 446 CONFIG_SETFONT bool
+c kconfig_variable 447 CONFIG_PWDX bool
+c kconfig_variable 448 CONFIG_FEATURE_SETFILES_CHECK_OPTION bool
+c kconfig_variable 449 CONFIG_SHRED bool
+c kconfig_variable 450 CONFIG_PASSWD bool
+c kconfig_variable 451 CONFIG_FEATURE_ALLOW_EXEC bool
+c kconfig_variable 452 CONFIG_ED bool
+c kconfig_variable 453 CONFIG_CAL bool
+c kconfig_variable 454 CONFIG_UDHCP_DEBUG int 9
+c kconfig_variable 455 CONFIG_FEATURE_HWIB bool
+c kconfig_variable 456 CONFIG_FEATURE_KILL_DELAY int 0
+c kconfig_variable 457 CONFIG_FEATURE_UDHCPD_WRITE_LEASES_EARLY bool
+c kconfig_variable 458 CONFIG_FEATURE_XARGS_SUPPORT_QUOTES bool
+c kconfig_variable 459 CONFIG_FEATURE_XARGS_SUPPORT_TERMOPT bool
+c kconfig_variable 460 CONFIG_INOTIFYD bool
+c kconfig_variable 461 CONFIG_RESUME bool
+c kconfig_variable 462 CONFIG_FEATURE_SWAPONOFF_LABEL bool
+c kconfig_variable 463 CONFIG_PING6 bool
+c kconfig_variable 464 CONFIG_NC bool
+c kconfig_variable 465 CONFIG_USERS bool
+c kconfig_variable 466 CONFIG_FEATURE_LS_FOLLOWLINKS bool
+c kconfig_variable 467 CONFIG_FEATURE_IP_NEIGH bool
+c kconfig_variable 468 CONFIG_FEATURE_TAR_GNU_EXTENSIONS bool
+c kconfig_variable 469 CONFIG_FAKEIDENTD bool
+c kconfig_variable 470 CONFIG_WATCHDOG bool
+c kconfig_variable 471 CONFIG_UEVENT bool
+c kconfig_variable 472 CONFIG_MKDOSFS bool
+c kconfig_variable 473 CONFIG_FEATURE_IFUPDOWN_IP bool
+c kconfig_variable 474 CONFIG_CRONTAB bool
+c kconfig_variable 475 CONFIG_TASKSET bool
+c kconfig_variable 476 CONFIG_FEATURE_DATE_COMPAT bool
+c kconfig_variable 477 CONFIG_FLASH_LOCK bool
+c kconfig_variable 478 CONFIG_HUSH_TIMES bool
+c kconfig_variable 479 CONFIG_FEATURE_VI_USE_SIGNALS bool
+c kconfig_variable 480 CONFIG_BRCTL bool
+c kconfig_variable 481 CONFIG_LAST bool
+c kconfig_variable 482 CONFIG_FEATURE_HTTPD_GZIP bool
+c kconfig_variable 483 CONFIG_FEATURE_SH_MATH_64 bool
+c kconfig_variable 484 CONFIG_CROSS_COMPILER_PREFIX string ""
+c kconfig_variable 485 CONFIG_WC bool
+c kconfig_variable 486 CONFIG_FEATURE_TOP_SMP_PROCESS bool
+c kconfig_variable 487 CONFIG_FEATURE_TAR_CREATE bool
+c kconfig_variable 488 CONFIG_GETOPT bool
+c kconfig_variable 489 CONFIG_MKE2FS bool
+c kconfig_variable 490 CONFIG_PAM bool
+c kconfig_variable 491 CONFIG_FEATURE_CATN bool
+c kconfig_variable 492 CONFIG_HUSH_MODE_X bool
+c kconfig_variable 493 CONFIG_FEATURE_STAT_FORMAT bool
+c kconfig_variable 494 CONFIG_MKFS_REISER bool
+c kconfig_variable 495 CONFIG_FEATURE_LS_SORTFILES bool
+c kconfig_variable 496 CONFIG_SWAPON bool
+c kconfig_variable 497 CONFIG_FEATURE_HDPARM_GET_IDENTITY bool
+c kconfig_variable 498 CONFIG_CHMOD bool
+c kconfig_variable 499 CONFIG_SV_DEFAULT_SERVICE_DIR string "/var/service"
+c kconfig_variable 500 CONFIG_FEATURE_POPMAILDIR_DELIVERY bool
+c kconfig_variable 501 CONFIG_UNIT_TEST bool
+c kconfig_variable 502 CONFIG_USE_BB_CRYPT bool
+c kconfig_variable 503 CONFIG_FEATURE_MAKEDEVS_LEAF choice_bool
+c kconfig_variable 504 CONFIG_TFTPD bool
+c kconfig_variable 505 CONFIG_REALPATH bool
+c kconfig_variable 506 CONFIG_FEATURE_FIND_LINKS bool
+c kconfig_variable 507 CONFIG_FEATURE_FIND_REGEX bool
+c kconfig_variable 508 CONFIG_FEATURE_WC_LARGE bool
+c kconfig_variable 509 CONFIG_FEATURE_EDITING_HISTORY int 255
+c kconfig_variable 510 CONFIG_UNIQ bool
+c kconfig_variable 511 CONFIG_PLATFORM_LINUX hidden_bool
+c kconfig_variable 512 CONFIG_WHO bool
+c kconfig_variable 513 CONFIG_HUSH_BASH_COMPAT bool
+c kconfig_variable 514 CONFIG_FEATURE_PS_TIME bool
+c kconfig_variable 515 CONFIG_FEATURE_FIND_DELETE bool
+c kconfig_variable 516 CONFIG_HWCLOCK bool
+c kconfig_variable 517 CONFIG_FEATURE_KLOGD_KLOGCTL bool
+c kconfig_variable 518 CONFIG_FEATURE_COMPRESS_BBCONFIG bool
+c kconfig_variable 519 CONFIG_FEATURE_LESS_WINCH bool
+c kconfig_variable 520 CONFIG_DMESG bool
+c kconfig_variable 521 CONFIG_FEATURE_UNZIP_BZIP2 bool
+c kconfig_variable 522 CONFIG_FEATURE_MDEV_EXEC bool
+c kconfig_variable 523 CONFIG_MT bool
+c kconfig_variable 524 CONFIG_MKNOD bool
+c kconfig_variable 525 CONFIG_MOUNTPOINT bool
+c kconfig_variable 526 CONFIG_SETCONSOLE bool
+c kconfig_variable 527 CONFIG_KILLALL bool
+c kconfig_variable 528 CONFIG_FEATURE_LSMOD_PRETTY_2_6_OUTPUT bool
+c kconfig_variable 529 CONFIG_FEATURE_VI_SEARCH bool
+c kconfig_variable 530 CONFIG_FEATURE_TAR_LONG_OPTIONS bool
+c kconfig_variable 531 CONFIG_FEATURE_RUNSVDIR_LOG bool
+c kconfig_variable 532 CONFIG_SLEEP bool
+c kconfig_variable 533 CONFIG_FEATURE_INIT_COREDUMPS bool
+c kconfig_variable 534 CONFIG_WERROR bool
+c kconfig_variable 535 CONFIG_FEATURE_EDITING_SAVE_ON_EXIT bool
+c kconfig_variable 536 CONFIG_FEATURE_IFUPDOWN_EXTERNAL_DHCP bool
+c kconfig_variable 537 CONFIG_UBIDETACH bool
+c kconfig_variable 538 CONFIG_FEATURE_GETOPT_LONG bool
+c kconfig_variable 539 CONFIG_FEATURE_FIND_TYPE bool
+c kconfig_variable 540 CONFIG_FEATURE_START_STOP_DAEMON_LONG_OPTIONS bool
+c kconfig_variable 541 CONFIG_FEATURE_LOADFONT_PSF2 bool
+c kconfig_variable 542 CONFIG_LOADKMAP bool
+c kconfig_variable 543 CONFIG_INSTALL bool
+c kconfig_variable 544 CONFIG_NC_110_COMPAT bool
+c kconfig_variable 545 CONFIG_W bool
+c kconfig_variable 546 CONFIG_FUSER bool
+c kconfig_variable 547 CONFIG_FEATURE_MOUNT_LABEL bool
+c kconfig_variable 548 CONFIG_ASH_ECHO bool
+c kconfig_variable 549 CONFIG_SELINUX bool
+c kconfig_variable 550 CONFIG_FEATURE_INSMOD_LOAD_MAP bool
+c kconfig_variable 551 CONFIG_FEATURE_INSTALLER bool
+c kconfig_variable 552 CONFIG_HUSH_KILL bool
+c kconfig_variable 553 CONFIG_FEATURE_PRESERVE_HARDLINKS bool
+c kconfig_variable 554 CONFIG_BASE64 bool
+c kconfig_variable 555 CONFIG_FEATURE_FBSET_FANCY bool
+c kconfig_variable 556 CONFIG_FEATURE_VOLUMEID_EXFAT bool
+c kconfig_variable 557 CONFIG_FALLOCATE bool
+c kconfig_variable 558 CONFIG_CHPASSWD bool
+c kconfig_variable 559 CONFIG_VLOCK bool
+c kconfig_variable 560 CONFIG_FEATURE_SH_HISTFILESIZE bool
+c kconfig_variable 561 CONFIG_KLOGD bool
+c kconfig_variable 562 CONFIG_HUSH_EXPORT bool
+c kconfig_variable 563 CONFIG_FEATURE_TELNETD_INETD_WAIT bool
+c kconfig_variable 564 CONFIG_HD bool
+c kconfig_variable 565 CONFIG_FEATURE_UNZIP_LZMA bool
+c kconfig_variable 566 CONFIG_FEATURE_TAR_AUTODETECT bool
+c kconfig_variable 567 CONFIG_FEATURE_MOUNT_HELPERS bool
+c kconfig_variable 568 CONFIG_ETHER_WAKE bool
+c kconfig_variable 569 CONFIG_INSMOD bool
+c kconfig_variable 570 CONFIG_FEATURE_WGET_AUTHENTICATION bool
+c kconfig_variable 571 CONFIG_MKSWAP bool
+c kconfig_variable 572 CONFIG_KBD_MODE bool
+c kconfig_variable 573 CONFIG_RENICE bool
+c kconfig_variable 574 CONFIG_CHATTR bool
+c kconfig_variable 575 CONFIG_NETSTAT bool
+c kconfig_variable 576 CONFIG_FEATURE_HTTPD_SET_REMOTE_PORT_TO_ENV bool
+c kconfig_variable 577 CONFIG_OD bool
+c kconfig_variable 578 CONFIG_FEATURE_VI_ASK_TERMINAL bool
+c kconfig_variable 579 CONFIG_FEATURE_CROND_CALL_SENDMAIL bool
+c kconfig_variable 580 CONFIG_FEATURE_VI_8BIT bool
+c kconfig_variable 581 CONFIG_REMOVE_SHELL bool
+c kconfig_variable 582 CONFIG_CONSPY bool
+c kconfig_variable 583 CONFIG_INSTALL_SH_APPLET_HARDLINK choice_bool
+c kconfig_variable 584 CONFIG_FEATURE_USERNAME_COMPLETION bool
+c kconfig_variable 585 CONFIG_FEATURE_UDHCPC_SANITIZEOPT bool
+c kconfig_variable 586 CONFIG_FEATURE_CMDLINE_MODULE_OPTIONS bool
+c kconfig_variable 587 CONFIG_RTCWAKE bool
+c kconfig_variable 588 CONFIG_TTY bool
+c kconfig_variable 589 CONFIG_FEATURE_LS_USERNAME bool
+c kconfig_variable 590 CONFIG_FEATURE_BOOTCHARTD_BLOATED_HEADER bool
+c kconfig_variable 591 CONFIG_DU bool
+c kconfig_variable 592 CONFIG_CROND bool
+c kconfig_variable 593 CONFIG_PWD bool
+c kconfig_variable 594 CONFIG_INCLUDE_SUSv2 bool
+c kconfig_variable 595 CONFIG_FEATURE_DU_DEFAULT_BLOCKSIZE_1K bool
+c kconfig_variable 596 CONFIG_NUKE bool
+c kconfig_variable 597 CONFIG_EGREP bool
+c kconfig_variable 598 CONFIG_DEVMEM bool
+c kconfig_variable 599 CONFIG_BOOTCHARTD bool
+c kconfig_variable 600 CONFIG_COMM bool
+c kconfig_variable 601 CONFIG_HDPARM bool
+c kconfig_variable 602 CONFIG_FEATURE_INETD_RPC bool
+c kconfig_variable 603 CONFIG_NC_SERVER bool
+c kconfig_variable 604 CONFIG_FEATURE_VOLUMEID_BCACHE bool
+c kconfig_variable 605 CONFIG_UNLINK bool
+c kconfig_variable 606 CONFIG_NETCAT bool
+c kconfig_variable 607 CONFIG_FEATURE_HTTPD_ENCODE_URL_STR bool
+c kconfig_variable 608 CONFIG_FEATURE_WGET_OPENSSL bool
+c kconfig_variable 609 CONFIG_ASH_RANDOM_SUPPORT bool
+c kconfig_variable 610 CONFIG_HEXEDIT bool
+c kconfig_variable 611 CONFIG_RPM bool
+c kconfig_variable 612 CONFIG_FEATURE_TOUCH_NODEREF bool
+c kconfig_variable 613 CONFIG_FEATURE_CP_LONG_OPTIONS bool
+c kconfig_variable 614 CONFIG_TUNE2FS bool
+c kconfig_variable 615 CONFIG_FEATURE_IFCONFIG_STATUS bool
+c kconfig_variable 616 CONFIG_FEATURE_SGI_LABEL bool
+c kconfig_variable 617 CONFIG_FEATURE_TEST_64 bool
+c kconfig_variable 618 CONFIG_SHA256SUM bool
+c kconfig_variable 619 CONFIG_CHVT bool
+c kconfig_variable 620 CONFIG_FEATURE_HTTPD_AUTH_MD5 bool
+c kconfig_variable 621 CONFIG_FLOCK bool
+c kconfig_variable 622 CONFIG_FEATURE_MOUNT_CIFS bool
+c kconfig_variable 623 CONFIG_FEATURE_MINIX2 bool
+c kconfig_variable 624 CONFIG_FEATURE_DEVPTS bool
+c kconfig_variable 625 CONFIG_FEATURE_FDISK_ADVANCED bool
+c kconfig_variable 626 CONFIG_XARGS bool
+c kconfig_variable 627 CONFIG_FEATURE_LESS_BRACKETS bool
+c kconfig_variable 628 CONFIG_DELUSER bool
+c kconfig_variable 629 CONFIG_LSMOD bool
+c kconfig_variable 630 CONFIG_FEATURE_EDITING_ASK_TERMINAL bool
+c kconfig_variable 631 CONFIG_DC bool
+c kconfig_variable 632 CONFIG_FBSET bool
+c kconfig_variable 633 CONFIG_FEATURE_INSMOD_LOAD_MAP_FULL bool
+c kconfig_variable 634 CONFIG_SHA3SUM bool
+c kconfig_variable 635 CONFIG_FEATURE_LESS_DASHCMD bool
+c kconfig_variable 636 CONFIG_INIT bool
+c kconfig_variable 637 CONFIG_FSCK_MINIX bool
+c kconfig_variable 638 CONFIG_FEATURE_TOUCH_SUSV3 bool
+c kconfig_variable 639 CONFIG_FEATURE_UDHCP_RFC3397 bool
+c kconfig_variable 640 CONFIG_FEATURE_VOLUMEID_NILFS bool
+c kconfig_variable 641 CONFIG_MKFS_MINIX bool
+c kconfig_variable 642 CONFIG_DEALLOCVT bool
+c kconfig_variable 643 CONFIG_FEATURE_TOP_SMP_CPU bool
+c kconfig_variable 644 CONFIG_FEATURE_HTTPD_SETUID bool
+c kconfig_variable 645 CONFIG_UBIRENAME bool
+c kconfig_variable 646 CONFIG_FEATURE_VOLUMEID_LINUXSWAP bool
+c kconfig_variable 647 CONFIG_FEATURE_DEL_USER_FROM_GROUP bool
+c kconfig_variable 648 CONFIG_FEATURE_UPTIME_UTMP_SUPPORT bool
+c kconfig_variable 649 CONFIG_HUSH bool
+c kconfig_variable 650 CONFIG_BASENAME bool
+c kconfig_variable 651 CONFIG_FEATURE_COMPRESS_USAGE bool
+c kconfig_variable 652 CONFIG_FEATURE_CHECK_NAMES bool
+c kconfig_variable 653 CONFIG_FEATURE_SETPRIV_CAPABILITY_NAMES bool
+c kconfig_variable 654 CONFIG_RM bool
+c kconfig_variable 655 CONFIG_LN bool
+c kconfig_variable 656 CONFIG_FEATURE_DEFAULT_PASSWD_ALGO string "des"
+c kconfig_variable 657 CONFIG_FEATURE_VOLUMEID_NTFS bool
+c kconfig_variable 658 CONFIG_FEATURE_NTPD_SERVER bool
+c kconfig_variable 659 CONFIG_FEATURE_FIND_PAREN bool
+c kconfig_variable 660 CONFIG_FEATURE_LESS_LINENUMS bool
+c kconfig_variable 661 CONFIG_FEATURE_LOADFONT_RAW bool
+c kconfig_variable 662 CONFIG_FEATURE_EDITING_VI bool
+c kconfig_variable 663 CONFIG_SHOWKEY bool
+c kconfig_variable 664 CONFIG_HUSH_SAVEHISTORY bool
+c kconfig_variable 665 CONFIG_HUSH_TEST bool
+c kconfig_variable 666 CONFIG_FEATURE_GPT_LABEL bool
+c kconfig_variable 667 CONFIG_FEATURE_INIT_SCTTY bool
+c kconfig_variable 668 CONFIG_FIND bool
+c kconfig_variable 669 CONFIG_MODPROBE bool
+c kconfig_variable 670 CONFIG_FEATURE_FTPD_WRITE bool
+c kconfig_variable 671 CONFIG_CUT bool
+c kconfig_variable 672 CONFIG_XXD bool
+c kconfig_variable 673 CONFIG_FEATURE_RUN_PARTS_FANCY bool
+c kconfig_variable 674 CONFIG_FEATURE_CHECK_UNICODE_IN_ENV bool
+c kconfig_variable 675 CONFIG_FDISK_SUPPORT_LARGE_DISKS bool
+c kconfig_variable 676 CONFIG_FEATURE_WGET_HTTPS bool
+c kconfig_variable 677 CONFIG_HUSH_SET bool
+c kconfig_variable 678 CONFIG_FEATURE_FIND_EXEC bool
+c kconfig_variable 679 CONFIG_XZCAT bool
+c kconfig_variable 680 CONFIG_SH_IS_ASH choice_bool
+c kconfig_variable 681 CONFIG_MINIPS bool
+c kconfig_variable 682 CONFIG_FEATURE_MOUNT_VERBOSE bool
+c kconfig_variable 683 CONFIG_HUSH_LOOPS bool
+c kconfig_variable 684 CONFIG_LPR bool
+c kconfig_variable 685 CONFIG_SETUIDGID bool
+c kconfig_variable 686 CONFIG_LOGIN_SESSION_AS_CHILD bool
+c kconfig_variable 687 CONFIG_FEATURE_FANCY_HEAD bool
+c kconfig_variable 688 CONFIG_FEATURE_TAR_UNAME_GNAME bool
+c kconfig_variable 689 CONFIG_FEATURE_NETSTAT_WIDE bool
+c kconfig_variable 690 CONFIG_FEATURE_LESS_REGEXP bool
+c kconfig_variable 691 CONFIG_MD5SUM bool
+c kconfig_variable 692 CONFIG_FEATURE_SEAMLESS_LZMA bool
+c kconfig_variable 693 CONFIG_UNAME_OSNAME string "GNU/Linux"
+c kconfig_variable 694 CONFIG_FEATURE_GZIP_LONG_OPTIONS bool
+c kconfig_variable 695 CONFIG_FALSE bool
+c kconfig_variable 696 CONFIG_TAR bool
+c kconfig_variable 697 CONFIG_LOGIN bool
+c kconfig_variable 698 CONFIG_NANDDUMP bool
+c kconfig_variable 699 CONFIG_MESG bool
+c kconfig_variable 700 CONFIG_SCRIPTREPLAY bool
+c kconfig_variable 701 CONFIG_GETSEBOOL bool
+c kconfig_variable 702 CONFIG_NMETER bool
+c kconfig_variable 703 CONFIG_IPLINK bool
+c kconfig_variable 704 CONFIG_SYSROOT string ""
+c kconfig_variable 705 CONFIG_SHOW_USAGE bool
+c kconfig_variable 706 CONFIG_FEATURE_PIDOF_SINGLE bool
+c kconfig_variable 707 CONFIG_FEATURE_SYSLOG hidden_bool
+c kconfig_variable 708 CONFIG_FEATURE_IP_ADDRESS bool
+c kconfig_variable 709 CONFIG_MAKEDEVS bool
+c kconfig_variable 710 CONFIG_FEATURE_SHADOWPASSWDS bool
+c kconfig_variable 711 CONFIG_FEATURE_INSMOD_KSYMOOPS_SYMBOLS bool
+c kconfig_variable 712 CONFIG_FEATURE_VOLUMEID_LINUXRAID bool
+c kconfig_variable 713 CONFIG_PRINTENV bool
+c kconfig_variable 714 CONFIG_FEATURE_GZIP_DECOMPRESS bool
+c kconfig_variable 715 CONFIG_SETARCH bool
+c kconfig_variable 716 CONFIG_DELGROUP bool
+c kconfig_variable 717 CONFIG_FEATURE_IFCONFIG_SLIP bool
+c kconfig_variable 718 CONFIG_PING bool
+c kconfig_variable 719 CONFIG_SH_IS_HUSH choice_bool
+c kconfig_variable 720 CONFIG_IOSTAT bool
+c kconfig_variable 721 CONFIG_FEATURE_TOP_CPU_GLOBAL_PERCENTS bool
+c kconfig_variable 722 CONFIG_FEATURE_CHAT_SEND_ESCAPES bool
+c kconfig_variable 723 CONFIG_FEATURE_HWCLOCK_ADJTIME_FHS bool
+c kconfig_variable 724 CONFIG_FEATURE_DD_STATUS bool
+c kconfig_variable 725 CONFIG_FEATURE_CHAT_CLR_ABORT bool
+c kconfig_variable 726 CONFIG_FEATURE_LESS_TRUNCATE bool
+c kconfig_variable 727 CONFIG_FEATURE_NOLOGIN bool
+c kconfig_variable 728 CONFIG_LOGREAD bool
+c kconfig_variable 729 CONFIG_UNICODE_USING_LOCALE bool
+c kconfig_variable 730 CONFIG_FEATURE_SHARED_BUSYBOX bool
+c kconfig_variable 731 CONFIG_FEATURE_LESS_MAXLINES int 9999999
+c kconfig_variable 732 CONFIG_FEATURE_UNZIP_CDF bool
+c kconfig_variable 733 CONFIG_DEVFSD_MODLOAD bool
+c kconfig_variable 734 CONFIG_DEVFSD bool
+c kconfig_variable 735 CONFIG_HUSH_ECHO bool
+c kconfig_variable 736 CONFIG_FEATURE_NTPD_CONF bool
+c kconfig_variable 737 CONFIG_HUSH_HELP bool
+c kconfig_variable 738 CONFIG_INIT_TERMINAL_TYPE string "linux"
+c kconfig_variable 739 CONFIG_SELINUXENABLED bool
+c kconfig_variable 740 CONFIG_SSL_CLIENT bool
+c kconfig_variable 741 CONFIG_FSYNC bool
+c kconfig_variable 742 CONFIG_IOCTL_HEX2STR_ERROR bool
+c kconfig_variable 743 CONFIG_DNSDOMAINNAME bool
+c kconfig_variable 744 CONFIG_FEATURE_RUN_PARTS_LONG_OPTIONS bool
+c kconfig_variable 745 CONFIG_HUSH_UMASK bool
+c kconfig_variable 746 CONFIG_ECHO bool
+c kconfig_variable 747 CONFIG_ZCIP bool
+c kconfig_variable 748 CONFIG_FEATURE_XARGS_SUPPORT_ARGS_FILE bool
+c kconfig_variable 749 CONFIG_TELNETD bool
+c kconfig_variable 750 CONFIG_FLASHCP bool
+c kconfig_variable 751 CONFIG_FEATURE_LESS_MARKS bool
+c kconfig_variable 752 CONFIG_FEATURE_MDEV_CONF bool
+c kconfig_variable 753 CONFIG_TRUE bool
+c kconfig_variable 754 CONFIG_IFUPDOWN_IFSTATE_PATH string "/var/run/ifstate"
+c kconfig_variable 755 CONFIG_RDEV bool
+c kconfig_variable 756 CONFIG_CPIO bool
+c kconfig_variable 757 CONFIG_FSCK bool
+c kconfig_variable 758 CONFIG_FEATURE_ETC_NETWORKS bool
+c kconfig_variable 759 CONFIG_FEATURE_SWAPON_DISCARD bool
+c kconfig_variable 760 CONFIG_DEPMOD bool
+c kconfig_variable 761 CONFIG_CHGRP bool
+c kconfig_variable 762 CONFIG_MDEV bool
+c kconfig_variable 763 CONFIG_USE_BB_PWD_GRP bool
+c kconfig_variable 764 CONFIG_MKFS_VFAT bool
+c kconfig_variable 765 CONFIG_TR bool
+c kconfig_variable 766 CONFIG_FEATURE_2_4_MODULES bool
+c kconfig_variable 767 CONFIG_FEATURE_TAR_SELINUX bool
+c kconfig_variable 768 CONFIG_FEATURE_START_STOP_DAEMON_FANCY bool
+c kconfig_variable 769 CONFIG_FEATURE_UDHCPD_BASE_IP_ON_MAC bool
+c kconfig_variable 770 CONFIG_LAST_ID int 60000
+c kconfig_variable 771 CONFIG_EXPAND bool
+c kconfig_variable 772 CONFIG_UBIRSVOL bool
+c kconfig_variable 773 CONFIG_ENVUIDGID bool
+c kconfig_variable 774 CONFIG_FEATURE_SETPRIV_DUMP bool
+c kconfig_variable 775 CONFIG_CAT bool
+c kconfig_variable 776 CONFIG_FEATURE_DD_IBS_OBS bool
+c kconfig_variable 777 CONFIG_FEATURE_FBSET_READMODE bool
+c kconfig_variable 778 CONFIG_FEATURE_HTTPD_CONFIG_WITH_SCRIPT_INTERPR bool
+c kconfig_variable 779 CONFIG_SWAPOFF bool
+c kconfig_variable 780 CONFIG_FEATURE_SEAMLESS_Z bool
+c kconfig_variable 781 CONFIG_ADDGROUP bool
+c kconfig_variable 782 CONFIG_XZ bool
+c kconfig_variable 783 CONFIG_DD bool
+c kconfig_variable 784 CONFIG_FEATURE_FIND_GROUP bool
+c kconfig_variable 785 CONFIG_RMDIR bool
+c kconfig_variable 786 CONFIG_FATATTR bool
+c kconfig_variable 787 CONFIG_FEATURE_CROND_D bool
+c kconfig_variable 788 CONFIG_LPQ bool
+c kconfig_variable 789 CONFIG_FEATURE_BEEP_LENGTH_MS int 30
+c kconfig_variable 790 CONFIG_MODPROBE_SMALL bool
+c kconfig_variable 791 CONFIG_FEATURE_UDHCPC_ARPING bool
+c kconfig_variable 792 CONFIG_FEATURE_REVERSE_SEARCH bool
+c kconfig_variable 793 CONFIG_FEATURE_INETD_SUPPORT_BUILTIN_DISCARD bool
+c kconfig_variable 794 CONFIG_GREP bool
+c kconfig_variable 795 CONFIG_FEATURE_GUNZIP_LONG_OPTIONS bool
+c kconfig_variable 796 CONFIG_PSCAN bool
+c kconfig_variable 797 CONFIG_INSTALL_APPLET_HARDLINKS choice_bool
+c kconfig_variable 798 CONFIG_I2CDUMP bool
+c kconfig_variable 799 CONFIG_SOFTLIMIT bool
+c kconfig_variable 800 CONFIG_FEATURE_DD_SIGNAL_HANDLING bool
+c kconfig_variable 801 CONFIG_BLOCKDEV bool
+c kconfig_variable 802 CONFIG_FEATURE_UMOUNT_ALL bool
+c kconfig_variable 803 CONFIG_UUENCODE bool
+c kconfig_variable 804 CONFIG_MKFS_EXT2 bool
+c kconfig_variable 805 CONFIG_UNLZOP bool
+c kconfig_variable 806 CONFIG_TUNCTL bool
+c kconfig_variable 807 CONFIG_FEATURE_CPIO_P bool
+c kconfig_variable 808 CONFIG_FEATURE_PIDOF_OMIT bool
+c kconfig_variable 809 CONFIG_FEATURE_OSF_LABEL bool
+c kconfig_variable 810 CONFIG_INSTALL_APPLET_SCRIPT_WRAPPERS choice_bool
+c kconfig_variable 811 CONFIG_LAST_SYSTEM_ID int 999
+c kconfig_variable 812 CONFIG_FEATURE_CHAT_SWALLOW_OPTS bool
+c kconfig_variable 813 CONFIG_FEATURE_VOLUMEID_F2FS bool
+c kconfig_variable 814 CONFIG_FEATURE_FAST_TOP bool
+c kconfig_variable 815 CONFIG_FEATURE_VOLUMEID_FAT bool
+c kconfig_variable 816 CONFIG_NSLOOKUP bool
+c kconfig_variable 817 CONFIG_FEATURE_FTPGETPUT_LONG_OPTIONS bool
+c kconfig_variable 818 CONFIG_FEATURE_INDIVIDUAL bool
+c kconfig_variable 819 CONFIG_FEATURE_XARGS_SUPPORT_PARALLEL bool
+c kconfig_variable 820 CONFIG_FEATURE_PS_ADDITIONAL_COLUMNS bool
+c kconfig_variable 821 CONFIG_PIDOF bool
+c kconfig_variable 822 CONFIG_CHOWN bool
+c kconfig_variable 823 CONFIG_CHROOT bool
+c kconfig_variable 824 CONFIG_FEATURE_CATV bool
+c kconfig_variable 825 CONFIG_CRYPTPW bool
+c kconfig_variable 826 CONFIG_FEATURE_FIND_MMIN bool
+c kconfig_variable 827 CONFIG_FEATURE_SU_BLANK_PW_NEEDS_SECURE_TTY bool
+c kconfig_variable 828 CONFIG_FLASH_ERASEALL bool
+c kconfig_variable 829 CONFIG_ADD_SHELL bool
+c kconfig_variable 830 CONFIG_DPKG_DEB bool
+c kconfig_variable 831 CONFIG_FEATURE_FIND_EXEC_PLUS bool
+c kconfig_variable 832 CONFIG_FEATURE_CROND_SPECIAL_TIMES bool
+c kconfig_variable 833 CONFIG_FEATURE_VI_REGEX_SEARCH bool
+c kconfig_variable 834 CONFIG_FEATURE_GZIP_LEVELS bool
+c kconfig_variable 835 CONFIG_FEATURE_SKIP_ROOTFS bool
+c kconfig_variable 836 CONFIG_FEATURE_SU_CHECKS_SHELLS bool
+c kconfig_variable 837 CONFIG_NL bool
+c kconfig_variable 838 CONFIG_FEATURE_IFCONFIG_BROADCAST_PLUS bool
+c kconfig_variable 839 CONFIG_SETPRIV bool
+c kconfig_variable 840 CONFIG_DPKG bool
+c kconfig_variable 841 CONFIG_FEATURE_HDPARM_HDIO_SCAN_HWIF bool
+c kconfig_variable 842 CONFIG_DEVFSD_VERBOSE bool
+c kconfig_variable 843 CONFIG_PIVOT_ROOT bool
+c kconfig_variable 844 CONFIG_ZCAT bool
+c kconfig_variable 845 CONFIG_FEATURE_IFUPDOWN_IPV6 bool
+c kconfig_variable 846 CONFIG_FEATURE_ADDUSER_TO_GROUP bool
+c kconfig_variable 847 CONFIG_FEATURE_MODUTILS_SYMBOLS bool
+c kconfig_variable 848 CONFIG_FEATURE_LS_COLOR bool
+c kconfig_variable 849 CONFIG_PMAP bool
+c kconfig_variable 850 CONFIG_INSTALL_APPLET_SYMLINKS choice_bool
+c kconfig_variable 851 CONFIG_SU bool
+c kconfig_variable 852 CONFIG_RPM2CPIO bool
+c kconfig_variable 853 CONFIG_FEATURE_HDPARM_HDIO_GETSET_DMA bool
+c kconfig_variable 854 CONFIG_UNICODE_NEUTRAL_TABLE bool
+c kconfig_variable 855 CONFIG_MONOTONIC_SYSCALL bool
+c kconfig_variable 856 CONFIG_FEATURE_MOUNT_OTHERTAB bool
+c kconfig_variable 857 CONFIG_DUMPLEASES bool
+c kconfig_variable 858 CONFIG_FEATURE_TRACEROUTE_VERBOSE bool
+c kconfig_variable 859 CONFIG_FEATURE_FTPD_AUTHENTICATION bool
+c kconfig_variable 860 CONFIG_FEATURE_MESG_ENABLE_ONLY_GROUP bool
+c kconfig_variable 861 CONFIG_RUNSV bool
+c kconfig_variable 862 CONFIG_FEATURE_AIX_LABEL bool
+c kconfig_variable 863 CONFIG_HOSTNAME bool
+c kconfig_variable 864 CONFIG_WHOIS bool
+c kconfig_variable 865 CONFIG_FEATURE_SH_READ_FRAC bool
+c kconfig_variable 866 CONFIG_NPROC bool
+c kconfig_variable 867 CONFIG_ROUTE bool
+c kconfig_variable 868 CONFIG_USE_BB_SHADOW bool
+c kconfig_variable 869 CONFIG_FEATURE_INETD_SUPPORT_BUILTIN_DAYTIME bool
+c kconfig_variable 870 CONFIG_FEATURE_VOLUMEID_UDF bool
+c kconfig_variable 871 CONFIG_FEATURE_INETD_SUPPORT_BUILTIN_ECHO bool
+c kconfig_variable 872 CONFIG_FEATURE_IPC_SYSLOG bool
+c kconfig_variable 873 CONFIG_FEATURE_HDPARM_HDIO_TRISTATE_HWIF bool
+c kconfig_variable 874 CONFIG_FEATURE_TOP_CPU_USAGE_PERCENTAGE bool
+c kconfig_variable 875 CONFIG_LSOF bool
+c kconfig_variable 876 CONFIG_LOSETUP bool
+c kconfig_variable 877 CONFIG_LZOP bool
+c kconfig_variable 878 CONFIG_FEATURE_VI_DOT_CMD bool
+c kconfig_variable 879 CONFIG_FEATURE_VOLUMEID_REISERFS bool
+c kconfig_variable 880 CONFIG_FEATURE_MKSWAP_UUID bool
+c kconfig_variable 881 CONFIG_FEATURE_SH_EXTRA_QUIET bool
+c kconfig_variable 882 CONFIG_FEATURE_BUFFERS_USE_MALLOC choice_bool
+c kconfig_variable 883 CONFIG_MAKEMIME bool
+c kconfig_variable 884 CONFIG_FEATURE_DATE_ISOFMT bool
+c kconfig_variable 885 CONFIG_BASH_IS_NONE choice_bool
+c kconfig_variable 886 CONFIG_REV bool
+c kconfig_variable 887 CONFIG_UDHCPC_SLACK_FOR_BUGGY_SERVERS int 80
+c kconfig_variable 888 CONFIG_FEATURE_CHAT_VAR_ABORT_LEN bool
+c kconfig_variable 889 CONFIG_BB_ARCH bool
+c kconfig_variable 890 CONFIG_HUSH_GETOPTS bool
+c kconfig_variable 891 CONFIG_FEATURE_INIT_SYSLOG bool
+c kconfig_variable 892 CONFIG_IPCRM bool
+c kconfig_variable 893 CONFIG_FEATURE_SUID_CONFIG bool
+c kconfig_variable 894 CONFIG_AWK bool
+c kconfig_variable 895 CONFIG_LINK bool
+c kconfig_variable 896 CONFIG_SETFILES bool
+c kconfig_variable 897 CONFIG_EXPR_MATH_SUPPORT_64 bool
+c kconfig_variable 898 CONFIG_SHA3_SMALL int 1
+c kconfig_variable 899 CONFIG_FEATURE_UNZIP_XZ bool
+c kconfig_variable 900 CONFIG_USE_BB_CRYPT_SHA bool
+c kconfig_variable 901 CONFIG_FEATURE_VI_READONLY bool
+c kconfig_variable 902 CONFIG_FEATURE_VI_UNDO_QUEUE bool
+c kconfig_variable 903 CONFIG_FEATURE_VERBOSE bool
+c kconfig_variable 904 CONFIG_FINDFS bool
+c kconfig_variable 905 CONFIG_FEATURE_DIFF_DIR bool
+c kconfig_variable 906 CONFIG_DATE bool
+c kconfig_variable 907 CONFIG_REFORMIME bool
+c kconfig_variable 908 CONFIG_WHOAMI bool
+c kconfig_variable 909 CONFIG_HUSH_READONLY bool
+c kconfig_variable 910 CONFIG_INETD bool
+c kconfig_variable 911 CONFIG_FEATURE_HEXDUMP_REVERSE bool
+c kconfig_variable 912 CONFIG_FEATURE_IFCONFIG_HW bool
+c kconfig_variable 913 CONFIG_FEATURE_PS_UNUSUAL_SYSTEMS bool
+c kconfig_variable 914 CONFIG_FEATURE_KMSG_SYSLOG bool
+c kconfig_variable 915 CONFIG_EXTRA_LDFLAGS string ""
+c kconfig_variable 916 CONFIG_GETTY bool
+c kconfig_variable 917 CONFIG_FEATURE_DMESG_PRETTY bool
+c kconfig_variable 918 CONFIG_ASH_EXPAND_PRMT bool
+c kconfig_variable 919 CONFIG_LZMA bool
+c kconfig_variable 920 CONFIG_FEATURE_SH_NOFORK bool
+c kconfig_variable 921 CONFIG_FTPPUT bool
+c kconfig_variable 922 CONFIG_HUSH_MEMLEAK bool
+c kconfig_variable 923 CONFIG_SETENFORCE bool
+c kconfig_variable 924 CONFIG_FEATURE_BZIP2_DECOMPRESS bool
+c kconfig_variable 925 CONFIG_FEATURE_FIND_NOT bool
+c kconfig_variable 926 CONFIG_FEATURE_VOLUMEID_ROMFS bool
+c kconfig_variable 927 CONFIG_EXTRA_LDLIBS string ""
+c kconfig_variable 928 CONFIG_SV bool
+c kconfig_variable 929 CONFIG_FEATURE_FIND_INUM bool
+c kconfig_variable 930 CONFIG_FEATURE_BLKID_TYPE bool
+c kconfig_variable 931 CONFIG_ASH_OPTIMIZE_FOR_SIZE bool
+c kconfig_variable 932 CONFIG_POWERTOP bool
+c kconfig_variable 933 CONFIG_IFPLUGD bool
+c kconfig_variable 934 CONFIG_FEATURE_IPCALC_LONG_OPTIONS bool
+c kconfig_variable 935 CONFIG_NTPD bool
+c kconfig_variable 936 CONFIG_DEBUG bool
+c kconfig_variable 937 CONFIG_TOP bool
+c kconfig_variable 938 CONFIG_IFENSLAVE bool
+c kconfig_variable 939 CONFIG_FLASH_UNLOCK bool
+c kconfig_variable 940 CONFIG_ASH_CMDCMD bool
+c kconfig_variable 941 CONFIG_UNEXPAND bool
+c kconfig_variable 942 CONFIG_FEATURE_PS_WIDE bool
+c kconfig_variable 943 CONFIG_EJECT bool
+c kconfig_variable 944 CONFIG_PIE bool
+c kconfig_variable 945 CONFIG_FEATURE_TOP_INTERACTIVE bool
+c kconfig_variable 946 CONFIG_UNLZMA bool
+c kconfig_variable 947 CONFIG_SVLOGD bool
+c kconfig_variable 948 CONFIG_FEATURE_FIND_DEPTH bool
+c kconfig_variable 949 CONFIG_FEATURE_TEE_USE_BLOCK_IO bool
+c kconfig_variable 950 CONFIG_BASH_IS_ASH choice_bool
+c kconfig_variable 951 CONFIG_EXTRA_COMPAT bool
+c kconfig_variable 952 CONFIG_FEATURE_TAR_OLDGNU_COMPATIBILITY bool
+c kconfig_variable 953 CONFIG_ASH_PRINTF bool
+c kconfig_variable 954 CONFIG_CHCON bool
+c kconfig_variable 955 CONFIG_FEATURE_MODPROBE_SMALL_CHECK_ALREADY_LOADED bool
+c kconfig_variable 956 CONFIG_POPMAILDIR bool
+c kconfig_variable 957 CONFIG_SORT bool
+c kconfig_variable 958 CONFIG_IPROUTE bool
+c kconfig_variable 959 CONFIG_LZOPCAT bool
+c kconfig_variable 960 CONFIG_READPROFILE bool
+c kconfig_variable 961 CONFIG_FEATURE_INSMOD_VERSION_CHECKING bool
+c kconfig_variable 962 CONFIG_TCPSVD bool
+c kconfig_variable 963 CONFIG_FEATURE_LS_WIDTH bool
+c kconfig_variable 964 CONFIG_FEATURE_HUMAN_READABLE bool
+c kconfig_variable 965 CONFIG_FEATURE_UDHCPC6_RFC3646 bool
+c kconfig_variable 966 CONFIG_TOUCH bool
+c kconfig_variable 967 CONFIG_REBOOT bool
+c kconfig_variable 968 CONFIG_FEATURE_UDHCPC6_RFC4704 bool
+c kconfig_variable 969 CONFIG_HUSH_TYPE bool
+c kconfig_variable 970 CONFIG_HUSH_IF bool
+c kconfig_variable 971 CONFIG_UDHCPD bool
+c kconfig_variable 972 CONFIG_TIME bool
+c kconfig_variable 973 CONFIG_FEATURE_VOLUMEID_OCFS2 bool
+c kconfig_variable 974 CONFIG_FEATURE_VERBOSE_CP_MESSAGE bool
+c kconfig_variable 975 CONFIG_FEATURE_VOLUMEID_JFS bool
+c kconfig_variable 976 CONFIG_STTY bool
+c kconfig_variable 977 CONFIG_TTYSIZE bool
+c kconfig_variable 978 CONFIG_READAHEAD bool
+c kconfig_variable 979 CONFIG_SYSLOGD bool
+c kconfig_variable 980 CONFIG_FEATURE_CHOWN_LONG_OPTIONS bool
+c kconfig_variable 981 CONFIG_NO_DEBUG_LIB choice_bool
+c kconfig_variable 982 CONFIG_FEATURE_VOLUMEID_CRAMFS bool
+c kconfig_variable 983 CONFIG_UDPSVD bool
+c kconfig_variable 984 CONFIG_SETSERIAL bool
+c kconfig_variable 985 CONFIG_ASH_ALIAS bool
+c kconfig_variable 986 CONFIG_FEATURE_SHOW_THREADS bool
+c kconfig_variable 987 CONFIG_GETENFORCE bool
+c kconfig_variable 988 CONFIG_FEATURE_LIBBUSYBOX_STATIC bool
+c kconfig_variable 989 CONFIG_FREE bool
+c kconfig_variable 990 CONFIG_FEATURE_HDPARM_HDIO_DRIVE_RESET bool
+c kconfig_variable 991 CONFIG_FEATURE_IPCALC_FANCY bool
+c kconfig_variable 992 CONFIG_FEATURE_FLOAT_SLEEP bool
+c kconfig_variable 993 CONFIG_FEATURE_DF_FANCY bool
+c kconfig_variable 994 CONFIG_FEATURE_PREFER_IPV4_ADDRESS bool
+c kconfig_variable 995 CONFIG_LZOP_COMPR_HIGH bool
+c kconfig_variable 996 CONFIG_ARPING bool
+c kconfig_variable 997 CONFIG_FEATURE_CHAT_NOFAIL bool
+c kconfig_variable 998 CONFIG_ACPID bool
+p cnf 998 962
+-776 783 0
+28 -845 0
+887 -971 0
+511 -806 0
+-306 511 0
+529 -833 0
+236 797 810 850 0
+419 -441 0
+160 -175 0
+315 -608 0
+-323 511 0
+-212 -781 811 0
+-203 -402 0
+228 -483 0
+-52 937 0
+-204 237 0
+-653 839 0
+-126 762 0
+86 649 -683 719 0
+86 649 -665 719 0
+511 -786 0
+-352 575 0
+575 -689 0
+29 -425 680 950 0
+254 -386 971 0
+29 -240 680 950 0
+-148 549 0
+669 760 -847 0
+270 -326 339 0
+-30 511 0
+549 -987 0
+92 -625 0
+-686 697 0
+86 -492 649 719 0
+-874 937 0
+-178 -882 0
+84 -670 0
+80 -781 0
+14 15 20 30 32 34 35 36 41 53 70 81 89 95 127 131 136 138 139 146 150 151 161 181 190 204 209 226 229 230 235 238 247 252 254 259 266 270 277 280 285 295 306 309 316 323 331 339 361 368 387 400 403 408 413 420 422 430 437 446 470 471 472 480 489 494 496 -511 514 516 517 520 526 537 542 549 568 569 572 575 582 587 601 619 629 632 641 642 645 663 669 698 703 715 718 734 747 760 762 764 772 779 786 798 804 806 839 843 855 867 876 904 914 933 935 938 943 958 971 978 984 989 996 998 0
+-213 266 0
+511 -703 0
+47 503 -709 0
+-30 467 0
+-326 344 0
+264 -301 504 0
+511 -537 0
+86 -292 649 719 0
+-69 254 0
+110 -341 0
+898 0
+279 -669 -760 0
+-372 530 696 0
+-170 -240 0
+511 -938 0
+423 -726 0
+249 -949 0
+499 -928 0
+915 0
+270 -433 0
+-797 -810 0
+92 -862 0
+511 -569 0
+-398 439 0
+-752 762 0
+511 -514 0
+-273 320 0
+433 -856 0
+-83 -170 0
+-212 811 0
+668 -826 0
+-79 96 0
+-100 783 0
+239 251 -473 0
+-105 124 0
+165 -893 0
+439 -848 0
+439 -540 0
+64 -902 0
+-36 511 0
+402 -565 0
+569 -586 669 0
+221 -260 692 919 946 0
+549 -739 0
+124 -189 0
+-236 -850 0
+511 -914 0
+200 -732 0
+484 0
+-115 668 0
+266 -809 0
+-528 629 -790 0
+429 439 -540 0
+-397 668 0
+239 251 -288 0
+511 -698 0
+179 -978 0
+-176 363 0
+422 -648 0
+-721 874 0
+86 -513 649 719 0
+268 -991 0
+-254 454 0
+396 -872 0
+-109 450 0
+-711 766 0
+246 -482 0
+-15 511 0
+511 -843 0
+-372 530 0
+571 -880 0
+511 -517 0
+-55 979 0
+206 -271 0
+707 -910 0
+-104 264 504 0
+349 -878 0
+270 -622 0
+-409 894 0
+-212 770 0
+-808 821 0
+707 -734 0
+-204 511 0
+-497 601 0
+13 -971 0
+246 -644 0
+153 281 -553 0
+246 -607 0
+439 -934 0
+423 -519 0
+18 -830 0
+770 -781 0
+383 -592 0
+86 -225 649 719 0
+-32 439 0
+601 -841 0
+-108 349 0
+144 -693 0
+502 -900 0
+-487 696 0
+-659 668 0
+92 -616 0
+-356 509 0
+86 649 719 -745 0
+-118 -944 0
+-51 -636 738 0
+315 -570 0
+-174 254 363 971 0
+-733 734 0
+-169 549 0
+-134 385 0
+29 -609 680 950 0
+268 439 -934 0
+-476 906 0
+439 -530 0
+439 -530 696 0
+511 -943 0
+549 -767 0
+511 -760 0
+-674 -729 0
+-550 569 0
+-37 480 0
+402 -514 0
+-555 632 0
+412 -653 0
+-211 -882 0
+-70 279 -760 0
+-515 948 0
+96 -367 0
+-407 428 0
+80 -212 0
+-282 -363 454 0
+-185 -790 0
+116 -365 0
+550 -633 0
+-178 -211 0
+-330 874 0
+-170 -918 0
+268 -934 0
+-310 766 0
+315 -676 0
+320 -657 0
+707 -916 0
+423 -690 0
+714 -844 0
+-220 246 0
+781 -846 0
+415 -493 0
+220 -778 0
+-70 245 -760 0
+-71 315 0
+-202 446 0
+511 -526 0
+-408 511 0
+428 -848 0
+96 -729 0
+-517 561 0
+937 -945 0
+86 -552 649 719 0
+-86 -950 0
+28 -218 0
+439 -694 0
+-183 697 0
+-310 569 669 0
+-114 668 0
+70 -279 669 760 0
+-244 626 0
+349 -451 894 0
+321 0
+-170 -360 0
+9 51 252 305 358 450 469 592 636 697 -707 734 747 749 851 910 916 0
+-145 320 0
+-86 -885 0
+86 -431 649 719 0
+-269 924 0
+678 -831 0
+320 -815 0
+511 -734 0
+-70 279 0
+29 -83 -170 680 950 0
+511 -575 0
+805 877 959 -995 0
+-56 -790 0
+80 -212 -781 0
+-376 765 0
+-149 669 -790 0
+549 -701 0
+320 -640 0
+-230 511 0
+29 -382 680 950 0
+231 250 311 410 -617 665 0
+-23 96 0
+-480 511 0
+-395 569 669 0
+569 669 -961 0
+-252 511 0
+696 -767 0
+429 -768 0
+29 -170 -299 680 950 0
+511 -958 0
+105 -481 0
+-361 511 0
+-602 910 0
+284 -331 -420 0
+-623 637 641 0
+710 763 -868 0
+320 -392 0
+439 -781 0
+-93 259 0
+-116 714 -844 0
+29 -170 680 950 -953 0
+-155 626 0
+356 -369 0
+4 -11 0
+42 -378 0
+-766 -790 0
+439 -538 0
+28 239 251 -845 0
+-396 872 0
+-252 707 0
+707 -749 0
+199 -398 0
+520 -917 0
+668 -678 0
+-45 902 0
+166 -239 -251 0
+-6 356 0
+-308 446 0
+-566 696 0
+-205 696 840 0
+-277 511 0
+-96 367 0
+-448 896 0
+-47 709 0
+766 -961 0
+-305 707 0
+699 -860 0
+349 -357 0
+-81 511 0
+-212 770 -781 0
+-190 -331 708 0
+264 -390 504 0
+927 0
+-422 511 0
+297 -563 0
+-150 511 0
+-471 511 0
+428 -589 0
+-372 696 0
+511 -798 0
+258 0
+349 -580 0
+42 -223 0
+-248 292 0
+320 -604 0
+601 -990 0
+-254 511 0
+-238 511 0
+-195 -215 924 0
+18 65 404 -566 692 780 0
+-142 714 0
+22 -664 0
+-127 511 0
+-565 732 0
+511 -978 0
+245 -760 0
+160 -291 0
+-170 -950 0
+-195 -215 -269 924 0
+320 -646 0
+-12 423 0
+-914 979 0
+-100 783 800 0
+29 -83 680 950 0
+-379 728 0
+329 -676 0
+29 -170 680 -918 950 0
+635 -660 0
+511 -804 0
+-20 511 0
+18 -840 0
+332 0
+-239 -251 754 0
+-209 511 0
+86 649 719 -735 0
+-41 511 0
+-70 245 -669 0
+-522 752 0
+-363 454 -971 0
+-58 101 -883 0
+-295 415 0
+-68 -729 0
+775 -824 0
+29 680 -931 950 0
+488 -538 0
+349 -901 0
+-212 439 0
+320 -556 0
+-423 731 0
+511 -642 0
+-638 966 0
+-395 -790 0
+-254 887 0
+-325 439 0
+-296 -583 0
+94 -620 0
+167 -314 0
+-162 177 0
+-363 454 0
+-500 956 0
+48 -356 0
+-215 -269 924 0
+-643 721 0
+-437 511 0
+29 -299 680 950 0
+320 -437 0
+-170 -953 0
+569 669 -711 0
+-144 693 0
+-31 53 0
+-290 548 735 746 0
+-458 626 0
+254 282 363 -454 971 0
+-96 130 0
+592 -832 0
+-17 29 680 950 0
+511 -572 0
+-380 697 0
+29 86 649 680 719 -881 950 0
+-253 320 0
+-496 511 0
+511 -839 0
+356 -662 0
+239 251 -754 0
+-297 749 0
+511 -855 0
+732 -899 0
+-170 -985 0
+186 0
+29 86 228 -483 649 680 719 950 0
+323 446 -661 0
+76 0
+320 -462 0
+-91 475 0
+257 -992 0
+-71 439 0
+704 0
+439 488 -538 0
+199 -905 0
+-46 51 636 0
+439 -744 0
+429 -540 0
+-17 29 -170 680 950 0
+160 -812 0
+-51 738 0
+320 -384 0
+37 -418 480 0
+-421 851 0
+-95 511 0
+-450 -558 656 0
+696 840 -952 0
+-34 511 0
+180 -979 0
+511 -867 0
+-265 756 0
+86 -302 649 719 0
+29 86 649 680 719 -920 950 0
+270 -326 344 0
+-236 -810 0
+-872 979 0
+-210 668 0
+45 -902 0
+349 -529 0
+549 -954 0
+-521 732 0
+116 439 -694 0
+-102 668 0
+129 439 -744 0
+-8 543 0
+-48 356 0
+-470 511 0
+511 -516 0
+51 -533 636 0
+-170 -425 0
+166 -251 0
+511 -904 0
+-239 754 0
+-193 481 0
+668 -929 0
+-77 264 504 0
+84 -859 0
+632 -777 0
+-92 266 0
+-170 -548 0
+-177 331 958 0
+263 296 583 -810 0
+-47 -503 0
+511 -764 0
+246 -353 0
+-389 -981 0
+5 680 719 0
+-491 775 0
+-53 511 0
+101 -883 -907 0
+270 -547 0
+29 -170 -240 680 950 0
+-528 -790 0
+320 -813 0
+-243 270 0
+-219 979 0
+30 190 204 -318 331 420 703 958 0
+21 -456 0
+168 389 981 0
+-506 668 0
+92 -213 0
+320 -324 0
+-185 629 766 0
+511 -935 0
+-59 270 339 0
+29 -170 680 -931 950 0
+-393 705 0
+-136 511 0
+511 -582 0
+204 -237 331 0
+-149 669 0
+-325 526 0
+245 -669 0
+281 -613 0
+511 -663 0
+-319 463 718 0
+220 -576 0
+29 86 -228 649 680 719 950 0
+-51 707 0
+-170 -940 0
+171 428 591 -964 0
+-170 -299 0
+-450 707 0
+254 -887 971 0
+-195 924 0
+107 -514 681 0
+423 -751 0
+86 -132 649 719 0
+383 -474 -592 0
+349 -388 0
+320 -712 0
+428 -466 0
+-459 626 0
+-406 549 0
+-168 -981 0
+51 -112 636 0
+346 -729 0
+-499 928 0
+265 -807 0
+177 -331 -958 0
+-827 851 0
+-411 668 0
+270 -305 0
+-418 480 0
+-515 668 948 0
+822 -980 0
+187 -531 0
+516 -723 0
+323 446 -541 0
+-9 707 0
+-254 -363 454 0
+29 -170 -425 680 950 0
+-413 511 0
+-697 707 0
+270 -567 0
+356 -792 0
+28 -463 0
+-50 464 606 0
+29 -360 680 950 0
+511 -520 0
+-339 511 0
+428 -495 0
+-774 839 0
+569 669 760 -955 0
+-120 696 0
+59 -188 0
+-198 315 0
+-25 86 649 719 0
+-448 549 0
+320 -547 0
+116 142 -714 844 0
+-190 511 0
+763 -868 0
+107 -203 681 0
+511 -669 0
+82 -730 0
+-170 -931 0
+-871 910 0
+-241 806 0
+-769 971 0
+783 -800 0
+-869 910 0
+-387 511 0
+439 -980 0
+-400 511 0
+140 -424 0
+511 -632 0
+-558 656 -825 0
+-121 668 0
+29 -170 680 950 -985 0
+-254 -282 454 0
+511 -984 0
+549 -923 0
+-5 -719 0
+-282 454 -971 0
+-8 439 0
+-194 601 0
+-232 599 0
+6 -584 0
+511 -989 0
+218 247 -858 0
+-170 -680 0
+-90 356 0
+423 -627 0
+86 649 719 -969 0
+190 331 -708 0
+-140 -636 0
+-94 246 0
+69 -254 0
+356 -509 0
+-151 511 0
+270 -682 0
+29 -170 -360 680 950 0
+-885 -950 0
+-40 246 0
+-469 707 0
+86 649 719 -922 0
+-781 811 0
+53 -717 0
+402 -899 0
+668 -948 0
+-17 -170 0
+511 -876 0
+-358 707 0
+402 732 -899 0
+90 -535 0
+511 -645 0
+29 680 950 -985 0
+-486 937 0
+656 -825 0
+-179 266 -675 0
+252 -348 0
+-412 839 0
+707 -851 0
+511 -715 0
+-8 439 543 0
+-457 971 0
+-62 419 0
+93 -259 0
+92 -666 0
+-263 -296 0
+29 -170 -609 680 950 0
+-22 86 649 719 0
+-325 439 526 0
+124 -648 0
+-282 454 0
+320 -926 0
+-385 752 0
+-309 511 0
+-168 -389 0
+-121 549 0
+423 -731 0
+107 -203 -402 681 0
+-74 765 0
+239 251 -426 0
+-195 -269 924 0
+-161 511 0
+142 439 -795 844 0
+86 649 719 -909 0
+284 -420 0
+-58 101 0
+-32 511 0
+-583 810 0
+320 -399 0
+511 -971 0
+-259 789 0
+668 -925 0
+428 -435 0
+266 -616 0
+160 -997 0
+-355 907 0
+-27 29 86 649 680 719 950 0
+156 0
+-270 -326 344 0
+54 -703 0
+-179 -675 0
+275 -897 0
+320 -982 0
+86 649 719 -890 0
+279 -760 0
+124 -512 0
+-204 237 -331 0
+-21 456 0
+-196 734 0
+245 -669 -760 0
+402 -521 0
+-247 511 0
+86 -272 649 719 0
+-263 810 0
+37 -418 0
+-3 218 247 0
+-181 511 0
+-254 454 -971 0
+-116 365 0
+-462 496 779 0
+-4 11 0
+239 251 -845 0
+-229 511 0
+626 -819 0
+125 -817 921 0
+107 402 681 -820 0
+-797 -850 0
+124 -465 0
+195 215 269 -924 0
+511 -641 0
+320 -336 0
+-658 935 0
+28 -363 0
+-72 391 597 794 0
+266 -666 0
+266 -862 0
+128 -224 0
+363 -965 0
+-2 519 0
+-706 821 0
+-342 910 0
+-182 549 0
+-85 513 0
+-71 315 439 0
+511 -998 0
+-100 800 0
+329 -740 0
+54 -331 -703 0
+-402 -942 0
+84 -157 0
+86 649 -677 719 0
+-140 424 0
+-68 96 0
+-450 656 -825 0
+160 -722 0
+-592 707 0
+-295 511 0
+-14 511 0
+402 -565 732 0
+29 -170 680 -940 950 0
+511 -718 0
+212 781 -811 0
+-170 -609 0
+107 681 -820 0
+697 -727 0
+142 -795 844 0
+569 669 760 790 -955 0
+-420 511 0
+246 -289 0
+-64 349 0
+-392 930 0
+-190 708 0
+-208 320 0
+-82 -118 0
+116 -694 0
+33 -140 427 -636 967 0
+68 -854 0
+86 649 719 -737 0
+63 -911 0
+29 -170 -548 680 950 0
+-494 511 0
+266 -675 0
+107 214 937 -986 0
+349 -479 0
+601 -853 0
+-503 709 0
+-333 349 0
+-138 511 0
+58 -101 883 907 0
+-307 668 0
+439 -795 0
+-254 887 -971 0
+53 -912 0
+-261 668 0
+-403 511 0
+107 -402 681 -942 0
+129 -744 0
+-590 599 0
+-56 669 760 -790 0
+511 -568 0
+511 -619 0
+-280 511 0
+124 -545 0
+86 -173 649 719 0
+-89 511 0
+-257 532 0
+-539 668 0
+710 -868 0
+29 86 -560 649 680 719 950 0
+437 -930 0
+-680 -719 0
+304 -518 0
+-284 331 420 0
+320 -870 0
+-558 656 0
+107 681 -942 0
+177 -958 0
+-528 629 0
+-122 264 0
+18 65 404 -566 692 696 780 0
+171 -993 0
+592 -787 0
+734 -842 0
+202 -446 0
+-446 511 0
+-647 716 0
+707 -747 0
+-152 893 0
+82 -818 0
+82 -988 0
+-26 943 0
+178 211 882 0
+-5 -680 0
+363 -968 0
+-217 848 0
+-56 669 760 0
+101 -883 0
+-489 511 0
+-54 331 703 0
+511 -629 0
+511 -779 0
+511 -996 0
+320 -879 0
+511 -762 0
+-736 935 0
+29 -548 680 950 0
+-19 86 649 719 0
+-276 668 0
+-70 279 -669 0
+-185 629 766 -790 0
+496 -759 0
+626 -748 0
+-149 -790 0
+96 -674 0
+-366 562 0
+92 -809 0
+254 -639 971 0
+-73 631 0
+281 439 -613 0
+-166 239 251 0
+-836 851 0
+-16 626 0
+-251 754 0
+29 680 -940 950 0
+108 -349 0
+270 326 -344 0
+-170 -382 0
+86 -328 649 719 0
+212 -770 781 0
+-259 511 0
+-337 549 0
+266 -625 0
+96 -130 0
+-70 245 0
+-430 511 0
+-579 592 0
+29 -170 -382 680 950 0
+29 86 -483 649 680 719 950 0
+549 -896 0
+-227 957 0
+450 558 -656 825 0
+-164 428 0
+-97 998 0
+129 -673 0
+51 636 -891 0
+86 -478 649 719 0
+-636 738 0
+254 -791 0
+-21 371 0
+-329 676 740 0
+-146 511 0
+51 -371 636 0
+-139 511 0
+29 -170 -410 680 950 0
+70 -245 669 760 0
+-507 668 0
+127 569 629 669 -766 0
+511 -542 0
+116 -834 0
+-191 894 0
+464 -544 606 0
+-88 979 0
+439 822 -980 0
+-285 511 0
+-13 971 0
+33 -140 427 967 0
+335 -687 0
+-317 320 0
+511 -549 0
+-450 656 0
+601 -873 0
+-80 212 781 0
+-316 511 0
+-78 222 444 618 634 691 0
+29 680 950 -953 0
+-651 705 0
+29 680 -918 950 0
+428 -963 0
+423 -635 0
+-67 419 0
+-119 349 0
+-30 -331 467 0
+-436 932 0
+402 -521 732 0
+-515 668 0
+-131 511 0
+29 -410 680 950 0
+-263 -583 0
+259 -789 0
+-7 936 0
+-724 783 0
+356 -630 0
+-345 696 0
+-810 -850 0
+-636 707 0
+790 -955 0
+-61 96 0
+668 -784 0
+-262 349 0
+511 -933 0
+166 -239 0
+-270 511 0
+-530 696 0
+101 -907 0
+511 -747 0
+86 885 950 0
+-884 906 0
+320 -973 0
+-70 511 0
+199 -398 439 0
+51 636 -667 0
+254 -585 0
+29 86 649 680 719 -865 950 0
+464 -603 606 0
+-368 511 0
+439 -817 0
+-170 -410 0
+51 636 -738 0
+-351 668 0
+339 -802 0
+160 -888 0
+86 -562 649 719 0
+320 -975 0
+287 0
+162 -177 0
+669 760 -790 -847 0
+-39 -82 0
+160 -725 0
+-82 -944 0
+53 -838 0
+-58 101 -907 0
+412 -653 839 0
+22 -440 0
+279 -669 0
+-32 -170 0
+-790 -847 0
+349 -578 0
+-235 511 0
+-688 696 0
+28 -994 0
+-267 315 0
+141 -551 0
+-192 294 0
+107 402 -514 681 0
+22 90 -664 0
+-180 979 0
+402 -820 0
+86 649 719 -970 0
+-150 439 0
+124 422 -648 0
+511 -772 0
+239 251 -536 0
+-116 -142 714 0
+-331 511 0
+-142 714 -844 0
+-472 511 0
+511 -587 0
+591 -595 0
+-383 474 592 0
+454 -971 0
+-550 766 0
+-236 -797 0
+-116 -142 714 -844 0
+124 -172 0
+-298 979 0
+490 -686 697 0
+485 -508 0
+-226 511 0
+428 439 -848 0
+-266 511 0
+90 -664 0
+320 -392 930 0
+-381 910 0
+-35 511 0
+92 266 -625 0
+-612 966 0
+383 -474 0
+511 -601 0
+-468 696 840 0
+212 -652 781 0
+30 331 -467 0
+-320 437 462 547 904 0
+-793 910 0
+514 -913 0
+-306 906 0
+-296 810 0
+53 -615 0
+-255 496 0
+439 -613 0
+320 -904 0
+439 -839 0
+-29 -170 0
+-293 549 0
+125 439 -817 921 0
