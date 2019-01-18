@@ -1,0 +1,426 @@
+c format kmax_kconfig_v2
+c kconfig_variable 1 CONFIG_KILL bool
+c kconfig_variable 2 CONFIG_TOYBOX_NORECURSE bool
+c kconfig_variable 3 CONFIG_LOGGER bool
+c kconfig_variable 4 CONFIG_WHICH bool
+c kconfig_variable 5 CONFIG_DHCP6 bool
+c kconfig_variable 6 CONFIG_LSATTR bool
+c kconfig_variable 7 CONFIG_UUDECODE bool
+c kconfig_variable 8 CONFIG_UNSHARE bool
+c kconfig_variable 9 CONFIG_USERADD bool
+c kconfig_variable 10 CONFIG_OPENVT bool
+c kconfig_variable 11 CONFIG_IONICE bool
+c kconfig_variable 12 CONFIG_SWITCH_ROOT bool
+c kconfig_variable 13 CONFIG_WATCH bool
+c kconfig_variable 14 CONFIG_FACTOR bool
+c kconfig_variable 15 CONFIG_TOYBOX_HELP bool
+c kconfig_variable 16 CONFIG_IFCONFIG bool
+c kconfig_variable 17 CONFIG_GROUPS bool
+c kconfig_variable 18 CONFIG_TOYBOX_ANDROID_SCHEDPOLICY hidden_bool
+c kconfig_variable 19 CONFIG_MKDIR bool
+c kconfig_variable 20 CONFIG_CATV bool
+c kconfig_variable 21 CONFIG_MODINFO bool
+c kconfig_variable 22 CONFIG_MDEV_CONF bool
+c kconfig_variable 23 CONFIG_MKNOD_Z hidden_bool
+c kconfig_variable 24 CONFIG_SETPROP bool
+c kconfig_variable 25 CONFIG_IPCS bool
+c kconfig_variable 26 CONFIG_FREERAMDISK bool
+c kconfig_variable 27 CONFIG_TEST_MANY_OPTIONS bool
+c kconfig_variable 28 CONFIG_UNIX2DOS bool
+c kconfig_variable 29 CONFIG_SEQ bool
+c kconfig_variable 30 CONFIG_ASCII bool
+c kconfig_variable 31 CONFIG_TOYBOX_FORK hidden_bool
+c kconfig_variable 32 CONFIG_TEST_UTF8TOWC bool
+c kconfig_variable 33 CONFIG_LSUSB bool
+c kconfig_variable 34 CONFIG_PS bool
+c kconfig_variable 35 CONFIG_SYNC bool
+c kconfig_variable 36 CONFIG_GZIP bool
+c kconfig_variable 37 CONFIG_CHRT bool
+c kconfig_variable 38 CONFIG_NBD_CLIENT bool
+c kconfig_variable 39 CONFIG_FTPGET bool
+c kconfig_variable 40 CONFIG_RMMOD bool
+c kconfig_variable 41 CONFIG_TAIL bool
+c kconfig_variable 42 CONFIG_MORE bool
+c kconfig_variable 43 CONFIG_CMP bool
+c kconfig_variable 44 CONFIG_GUNZIP bool
+c kconfig_variable 45 CONFIG_UNAME bool
+c kconfig_variable 46 CONFIG_TAC bool
+c kconfig_variable 47 CONFIG_LOAD_POLICY bool
+c kconfig_variable 48 CONFIG_GETPROP bool
+c kconfig_variable 49 CONFIG_FSFREEZE bool
+c kconfig_variable 50 CONFIG_MV bool
+c kconfig_variable 51 CONFIG_PATCH bool
+c kconfig_variable 52 CONFIG_PKILL bool
+c kconfig_variable 53 CONFIG_DOS2UNIX bool
+c kconfig_variable 54 CONFIG_SENDEVENT bool
+c kconfig_variable 55 CONFIG_ACPI bool
+c kconfig_variable 56 CONFIG_TEST_SCANKEY bool
+c kconfig_variable 57 CONFIG_MKTEMP bool
+c kconfig_variable 58 CONFIG_READLINK bool
+c kconfig_variable 59 CONFIG_DF bool
+c kconfig_variable 60 CONFIG_TOYBOX_HELP_DASHDASH bool
+c kconfig_variable 61 CONFIG_BZCAT bool
+c kconfig_variable 62 CONFIG_DIFF bool
+c kconfig_variable 63 CONFIG_TRUNCATE bool
+c kconfig_variable 64 CONFIG_DECOMPRESS bool
+c kconfig_variable 65 CONFIG_YES bool
+c kconfig_variable 66 CONFIG_ARP bool
+c kconfig_variable 67 CONFIG_ID_Z hidden_bool
+c kconfig_variable 68 CONFIG_HOST bool
+c kconfig_variable 69 CONFIG_FOLD bool
+c kconfig_variable 70 CONFIG_SHA1SUM bool
+c kconfig_variable 71 CONFIG_TEST_HUMAN_READABLE bool
+c kconfig_variable 72 CONFIG_TOYBOX_SHADOW hidden_bool
+c kconfig_variable 73 CONFIG_USLEEP bool
+c kconfig_variable 74 CONFIG_NICE bool
+c kconfig_variable 75 CONFIG_RFKILL bool
+c kconfig_variable 76 CONFIG_LSPCI_TEXT bool
+c kconfig_variable 77 CONFIG_GETFATTR bool
+c kconfig_variable 78 CONFIG_EXIT hidden_bool
+c kconfig_variable 79 CONFIG_VCONFIG bool
+c kconfig_variable 80 CONFIG_SETFATTR bool
+c kconfig_variable 81 CONFIG_START bool
+c kconfig_variable 82 CONFIG_TRACEROUTE bool
+c kconfig_variable 83 CONFIG_TEE bool
+c kconfig_variable 84 CONFIG_TEST bool
+c kconfig_variable 85 CONFIG_ID bool
+c kconfig_variable 86 CONFIG_TOYBOX_SUID bool
+c kconfig_variable 87 CONFIG_TFTP bool
+c kconfig_variable 88 CONFIG_FDISK bool
+c kconfig_variable 89 CONFIG_BUNZIP2 bool
+c kconfig_variable 90 CONFIG_MOUNT bool
+c kconfig_variable 91 CONFIG_TOYBOX hidden_bool
+c kconfig_variable 92 CONFIG_HOSTID bool
+c kconfig_variable 93 CONFIG_EXPR bool
+c kconfig_variable 94 CONFIG_CP bool
+c kconfig_variable 95 CONFIG_MICROCOM bool
+c kconfig_variable 96 CONFIG_PARTPROBE bool
+c kconfig_variable 97 CONFIG_RUNCON bool
+c kconfig_variable 98 CONFIG_SPLIT bool
+c kconfig_variable 99 CONFIG_SED bool
+c kconfig_variable 100 CONFIG_RESET bool
+c kconfig_variable 101 CONFIG_WGET bool
+c kconfig_variable 102 CONFIG_TOYBOX_SELINUX choice_bool
+c kconfig_variable 103 CONFIG_NOHUP bool
+c kconfig_variable 104 CONFIG_IP bool
+c kconfig_variable 105 CONFIG_TOYBOX_PRLIMIT hidden_bool
+c kconfig_variable 106 CONFIG_LSPCI bool
+c kconfig_variable 107 CONFIG_HEAD bool
+c kconfig_variable 108 CONFIG_TOYBOX_I18N bool
+c kconfig_variable 109 CONFIG_UMOUNT bool
+c kconfig_variable 110 CONFIG_DIRNAME bool
+c kconfig_variable 111 CONFIG_HELP_EXTRAS bool
+c kconfig_variable 112 CONFIG_CLEAR bool
+c kconfig_variable 113 CONFIG_PASTE bool
+c kconfig_variable 114 CONFIG_CD hidden_bool
+c kconfig_variable 115 CONFIG_TIMEOUT bool
+c kconfig_variable 116 CONFIG_VI bool
+c kconfig_variable 117 CONFIG_STRINGS bool
+c kconfig_variable 118 CONFIG_SULOGIN bool
+c kconfig_variable 119 CONFIG_CKSUM bool
+c kconfig_variable 120 CONFIG_KILLALL5 bool
+c kconfig_variable 121 CONFIG_SETSID bool
+c kconfig_variable 122 CONFIG_GROUPADD bool
+c kconfig_variable 123 CONFIG_FGREP hidden_bool
+c kconfig_variable 124 CONFIG_MKFIFO bool
+c kconfig_variable 125 CONFIG_RESTORECON bool
+c kconfig_variable 126 CONFIG_NSENTER bool
+c kconfig_variable 127 CONFIG_TOYBOX_FLOAT bool
+c kconfig_variable 128 CONFIG_ENV bool
+c kconfig_variable 129 CONFIG_STAT bool
+c kconfig_variable 130 CONFIG_TELNET bool
+c kconfig_variable 131 CONFIG_SHA384SUM bool
+c kconfig_variable 132 CONFIG_UPTIME bool
+c kconfig_variable 133 CONFIG_LS bool
+c kconfig_variable 134 CONFIG_PRINTF bool
+c kconfig_variable 135 CONFIG_LOGNAME bool
+c kconfig_variable 136 CONFIG_BLKID bool
+c kconfig_variable 137 CONFIG_PGREP bool
+c kconfig_variable 138 CONFIG_SORT_BIG bool
+c kconfig_variable 139 CONFIG_SHA512SUM bool
+c kconfig_variable 140 CONFIG_MKPASSWD bool
+c kconfig_variable 141 CONFIG_PWDX bool
+c kconfig_variable 142 CONFIG_SHRED bool
+c kconfig_variable 143 CONFIG_PASSWD bool
+c kconfig_variable 144 CONFIG_CAL bool
+c kconfig_variable 145 CONFIG_INOTIFYD bool
+c kconfig_variable 146 CONFIG_CRONTAB bool
+c kconfig_variable 147 CONFIG_TASKSET bool
+c kconfig_variable 148 CONFIG_BRCTL bool
+c kconfig_variable 149 CONFIG_LAST bool
+c kconfig_variable 150 CONFIG_WC bool
+c kconfig_variable 151 CONFIG_MKE2FS_EXTENDED bool
+c kconfig_variable 152 CONFIG_MKE2FS bool
+c kconfig_variable 153 CONFIG_TOYBOX_FREE bool
+c kconfig_variable 154 CONFIG_SWAPON bool
+c kconfig_variable 155 CONFIG_CHMOD bool
+c kconfig_variable 156 CONFIG_TFTPD bool
+c kconfig_variable 157 CONFIG_REALPATH bool
+c kconfig_variable 158 CONFIG_UNIQ bool
+c kconfig_variable 159 CONFIG_TOYBOX_FIFREEZE hidden_bool
+c kconfig_variable 160 CONFIG_WHO bool
+c kconfig_variable 161 CONFIG_HWCLOCK bool
+c kconfig_variable 162 CONFIG_DMESG bool
+c kconfig_variable 163 CONFIG_MKNOD bool
+c kconfig_variable 164 CONFIG_MOUNTPOINT bool
+c kconfig_variable 165 CONFIG_TOYBOX_FALLOCATE hidden_bool
+c kconfig_variable 166 CONFIG_KILLALL bool
+c kconfig_variable 167 CONFIG_SHA224SUM bool
+c kconfig_variable 168 CONFIG_DHCPD bool
+c kconfig_variable 169 CONFIG_SLEEP bool
+c kconfig_variable 170 CONFIG_INSTALL bool
+c kconfig_variable 171 CONFIG_W bool
+c kconfig_variable 172 CONFIG_BASE64 bool
+c kconfig_variable 173 CONFIG_FALLOCATE bool
+c kconfig_variable 174 CONFIG_KLOGD bool
+c kconfig_variable 175 CONFIG_INSMOD bool
+c kconfig_variable 176 CONFIG_MKSWAP bool
+c kconfig_variable 177 CONFIG_RENICE bool
+c kconfig_variable 178 CONFIG_CHATTR bool
+c kconfig_variable 179 CONFIG_NETSTAT bool
+c kconfig_variable 180 CONFIG_OD bool
+c kconfig_variable 181 CONFIG_DEBUG_DHCP bool
+c kconfig_variable 182 CONFIG_TOYBOX_DEBUG bool
+c kconfig_variable 183 CONFIG_TTY bool
+c kconfig_variable 184 CONFIG_DU bool
+c kconfig_variable 185 CONFIG_CROND bool
+c kconfig_variable 186 CONFIG_TOYBOX_MUSL_NOMMU_IS_BROKEN bool
+c kconfig_variable 187 CONFIG_PWD bool
+c kconfig_variable 188 CONFIG_EGREP hidden_bool
+c kconfig_variable 189 CONFIG_BOOTCHARTD bool
+c kconfig_variable 190 CONFIG_COMM bool
+c kconfig_variable 191 CONFIG_ONEIT bool
+c kconfig_variable 192 CONFIG_UNLINK bool
+c kconfig_variable 193 CONFIG_NETCAT bool
+c kconfig_variable 194 CONFIG_PASSWD_SAD bool
+c kconfig_variable 195 CONFIG_HEXEDIT bool
+c kconfig_variable 196 CONFIG_SHA256SUM bool
+c kconfig_variable 197 CONFIG_CHVT bool
+c kconfig_variable 198 CONFIG_FLOCK bool
+c kconfig_variable 199 CONFIG_XARGS bool
+c kconfig_variable 200 CONFIG_FSTYPE bool
+c kconfig_variable 201 CONFIG_LSMOD bool
+c kconfig_variable 202 CONFIG_MIX bool
+c kconfig_variable 203 CONFIG_INIT bool
+c kconfig_variable 204 CONFIG_DEALLOCVT bool
+c kconfig_variable 205 CONFIG_TAIL_SEEK bool
+c kconfig_variable 206 CONFIG_BASENAME bool
+c kconfig_variable 207 CONFIG_RM bool
+c kconfig_variable 208 CONFIG_LN bool
+c kconfig_variable 209 CONFIG_ICONV bool
+c kconfig_variable 210 CONFIG_FIND bool
+c kconfig_variable 211 CONFIG_MKE2FS_JOURNAL bool
+c kconfig_variable 212 CONFIG_MODPROBE bool
+c kconfig_variable 213 CONFIG_CUT bool
+c kconfig_variable 214 CONFIG_MKE2FS_LABEL bool
+c kconfig_variable 215 CONFIG_XXD bool
+c kconfig_variable 216 CONFIG_XZCAT bool
+c kconfig_variable 217 CONFIG_HELLO bool
+c kconfig_variable 218 CONFIG_KLOGD_SOURCE_RING_BUFFER bool
+c kconfig_variable 219 CONFIG_COUNT bool
+c kconfig_variable 220 CONFIG_SORT_FLOAT hidden_bool
+c kconfig_variable 221 CONFIG_MD5SUM bool
+c kconfig_variable 222 CONFIG_TOYBOX_UID_SYS int 100
+c kconfig_variable 223 CONFIG_FALSE bool
+c kconfig_variable 224 CONFIG_TAR bool
+c kconfig_variable 225 CONFIG_LOGIN bool
+c kconfig_variable 226 CONFIG_MAKEDEVS bool
+c kconfig_variable 227 CONFIG_PRINTENV bool
+c kconfig_variable 228 CONFIG_TOYBOX_LIBCRYPTO bool
+c kconfig_variable 229 CONFIG_PING bool
+c kconfig_variable 230 CONFIG_MKDIR_Z hidden_bool
+c kconfig_variable 231 CONFIG_CAT_V bool
+c kconfig_variable 232 CONFIG_IOTOP bool
+c kconfig_variable 233 CONFIG_COMPRESS bool
+c kconfig_variable 234 CONFIG_TOYBOX_ON_ANDROID hidden_bool
+c kconfig_variable 235 CONFIG_FSYNC bool
+c kconfig_variable 236 CONFIG_ECHO bool
+c kconfig_variable 237 CONFIG_TELNETD bool
+c kconfig_variable 238 CONFIG_TRUE bool
+c kconfig_variable 239 CONFIG_CPIO bool
+c kconfig_variable 240 CONFIG_MKFIFO_Z hidden_bool
+c kconfig_variable 241 CONFIG_FSCK bool
+c kconfig_variable 242 CONFIG_TOYBOX_UID_USR int 500
+c kconfig_variable 243 CONFIG_CHGRP bool
+c kconfig_variable 244 CONFIG_MDEV bool
+c kconfig_variable 245 CONFIG_TR bool
+c kconfig_variable 246 CONFIG_DHCP bool
+c kconfig_variable 247 CONFIG_GROUPDEL bool
+c kconfig_variable 248 CONFIG_EXPAND bool
+c kconfig_variable 249 CONFIG_CAT bool
+c kconfig_variable 250 CONFIG_SWAPOFF bool
+c kconfig_variable 251 CONFIG_HELP bool
+c kconfig_variable 252 CONFIG_DD bool
+c kconfig_variable 253 CONFIG_RMDIR bool
+c kconfig_variable 254 CONFIG_GREP bool
+c kconfig_variable 255 CONFIG_BLOCKDEV bool
+c kconfig_variable 256 CONFIG_UUENCODE bool
+c kconfig_variable 257 CONFIG_TUNCTL bool
+c kconfig_variable 258 CONFIG_TOYBOX_PEDANTIC_ARGS bool
+c kconfig_variable 259 CONFIG_IORENICE bool
+c kconfig_variable 260 CONFIG_SLEEP_FLOAT hidden_bool
+c kconfig_variable 261 CONFIG_PIDOF bool
+c kconfig_variable 262 CONFIG_CHOWN bool
+c kconfig_variable 263 CONFIG_CHROOT bool
+c kconfig_variable 264 CONFIG_VMSTAT bool
+c kconfig_variable 265 CONFIG_SKELETON_ALIAS bool
+c kconfig_variable 266 CONFIG_NL bool
+c kconfig_variable 267 CONFIG_PIVOT_ROOT bool
+c kconfig_variable 268 CONFIG_ZCAT bool
+c kconfig_variable 269 CONFIG_PMAP bool
+c kconfig_variable 270 CONFIG_SU bool
+c kconfig_variable 271 CONFIG_STOP bool
+c kconfig_variable 272 CONFIG_LS_COLOR bool
+c kconfig_variable 273 CONFIG_DUMPLEASES bool
+c kconfig_variable 274 CONFIG_HOSTNAME bool
+c kconfig_variable 275 CONFIG_SYSCTL bool
+c kconfig_variable 276 CONFIG_NPROC bool
+c kconfig_variable 277 CONFIG_ROUTE bool
+c kconfig_variable 278 CONFIG_LSOF bool
+c kconfig_variable 279 CONFIG_USERDEL bool
+c kconfig_variable 280 CONFIG_LOSETUP bool
+c kconfig_variable 281 CONFIG_TOYBOX_UTMPX hidden_bool
+c kconfig_variable 282 CONFIG_TOYBOX_LIBZ bool
+c kconfig_variable 283 CONFIG_REV bool
+c kconfig_variable 284 CONFIG_SH bool
+c kconfig_variable 285 CONFIG_IPCRM bool
+c kconfig_variable 286 CONFIG_LINK bool
+c kconfig_variable 287 CONFIG_TOYBOX_ICONV hidden_bool
+c kconfig_variable 288 CONFIG_ULIMIT bool
+c kconfig_variable 289 CONFIG_DATE bool
+c kconfig_variable 290 CONFIG_WHOAMI bool
+c kconfig_variable 291 CONFIG_MKE2FS_GEN bool
+c kconfig_variable 292 CONFIG_GETTY bool
+c kconfig_variable 293 CONFIG_FTPPUT bool
+c kconfig_variable 294 CONFIG_SETENFORCE bool
+c kconfig_variable 295 CONFIG_TOP bool
+c kconfig_variable 296 CONFIG_EJECT bool
+c kconfig_variable 297 CONFIG_TOYBOX_LSM_NONE choice_bool
+c kconfig_variable 298 CONFIG_FILE bool
+c kconfig_variable 299 CONFIG_CHCON bool
+c kconfig_variable 300 CONFIG_SORT bool
+c kconfig_variable 301 CONFIG_SKELETON bool
+c kconfig_variable 302 CONFIG_TCPSVD bool
+c kconfig_variable 303 CONFIG_TOUCH bool
+c kconfig_variable 304 CONFIG_REBOOT bool
+c kconfig_variable 305 CONFIG_TOYBOX_CONTAINER hidden_bool
+c kconfig_variable 306 CONFIG_TIME bool
+c kconfig_variable 307 CONFIG_READAHEAD bool
+c kconfig_variable 308 CONFIG_SYSLOGD bool
+c kconfig_variable 309 CONFIG_TOYBOX_SMACK choice_bool
+c kconfig_variable 310 CONFIG_NETCAT_LISTEN bool
+c kconfig_variable 311 CONFIG_GETENFORCE bool
+c kconfig_variable 312 CONFIG_FREE bool
+c kconfig_variable 313 CONFIG_XARGS_PEDANTIC bool
+c kconfig_variable 314 CONFIG_LOG bool
+c kconfig_variable 315 CONFIG_ARPING bool
+c kconfig_variable 316 CONFIG_CP_PRESERVE bool
+p cnf 316 108
+188 -254 0
+281 0
+165 -173 0
+-23 -297 0
+123 -254 0
+-230 -297 0
+152 -214 0
+31 -302 0
+-36 282 0
+-127 -169 260 0
+15 -60 0
+159 0
+31 186 0
+1 -120 0
+-127 -138 220 0
+-240 -297 0
+-24 234 0
+-102 -309 0
+-31 -186 0
+-151 152 0
+-268 282 0
+199 -313 0
+-139 228 0
+102 -299 0
+-67 85 0
+-297 -309 0
+-78 0
+31 -189 0
+-48 102 0
+15 -251 0
+-3 308 0
+-114 0
+127 -260 0
+-10 31 0
+-54 234 0
+-48 102 234 0
+-123 254 0
+102 -125 0
+-171 281 0
+-76 106 0
+72 -118 0
+234 -314 0
+152 -291 0
+-138 300 0
+-29 127 0
+168 -181 0
+127 -220 0
+91 -111 0
+127 -306 0
+41 -205 0
+-209 287 0
+-97 102 0
+124 -240 0
+-22 244 0
+-188 254 0
+102 297 309 0
+242 0
+-115 127 0
+-234 0
+72 -225 0
+-18 0
+-132 281 0
+-102 -297 0
+-23 163 0
+143 -194 0
+174 -218 0
+31 -38 0
+-231 249 0
+-111 251 0
+72 0
+94 -316 0
+169 -260 0
+-167 228 0
+287 0
+-126 305 0
+-49 159 0
+19 -230 0
+-131 228 0
+31 -146 0
+234 -271 0
+-105 0
+-124 240 297 0
+102 -294 0
+91 -111 251 0
+72 -143 0
+-48 234 0
+102 -311 0
+72 -270 0
+222 0
+152 -211 0
+-140 -234 0
+91 0
+165 0
+23 -163 297 0
+-44 282 0
+193 -310 0
+67 -85 297 0
+-67 -297 0
+-47 102 0
+133 -272 0
+138 -220 0
+-196 228 0
+105 -288 0
+-305 0
+-8 305 0
+-160 281 0
+-19 230 297 0
+-81 234 0
