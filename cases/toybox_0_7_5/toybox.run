@@ -10,6 +10,9 @@ import json
 
 CLEANUP = True
 
+bug_hashes = ["9e552ffde24e092a68a9402f43fcf020", "01c76e0bb9d35d939d43a1028a9dd9ac", "0e19f73bb5aab477b6acfa8c0ba47b2e", "696aeec43c6284e8bd25869ad9d0cf51", "6da5dbcea387bae1579335cf13ca5c0b", "a90426165c4045ea120818444e95b86d", "b17a02fe88d235405fe8bea7fe8226ae", "3d2c1c650f60f325f06d65b32fde3756", "02afdad05af4e7fe184c6d6cea4885eb", "b0cded144b10da15a1340f19c67bfbc9", "d66595c5f280ea336e57b4c71f4d6d8e", "78c6b2ac714ecbfba7cc10d05f2bebe0", "3156c88793c3f69227bc70d3eac80d03", "b576d899f860afb1909c81e92c1a581d", "1c756da8a116983bc7f439fbff2125a4", "8c55545e7e82f061034ad6d4b6140410", "f632dfa9f5e23910b89e4f6e8278dd37", "677f8e919757f2ed495dd69d99e31b0f", "46b9845b461b5713c6d80ed203bf620d", "f367e273fe1cafaaebca2842563fee1f", "d6cd48610e9532fd6321b3808ed29799", "80307352d0d3638b0d5c4dd054df436d", "7fc07928e935ec1f6766b9f2ea912164", "7196c190eedfa4f0bd75643731436ed2", "985a7b40da4e2c81766ccdcf2946025a", "74f83796ef6ff504322ebdebe12c1b6c", "a3ee1e0445080c1af39658b04bf61e55", "62d9280fdcf11a306508b95a59f92801", "73842d7edad816346559f73ed592d9c5", "a8dd9194bb15659c7436d1d407f6605d", "9d16156f5e6e1540f541442801179843", "69f2275f2a5ff75f0586a734a57c1367", "0d8db4f3a6a0b7b1555a637b206b487c", "ca6ec35fa166afc8d6b0d3b4f3be2e83", "f20969a6f3f271dbed11418aa4e1d8d0", "67d32164aa51d87cdafdf33beffc7266", "61b84d73f45ba23ddaf7f87a1a59e957", "37293b3e0b9b75331fc5eeecd2653788", "687c3f1c2738a8f9c79bdd183c97bda9", "84e5c617a037daa81a30d23fd808b483", "d322afe21de620dfd5dc6769ffea7a8f", "4d5eae4c90e0ab5d5b06a97980d5c0bf", "afe0a214c88b91cd7182842809ae1b3a", "8e1f1948781a4f34a44359b50a3fc061", "c0cde67e4c22bcf48bda4d2859e4446a", "5e54434a4a123d5672507cd0d4de50c6", "1988396761b0bcfc53bf83f1236f5cd2", "4f314adf2c095ef58891295c6968f81e", "f3234bcffd1116814edd65b5fc58651a", "55cc05beebe9c456a02bbaa105971729", "5b46c9bdecca65f0cc375bb17a3a0a56", "5768482cb97e72b3e61aa588bbc2a43f", "a1e4268a5508fc70354068c5bed8a737", "b3ffa71ada7334bd1ffaa804b77065ca", "1ec69260f281d4cbe387de2e8deff464", "193d3d91a143382d2e987bd27d63720d", "5453ad42f8d130305383ad88e2af25a2", "9bb76bb5dfabb1d34d6238d5b8157e88", "83f130759c01660f70ecbbb4adadbe97", "2030eeca9918134226a28d6794de3475", "66a332c801db604e34c27be7fcd2f20c", "3d9551e5afb767952a46d5f2de8600d7", "4914f2d4f400c7a22a8df649aa8bfdf8", "c87e16151ec7f030d97b389b3ccdb2b0", "1f2a6b7d43f8134ada9231d7529eddd5", "12bece923ad921270067e7d9e3a3c2ac", "f67318c8d484ce72f89b6c5fd5eacaae", "5c3ec1242ac6dedb3bf72a0510fbadde", "49ed07fdf527e5ce17a20bbe65052285", "8cb8c5be167bd074415c768b404b38ef", "be99ebfe883a0ebf037a4e7a64dfdde4", "75a855e09651ce801d93f434125f92b1", "045003c1a9219f5270daad3c63c2b275", "4451cbee610ef0a746fc3d60a01dc63c", "fff5278e0ad9b62e11f0c31292f3cf1b", "bd4ca4f7221b23c5de7b75d62e6b2ab9", "04d6a427df96cff687b61e9a0e1a6bea", "f6b2a11f76075c6296d03cc4222e2259"]
+
+
 def vcmd(cmd, inp=None, shell=True):
     proc = sp.Popen(cmd,shell=shell,stdin=sp.PIPE,stdout=sp.PIPE,stderr=sp.PIPE)
     rs =  proc.communicate(input=inp)
@@ -31,14 +34,22 @@ def phash(v):
     import sys
     return hash(v) % ((sys.maxsize + 1) * 2)
     
-def printHashCodes(jsonFile, outFile):
+def printHashCodes(jsonFile, outFile, filter=True):
     jsonFile = open(jsonFile, 'r')
     values = json.load(jsonFile)
     jsonFile.close()
 
     hashCodesStr = [bug['hash'] for bug in values]
+    nonReachedList=[]
+    if filter:
+        hashCodesStr = [hsh for hsh in hashCodesStr if hsh in bug_hashes]
+        nonReachedList = ['-'+hsh for hsh in bug_hashes if hsh not in hashCodesStr]
+
     f = open(outFile, "a")
     f.write('\n'.join(hashCodesStr))
+    f.write('\n')
+    f.write('\n'.join(nonReachedList))
+    f.close()
 
 def similar(tdir, f1, f2):
     tf1 = "{}/f1.txt".format(tdir)
@@ -69,38 +80,44 @@ if __name__ == "__main__":
     HOME_DIR="/home/ugur"
     KCONFIG_DIR="{}/kconfig_case_studies".format(HOME_DIR)
 
-    pname="toybox_0_7_5"
-    driver="{}/scripts/driver_variants/driver_clang.sh".format(KCONFIG_DIR)
-    deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
-    saTool='clang'
-    jsonFile="unique.json.results"
-
-    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, pname)
+    saToolVersion=""
+    saTool='infer{}'.format(saToolVersion)
+    progName="toybox_0_7_5"
     tarFile = "toybox-0.7.5.tar.gz"
-    SRC_DIR= "{}/toybox-0.7.5".format(BENCH_DIR)
+
+    driver="{}/scripts/driver_variants/driver_{}.sh".format(KCONFIG_DIR, saTool)
+    deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
+    
+    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, progName)
+    SRC_DIR= "{}/{}-{}".format(BENCH_DIR, progName, tid)
     OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
-    RESULT_DIR = "{}/varbugs/output/{}/clang_results".format(HOME_DIR,pname)
+    RESULT_DIR = "{}/varbugs/output/{}/{}_results".format(HOME_DIR, progName, saTool)
     jsonFile="{}/unique.json.results".format(RESULT_DIR)
 
     defConfigFile="{}/def.config".format(BENCH_DIR)
-    configFile="{}/{}.config".format(RESULT_DIR, tid)
-
+    configFile="{}/build/configs/{}.config".format(BENCH_DIR, tid)
+    
     assert not os.path.isdir(SRC_DIR), SRC_DIR
 
-    cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
-#    print cmd
-    assert runcmd(cmd) == 0
-    cmd="cp {} {}".format(defConfigFile, configFile)
-#    print cmd
+    cmd="mkdir {}".format(SRC_DIR)
     assert runcmd(cmd) == 0
 
-    parts =  [p.split() for p in inp.split(",")]
+    cmd="cd {} && tar -xf {} -C {}".format(BENCH_DIR, tarFile, SRC_DIR)
+    assert runcmd(cmd) == 0
+
+    cmd="cp {} {}".format(defConfigFile, configFile)
+    assert runcmd(cmd) == 0
+
+    parts =  [p.split() for p in inp.split(" , ")]
     ys, ns = [], []
+    neithers = {}
     for name, val in parts:
-        assert val == 'y' or val == 'n', val
-        
-        ls = ys if val == 'y' else ns
-        ls.append(name)
+        if val == 'y':
+            ys.append(name)
+        elif val == 'n':
+            ns.append(name)
+        else:
+            neithers[name] = val
 
     setcmd = lambda name: \
              "sed -e 's/.*{} .*/{}=y/' -i {}".format(name, name, configFile)
@@ -109,31 +126,34 @@ if __name__ == "__main__":
                "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(
                    name, name, configFile)
     
+    setNonBool = lambda name, value: \
+            "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
+
     for name in ys:
         runcmd(setcmd(name))
         
     for name in ns:
         runcmd(unsetcmd(name))
         
+    for name, value in neithers.iteritems():
+        runcmd(setNonBool(name, value))
     
     #runtest
-    logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, pname, tid)
-    assert runcmd("echo \"---Configuration:{}, stime+hash:{}\n\" > {} 2>&1".format(inp, tid, logFile)) == 0
-
-#    print "rundriver"
-    runDriver = lambda : runcmd("cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, pname, logFile))
+    logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, progName, tid)
+    outF = open(logFile, "w+")
+    outF.write("---Configuration:{}, stime+hash:{}\n".format(inp, tid))    
+    outF.close()
+    runDriver = lambda : runcmd("cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, progName, logFile))
     runBugProcessor = lambda : runcmd("cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile))
 
     found = True
     if runDriver() != 0:
         found = False
 
-#    print "runBugProcessor"
-            
     if found and runBugProcessor() != 0:
         found = False
     
-    resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, pname, tid)
+    resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, progName, tid)
     if found:
         printHashCodes(jsonFile, resultFile)
     else:
@@ -142,5 +162,6 @@ if __name__ == "__main__":
     if CLEANUP:
         assert runcmd("rm -rf {}".format(SRC_DIR)) == 0
         assert runcmd("rm -rf {}/*".format(RESULT_DIR)) == 0
-        assert runcmd("rm -rf {}/build/configs/**".format(BENCH_DIR)) == 0
+        assert runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR)) == 0
+
     print resultFile

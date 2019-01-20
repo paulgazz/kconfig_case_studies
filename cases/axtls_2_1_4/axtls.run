@@ -88,7 +88,6 @@ if __name__ == "__main__":
     driver="{}/scripts/driver_variants/driver_clang{}.sh".format(KCONFIG_DIR,saToolVersion)
     deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
     saTool='clang'
-    jsonFile="unique.json.results"
 
     BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, pname)
     tarFile = "axTLS-2.1.4.tar.gz"
