@@ -21,7 +21,7 @@ ls -d *.config | sort -h | while read config_dir; do
        echo "skipping existing clang run: ${config_dir}/${iout}"
     else
       echo "checking ${config_dir}/${i} and writing to ${config_dir}/${iout}"
-      clang --analyze "${i}"
+      clang-7 --analyze "${i}"
 #      mv "${iout}.tmp" "${iout}"
     fi
   done
