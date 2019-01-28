@@ -26,7 +26,7 @@ file_list = list()
 fields_to_hash = None
 # Set file extension based on format
 if args.format == 'cbmc':
-    file_extension = '.config.xml'
+    file_extension = 'cbmc_exec.xml'
     fields_to_hash = {'@class', 'location'}
     description = 'description'
 elif args.format == 'infer':
