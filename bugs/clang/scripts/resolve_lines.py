@@ -14,9 +14,9 @@ for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
   # for each clang result for a compilation unit
   for root, dirs, files in os.walk(config_dir):
     files = filter(lambda x : x.endswith(".plist"), files)
-    for clang_result in files:
+    for clang_file in files:
       # sys.stderr.write("%s\n" % (clang_result))
-      clang_result = os.path.join(root, clang_result)
+      clang_result = os.path.join(root, clang_file)
       clang_resolved = clang_result + ".resolved"
       with open(clang_resolved, 'wb') as outfile:
         new_errors = list()
@@ -27,8 +27,24 @@ for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
 #            import pdb; pdb.set_trace()
             old_line = reports[ix]['location']['line']
             # assume that clang errors are relative to the config directory
-            old_file = clang_result.replace('.plist', '.i')
-            ref_file = old_file
+
+            old_file = None
+            # Check that the file exists
+            if os.path.isfile(clang_result.replace('.plist', '.i')):
+              old_file = clang_result.replace('.plist', '.i')
+            else:
+              # Find the file
+              # Old_file is the entire path so we'll just use clang_file
+              for root, dirs, files in os.walk('.'):
+                for f in files:
+                  if f == clang_file.replace('.plist', '.i'):
+                    old_file = os.path.join(root, f)
+                    break
+
+            if old_file == None:
+              raise FileNotFoundError("Couldn't find .i file for %s" % clang_file)
+            
+            ref_file = clang_file.replace('.plist', '.c')
             content['files'][0] = ref_file
             ref_line = 1
             found = False
