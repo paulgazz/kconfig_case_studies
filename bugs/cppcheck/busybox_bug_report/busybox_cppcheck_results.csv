@@ -1,0 +1,11 @@
+hash,classification,type,file,line,message,reasoning,features
+80b0ed169aa55e398abc9ee72c4ed665,TRUE,N/A,read_key.c,262,Shifting a negative value is undefined behaviour,"This may not be a variability-aware bug, since it appeared in all of
+the sampled configurations.  Since the samples are from a constrained
+version of the feature model, however, it is possible that these
+constraints lead to the bug and configurations without them will not
+expose the bug.
+",generic
+4181016e21dcf1da11d43375f489e9d6,TRUE,N/A,split-include.c,227,Memory leak: line,"Line is not freed.  However, this is the `main` method for some helper
+program.",generic
+3daf24d05dc1867ee938524042d2f560,TRUE,N/A,fdisk_sgi.c,138,"Array 'freelist[17]' accessed at index 17, which is out of bounds.",See busybox_bug_report.md,"CONFIG_FDISK, CONFIG_FEATURE_FDISK_WRITABLE, CONFIG_FEATURE_SGI_LABEL"
+d2268c27bffca8381f008379f2767065,FALSE,N/A,hash_md5_sha.c,665,Shifting 32-bit value by 32 bits is undefined behaviour,See busybox_bug_report.md,
