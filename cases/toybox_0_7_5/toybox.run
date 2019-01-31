@@ -87,7 +87,7 @@ if __name__ == "__main__":
     HOME_DIR="/home/vagrant"
     KCONFIG_DIR="{}/kconfig_case_studies".format(HOME_DIR)
 
-    saToolVersion="7"
+    saToolVersion=""
     saTool='clang{}'.format(saToolVersion) #cppcheck infer clang
     progName="toybox_0_7_5"
     tarFile = "toybox-0.7.5.tar.gz"
@@ -151,14 +151,16 @@ if __name__ == "__main__":
     outF = open(logFile, "w+")
     outF.write("---Configuration:{}, stime+hash:{}\n".format(inp, tid))    
     outF.close()
-    runDriver = lambda : runcmd("cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, progName, logFile))
-    runBugProcessor = lambda : runcmd("cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile))
 
+    cmd = "cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, progName, logFile);
+    print cmd
     found = True
-    if runDriver() != 0:
+    if runcmd(cmd) != 0:
         found = False
 
-    if found and runBugProcessor() != 0:
+    cmd = "cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile)
+    print cmd
+    if found and runcmd(cmd) != 0:
         found = False
     
     resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, progName, tid)
