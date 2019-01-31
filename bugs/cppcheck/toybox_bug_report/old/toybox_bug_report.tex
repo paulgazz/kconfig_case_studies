@@ -25,8 +25,17 @@ Bug reports are classified into the following categories:
 \noindent\lstinputlisting[linerange=52-64, firstnumber=52]{code/blockdev.c}
 \noindent\begin{tabularx}{\textwidth}{rY}
   \midrule
-  Status & True \\
-  Remarks & \texttt{cmd[]} is defined as an integer array of size 11. By using a loop that iterates through the number 31 to access the loop, the program is exceeding the bounds of the array. \\
+  Status & Likely False \\
+  Remarks & \texttt{cmd[]} is defined as an integer array of size
+  11. By using a loop that iterates through the number 31 to access
+  the loop, the program is exceeding the bounds of the array.
+  However, there may be checks on toys.optflags elsewhere in the program
+  that prevent i from ever exceeding the array bounds.
+
+  It appears the comments above blockdev code (and at the beginning of
+  every toy) defines the flags and options, so as long as that's right
+  the loop won't exceed the bounds of the command array.
+  \\
   Features & CONFIG\_BLOCKDEV \\
   \bottomrule
 \end{tabularx}
@@ -65,8 +74,9 @@ Bug reports are classified into the following categories:
 \noindent\lstinputlisting[linerange=80-85, firstnumber=80]{code/cmp.c}
 \noindent\begin{tabularx}{\textwidth}{rY}
   \midrule 
-  Status & True \\
-  Remarks & The multiplication of the flags will cause integer overflow. \\
+  Status & False \\
+  Remarks & \texttt{!} is logical negation and not bitwise negation,
+  so WARN_ONLY will only be multiplied by 1 or 0. \\
   Features & CONFIG\_CMP \\
   \bottomrule
 \end{tabularx}
