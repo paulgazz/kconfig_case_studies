@@ -30,8 +30,8 @@ if args.mode == 'compare':
     print('Now iterating through records.')
 
     # Build the hash: result dictionary for both files and compare
-    json_results = {d['hash']:d['investigation']['result'] for d in json_data}
-    csv_results = {d['hash']:d['verdict'] for d in csv_data}
+    json_results = {d['hash']:str(d['investigation']['result']).lower() for d in json_data}
+    csv_results = {d['hash']:str(d['verdict']).lower() for d in csv_data}
 
     # Make a copy of the dictionary to write back to the file
     import copy
@@ -40,19 +40,64 @@ if args.mode == 'compare':
     # Check for different record lengths
     if len(json_results) != len(csv_results):
         print('Different numbers of records: %s has %d records, and %s has %d records.' % (args.json, len(json_results), args.csv, len(csv_results)))
-        
-    for k, v in json_results.items():
-        if k not in csv_results:
-            print('Record %s is in %s but not in %s' % (k, args.json, args.csv))
+        # Print records that are different
+        if len(json_results) > len(csv_results):
+            for k, v in json_results.items():
+                if k not in csv_results:
+                    print('%s is in %s but not in %s' % (k, args.json, args.csv))
         else:
-            if csv_results[k].lower() != str(v).lower():
-                print('Classification discrepancy: %s is %s in %s, but %s in %s' % (k, str(v).upper(), args.json, csv_results[k].upper(), args.csv))
-        csv_results.pop(k)
+            for k, v in csv_results.items():
+                if k not in csv_results:
+                    print('%s is in %s but not in %s' % (k, args.csv, args.json))
 
-    if len(csv_results) > 0:
-        for k, v in csv_results.items():
-            print('Record %s with classification %s is in %s but not in %s.' % (k, v, args.csv, args.json))
+    json_dirty = False
+    csv_dirty = False
+    # Compare element by element
+    for k, v in json_results.items():
+        if k in csv_results:
+            if v != csv_results[k]:
+                print('Discrepancy: %s is %s in %s but %s in %s' % (k, v, args.json, csv_results[k], args.csv))
+                # Correct records
+                print('Would you like to correct the (C)SV file, the (J)SON file, or move on (any other character)?')
+                choice = input()
+                if choice.upper() == 'C':
+                    csv_dirty = True
+                    for d in csv_data:
+                        if d['hash'] == k:
+                            d['verdict'] = '' if v.lower() == 'none' else v.upper()
+                            break
+                if choice.upper() == 'J':
+                    json_dirty = True
+                    for d in json_data:
+                        if d['hash'] == k:
+                            d['investigation']['result'] = '' if csv_results[k].lower() == 'none' else csv_results[k]
+                
+
+    # Finally, write updated results to file
+    if json_dirty:
+        with open(args.json+'.new', 'w') as f:
+            json.dump(json_data, f)
+            print('Updated JSON written to %s' % args.json+'.new')
+    if csv_dirty:
+        with open(args.csv+'.new', 'w') as f:
+            csv_writer = csv.DictWriter(f, fieldnames=csv_data[0].keys())
+            csv_writer.writeheader()
+            for d in csv_data:
+                csv_writer.writerow(d)
+            print('Updated CSV written to %s' % args.csv+'.new')
 else: # If we're in generate mode
-    print('Not implemented yet, sorry :(')
+    try:
+        raise NotImplementedError
+        # Open the CSV file specified; if it already exists exit without overwriting
+        from pathlib import Path
+        csv_path = Path(args.csv)
+        if csv_path.is_file():
+            raise FileExistsError
+    except NotImplementedError:
+        print("This section isn't implemented yet :(")
+    except FileExistsError:
+        print("File %s already exists, refusing to overwrite it.")
+    else:
+        print("Keys in %s: %s" % (args.json, json_data[0].keys()))
+        for k in json_data[0].keys():
 
-    
