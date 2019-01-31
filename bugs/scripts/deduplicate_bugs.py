@@ -3,7 +3,7 @@ parser = argparse.ArgumentParser(description='Postprocesses bug reports, finds u
 parser.add_argument('--target', '-t', default='.', help='Target directory (default = \'.\')')
 parser.add_argument('--output', '-o', default='unique.json.results', help='Output file (default = unique.json.results)')
 parser.add_argument('--verbose', '-v', action='count', help='Verbosity level')
-parser.add_argument('format', choices=['cbmc', 'clang', 'infer', 'cppcheck', 'ikos'])
+parser.add_argument('format', choices=['cbmc', 'clang', 'infer', 'cppcheck', 'ikos', 'clang7'])
 args = parser.parse_args()
 
 import logging
@@ -26,7 +26,7 @@ file_list = list()
 fields_to_hash = None
 # Set file extension based on format
 if args.format == 'cbmc':
-    file_extension = '.config.xml'
+    file_extension = 'cbmc_exec.xml'
     fields_to_hash = {'@class', 'location'}
     description = 'description'
 elif args.format == 'infer':
@@ -36,6 +36,10 @@ elif args.format == 'infer':
     description = 'qualifier'
 elif args.format == 'clang':
     file_extension = '.plist'
+    fields_to_hash = {'category', 'location', 'file'}
+    description = 'description'
+elif args.format == 'clang7':
+    file_extension = '.plist.resolved'
     fields_to_hash = {'category', 'location', 'file'}
     description = 'description'
 elif args.format == 'ikos':
@@ -89,11 +93,13 @@ for entry in file_list:
                 property_list = json.loads(content)
             except ValueError:
                 continue;
-        elif args.format == 'clang':
+        elif args.format == 'clang' or args.format == 'clang7':
             clang_data = plistlib.readPlist(f)
             property_list  = clang_data['diagnostics']
             for property in property_list:
                 property['source_file'] = clang_data['files'][0]
+                # REMOVES PATH INFO, BECAUSE IT'S VERY LONG AND MAKES JSON REPORTS HARD TO READ
+                del property['path']
         elif args.format == 'ikos':
             try:
                 property_list = json.loads(f.read())
@@ -136,12 +142,17 @@ for property in master:
         if property['hash'] in hash_index[record]:
             property['configurations'].add(int(re.findall('[0-9]{1,3}', re.findall('[0-9]{1,3}.config', record)[0])[0]))
             count = count + 1
+    property['configurations'] = list(property['configurations'])
+    property['configurations'].sort()
     property['num_occurrences'] = len(property['configurations'])
     logging.info('Report ' + property['hash'] + ' was present in ' + str(len(property['configurations'])) + ' configurations.')
 
     # Also add the description list to the property
     property['matching_description'] = description_index[property['hash']]
 
+    # Add empty investigation results field
+    property['investigation'] = {'result': None, 'comments':''}
+    
 print str(len(master)) + ' unique bugs found.'
 
 # Write output to file
@@ -149,4 +160,3 @@ with open(args.output, 'w') as out:
     content = json.dumps(master,out)
     out.write(content)
     print 'Output written to ' + args.output
-
