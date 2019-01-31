@@ -10,12 +10,10 @@ import json
 
 CLEANUP = True
 
-bug_hashes = ["1e776811c0e6ab4fb4967951b947478c", "bdf654a44c7674aaeb296f47e966a5ae",
-    "858e5d49272787c243fa7795b51e1ce7", "0823aeeab7a91433f343ce2223e3c9e9",
-    "e260e94feabb02f22ed397b00a425c63", "758ca0f92999575beb67530465557570",
-    "d3e06d501efeca7120ee3a28ef7ed761", "3c56314112bd449421c70d85c3e433e7",
-    "06b42fe0702677cef86df82aabbe9b74", "f0f3270314e7f46a6effa32f6337cebc",
-    "3af95a05752e49640ccb902a698825d7"]
+#clang
+bug_hashes = ["b473f7f0d7a0a486336b26af1c3b059d","1e776811c0e6ab4fb4967951b947478c","bdf654a44c7674aaeb296f47e966a5ae","758ca0f92999575beb67530465557570","d3e06d501efeca7120ee3a28ef7ed761","0f8cce29fa9c8ea0c804ff5f6e7f6ed1","814bf16ed7a359df0181baf4e4d79f40","f0f3270314e7f46a6effa32f6337cebc","3af95a05752e49640ccb902a698825d7"]
+
+
 
 def vcmd(cmd, inp=None, shell=True):
     proc = sp.Popen(cmd,shell=shell,stdin=sp.PIPE,stdout=sp.PIPE,stderr=sp.PIPE)
@@ -81,19 +79,22 @@ if __name__ == "__main__":
     tid = "{}.{}".format(time.time(), phash(inp))
 
 
-    KCONFIG_DIR="/home/ugur/kconfig_case_studies"
+    HOME_DIR="/home/vagrant"
+    KCONFIG_DIR="{}/kconfig_case_studies".format(HOME_DIR)
 
-    saToolVersion="-4.0"
-    pname="axtls_2_1_4"
-    driver="{}/scripts/driver_variants/driver_clang{}.sh".format(KCONFIG_DIR,saToolVersion)
+    saToolVersion=""
+    saTool='clang{}'.format(saToolVersion)
+    progName="axtls_2_1_4"
+    tarFile="axTLS-2.1.4.tar.gz"
+    exratedFile="axtls-code"
+    
+    driver="{}/scripts/driver_variants/driver_{}.sh".format(KCONFIG_DIR, saTool)
     deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
-    saTool='clang'
-
-    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, pname)
-    tarFile = "axTLS-2.1.4.tar.gz"
-    SRC_DIR= "{}/axtls-code-{}".format(BENCH_DIR, tid)
+    
+    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, progName)
+    SRC_DIR= "{}/{}".format(BENCH_DIR, exratedFile)
     OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
-    RESULT_DIR = "/home/ugur/varbugs/output/axtls_2_1_4/clang{}_results".format(saToolVersion)
+    RESULT_DIR = "{}/varbugs/output/{}/{}_results".format(HOME_DIR, progName, saTool)
     jsonFile="{}/unique.json.results".format(RESULT_DIR)
 
     defConfigFile="{}/def.config".format(BENCH_DIR)
@@ -101,20 +102,10 @@ if __name__ == "__main__":
     
     assert not os.path.isdir(SRC_DIR), SRC_DIR
 
-    cmd="cd {} && mkdir {}".format(BENCH_DIR, tid)
-    assert runcmd(cmd) == 0
-    cmd="cd {} && tar -C {} -xf {}".format(BENCH_DIR, tid,  tarFile)
+    cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
     assert runcmd(cmd) == 0
 
-    cmd="cd {} && mv {}/axtls-code axtls-code-{}".format(BENCH_DIR, tid, tid)
-    assert runcmd(cmd) == 0
-
-    cmd="cd {} && rm -fr {}".format(BENCH_DIR, tid)
-    assert runcmd(cmd) == 0
-         
-        
     cmd="cp {} {}".format(defConfigFile, configFile)
-#    print cmd
     assert runcmd(cmd) == 0
 
     parts =  [p.split() for p in inp.split(" , ")]
@@ -134,9 +125,9 @@ if __name__ == "__main__":
     unsetcmd = lambda name:\
                "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(
                    name, name, configFile)
-
+    
     setNonBool = lambda name, value: \
-                "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
+            "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
 
     for name in ys:
         runcmd(setcmd(name))
@@ -148,29 +139,29 @@ if __name__ == "__main__":
         runcmd(setNonBool(name, value))
     
     #runtest
-    logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, pname, tid)
+    logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, progName, tid)
     outF = open(logFile, "w+")
     outF.write("---Configuration:{}, stime+hash:{}\n".format(inp, tid))    
     outF.close()
-    runDriver = lambda : runcmd("cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, pname, logFile))
-    runBugProcessor = lambda : runcmd("cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile))
 
+    cmd = "cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, progName, logFile);
     found = True
-    if runDriver() != 0:
+    if runcmd(cmd) != 0:
         found = False
 
-    if found and runBugProcessor() != 0:
+    cmd = "cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile)
+    if found and runcmd(cmd) != 0:
         found = False
     
-    resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, pname, tid)
+    resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, progName, tid)
     if found:
         printHashCodes(jsonFile, resultFile)
     else:
         runcmd("touch {}".format(resultFile))
 
     if CLEANUP:
-        assert runcmd("rm -rf {}".format(SRC_DIR)) == 0
-        assert runcmd("rm -rf {}/*".format(RESULT_DIR)) == 0
-        assert runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR)) == 0
+        runcmd("rm -rf {}".format(SRC_DIR))
+        runcmd("rm -rf {}/*".format(RESULT_DIR))
+        runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR))
 
     print resultFile
