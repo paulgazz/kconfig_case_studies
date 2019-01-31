@@ -1,4 +1,3 @@
-#
 #!/bin/bash
 
 results_dir=~/varbugs/output

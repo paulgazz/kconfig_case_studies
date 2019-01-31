@@ -8,7 +8,7 @@ import subprocess as sp
 import hashlib
 import json
 
-CLEANUP = False
+CLEANUP = True
 
 #infer
 #bug_hashes = ["9e552ffde24e092a68a9402f43fcf020","01c76e0bb9d35d939d43a1028a9dd9ac","696aeec43c6284e8bd25869ad9d0cf51","8c55545e7e82f061034ad6d4b6140410","f632dfa9f5e23910b89e4f6e8278dd37","8e1f1948781a4f34a44359b50a3fc061","f3234bcffd1116814edd65b5fc58651a","55cc05beebe9c456a02bbaa105971729","fff5278e0ad9b62e11f0c31292f3cf1b","04d6a427df96cff687b61e9a0e1a6bea","f6b2a11f76075c6296d03cc4222e2259"]
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
     
     BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, progName)
-    SRC_DIR= "{}/{}".format(BENCH_DIR, progName, tid)
+    SRC_DIR= "{}/{}".format(BENCH_DIR, exratedFile)
     OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
     RESULT_DIR = "{}/varbugs/output/{}/{}_results".format(HOME_DIR, progName, saTool)
     jsonFile="{}/unique.json.results".format(RESULT_DIR)
@@ -108,9 +108,6 @@ if __name__ == "__main__":
     assert not os.path.isdir(SRC_DIR), SRC_DIR
 
     cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
-    assert runcmd(cmd) == 0
-
-    cmd="cd {} && mv {} {}".format(BENCH_DIR, exratedFile, SRC_DIR)
     assert runcmd(cmd) == 0
 
     cmd="cp {} {}".format(defConfigFile, configFile)
@@ -153,13 +150,11 @@ if __name__ == "__main__":
     outF.close()
 
     cmd = "cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, progName, logFile);
-    print cmd
     found = True
     if runcmd(cmd) != 0:
         found = False
 
     cmd = "cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile)
-    print cmd
     if found and runcmd(cmd) != 0:
         found = False
     
@@ -170,8 +165,8 @@ if __name__ == "__main__":
         runcmd("touch {}".format(resultFile))
 
     if CLEANUP:
-        assert runcmd("rm -rf {}".format(SRC_DIR)) == 0
-        assert runcmd("rm -rf {}/*".format(RESULT_DIR)) == 0
-        assert runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR)) == 0
+        runcmd("rm -rf {}".format(SRC_DIR))
+        runcmd("rm -rf {}/*".format(RESULT_DIR))
+        runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR))
 
     print resultFile

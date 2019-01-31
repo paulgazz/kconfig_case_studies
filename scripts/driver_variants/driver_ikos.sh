@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # This script sets up the environment veriables needed for IKOS to run
