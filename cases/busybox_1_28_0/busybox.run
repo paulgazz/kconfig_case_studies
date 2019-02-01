@@ -1,0 +1,172 @@
+#!/usr/bin/env python2.7
+
+"""
+"""
+import argparse
+import os.path
+import subprocess as sp
+import hashlib
+import json
+
+CLEANUP = True
+
+#infer
+#bug_hashes = []
+
+#cppcheck
+#bug_hashes = [80b0ed169aa55e398abc9ee72c4ed665,4181016e21dcf1da11d43375f489e9d6,3daf24d05dc1867ee938524042d2f560]
+
+#clang
+bug_hashes = []
+
+
+def vcmd(cmd, inp=None, shell=True):
+    proc = sp.Popen(cmd,shell=shell,stdin=sp.PIPE,stdout=sp.PIPE,stderr=sp.PIPE)
+    rs =  proc.communicate(input=inp)
+    exit_code = proc.wait()
+    return rs, exit_code
+
+def runcmd(cmd):
+    try:
+        #print '$', cmd
+        (_,rs_err), exit_code = vcmd(cmd)
+        #assert not rs_err, rs_err
+        #print 'ecode', exit_code
+        return exit_code
+    except:
+        #print("cmd '{}' failed".format(cmd))
+        return -1
+
+def phash(v):
+    import sys
+    return hash(v) % ((sys.maxsize + 1) * 2)
+    
+def printHashCodes(jsonFile, outFile, filter=True):
+    jsonFile = open(jsonFile, 'r')
+    values = json.load(jsonFile)
+    jsonFile.close()
+
+    hashCodesStr = [bug['hash'] for bug in values]
+    nonReachedList=[]
+    if filter:
+        hashCodesStr = [hsh for hsh in hashCodesStr if hsh in bug_hashes]
+        nonReachedList = ['-'+hsh for hsh in bug_hashes if hsh not in hashCodesStr]
+
+    f = open(outFile, "a")
+    f.write('\n'.join(hashCodesStr))
+    f.write('\n')
+    f.write('\n'.join(nonReachedList))
+    f.close()
+
+def similar(tdir, f1, f2):
+    tf1 = "{}/f1.txt".format(tdir)
+    tf2 = "{}/f2.txt".format(tdir)
+
+    assert runcmd("rm -rf {} {}".format(tf1, tf2)) == 0
+
+    cleansort = lambda f, tf: "cat {} | sort | egrep \"^(CONFIG_|# CONFIG_.*is not set)\" > {}".format(f, tf)
+    assert runcmd(cleansort(f1, tf1))  == 0
+    assert runcmd(cleansort(f2, tf2))  == 0
+    return runcmd("diff {} {}".format(tf1, tf2)) == 0
+    
+                 
+if __name__ == "__main__":
+    #note:  use abspath (considers symlinks) instead of realpath (ignore symlinks)
+    me_file = os.path.abspath(os.path.expanduser(__file__))  
+    me_dir = os.path.dirname(me_file)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("inputs", help="input configurations")
+    args = parser.parse_args()
+    inp = args.inputs.strip() #"x 0, y 1, z 0"
+
+    import time
+    tid = "{}.{}".format(time.time(), phash(inp))
+
+
+    HOME_DIR="/home/vagrant"
+    KCONFIG_DIR="{}/kconfig_case_studies".format(HOME_DIR)
+
+    saToolVersion=""
+    saTool='clang{}'.format(saToolVersion) #cppcheck infer clang
+    progName="busybox_1_28_0"
+    tarFile = "busybox-1.28.0.tar.bz2"
+    exratedFile = "busybox-1.28.0"
+
+    driver="{}/scripts/driver_variants/driver_{}.sh".format(KCONFIG_DIR, saTool)
+    deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
+    
+    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, progName)
+    SRC_DIR= "{}/{}".format(BENCH_DIR, exratedFile)
+    OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
+    RESULT_DIR = "{}/varbugs/output/{}/{}_results".format(HOME_DIR, progName, saTool)
+    jsonFile="{}/unique.json.results".format(RESULT_DIR)
+
+    defConfigFile="{}/def.config".format(BENCH_DIR)
+    configFile="{}/build/configs/{}.config".format(BENCH_DIR, tid)
+    
+    assert not os.path.isdir(SRC_DIR), SRC_DIR
+
+    cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
+    assert runcmd(cmd) == 0
+
+    cmd="cp {} {}".format(defConfigFile, configFile)
+    assert runcmd(cmd) == 0
+
+    parts =  [p.split() for p in inp.split(" , ")]
+    ys, ns = [], []
+    neithers = {}
+    for name, val in parts:
+        if val == 'y':
+            ys.append(name)
+        elif val == 'n':
+            ns.append(name)
+        else:
+            neithers[name] = val
+
+    setcmd = lambda name: \
+             "sed -e 's/.*{} .*/{}=y/' -i {}".format(name, name, configFile)
+
+    unsetcmd = lambda name:\
+               "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(
+                   name, name, configFile)
+    
+    setNonBool = lambda name, value: \
+            "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
+
+    for name in ys:
+        runcmd(setcmd(name))
+        
+    for name in ns:
+        runcmd(unsetcmd(name))
+        
+    for name, value in neithers.iteritems():
+        runcmd(setNonBool(name, value))
+    
+    #runtest
+    logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, progName, tid)
+    outF = open(logFile, "w+")
+    outF.write("---Configuration:{}, stime+hash:{}\n".format(inp, tid))    
+    outF.close()
+
+    cmd = "cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, progName, logFile);
+    found = True
+    if runcmd(cmd) != 0:
+        found = False
+
+    cmd = "cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile)
+    if found and runcmd(cmd) != 0:
+        found = False
+    
+    resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, progName, tid)
+    if found:
+        printHashCodes(jsonFile, resultFile)
+    else:
+        runcmd("touch {}".format(resultFile))
+
+    if CLEANUP:
+        runcmd("rm -rf {}".format(SRC_DIR))
+        runcmd("rm -rf {}/*".format(RESULT_DIR))
+        runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR))
+
+    print resultFile

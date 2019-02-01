@@ -7,16 +7,24 @@ parser.add_argument('format', choices=['cbmc', 'clang', 'infer', 'cppcheck', 'ik
 args = parser.parse_args()
 
 import logging
-if args.verbose < 1:
+try:
+    if args.verbose < 1:
+        logging.basicConfig(level=logging.WARNING)
+    elif args.verbose == 1:
+        logging.basicConfig(level=logging.INFO)
+    else:
+        logging.basicConfig(level=logging.DEBUG)
+except TypeError:
     logging.basicConfig(level=logging.WARNING)
-elif args.verbose == 1:
-    logging.basicConfig(level=logging.INFO)
-else:
-    logging.basicConfig(level=logging.DEBUG)
 
 import hashlib
 import os
-import xmltodict
+import sys
+try:
+    import xmltodict
+except ImportError:
+    print("xmltodict is missing from your python installation. If you're using python2, you can install it with \'python2 -m pip install xmltodict\'. If you're using python3, this library is unavailable and you have to run this script with python2.")
+    sys.exit(1)
 import re
 import csv
 import jsonplus as json
@@ -111,8 +119,10 @@ for entry in file_list:
         for property in property_list:
             # Hash property
             datum = {k: v for k,v in property.items() if k in fields_to_hash}
-            
-            datum['location'] = {k:v for k,v in datum['location'].items() if k not in {'stmt_uid'}}
+
+            # Only for certain programs
+            if 'location' in datum.keys():
+                datum['location'] = {k:v for k,v in datum['location'].items() if k not in {'stmt_uid'}}
             property['hash'] = hashlib.md5(str(datum).encode()).hexdigest()
 
             # Add the description to the hash's description list
@@ -153,10 +163,10 @@ for property in master:
     # Add empty investigation results field
     property['investigation'] = {'result': None, 'comments':''}
     
-print str(len(master)) + ' unique bugs found.'
+print(str(len(master)) + ' unique bugs found.')
 
 # Write output to file
 with open(args.output, 'w') as out:
     content = json.dumps(master,out)
     out.write(content)
-    print 'Output written to ' + args.output
+    print('Output written to ' + args.output)
