@@ -281,8 +281,14 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
                         # already matches it.
                         preprocess_args_opt="CC=gcc"
                     else
-                      # kbuild-based build system flag for verbose mode
-                      preprocess_args_opt="KBUILD_VERBOSE=1"
+                      echo "${casename}" | egrep -i "toybox" >/dev/null
+                      if [[ $? -eq 0 ]]; then
+                          # fiasco's flag for verbose mode
+                          preprocess_args_opt="V=1 CC=gcc"
+                      else
+                        # kbuild-based build system flag for verbose mode
+                        preprocess_args_opt="KBUILD_VERBOSE=1"
+                      fi
                     fi
                   fi
               else
@@ -312,7 +318,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             if [[ "${action}" == "preprocess" ]]; then
                 echo "preprocessing $i"
                 bunzip2 -f "${save_file}.bz2"
-                echo "${casename}" | egrep -i "fiasco|axtls" >/dev/null
+                echo "${casename}" | egrep -i "fiasco|axtls|toybox" >/dev/null
                 if [[ $? -eq 0 ]]; then
                     preprocess_script="preprocess_config_make.py"
                 else
