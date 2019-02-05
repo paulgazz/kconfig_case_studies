@@ -1,0 +1,4 @@
+---Configuration:CONFIG_FEATURE_CHAT_NOFAIL y , CONFIG_ACPID y, stime+hash:1549169499.2.4283244567076683271
+building /home/vagrant/kconfig_case_studies/cases/busybox_1_28_0/build/configs/1549169499.2.4283244567076683271.config
+0 unique bugs found.
+Output written to unique.json.results
