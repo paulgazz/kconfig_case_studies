@@ -150,7 +150,8 @@ for property in master:
     logging.debug('Finding configuration list for report ' + property['hash'])
     for record in hash_index:
         if property['hash'] in hash_index[record]:
-            property['configurations'].add(int(re.findall('[0-9]{1,3}', re.findall('[0-9]{1,3}.config', record)[0])[0]))
+            # property['configurations'].add(int(re.findall('[0-9]{1,3}', re.findall('[0-9]{1,3}.config', record)[0])[0]))
+            property['configurations'].add(os.path.dirname(record))
             count = count + 1
     property['configurations'] = list(property['configurations'])
     property['configurations'].sort()
