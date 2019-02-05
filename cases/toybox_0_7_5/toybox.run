@@ -11,13 +11,13 @@ import json
 CLEANUP = True
 
 #infer
-#bug_hashes = ["9e552ffde24e092a68a9402f43fcf020","01c76e0bb9d35d939d43a1028a9dd9ac","696aeec43c6284e8bd25869ad9d0cf51","8c55545e7e82f061034ad6d4b6140410","f632dfa9f5e23910b89e4f6e8278dd37","8e1f1948781a4f34a44359b50a3fc061","f3234bcffd1116814edd65b5fc58651a","55cc05beebe9c456a02bbaa105971729","fff5278e0ad9b62e11f0c31292f3cf1b","04d6a427df96cff687b61e9a0e1a6bea","f6b2a11f76075c6296d03cc4222e2259"]
+bug_hashes = ["9e552ffde24e092a68a9402f43fcf020","01c76e0bb9d35d939d43a1028a9dd9ac","696aeec43c6284e8bd25869ad9d0cf51","8c55545e7e82f061034ad6d4b6140410","f632dfa9f5e23910b89e4f6e8278dd37","8e1f1948781a4f34a44359b50a3fc061","f3234bcffd1116814edd65b5fc58651a","55cc05beebe9c456a02bbaa105971729","fff5278e0ad9b62e11f0c31292f3cf1b","04d6a427df96cff687b61e9a0e1a6bea","f6b2a11f76075c6296d03cc4222e2259"]
 
 #cppcheck
 #bug_hashes = []
 
 #clang
-bug_hashes = ["62bfea16602609b9b604f105dd8806ac","b2d2a68c9c476c68eaf8cbe8ae78e818","996b3375d3980946fb41243a4234c44d","cee49f61b5ecd1f2da90f0baaf635fdd","0b784dc1a7078a89f68d2ed454929810","2e0b9310d7807bfad1a576cee5522eba","4261c2084283bb88226766cc65daa143","eca29724fde9812c89ef80042e199ecf","b0a4dc55b0b241acb3878c4fcd67ddd6","cf7d98b52c49298868002dc01e2d5159","3c9de11f3d294ab390e4361206119dfc","05332104e98f1d29b2733da0fc02e18d","3a85ed54be8b9aa11d76ab871c7a554f","09a1f0f59b8349d7add683f4875eaf98","f0ec20e6526351581f54f79991d8b771","fa7e7a0ad248ab901734ef81a383b134","168104a3064dfad654f1e10318c4afa3","bb7bbc3774fd0a4b3279f2a362c35a5b","36cc6b899deb003264e1e6d4c53924e6","ee60f6c19fa3a6d3ce0f6d62c12c3848","3eb113f83a2dc9cdd058db85b922229f","ffafee65008bfba9883938a53e581dce","17624f4db57cf891523697df858b7dc3","4d39f6a6d904669b8c38406ebaf00acb","c53aa7bf06a8ea16dc990d1175ee4c37","f9085c2100f44c20d14525d66fde6200","8366016a5d1acf6dec334cc1d5a3ba91"]
+#bug_hashes = ["62bfea16602609b9b604f105dd8806ac","b2d2a68c9c476c68eaf8cbe8ae78e818","996b3375d3980946fb41243a4234c44d","cee49f61b5ecd1f2da90f0baaf635fdd","0b784dc1a7078a89f68d2ed454929810","2e0b9310d7807bfad1a576cee5522eba","4261c2084283bb88226766cc65daa143","eca29724fde9812c89ef80042e199ecf","b0a4dc55b0b241acb3878c4fcd67ddd6","cf7d98b52c49298868002dc01e2d5159","3c9de11f3d294ab390e4361206119dfc","05332104e98f1d29b2733da0fc02e18d","3a85ed54be8b9aa11d76ab871c7a554f","09a1f0f59b8349d7add683f4875eaf98","f0ec20e6526351581f54f79991d8b771","fa7e7a0ad248ab901734ef81a383b134","168104a3064dfad654f1e10318c4afa3","bb7bbc3774fd0a4b3279f2a362c35a5b","36cc6b899deb003264e1e6d4c53924e6","ee60f6c19fa3a6d3ce0f6d62c12c3848","3eb113f83a2dc9cdd058db85b922229f","ffafee65008bfba9883938a53e581dce","17624f4db57cf891523697df858b7dc3","4d39f6a6d904669b8c38406ebaf00acb","c53aa7bf06a8ea16dc990d1175ee4c37","f9085c2100f44c20d14525d66fde6200","8366016a5d1acf6dec334cc1d5a3ba91"]
 
 
 def vcmd(cmd, inp=None, shell=True):
@@ -98,8 +98,8 @@ if __name__ == "__main__":
     
     BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, progName)
     SRC_DIR= "{}/{}".format(BENCH_DIR, exratedFile)
-    OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
-    RESULT_DIR = "{}/varbugs/output/{}/{}_results".format(HOME_DIR, progName, saTool)
+    OUTPUT_DIR= "/varbugs/igen_out".format()
+    RESULT_DIR = "/varbugs/output/{}/{}_results".format(progName, saTool)
     jsonFile="{}/unique.json.results".format(RESULT_DIR)
 
     defConfigFile="{}/def.config".format(BENCH_DIR)
@@ -168,5 +168,7 @@ if __name__ == "__main__":
         runcmd("rm -rf {}".format(SRC_DIR))
         runcmd("rm -rf {}/*".format(RESULT_DIR))
         runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR))
+        if found:
+            runcmd("rm -rf {}".format(logFile))
 
     print resultFile

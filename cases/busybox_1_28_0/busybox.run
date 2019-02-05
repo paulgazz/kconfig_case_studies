@@ -14,10 +14,10 @@ CLEANUP = True
 #bug_hashes = []
 
 #cppcheck
-#bug_hashes = [80b0ed169aa55e398abc9ee72c4ed665,4181016e21dcf1da11d43375f489e9d6,3daf24d05dc1867ee938524042d2f560]
+bug_hashes = ["80b0ed169aa55e398abc9ee72c4ed665","4181016e21dcf1da11d43375f489e9d6","3daf24d05dc1867ee938524042d2f560"]
 
 #clang
-bug_hashes = []
+#bug_hashes = []
 
 
 def vcmd(cmd, inp=None, shell=True):
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     KCONFIG_DIR="{}/kconfig_case_studies".format(HOME_DIR)
 
     saToolVersion=""
-    saTool='clang{}'.format(saToolVersion) #cppcheck infer clang
+    saTool='cppcheck{}'.format(saToolVersion) #cppcheck infer clang
     progName="busybox_1_28_0"
     tarFile = "busybox-1.28.0.tar.bz2"
     exratedFile = "busybox-1.28.0"
