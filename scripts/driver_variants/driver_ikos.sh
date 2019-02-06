@@ -3,7 +3,7 @@
 
 # This script sets up the environment veriables needed for IKOS to run
 
-results_dir=~/Documents/varbugs/output
+results_dir=/vagrant/vm_output
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
@@ -250,19 +250,17 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time make ${make_extra_args} PREFIX="/tmp/local"
+                time yes | ikos-scan make ${make_extra_args} PREFIX="/tmp/local"
             else
-              time make ${make_extra_args};
+              time yes | ikos-scan make ${make_extra_args};
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
 
-	    extract-bc ${binaries}
-	    cp ${binaries}.bc ${results_dir}/${casename}/ikos_results/ikos_${i_base}.bc
+	    # Just move all .db files to ikos because who knows what executables it'll actually process
+	    mkdir -p "${results_dir}/${casename}/ikos_results/ikos_${i_base}"
+	    find . -name '*.db' -exec mv -t "${results_dir}/${casename}/ikos_results/ikos_${i_base}" {} +
 	    
-	    # Do IKOS processing
-	    #extract-bc ${binaries}
-	    #ikos --ikos-pp ${binaries}.bc -o ikos_${i_base}.db
           done 2>&1 | tee "${save_file}" | egrep "^(building)"
 
           if [[ "${action}" == "preprocess" ]]; then

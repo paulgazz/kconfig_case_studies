@@ -7,6 +7,17 @@ sudo apt-get update
 # dependencies for building axtls, toybox, fiasco
 yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence libdlib-dev libaudit-dev linux-source-4.4.0 g++-mips-linux-gnu
 
+# smack dependencies for toybox
+yes | sudo apt-get install autoconf libtool-bin
+
+# install smack
+cd /home/vagrant
+git clone https://github.com/smack-team/smack
+cd smack
+./autogen.sh
+make
+sudo make install
+
 # cross-compilation tools for fiasco
 yes | sudo apt-get install g++-5-arm-linux-gnueabihf g++-aarch64-linux-gnu 
 
@@ -31,6 +42,10 @@ sudo ln -s $(which arm-linux-gnueabihf-objcopy) /usr/local/bin/arm-linux-objcopy
 sudo ln -s $(which arm-linux-gnueabihf-objdump) /usr/local/bin/arm-linux-objdump
 sudo ln -s $(which arm-linux-gnueabihf-ar) /usr/local/bin/arm-linux-ar
 sudo ln -s $(which arm-linux-gnueabihf-strip) /usr/local/bin/arm-linux-strip
+
+# setup aarch64 binutils
+sudo ln -s $(which aarch64-linux-gnu-g++) /usr/local/bin/aarch64-linux-gnu-arm-linux-g++
+sudo ln -s $(which aarch64-linux-gnu-gcc) /usr/local/bin/aarch64-linux-gnu-arm-linux-gcc
 
 # setup mips binutils for fiasco cross-compiling
 sudo ln -s $(which mips-linux-gnu-g++) /usr/local/bin/mips-linux-g++
