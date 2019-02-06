@@ -34,7 +34,7 @@ file_list = list()
 fields_to_hash = None
 # Set file extension based on format
 if args.format == 'cbmc':
-    file_extension = 'cbmc_exec.xml'
+    file_extension = '.config.xml'
     fields_to_hash = {'@class', 'location'}
     description = 'description'
 elif args.format == 'infer':
@@ -59,11 +59,13 @@ else:
     exit()
 
 # Get a list of all relevant files (i.e. those with file_extension as the ending
+print("Finding files....")
 for root, dirs, files in os.walk(args.target):
     for f in files:
         if f.endswith(file_extension):
             file_list.append(os.path.join(root, f))
 
+print("{} files found.".format(len(file_list)))
 # SETUP DATA STRUCTURES
 master = list()
 hash_master = set()
@@ -72,7 +74,7 @@ description_index = dict()
 hashes = list()
 
 # Iterate over files and count
-logging.info('Processing files....')
+print('Processing files.... (this may take a while)')
 for entry in file_list:
     logging.debug('Processing file ' + entry)
     with open(entry) as f:
@@ -150,7 +152,11 @@ for property in master:
     logging.debug('Finding configuration list for report ' + property['hash'])
     for record in hash_index:
         if property['hash'] in hash_index[record]:
-            property['configurations'].add(int(re.findall('[0-9]{1,3}', re.findall('[0-9]{1,3}.config', record)[0])[0]))
+            config_list = re.findall('[0-9]{1,3}.config',record)
+            if len(config_list) > 1:
+                raise SystemError("More than one configuration detected in path {}".format(record))
+            
+            property['configurations'].add(re.findall('[0-9]{1,3}.config', record)[0])
             count = count + 1
     property['configurations'] = list(property['configurations'])
     property['configurations'].sort()
