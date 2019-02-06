@@ -15818,8 +15818,8 @@
       "file": 0
     },
     "investigation": {
-      "result": "True",
-      "comments": "I can't find either where oldname or newname is initialized to anything but null"
+      "result": "false",
+      "comments": "state will never be set to 1 unless the initial if branch is explored first"
     },
     "HTMLDiagnostics_files": [
       "report-31f1c7.html"
@@ -16297,8 +16297,8 @@
       "file": 0
     },
     "investigation": {
-      "result": "True",
-      "comments": "If fa7e7a0ad248ab901734ef81a383b134 is true, then this is as well"
+      "result": "false",
+      "comments": "If fa7e7a0ad248ab901734ef81a383b134 is false, then this is as well"
     },
     "HTMLDiagnostics_files": [
       "report-fc8c14.html"
@@ -16790,8 +16790,8 @@
       "file": 0
     },
     "investigation": {
-      "result": "True",
-      "comments": "if fa7e7a0ad248ab901734ef81a383b134 is true then this also must be true"
+      "result": "False",
+      "comments": "if fa7e7a0ad248ab901734ef81a383b134 is false then this also must be false"
     },
     "HTMLDiagnostics_files": [
       "report-0b4cae.html"
@@ -24868,8 +24868,8 @@
       "file": 0
     },
     "investigation": {
-      "result": "true",
-      "comments": ""
+      "result": "false",
+      "comments": "t->size is checked on lines 81-90, and appears not to be altered after that."
     },
     "HTMLDiagnostics_files": [
       "report-04c9a2.html"
