@@ -1,0 +1,28 @@
+{
+  "valid_options": {
+    "analysis_tools": {
+      "clang": {
+	"invocation": "clang",
+	"command_line_args": ",
+      "cppcheck": "cppcheck",
+      "cbmc": "cbmc",
+      "ikos": "ikos-scan"
+      "infer": "infer"
+    },
+    "target_programs": [
+      "axtls_2_1_4",
+      "busybox_1_28_0",
+      "linux_4_17_6",
+      "toybox_0_7_5"
+    ],
+    "__comment": "Use tool_constraints to specify program: tool that ***won't*** work on it",
+    "program_constraints": {
+      "linux_4_17_6": [
+        "infer",
+        "cbmc",
+        "ikos"
+      ]
+    }
+  }
+}
+
