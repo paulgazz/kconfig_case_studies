@@ -1,0 +1,3 @@
+[console_scripts]
+deduplicate = deduplicate.__main__:main
+
