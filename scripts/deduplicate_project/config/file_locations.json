@@ -2,7 +2,7 @@
   "axtls_2_1_4": {
     "infer_results": "",
     "cppcheck_results": "",
-    "clang_results": "",
+    "clang_results": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/axtls_2_1_4/clang_results",
     "ikos_results": "",
     "cbmc_results": ""
   },

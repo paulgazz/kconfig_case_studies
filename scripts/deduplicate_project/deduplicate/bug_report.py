@@ -1,7 +1,7 @@
 import json
 import xmltodict
 import plistlib
-
+import logging
 """
 By Austin Mordahl
 2019-02-11
@@ -29,7 +29,6 @@ class BugReport:
         self.line = line
         self.filename = filename
         self.description = description
-        self.target = target
         self.configs = list()
         self.type = None
         self.target = None
@@ -90,14 +89,7 @@ class BugReport:
         ds = cls.__get_dataset_from_file(file)
         for d in ds:
             yield cls.__generate_from_record(d)
-          
-    def __get_dataset_from_file(file):
-        """
-        Return the iterable dataset from the file.
-        """
-        raise NotImplementedError("__get_dataset_from_file not implemented",
-                                  " in the abstract base class")
-   
+            
     def __eq__(self, other):
         """
         NOTE: Currently, the originating tool is used to compute
@@ -107,17 +99,17 @@ class BugReport:
         """
 
         return self.line == other.line and \
-            self.file == other.file and \
+            self.filename == other.filename and \
             self.tool == other.tool
 
     def __hash__(self):
-        return hash((self.line, self.file, self.tool))
+        return hash((self.line, self.filename, self.tool))
 
 
 class CBMCReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(self, line, filename, description)
         self.type = type
         self.tool = "CBMC"
 
@@ -128,7 +120,7 @@ class CBMCReport(BugReport):
         return cr
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         with open(file) as f:
             data = xmltodict.parse(f.read())
 
@@ -138,14 +130,17 @@ class CBMCReport(BugReport):
         if "property" not in data["cprover"]:
             raise ValueError(f"{file} has no bug reports")
 
-        property_list = data["cprover"]["probperty"]
-        return property_list
+        property_list = data["cprover"]["property"]
+
+        for p in property_list:
+            yield cls.__generate_from_record(p)
+
     
 
 class IKOSReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.type = "IKOS"
 
@@ -157,20 +152,23 @@ class IKOSReport(BugReport):
         return ir
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         # Open JSON file
         with open(file) as f:
             data = json.load(f)
 
-        return data
+        for d in data:
+            yield cls.generate_from_file(d)
     
             
 class ClangReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init_(line, filename, description)
+#        import pdb; pdb.set_trace() # debugging
         self.type = type
         self.tool = "clang"
+        super().__init__(line, filename, description)
+
 
     @classmethod
     def __generate_from_record(cls, record):
@@ -179,27 +177,27 @@ class ClangReport(BugReport):
         return cr
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         """
         Given a clang-generated JSON file, iteratively produce each record
         """
 
+        logging.debug(f"Producing a clang report from {file}")
         # Open JSON file
-        with open(file) as f:
-            data = plistlib.readPlist()
+        with open(file, 'rb') as f:
+            data = plistlib.load(f)
 
         # In clang, source file is embedded at the beginning instead of
         #  in each report
         for r in data["diagnostics"]:
             r["source_file"] = data["files"][0]
-
-        return data["diagnostics"]
+            yield cls.__generate_from_record(r)
 
             
 class InferReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "infer"
 
@@ -209,17 +207,18 @@ class InferReport(BugReport):
                          record["qualifier"], record["bug_type"])
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         # open JSON file
         with open(file) as f:
             data = json.load(f)
             
-        return data
+        for d in data:
+            yield cls.__generate_from_record(d)
 
 class CppcheckReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "cppcheck"
 
@@ -250,6 +249,9 @@ class CppcheckReport(BugReport):
         return cls(line, filename, description, type)
     
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         with open(file) as f:
-            return f.readlines()
+            data = f.readlines()
+
+        for d in data:
+            yield cls.__generate_from_record(d)

@@ -3,6 +3,7 @@ import deduplicate.bug_report as br
 import json
 import re
 import csv
+import logging
 
 class DeduplicateUtils:
     """
@@ -25,6 +26,7 @@ class DeduplicateUtils:
 
     @staticmethod
     def get_bug_dataset(tool, dirname, target):
+        logging.debug(f"get_bug_dataset called with {tool}, {dirname}, {target}")
         """
         Takes a tool and a directory name and returns the dataset
         of bug reports obtained from iterating over the results.
@@ -56,17 +58,18 @@ class DeduplicateUtils:
 
         # Get the complete list of files
         for root, dirs, files in os.walk(dirname):
-            files.extend(list(
+            master_files_list.extend(list(
                 map(lambda x: os.path.join(root, x), (
                 filter(lambda x: x.endswith(file_extension), files)))))
-
+        logging.debug(f"Found {len(master_files_list)} files. Processing now")
+        logging.debug(f"Report type is {type(report)}")
         # Get the list of warnings
         warnings = list()
         for f in master_files_list:
             bugs = report.generate_from_file(f)
             for b in bugs:
                 # Add configuration information
-                config = re.findall('[0-9]{1,3}.config')
+                config = re.findall('[0-9]{1,3}.config', f)
                 if len(config) > 1:
                     raise RuntimeError(f"More than one configuration number",
                                        " extracted from {dirname}. Crashing because",
@@ -91,12 +94,12 @@ class DeduplicateUtils:
     def output_as_csv(dataset, outfile):
         """
         Takes a bug database and outputs as a CSV file.
+        DOES NOT CALL CHECK_CSV.
+        This is because this function is not called until
+        the end of execution, and we would like to know
+        if the program will fail because the CSV exists before
+        wasting an hour on execution.
         """
-
-        # Checking that the file doesn't already exist.
-        if os.path.isfile(outfile):
-            raise RuntimeError(f"{outfile} exists! Refusing to overwrite.")
-
         with open(outfile, 'w') as f:
             fieldnames = dataset[0].asdict().keys()
 
@@ -104,4 +107,17 @@ class DeduplicateUtils:
 
             writer.writeheader()
             for w in dataset:
-                writer.write(w)
+                w = w.asdict()
+                writer.writerow(w)
+
+    @staticmethod
+    def check_csv(outfile):
+        """
+        Simply checks if the csv file exists and throws a RuntimeError
+        if it does. Returns nothing otherwise.
+        """
+        
+        # Checking that the file doesn't already exist.
+        if os.path.isfile(outfile):
+            raise RuntimeError(f"{outfile} exists! Refusing to overwrite.")
+
