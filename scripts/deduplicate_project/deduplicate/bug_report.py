@@ -2,6 +2,9 @@ import json
 import xmltodict
 import plistlib
 import logging
+import csv
+import os
+
 """
 By Austin Mordahl
 2019-02-11
@@ -29,7 +32,7 @@ class BugReport:
         self.line = line
         self.filename = filename
         self.description = description
-        self.configs = list()
+        self.configs = set()
         self.type = None
         self.target = None
 
@@ -47,7 +50,7 @@ class BugReport:
         selfdict['filename'] = self.filename
         selfdict['description'] = self.description
         selfdict['configs'] = str(self.configs)
-        selfdict['num_configs'] = self.num_configs
+        selfdict['num_configs'] = self.num_configs()
         selfdict['tool'] = self.tool
         selfdict['target'] = self.target
         selfdict['type'] = self.type
@@ -63,8 +66,11 @@ class BugReport:
         """
         Adds config to the warning's config database
         """
-        self.configs.append(config)
+        self.configs.add(config)
 
+    def update_configs(self, other):
+        self.configs |= other.configs
+        
     @classmethod
     def __generate_from_record(cls, record):
         """
@@ -89,7 +95,7 @@ class BugReport:
         ds = cls.__get_dataset_from_file(file)
         for d in ds:
             yield cls.__generate_from_record(d)
-            
+
     def __eq__(self, other):
         """
         NOTE: Currently, the originating tool is used to compute
@@ -100,10 +106,11 @@ class BugReport:
 
         return self.line == other.line and \
             self.filename == other.filename and \
+            self.description == other.description and \
             self.tool == other.tool
-
+    
     def __hash__(self):
-        return hash((self.line, self.filename, self.tool))
+        return hash((self.line, self.filename, self.description, self.tool))
 
 
 class CBMCReport(BugReport):
@@ -147,17 +154,18 @@ class IKOSReport(BugReport):
     @classmethod
     def __generate_from_record(cls, record):
         """ Generates the IKOS record from a single JSON record """
-        ir = cls(record["location"]["line"], record["location"]["file"],
-                        record["long_msg"], record["checker"])
+        ir = cls(record['line'], os.path.basename(record['file']),
+                 record['message'], record['check'])
+
         return ir
 
     @classmethod
     def generate_from_file(cls, file):
         # Open JSON file
         with open(file) as f:
-            data = json.load(f)
+            csvreader = csv.DictReader(f)
 
-        for d in data:
+        for d in csvreader:
             yield cls.generate_from_file(d)
     
             
@@ -190,7 +198,9 @@ class ClangReport(BugReport):
         # In clang, source file is embedded at the beginning instead of
         #  in each report
         for r in data["diagnostics"]:
-            r["source_file"] = data["files"][0]
+            source = data["files"][0]
+            source = source.split('/')
+            r["source_file"] = source[-1]
             yield cls.__generate_from_record(r)
 
             

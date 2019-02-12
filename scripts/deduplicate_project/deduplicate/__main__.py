@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 if not args.verbose:
     logging.basicConfig(level=logging.CRITICAL)
-elif args.verbose >= 1:
+elif args.verbose <= 1:
     logging.basicConfig(level=logging.WARNING)
 elif args.verbose == 2:
     logging.basicConfig(level=logging.INFO)

@@ -1,12 +1,12 @@
 {
   "axtls_2_1_4": {
     "infer_results": {
-      "location": "",
-      "successful_configs": "",
+      "location": "/home/austin/Documents/var-bugs-study/varbugs/server_generated/output/axtls_2_1_4/infer_results"
+      "successful_configs": "1000",
     },
     "cppcheck_results": {
-      "location": "",
-      "successful_configs": "",
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/axtls_2_1_4/cppcheck_results",
+      "successful_configs": "1000",
     },
     "clang_results": {
       "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/axtls_2_1_4/clang_results",
@@ -18,7 +18,7 @@
     },
     "cbmc_results": {
       "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/axtls_2_1_4/cbmc_results",
-      "successful_configs": "",
+      "successful_configs": "1000",
     }
   },
   "toybox_0_7_5": {
@@ -35,12 +35,12 @@
       "successful_configs": "",
     },
     "ikos_results": {
-      "location": "",
-      "successful_configs": "",
+      "location": " /home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/toybox_0_7_5",
+      "successful_configs": "1000",
     },
     "cbmc_results": {
-      "location": "",
-      "successful_configs": "",
+      "location": " /home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/toybox_0_7_5",
+      "successful_configs": "1000",
     }
   },
   "busybox_1_28_0": {
@@ -53,7 +53,7 @@
       "successful_configs": "",
     },
     "clang_results": {
-      "location": "",
+      "location": "/home/austin/Documents/var-bugs-study/varbugs/server_generated/output/busybox_1_28_0/clang_results",
       "successful_configs": "",
     },
     "ikos_results": {
@@ -61,8 +61,8 @@
       "successful_configs": "",
     },
     "cbmc_results": {
-      "location": "",
-      "successful_configs": "",
+      "location": "/home/austin/Documents/var-bugs-study/varbugs/server_generated/output/busybox_1_28_0/cbmc_results",
+      "successful_configs": "1000",
     }
   },  
   "linux_4_17_6": {

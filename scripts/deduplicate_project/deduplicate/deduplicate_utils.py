@@ -38,7 +38,7 @@ class DeduplicateUtils:
         
         if tool == "clang":
             report = br.ClangReport
-            file_extension = ".plist"
+            file_extension = ".plist.resolved"
         elif tool == "cbmc":
             report = br.CBMCReport
             file_extension = ".xml"
@@ -88,8 +88,27 @@ class DeduplicateUtils:
         Currently, if A and B are emitted by different tools, they
         will not be considered equivalent.
         """
-        return set(warnings)
 
+        logging.info("Deduplicating...")
+
+        unique = set(warnings)
+
+        # Update config lists
+        for u in unique:
+            for w in warnings:
+                if u == w:
+                    u.update_configs(w)
+                    
+        return unique
+
+        # I initially had this as just set(warnings) but
+        #  this doesn't work, because I need to perform the union of the
+        #  configuration set.
+        
+    @staticmethod
+    def update_config_list(updatee, updater):
+        updatee.update_config_list(updater)
+        
     @staticmethod
     def output_as_csv(dataset, outfile):
         """
