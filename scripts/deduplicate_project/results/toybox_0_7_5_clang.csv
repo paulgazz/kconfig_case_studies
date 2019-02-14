@@ -1,57 +1,57 @@
-line,filename,tool,description,target,type,configs,num_configs,variability
-176,lib_args.c,clang,,toybox_0_7_5,Logic error,,986,True
-214,lib_args.c,clang,,toybox_0_7_5,Logic error,,704,True
-150,ftpget.c,clang,,toybox_0_7_5,Logic error,,738,True
-66,timeout.c,clang,,toybox_0_7_5,Logic error,,350,True
-60,oneit.c,clang,,toybox_0_7_5,Security,,512,True
-322,file.c,clang,,toybox_0_7_5,Logic error,,483,True
-184,xargs.c,clang,,toybox_0_7_5,Logic error,,664,True
-33,lib_password.c,clang,,toybox_0_7_5,Dead store,,986,True
-382,patch.c,clang,,toybox_0_7_5,Logic error,,490,True
-928,sed.c,clang,,toybox_0_7_5,Dead store,,494,True
-167,od.c,clang,,toybox_0_7_5,Logic error,,491,True
-349,ls.c,clang,,toybox_0_7_5,API,,655,True
-136,grep.c,clang,,toybox_0_7_5,Dead store,,507,True
-29,uudecode.c,clang,,toybox_0_7_5,Logic error,,485,True
-218,lib_xwrap.c,clang,,toybox_0_7_5,Security,,986,True
-40,uuencode.c,clang,,toybox_0_7_5,Dead store,,514,True
-273,md5sum.c,clang,,toybox_0_7_5,Logic error,,622,True
-201,lib_args.c,clang,,toybox_0_7_5,Logic error,,986,True
-183,ftpget.c,clang,,toybox_0_7_5,Dead store,,243,True
-31,time.c,clang,,toybox_0_7_5,Logic error,,350,True
-490,lib_args.c,clang,,toybox_0_7_5,Logic error,,986,True
-22,setsid.c,clang,,toybox_0_7_5,Logic error,,492,True
-130,find.c,clang,,toybox_0_7_5,Dead store,,515,True
-210,lib_args.c,clang,,toybox_0_7_5,Logic error,,986,True
-105,netcat.c,clang,,toybox_0_7_5,Dead store,,347,True
-116,od.c,clang,,toybox_0_7_5,Logic error,,491,True
-779,sed.c,clang,,toybox_0_7_5,Dead store,,494,True
-21,lib_help.c,clang,,toybox_0_7_5,Dead store,,127,True
-178,netcat.c,clang,,toybox_0_7_5,Security,,658,True
-159,id.c,clang,,toybox_0_7_5,Memory error,,472,True
-149,cp.c,clang,,toybox_0_7_5,API,,897,True
-193,date.c,clang,,toybox_0_7_5,Dead store,,511,True
-51,vmstat.c,clang,,toybox_0_7_5,Logic error,,508,True
-375,patch.c,clang,,toybox_0_7_5,API,,490,True
-397,patch.c,clang,,toybox_0_7_5,API,,490,True
-137,date.c,clang,,toybox_0_7_5,Logic error,,511,True
-121,hwclock.c,clang,,toybox_0_7_5,Logic error,,466,True
-309,lib_args.c,clang,,toybox_0_7_5,Logic error,,519,True
-49,switch_root.c,clang,,toybox_0_7_5,Logic error,,486,True
-64,losetup.c,clang,,toybox_0_7_5,Logic error,,531,True
-353,ls.c,clang,,toybox_0_7_5,Logic error,,329,True
-115,hwclock.c,clang,,toybox_0_7_5,Logic error,,466,True
-287,cpio.c,clang,,toybox_0_7_5,Logic error,,512,True
-366,lib_args.c,clang,,toybox_0_7_5,Logic error,,519,True
-1506,ps.c,clang,,toybox_0_7_5,Dead store,,962,True
-158,grep.c,clang,,toybox_0_7_5,Logic error,,507,True
-89,hwclock.c,clang,,toybox_0_7_5,Logic error,,466,True
-20,realpath.c,clang,,toybox_0_7_5,Dead store,,483,True
-82,oneit.c,clang,,toybox_0_7_5,Security,,512,True
-113,find.c,clang,,toybox_0_7_5,Dead store,,515,True
-186,netcat.c,clang,,toybox_0_7_5,Logic error,,297,True
-118,ifconfig.c,clang,,toybox_0_7_5,Dead store,,457,True
-196,lib_args.c,clang,,toybox_0_7_5,Logic error,,986,True
-203,ftpget.c,clang,,toybox_0_7_5,Logic error,,235,True
-49,taskset.c,clang,,toybox_0_7_5,Dead store,,730,True
-24,chvt.c,clang,,toybox_0_7_5,Logic error,,512,True
+line,filename,tool,target,type,num_configs,variability
+176,lib_args.c,clang,toybox_0_7_5,Logic error,986,False
+214,lib_args.c,clang,toybox_0_7_5,Logic error,704,True
+150,ftpget.c,clang,toybox_0_7_5,Logic error,738,True
+66,timeout.c,clang,toybox_0_7_5,Logic error,350,True
+60,oneit.c,clang,toybox_0_7_5,Security,512,True
+322,file.c,clang,toybox_0_7_5,Logic error,483,True
+184,xargs.c,clang,toybox_0_7_5,Logic error,664,True
+33,lib_password.c,clang,toybox_0_7_5,Dead store,986,False
+382,patch.c,clang,toybox_0_7_5,Logic error,490,True
+928,sed.c,clang,toybox_0_7_5,Dead store,494,True
+167,od.c,clang,toybox_0_7_5,Logic error,491,True
+349,ls.c,clang,toybox_0_7_5,API,655,True
+136,grep.c,clang,toybox_0_7_5,Dead store,507,True
+29,uudecode.c,clang,toybox_0_7_5,Logic error,485,True
+218,lib_xwrap.c,clang,toybox_0_7_5,Security,986,False
+40,uuencode.c,clang,toybox_0_7_5,Dead store,514,True
+273,md5sum.c,clang,toybox_0_7_5,Logic error,622,True
+201,lib_args.c,clang,toybox_0_7_5,Logic error,986,False
+183,ftpget.c,clang,toybox_0_7_5,Dead store,243,True
+31,time.c,clang,toybox_0_7_5,Logic error,350,True
+490,lib_args.c,clang,toybox_0_7_5,Logic error,986,False
+22,setsid.c,clang,toybox_0_7_5,Logic error,492,True
+130,find.c,clang,toybox_0_7_5,Dead store,515,True
+210,lib_args.c,clang,toybox_0_7_5,Logic error,986,False
+105,netcat.c,clang,toybox_0_7_5,Dead store,347,True
+116,od.c,clang,toybox_0_7_5,Logic error,491,True
+779,sed.c,clang,toybox_0_7_5,Dead store,494,True
+21,lib_help.c,clang,toybox_0_7_5,Dead store,127,True
+178,netcat.c,clang,toybox_0_7_5,Security,658,True
+159,id.c,clang,toybox_0_7_5,Memory error,472,True
+149,cp.c,clang,toybox_0_7_5,API,897,True
+193,date.c,clang,toybox_0_7_5,Dead store,511,True
+51,vmstat.c,clang,toybox_0_7_5,Logic error,508,True
+375,patch.c,clang,toybox_0_7_5,API,490,True
+397,patch.c,clang,toybox_0_7_5,API,490,True
+137,date.c,clang,toybox_0_7_5,Logic error,511,True
+121,hwclock.c,clang,toybox_0_7_5,Logic error,466,True
+309,lib_args.c,clang,toybox_0_7_5,Logic error,519,True
+49,switch_root.c,clang,toybox_0_7_5,Logic error,486,True
+64,losetup.c,clang,toybox_0_7_5,Logic error,531,True
+353,ls.c,clang,toybox_0_7_5,Logic error,329,True
+115,hwclock.c,clang,toybox_0_7_5,Logic error,466,True
+287,cpio.c,clang,toybox_0_7_5,Logic error,512,True
+366,lib_args.c,clang,toybox_0_7_5,Logic error,519,True
+1506,ps.c,clang,toybox_0_7_5,Dead store,962,True
+158,grep.c,clang,toybox_0_7_5,Logic error,507,True
+89,hwclock.c,clang,toybox_0_7_5,Logic error,466,True
+20,realpath.c,clang,toybox_0_7_5,Dead store,483,True
+82,oneit.c,clang,toybox_0_7_5,Security,512,True
+113,find.c,clang,toybox_0_7_5,Dead store,515,True
+186,netcat.c,clang,toybox_0_7_5,Logic error,297,True
+118,ifconfig.c,clang,toybox_0_7_5,Dead store,457,True
+196,lib_args.c,clang,toybox_0_7_5,Logic error,986,False
+203,ftpget.c,clang,toybox_0_7_5,Logic error,235,True
+49,taskset.c,clang,toybox_0_7_5,Dead store,730,True
+24,chvt.c,clang,toybox_0_7_5,Logic error,512,True

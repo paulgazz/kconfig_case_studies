@@ -50,11 +50,13 @@ def main():
             warnings = DeduplicateUtils.get_bug_dataset(tool, config[c][key]['location'], c)
             logging.info(f"{len(warnings)} unique warnings; adding to master list.")
 
+            max_configs = compute_max_config(warnings)
             # Variability?
             for w in warnings:
-                if w.num_configs < (int(config[c][key]['successful_configs']) if
-                                      config[c][key]['successful_configs'] else
-                                      1000):
+                if w.num_configs < max_configs:
+#                if w.num_configs < (int(config[c][key]['successful_configs']) if
+#                                      config[c][key]['successful_configs'] else
+#                                      1000):
                     w.set_variability(True)
                 else:
                     w.set_variability(False)
@@ -67,5 +69,24 @@ def main():
             DeduplicateUtils.output_as_csv(warnings, outcsv)
             DeduplicateUtils.write_to_json(warnings, outcsv.replace('.csv', '.json'))
 
+def compute_max_config(warnings):
+    """
+    Given a list of warnings, computes the number of configurations
+    that we should compare against to make our guess as to whether
+    a bug is a variability bug.
+
+    Insetad of providing the successful configurations
+    as a potentially incorrect field in the config file,
+    let's compute it programmatically.
+    """
+
+    configs_master = [set(w.configs) for w in warnings]
+    configs = set()
+    for c in configs_master:
+        configs = configs.union(c)
+
+    return len(configs)
+    
+    
 if __name__ == "__main__":
     main()

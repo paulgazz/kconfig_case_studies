@@ -180,17 +180,22 @@ class DeduplicateUtils:
         if len(dataset) == 0:
             logging.warning(f"Dataset for {outfile} is empty; not writing.")
         else:
+
+            # Remove description and configs
+            datasetasdicts = list()
+            for d in dataset:
+                w = d.asdict()
+                w.pop('description')
+                w.pop('configs')
+                datasetasdicts.append(w)
+            
             with open(outfile, 'w') as f:
-                fieldnames = dataset[0].asdict().keys()
+                fieldnames = datasetasdicts[0].keys()
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
 
                 writer.writeheader()
-                for w in dataset:
-                    w = w.asdict()
-                    # We don't want these fields in the dictionary.
-                    w.pop('description')
-                    w.pop('configs')
-                    writer.writerow(w)
+                for d in datasetasdicts:
+                    writer.writerow(d)
 
     @staticmethod
     def check_csv(outfile):
