@@ -1,8 +1,11 @@
+import sys
 import json
 import xmltodict
 import plistlib
 import logging
 import csv
+csv.field_size_limit(sys.maxsize) # dirty code to get around IKOS
+
 import os
 
 """
@@ -33,12 +36,18 @@ class BugReport:
         self.filename = filename
         self.description = description
         self.configs = set()
+        self.tool = None
         self.type = None
         self.target = None
+        self.variability = None
+        self.num_configs = None
 
     def __str__(self):
         raise NotImplementedError("Not implemented in the abstract base class")
 
+    def set_variability(self, flag):
+        self.variability = flag
+        
     def asdict(self):
         """
         Method to return the bug reports as a dictionary
@@ -48,20 +57,37 @@ class BugReport:
         selfdict = dict()
         selfdict['line'] = self.line
         selfdict['filename'] = self.filename
-        selfdict['description'] = self.description
-        selfdict['configs'] = str(self.configs)
-        selfdict['num_configs'] = self.num_configs()
+        # Have to do the config list a little different
+        #  to help in re-reading from file.
         selfdict['tool'] = self.tool
+        selfdict['description'] = self.description
         selfdict['target'] = self.target
         selfdict['type'] = self.type
+        selfdict['configs'] = list(self.configs)
+        selfdict['num_configs'] = self.num_configs
+        selfdict['variability'] = self.variability
         return selfdict
 
+    @staticmethod
+    def fromdict(record):
+
+        me = BugReport(record['line'], record['filename'], None) # not putting description in the table
+        me.type = record['type']
+        me.target = record['target']
+        me.tool = record['tool']
+        me.variability = record['variability']
+        me.num_configs = record['num_configs']
+        me.description = record['description']
+        me.configs = set(record['configs'])
+        
+        # Not including variability here because it's not included in the asdict(),
+        #  and the assumption is this will be called on dictionaries created by
+        #  asdict()
+        return me
+        
     def add_target(self, target):
         self.target = target
         
-    def num_configs(self):
-        return len(self.configs)
-    
     def add_config(self, config:str):
         """
         Adds config to the warning's config database
@@ -106,17 +132,16 @@ class BugReport:
 
         return self.line == other.line and \
             self.filename == other.filename and \
-            self.description == other.description and \
             self.tool == other.tool
     
     def __hash__(self):
-        return hash((self.line, self.filename, self.description, self.tool))
+        return hash((self.line, self.filename, self.tool))
 
 
 class CBMCReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        super().__init__(self, line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "CBMC"
 
@@ -149,33 +174,32 @@ class IKOSReport(BugReport):
     def __init__(self, line, filename, description, type):
         super().__init__(line, filename, description)
         self.type = type
-        self.type = "IKOS"
+        self.tool = "IKOS"
 
     @classmethod
     def __generate_from_record(cls, record):
         """ Generates the IKOS record from a single JSON record """
         ir = cls(record['line'], os.path.basename(record['file']),
                  record['message'], record['check'])
-
         return ir
 
     @classmethod
     def generate_from_file(cls, file):
+        logging.debug(f"Generating IKOS from {file}")
         # Open JSON file
         with open(file) as f:
             csvreader = csv.DictReader(f)
-
-        for d in csvreader:
-            yield cls.generate_from_file(d)
+            for d in csvreader:
+                yield cls.__generate_from_record(d)
     
             
 class ClangReport(BugReport):
-
+    
     def __init__(self, line, filename, description, type):
-#        import pdb; pdb.set_trace() # debugging
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "clang"
-        super().__init__(line, filename, description)
+
 
 
     @classmethod
@@ -190,7 +214,6 @@ class ClangReport(BugReport):
         Given a clang-generated JSON file, iteratively produce each record
         """
 
-        logging.debug(f"Producing a clang report from {file}")
         # Open JSON file
         with open(file, 'rb') as f:
             data = plistlib.load(f)
@@ -215,6 +238,7 @@ class InferReport(BugReport):
     def __generate_from_record(cls, record):
         ir = cls(record["line"], record["file"],
                          record["qualifier"], record["bug_type"])
+        return ir
 
     @classmethod
     def generate_from_file(cls, file):
@@ -234,10 +258,12 @@ class CppcheckReport(BugReport):
 
     @classmethod
     def __generate_from_record(cls, record):
+        logging.debug(f"cppcheck report: {record}")
         # a cppcheck report looks like
         # [toys/other/vmstat.c:51]: (error) Uninitialized variable: p
         record = record.replace("\n", "")
         tokens = record.split(":")
+        logging.debug(f"cppcheck tokens: {tokens}")
         # We now have something like
         # [toys/other/vmstat.c
         # 51]
@@ -251,7 +277,10 @@ class CppcheckReport(BugReport):
         line = tokens[1][:-1]
 
         # Description: concatenate last two tokens
-        description = tokens[2] + tokens[3]
+        try:
+            description = tokens[2] + tokens[3]
+        except IndexError:
+            description = tokens[2]
 
         # Type: third token
         type = tokens[2]

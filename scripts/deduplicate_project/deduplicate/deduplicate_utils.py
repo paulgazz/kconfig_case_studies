@@ -11,11 +11,11 @@ class DeduplicateUtils:
     of processing and deduplicating warnings.
     """
     @staticmethod
-    def read_config_file():
+    def read_config_file(config_file):
         """
         Read config file and return it as a dictionary.
         """
-        config_file = "config/file_locations.json"
+        config_file = "config/{}".format(config_file)
         if not os.path.isfile(config_file):
             raise FileNotFoundError(f"Config file {config_file} does not exist.")
         
@@ -33,6 +33,14 @@ class DeduplicateUtils:
         Also takes the target program to include in the report.
         """
 
+        intermediate_result = "results/.{}_{}.json".format(tool, target)
+        
+        # Check if the results already exist, if they do, load from memory
+        if os.path.isfile(intermediate_result):
+            logging.info(f"Intermediate result found at {intermediate_result}. Loading from there")
+            warnings = DeduplicateUtils.read_from_json(intermediate_result)
+            return warnings
+        
         if not os.path.isdir(dirname):
             raise FileNotFoundError(f"{dirname} doesn't exist.")
         
@@ -44,10 +52,10 @@ class DeduplicateUtils:
             file_extension = ".xml"
         elif tool == "infer":
             report = br.InferReport
-            file_extension = ".report.json"
+            file_extension = "report.json"
         elif tool == "ikos":
             report = br.IKOSReport
-            file_extension = ".db.json"
+            file_extension = ".db.csv"
         elif tool == "cppcheck":
             report = br.CppcheckReport
             file_extension = ".cppcheck.resolved"
@@ -69,18 +77,62 @@ class DeduplicateUtils:
             bugs = report.generate_from_file(f)
             for b in bugs:
                 # Add configuration information
-                config = re.findall('[0-9]{1,3}.config', f)
-                if len(config) > 1:
+                config_path = re.findall('[0-9]{1,3}.config', f)
+                if len(config_path) > 1:
                     raise RuntimeError(f"More than one configuration number",
                                        " extracted from {dirname}. Crashing because",
                                        " I don't know how to handle this.")
+
+                config = re.findall('[0-9]{1,3}', config_path[0])
+                if len(config) > 1:
+                    raise RuntimeError(f"Problem extracting configuration number",
+                                       " from pathname {config_path[0]}. Exiting.")
+                
                 b.add_config(config[0])
                 b.add_target(target)
                 warnings.append(b)
 
         # Compute
+        warnings = DeduplicateUtils.deduplicate_dataset(warnings)
+
+        # Write to intermediate results file
+        DeduplicateUtils.write_to_json(warnings, intermediate_result)
+        
         return warnings
 
+    @staticmethod
+    def write_to_json(dataset, outfile):
+        """
+        Used to write intermediate results to json files,
+        so next time the tool is run, intermediate results
+        can be loaded instead of recomputed (which is super expensive).
+        """
+
+        # Convert to a list of dicts, so we can write
+        dataset_as_dicts = [x.asdict() for x in dataset]
+        with open(outfile, 'w') as f:
+            json.dump(dataset_as_dicts, f)
+
+    @staticmethod
+    def read_from_json(infile):
+        """
+        Used to read intermediate results from json files.
+        """
+
+        if not os.path.isfile(infile):
+            raise FileNotFoundError
+
+        with open(infile) as f:
+            data = json.load(f)
+
+        warnings = list()
+        # Convert each entry to a bug report
+        for d in data:
+            warnings.append(br.BugReport.fromdict(d))
+
+        return warnings
+            
+        
     @staticmethod
     def deduplicate_dataset(warnings):
         """
@@ -89,7 +141,7 @@ class DeduplicateUtils:
         will not be considered equivalent.
         """
 
-        logging.info("Deduplicating...")
+        logging.info(f"Deduplicating {len(warnings)} warnings...")
 
         unique = set(warnings)
 
@@ -98,7 +150,10 @@ class DeduplicateUtils:
             for w in warnings:
                 if u == w:
                     u.update_configs(w)
-                    
+
+        # Update number of configurations
+        for u in unique:
+            u.num_configs = len(u.configs)
         return unique
 
         # I initially had this as just set(warnings) but
@@ -119,15 +174,23 @@ class DeduplicateUtils:
         if the program will fail because the CSV exists before
         wasting an hour on execution.
         """
-        with open(outfile, 'w') as f:
-            fieldnames = dataset[0].asdict().keys()
 
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
+        dataset = list(dataset)
 
-            writer.writeheader()
-            for w in dataset:
-                w = w.asdict()
-                writer.writerow(w)
+        if len(dataset) == 0:
+            logging.warning(f"Dataset for {outfile} is empty; not writing.")
+        else:
+            with open(outfile, 'w') as f:
+                fieldnames = dataset[0].asdict().keys()
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+
+                writer.writeheader()
+                for w in dataset:
+                    w = w.asdict()
+                    # We don't want these fields in the dictionary.
+                    w.pop('description')
+                    w.pop('configs')
+                    writer.writerow(w)
 
     @staticmethod
     def check_csv(outfile):
@@ -139,4 +202,5 @@ class DeduplicateUtils:
         # Checking that the file doesn't already exist.
         if os.path.isfile(outfile):
             raise RuntimeError(f"{outfile} exists! Refusing to overwrite.")
+
 

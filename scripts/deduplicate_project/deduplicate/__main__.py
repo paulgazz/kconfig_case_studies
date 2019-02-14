@@ -1,5 +1,3 @@
-import sys
-import deduplicate.bug_report as br
 from deduplicate.deduplicate_utils import DeduplicateUtils
 import logging
 
@@ -9,8 +7,8 @@ parser = argparse.ArgumentParser("Utility to deduplicate bug reports.")
 parser.add_argument("-v", "--verbose", action="count")
 parser.add_argument("-f", "--force", action="store_true",
                     help="Enable to overwrite CSV file if it already exists.")
-parser.add_argument("-o", "--outfile", default="warnings.csv",
-                    help="Specify name of output CSV (default warnings.csv")
+parser.add_argument("-c", "--config", default="file_locations.json",
+                    help="Specify the configuration file (default = config/file_locations.json")
 
 args = parser.parse_args()
 
@@ -23,42 +21,51 @@ elif args.verbose == 2:
 else:
     logging.basicConfig(level=logging.DEBUG)
 
-outcsv = "results/{}".format(args.outfile)
-
 def main():
     # Goal: read config file, and for each location, get the bugs.
     # Then, dump all of these bugs into a CSV file.
-    config = DeduplicateUtils.read_config_file()
+    config = DeduplicateUtils.read_config_file(args.config)
 
     # For convenience in the for loop below
     master_tool_list = (('infer_results', 'infer'),
-                        ('cbmc_results', 'cbmc'),
-                        ('clang_results', 'clang'),
+                        ('clang_results', 'clang'),                        
+                        ('cppcheck_results', 'cppcheck'),
                         ('ikos_results', 'ikos'),
-                        ('cppcheck_results', 'cppcheck'))
+                        ('cbmc_results', 'cbmc')
+    )
                         
     master_warnings_list = list()
 
     # Check the CSV file is not already extant.
-    outcsv = "results/warnings.csv"
 
     if not args.force:
         DeduplicateUtils.check_csv(outcsv)
     for c in config:
         for key, tool in master_tool_list:
-            if not config[c][key]:
+            if key not in config[c] or not config[c][key]['location']:
                 logging.warning(f"Location for {tool} reports on target {c} not present.")
                 continue
             logging.info(f"Collecting warnings from {tool} on {c}.")
-            warnings = DeduplicateUtils.get_bug_dataset(tool, config[c][key], c)
-            logging.info(f"{len(warnings)} warnings collected. Now deduplicating.")
-            warnings = DeduplicateUtils.deduplicate_dataset(warnings)
+            
+            warnings = DeduplicateUtils.get_bug_dataset(tool, config[c][key]['location'], c)
             logging.info(f"{len(warnings)} unique warnings; adding to master list.")
-            master_warnings_list.extend(warnings)
 
-    logging.info(f"{len(master_warnings_list)} bugs found in total.")
-    logging.info(f"Writing to {outcsv}")
-    DeduplicateUtils.output_as_csv(master_warnings_list, outcsv)
+            # Variability?
+            for w in warnings:
+                if w.num_configs < (int(config[c][key]['successful_configs']) if
+                                      config[c][key]['successful_configs'] else
+                                      1000):
+                    w.set_variability(True)
+                else:
+                    w.set_variability(False)
+            
+            # master_warnings_list.extend(warnings) # we want each tool/program in its own csv
+            
+            logging.info(f"{len(warnings)} unique bugs found.")
+            outcsv = "results/{}_{}.csv".format(c, tool)
+            logging.info(f"Writing to {outcsv}")
+            DeduplicateUtils.output_as_csv(warnings, outcsv)
+            DeduplicateUtils.write_to_json(warnings, outcsv.replace('.csv', '.json'))
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,18 @@
+line,filename,tool,description,target,type,configs,num_configs,variability
+64,toys/other/losetup.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,531,True
+188,toys/posix/tail.c,cppcheck,,toybox_0_7_5, (error) Memory is allocated but not initialized,,655,True
+89,toys/other/hwclock.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,466,True
+49,toys/other/switch_root.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,486,True
+975,lib/lib.c,cppcheck,,toybox_0_7_5, (error) Buffer is accessed out of bounds,,986,True
+29,toys/posix/uudecode.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,485,True
+63,./lib/lsm.h,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,4,True
+137,toys/posix/date.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,511,True
+24,toys/other/chvt.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,512,True
+96,toys/other/hwclock.c,cppcheck,,toybox_0_7_5, (error) Memory pointed to by 's' is freed twice.,,466,True
+35,toys/other/base64.c,cppcheck,,toybox_0_7_5, (error) Expression 'this.base64.columns&&++*x==this.base64.columns' depends on order of evaluation of side effects,,478,True
+63,lib/lsm.h,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,4,True
+83,toys/posix/cmp.c,cppcheck,,toybox_0_7_5, (error) Signed integer overflow for expression '(2147483648)*!(toys.optflags&(1))'.,,501,True
+51,toys/other/vmstat.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,508,True
+309,lib/args.c,cppcheck,,toybox_0_7_5, (error) Uninitialized variable,,519,True
+118,toys/net/netstat.c,cppcheck,,toybox_0_7_5, (error) Resource leak,,515,True
+60,toys/other/blockdev.c,cppcheck,,toybox_0_7_5," (error) Array 'cmds[11]' accessed at index 31, which is out of bounds.",,482,True
