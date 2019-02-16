@@ -1,112 +1,112 @@
-line,filename,tool,target,type,num_configs,variability
-377,toys/posix/ls.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,655,True
-264,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-26,toys/posix/pwd.c,infer,toybox_0_7_5,NULL_DEREFERENCE,524,True
-287,toys/posix/cpio.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,512,True
-225,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-737,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-428,toys/posix/ls.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,655,True
-130,toys/posix/find.c,infer,toybox_0_7_5,DEAD_STORE,515,True
-779,toys/posix/sed.c,infer,toybox_0_7_5,DEAD_STORE,494,True
-397,toys/posix/ls.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,655,True
-232,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-912,toys/posix/sed.c,infer,toybox_0_7_5,DEAD_STORE,494,True
-203,toys/lsb/md5sum.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,954,True
-101,scripts/mkflags.c,infer,toybox_0_7_5,NULL_DEREFERENCE,986,False
-92,toys/posix/od.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,491,True
-147,toys/lsb/md5sum.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,954,True
-219,toys/other/lsattr.c,infer,toybox_0_7_5,DEAD_STORE,743,True
-111,toys/lsb/passwd.c,infer,toybox_0_7_5,DEAD_STORE,640,True
-707,lib/lib.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-63,lib/lsm.h,infer,toybox_0_7_5,UNINITIALIZED_VALUE,922,True
-254,toys/other/bzcat.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,748,True
-1268,lib/lib.c,infer,toybox_0_7_5,MEMORY_LEAK,986,False
-286,lib/args.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-20,toys/other/realpath.c,infer,toybox_0_7_5,DEAD_STORE,483,True
-193,toys/posix/date.c,infer,toybox_0_7_5,DEAD_STORE,511,True
-448,toys/posix/ps.c,infer,toybox_0_7_5,DEAD_STORE,962,True
-115,toys/other/hwclock.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,466,True
-72,toys/other/oneit.c,infer,toybox_0_7_5,RESOURCE_LEAK,512,True
-389,lib/xwrap.c,infer,toybox_0_7_5,RESOURCE_LEAK,986,False
-86,toys/other/pmap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,500,True
-151,toys/net/ftpget.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,738,True
-92,scripts/mkflags.c,infer,toybox_0_7_5,NULL_DEREFERENCE,986,False
-94,toys/net/rfkill.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,468,True
-42,toys/other/nbd_client.c,infer,toybox_0_7_5,DEAD_STORE,248,True
-1257,lib/lib.c,infer,toybox_0_7_5,MEMORY_LEAK,986,False
-234,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-27,toys/posix/nohup.c,infer,toybox_0_7_5,RESOURCE_LEAK,476,True
-794,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-1514,toys/posix/ps.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,962,True
-726,toys/posix/sed.c,infer,toybox_0_7_5,DEAD_STORE,494,True
-424,toys/posix/ls.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,655,True
-33,lib/password.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-30,toys/android/setenforce.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,492,True
-479,toys/posix/ls.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,655,True
-736,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-79,toys/posix/comm.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,462,True
-113,toys/posix/find.c,infer,toybox_0_7_5,DEAD_STORE,515,True
-369,toys/posix/ls.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,655,True
-251,toys/other/bzcat.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,748,True
-136,toys/posix/grep.c,infer,toybox_0_7_5,DEAD_STORE,507,True
-85,toys/posix/od.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,491,True
-570,toys/posix/sed.c,infer,toybox_0_7_5,DEAD_STORE,494,True
-233,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-1456,toys/posix/ps.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,962,True
-184,toys/posix/grep.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,507,True
-54,toys/other/uptime.c,infer,toybox_0_7_5,NULL_DEREFERENCE,495,True
-72,toys/other/modinfo.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,496,True
-128,toys/posix/kill.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,653,True
-671,toys/posix/sed.c,infer,toybox_0_7_5,MEMORY_LEAK,494,True
-227,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-145,toys/posix/kill.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,653,True
-213,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-625,lib/lib.c,infer,toybox_0_7_5,RESOURCE_LEAK,986,False
-1464,toys/posix/ps.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,962,True
-263,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-769,lib/lib.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-143,toys/lsb/md5sum.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,954,True
-62,toys/posix/comm.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,462,True
-36,toys/other/mix.c,infer,toybox_0_7_5,DEAD_STORE,511,True
-82,toys/net/rfkill.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,468,True
-928,toys/posix/sed.c,infer,toybox_0_7_5,DEAD_STORE,494,True
-127,lib/password.c,infer,toybox_0_7_5,NULL_DEREFERENCE,986,False
-1468,toys/posix/ps.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,962,True
-49,toys/other/taskset.c,infer,toybox_0_7_5,DEAD_STORE,730,True
-73,toys/other/oneit.c,infer,toybox_0_7_5,RESOURCE_LEAK,512,True
-53,toys/other/mountpoint.c,infer,toybox_0_7_5,MEMORY_LEAK,255,True
-458,lib/xwrap.c,infer,toybox_0_7_5,NULL_DEREFERENCE,986,False
-1506,toys/posix/ps.c,infer,toybox_0_7_5,DEAD_STORE,962,True
-76,toys/posix/comm.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,462,True
-53,main.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-82,toys/posix/od.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,491,True
-253,toys/other/bzcat.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,748,True
-373,lib/xwrap.c,infer,toybox_0_7_5,RESOURCE_LEAK,986,False
-1453,toys/posix/ps.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,962,True
-39,toys/posix/nohup.c,infer,toybox_0_7_5,RESOURCE_LEAK,476,True
-1793,toys/posix/ps.c,infer,toybox_0_7_5,DEAD_STORE,962,True
-228,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-126,scripts/mkflags.c,infer,toybox_0_7_5,NULL_DEREFERENCE,986,False
-790,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-1513,toys/posix/ps.c,infer,toybox_0_7_5,DEAD_STORE,962,True
-160,lib/args.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-52,main.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-242,toys/other/lsattr.c,infer,toybox_0_7_5,DEAD_STORE,743,True
-40,toys/posix/uuencode.c,infer,toybox_0_7_5,DEAD_STORE,514,True
-383,lib/xwrap.c,infer,toybox_0_7_5,RESOURCE_LEAK,986,False
-694,toys/posix/sed.c,infer,toybox_0_7_5,MEMORY_LEAK,494,True
-68,toys/posix/comm.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,462,True
-88,toys/posix/od.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,491,True
-101,lib/xwrap.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-223,lib/xwrap.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,986,False
-349,toys/posix/ls.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,655,True
-314,toys/lsb/mount.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,496,True
-157,toys/lsb/md5sum.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,954,True
-90,toys/net/netcat.c,infer,toybox_0_7_5,DEAD_STORE,658,True
-95,toys/posix/ulimit.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,510,True
-238,toys/other/lsattr.c,infer,toybox_0_7_5,DEAD_STORE,743,True
-203,toys/net/ftpget.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,738,True
-145,lib/args.c,infer,toybox_0_7_5,DEAD_STORE,986,False
-150,toys/net/ftpget.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,738,True
-118,toys/net/ifconfig.c,infer,toybox_0_7_5,DEAD_STORE,457,True
-215,toys/posix/grep.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,507,True
+line,filename,tool,description,target,type,configs,num_configs,variability,features
+377,toys/posix/ls.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,655,True,LS
+264,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+26,toys/posix/pwd.c,infer,,toybox_0_7_5,NULL_DEREFERENCE,,524,True,PWD
+287,toys/posix/cpio.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,512,True,CPIO
+225,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+737,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+428,toys/posix/ls.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,655,True,LS
+130,toys/posix/find.c,infer,,toybox_0_7_5,DEAD_STORE,,515,True,FIND
+779,toys/posix/sed.c,infer,,toybox_0_7_5,DEAD_STORE,,494,True,SED
+397,toys/posix/ls.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,655,True,LS
+232,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+912,toys/posix/sed.c,infer,,toybox_0_7_5,DEAD_STORE,,494,True,SED
+203,toys/lsb/md5sum.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,954,True,CONFIG_SHA1SUM or CONFIG_SHA384SUM or CONFIG_SHA512SUM or CONFIG_SHA224SUM or CONFIG_SHA256SUM or CONFIG_MD5SUM
+101,scripts/mkflags.c,infer,,toybox_0_7_5,NULL_DEREFERENCE,,986,False,generic
+92,toys/posix/od.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,491,True,OD
+147,toys/lsb/md5sum.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,954,True,CONFIG_SHA1SUM or CONFIG_SHA384SUM or CONFIG_SHA512SUM or CONFIG_SHA224SUM or CONFIG_SHA256SUM or CONFIG_MD5SUM
+219,toys/other/lsattr.c,infer,,toybox_0_7_5,DEAD_STORE,,743,True,LSATTR or CHATTR
+111,toys/lsb/passwd.c,infer,,toybox_0_7_5,DEAD_STORE,,640,True,PASSWD
+707,lib/lib.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+63,lib/lsm.h,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,922,True,check
+254,toys/other/bzcat.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,748,True,BZCAT or BUNZIP2
+1268,lib/lib.c,infer,,toybox_0_7_5,MEMORY_LEAK,,986,False,generic
+286,lib/args.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+20,toys/other/realpath.c,infer,,toybox_0_7_5,DEAD_STORE,,483,True,REALPATH
+193,toys/posix/date.c,infer,,toybox_0_7_5,DEAD_STORE,,511,True,DATE
+448,toys/posix/ps.c,infer,,toybox_0_7_5,DEAD_STORE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+115,toys/other/hwclock.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,466,True,HWCLOCK
+72,toys/other/oneit.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,512,True,ONEIT
+389,lib/xwrap.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,986,False,generic
+86,toys/other/pmap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,500,True,PMAP
+151,toys/net/ftpget.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,738,True,FTPGET or FTPPUT
+92,scripts/mkflags.c,infer,,toybox_0_7_5,NULL_DEREFERENCE,,986,False,generic
+94,toys/net/rfkill.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,468,True,RFKILL
+42,toys/other/nbd_client.c,infer,,toybox_0_7_5,DEAD_STORE,,248,True,CONFIG_NBD_CLIENT and -CONFIG_TOYBOX_MUSL_NOMMU_IS_BROKEN
+1257,lib/lib.c,infer,,toybox_0_7_5,MEMORY_LEAK,,986,False,generic
+234,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+27,toys/posix/nohup.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,476,True,NOHUP
+794,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+1514,toys/posix/ps.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+726,toys/posix/sed.c,infer,,toybox_0_7_5,DEAD_STORE,,494,True,SED
+424,toys/posix/ls.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,655,True,LS
+33,lib/password.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+30,toys/android/setenforce.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,492,True,SETENFORCE
+479,toys/posix/ls.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,655,True,LS
+736,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+79,toys/posix/comm.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,462,True,COMM
+113,toys/posix/find.c,infer,,toybox_0_7_5,DEAD_STORE,,515,True,FIND
+369,toys/posix/ls.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,655,True,LS
+251,toys/other/bzcat.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,748,True,BZCAT or BUNZIP2
+136,toys/posix/grep.c,infer,,toybox_0_7_5,DEAD_STORE,,507,True,GREP
+85,toys/posix/od.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,491,True,OD
+570,toys/posix/sed.c,infer,,toybox_0_7_5,DEAD_STORE,,494,True,SED
+233,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+1456,toys/posix/ps.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+184,toys/posix/grep.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,507,True,GREP
+54,toys/other/uptime.c,infer,,toybox_0_7_5,NULL_DEREFERENCE,,495,True,UPTIME
+72,toys/other/modinfo.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,496,True,MODINFO
+128,toys/posix/kill.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,653,True,KILL
+671,toys/posix/sed.c,infer,,toybox_0_7_5,MEMORY_LEAK,,494,True,SED
+227,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+145,toys/posix/kill.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,653,True,KILL
+213,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+625,lib/lib.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,986,False,generic
+1464,toys/posix/ps.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+263,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+769,lib/lib.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+143,toys/lsb/md5sum.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,954,True,CONFIG_SHA1SUM or CONFIG_SHA384SUM or CONFIG_SHA512SUM or CONFIG_SHA224SUM or CONFIG_SHA256SUM or CONFIG_MD5SUM
+62,toys/posix/comm.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,462,True,COMM
+36,toys/other/mix.c,infer,,toybox_0_7_5,DEAD_STORE,,511,True,MIX
+82,toys/net/rfkill.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,468,True,RFKILL
+928,toys/posix/sed.c,infer,,toybox_0_7_5,DEAD_STORE,,494,True,SED
+127,lib/password.c,infer,,toybox_0_7_5,NULL_DEREFERENCE,,986,False,generic
+1468,toys/posix/ps.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+49,toys/other/taskset.c,infer,,toybox_0_7_5,DEAD_STORE,,730,True,TASKSET or NPROC
+73,toys/other/oneit.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,512,True,ONEIT
+53,toys/other/mountpoint.c,infer,,toybox_0_7_5,MEMORY_LEAK,,255,True,-CONFIG_TOYBOX_FREE and CONFIG_MOUNTPOINT
+458,lib/xwrap.c,infer,,toybox_0_7_5,NULL_DEREFERENCE,,986,False,generic
+1506,toys/posix/ps.c,infer,,toybox_0_7_5,DEAD_STORE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+76,toys/posix/comm.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,462,True,COMM
+53,main.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+82,toys/posix/od.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,491,True,OD
+253,toys/other/bzcat.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,748,True,BZCAT or BUNZIP2
+373,lib/xwrap.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,986,False,generic
+1453,toys/posix/ps.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+39,toys/posix/nohup.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,476,True,NOHUP
+1793,toys/posix/ps.c,infer,,toybox_0_7_5,DEAD_STORE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+228,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+126,scripts/mkflags.c,infer,,toybox_0_7_5,NULL_DEREFERENCE,,986,False,generic
+790,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+1513,toys/posix/ps.c,infer,,toybox_0_7_5,DEAD_STORE,,962,True,PS or TOP or IOTOP or PGREP or PKILL
+160,lib/args.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+52,main.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+242,toys/other/lsattr.c,infer,,toybox_0_7_5,DEAD_STORE,,743,True,LSATTR or CHATTR
+40,toys/posix/uuencode.c,infer,,toybox_0_7_5,DEAD_STORE,,514,True,UUENCODE
+383,lib/xwrap.c,infer,,toybox_0_7_5,RESOURCE_LEAK,,986,False,generic
+694,toys/posix/sed.c,infer,,toybox_0_7_5,MEMORY_LEAK,,494,True,SED
+68,toys/posix/comm.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,462,True,COMM
+88,toys/posix/od.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,491,True,OD
+101,lib/xwrap.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+223,lib/xwrap.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,986,False,generic
+349,toys/posix/ls.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,655,True,LS
+314,toys/lsb/mount.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,496,True,MOUNT
+157,toys/lsb/md5sum.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,954,True,CONFIG_SHA1SUM or CONFIG_SHA384SUM or CONFIG_SHA512SUM or CONFIG_SHA224SUM or CONFIG_SHA256SUM or CONFIG_MD5SUM
+90,toys/net/netcat.c,infer,,toybox_0_7_5,DEAD_STORE,,658,True,NETCAT
+95,toys/posix/ulimit.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,510,True,ULIMIT
+238,toys/other/lsattr.c,infer,,toybox_0_7_5,DEAD_STORE,,743,True,LSATTR or CHATTR
+203,toys/net/ftpget.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,738,True,FTPGET or FTPPUT
+145,lib/args.c,infer,,toybox_0_7_5,DEAD_STORE,,986,False,generic
+150,toys/net/ftpget.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,738,True,FTPGET or FTPPUT
+118,toys/net/ifconfig.c,infer,,toybox_0_7_5,DEAD_STORE,,457,True,IFCONFIG
+215,toys/posix/grep.c,infer,,toybox_0_7_5,UNINITIALIZED_VALUE,,507,True,GREP
