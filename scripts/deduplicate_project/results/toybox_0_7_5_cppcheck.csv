@@ -1,21 +1,21 @@
 line,filename,tool,target,type,num_configs,variability
-586,bzcat.c,cppcheck,toybox_0_7_5, (error) Possible null pointer dereference,686,True
-64,losetup.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,531,True
-89,kill.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,339,True
-51,vmstat.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,514,True
-137,date.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,511,True
-96,hwclock.c,cppcheck,toybox_0_7_5, (error) Memory pointed to by 's' is freed twice.,468,True
-118,netstat.c,cppcheck,toybox_0_7_5, (error) Resource leak,521,True
-35,base64.c,cppcheck,toybox_0_7_5, (error) Expression 'this.base64.columns&&++*x==this.base64.columns' depends on order of evaluation of side effects,481,True
-188,tail.c,cppcheck,toybox_0_7_5, (error) Memory is allocated but not initialized,657,True
+118,netstat.c,cppcheck,toybox_0_7_5, (error) Resource leak,522,True
+137,date.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,516,True
+86,main.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,563,True
+51,vmstat.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,517,True
+188,tail.c,cppcheck,toybox_0_7_5, (error) Memory is allocated but not initialized,665,True
+60,blockdev.c,cppcheck,toybox_0_7_5," (error) Array 'cmds[11]' accessed at index 31, which is out of bounds.",491,True
+309,args.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,527,True
+24,chvt.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,520,True
+409,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,406,True
+49,switch_root.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,493,True
+96,hwclock.c,cppcheck,toybox_0_7_5, (error) Memory pointed to by 's' is freed twice.,474,True
+975,lib.c,cppcheck,toybox_0_7_5, (error) Buffer is accessed out of bounds,1000,False
 63,lsm.h,cppcheck,toybox_0_7_5, (error) Uninitialized variable,4,True
-86,main.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,555,True
-409,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,402,True
-975,lib.c,cppcheck,toybox_0_7_5, (error) Buffer is accessed out of bounds,990,False
-343,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,402,True
-60,blockdev.c,cppcheck,toybox_0_7_5," (error) Array 'cmds[11]' accessed at index 31, which is out of bounds.",487,True
-309,args.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,523,True
-89,hwclock.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,468,True
-24,chvt.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,513,True
-49,switch_root.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,487,True
-29,uudecode.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,487,True
+29,uudecode.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,494,True
+64,losetup.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,536,True
+35,base64.c,cppcheck,toybox_0_7_5, (error) Expression 'this.base64.columns&&++*x==this.base64.columns' depends on order of evaluation of side effects,487,True
+343,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,406,True
+586,bzcat.c,cppcheck,toybox_0_7_5, (error) Possible null pointer dereference,694,True
+89,kill.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,341,True
+89,hwclock.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,474,True
