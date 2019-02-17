@@ -1,0 +1,11 @@
+line,filename,tool,target,type,num_configs,variability
+662,proc.c,clang,axtls_2_1_4,Logic error,1,False
+297,asn1.c,clang,axtls_2_1_4,Memory error,1,False
+1253,tls1.c,clang,axtls_2_1_4,Dead store,1,False
+1829,tls1.c,clang,axtls_2_1_4,Logic error,1,False
+368,axtlswrap.c,clang,axtls_2_1_4,Logic error,1,False
+628,proc.c,clang,axtls_2_1_4,Security,1,False
+82,sha256.c,clang,axtls_2_1_4,Logic error,1,False
+136,htpasswd.c,clang,axtls_2_1_4,Memory error,1,False
+287,asn1.c,clang,axtls_2_1_4,Memory error,1,False
+164,axtlswrap.c,clang,axtls_2_1_4,Security,1,False
