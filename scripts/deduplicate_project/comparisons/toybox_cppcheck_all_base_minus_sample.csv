@@ -1,0 +1,2 @@
+188,main.c,cppcheck,toybox_0_7_5," (error) Array 'toy_list[1]' accessed at index 1, which is out of bounds.",1,False
+195,main.c,cppcheck,toybox_0_7_5," (error) Array 'toy_list[1]' accessed at index 1, which is out of bounds.",1,False
