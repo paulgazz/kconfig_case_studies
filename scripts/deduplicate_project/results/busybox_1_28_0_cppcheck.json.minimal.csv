@@ -1,4 +1,5 @@
-iteration,removed,% removed,num remaining,configs
+iteration,configuration selected,% warnings removed (cumulative),number of warnings remaining,minimal set
+0,,0,125,[]
 1,602,38.4,77,['602']
 2,368,60.8,49,"['602', '368']"
 3,1000,76.0,30,"['602', '368', '1000']"
