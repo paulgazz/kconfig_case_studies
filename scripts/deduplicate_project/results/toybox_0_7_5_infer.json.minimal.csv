@@ -1,4 +1,4 @@
-iteration,removed,% remaining,num remaining,configs
+iteration,removed,% removed,num remaining,configs
 1,604,48.214285714285715,58,['604']
 2,341,74.10714285714286,29,"['604', '341']"
 3,662,86.60714285714286,15,"['604', '341', '662']"
