@@ -1,3 +1,5 @@
+New as of 2019-02-26: This directory is deprecated; current results are in scripts/deduplication_project/results.
+
 # Variability-Aware Bug-Finding by Randomly Sampling
 
 This directory house the results of running off-the-shelf bug-finders
