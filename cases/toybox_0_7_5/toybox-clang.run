@@ -31,7 +31,7 @@ def phash(v):
     import sys
     return hash(v) % ((sys.maxsize + 1) * 2)
     
-def printHashCodes(jsonFile, outFile, filter=True):
+def printHashCodes(jsonFile, outFile, filter=True):#for infer
     jsonFile = open(jsonFile, 'r')
     values = json.load(jsonFile)
     jsonFile.close()
@@ -77,10 +77,11 @@ if __name__ == "__main__":
     TMP_DIR = "/var/tmp"
     KCONFIG_DIR="{}/kconfig".format(HOME_DIR)
 
-    saCMD='{}/cppcheck/bin/cppcheck .'.format(HOME_DIR)
-    progName="axtls_2_1_4"
-    tarFile = "axTLS-2.1.4.tar.gz"
-    exratedFile = "axtls-code"
+    saToolVersion=""
+    saTool='clang{}'.format(saToolVersion) #cppcheck infer clang
+    progName="toybox_0_7_5"
+    tarFile = "toybox-0.7.5.tar.gz"
+    exratedFile = "toybox-0.7.5"
 
     BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, progName)
     VANILLA_DIR = "{}/{}".format(BENCH_DIR, exratedFile)
@@ -143,7 +144,7 @@ if __name__ == "__main__":
         found = False
     
     #cmd = "cd {} && infer run -- make >> {} 2>&1".format(SRC_DIR, logFile);
-    cmd = "cd {} && {}/infer/bin/infer run -- make >> {} 2>&1".format(SRC_DIR, HOME_DIR, logFile);
+    cmd = "cd {} && {}/cppcheck/cppcheck . >> {} 2>&1".format(SRC_DIR, HOME_DIR, logFile);
     if found and runcmd(cmd) != 0:
         found = False
     

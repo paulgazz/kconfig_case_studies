@@ -1,0 +1,169 @@
+#!/usr/bin/env python2.7
+
+"""
+"""
+import argparse
+import os.path
+import subprocess as sp
+import hashlib
+import json
+
+CLEANUP = True
+
+#clang
+#bug_hashes = ["b473f7f0d7a0a486336b26af1c3b059d","1e776811c0e6ab4fb4967951b947478c","bdf654a44c7674aaeb296f47e966a5ae","758ca0f92999575beb67530465557570","d3e06d501efeca7120ee3a28ef7ed761","0f8cce29fa9c8ea0c804ff5f6e7f6ed1","814bf16ed7a359df0181baf4e4d79f40","f0f3270314e7f46a6effa32f6337cebc","3af95a05752e49640ccb902a698825d7"]
+
+#infer
+bug_hashes = ["34238d23df0cf6c422f6a2e1a7b66d7d","adb2170b2e216ace1a0eb5bb9997bf56","12bddc677414bd4f775411cac7e97f06","2201adba948aa2ded317615db6d31cad","0cd5772080ddcd0615488903fa58b164","6e95c7327b18743a34aa1c519e39ef4c","37313b4f8fc39fabbfb26a4f17261425","de68b44bc9f5c68d4e390012e216cc2a","683a2507a02004432ee6e12bc43e297a","5e8ff25ae54b1efe275281cfcd7c4ac1","cd9cbaefcf9ae8ab7805f38cb3b8e92a","89c5f5372b687175b4ac7e41569184f9","fbd9f8f9411333e664202da4423e749f","ba4d42765bb6954435c49e98db2af8e4","778deb2faa85887d3fd34a2ccbb44fb5","a1834c975ba7c3d9ad4f592c2f6c622b","8bdb4377b019dc1e4493d526d66f4bd6","7f8122247189fdb39138ff3ab501a6cf","8e5cd4b20ed57c627cd7d7c751cee453","a21efa458e2f94f378f001b1f1e89cac","5cc420a679276ea1629ffdcef11078e1","6c2f2025fb485e672ece97ec59ee7e6d","5d7f1dc510943cf5647dea318f501d69","386931492218e0b5abd08388797f2f2d","14b728eb44839fdac938304f64e664ae","16c622654c62f0caffe9e5d5c8c02544","d4bed22f8ee54d51964af959807ea2aa","283d62a9721ddad057f4236b531114c9","018935efdb38233fa421c595164c7d92"]
+
+
+def vcmd(cmd, inp=None, shell=True):
+    proc = sp.Popen(cmd,shell=shell,stdin=sp.PIPE,stdout=sp.PIPE,stderr=sp.PIPE)
+    rs =  proc.communicate(input=inp)
+    exit_code = proc.wait()
+    return rs, exit_code
+
+def runcmd(cmd):
+    try:
+        #print '$', cmd
+        (_,rs_err), exit_code = vcmd(cmd)
+        #assert not rs_err, rs_err
+        #print 'ecode', exit_code
+        return exit_code
+    except:
+        #print("cmd '{}' failed".format(cmd))
+        return -1
+
+def phash(v):
+    import sys
+    return hash(v) % ((sys.maxsize + 1) * 2)
+    
+def printHashCodes(jsonFile, outFile, filter=True):
+    jsonFile = open(jsonFile, 'r')
+    values = json.load(jsonFile)
+    jsonFile.close()
+
+    hashCodesStr = [bug['hash'] for bug in values]
+    nonReachedList=[]
+    if filter:
+        hashCodesStr = [hsh for hsh in hashCodesStr if hsh in bug_hashes]
+        nonReachedList = ['-'+hsh for hsh in bug_hashes if hsh not in hashCodesStr]
+
+    f = open(outFile, "a")
+    f.write('\n'.join(hashCodesStr))
+    f.write('\n')
+    f.write('\n'.join(nonReachedList))
+    f.close()
+
+def similar(tdir, f1, f2):
+    tf1 = "{}/f1.txt".format(tdir)
+    tf2 = "{}/f2.txt".format(tdir)
+
+    assert runcmd("rm -rf {} {}".format(tf1, tf2)) == 0
+
+    cleansort = lambda f, tf: "cat {} | sort | egrep \"^(CONFIG_|# CONFIG_.*is not set)\" > {}".format(f, tf)
+    assert runcmd(cleansort(f1, tf1))  == 0
+    assert runcmd(cleansort(f2, tf2))  == 0
+    return runcmd("diff {} {}".format(tf1, tf2)) == 0
+    
+                 
+if __name__ == "__main__":
+    #note:  use abspath (considers symlinks) instead of realpath (ignore symlinks)
+    me_file = os.path.abspath(os.path.expanduser(__file__))  
+    me_dir = os.path.dirname(me_file)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("inputs", help="input configurations")
+    args = parser.parse_args()
+    inp = args.inputs.strip() #"x 0, y 1, z 0"
+
+    import time
+    tid = "{}.{}".format(time.time(), phash(inp))
+
+
+    HOME_DIR="/home/vagrant"
+    KCONFIG_DIR="{}/kconfig_case_studies".format(HOME_DIR)
+
+    saToolVersion=""
+    saTool='infer{}'.format(saToolVersion)
+    progName="axtls_2_1_4"
+    tarFile="axTLS-2.1.4.tar.gz"
+    exratedFile="axtls-code"
+    
+    driver="{}/scripts/driver_variants/driver_{}.sh".format(KCONFIG_DIR, saTool)
+    deduplicateBugs='python2.7 {}/bugs/scripts/deduplicate_bugs.py'.format(KCONFIG_DIR)
+    
+    BENCH_DIR="{}/cases/{}".format(KCONFIG_DIR, progName)
+    SRC_DIR= "{}/{}".format(BENCH_DIR, exratedFile)
+    OUTPUT_DIR= "{}/output4igen".format(BENCH_DIR)
+    RESULT_DIR = "{}/varbugs/output/{}/{}_results".format(HOME_DIR, progName, saTool)
+    jsonFile="{}/unique.json.results".format(RESULT_DIR)
+
+    defConfigFile="{}/def.config".format(BENCH_DIR)
+    configFile="{}/build/configs/{}.config".format(BENCH_DIR, tid)
+    
+    assert not os.path.isdir(SRC_DIR), SRC_DIR
+
+    cmd="cd {} && tar -xf {}".format(BENCH_DIR, tarFile)
+    assert runcmd(cmd) == 0
+
+    cmd="cp {} {}".format(defConfigFile, configFile)
+    assert runcmd(cmd) == 0
+
+    parts =  [p.split() for p in inp.split(" , ")]
+    ys, ns = [], []
+    neithers = {}
+    for name, val in parts:
+        if val == 'y':
+            ys.append(name)
+        elif val == 'n':
+            ns.append(name)
+        else:
+            neithers[name] = val
+
+    setcmd = lambda name: \
+             "sed -e 's/.*{} .*/{}=y/' -i {}".format(name, name, configFile)
+
+    unsetcmd = lambda name:\
+               "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(
+                   name, name, configFile)
+    
+    setNonBool = lambda name, value: \
+            "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
+
+    for name in ys:
+        runcmd(setcmd(name))
+        
+    for name in ns:
+        runcmd(unsetcmd(name))
+        
+    for name, value in neithers.iteritems():
+        runcmd(setNonBool(name, value))
+    
+    #runtest
+    logFile = "{}/{}_{}_build.log".format(OUTPUT_DIR, progName, tid)
+    outF = open(logFile, "w+")
+    outF.write("---Configuration:{}, stime+hash:{}\n".format(inp, tid))    
+    outF.close()
+
+    cmd = "cd {} && {} build {} build/configs >> {} 2>&1".format(SRC_DIR, driver, progName, logFile);
+    found = True
+    if runcmd(cmd) != 0:
+        found = False
+
+    cmd = "cd {} && {} {} >> {} 2>&1".format(RESULT_DIR, deduplicateBugs, saTool, logFile)
+    if found and runcmd(cmd) != 0:
+        found = False
+    
+    resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, progName, tid)
+    if found:
+        printHashCodes(jsonFile, resultFile)
+    else:
+        runcmd("touch {}".format(resultFile))
+
+    if CLEANUP:
+        runcmd("rm -rf {}".format(SRC_DIR))
+        runcmd("rm -rf {}/*".format(RESULT_DIR))
+        runcmd("rm -rf {}/build/configs/*".format(BENCH_DIR))
+
+    print resultFile

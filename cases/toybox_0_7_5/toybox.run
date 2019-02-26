@@ -77,8 +77,7 @@ if __name__ == "__main__":
     TMP_DIR = "/var/tmp"
     KCONFIG_DIR="{}/kconfig".format(HOME_DIR)
 
-    saToolVersion=""
-    saTool='clang{}'.format(saToolVersion) #cppcheck infer clang
+    saCMD='{}/infer/bin/infer run -- make'.format(HOME_DIR)
     progName="toybox_0_7_5"
     tarFile = "toybox-0.7.5.tar.gz"
     exratedFile = "toybox-0.7.5"
@@ -97,7 +96,7 @@ if __name__ == "__main__":
     assert os.path.isdir(VANILLA_DIR), VANILLA_DIR
     assert not os.path.isdir(SRC_DIR), SRC_DIR
 
-    cmd="cp {} {}".format(VANILLA_DIR, SRC_DIR)
+    cmd="cp -r {} {}".format(VANILLA_DIR, SRC_DIR)
     assert runcmd(cmd) == 0
 
     cmd="cp {} {}".format(defConfigFile, configFile)
@@ -114,15 +113,9 @@ if __name__ == "__main__":
         else:
             neithers[name] = val
 
-    setcmd = lambda name: \
-             "sed -e 's/.*{} .*/{}=y/' -i {}".format(name, name, configFile)
-
-    unsetcmd = lambda name:\
-               "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(
-                   name, name, configFile)
-    
-    setNonBool = lambda name, value: \
-            "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
+    setcmd = lambda name: "sed -e 's/.*{} .*/{}=y/' -i {}".format(name, name, configFile)
+    unsetcmd = lambda name: "sed -e 's/.*{}=y.*/# {} is not set/' -i {}".format(name, name, configFile)
+    setNonBool = lambda name, value: "sed -e 's/.*{}.*/{}={}/' -i {}".format(name, name, value, configFile)
 
     for name in ys:
         runcmd(setcmd(name))
@@ -149,14 +142,15 @@ if __name__ == "__main__":
     if found and not sameConfig(SRC_DIR, configFile, configFileBackup):
         found = False
     
-    cmd = "cd {} && infer run -- make >> {} 2>&1".format(SRC_DIR, logFile);
+    #cmd = "cd {} && infer run -- make >> {} 2>&1".format(SRC_DIR, logFile);
+    cmd = "cd {} &&  >> {} 2>&1".format(SRC_DIR, saCMD, logFile);
     if found and runcmd(cmd) != 0:
         found = False
     
     if found:
         printHashCodes(jsonFile, resultFile)
     else:
-        runcmd("touch {}".format(resultFile))
+        runcmd("echo 'allreachable' > {}".format(resultFile))
 
     if CLEANUP:
         runcmd("rm -rf {}".format(SRC_DIR))
