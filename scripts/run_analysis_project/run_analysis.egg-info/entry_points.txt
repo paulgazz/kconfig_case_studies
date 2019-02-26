@@ -1,3 +1,0 @@
-[console_scripts]
-run_analysis = run_analysis.__main__:main
-

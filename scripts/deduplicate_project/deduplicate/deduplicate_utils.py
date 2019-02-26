@@ -1,15 +1,23 @@
+from multiprocessing import Pool
+import functools
 import os
 import deduplicate.bug_report as br
 import json
 import re
 import csv
 import logging
+import plistlib
+
+NUM_CORES = 24
 
 class DeduplicateUtils:
     """
     This class holds disparate methods that would be useful to the task
     of processing and deduplicating warnings.
     """
+
+    hash_table = dict()
+    
     @staticmethod
     def read_config_file(config_file):
         """
@@ -25,7 +33,20 @@ class DeduplicateUtils:
         return data
 
     @staticmethod
+    def add_to_hash_table(subhash):
+        """
+        Adds to the class hash table
+        """
+        logging.debug(f"{len(subhash)} entries in the subhash.")
+        for d in subhash.keys():
+            if d not in DeduplicateUtils.hash_table:
+                DeduplicateUtils.hash_table[d] = subhash[d]
+            else:
+                DeduplicateUtils.hash_table[d] |= subhash[d]
+        
+    @staticmethod
     def get_bug_dataset(tool, dirname, target):
+        DeduplicateUtils.hash_table = dict()
         logging.debug(f"get_bug_dataset called with {tool}, {dirname}, {target}")
         """
         Takes a tool and a directory name and returns the dataset
@@ -72,9 +93,35 @@ class DeduplicateUtils:
         logging.debug(f"Found {len(master_files_list)} files. Processing now")
         logging.debug(f"Report type is {type(report)}")
         # Get the list of warnings
+        reader = functools.partial(DeduplicateUtils.read_warnings_from_file,
+                                   report=report,
+                                   target=target)
+        with Pool(24) as p:
+            results = p.map(reader, master_files_list)
+
+        warnings = [x[0] for x in results]
+        subhashes = [x[1] for x in results]
+        
+        logging.info(f"Updating global hash table with {len(subhashes)}")
+        for s in subhashes:
+            DeduplicateUtils.add_to_hash_table(s)
+        logging.debug(f"{len(DeduplicateUtils.hash_table)} entries in global hash table.")
+        # Flatten
+        warnings = [bug for subwarning in warnings for bug in subwarning]
+            # Compute
+        warnings = DeduplicateUtils.deduplicate_dataset(warnings)
+
+        # Write to intermediate results file
+        DeduplicateUtils.write_to_json(warnings, intermediate_result)
+        
+        return warnings
+
+    def read_warnings_from_file(f, report, target):
         warnings = list()
-        for f in master_files_list:
+        hash_table = dict()
+        try:
             bugs = report.generate_from_file(f)
+            logging.debug(f"Successfully read reports from {f}")
             for b in bugs:
                 # Add configuration information
                 config_path = re.findall('[0-9]{1,3}.config', f)
@@ -87,19 +134,19 @@ class DeduplicateUtils:
                 if len(config) > 1:
                     raise RuntimeError(f"Problem extracting configuration number",
                                        " from pathname {config_path[0]}. Exiting.")
-                
+                if b not in hash_table:
+                    hash_table[b] = set()
+                hash_table[b].add(config[0])
+                logging.debug(f"Size of hash table {len(hash_table)}")
                 b.add_config(config[0])
                 b.add_target(target)
                 warnings.append(b)
+            return (warnings, hash_table)
 
-        # Compute
-        warnings = DeduplicateUtils.deduplicate_dataset(warnings)
-
-        # Write to intermediate results file
-        DeduplicateUtils.write_to_json(warnings, intermediate_result)
-        
-        return warnings
-
+        except (ValueError, plistlib.InvalidFileException):
+            logging.warning(f"Couldn't read from {f}. Maybe it's empty?")
+            return (warnings, hash_table)
+            
     @staticmethod
     def write_to_json(dataset, outfile):
         """
@@ -132,7 +179,20 @@ class DeduplicateUtils:
 
         return warnings
             
-        
+
+    @staticmethod
+    def fill_config_list(u):
+        """
+        Takes the unique warnings set, and the warnings list,
+        and updates the configuration lists of the unique warnings.
+        """
+        logging.debug(f"I'm in fill_config_list, and the size of the hash table is {len(DeduplicateUtils.hash_table)}")
+        if u not in DeduplicateUtils.hash_table:
+            raise RuntimeError("The unique warning is not in the hash table, which shouldn't happen.")
+        else:
+            u.configs = DeduplicateUtils.hash_table[u]
+        return u
+      
     @staticmethod
     def deduplicate_dataset(warnings):
         """
@@ -142,20 +202,18 @@ class DeduplicateUtils:
         """
 
         logging.info(f"Deduplicating {len(warnings)} warnings...")
+        logging.debug(f"Size of hash table: {len(DeduplicateUtils.hash_table)}")
 
-        unique = set(warnings)
+        unique = list(set(warnings))
 
-        # Update config lists
-        for u in unique:
-            for w in warnings:
-                if u == w:
-                    u.update_configs(w)
+        logging.info(f"{len(unique)} unique warnings found.")
 
-        # Update number of configurations
-        for u in unique:
-            u.num_configs = len(u.configs)
+        # create partial function call to use with pool
+        logging.debug(f"Building configuration lists.... (this may take a while)")
+        with Pool(NUM_CORES) as pool:
+            unique = pool.map(DeduplicateUtils.fill_config_list, unique)
+
         return unique
-
         # I initially had this as just set(warnings) but
         #  this doesn't work, because I need to perform the union of the
         #  configuration set.

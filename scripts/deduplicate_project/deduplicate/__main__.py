@@ -38,13 +38,22 @@ def main():
 
     # Check the CSV file is not already extant.
 
-    if not args.force:
-        DeduplicateUtils.check_csv(outcsv)
     for c in config:
         for key, tool in master_tool_list:
+            
             if key not in config[c] or not config[c][key]['location']:
                 logging.warning(f"Location for {tool} reports on target {c} not present.")
                 continue
+
+            outcsv = "results/{}_{}.csv".format(c, tool)
+
+            if not args.force:
+                try:
+                    DeduplicateUtils.check_csv(outcsv)
+                except RuntimeError as re:
+                    logging.warning(str(re))
+                    continue
+
             logging.info(f"Collecting warnings from {tool} on {c}.")
             
             warnings = DeduplicateUtils.get_bug_dataset(tool, config[c][key]['location'], c)
@@ -53,6 +62,7 @@ def main():
             max_configs = compute_max_config(warnings)
             # Variability?
             for w in warnings:
+                w.num_configs = len(w.configs)
                 if w.num_configs < max_configs:
 #                if w.num_configs < (int(config[c][key]['successful_configs']) if
 #                                      config[c][key]['successful_configs'] else
@@ -64,11 +74,11 @@ def main():
             # master_warnings_list.extend(warnings) # we want each tool/program in its own csv
             
             logging.info(f"{len(warnings)} unique bugs found.")
-            outcsv = "results/{}_{}.csv".format(c, tool)
             logging.info(f"Writing to {outcsv}")
             DeduplicateUtils.output_as_csv(warnings, outcsv)
             DeduplicateUtils.write_to_json(warnings, outcsv.replace('.csv', '.json'))
 
+            
 def compute_max_config(warnings):
     """
     Given a list of warnings, computes the number of configurations
