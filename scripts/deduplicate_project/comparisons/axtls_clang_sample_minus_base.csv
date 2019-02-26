@@ -1,0 +1,8 @@
+368,axtlswrap.c,clang,axtls_2_1_4,Logic error,529,TRUE
+297,asn1.c,clang,axtls_2_1_4,Memory error,519,TRUE
+295,axhttpd.c,clang,axtls_2_1_4,Dead store,255,TRUE
+331,bigint.c,clang,axtls_2_1_4,Memory error,12,TRUE
+164,axtlswrap.c,clang,axtls_2_1_4,Security,529,TRUE
+136,htpasswd.c,clang,axtls_2_1_4,Memory error,468,TRUE
+662,proc.c,clang,axtls_2_1_4,Logic error,527,TRUE
+628,proc.c,clang,axtls_2_1_4,Security,527,TRUE

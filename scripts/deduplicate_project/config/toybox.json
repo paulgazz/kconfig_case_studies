@@ -1,0 +1,24 @@
+{
+  "toybox_0_7_5": {
+    "cppcheck_results":	{
+      "location": "/home/austin/Documents/var-bugs-study/varbugs/vm_generated/cppcheck/toybox_0_7_5",
+      "successful_configs": "1000"
+    },
+    "clang_results": {
+      "location": "/home/austin/Documents/var-bugs-study/varbugs/vm_generated/clang/toybox_0_7_5",
+      "successful_configs": "1000"
+    },
+    "infer_results": {
+	"location": "/home/austin/Documents/var-bugs-study/varbugs/server_generated/output/toybox_0_7_5",
+	"successful_configs": "986"
+    },
+    "ikos_results": {
+	"location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/toybox_0_7_5",
+	"successful_configs": "1000"
+      },
+    "cbmc_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/toybox_0_7_5",
+      "successful_configs": "1000"
+    }
+  }
+}
