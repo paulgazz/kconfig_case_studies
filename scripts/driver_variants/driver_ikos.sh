@@ -258,7 +258,7 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
 
 	    # Just move all .db files to ikos because who knows what executables it'll actually process
-	    mkdir -p "${results_dir}/${casename}/ikos_results/ikos_${i_base}"
+	    mkdir -p  "${results_dir}/${casename}/ikos_results/ikos_${i_base}"
 	    find . -name '*.db' -exec mv -t "${results_dir}/${casename}/ikos_results/ikos_${i_base}" {} +
 	    
           done 2>&1 | tee "${save_file}" | egrep "^(building)"

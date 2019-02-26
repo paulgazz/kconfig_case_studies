@@ -1,21 +1,21 @@
+import sys
 import json
 import xmltodict
 import plistlib
+import logging
+import csv
+csv.field_size_limit(sys.maxsize) # dirty code to get around IKOS
+
+import os
 
 """
-By Austin Mordahl
 2019-02-11
 
 Classes that represent bug reports.
 Here we define two reports as equivalent if they have the same
  file name and line number (imprecise, but allows us to compare across
  multiple tools, some of which don't use column names, and some tools
- have different types.
-
-If you want to add a new type of warning from a new tool, you must:
-1. Make a new class that extends BugReport
-2. Define __init__(self, record) to build a bug report from a single record
-    of whatever file the bug detector emits.
+ have different types).
 """
 
 
@@ -26,15 +26,23 @@ class BugReport:
     implements the == relationship between two bug reports.
     """
 
-    def __init__(self, line: int, filename: str, description):
+    def __init__(self, line: int, filename: str, description: str):
         self.line = line
         self.filename = filename
         self.description = description
-        self.configs = list()
+        self.configs = set()
+        self.tool = None
+        self.type = None
+        self.target = None
+        self.variability = None
+        self.num_configs = None
 
     def __str__(self):
         raise NotImplementedError("Not implemented in the abstract base class")
 
+    def set_variability(self, flag):
+        self.variability = flag
+        
     def asdict(self):
         """
         Method to return the bug reports as a dictionary
@@ -44,20 +52,46 @@ class BugReport:
         selfdict = dict()
         selfdict['line'] = self.line
         selfdict['filename'] = self.filename
-        selfdict['description'] = self.description
-        selfdict['configs'] = str(self.configs)
-        selfdict['num_configs'] = self.num_configs
+        # Have to do the config list a little different
+        #  to help in re-reading from file.
         selfdict['tool'] = self.tool
+        selfdict['description'] = self.description
+        selfdict['target'] = self.target
+        selfdict['type'] = self.type
+        selfdict['configs'] = list(self.configs)
+        selfdict['num_configs'] = self.num_configs
+        selfdict['variability'] = self.variability
+        return selfdict
+
+    @staticmethod
+    def fromdict(record):
+
+        me = BugReport(record['line'], record['filename'], None) # not putting description in the table
+        me.type = record['type']
+        me.target = record['target']
+        me.tool = record['tool']
+        me.variability = record['variability']
+        me.num_configs = record['num_configs']
+        me.description = record['description']
+        me.configs = set(record['configs'])
         
-    def num_configs(self):
-        return len(self.configs)
-    
+        # Not including variability here because it's not included in the asdict(),
+        #  and the assumption is this will be called on dictionaries created by
+        #  asdict()
+        return me
+        
+    def add_target(self, target):
+        self.target = target
+        
     def add_config(self, config:str):
         """
         Adds config to the warning's config database
         """
-        self.configs.append(config)
+        self.configs.add(config)
 
+    def update_configs(self, other):
+        self.configs |= other.configs
+        
     @classmethod
     def __generate_from_record(cls, record):
         """
@@ -82,14 +116,7 @@ class BugReport:
         ds = cls.__get_dataset_from_file(file)
         for d in ds:
             yield cls.__generate_from_record(d)
-          
-    def __get_dataset_from_file(file):
-        """
-        Return the iterable dataset from the file.
-        """
-        raise NotImplementedError("__get_dataset_from_file not implemented",
-                                  " in the abstract base class")
-   
+
     def __eq__(self, other):
         """
         NOTE: Currently, the originating tool is used to compute
@@ -99,17 +126,17 @@ class BugReport:
         """
 
         return self.line == other.line and \
-            self.file == other.file and \
+            self.filename == other.filename and \
             self.tool == other.tool
-
+    
     def __hash__(self):
-        return hash((self.line, self.file, self.tool))
+        return hash((self.line, self.filename, self.tool))
 
 
 class CBMCReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "CBMC"
 
@@ -120,7 +147,7 @@ class CBMCReport(BugReport):
         return cr
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         with open(file) as f:
             data = xmltodict.parse(f.read())
 
@@ -128,40 +155,47 @@ class CBMCReport(BugReport):
 
         # Handle the file being empty
         if "property" not in data["cprover"]:
-            raise ValueError(f"{file} has no bug reports")
+            raise ValueError(f"{file} has no data")
 
-        return property_list = data["cprover"]["property"]
+        property_list = data["cprover"]["property"]
+
+        for p in property_list:
+            yield cls.__generate_from_record(p)
+
     
 
 class IKOSReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
-        self.type = "IKOS"
+        self.tool = "IKOS"
 
     @classmethod
     def __generate_from_record(cls, record):
         """ Generates the IKOS record from a single JSON record """
-        ir = cls(record["location"]["line"], record["location"]["file"],
-                        record["long_msg"], record["checker"])
+        ir = cls(record['line'], os.path.basename(record['file']),
+                 record['message'], record['check'])
         return ir
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
+        logging.debug(f"Generating IKOS from {file}")
         # Open JSON file
         with open(file) as f:
-            data = json.load(f)
-
-        return data
+            csvreader = csv.DictReader(f)
+            for d in csvreader:
+                yield cls.__generate_from_record(d)
     
             
 class ClangReport(BugReport):
-
+    
     def __init__(self, line, filename, description, type):
-        BugReport.__init_(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "clang"
+
+
 
     @classmethod
     def __generate_from_record(cls, record):
@@ -170,27 +204,29 @@ class ClangReport(BugReport):
         return cr
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         """
         Given a clang-generated JSON file, iteratively produce each record
         """
 
+        logging.debug(f"Generating clang records from {file}")
         # Open JSON file
-        with open(file) as f:
-            data = plistlib.readPlist()
+        with open(file, 'rb') as f:
+            data = plistlib.load(f)
 
         # In clang, source file is embedded at the beginning instead of
         #  in each report
         for r in data["diagnostics"]:
-            r["source_file"] = data["files"][0]
-
-        return data["diagnostics"]
+            source = data["files"][0]
+            source = source.split('/')
+            r["source_file"] = source[-1]
+            yield cls.__generate_from_record(r)
 
             
 class InferReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "infer"
 
@@ -198,28 +234,32 @@ class InferReport(BugReport):
     def __generate_from_record(cls, record):
         ir = cls(record["line"], record["file"],
                          record["qualifier"], record["bug_type"])
+        return ir
 
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         # open JSON file
         with open(file) as f:
             data = json.load(f)
             
-        return data
+        for d in data:
+            yield cls.__generate_from_record(d)
 
 class CppcheckReport(BugReport):
 
     def __init__(self, line, filename, description, type):
-        BugReport.__init__(line, filename, description)
+        super().__init__(line, filename, description)
         self.type = type
         self.tool = "cppcheck"
 
     @classmethod
     def __generate_from_record(cls, record):
+        logging.debug(f"cppcheck report: {record}")
         # a cppcheck report looks like
         # [toys/other/vmstat.c:51]: (error) Uninitialized variable: p
         record = record.replace("\n", "")
         tokens = record.split(":")
+        logging.debug(f"cppcheck tokens: {tokens}")
         # We now have something like
         # [toys/other/vmstat.c
         # 51]
@@ -227,13 +267,16 @@ class CppcheckReport(BugReport):
         # p
 
         # Filename: first token except the first character
-        filename = tokens[0][1:]
+        filename = os.path.basename(tokens[0][1:])
 
         # Line: second token except the last character
         line = tokens[1][:-1]
 
         # Description: concatenate last two tokens
-        description = tokens[2] + tokens[3]
+        try:
+            description = tokens[2] + tokens[3]
+        except IndexError:
+            description = tokens[2]
 
         # Type: third token
         type = tokens[2]
@@ -241,6 +284,9 @@ class CppcheckReport(BugReport):
         return cls(line, filename, description, type)
     
     @classmethod
-    def __get_dataset_from_file(cls, file):
+    def generate_from_file(cls, file):
         with open(file) as f:
-            return f.readlines()
+            data = f.readlines()
+
+        for d in data:
+            yield cls.__generate_from_record(d)

@@ -1,0 +1,6 @@
+iteration,configuration selected,% warnings removed (cumulative),number of warnings remaining,minimal set
+0,,0,13,[]
+1,264,53.84615384615385,6,['264']
+2,113,76.92307692307693,3,"['264', '113']"
+3,771,92.3076923076923,1,"['264', '113', '771']"
+4,299,100.0,0,"['264', '113', '771', '299']"

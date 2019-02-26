@@ -9,18 +9,13 @@ csv.field_size_limit(sys.maxsize) # dirty code to get around IKOS
 import os
 
 """
-By Austin Mordahl
 2019-02-11
 
 Classes that represent bug reports.
 Here we define two reports as equivalent if they have the same
  file name and line number (imprecise, but allows us to compare across
  multiple tools, some of which don't use column names, and some tools
- have different types.
-
-If you want to add a new type of warning from a new tool, you must:
-1. Make a new class that extends BugReport
-TODO
+ have different types).
 """
 
 
@@ -160,7 +155,7 @@ class CBMCReport(BugReport):
 
         # Handle the file being empty
         if "property" not in data["cprover"]:
-            raise ValueError(f"{file} has no bug reports")
+            raise ValueError(f"{file} has no data")
 
         property_list = data["cprover"]["property"]
 
@@ -214,6 +209,7 @@ class ClangReport(BugReport):
         Given a clang-generated JSON file, iteratively produce each record
         """
 
+        logging.debug(f"Generating clang records from {file}")
         # Open JSON file
         with open(file, 'rb') as f:
             data = plistlib.load(f)
@@ -271,7 +267,7 @@ class CppcheckReport(BugReport):
         # p
 
         # Filename: first token except the first character
-        filename = tokens[0][1:]
+        filename = os.path.basename(tokens[0][1:])
 
         # Line: second token except the last character
         line = tokens[1][:-1]

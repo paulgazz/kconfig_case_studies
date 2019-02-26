@@ -1,7 +1,7 @@
 #
 #!/bin/bash
-
-results_dir=~/Documents/varbugs/output
+set -x
+results_dir=/vagrant/vm_output
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
@@ -248,9 +248,11 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             echo "${casename}" | grep -i "axtls" > /dev/null
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
-                time infer run -o "${results_dir}/${casename}/infer_results/infer_${i_base}" -- make ${make_extra_args} PREFIX="/tmp/local"
+                time infer run --keep-going -o "./infer_${i_base}" -- make ${make_extra_args} PREFIXb="/tmp/local"
+		mv "./infer_${i_base}" "${results_dir}/${casename}/infer_results"
             else
-              time infer run -o "${results_dir}/${casename}/infer_results/infer_${i_base}" -- make ${make_extra_args};
+		time infer run -o --keep-going "./infer_${i_base}" -- make ${make_extra_args}
+		mv "./infer_${i_base}" "${results_dir}/${casename}/infer_results"
             fi
             echo "return code $?";
             echo "binary size (in bytes): $(du -bc ${binaries} | tail -n1 | cut -f1)"
