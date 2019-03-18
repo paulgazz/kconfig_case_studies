@@ -9,7 +9,7 @@ import hashlib
 import json
 
 
-jsonFile='bugs/infer/toybox/unique.json.results.filtered2'
+jsonFile='/Users/ukoc/kconfig_master/bugs/infer/toybox/unique.json.results.filtered'
 jsonFile = open(jsonFile, 'r')
 values = json.load(jsonFile)
 jsonFile.close()
@@ -19,6 +19,7 @@ for bug in values:
     fields2hash={}
     for field in fields_to_hash:
         fields2hash[field] = bug[field]
-    hashCodes.append(hashlib.md5(str(fields2hash).encode()).hexdigest())
+    print(bug['hash']+' : '+hashlib.md5(str(fields2hash).encode()).hexdigest())
+#     hashCodes.append()
 
-print('\n'.join(hashCodes))
+# print('\n'.join(hashCodes))
