@@ -77,7 +77,8 @@ if __name__ == "__main__":
     TMP_DIR = "/var/tmp"
     KCONFIG_DIR="{}/kconfig".format(HOME_DIR)
 
-    saCMD='{}/cppcheck/bin/cppcheck .'.format(HOME_DIR)
+    saCMD='{}/infer/bin/infer run --keep-going -- make PREFIXb=/tmp/local'.format(HOME_DIR)
+
     progName="axtls_2_1_4"
     tarFile = "axTLS-2.1.4.tar.gz"
     exratedFile = "axtls-code"
@@ -142,8 +143,7 @@ if __name__ == "__main__":
     if found and not sameConfig(SRC_DIR, configFile, configFileBackup):
         found = False
     
-    #cmd = "cd {} && infer run -- make >> {} 2>&1".format(SRC_DIR, logFile);
-    cmd = "cd {} && {}/infer/bin/infer run -- make >> {} 2>&1".format(SRC_DIR, HOME_DIR, logFile);
+    cmd = "cd {} && {} >> {} 2>&1".format(SRC_DIR, saCMD, logFile);
     if found and runcmd(cmd) != 0:
         found = False
     
