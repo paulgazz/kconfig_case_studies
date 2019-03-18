@@ -142,8 +142,7 @@ if __name__ == "__main__":
     if found and not sameConfig(SRC_DIR, configFile, configFileBackup):
         found = False
     
-    #cmd = "cd {} && infer run -- make >> {} 2>&1".format(SRC_DIR, logFile);
-    cmd = "cd {} &&  >> {} 2>&1".format(SRC_DIR, saCMD, logFile);
+    cmd = "cd {} && {} >> {} 2>&1".format(SRC_DIR, saCMD, logFile);
     if found and runcmd(cmd) != 0:
         found = False
     
