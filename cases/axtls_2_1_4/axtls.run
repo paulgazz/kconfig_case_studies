@@ -89,7 +89,7 @@ if __name__ == "__main__":
     OUTPUT_DIR= "{}/igen_out".format(TMP_DIR)
     
     defConfigFile = "{}/def.config".format(BENCH_DIR)
-    configFile = "{}/.config".format(SRC_DIR)
+    configFile = "{}/config/.config".format(SRC_DIR)
     configFileBackup = "{}/backup.config".format(SRC_DIR)
     jsonFile = "{}/infer-out/report.json".format(SRC_DIR)
     resultFile = "{}/{}_{}_interesting.txt".format(OUTPUT_DIR, progName, tid)
