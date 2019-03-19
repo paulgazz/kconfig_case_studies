@@ -8,7 +8,7 @@ import subprocess as sp
 import hashlib
 import json
 
-CLEANUP = False
+CLEANUP = True
 
 def vcmd(cmd, inp=None, shell=True):
     proc = sp.Popen(cmd,shell=shell,stdin=sp.PIPE,stdout=sp.PIPE,stderr=sp.PIPE)
@@ -138,20 +138,17 @@ if __name__ == "__main__":
     found = True
     cmd = "cd {} && make oldconfig >> {} 2>&1".format(SRC_DIR, logFile);
     if runcmd(cmd) != 0:
+        runcmd("echo 'make oldconfig Fail!' >> {} 2>&1".format(logFile))
         found = False
-    else:
-        runcmd("echo 'make oldconfig succes' >> {} 2>&1".format(logFile))
 
     if found and not sameConfig(SRC_DIR, configFile, configFileBackup):
+        runcmd("echo 'SameConfig Fail!' >> {} 2>&1".format(logFile))
         found = False
-    else:
-        runcmd("echo 'SameConfig succes' >> {} 2>&1".format(logFile))
     
     cmd = "cd {} && {} >> {} 2>&1".format(SRC_DIR, saCMD, logFile);
     if found and runcmd(cmd) != 0:
+        runcmd("echo 'Analysis Fail!' >> {} 2>&1".format(logFile))
         found = False
-    else:
-        runcmd("echo 'Analysis succes' >> {} 2>&1".format(logFile))
     
     if found:
         printHashCodes(jsonFile, resultFile)
