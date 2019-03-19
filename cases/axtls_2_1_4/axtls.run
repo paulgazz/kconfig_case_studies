@@ -139,13 +139,19 @@ if __name__ == "__main__":
     cmd = "cd {} && make oldconfig >> {} 2>&1".format(SRC_DIR, logFile);
     if runcmd(cmd) != 0:
         found = False
+    else:
+        runcmd("echo 'make oldconfig failed' >> {} 2>&1".format(logFile);)
 
     if found and not sameConfig(SRC_DIR, configFile, configFileBackup):
         found = False
+    else:
+        runcmd("echo 'make oldconfig or sameConfig failed' >> {} 2>&1".format(logFile);)
     
     cmd = "cd {} && {} >> {} 2>&1".format(SRC_DIR, saCMD, logFile);
     if found and runcmd(cmd) != 0:
         found = False
+    else:
+        runcmd("echo 'make oldconfig or sameConfig or analysis failed' >> {} 2>&1".format(logFile);)
     
     if found:
         printHashCodes(jsonFile, resultFile)
