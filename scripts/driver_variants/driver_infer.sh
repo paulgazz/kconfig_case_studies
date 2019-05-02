@@ -1,7 +1,6 @@
 #
 #!/bin/bash
-set -x
-results_dir=/vagrant/vm_output
+results_dir=/vagrant/demonstration
 
 if [[ $# -lt 1 ]]; then
     cat <<EOF
@@ -249,9 +248,11 @@ if [[ "${action}" == "config" || "${action}" == "build" || "${action}" == "prepr
             if [[ $? -eq 0 ]]; then
                 mkdir -p /tmp/local
                 time infer run --keep-going -o "./infer_${i_base}" -- make ${make_extra_args} PREFIXb="/tmp/local"
+		mkdir -p "./infer_${i_base}" "${results_dir}/${casename}/infer_results"
 		mv "./infer_${i_base}" "${results_dir}/${casename}/infer_results"
             else
-		time infer run -o --keep-going "./infer_${i_base}" -- make ${make_extra_args}
+		time infer run --keep-going -o "./infer_${i_base}" -- make ${make_extra_args}
+		mkdir -p "./infer_${i_base}" "${results_dir}/${casename}/infer_results"
 		mv "./infer_${i_base}" "${results_dir}/${casename}/infer_results"
             fi
             echo "return code $?";
