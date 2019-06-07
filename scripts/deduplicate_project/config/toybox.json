@@ -1,0 +1,13 @@
+{
+  "toybox_0_7_5": {
+    "cppcheck_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/toybox_results"
+    },
+    "clang_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/toybox_results"
+    },
+    "infer_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/vm_output/toybox_0_7_5/infer_results"
+    }
+  }
+}

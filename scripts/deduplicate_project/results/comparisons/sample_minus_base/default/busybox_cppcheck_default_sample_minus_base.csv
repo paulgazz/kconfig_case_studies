@@ -1,0 +1,42 @@
+392,nc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+379,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+358,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+464,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,459,TRUE
+349,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+324,date.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,445,TRUE
+256,ps.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+378,tar.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+429,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+1592,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+661,login.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+1412,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+601,pw_encrypt.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+657,ps.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,93,TRUE
+470,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,459,TRUE
+438,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+665,hash_md5_sha.c,cppcheck,busybox_1_28_0, (error) Shifting 32-bit value by 32 bits is undefined behaviour,318,TRUE
+415,ping.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+137,df.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,340,TRUE
+657,login.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+1232,tar.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,108,TRUE
+1231,d6_dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,895,TRUE
+389,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+411,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+139,fdisk_sgi.c,cppcheck,busybox_1_28_0," (error) Array 'freelist[17]' accessed at index 17, which is out of bounds.",486,TRUE
+139,fdisk.c,cppcheck,busybox_1_28_0," (error) Array 'freelist[17]' accessed at index 17, which is out of bounds.",1,TRUE
+138,fdisk_sgi.c,cppcheck,busybox_1_28_0," (error) Array 'freelist[17]' accessed at index 17, which is out of bounds.",486,TRUE
+420,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+138,fdisk.c,cppcheck,busybox_1_28_0," (error) Array 'freelist[17]' accessed at index 17, which is out of bounds.",1,TRUE
+56,nc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+658,ps.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,93,TRUE
+255,ps.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+1414,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+122,nc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,482,TRUE
+402,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+1664,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+577,nc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+367,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,216,TRUE
+1349,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+1339,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE
+325,date.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,445,TRUE
+393,nc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,TRUE

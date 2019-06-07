@@ -1,3 +1,5 @@
+New as of 2019-02-26: Please find deduplication scripts and results in scripts/deduplication_project/results.
+
 # Variability-Aware Bug-Finding by Randomly Sampling
 
 This directory house the results of running off-the-shelf bug-finders

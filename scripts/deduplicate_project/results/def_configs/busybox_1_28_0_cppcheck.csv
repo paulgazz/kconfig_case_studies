@@ -1,0 +1,95 @@
+line,filename,tool,target,type,num_configs,variability
+71,beep.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+185,zcip.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1149,lzop.c,cppcheck,busybox_1_28_0, (error) Null pointer dereference,1,False
+227,split-include.c,cppcheck,busybox_1_28_0, (error) Memory leak,1,False
+347,expr.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+155,reformime.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+258,tcpudp.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+907,dhcpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+64,dos2unix.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+250,tcpudp.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+96,rtc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+281,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+146,logread.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+46,wall.c,cppcheck,busybox_1_28_0, (error) Null pointer dereference,1,False
+55,lzo1x_c.c,cppcheck,busybox_1_28_0," (error) Expression 'm_pos=ip-(int)(ip-m_pos),(long)m_pos<(long)in||(m_off=(int)(ip-m_pos))<=0||m_off>49151' depends on order of evaluation of side effects",1,False
+253,getopt.c,cppcheck,busybox_1_28_0, (error) Possible null pointer dereference,1,False
+73,beep.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+835,tftp.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+257,tcpudp.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+2091,httpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+70,beep.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+5651,hush.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+809,dhcpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+370,zcip.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+740,less.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+650,telnetd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+240,runsvdir.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+120,lpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+106,sysctl.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+255,get_devname.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+252,getopt.c,cppcheck,busybox_1_28_0, (error) Possible null pointer dereference,1,False
+601,pw_encrypt_des.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+327,login.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+470,conspy.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+34,domain_codec.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+143,rtcwake.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+262,read_key.c,cppcheck,busybox_1_28_0, (error) Shifting a negative value is undefined behaviour,1,False
+63,lzo1x_c.c,cppcheck,busybox_1_28_0," (error) Expression 'm_pos=ip-(int)(ip-m_pos),(long)m_pos<(long)in||(m_off=(int)(ip-m_pos))<=0||m_off>49151' depends on order of evaluation of side effects",1,False
+2624,httpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1416,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+44,shred.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+5649,hush.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+142,rtcwake.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+118,mail.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+147,logread.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+589,nc_bloaty.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+651,telnetd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+121,ubi_tools.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+183,zcip.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+165,decompress_bunzip2.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+500,tcpudp.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+119,mail.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+2506,awk.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+3011,awk.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1087,mdev.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1217,inetd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+75,chrt.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+115,xfuncs_printf.c,cppcheck,busybox_1_28_0," (error) Allocation with xmalloc, memcpy doesn't release it.",1,False
+76,more.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+254,get_devname.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+2792,awk.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+590,nc_bloaty.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+628,test.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1251,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+333,grep.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+296,hexedit.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+282,chpst.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+72,beep.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1116,lineedit.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+348,expr.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1253,dhcpc.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+115,slattach.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+239,runsvdir.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+2092,httpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+65,dos2unix.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+624,mdev.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+454,fbset.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+742,nc_bloaty.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+2282,ash.c,cppcheck,busybox_1_28_0, (error) Memory pointed to by 's' is freed twice.,1,False
+32,devmem.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+133,sort.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+493,fbsplash.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1300,ntpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+369,patch.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1146,lzop.c,cppcheck,busybox_1_28_0, (error) Null pointer dereference,1,False
+370,patch.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+600,ping.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+1301,ntpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+257,get_devname.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+105,reformime.c,cppcheck,busybox_1_28_0, (error) Possible null pointer dereference,1,False
+183,open_transformer.c,cppcheck,busybox_1_28_0, (error) Null pointer dereference,1,False
+205,unshare.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
+589,wget.c,cppcheck,busybox_1_28_0," (error) Expression 'c=getc_unlocked(fp),c!=-1&&c!='\n'' depends on order of evaluation of side effects",1,False
+1302,ntpd.c,cppcheck,busybox_1_28_0, (error) Uninitialized variable,1,False
