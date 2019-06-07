@@ -250,7 +250,6 @@ def analyze_cpp_paul(dimacs_, cdir_, reportfile_):
 
                 filter_common(dimacs_, cdir_, configs)
 
-
 # run script
 if __name__ == "__main__":
     args = sys.argv

@@ -248,7 +248,6 @@ def analyze_cpp(dimacs_, cdir_, listfile_):
     else:
         print("checking with no config list")
 
-    print("Number of failed configs:" + str(len(configs)))
     filter_common(dimacs_, cdir_, configs)
 
 
