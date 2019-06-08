@@ -1,0 +1,17 @@
+{
+  "tools" : [
+    { "name" : "infer",
+      "mode" : "interposition",
+      "invocation" : "infer run"
+      "output" : "-o",
+      "extra_args" : "--keep-going"
+    },
+    { "name" : "clang",
+      "invocation" : "clang-7 --analyze",
+      "mode": "preprocess",
+      "output": "-o",
+      "extra_args": ""
+    },
+    { "name" : "cbmc",
+      "invocation" : 
+  ]

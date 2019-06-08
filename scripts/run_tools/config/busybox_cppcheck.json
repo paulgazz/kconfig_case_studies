@@ -1,0 +1,14 @@
+{
+    "runs" : [
+	{
+      "tool": "cppcheck",
+      "target": "busybox",
+      "source": "/home/vagrant/busybox_1_28_0",
+      "configs": "bugs/configs",
+      "config_range": [
+        0,
+        4
+      ]
+	    }
+    ]
+}

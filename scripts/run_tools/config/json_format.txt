@@ -1,0 +1,27 @@
+# How to use the JSON format
+
+## tools.json
+
+This file is a list of analysis tools. They are described in the following format:
+
+{ "name" : <name of the tool>,
+  "invocation" : <how you actually call it from the command line>,
+  "output" : <the option you use to control the ouput file/directory>,
+  "extra args": <any extra arguments that need to be passed to the tool>,
+  "command_format": <see section "Command Format" below>
+}
+
+### Command Format
+This field tells the tool how to construct the command line call to the tool.
+This is done with a string using pre-defined substitution strings as follows:
+
+$invocation$: the invocation field
+$output$: the output option
+$output_target$: the actual name of the output file or directory (this will be constructed in the C script)
+$extra_args$: extra arguments
+
+So, for example, with the infer call
+infer run -o "infer_{config}" --keep-going -- make ${make extra args}$
+
+We would write
+$invocation$ $output$ $output_target$ $extra_args$ -- make ${make_extra_args}

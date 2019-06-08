@@ -1,0 +1,3 @@
+[console_scripts]
+run_tools = src.__main__:main
+

@@ -1,0 +1,124 @@
+{
+  "runs": [
+    {
+      "tool": "cppcheck",
+      "target": "toybox",
+      "source": "/home/vagrant/toybox_0_7_5",
+      "configs": "bugs/configs",
+      "config_range": [
+        0,
+        4
+      ]
+    },
+    {
+      "tool": "cppcheck",
+      "target": "axtls",
+      "source": "/home/vagrant/axtls_2_1_4",
+      "configs": "bugs/configs",
+      "config_range": [
+        0,
+        4
+      ]
+    },
+    {
+      "tool": "cppcheck",
+      "target": "busybox",
+      "source": "/home/vagrant/busybox_1_28_0",
+      "configs": "bugs/configs",
+      "config_range": [
+        1,
+        5
+      ]
+    },
+    {
+      "tool": "infer",
+      "target": "toybox",
+      "source": "/home/vagrant/toybox_0_7_5",
+      "configs": "bugs/configs",
+      "config_range": [
+        0,
+        4
+      ]
+    },
+    {
+      "tool": "infer",
+      "target": "axtls",
+      "source": "/home/vagrant/axtls_2_1_4",
+      "configs": "bugs/configs",
+      "config_range": [
+        0,
+        4
+      ]
+    },
+    {
+      "tool": "infer",
+      "target": "busybox",
+      "source": "/home/vagrant/busybox_1_28_0",
+      "configs": "bugs/configs",
+      "config_range": [
+        1,
+        5
+      ]
+    },
+    {
+      "tool": "clang",
+      "target": "busybox",
+      "source": "/home/vagrant/busybox_1_28_0",
+      "configs": "bugs/configs",
+      "config_range": [
+	1,
+	5
+      ]
+    },
+    {
+      "tool": "clang",
+      "target": "toybox",
+      "source": "/home/vagrant/toybox_0_7_5",
+      "configs": "bugs/configs",
+      "config_range": [
+	0,
+	4
+      ]
+    },
+    {
+      "tool": "clang",
+      "target": "axtls",
+      "source": "/home/vagrant/axtls_2_1_4",
+      "configs": "bugs/configs",
+      "config_range": [
+	0,
+	4
+      ]
+    },
+    {
+      "tool": "cbmc",
+      "target": "axtls",
+      "source": "/home/vagrant/axtls_2_1_4",
+      "configs": "bugs/configs",
+      "config_range": [
+	0,
+	4
+      ]
+    },
+    {
+      "tool": "cbmc",
+      "target": "busybox",
+      "source": "/home/vagrant/busybox_1_28_0",
+      "configs": "bugs/configs",
+      "config_range": [
+	1,
+	5
+      ]
+    },
+    {
+      "tool": "cbmc",
+      "target": "toybox",
+      "source": "/home/vagrant/toybox_0_7_5",
+      "configs": "bugs/configs",
+      "config_range": [
+	0,
+	4
+      ]
+    }
+  ]
+}
