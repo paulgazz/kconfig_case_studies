@@ -1,4 +1,4 @@
-New as of 2019-02-26: This directory is deprecated; current results are in scripts/deduplication_project/results.
+New as of 2019-02-26: Please find deduplication scripts and results in scripts/deduplication_project/results.
 
 # Variability-Aware Bug-Finding by Randomly Sampling
 
