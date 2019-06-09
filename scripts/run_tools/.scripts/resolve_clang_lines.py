@@ -7,21 +7,24 @@ import natsort  # pip3 install natsort
 import re
 import plistlib
 
-
+import logging
+logging.basicConfig(level=logging.WARNING)
 for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
   config_errors = set([])
   sys.stderr.write("processing: %s\n" % (config_dir))
   # for each clang result for a compilation unit
   for root, dirs, files in os.walk(config_dir):
-    files = filter(lambda x : x.endswith(".plist"), files)
+    files = list(filter(lambda x : x.endswith('.plist'), files))
     for clang_file in files:
+      logging.debug(f"Looking at file {clang_file}, root = {root}")
       # sys.stderr.write("%s\n" % (clang_result))
       clang_result = os.path.join(root, clang_file)
       clang_resolved = clang_result + ".resolved"
+      logging.debug(f"Clang result: {clang_result}")
       with open(clang_resolved, 'wb') as outfile:
         new_errors = list()
         with open(clang_result, 'rb') as f:
-          content = plistlib.readPlist(f)
+          content = plistlib.load(f)
           reports = content['diagnostics']
           for ix in range(len(reports)):
 #            import pdb; pdb.set_trace()
@@ -35,10 +38,10 @@ for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
             else:
               # Find the file
               # Old_file is the entire path so we'll just use clang_file
-              for root, dirs, files in os.walk('.'):
-                for f in files:
+              for newroot, newdirs, newfiles in os.walk('.'):
+                for f in newfiles:
                   if f == clang_file.replace('.plist', '.i'):
-                    old_file = os.path.join(root, f)
+                    old_file = os.path.join(newroot, f)
                     break
 
             if old_file == None:

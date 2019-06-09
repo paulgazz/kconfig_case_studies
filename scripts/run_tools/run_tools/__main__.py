@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG)
 import argparse
 
 ## global variables
-NUM_CORES = 24
+NUM_CORES = 16
 
 def validate(data):
     runId = 0
@@ -113,10 +113,9 @@ def handle(run):
     #  scripts potentially running in parallel.
     temp = tempfile.TemporaryDirectory(None, "/vagrant/temporary")
     temp_dir = temp.name
-    shutil.copytree(run["source"], f"{temp_dir}/src")
-    run["source"] = f"{temp_dir}/src"
     logging.debug(f"Current run is {run}")
     os.chdir(run["source"])
+    logging.debug(f"Current directory is {os.getcwd()}")
     logging.debug(f"scripts are in {scripts_dir}")
 
     if run["tool"] == "infer":
@@ -186,13 +185,8 @@ def main(args=None):
         data = json.load(f)
         run_list = list()
         for run in validate(data["runs"]):
-            run_list.append(run)
+            handle(run)
 
-        # Multiprocessing
-        p = Pool(NUM_CORES)
-        p.map(handle, run_list)
-        
-    
     # Do argument parsing here (eg. with argparse) and anything else
     # you want your project to do.
 
