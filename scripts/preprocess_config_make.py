@@ -33,9 +33,9 @@ def gccshunt_cmd(cli_args, out_file):
   return "java -cp %s GCCShunt --shunt-kbuild --shunt-config %s %s" % (kconfig_case_studies, out_file, cli_args)
 
 if len(sys.argv) < 3:
-  print "%s build_out out_dir" % (os.path.basename(sys.argv[0]))
-  print "build_out is the result of building one config, i.e., cases/CASE_NAME/SAMPLE_DIR/build_out/CONFIG_NUM.config"
-  print "out_dir is the path to store the preprocessed files"
+  print("%s build_out out_dir" % (os.path.basename(sys.argv[0])))
+  print("build_out is the result of building one config, i.e., cases/CASE_NAME/SAMPLE_DIR/build_out/CONFIG_NUM.config")
+  print("out_dir is the path to store the preprocessed files")
   exit(1)
 
 def cpp_cmd(gcc_cmd, cli_args_file, source_filename, preprocessed_out):
@@ -51,14 +51,14 @@ def mkdir_p(path):
             raise
 
 def verbose_call(cmd):
-  print " [CALL] %s" % (cmd)
+  print(" [CALL] %s" % (cmd))
   subprocess.call(cmd, shell=True)
   
 build_out = sys.argv[1]
 out_dir = sys.argv[2]
 
 if not os.path.exists(build_out):
-  print "%s does not exist" % (build_out)
+  print("%s does not exist" % (build_out))
   exit(1)
 
 # go through each line of the build output, collecting calls to gcc,
@@ -70,7 +70,7 @@ with open(build_out) as f:
 
     make_cd_result = make_cd_match.search(line)
     if make_cd_result:
-      print line
+      print(line)
       # process directory changes
       cd_type = make_cd_result.group(1)
       cd_dir = make_cd_result.group(2)
