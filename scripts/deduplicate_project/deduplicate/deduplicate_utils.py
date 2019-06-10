@@ -8,7 +8,7 @@ import csv
 import logging
 import plistlib
 
-NUM_CORES = 24
+NUM_CORES = 1
 
 class DeduplicateUtils:
     """
@@ -17,7 +17,13 @@ class DeduplicateUtils:
     """
 
     hash_table = dict()
-
+    @staticmethod
+    def set_num_cores(num_cores):
+        """
+        Set the global variable NUM_CORES to control multiprocessing.
+        """
+        NUM_CORES = num_cores
+        
     @staticmethod
     def get_common(target, configs_, include_=True):
         """
@@ -152,7 +158,6 @@ class DeduplicateUtils:
         """
         Read config file and return it as a dictionary.
         """
-        config_file = "config/{}".format(config_file)
         if not os.path.isfile(config_file):
             raise FileNotFoundError(f"Config file {config_file} does not exist.")
         

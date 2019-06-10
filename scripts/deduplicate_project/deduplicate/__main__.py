@@ -7,10 +7,13 @@ parser = argparse.ArgumentParser("Utility to deduplicate bug reports.")
 parser.add_argument("-v", "--verbose", action="count")
 parser.add_argument("-f", "--force", action="store_true",
                     help="Enable to overwrite CSV file if it already exists.")
-parser.add_argument("-c", "--config", default="file_locations.json",
+parser.add_argument("-c", "--config", default="config/file_locations.json",
                     help="Specify the configuration file (default = config/file_locations.json")
+parser.add_argument("--cores", default=1, type=int, help="Specify the number of cores"\
+                    " the machine has for multiprocessing.")
 
 args = parser.parse_args()
+DeduplicateUtils.set_num_cores(args.cores)
 
 if not args.verbose:
     logging.basicConfig(level=logging.CRITICAL)
@@ -30,7 +33,6 @@ def main():
     master_tool_list = (('infer_results', 'infer'),
                         ('clang_results', 'clang'),                        
                         ('cppcheck_results', 'cppcheck'),
-                        ('ikos_results', 'ikos'),
                         ('cbmc_results', 'cbmc')
     )
                         

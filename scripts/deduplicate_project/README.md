@@ -1,42 +1,42 @@
+# SETUP
+
+Run python setup.py build
+
+To build the program.
+
 # REMARKS
 
-This program and the scripts included with it are used to process the raw data obtained by running bug detectors on configurations of target programs. Since the raw data were huge (461GB), we are unable to provide it for download. We will prepare a virtual machine that will replicate all of our experiments and share it in the future. For now, we provide this program and the results of the postprocessing, including all deduplicated warnings sets, all comparisons we computed between those datasets, the computation of the subset configuration sets that cover all bugs, and the scripts that produce these results.
+This program and the scripts included with it are used to process the raw data obtained by running bug detectors on configurations of target programs. Since the raw data were huge (461GB), we are unable to provide it for download. We instead provide a virtual machine and scripts that can replicate all of our experiments (see ../run_tools).
 
 # DIRECTORY STRUCTURE
 
 deduplicate/ : the source code files for the main program
 scripts/ : other helpful scripts for intermediate scripts
-results/ : where all of our results are. In the root are the deduplicated files, named with the tool and program combination
-results/excel : the excel tables we used
-results/comparison : the comparison files
-results/comparison/base_minus_sample : the files including bugs that were found by the base cases (min/max/default) but not the sample. Sorted into min/max/default folders.
-results/comparison/sample_minus_base : the files including bugs that were found by the sample but not by the base cases. Organized in the same way as above.
-results/minimal : the files detailing the the minimal configuration sets we found, including information about each iteration of the algorithm
-
-# SETUP
-
-First, start the python virtual environment (Python 3.7.0 required). This will include all dependencies you need for the program.
-Making sure you have pyvenv installed, run:
-
-source ./bin/activate
-
-from the root of the project directory to activate the python virtual environment. Then run
-
-python setup.py build
-
-To build the program.
+results/ : where the project places results it generates
+artifact_results/ : where all of our results are. In the root are the deduplicated files, named with the tool and program combination
+artifact_results/excel : the excel tables we used
+artifact_results/comparison : the comparison files
+artifact_results/comparison/base_minus_sample : the files including bugs that were found by the base cases (min/max/default) but not the sample. Sorted into min/max/default folders.
+artifact_results/comparison/sample_minus_base : the files including bugs that were found by the sample but not by the base cases. Organized in the same way as above.
+artifact_results/minimal : the files detailing the the minimal configuration sets we found, including information about each iteration of the algorithm
 
 # CONFIGURING THE PROGRAM
 
 From the root, config/ is the directory that holds the configuration files. These files are in JSON format. Please look at these files for an example of how to write one yourself, as they are very straightfoward.
 
-You also may want to change NUM_CORES in deduplicate/deduplicate_utils.py. This governs how many child processes are created for reading files and for the CPU-heavy configuration list building task.
-
 To run the program, type
 
 python -m deduplicate
 
-from the root. You can pass the --help option to learn more about the command line options that the program takes.
+from the root. You can pass the --help option to learn more about the command line options that the program takes. Of particular interest will be the --cores option, which will allow you to take advantage of multiple cores on your machine to perform the deduplication task more quickly.
+
+# OUTPUT
+
+The project outputs results in the ./results directory. For each tool/target combination, three artifacts are produced:
+
+1. A .json file, which contains the deduplicated warnings in the unified JSON format.
+2. A .csv file, which contains the same warnings as the associated .JSON file, but with fewer fields for easier viewing.
+3. A hidden .json file, which is created as an intermediate result after reading the raw data so that the raw data doesn't need to be read again if the formatting or post-processing steps change.
 
 # OTHER SCRIPTS
 
