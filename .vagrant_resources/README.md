@@ -1,33 +1,10 @@
 # Setup
 
-Once you're in the VM, there are a few manual steps you need to perform. The first is installing the pyenv tool to manage python versions. You can use the pyenv-installer project available at https://github.com/pyenv/pyenv-installer, distributed under the MIT License.
+The vast majority of the setup was performed automatically when the VM was setup. However, you do need to manually setup the correct version of python.
 
-## Setting up pyenv
-
-Run the following command from a bash shell from inside the vagrant vm:
-
-`curl https://pyenv.run | bash`
-
-This should take care of installing pyenv and adding the appropriate lines to ~/.bashrc to allow it to be available upon startup. Start a new bash shell and run
-
-`pyenv update`
-
-to make sure that pyenv is available. If it isn't, please refer to the homepage of the pyenv installer and follow the instructions there.
-
-Assuming pyenv is installed, run
+Run the following commands to install python 3.7.0 and set it as the global default:
 
 `pyenv install 3.7.0`
-
-to install Python 3.7.0 (this will take a bit of time), then run
-
 `pyenv global 3.7.0`
 
-to set Python 3.7.0 as the global python version.
-
-## Final setup steps
-
-Finally, you need to compile the GCCShunt.java program to correctly run the analysis tools. Run the following commands:
-
-`cd /vagrant/scripts && javac GCCShunt.java`
-
-You are now ready to run the analysis tools. Refer to the instructions in /vagrant/scripts/run_tools.
+You should now be ready to run the analysis tools. See the README.md in /vagrant/scripts/run_tools to learn how to do this.

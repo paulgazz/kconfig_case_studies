@@ -1,18 +1,0 @@
-hash,features,classification,reasoning,file,line,type,message
-1e8ffa982259baf7cfdcfa363c8d4f4c,,FALSE,"Option list is extracted from comments, which are hard coded in. Therefore, as long as these are correct, the loop will never exceed the bounds of the array (credit to Paul for figuring this out).",blockdev.c,60,N/A,"Array cmds[11] accessed at index 31, which is out of bounds."
-a3a7b2c043526734da2447553d5636c2,CONFIG_NETSTAT,TRUE,fp is not freed before the function returns.,netstat.c,515,N/A,Resource leak: fp
-fbc0f3265e51bb6f84cf7fee7a75cb1c,,FALSE,"Logical not means that WARN_ONLY will only ever be multiplied by 0 or 1, neither of which can cause overflow.",cmp.c,83,N/A,"Signed integer overflow for expression (2147483648)*!(toys.optflags&(1)).
-"
-fcce98bb176d2153a41ccb7167526475,CONFIG_CHVT,TRUE,Self-assignment means that an uninitialized variable is used,chvt.c,24,N/A,Uninitialized variable: fd
-14847581aa432d5bf1b663ce39e35671,CONFIG_DATE,TRUE,Self-assignment means that an uninitialized variable is used,date.c,137,N/A,Uninitialized variable: width
-9b755e16e9d93969ba5edbf0dae3104e,CONFIG_HWCLOCK,TRUE,Self-assignment means that an uninitialized variable is used,hwclock.c,89,N/A,Uninitialized variable: s
-9f891d83389967113789257fd692124b,CONFIG_LOSETUP,TRUE,Self-assignment means that an uninitialized variable is used,losetup.c,64,N/A,Uninitialized variable: ffd
-25c643e02de1ac887dfcf1d65a46d6aa,CONFIG_SWITCH_ROOT,TRUE,Self-assignment means that an uninitialized variable is used,switch_root.c,49,N/A,Uninitialized variable: console
-b750873042044d901184664332206c90,CONFIG_UUDECODE,TRUE,Self-assignment means that an uninitialized variable is used,uudecode.c,29,N/A,Uninitialized variable: m
-baecc5c6d3aadde2e2e9751bc8089f59,CONFIG_VMSTAT,TRUE,Self-assignment means that an uninitialized variable is used,vmstat.c,51,N/A,Uninitialized variable: name
-d1185d419f3cfdeb5eb559a78bf8b70f,CONFIG_VMSTAT,TRUE,Self-assignment means that an uninitialized variable is used,vmstat.c,51,N/A,Uninitialized variable: p
-0a702c1276eb92f4959e9a51e644b4ef,,FALSE,Self-assignment means that an uninitialized variable is used,lsm.h,63,N/A,Uninitialized variable: result
-63b3ff1866029e1dff73c0978d7c41a3,,FALSE,"Although TT.columns appears twice in the same expression, it is modified neither time. Thus, the order of evaluation of side effects does not matter.",base64.c,35,N/A,Expression ‘this.base64.columns&&++*x == this.base64.columns’ depends on order of evaluation of side effects.
-b8054b61a6ad95e841a80c318ef8d858,,FALSE,The for loop causing cppcheck to give a warning is actually only testing try[count] for equality.,tail.c,188,N/A,Memory is allocated but not initialized: try
-ccc8465c9248ddf45086a96142803b66,,FALSE,temp is necessarily initialized by either a call to strol or strod.,args.c,309,N/A,Uninitialized variable: temp
-516fa619279f790a425d755a4f8b82e0,,FALSE,"“xwr” will never be accessed out of bounds. c is assigned by  the expression c = i % 3, which will give c the value of 0, 1, or 2. ",lib.c,975,N/A,Buffer is accessed out of bounds: ‘‘xwr’’
