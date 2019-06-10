@@ -4,6 +4,7 @@
 # python-apps-the-right-way-entry_points-and-scripts/
 # Accessed 2019-06-04 12:28 CDT
 ###########
+
 from datetime import datetime
 import shutil
 import sys
@@ -13,7 +14,7 @@ import subprocess
 import tempfile
 import logging
 from multiprocessing import Pool
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 ## import my modules
 import argparse
 
@@ -113,7 +114,7 @@ def handle(run):
     #  scripts potentially running in parallel.
     temp = tempfile.TemporaryDirectory(None, "/vagrant/temporary")
     temp_dir = temp.name
-    logging.debug(f"Current run is {run}")
+    logging.info(f"Current run is {run}")
     os.chdir(run["source"])
     logging.debug(f"Current directory is {os.getcwd()}")
     logging.debug(f"scripts are in {scripts_dir}")

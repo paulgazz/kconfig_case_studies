@@ -103,34 +103,9 @@ if [ ! -d "busybox_1_28_0" ]; then
     cd /home/vagrant
 fi
 
-if [ ! -d "fiasco_17_10" ]; then
-    if [ ! -d "fiasco-17.10" ]; then
-        tar -xvf /vagrant/cases/fiasco_17_10/fiasco-17.10.tar.bz2
-    fi
-    mv fiasco-17.10 fiasco_17_10
-
-    cd fiasco_17_10/src/kernel/fiasco    
-    tool/gen_kconfig src/Kconfig my_kconfig $(find src/ | grep Kconfig | grep -v src/Kconfig)
-    cd /home/vagrant
-fi
-
-if [ ! -d "uClibc-ng_1_0_29" ]; then
-    if [ ! -d "uClibc-ng-1.0.29" ]; then
-        tar -xvf /vagrant/cases/uClibc-ng_1_0_29/uClibc-ng-1.0.29.tar.xz
-    fi
-    mv uClibc-ng-1.0.29 uClibc-ng_1_0_29
-fi
-
 if [ ! -d "/home/vagrant/linux-headers" ]; then
     tar -C /home/vagrant -xvf /usr/src/linux-source-4.4.0.tar.bz2
     make -C /home/vagrant/linux-source-4.4.0 INSTALL_HDR_PATH=/home/vagrant/linux-headers headers_install
-fi
-
-if [ ! -d "buildroot_2018_02" ]; then
-    if [ ! -d "buildroot-2018.02" ]; then
-        tar -xvf /vagrant/cases/buildroot_2018_02/buildroot-2018.02.tar.gz
-    fi
-    mv buildroot-2018.02 buildroot_2018_02
 fi
 
 # Install infer
