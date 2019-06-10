@@ -5,7 +5,7 @@ set -x
 sudo apt-get update
 
 # dependencies for building axtls, toybox, fiasco
-yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence libdlib-dev libaudit-dev linux-source-4.4.0 g++-mips-linux-gnu
+yes | sudo apt-get install python make gcc libreadline-dev libselinux1-dev libssl-dev libncurses5-dev patch liblua50-dev libpam0g-dev libdmalloc-dev electric-fence libdlib-dev libaudit-dev linux-source-4.4.0 g++-mips-linux-gnu cbmc cppcheck default-jdk
 
 # smack dependencies for toybox
 yes | sudo apt-get install autoconf libtool-bin
@@ -133,3 +133,35 @@ if [ ! -d "buildroot_2018_02" ]; then
     mv buildroot-2018.02 buildroot_2018_02
 fi
 
+# Install infer
+VERSION=0.15.0
+curl -sSL "https://github.com/facebook/infer/releases/download/v$VERSION/infer-linux64-v$VERSION.tar.xz" | sudo tar -C /opt -xJ
+ln -s "/opt/infer-linux64-v$VERSION/bin/infer" /usr/local/bin/infer
+
+# Install clang
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-7 main"
+sudo apt-get update
+yes | sudo apt-get install clang-7
+sudo ln -s /usr/bin/clang-7 /usr/bin/clang
+
+# Install pyenv
+curl https://pyenv.run > /home/vagrant/setup_pyenv.sh
+sudo chmod +x /home/vagrant/setup_pyenv.sh
+/home/vagrant/setup_pyenv.sh
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+rm /home/vagrant/setup_pyenv.sh
+
+pyenv install 3.7.0
+pyenv global 3.7.0
+
+# Copy README and license info
+cp /vagrant/.vagrant_resources/* ~
+
+# Compile GCCShunt
+cd /vagrant/scripts && javac GCCShunt.java
+
+# Force vagrant to read ~/.bashrc
+echo "source ~/.bashrc" >> /home/vagrant/.bash_profile

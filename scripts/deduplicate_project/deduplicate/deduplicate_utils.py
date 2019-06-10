@@ -17,7 +17,136 @@ class DeduplicateUtils:
     """
 
     hash_table = dict()
-    
+
+    @staticmethod
+    def get_common(target, configs_, include_=True):
+        """
+        Gets the common features for automatic feature extraction.
+        target in {toybox_0_7_5, axtls_2_1_4, busybox_1_28_0}
+        configs_ is the list of configurations from the bug report
+        include governs whether we're finding the common failed configurations (include_ = True) or the common passed configurations (include_ = False)
+        Original code by Jeho Oh
+        Adapted for use in this tool by Austin Mordahl
+        """
+        configs_ = list(map(lambda x: f"{x}.config", configs_))
+        dimacs_ = f"{os.environ['KCONFIG_CASE_STUDIES']}/cases/{target}/kconfig.dimacs"
+        cdir_ = f"{os.environ['KCONFIG_CASE_STUDIES']}/cases/{target}/bugs/configs"
+
+        common = list()
+        init = True
+
+        # check if config dir exists
+        if not os.path.exists(cdir_):
+            print("randconfig not found")
+            return
+
+        # get features and clauses
+        _features, _clauses, _vars = DeduplicateUtils.read_dimacs(dimacs_)
+        _names = [i[1] for i in _features]
+
+        # iterate over each randconfig configurations
+        for file in os.listdir(cdir_):
+            if (include_ and (file in configs_)) or (not include_ and (file not in configs_)) or (len(configs_) == 0):
+                try:
+                    with open(cdir_ + "/" + file, 'r') as f:
+                        # print(file)
+                        _existing = set()
+
+                        sol = list()
+                        for line in f:
+                            # line: # FEATURE is not set
+                            if line.startswith('#'):
+                                line = line[0:len(line) - 1]
+                                data = line.split()
+                                if len(data) > 4:
+                                    if data[1] in _names:
+                                        i = _names.index(data[1])
+                                        _existing.add(data[1])
+                                        if i != -1:
+                                            sol.append('-' + _features[i][1])
+                            # line: FEATURE=y or FEATURE="nonbool value"
+                            else:
+                                line = line[0:len(line) - 1]
+                                data = line.split('=')
+                                if len(data) > 1:
+                                    if data[0] in _names:
+                                        i = _names.index(data[0])
+                                        _existing.add(data[0])
+                                        # FEATURE=y
+                                        if data[1] == 'y':
+                                            sol.append(str(_features[i][1]))
+                                        # FEATURE=empty string or 0
+                                        elif data[1] == '\"\"' or data[1] == '0':
+                                            if _features[i][3] != '\"\"' and _features[i][3] != '0':
+                                                sol.append('-' + _features[i][1])
+                                        # FEATURE='nonbool value'
+                                        else:
+                                            sol.append(str(_features[i][1]))
+
+                        if init:
+                            common = sol
+                            init = False
+                        else:
+                            for s in common:
+                                if s not in sol:
+                                    common.remove(s)
+                except IsADirectoryError:
+                    continue
+                    
+        return common
+
+    @staticmethod
+    def read_dimacs(dimacsfile):
+        _features = list()
+        _clauses = list()
+        _vcount = '-1'
+
+        with open(dimacsfile) as f:
+            logging.debug("Found the dimacs file")
+            for line in f:
+                # read variables in comments
+                if line.startswith("c"):
+                    line = line[0:len(line) - 1]
+                    _feature = line.split(" ", 4)
+                    del _feature[0]
+                    _features.append(tuple(_feature))
+                # read dimacs properties
+                elif line.startswith("p"):
+                    info = line.split()
+                    _vcount = info[2]
+                # read clauses
+                else:
+                    info = line.split()
+                    if len(info) != 0:
+                        _clauses.append(line)
+
+        return _features, _clauses, _vcount
+
+    @staticmethod
+    def map_to_target(name):
+        if name == "toybox" or name  == "toybox_0_7_5":
+            return "toybox_0_7_5"
+        elif name == "axtls" or name == "axtls_2_1_4":
+            return "axtls_2_1_4"
+        elif name == "busybox" or name == "busybox_1_28_0":
+            return "busybox_1_28_0"
+
+    @staticmethod
+    def add_automatic_features(w):
+        if w.automatic_features is not None:
+            logging.debug("Warning already has automatic features; skipping....")
+            return w
+        logging.debug("Determining automatic features....")
+        common_fail = DeduplicateUtils.get_common(DeduplicateUtils.map_to_target(w.target), w.configs, True)
+        common_pass = DeduplicateUtils.get_common(DeduplicateUtils.map_to_target(w.target), w.configs, False)
+        automatic_features = list()
+        for s in common_fail:
+            if s not in common_pass:
+                automatic_features.append(s)
+        logging.debug(f"Automatic features: {automatic_features}")
+        w.automatic_features = automatic_features
+        return w
+
     @staticmethod
     def read_config_file(config_file):
         """
@@ -111,6 +240,8 @@ class DeduplicateUtils:
             # Compute
         warnings = DeduplicateUtils.deduplicate_dataset(warnings)
 
+        p = Pool(NUM_CORES)
+        warnings = p.map(DeduplicateUtils.add_automatic_features, warnings)
         # Write to intermediate results file
         DeduplicateUtils.write_to_json(warnings, intermediate_result)
         
@@ -265,5 +396,4 @@ class DeduplicateUtils:
         # Checking that the file doesn't already exist.
         if os.path.isfile(outfile):
             raise RuntimeError(f"{outfile} exists! Refusing to overwrite.")
-
 

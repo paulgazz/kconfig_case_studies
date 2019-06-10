@@ -36,6 +36,7 @@ class BugReport:
         self.target = None
         self.variability = None
         self.num_configs = None
+        self.automatic_features = None
 
     def __str__(self):
         raise NotImplementedError("Not implemented in the abstract base class")
@@ -61,6 +62,7 @@ class BugReport:
         selfdict['configs'] = list(self.configs)
         selfdict['num_configs'] = self.num_configs
         selfdict['variability'] = self.variability
+        selfdict['automatic_features'] = self.automatic_features
         return selfdict
 
     @staticmethod
