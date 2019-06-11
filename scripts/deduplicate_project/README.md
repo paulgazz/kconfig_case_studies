@@ -10,7 +10,7 @@
 
 -v: Specify level of verbosity (use more v's for more verbosity)
 
---cores: Specify the number of cores to use (should not exceed the number of cores of your VM. You can configure this manually through Virtualbox settings on the host machine).
+--cores: Specify the number of cores to use (should not exceed the number of cores of your VM. You can configure the number of cores on the VM manually through Virtualbox settings on the host machine).
 
 -f/--force: Force the tool to overwrite existing results rather than failing.
 

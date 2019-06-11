@@ -11,7 +11,7 @@ setup(name="deduplicate",
       packages=["deduplicate"],
       entry_points={
           "console_scripts": [
-              "deduplicate = src.__main__:main"
+              "deduplicate = deduplicate.__main__:main"
               ]
           }
       )
