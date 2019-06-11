@@ -7,9 +7,14 @@
 
 ## Options:
 -c/--config: The config file to use (defaults to config/file_locations.json). The config file specifies the locations of the results to deduplicate.
+
 -v: Specify level of verbosity (use more v's for more verbosity)
+
 --cores: Specify the number of cores to use (should not exceed the number of cores of your VM. You can configure this manually through Virtualbox settings on the host machine).
+
 -f/--force: Force the tool to overwrite existing results rather than failing.
+
+You can also see these with `python -m deduplicate --help`
 
 # Remarks
 
