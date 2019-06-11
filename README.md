@@ -1,6 +1,6 @@
 # For reviewers:
 
-The tarred version of this repository is available at https://zenodo.org/record/3243323#.XP-Xzi2ZMxg
+The tarred, archived version of this repository is available at https://zenodo.org/record/3243323#.XP-Xzi2ZMxg
 
 # Description
 
