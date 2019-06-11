@@ -1,9 +1,0 @@
-setup.py
-deduplicate/__main__.py
-deduplicate/bug_report.py
-deduplicate/deduplicate_utils.py
-deduplicate.egg-info/PKG-INFO
-deduplicate.egg-info/SOURCES.txt
-deduplicate.egg-info/dependency_links.txt
-deduplicate.egg-info/entry_points.txt
-deduplicate.egg-info/top_level.txt
