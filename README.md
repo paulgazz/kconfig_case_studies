@@ -1,6 +1,6 @@
 # For reviewers:
 
-The Zenodo upload has not yet completed, but it is simply a zipped version of this archive. A link will be available here upon once it is ready.
+The tarred version of this repository is available at https://zenodo.org/record/3243323#.XP-Xzi2ZMxg
 
 # Description
 
