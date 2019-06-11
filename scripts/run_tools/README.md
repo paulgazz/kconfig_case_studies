@@ -13,7 +13,7 @@ If you'd like to run other experiments, see the [README.md](config/README.md) in
 
 # Results
 
-All results will be written to [/vagrant/results](../../results) (note that on a Vagrant VM, /vagrant/ is a link to where the VM exists on the host machine, so /vagrant/results is a folder at the root of your host's clone of the repository). The tool is conservative and will not overwrite any results if the parent directory exists (for example, if /vagrant/results/toybox_0_7_5/cppcheck_results exists, even if the directory is empty or has incomplete results, the tool will not write there and will skip a cppcheck on toybox run).
+All results will be written to /vagrant/results (note that on a Vagrant VM, /vagrant/ is a link to where the VM exists on the host machine, so /vagrant/results is a folder at the root of your host's clone of the repository). The tool is conservative and will not overwrite any results if the parent directory exists (for example, if /vagrant/results/toybox_0_7_5/cppcheck_results exists, even if the directory is empty or has incomplete results, the tool will not write there and will skip a cppcheck on toybox run).
 
 # A Note on Parallelization
 
