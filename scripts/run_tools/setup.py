@@ -5,7 +5,7 @@ setup(name='run_tools',
       packages=['run_tools'],
       entry_points={
           'console_scripts': [
-              'run_tools = run_tools.__main__:main'
+              'run_tools = src.__main__:main'
           ]
       },
       )

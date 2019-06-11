@@ -5,7 +5,7 @@
 ## Configuration Files
 
 Some prefabricated configuration files are provided for your use:
-- `config/runs.json`: Does a small (5 config) run of each program/tool combination we performed. Estimated 2 hour runtime.
+- `config/runs.json`: Does a small (5 config) run of each program/tool combination we performed (except for busybox/cbmc, because deduplication of just these results increases the time it takes  to deduplicate the results by many times). Estimated 2 hour runtime.
 - `config/full_runs.json`: Does the full experiments (see note on parallelization below). Estimated 16 day runtime.
 - `config/toybox_clang.json`: Runs clang on 5 configurations of toybox. Estimated 8 minute runtime.
 - `config/toybox_clang_full.json` Runs clang on 1000 configurations of toybox. Estimated 25 hour runtime.

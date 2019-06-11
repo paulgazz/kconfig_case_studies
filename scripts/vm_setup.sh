@@ -129,8 +129,8 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 rm /home/vagrant/setup_pyenv.sh
 
-pyenv install 3.7.0
-pyenv global 3.7.0
+# Force vagrant to read ~/.bashrc
+echo "source ~/.bashrc" >> /home/vagrant/.bash_profile
 
 # Copy README and license info
 cp /vagrant/.vagrant_resources/* ~
@@ -138,5 +138,3 @@ cp /vagrant/.vagrant_resources/* ~
 # Compile GCCShunt
 cd /vagrant/scripts && javac GCCShunt.java
 
-# Force vagrant to read ~/.bashrc
-echo "source ~/.bashrc" >> /home/vagrant/.bash_profile

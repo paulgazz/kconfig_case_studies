@@ -92,16 +92,6 @@
     },
     {
       "tool": "cbmc",
-      "target": "busybox",
-      "source": "/home/vagrant/busybox_1_28_0",
-      "configs": "bugs/configs",
-      "config_range": [
-	1,
-	5
-      ]
-    },
-    {
-      "tool": "cbmc",
       "target": "toybox",
       "source": "/home/vagrant/toybox_0_7_5",
       "configs": "bugs/configs",
