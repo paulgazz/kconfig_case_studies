@@ -4,7 +4,8 @@
       "tool": "clang",
       "target": "toybox",
       "source": "/home/vagrant/toybox_0_7_5",
-      "configs": "bugs/configs"
+      "configs": "bugs/configs",
+      "config_range": [0,4]		   
     }
   ]
 }
