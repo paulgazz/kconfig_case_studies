@@ -13,7 +13,3 @@ artifact_results/comparison/sample_minus_base : the files including bugs that we
 artifact_results/minimal : the files detailing the the minimal configuration sets we found, including information about each iteration of the algorithm
 
 # Figure Mappings
-
-## Where are the automatic feature mappings?
-
-These results were generated using an older version of the tool where the automatic feature extraction step was not yet into the deduplicate_project. As such, to save time, we only extracted features on the verified bugs. So, although these results do not include the automatic features, they are included in the [bug dataset](./excel/bug_dataset.xlsx)
