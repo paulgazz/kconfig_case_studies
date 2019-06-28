@@ -1,0 +1,8 @@
+572,ssl/asn1.c,infer,axtls_2_1_4,NULL_DEREFERENCE,1,False
+737,ssl/x509.c,infer,axtls_2_1_4,DEAD_STORE,1,False
+252,ssl/x509.c,infer,axtls_2_1_4,NULL_DEREFERENCE,1,False
+249,ssl/x509.c,infer,axtls_2_1_4,MEMORY_LEAK,1,False
+255,ssl/x509.c,infer,axtls_2_1_4,NULL_DEREFERENCE,1,False
+209,ssl/tls1_clnt.c,infer,axtls_2_1_4,DEAD_STORE,1,False
+390,ssl/tls1_clnt.c,infer,axtls_2_1_4,DEAD_STORE,1,False
+657,crypto/bigint.c,infer,axtls_2_1_4,NULL_DEREFERENCE,1,False

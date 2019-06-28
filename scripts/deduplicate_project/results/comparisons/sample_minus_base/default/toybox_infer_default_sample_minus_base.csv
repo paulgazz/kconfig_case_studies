@@ -1,2 +1,0 @@
-30,toys/android/setenforce.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,492,TRUE
-95,toys/posix/ulimit.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,513,TRUE

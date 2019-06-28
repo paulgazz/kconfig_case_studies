@@ -1,3 +1,0 @@
-537,libbb/getopt32.c,CBMC,busybox_1_28_0,pointer dereference,1,False
-1026,libbb/appletlib.c,CBMC,busybox_1_28_0,pointer dereference,1,False
-138,libbb/appletlib.c,CBMC,busybox_1_28_0,pointer dereference,1,False

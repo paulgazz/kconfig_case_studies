@@ -1,7 +1,0 @@
-num_configs 3
-unique_errors 1
-total_errors 2
-max_per_config 1
-min_per_config 0
-"[crypto_misc.c:126]: (error) Uninitialized variable: i",2,set0
-set0,min minexecutable

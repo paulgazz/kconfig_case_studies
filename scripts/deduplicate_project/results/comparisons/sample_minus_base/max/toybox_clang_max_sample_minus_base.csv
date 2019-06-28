@@ -1,8 +1,0 @@
-309,lib_args.c,clang,toybox_0_7_5,Logic error,527,TRUE
-21,lib_help.c,clang,toybox_0_7_5,Dead store,129,TRUE
-366,lib_args.c,clang,toybox_0_7_5,Logic error,527,TRUE
-105,netcat.c,clang,toybox_0_7_5,Dead store,350,TRUE
-183,ftpget.c,clang,toybox_0_7_5,Dead store,247,TRUE
-353,ls.c,clang,toybox_0_7_5,Logic error,336,TRUE
-159,id.c,clang,toybox_0_7_5,Memory error,478,TRUE
-273,md5sum.c,clang,toybox_0_7_5,Logic error,629,TRUE

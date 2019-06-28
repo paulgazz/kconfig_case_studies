@@ -1,0 +1,38 @@
+{
+  "toybox_0_7_5": {
+    "infer_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/toybox_0_7_5/infer_results"
+    },
+    "cbmc_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/toybox_0_7_5/cbmc_results"
+    },
+    "cppcheck_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/toybox_0_7_5/cppcheck_results"
+    },
+    "clang_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/toybox_0_7_5/clang_results"
+    }
+  },
+  "axtls_2_1_4": {
+    "infer_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/axtls_2_1_4/infer_results"
+    },
+    "cbmc_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/axtls_2_1_4/cbmc_results"
+    },
+    "cppcheck_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/axtls_2_1_4/cppcheck_results"
+    },
+    "clang_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/axtls_2_1_4/clang_results"
+    }
+  },
+  "busybox_1_28_0": {
+    "cppcheck_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/busybox_1_28_0/cppcheck_results"
+    },
+    "clang_results": {
+      "location": "/home/austin/Documents/var-bugs-study/kconfig_case_studies/results/busybox_1_28_0/clang_results"
+    }
+  }
+}

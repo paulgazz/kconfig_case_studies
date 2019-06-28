@@ -1,4 +1,0 @@
-89,kill.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,341,TRUE
-409,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,406,TRUE
-86,main.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,563,TRUE
-343,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,406,TRUE

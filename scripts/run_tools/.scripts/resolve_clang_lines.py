@@ -38,10 +38,11 @@ for config_dir in natsort.natsorted(glob.iglob('*.config', recursive=False)):
             else:
               # Find the file
               # Old_file is the entire path so we'll just use clang_file
-              for newroot, newdirs, newfiles in os.walk('.'):
+              for newroot, newdirs, newfiles in os.walk(config_dir):
                 for f in newfiles:
                   if f == clang_file.replace('.plist', '.i'):
                     old_file = os.path.join(newroot, f)
+                    logging.debug(f"File resolved: {clang_file} = {old_file}")
                     break
 
             if old_file == None:

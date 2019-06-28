@@ -1,7 +1,8 @@
-""" Credit to the setuptools tutorial at
+""" Thank you to the setuptools tutorial at
 https://chriswarrick.com/blog/2014/09/15/
 python-apps-the-right-way-entry_points-and-scripts/,
-accessed 2019-02-11 """
+for help understanding how to setup a setuptools project.
+Last accessed 2019-02-11 """
 
 from setuptools import setup
 

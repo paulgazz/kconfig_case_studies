@@ -51,16 +51,6 @@
       ]
     },
     {
-      "tool": "infer",
-      "target": "busybox",
-      "source": "/home/vagrant/busybox_1_28_0",
-      "configs": "bugs/configs",
-      "config_range": [
-        1,
-        5
-      ]
-    },
-    {
       "tool": "clang",
       "target": "busybox",
       "source": "/home/vagrant/busybox_1_28_0",
@@ -98,16 +88,6 @@
       "config_range": [
 	0,
 	4
-      ]
-    },
-    {
-      "tool": "cbmc",
-      "target": "busybox",
-      "source": "/home/vagrant/busybox_1_28_0",
-      "configs": "bugs/configs",
-      "config_range": [
-	1,
-	5
       ]
     },
     {

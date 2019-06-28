@@ -1,2 +1,0 @@
-95,toys/posix/ulimit.c,infer,toybox_0_7_5,UNINITIALIZED_VALUE,513,TRUE
-53,toys/other/mountpoint.c,infer,toybox_0_7_5,MEMORY_LEAK,258,TRUE

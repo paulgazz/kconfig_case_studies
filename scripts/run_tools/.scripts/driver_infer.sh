@@ -107,7 +107,7 @@ echo "${casename}" | grep -i "busybox" > /dev/null
 if [[ $? -eq 0 ]]; then
     config_file=".config"
     kconfig_root="Config.in"
-    binaries="busybox"
+    binaries="busybox_unstripped"
     get_reverse_dep="true"
     make_extra_args="KBUILD_VERBOSE=1"  # emit entire gcc commands
 fi

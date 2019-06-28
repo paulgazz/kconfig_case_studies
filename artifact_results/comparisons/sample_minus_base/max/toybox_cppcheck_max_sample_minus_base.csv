@@ -1,0 +1,6 @@
+409,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,406,TRUE
+89,kill.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,341,TRUE
+343,cp.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,406,TRUE
+63,lsm.h,cppcheck,toybox_0_7_5, (error) Uninitialized variable,4,TRUE
+309,args.c,cppcheck,toybox_0_7_5, (error) Uninitialized variable,527,TRUE
+86,main.c,cppcheck,toybox_0_7_5, (error) Null pointer dereference,563,TRUE

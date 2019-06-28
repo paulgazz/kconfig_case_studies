@@ -1,6 +1,0 @@
-88,open_transformer.c,clang,busybox_1_28_0,Logic error,1,False
-10781,login.c,clang,busybox_1_28_0,Logic error,1,False
-79,applet_tables.c,clang,busybox_1_28_0,Dead store,1,False
-68,verror_msg.c,clang,busybox_1_28_0,Dead store,1,False
-11805,login.c,clang,busybox_1_28_0,Logic error,1,False
-12087,login.c,clang,busybox_1_28_0,Security,1,False

@@ -1,2 +1,0 @@
-line,filename,tool,target,type,num_configs,variability
-126,crypto_misc.c,cppcheck,axtls_2_1_4, (error) Uninitialized variable,1,False

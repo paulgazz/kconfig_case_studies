@@ -1,5 +1,0 @@
-num_configs 1000
-unique_errors 0
-total_errors 0
-max_per_config 0
-min_per_config 0

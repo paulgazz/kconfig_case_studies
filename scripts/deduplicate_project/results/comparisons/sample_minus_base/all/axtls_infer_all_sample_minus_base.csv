@@ -1,3 +1,0 @@
-117,httpd/htpasswd.c,infer,axtls_2_1_4,NULL_DEREFERENCE,307,TRUE
-295,httpd/axhttpd.c,infer,axtls_2_1_4,DEAD_STORE,98,TRUE
-135,httpd/htpasswd.c,infer,axtls_2_1_4,MEMORY_LEAK,307,TRUE

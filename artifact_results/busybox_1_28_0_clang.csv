@@ -1,0 +1,325 @@
+line,filename,tool,target,type,num_configs,variability
+149,appletlib.c,clang,busybox_1_28_0,Dead store,178,TRUE
+155,appletlib.c,clang,busybox_1_28_0,Logic error,393,TRUE
+695,appletlib.c,clang,busybox_1_28_0,Security,726,TRUE
+696,appletlib.c,clang,busybox_1_28_0,Security,726,TRUE
+932,appletlib.c,clang,busybox_1_28_0,API,1000,FALSE
+194,arping.c,clang,busybox_1_28_0,Logic error,531,TRUE
+1503,ash.c,clang,busybox_1_28_0,Memory error,379,TRUE
+2262,ash.c,clang,busybox_1_28_0,Memory error,1000,FALSE
+2282,ash.c,clang,busybox_1_28_0,Memory error,1000,FALSE
+2304,ash.c,clang,busybox_1_28_0,Memory error,1000,FALSE
+3346,ash.c,clang,busybox_1_28_0,Memory error,519,TRUE
+3743,ash.c,clang,busybox_1_28_0,Dead store,511,TRUE
+5887,ash.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5888,ash.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+7422,ash.c,clang,busybox_1_28_0,Memory error,379,TRUE
+9057,ash.c,clang,busybox_1_28_0,Logic error,519,TRUE
+9150,ash.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+9230,ash.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+9850,ash.c,clang,busybox_1_28_0,Logic error,765,TRUE
+11461,ash.c,clang,busybox_1_28_0,Dead store,483,TRUE
+898,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+1285,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2033,awk.c,clang,busybox_1_28_0,Dead store,791,TRUE
+2303,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2316,awk.c,clang,busybox_1_28_0,Logic error,391,TRUE
+2331,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2333,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2344,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2345,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2361,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2365,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2369,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2373,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2377,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2381,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2387,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2400,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2401,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2424,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2428,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2436,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2440,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2441,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2457,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2461,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2465,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+2506,awk.c,clang,busybox_1_28_0,Logic error,791,TRUE
+123,bbunzip.c,clang,busybox_1_28_0,Logic error,507,TRUE
+158,bbunzip.c,clang,busybox_1_28_0,Logic error,507,TRUE
+70,beep.c,clang,busybox_1_28_0,Logic error,506,TRUE
+459,bootchartd.c,clang,busybox_1_28_0,Logic error,813,TRUE
+269,brctl.c,clang,busybox_1_28_0,Logic error,244,TRUE
+234,bzip2.c,clang,busybox_1_28_0,Dead store,574,TRUE
+190,cat.c,clang,busybox_1_28_0,Dead store,201,TRUE
+281,chpst.c,clang,busybox_1_28_0,Logic error,969,TRUE
+75,chrt.c,clang,busybox_1_28_0,Logic error,496,TRUE
+218,conf.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+250,conf.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+408,conf.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+336,conspy.c,clang,busybox_1_28_0,Logic error,489,TRUE
+470,conspy.c,clang,busybox_1_28_0,Logic error,489,TRUE
+375,copy_file.c,clang,busybox_1_28_0,Memory error,1000,FALSE
+207,cp.c,clang,busybox_1_28_0,Memory error,356,TRUE
+217,cp.c,clang,busybox_1_28_0,Memory error,724,TRUE
+388,crond.c,clang,busybox_1_28_0,Memory error,905,TRUE
+710,crond.c,clang,busybox_1_28_0,Security,458,TRUE
+714,crond.c,clang,busybox_1_28_0,Logic error,458,TRUE
+854,crond.c,clang,busybox_1_28_0,Security,447,TRUE
+858,crond.c,clang,busybox_1_28_0,Logic error,447,TRUE
+48,crontab.c,clang,busybox_1_28_0,Logic error,544,TRUE
+1231,d6_dhcpc.c,clang,busybox_1_28_0,Logic error,895,TRUE
+84,data_extract_to_command.c,clang,busybox_1_28_0,Security,335,TRUE
+563,dd.c,clang,busybox_1_28_0,Memory error,250,TRUE
+165,decompress_bunzip2.c,clang,busybox_1_28_0,Logic error,964,TRUE
+75,decompress_unxz.c,clang,busybox_1_28_0,Logic error,962,TRUE
+480,decompress_unxz.c,clang,busybox_1_28_0,Logic error,962,TRUE
+491,decompress_unxz.c,clang,busybox_1_28_0,Logic error,962,TRUE
+616,devfsd.c,clang,busybox_1_28_0,Dead store,150,TRUE
+628,devfsd.c,clang,busybox_1_28_0,Dead store,150,TRUE
+680,devfsd.c,clang,busybox_1_28_0,Dead store,150,TRUE
+906,devfsd.c,clang,busybox_1_28_0,Dead store,294,TRUE
+1000,devfsd.c,clang,busybox_1_28_0,Dead store,294,TRUE
+1018,devfsd.c,clang,busybox_1_28_0,Memory error,886,TRUE
+1734,devfsd.c,clang,busybox_1_28_0,Dead store,886,TRUE
+32,devmem.c,clang,busybox_1_28_0,Logic error,491,TRUE
+1251,dhcpc.c,clang,busybox_1_28_0,Logic error,851,TRUE
+809,dhcpd.c,clang,busybox_1_28_0,Logic error,816,TRUE
+130,docproc.c,clang,busybox_1_28_0,Unix API,1000,FALSE
+34,domain_codec.c,clang,busybox_1_28_0,Logic error,837,TRUE
+64,dos2unix.c,clang,busybox_1_28_0,Logic error,745,TRUE
+602,dpkg.c,clang,busybox_1_28_0,Dead store,409,TRUE
+852,dpkg.c,clang,busybox_1_28_0,API,409,TRUE
+1922,dpkg.c,clang,busybox_1_28_0,Logic error,213,TRUE
+803,ed.c,clang,busybox_1_28_0,Dead store,508,TRUE
+347,expr.c,clang,busybox_1_28_0,Logic error,690,TRUE
+454,fbset.c,clang,busybox_1_28_0,Logic error,809,TRUE
+493,fbsplash.c,clang,busybox_1_28_0,Logic error,509,TRUE
+420,fdisk.c,clang,busybox_1_28_0,Logic error,472,TRUE
+530,fdisk.c,clang,busybox_1_28_0,Logic error,472,TRUE
+2058,fdisk.c,clang,busybox_1_28_0,Logic error,991,TRUE
+2482,fdisk.c,clang,busybox_1_28_0,Logic error,949,TRUE
+2522,fdisk.c,clang,busybox_1_28_0,Logic error,949,TRUE
+651,find.c,clang,busybox_1_28_0,Memory error,303,TRUE
+70,flash_eraseall.c,clang,busybox_1_28_0,Logic error,494,TRUE
+61,flash_lock_unlock.c,clang,busybox_1_28_0,Dead store,491,TRUE
+62,flash_lock_unlock.c,clang,busybox_1_28_0,Dead store,491,TRUE
+791,fsck_minix.c,clang,busybox_1_28_0,Dead store,586,TRUE
+1294,fsck_minix.c,clang,busybox_1_28_0,Logic error,586,TRUE
+694,ftpd.c,clang,busybox_1_28_0,Security,886,TRUE
+156,fuser.c,clang,busybox_1_28_0,Logic error,485,TRUE
+159,fuser.c,clang,busybox_1_28_0,Logic error,485,TRUE
+254,get_devname.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+252,getopt.c,clang,busybox_1_28_0,Logic error,344,TRUE
+333,grep.c,clang,busybox_1_28_0,Logic error,926,TRUE
+2221,gzip.c,clang,busybox_1_28_0,Dead store,27,TRUE
+2223,gzip.c,clang,busybox_1_28_0,Dead store,28,TRUE
+165,halt.c,clang,busybox_1_28_0,Logic error,378,TRUE
+173,halt.c,clang,busybox_1_28_0,Logic error,362,TRUE
+189,halt.c,clang,busybox_1_28_0,Logic error,517,TRUE
+1979,hdparm.c,clang,busybox_1_28_0,Logic error,486,TRUE
+2053,hdparm.c,clang,busybox_1_28_0,Logic error,486,TRUE
+296,hexedit.c,clang,busybox_1_28_0,Logic error,469,TRUE
+136,hostname.c,clang,busybox_1_28_0,Dead store,248,TRUE
+1554,httpd.c,clang,busybox_1_28_0,Security,406,TRUE
+1564,httpd.c,clang,busybox_1_28_0,Logic error,406,TRUE
+2091,httpd.c,clang,busybox_1_28_0,Logic error,280,TRUE
+2624,httpd.c,clang,busybox_1_28_0,Logic error,508,TRUE
+2544,hush.c,clang,busybox_1_28_0,Logic error,137,TRUE
+2917,hush.c,clang,busybox_1_28_0,Logic error,515,TRUE
+3912,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+3916,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+3925,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+3949,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+3959,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+3961,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+3972,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+4068,hush.c,clang,busybox_1_28_0,API,1000,FALSE
+4246,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+4544,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+4663,hush.c,clang,busybox_1_28_0,Dead store,836,TRUE
+4667,hush.c,clang,busybox_1_28_0,Dead store,678,TRUE
+4701,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5102,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5124,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5128,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5170,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5279,hush.c,clang,busybox_1_28_0,Dead store,495,TRUE
+5299,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5315,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+5628,hush.c,clang,busybox_1_28_0,Logic error,633,TRUE
+5649,hush.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+5659,hush.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+6179,hush.c,clang,busybox_1_28_0,API,776,TRUE
+6233,hush.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+6530,hush.c,clang,busybox_1_28_0,Security,500,TRUE
+6712,hush.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+6716,hush.c,clang,busybox_1_28_0,Security,1000,FALSE
+7388,hush.c,clang,busybox_1_28_0,API,202,TRUE
+8199,hush.c,clang,busybox_1_28_0,Security,1000,FALSE
+8369,hush.c,clang,busybox_1_28_0,Dead store,885,TRUE
+10108,hush.c,clang,busybox_1_28_0,Dead store,526,TRUE
+1141,ifupdown.c,clang,busybox_1_28_0,Security,987,TRUE
+1216,ifupdown.c,clang,busybox_1_28_0,Logic error,514,TRUE
+510,inetd.c,clang,busybox_1_28_0,Logic error,476,TRUE
+1217,inetd.c,clang,busybox_1_28_0,Logic error,978,TRUE
+1364,inetd.c,clang,busybox_1_28_0,Dead store,34,TRUE
+1402,inetd.c,clang,busybox_1_28_0,Security,978,TRUE
+1636,inetd.c,clang,busybox_1_28_0,Dead store,491,TRUE
+488,init.c,clang,busybox_1_28_0,Security,994,TRUE
+499,init.c,clang,busybox_1_28_0,Logic error,994,TRUE
+745,init.c,clang,busybox_1_28_0,Security,994,TRUE
+747,init.c,clang,busybox_1_28_0,Logic error,994,TRUE
+944,init.c,clang,busybox_1_28_0,Security,312,TRUE
+585,ipaddress.c,clang,busybox_1_28_0,Logic error,902,TRUE
+709,ipaddress.c,clang,busybox_1_28_0,Logic error,902,TRUE
+726,ipaddress.c,clang,busybox_1_28_0,Dead store,902,TRUE
+149,ipcrm.c,clang,busybox_1_28_0,Dead store,497,TRUE
+206,ipneigh.c,clang,busybox_1_28_0,Dead store,676,TRUE
+205,kill.c,clang,busybox_1_28_0,Dead store,29,TRUE
+208,kill.c,clang,busybox_1_28_0,Dead store,212,TRUE
+366,less.c,clang,busybox_1_28_0,Memory error,782,TRUE
+553,less.c,clang,busybox_1_28_0,Dead store,995,TRUE
+740,less.c,clang,busybox_1_28_0,Logic error,995,TRUE
+1140,less.c,clang,busybox_1_28_0,Dead store,995,TRUE
+324,lineedit.c,clang,busybox_1_28_0,Dead store,981,TRUE
+371,lineedit.c,clang,busybox_1_28_0,Dead store,479,TRUE
+823,lineedit.c,clang,busybox_1_28_0,API,304,TRUE
+1116,lineedit.c,clang,busybox_1_28_0,Logic error,672,TRUE
+327,login.c,clang,busybox_1_28_0,Logic error,482,TRUE
+527,login.c,clang,busybox_1_28_0,Security,249,TRUE
+146,logread.c,clang,busybox_1_28_0,Logic error,309,TRUE
+120,lpd.c,clang,busybox_1_28_0,Logic error,504,TRUE
+63,lpr.c,clang,busybox_1_28_0,Dead store,744,TRUE
+487,ls.c,clang,busybox_1_28_0,Logic error,249,TRUE
+496,ls.c,clang,busybox_1_28_0,Logic error,254,TRUE
+500,ls.c,clang,busybox_1_28_0,Logic error,254,TRUE
+503,ls.c,clang,busybox_1_28_0,Logic error,254,TRUE
+533,ls.c,clang,busybox_1_28_0,Logic error,254,TRUE
+586,ls.c,clang,busybox_1_28_0,Logic error,175,TRUE
+593,ls.c,clang,busybox_1_28_0,Logic error,254,TRUE
+87,lsscsi.c,clang,busybox_1_28_0,Dead store,492,TRUE
+790,lzo1x_9x.c,clang,busybox_1_28_0,Dead store,481,TRUE
+822,lzo1x_9x.c,clang,busybox_1_28_0,Dead store,481,TRUE
+869,lzo1x_9x.c,clang,busybox_1_28_0,Dead store,481,TRUE
+49,mail.c,clang,busybox_1_28_0,Logic error,978,TRUE
+118,mail.c,clang,busybox_1_28_0,Logic error,978,TRUE
+171,man.c,clang,busybox_1_28_0,Dead store,23,TRUE
+716,math.c,clang,busybox_1_28_0,Logic error,678,TRUE
+109,mconf.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+125,mconf.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+413,mdev.c,clang,busybox_1_28_0,Dead store,123,TRUE
+417,mdev.c,clang,busybox_1_28_0,Dead store,282,TRUE
+624,mdev.c,clang,busybox_1_28_0,Logic error,931,TRUE
+628,mdev.c,clang,busybox_1_28_0,Dead store,125,TRUE
+1087,mdev.c,clang,busybox_1_28_0,Logic error,931,TRUE
+102,mktemp.c,clang,busybox_1_28_0,Security,504,TRUE
+27,modutils.c,clang,busybox_1_28_0,Logic error,970,TRUE
+76,more.c,clang,busybox_1_28_0,Logic error,514,TRUE
+2316,mount.c,clang,busybox_1_28_0,API,999,TRUE
+552,mpstat.c,clang,busybox_1_28_0,Logic error,498,TRUE
+288,nameif.c,clang,busybox_1_28_0,Memory error,176,TRUE
+295,nameif.c,clang,busybox_1_28_0,Memory error,176,TRUE
+315,nameif.c,clang,busybox_1_28_0,Memory error,176,TRUE
+323,nameif.c,clang,busybox_1_28_0,Memory error,352,TRUE
+151,nandwrite.c,clang,busybox_1_28_0,Logic error,248,TRUE
+156,nandwrite.c,clang,busybox_1_28_0,Logic error,248,TRUE
+201,nandwrite.c,clang,busybox_1_28_0,Dead store,263,TRUE
+122,nc.c,clang,busybox_1_28_0,Logic error,482,TRUE
+233,nc.c,clang,busybox_1_28_0,Security,482,TRUE
+417,nc.c,clang,busybox_1_28_0,Security,485,TRUE
+412,nmeter.c,clang,busybox_1_28_0,Dead store,523,TRUE
+747,nmeter.c,clang,busybox_1_28_0,Logic error,523,TRUE
+915,nmeter.c,clang,busybox_1_28_0,Dead store,523,TRUE
+1300,ntpd.c,clang,busybox_1_28_0,Logic error,783,TRUE
+112,open_transformer.c,clang,busybox_1_28_0,Security,1000,FALSE
+114,openvt.c,clang,busybox_1_28_0,Security,492,TRUE
+117,openvt.c,clang,busybox_1_28_0,Logic error,492,TRUE
+369,patch.c,clang,busybox_1_28_0,Logic error,524,TRUE
+87,pidof.c,clang,busybox_1_28_0,Dead store,192,TRUE
+600,ping.c,clang,busybox_1_28_0,Logic error,399,TRUE
+660,ping.c,clang,busybox_1_28_0,Logic error,399,TRUE
+657,ps.c,clang,busybox_1_28_0,Logic error,93,TRUE
+215,pw_encrypt.c,clang,busybox_1_28_0,Dead store,359,TRUE
+241,pw_encrypt.c,clang,busybox_1_28_0,Dead store,359,TRUE
+601,pw_encrypt.c,clang,busybox_1_28_0,Dead store,693,TRUE
+206,read_key.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+155,reformime.c,clang,busybox_1_28_0,Logic error,669,TRUE
+173,reformime.c,clang,busybox_1_28_0,Security,669,TRUE
+96,rtc.c,clang,busybox_1_28_0,Logic error,837,TRUE
+142,rtcwake.c,clang,busybox_1_28_0,Logic error,536,TRUE
+283,runsv.c,clang,busybox_1_28_0,Security,482,TRUE
+290,runsv.c,clang,busybox_1_28_0,Logic error,482,TRUE
+293,runsv.c,clang,busybox_1_28_0,Logic error,482,TRUE
+360,runsv.c,clang,busybox_1_28_0,Security,482,TRUE
+369,runsv.c,clang,busybox_1_28_0,Logic error,482,TRUE
+373,runsv.c,clang,busybox_1_28_0,Logic error,482,TRUE
+382,runsv.c,clang,busybox_1_28_0,Logic error,482,TRUE
+127,runsvdir.c,clang,busybox_1_28_0,Security,666,TRUE
+135,runsvdir.c,clang,busybox_1_28_0,Logic error,666,TRUE
+147,runsvdir.c,clang,busybox_1_28_0,Logic error,666,TRUE
+239,runsvdir.c,clang,busybox_1_28_0,Logic error,666,TRUE
+133,script.c,clang,busybox_1_28_0,Logic error,526,TRUE
+403,setfiles.c,clang,busybox_1_28_0,API,835,TRUE
+44,shred.c,clang,busybox_1_28_0,Logic error,483,TRUE
+115,slattach.c,clang,busybox_1_28_0,Logic error,524,TRUE
+133,sort.c,clang,busybox_1_28_0,Logic error,339,TRUE
+486,sort.c,clang,busybox_1_28_0,API,651,TRUE
+174,split-include.c,clang,busybox_1_28_0,Memory error,1000,FALSE
+223,split-include.c,clang,busybox_1_28_0,Memory error,1000,FALSE
+539,start_stop_daemon.c,clang,busybox_1_28_0,API,788,TRUE
+1262,stty.c,clang,busybox_1_28_0,Logic error,499,TRUE
+111,su.c,clang,busybox_1_28_0,Dead store,217,TRUE
+400,svlogd.c,clang,busybox_1_28_0,Security,489,TRUE
+412,svlogd.c,clang,busybox_1_28_0,Logic error,489,TRUE
+106,sysctl.c,clang,busybox_1_28_0,Logic error,478,TRUE
+614,tar.c,clang,busybox_1_28_0,Logic error,485,TRUE
+1232,tar.c,clang,busybox_1_28_0,Logic error,890,TRUE
+250,tcpudp.c,clang,busybox_1_28_0,Logic error,755,TRUE
+479,tcpudp.c,clang,busybox_1_28_0,Security,755,TRUE
+266,telnetd.c,clang,busybox_1_28_0,Dead store,745,TRUE
+481,telnetd.c,clang,busybox_1_28_0,Security,745,TRUE
+499,telnetd.c,clang,busybox_1_28_0,Logic error,745,TRUE
+650,telnetd.c,clang,busybox_1_28_0,Logic error,498,TRUE
+651,telnetd.c,clang,busybox_1_28_0,Dead store,266,TRUE
+758,telnetd.c,clang,busybox_1_28_0,Logic error,247,TRUE
+628,test.c,clang,busybox_1_28_0,Logic error,990,TRUE
+825,test.c,clang,busybox_1_28_0,Dead store,36,TRUE
+395,tftp.c,clang,busybox_1_28_0,Dead store,23,TRUE
+396,tftp.c,clang,busybox_1_28_0,Dead store,76,TRUE
+445,tftp.c,clang,busybox_1_28_0,Dead store,207,TRUE
+517,tftp.c,clang,busybox_1_28_0,Dead store,266,TRUE
+835,tftp.c,clang,busybox_1_28_0,Logic error,475,TRUE
+89,timeout.c,clang,busybox_1_28_0,Logic error,507,TRUE
+158,tls_aes.c,clang,busybox_1_28_0,Logic error,754,TRUE
+237,tls_pstm_mul_comba.c,clang,busybox_1_28_0,Dead store,754,TRUE
+463,tls_pstm_sqr_comba.c,clang,busybox_1_28_0,Dead store,754,TRUE
+150,tls_rsa.c,clang,busybox_1_28_0,Dead store,754,TRUE
+567,tls.c,clang,busybox_1_28_0,Dead store,754,TRUE
+644,top.c,clang,busybox_1_28_0,Logic error,988,TRUE
+47,tty.c,clang,busybox_1_28_0,Dead store,49,TRUE
+48,tty.c,clang,busybox_1_28_0,Dead store,52,TRUE
+121,ubi_tools.c,clang,busybox_1_28_0,Logic error,983,TRUE
+165,ubi_tools.c,clang,busybox_1_28_0,Dead store,126,TRUE
+205,unshare.c,clang,busybox_1_28_0,Logic error,499,TRUE
+680,unzip.c,clang,busybox_1_28_0,Dead store,157,TRUE
+682,unzip.c,clang,busybox_1_28_0,Dead store,157,TRUE
+166,vfork_daemon_rexec.c,clang,busybox_1_28_0,Security,1000,FALSE
+171,vfork_daemon_rexec.c,clang,busybox_1_28_0,Logic error,241,TRUE
+177,vfork_daemon_rexec.c,clang,busybox_1_28_0,Logic error,759,TRUE
+815,vi.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+1095,vi.c,clang,busybox_1_28_0,Dead store,510,TRUE
+1099,vi.c,clang,busybox_1_28_0,Dead store,510,TRUE
+1106,vi.c,clang,busybox_1_28_0,Dead store,83,TRUE
+1133,vi.c,clang,busybox_1_28_0,Dead store,510,TRUE
+1140,vi.c,clang,busybox_1_28_0,Dead store,510,TRUE
+1358,vi.c,clang,busybox_1_28_0,Dead store,122,TRUE
+1672,vi.c,clang,busybox_1_28_0,API,164,TRUE
+2943,vi.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+2946,vi.c,clang,busybox_1_28_0,Dead store,1000,FALSE
+705,wget.c,clang,busybox_1_28_0,Logic error,495,TRUE
+777,wget.c,clang,busybox_1_28_0,Security,481,TRUE
+241,xargs.c,clang,busybox_1_28_0,Logic error,523,TRUE
+682,xfuncs_printf.c,clang,busybox_1_28_0,Logic error,1000,FALSE
+183,zcip.c,clang,busybox_1_28_0,Logic error,490,TRUE
