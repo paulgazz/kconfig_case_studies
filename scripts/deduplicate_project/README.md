@@ -28,6 +28,16 @@ scripts/ : other helpful scripts for intermediate scripts
 
 results/ : where the project places results it generates
 
+# Code Structure
+
+[bug_report.py](./deduplicate/bug_report.py) contains the class definitions for the different classes of warnings. There is a superclass for all warnings, from which each tool's warning is subtyped.
+
+[deduplicate_utils.py](./deduplicate/deduplicate_utils.py) is a static class which implements the actual deduplication and formatting methods.
+
+[__main__.py](./deduplicate/__main__.py) implements the functionality of the app, using the deduplicate_utils class.
+
+[__init__.py](./deduplicate/__init__.py) is an empty file, which is only present to avoid warnings when the project is built.
+
 # Configurating the Program
 
 From the root, config/ is the directory that holds the configuration files. These files are in JSON format. Please look at these files for an example of how to write one yourself, as they are very straightfoward.
