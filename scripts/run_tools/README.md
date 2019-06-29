@@ -21,3 +21,11 @@ All results will be written to /vagrant/results (note that on a Vagrant VM, /vag
 These experiments run slowly, which is why we provide smaller sample runs to experiment with (even the small runs.json takes approximately two hours to run on our machine). The run_tools project does not currently support automatic parallelization, due to issues stemming from running multiple instances of a tool at once.
 
 The run_tools project is a wrapper for lower-level scripts, which are available in ./.scripts. See ./.scripts/replication.sh for more information on how to run these scripts. We have had success running tools in parallel manually using multiple sessions of GNU screen and the lower-level scripts.
+
+# Code Organization
+
+The artifact is split into two main code fragments. The run_tools/__main__.py is a wrapper for the C scripts in [the scripts directory](./.scripts), which interprets command line parameters, verifies correct input, and calls the appropriate script based on the selection.
+
+The scripts in [the scripts directory](./.scripts) handle the actual execution of the analysis programs. Specifications on running the scripts themselves [are included](./.scripts/replication.txt).
+
+The run_tools/__init__.py file is empty, but is necessary to avoid build errors when building the tool.
