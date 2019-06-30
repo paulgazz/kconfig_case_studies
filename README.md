@@ -1,6 +1,4 @@
-# For reviewers:
-
-The tarred, archived version of this repository is available at https://zenodo.org/record/3243323#.XP-Xzi2ZMxg
+An archival version of this repository is available at https://zenodo.org/record/3262370#.XRgAoS2ZP4M
 
 # Description
 
